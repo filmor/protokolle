@@ -1,0 +1,450 @@
+\documentclass{protokoll}
+\newcommand{\assistent}{Dr. J. Hannappel}
+\newcommand{\versuch}{Franck-Hertz-Versuch}
+
+\begin{document}
+
+\section{Einleitung}
+Mittels des \textsc{Franck-Hertz}-Versuches, welcher 1913 erstmals
+von \textsc{Franck} und \textsc{Hertz} durchgeführt wurde, konnte
+die Existenz diskreter Energieniveaus in Atomen, wie sie das
+\textsc{Bohr}sche Atommodell vorhersagt, belegt werden. Atome
+absorbieren und emittieren demnach nur diskrete Energiemengen.
+Insbesondere konnte durch diesen Versuch gezeigt werden, dass
+hierfür nicht nur Photonenabsorption und -emission, sondern auch
+Elektronenstöße, verantwortlich sein können.
+
+\section{Zugrundeliegende Theorie}
+\subsection{Franck-Hertz-Röhre}
+\label{cha:franck}
+Die \textsc{Franck-Hertz}-Röhre (siehe Abb. \ref{fig:aufbau}) ist
+durch einen Glaskolben mit darinliegender Glühkathode (K), einem
+Beschleunigungsgitter (G) und einer Anode (A) gegeben. Im Glaskolben
+befindet sich eine geringe Menge Quecksilber, welches in Abhängigkeit
+von der Temperatur $T$ für eine Quecksilberdampfatmosphäre des Drucks
+$p$ sorgt.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{aufbau}
+\caption[\textsc{Franck-Hertz}-Röhre]{Aufbau der \textsc{Franck-Hertz}-Röhre.}
+\label{fig:aufbau}
+\end{figure}
+
+Mit Hilfe der Heizspannung $U_h$ werden über den glühelektrischen
+Effekt (siehe auch \ref{cha:glu}) Elektronen aus der Kathode gelöst.
+Da zwischen Kathode und Gitter eine Beschleunigungsspannung $U_b$
+anliegt, werden die Elektronen nun zum Gitter hin beschleunigt. Im
+Allgemeinen führen die Elektronen dabei Stöße mit den Hg-Atomen aus
+(siehe Abschnitt \ref{cha:stoss}). Aufgrund des immensen Massenunterschiedes
+können diese als elastisch angenommen werden,
+d.h. die Elektronen geben keine Energie ab. Am Gitter
+besitzen sie also die kinetische Energie $E=e U_B$. Hinter dem Gitter
+befindet sich ein Gegenpotential $U_g$. Haben die Elektronen genügend
+Energie um dieses zu überwinden ($E_{kin} > e U_g$), gelangen sie an
+die Anode. Ein Strom $I$ wird messbar. Diese sogenannte Gegenfeldmethode
+selektiert also nach der kinetischen Energie der Elektronen.
+
+In Abbildung \ref{fig:graph} ist eine typische Anodenstrom-Beschleunigungsspannungs-Kennlinie $I_{(U_b)}$ dargestellt. Zunächst
+nimmt $I$ für $U_b > U_g$ zu, bis bei $U_b \approx \unit[4.9]{V}$ ein
+rapider Stromabfall bis auf ein Minimum zu beobachten ist.
+Anschließend steigt der Strom wieder, um bei $U_b \approx 2\cdot
+\unit[4.9]{V}$ erneut auf ein lokales Minimum zu fallen. Diese
+charakteristischen Dips ergeben sich allgemein für $U_b \approx n
+\cdot \unit[4.9]{V}$, wobei $n \in \mathbb{N}$.
+Dies lässt sich durch inelastische Stöße der Elektronen mit den
+Hg-Atomen erklären, bei welchen die Elektronen Energieverlust
+erleiden. Die diskreten Schwellen hierfür ergeben sich aus den
+diskreten Anregungsenergien der Atome.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{graph}
+\caption[Graph]{Typischer Graph des Anodenstromes $I$ in Abhängigkeit von der Beschleunigungsspannung $U_b$. [3].}
+\label{fig:graph}
+\end{figure}
+
+\subsection{Glühelektrischer Effekt und Raumladung}
+\label{cha:glu}
+Im Inneren eines Metalls lassen sich die im Leitungsband befindlichen
+Elektronen frei im Metall verschieben, ein Herauslösen bedarf jedoch wegen
+des positiven Ionengitters einer Austrittsarbeit von $W_A \approx
+\unit[1-5]{eV}$. Die mittlere kinetische Energie der Elektronen bei
+Raumtemperatur $T_0$ kann diese jedoch mit $E_{therm} = \frac{3}{2} k_B
+T_0 \approx \unit[\frac{1}{30}]{eV}$ offensichtlich nicht bereitstellen.
+Auch bei einer Temperatur von $T=\unit[1000]{K}$ ist dem unverändert so.
+Jedoch existieren nach der \textsc{Fermi}-Statistik bei jeder Temperatur wenigstens
+einige Elektronen mit $E \approx 1 \mathrm{eV}$ (\textsc{Fermi}-Schwanz). Ein
+Bruchteil der Elektronen kann also die Austrittsarbeit aufbringen und das
+Metall, die Kathode, verlassen. Die Wahrscheinlichkeit ein Elektron mit
+der Energie $E$ aufzufinden ist gegeben durch $W_{T}\propto
+\exp(-\frac{E}{k_B T})$ (\textsc{Boltzmann}-Faktor). Sie steigt also mit $T$ an.
+
+Da in unserem Fall hier zusätzlich noch eine Beschleunigungsspannung $U_b$
+die Elektronen von der Kathode zum Gitter hin zieht, gilt allgemein
+$E = W_A - eU_b$. Genauere Untersuchungen der Glühemission führen zur
+\textsc{Richardson}-Gleichung (\ref{eq:rich}), wobei $j$ den
+Elektronenstrom und $C$ eine Materialkonstante bezeichnet.
+
+\begin{equation}
+j = C T^2 \exp\left(-\frac{W_A - eU_B}{k_B T}\right)
+\label{eq:rich}
+\end{equation}
+
+Durch die Emission von Elektronen bildet sich um die Kathode eine
+Elektronenwolke, welche das elektrische Feld der Beschleunigungsspannung
+$U_b$ abschirmt. Dies kann soweit gehen, dass am Ort der Kathode kein Feld
+mehr vorhanden ist. Die Ladungsträgerkonzentration $n$ ist nun ortsabhängig,
+wobei sich ein Gleichgewicht für den Elektronenstrom $j = nev = 
+\text{const}$ einstellt. An Orten mit kleinen $n$ bewegen sich die
+Elektronen also langsamer.
+
+Der glühelektrische Effekt äußert sich in einem Weglaufen des Stromes $I$
+mit der Spannung $U_b$ (siehe gestrichelte Linie in Abb. \ref{fig:graph}),
+wobei $I \propto U^{\frac{3}{2}}_b$ ist (\textsc{Schottky-Langmuir}-
+Gleichung).
+
+\subsection{kinetische Gastheorie}
+\label{cha:gas}
+In der kinetischen Gastheorie approximiert man die Konstituenten (Atome und Moleküle) eines Gases als harte Kugeln, deren Bewegung nur statistisch erfasst werden kann. Diese Modellvorstellung impliziert, dass zwei Gasteilchen nur wechselwirken, falls ihr Abstand geringer als die Summer ihrer Radien ist. Dies führt direkt zur Definition des geometrischen Wirkungsquerschnitts $\sigma$ (siehe Gleichung (\ref{eq:wq})).
+
+\begin{equation}
+\sigma = \pi (r_1 + r_2)^2
+\label{eq:wq}
+\end{equation}
+
+
+Für ein solches ideales Gas gilt allgemein: 
+
+\begin{equation}
+p = n k_B T
+\label{eq:igas}
+\end{equation} 
+
+Hierbei beschreibt $p$ den Impuls, $n$ die Teilchendichte, $k_B$ die \textsc{Boltzmann}-Konstante und $T$ die Temperatur des Gases.
+
+Schickt man einen Teilchenstrahl durch ein solches Gas, so werden während der Propagation Teilchen aus dem Strahl herausgestreut, die Anzahl $N(x)$ der im Strahl verbleibenden Teilchen gehorcht dabei der Differentialgleichung (\ref{eq:dgl}) mit Lösung (\ref{eq:dgll}).
+
+\begin{equation}
+    \frac{\mathrm{d}N(x)}{\mathrm{d}x}= - n \sigma N(x)
+\label{eq:dgl}
+\end{equation}
+
+\begin{equation}
+N(x)= N_0 \exp(- n \sigma x)
+\label{eq:dgll}
+\end{equation}
+
+Mit Hilfe von Gleichung (\ref{eq:dgll}) kann nun die freie Weglänge $\Lambda$ wie folgt berechnet werden.
+
+\begin{eqnarray}
+    \Lambda & \equiv & \frac{1}{N_0} \int_{0}^{\infty} \mathrm{d}x\ x \left| \frac{\mathrm{d}N(x)}{\mathrm{d}x} \right| \nonumber \\
+    &    =   & n \sigma \int_{0}^{\infty} \mathrm{d}x \exp(-n\sigma x) \nonumber \\
+        &    =   & \frac{1}{n\sigma} \label{eq:weg}
+\end{eqnarray}
+
+Über die mittlere freie Weglänge der Konstituenten kann die mittlere Kollisionszeit $\tau$ zu $\tau = \frac{\Lambda}{\langle v \rangle}$ bestimmt werden, wobei $\langle v \rangle$ die mittlere Geschwindigkeit bezeichnet.
+
+\subsection{Stoßprozesse}
+\label{cha:stoss}
+Allgemein unterscheidet man in der klassischen Mechanik elastische und inelastische Stöße. Auf Grund der in Abschnitt \ref{cha:gas} angesprochenen Approximation können im vorliegenden Versuch Elektronen und Quecksilberatome also auf diese beiden Weisen miteinander wechselwirken. Wegen ihrer deutlich geringeren Masse ($\frac{m_{Hg}}{m_e} \approx 3.7 \cdot 10^{5}$) erfahren die Elektronen bei elastischen Stößen mit den Hg-Atomen im Wesentlichen nur eine Richtungsänderung, jedoch keinen Energieverlust. Die für diesen Versuch relevanten physikalischen Prozesse sind somit durch die inelastischen Stöße zwischen diesen beiden Teilchen gegeben. So erleidet das Elektron bei einem inelastischen Stoß mit einem Quecksilberatom einen Energieverlust, welcher sich für die Anregung des Atoms verantwortlich zeigt.
+
+\subsection{Zwei-Phasen-Systeme}
+Wie bereits erwähnt soll die \textsc{Franck-Hertz}-Röhre mit einer Quecksilberdampfatmosphäre erfüllt sein. Hierzu befindet sich ein Tropfen flüssigen Quecksilbers in der Röhre, welcher bei Temperaturerhöhung teilweise verdampft. Dieses Zwei-Phasen-System aus Flüssigkeit und Gas wird durch die \textsc{Clausius-Clapeyron}-Gleichung beschrieben.
+
+\begin{equation}
+    \frac{\mathrm{d}p}{\mathrm{d}T} = \frac{\lambda}{(V_G - V_F) T}
+\label{eq:claus}
+\end{equation}
+
+Wie üblich bezeichnet $p$ den Druck und $T$ die Temperatur, $\lambda$ ist die Verdampfungsenergie und $V_G$ und $V_F$ geben die Volumina in den beiden Phasen (Gas, Flüssigkeit) an. Nach Lösung der Differentialgleichung (\ref{eq:claus}) für Quecksilber ergibt sich dann schließlich:
+
+\begin{equation}
+\log(p) = 10.55 - \frac{3333}{T} - 0.86 \log(T)
+\label{eq:pt}
+\end{equation}
+
+Mit Hilfe von Gleichung (\ref{eq:pt}) ist es nun möglich die Messung des Gasdruckes auf eine Temperaturmessung zurückzuführen. Es ist dabei $T$ in $\unit{K}$, sowie $p$ in $\unit{Torr}$ anzugeben.
+
+\subsection{Quecksilber}
+Die Gasatmosphäre innerhalb der \textsc{Franck-Hertz}-Röhre wird in diesem
+Versuch mit Quecksilber realisiert. Quecksilber hat die Kernladungszahl
+$Z=80$, besitzt somit also $80$ Elektronen. Von diesen sind im Grundzustand
+$78$ in gefüllten Schalen aufzufinden, zwei weitere Elektronen befinden sich
+im $6\mathrm{s}$ Zustand. Ihre Spins (jeweils $s=\frac{1}{2}$) können somit zu einem
+Gesamtspin $S=0$ oder $S=1$ koppeln. Es ergeben sich also Singlett- und
+Triplett-Zustände. Die niedrigsten angeregten Zustände sind durch das
+$6 ^3\mathrm{P}$ Tripett gegeben, wobei $J=0,1,2$. Dies ist auch in Abbildung
+\ref{fig:hg} zu erkennen.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{hg}
+\caption[Graph]{Termschema von Quecksilber. [4].}
+\label{fig:hg}
+\end{figure}
+
+Bei Quecksilber handelt es sich um ein schwereres Element, weshalb keine
+L-S-Kopplung mehr auftritt. Vielmehr ist hier eine intermediäre Kopplung zu
+beobachten. Das Interkombinationsverbot ist bei Quecksilber abgeschwächt. Dies
+wird offensichtlich, wenn man bedenkt, dass der nach dem
+Interkombinationsverbot nicht erlaubte Übergang $6 ^1\mathrm{S}_0
+\leftrightarrow 6 ^3\mathrm{P}_1$ die stärkste Linie im Hg-Spektrum liefert
+($\lambda = \unit[253.7]{nm}$). Die anderen beiden Zustände des niedrigsten
+Tripletts ($6 ^3\mathrm{P}_0$ und $6 ^3\mathrm{P}_2$) sind auf Grund der folgenden Auswahlregeln
+metastabil.
+
+\begin{eqnarray}
+\Delta J=0, \pm 1 \\
+J=0 \nrightarrow J=0
+\end{eqnarray}
+
+Höhere Zustände als das $6 ^3\mathrm{P}$ Triplett sind deshalb nicht zu
+beachten, weil sie auf Grund der zu geringen Weglänge der Elektronen nicht
+angeregt werden.
+
+\subsection{Interferenzfilter}
+Ein Interferenzfilter besteht im Wesentlichen aus einem \textsc{Fabry-Perot}-Interferometer (siehe Abb. \ref{fig:fabry}). Dieses besteht aus zwei planparallelen, transparenten Platten mit Brechungsindex $n$, welche mit einem Abstand $d$ aufgebaut werden.
+Fällt elektromagnetische Strahlung der Wellenlänge $\lambda$ unter einem Winkel $\theta$ ein, so ergibt sich für $\lambda = \frac{2 n d}{m} \cos{\theta}$, wobei $m \in \mathbb{N}$, konstruktive Interferenz. Somit kann der Aufbau genutzt werden, um nur eine bestimmte Frequenz durchzulassen, alle anderen Frequenzen werden unterdrückt. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{fabry}
+\caption[Fabry-Perot-Interferometer]{Prinzip des Fabry-Perot-Interferometers. [2], bearbeitet.}
+\label{fig:fabry}
+\end{figure}
+
+In dem vorliegenden Experiment soll mit Hilfe eines Filters zur Filterung der Wellenlänge $\lambda = \unit[253.7]{nm}$ eine Messung der Lichtkurve für die Resonanzlinie von Quecksilber erfolgen.
+
+\subsubsection*{Anmerkung}
+\emph{Auf Grund nicht vorhandener bzw. inkompatibler Geräte konnten u.\ a.\ die hierzu gehörenden Versuchsteile nicht durchgeführt werden.}
+
+\subsection{Photomultiplier}
+Ein Photomultiplier ist ein lichtsensitives Bauteil, welches einfallende Photonen in einen messbaren elektrischen Strom umwandelt. Dies geschieht wie folgt (siehe auch Abb. \ref{fig:photo}). Fällt Strahlung auf die Photokathode aus photosensitivem Material, so werden Elektronen über den photoelektrischen Effekt emittiert. Hierbei werden Effizienzen von etwa $\unit[30]{\%}$ erreicht. Über ein angelegtes elektrisches Feld werden diese Elektronen nun auf die erste Dynode hin beschleunigt. Dort werden pro einfallenden Elektrons bis zu zehn Sekundärelektronen ausgeschlagen. Zwischen den einzelnen Dynoden, insgesamt gibt es etwa zehn Stück, liegen ebenfalls Spannungen an. Die Potentiale sind so gewählt, dass die Elektronen stets allesamt zur nächsten Dynode beschleunigt werden, wo sie erneut Sekundärelektronen ausschlagen usw.. Auf diese Weise kann eine Verstärkung des Eingangssignals von etwa $10^6 - 10^7$ an der Anode erreicht werden. Dabei ist die Amplitude des Ausgangssignals proportional zur Energie des einfallenden Photons.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{photo}
+\caption[Photomultiplier]{Prinzip eines Photomultipliers. [3], bearbeitet.}
+\label{fig:photo}
+\end{figure}
+
+\subsubsection*{Anmerkung:}
+\emph{Auf Grund nicht vorhandener bzw. inkompatibler Geräte konnten u\. a\. die hierzu gehörenden Versuchsteile nicht durchgeführt werden.}
+
+
+\section{Versuchsaufbau}
+Durch neue Geräte ist der Aufbau sehr kompakt und weicht von der Beschreibung des Skriptes ab. Kernstück des Versuchs ist die in Kapitel \ref{cha:franck} erläuterte \textsc{Franck-Hertz}-Röhre. Der übrige Aufbau ist im Prinzip vollständig in einem Apparat realisiert. Über diesen kann die Temperatur des Ofens, in welchem sich die \textsc{Franck-Hertz}-Röhre befindet, reguliert und abgelesen werden. Sämtliche Spannungen (Heizspannung $U_h$, Beschleunigungsspannung $U_b$ und Gegenspannung $U_g$) sind ferner einstell- und ablesbar. Die Beschleunigungspannung $U_b$ kann das Gerät dabei auf Knopfdruck u\. a\. automatisch linear auf einen zuvor einzugebenden Maximalwert hochregeln ($U^{max}_b=0..\unit[50]{V}$). $U_b$ wird dann auf den x-Eingang eines Cassy gegeben, welches an den Computer angeschlossen ist. Der zumessende Anodenstrom $I_a$ bzw. die Anodenspannung $U_a$ wird auf den y-Eingang des Cassy gegeben. Über die Software CassyLab werden die Messdaten aufgezeichnet und graphisch ausgegeben.
+
+Weitere geplante Aufbauten (Intereferenzfilter und Photomultiplier) konnten nicht verwendet werden, da sie entweder nicht vorhanden oder aber nicht kompatibel zum sonstigen Aufbau waren.
+
+
+\section{Versuchsdurchführung}
+Nach Überprüfung des Aufbaus werden alle Geräte angeschaltet. Nach Hochfahren des Computers startet automatisch das zu verwendende Programm CassyLab. Über das Allzweckgerät wird ein erster Temperaturwert $T$ eingestellt. Daraufhin heizt der Ofen bis der Wert erreicht ist. Die Heizspannung ist anschließend auf $U_h = \unit[6.3]{V}$ einzustellen. Ferner sind eine maximale Beschleunigungsspannung $U^{max}_b$ und eine Gegenspannung $U_g$ zu wählen. Nun wird die Datenaufnahme am Computer gestartet und gleichzeitig der Startknopf an der Aparatur gedrückt, so dass $U_b$ nun linear (vorher diesen Modus wählen!) von $\unit[0]{V}$ an hochgefahren wird bis $U^{max}_b$ erreicht ist. Am Bildschirm wird sich die typische Kurve langsam aufbauen.
+Auf diese Weise sind für vier verschiedene Temperaturen $T$ und jeweils vier verschiedene Gegenspannungen $U_g$ die Anodenspannungskurven aufzunehmen. Es ist dabei darauf zu achten, dass $U^{max}_b$ nicht zu hoch gewählt wird, da die \textsc{Franck-Hertz}-Röhre sonst durchzünden kann.
+
+\subsubsection*{Anmerkung}
+\emph{Ursprünglich sollten zusätzlich noch Lichtkurven und differenzierte Lichtkurven mit einem Photomultiplier aufgenommen werden. Dies scheiterte jedoch an fehlender oder inkompatibler Aparatur.}
+
+
+\section{Messdaten und Auswertung}
+
+\subsection{qualitative Beobachtungen und deren physikalische Erklärung}
+\label{cha:auswertung}
+Wie dem vorangehenden Abschnitt \ref{cha:graphen} zu entnehmen ist, ergeben sich in der Tat die erwarteten Anodenstromkurven (siehe Abschnitt \ref{cha:franck}), mit den ausgeprägten Maxima und Minima. Hierbei fällt zunächst ins Auge, dass die Anodenströme $I$ für höhere Gegenspannungen $U_g$ insgesamt geringer ausfallen. Bei einer höheren Gegenspannung $U_g$ benötigen die Elektronen eine höhere kinetische Energie, um es durchlaufen zu können und an die Anode zu gelangen. Die Elektronen, die bei Hochregeln der Gegenspannung um $\Delta U_g$ die zusätzlich nötige Energie $\Delta E = e U_g$ nicht mehr aufbringen können, erreichen somit nicht die Anode, der Anodenstrom $I$ sinkt also bei höherer Gegenspannung $U_g$ ab.
+
+Des Weiteren hat auch die Variation der Temperatur $T$ eine deutliche Auswirkung auf den Anodenstrom $I$. So nimmt $I$ mit steigender Temperatur $T$ global ab. Dies ist über den mit $T$ steigenden Gasdruck $p$ zu erklären. Durch die höhere Temperatur liegt mehr Quecksilber in gasförmigem Zustand vor, die Dichte $p$ steigt also an (siehe Gleichung (\ref{eq:pt})). Auf diese Weise sinkt die mittlere freie Weglänge der Elektronen ab (siehe Gleichung (\ref{eq:weg})) und werden öfter gestreut (zwischen Gitter und Anode). Bei einem Streuwinkel $\theta > \frac{\pi}{2}$ bewirkt die Gegenspannung $U_g$ eine Beschleunigung in Richtung des Gitters. Diese Elektronen tragen nicht zum Anodenstrom $I$ bei.
+
+Außerdem sind die Extrema der Kurven bei höheren Temperaturen zu höheren Beschleunigungsspannungen $U_b$ hin verschoben. Auch ist ein Offset zu beobachten. Anstelle bei $U_b \approx \unit[4,9]{V}$ findet man das erste Maximum bei Spannungen $U_b \gtrapprox \unit[10]{V}$. Diese Beobachtungen können über eine temperaturabhängige Kontaktspannung zwischen Kathode und Anode erklärt werden.
+
+Bei der Betrachtung eines isolierten Maximums fällt auf, dass dessen Amplitude mit steigender Beschleunigungsspannung $U_b$ zunimmt. Der Grund wurde bereits im Abschnitt \ref{cha:glu} angesprochen. Wie es in einer Vakuumröhre zu erwarten ist, gehorcht die Amplitude eines Maximums der \textsc{Schottky-Langmuir}-Gleichung $I \propto U^{\frac{3}{2}}_b$.
+
+Ferner ergeben sich wegen statistischer Fluktuationen der kinetischen Energie der Elektronen keine scharfen, sondern "`verschmierte"' Peaks, und die Minima sinken nie unter $\unit[0]{V}$.
+
+\subsection{quantitative Auswertung}
+\subsubsection*{Bestimmung der Anregungsspannung}
+Der experimentell bestimmte Wert von $U = \unit[(4.755 \pm 0.2)]{V}$ als gewichtetes Mittel über die Differenzen der Anregungsspannung stimmt relativ gut mit dem theoretischen Wert $U_{th} = \unit[4.9]{V}$ überein, die Abweichung nach unten ergibt sich vor allem aus den schlechteren Ergebnissen für $\unit[200]{^\circ C}$.
+
+Nun kann mit Hilfe der experimentell bestimmten Anregungsspannung $U$ die zugehörige Wellenlänge der emittierten Strahlung berechnet werden. Es gilt hierfür:
+
+\begin{equation}
+\lambda = \frac{h c}{e U}
+\end{equation}
+
+Der Fehler errechnet sich zu:
+
+\begin{equation}
+\sigma_{\lambda} = \frac{h c}{e U^2} \sigma_{U}
+\end{equation}
+
+Somit ergibt sich $\lambda = \unit[(261 \pm 10)]{nm}$. Dies stimmt entsprechend mit dem erwarteten theoretischen Wert relativ gut $\lambda = \unit[253.7]{nm}$ überein.
+
+\subsubsection*{Bestimmung der freien Weglänge}
+Nun soll die mittlere freie Weglänge für Elektronen der kinetischen Energie $E_{kin} = \unit[5]{eV}$ für die Anregung des Triplett P-Niveaus bei einer Temperatur $T = \unit[175]{^\circ C} = \unit[448.15]{K}$ berechnet werden.
+Zuächst einmal ist nach Gleichung (\ref{eq:pt}) bekannt:
+
+\begin{eqnarray}
+\nonumber
+p &=& 10^{10.55 - \frac{3333}{T} - 0.86 \log(T)} \\ \nonumber
+  &=& \unit[7.228]{Torr} \\ \nonumber
+  &=& \unit[963.7]{Pa} \nonumber
+\end{eqnarray}
+
+Für die benötigten Wirkungsquerschnitte der Anregung des Triplett P-Niveaus von Quecksilber ergeben sich nach dem Praktikumsskript folgende Werte, wobei $a_0$ der \textsc{Bohr}-Radius ist.
+
+\begin{eqnarray}
+\nonumber
+\sigma_{(^3\mathrm{P_0})} &=& \pi a^2_0  \\ \nonumber
+\sigma_{(^3\mathrm{P_1})} &=& 2.5 \pi a^2_0  \\ \nonumber
+\sigma_{(^3\mathrm{P_2})} &=& 0  \nonumber
+\end{eqnarray}
+
+Dies liefert einen Gesamtwirkungsquerschnitt:
+
+\begin{equation}
+\sigma_{(ges)} =3.5 \pi a_0 = \unit[3.092 \cdot 10^{-20}]{m^2}
+\end{equation}
+
+Durch Ausnutzen der aus der idealen Gasgleichung (\ref{eq:igas}) folgenden Relation $n = \frac{p}{k_B T}$ erhalten wir nun die mittlere freie Weglänge zu:
+
+\begin{equation}
+\Lambda = \frac{1}{n \sigma_{ges}} = \frac{k_B T}{p \sigma_{ges}} = \unit[207.55]{\mu m}
+\end{equation}
+
+Ein Elektron von etwa $\unit[5]{eV}$ regt also einen P-Triplettzustand durch Stoß an und verliert dabei seine kinetische Energie bevor genügend Energie für die Anregung eines höheren Niveaus bereitsteht. Dementsprechend ist es gerechtfertigt, davon auszugehen, dass höhere Niveaus nicht angeregt werden können.
+
+\subsubsection*{Bestimmung der mittleren Stoßzeit}
+Nun soll die mittlere Stoßzeit $\tau$ zweier Quecksilberatome bestimmt werden. Hierzu benutzen wir den in Abschnitt \ref{cha:gas} eingeführten geometrischen Wirkungsquerschnitt. Es ergibt sich nach Gleichung (\ref{eq:wq}) mit dem im Skript angegebenen gaskinetischen Durchmesser von Quecksilber $d_{Hg} = \unit[0.44]{nm}$:
+
+\begin{equation}
+\sigma_{Hg} = \pi d^2_{Hg} \approx \unit[6.08 \cdot 10^{-19}]{m^2}
+\end{equation}
+
+Daraus ergibt sich:
+
+\begin{equation}
+\Lambda_{Hg} = \frac{1}{n \sigma_{Hg}} = \frac{k_B T}{p \sigma_{ges}} = \unit[10.55]{\mu m}
+\end{equation}
+
+Nun muss noch die mittlere Geschwindigkeit $\langle v \rangle$ der Quecksilberatome ($m_{Hg} = \unit[200.59]{u}$) bei einer Temperatur $T = \unit[448.15]{K}$ bestimmt werden. Es gilt hierfür nach \textsc{Maxwell}:
+
+\begin{equation}
+\langle v \rangle = \sqrt{\frac{8 k_B T}{\pi m_{Hg}}} \approx \unit[217.48]{\frac{m}{s}}
+\end{equation}
+
+Es ergibt sich also für die mittlere Stoßzeit $\tau$ zweier Quecksilberatome:
+
+\begin{equation}
+\tau = \frac{\Lambda}{\langle v \rangle} = \frac{\unit[10.55]{\mu m}}{\unit[217.48]{\frac{m}{s}}} \approx \unit[48.53]{ns}
+\end{equation}
+
+Die Lebensdauer für den optischen Übergang $^3 \mathrm{P_1} \rightarrow ^1 \mathrm{S_0}$ beträgt $\tau_{opt} = \unit[117]{ns}$. Sie ist also etwa um einen Faktor zwei größer als $\tau$. Die Abregung der Atome sollte also im Allgemeinen über Stöße geschehen.
+
+\section{Zusammenfassung}
+Die Existenz diskreter Energieniveaus in Atomen, wie sie das \textsc{Bohr}sche Atommodell vorhersagt ist durch das Experiment bestätigt worden. Dabei stimmt unser Ergebnis für die Anregungsspannung der Triplett P-Niveaus von Quecksilber relativ gut mit dem theoretischen Wert überein.
+
+Wie im Verlauf des Protokolls bereits erwähnt, konnten andere Teile des Versuchs auf Grund fehlender Geräte leider nicht durchgeführt werden.
+
+\begin{appendix}
+\section{Literatur}
+[1] D. Meschede, \textit{Gerthsen Physik, 23., überarbeitete Auflage} (Springer-Verlag, 2006) 
+\newline
+[2] W. Demtröder, \textit{Experimentalphysik 2, 4. Auflage} (Springer-Verlag, 2006) 
+\newline
+[3] W. Demtröder, \textit{Experimentalphysik 3, 3. Auflage} (Springer-Verlag, 2005)  
+\newline
+[4] H. Haken, H. Wolf, \textit{Atom- und Quantenphysik, 8. Auflage} (Springer-Verlag, 2004)
+\newline
+[5] \textit{Skript zum physikalischen Praktikum Teil IV}, Universität Bonn (2008)
+\newline
+
+\section{Graphen}
+\label{cha:graphen}
+Im Folgenden sind die gewonnenen Messergebnisse graphisch dargestellt. Die abgelesenen Werte der Peaks sind ebenfalls angegeben. Die Fehler werden angenommen zu $\sigma_T = \unit[1]{K}$ sowie $\sigma_{U_g} = \unit[0.05]{V}$. Eine Auswertung der Messergebnisse erfolgt im Abschnitt \ref{cha:auswertung}.
+
+\newcommand{\plot}[4]{
+\begin{figure}[hbp]
+    \subsubsection*{$T = \unit[#1]{^\circ C}$, $U_B = \unit[#2]{V}$, $U_g = \unit[#3]{V}$}
+    \def\filename {data/#1b#2g#3.txt}
+    \label{#1#2#3}
+    \begin{tikzpicture}[y=.5cm]
+        % X-Achse
+        \draw[->, thick, id=x-axis] (0,0) -- (11,0) node[right] {$U_B/\unit{V}$} ;
+        \foreach \x in {5, 10, ..., #2}
+            \draw[shift={(\ratio{10 * \x}{#2},0)}] (0pt, 0pt) -- (0pt, -2pt)
+                                              node[below] {$\x$};
+        % Y-Achse
+        \draw[->, thick, id=y-axis] (0,0) -- (0,9) node[above] {$U/\unit{V}$};
+        \foreach \y in {1, ..., 8}
+            \draw[shift={(0, \y)}] (2pt, 0pt) -- (0pt, 0pt) node[left] {$\y$};
+        
+        % Plot
+        \draw plot[id=plot, mark=|, smooth, xscale=\ratio{10}{#2}, mark indices={#4}]
+                file \filename;
+
+    \end{tikzpicture}
+%    \caption{$T = \unit[#1]{^\circ C}$, $U_B = \unit[#2]{V}$, $U_g = \unit[#3]{V}$}
+
+    \pgfplotstableread \filename \table
+
+    \pgfplotstablecreatecol[
+        create col/assign first/.code={%
+            \pgfmathparse{0}\let\pgfmathaccuma=\pgfmathresult
+            },
+        create col/assign/.code={%
+            \foreach \row in {#4}
+            {%
+                \ifnum\pgfplotstablerow=\row\relax
+                    \pgfmathparse{\thisrow{0} - \pgfmathaccuma}
+                    \global\pgfkeyslet{/pgfplots/table/create col/next content}%
+                        \pgfmathresult
+                    \pgfmathparse{\thisrow{0}}
+                    \global\let\pgfmathaccuma=\pgfmathresult
+                    \breakforeach
+                \fi
+            }
+        }
+        ]{diff}\table
+
+    \pgfplotstabletypeset[
+        row predicate/.code={%
+            \pgfplotstableuserowfalse
+                \foreach \row in {#4} {%
+                    \ifnum\row=##1\relax
+                        \global\pgfplotstableuserowtrue
+                        \breakforeach
+                    \fi
+                }
+            },
+        columns={0,diff},
+        columns/0/.style={column name=$U_b/\unit{V}$},
+        columns/diff/.style={column name=$\Delta U_b/\unit{V}$}
+        ]
+        \table
+
+\end{figure}
+}
+
+\plot{140}{20}{0.5}{118, 166}
+\plot{140}{20}{1}{123, 174}
+\plot{140}{20}{1.5}{119, 170}
+\plot{140}{20}{2}{119, 170}
+\plot{160}{25}{0.5}{127, 167, 208}
+\plot{160}{25}{1}{95, 135, 175}
+\plot{160}{30}{1}{84, 116, 149, 184}
+\plot{160}{35}{1.5}{100, 128, 157, 187}
+\plot{160}{40}{2}{63, 87, 112, 138, 164, 191}
+\plot{175}{30}{0.5}{86, 118, 150, 184}
+\plot{175}{30}{1}{80, 113, 147, 180}
+\plot{175}{40}{1.5}{67, 87, 112, 138, 163, 189, 212}
+\plot{175}{50}{2}{54, 73, 93, 113, 133, 154, 175}
+\plot{200}{50}{0.5}{98, 117, 136, 155, 175, 194}
+\plot{200}{50}{1}{97, 116, 135, 154, 173, 193}
+\plot{200}{50}{1.5}{110, 136, 155, 174, 194} % vorletzter fehlt
+\plot{200}{50}{2}{176, 121, 157, 140} % dito
+
+
+\end{appendix}
+
+\end{document}
