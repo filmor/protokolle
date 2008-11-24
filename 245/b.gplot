@@ -1,0 +1,27 @@
+set terminal pdf monochrome size 29cm, 21cm
+set output 'vorversuch.pdf'
+
+set title ''
+
+set autoscale
+
+set xlabel 'R/Ohm'
+set ylabel 'P/W'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+R(x,y)=x/y
+delta_R(x,y)=(R(x,y)*sqrt((0.003/y)**2+0.025**2))
+Ps(x,y)=x*y
+delta_Ps(x,y)=(Ps(x,y)*sqrt((0.005/x)**2+(1/y)**2))
+PsCos(x,y,z)=x*y*z
+delta_PsCos(x,y,z)=PsCos(x,y,z)*sqrt((0.005/x)**2 + (1/y)**2 + (0.03/z)**2)
+
+set title 'Pw'
+plot 'vorversuch' using (R($1,$2)):($4):(delta_R($1,$2)):(1) with xyerrorbars notitle
+set title 'Ps'
+plot 'vorversuch' using ($1/$2):(Ps($2,$3)):(delta_R($1,$2)):(delta_Ps($2,$3)) with xyerrorbars notitle
+set title 'Ps*cos(phi)'
+plot 'vorversuch' using ($1/$2):($2*$3*$5):(delta_R($1,$2)):(delta_PsCos($2,$3,$5)) with xyerrorbars notitle

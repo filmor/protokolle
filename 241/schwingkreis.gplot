@@ -1,0 +1,19 @@
+set terminal pdf size 29cm,21cm
+set output 'schwingkreis.pdf'
+
+set title 'Schwingkreis'
+
+set autoscale
+
+set xlabel 'f/Hz'
+set ylabel 'U/V'
+
+# set yrange [1:5]
+# set xrange [100:1000]
+
+# v(x) = a*x + b
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+plot 'schwingkreis' using 1:2:($1*0.01):($2*0.01) with xyerrorbars notitle, 0.665/sqrt(2) notitle

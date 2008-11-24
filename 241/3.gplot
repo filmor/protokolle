@@ -1,0 +1,35 @@
+set terminal pdf
+set output '3.pdf'
+
+set autoscale
+
+set logscale x
+set logscale y
+
+set mxtics 10
+set mytics 10
+set grid xtics ytics mxtics mytics
+
+set xlabel '\Omega'
+set ylabel 'A'
+
+set title 'Hochpass'
+
+R=100
+C=1.5e-6
+
+fgr_1=1/(R*C*2*pi)
+
+fgr_2=655
+
+plot 'hochpass' using ($1/fgr_1):($2/0.9):($1/fgr_1*0.02):($2/0.9*0.05) with xyerrorbars notitle, 1.0/sqrt(2.0) notitle
+
+set title 'Tiefpass'
+
+plot 'tiefpass' using ($1/fgr_1):($2):($1/fgr_1*0.02):($2*0.05) with xyerrorbars notitle, 1.0/sqrt(2.0) notitle
+
+set title 'Sperrfilter'
+
+plot 'sperrfilter' using ($1/fgr_2):($2/0.8):($1/fgr_2*0.01):($2/0.8*0.05) with xyerrorbars  notitle, 1.0/sqrt(2.0) notitle
+
+# set xrange [0.2:4]

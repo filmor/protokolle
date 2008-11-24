@@ -1,0 +1,27 @@
+set terminal pdf monochrome  size 29cm, 21cm
+set output 'g.pdf'
+
+set title 'Spannungsübertragung'
+
+set autoscale
+
+set xlabel 'I2/A'
+set ylabel 'U2/U1'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+sigma=0.05
+omegaL=154
+Rv=2
+
+R(x,y)=x/y
+
+U2_U1(x,y)=R(x,y)/(R(x,y)+2*Rv)*sqrt(1-sigma)*(sqrt(1 + (sigma*omegaL/(R(x,y)+2*Rv))**2))
+
+f(x) = U2_U1(-12*(x-5),x)
+df(x) = f(x)*0.01*x
+
+
+plot 'versuch' using 5:($6/$2):($5*0.05):($6/$2*0.01) with xyerrorbars title 'messwerte', f(x) title 'theorie', f(x) - df(x) notitle, f(x) + df(x) notitle

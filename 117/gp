@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+RESULT="call '$1'"
+
+for i in $*
+do
+    if [ $i == $0 ] || [ $i == $1 ]
+    then
+        continue
+    fi
+    RESULT="${RESULT} $i"
+done
+
+echo ${RESULT} | gnuplot

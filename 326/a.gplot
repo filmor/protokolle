@@ -1,0 +1,32 @@
+set terminal pdf monochrome # size 29cm, 21cm
+set output 'a.pdf'
+
+set autoscale
+
+set title 'Malussches Gesetz'
+
+set xlabel 'phi/°'
+set ylabel 'U_norm'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+set key bottom right
+
+set angles degrees
+
+U_max = 0.449
+U_min = 0.386
+
+U_norm(x) = (x - U_min) / (U_max - U_min)
+dU_norm(x) = 0.01 * x * sqrt((U_max - U_min)**2 + (U_max - x)**2 + (U_min - x)**2)/(U_max - U_min)**2
+
+f(x) = I_0 * cos(x)**2
+
+dphi(x,y) = (x < 11) ? y - 90 : y + 90
+ddphi(x,y) = sqrt(2) * 2
+
+fit f(x) 'a.txt' using (dphi($0,$1)):(U_norm($2)):(ddphi($0,$1)) via I_0
+
+plot 'a.txt' using (dphi($0,$1)):(U_norm($2)):(ddphi($0,$1)):(dU_norm($2)) with xyerrorbars notitle, f(x) notitle
+

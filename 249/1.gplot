@@ -1,0 +1,32 @@
+set terminal pdf # size 29cm, 21cm
+set output '1.pdf'
+
+set title 'Fadenstrahlrohr'
+
+set autoscale
+
+set xlabel 'U/V'
+set ylabel '(rI)^2 / (Am)^2'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+rI2(x, y) = (0.01 * x * y)**2
+# TODO
+drI2(x, y) = 0.01 * rI2(x,y) # 2*rI2(x,y)*sqrt(0.02**2 + (0.002 / (0.01 * x)))
+
+f2(x) = r2*x + a
+f3(x) = r3*x + b
+f4(x) = r4*x + c
+f5(x) = r5*x + d
+
+fit f2(x) '1.txt' using (rI2($2, $3)):($2 == 2 ? $1 : 1/0):(drI2($2, $3)) via r2, a
+fit f3(x) '1.txt' using (rI2($2, $3)):($2 == 3 ? $1 : 1/0):(drI2($2, $3)) via r3, b
+fit f4(x) '1.txt' using (rI2($2, $3)):($2 == 4 ? $1 : 1/0):(drI2($2, $3)) via r4, c
+fit f5(x) '1.txt' using (rI2($2, $3)):($2 == 5 ? $1 : 1/0):(drI2($2, $3)) via r5, d
+
+plot '1.txt' using (rI2($2, $3)):($2 == 2 ? $1 : 1/0):(drI2($2, $3)):(0.02*$1) with xyerrorbars title 'r = 2cm', f2(x) notitle
+plot '1.txt' using (rI2($2, $3)):($2 == 3 ? $1 : 1/0):(drI2($2, $3)):(0.02*$1) with xyerrorbars title 'r = 3cm', f3(x) notitle
+plot '1.txt' using (rI2($2, $3)):($2 == 4 ? $1 : 1/0):(drI2($2, $3)):(0.02*$1) with xyerrorbars title 'r = 4cm', f4(x) notitle
+plot '1.txt' using (rI2($2, $3)):($2 == 5 ? $1 : 1/0):(drI2($2, $3)):(0.02*$1) with xyerrorbars title 'r = 5cm', f5(x) notitle

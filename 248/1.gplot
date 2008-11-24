@@ -1,0 +1,26 @@
+set terminal pdf size 29cm,21cm
+set output 'hysterese.pdf'
+
+set title 'Hysteresekurve'
+
+set autoscale
+
+set xlabel 'H/T'
+set ylabel 'B/mT'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+mu0 = 4 * pi * (10**(-7))
+Lfe = 0.5
+d = 0.002
+N = 1000
+# x = I/A, y = B/T
+H(x,y) = (N * x - d * mu0 * y) / Lfe
+dH(x,y) = 1/Lfe * sqrt ((0.02 * x)**2 + ((0.0005)**2 + (0.03 * 0.02)**2)*(x/mu0)**2 + (0.01 * H(x,y))**2)
+
+# 1: I, 2: B
+
+plot '248b3.dat' using (H($1,$2/1000)):2 smooth bezier notitle
+# :(dH($1,$2/1000)):($2*0.03) smooth bezier with xyerrorlines notitle

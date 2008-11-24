@@ -1,0 +1,25 @@
+set terminal pdf # monochrome size 29cm, 21cm
+set output '2.pdf'
+
+set title 'Cunninghamkorrektur'
+
+set autoscale
+
+set xlabel '(1/r)/(1/m)'
+set ylabel 'q/C'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+# set yrange [0:10**-29]
+
+X(x,y,z) = 1.0/x
+Y(x,y,z) = (y/z)**(2.0/3.0)
+dX(x,y,z) = 0.07 * X(x,y,z)**2
+dY(x,y,z) = 0.1 / (y/z)**(1.0/3.0)
+
+f(x) = A * x + e_2_3
+
+fit f(x) '2.r_und_e.txt' using (X($1,$2,$3)):(Y($1,$2,$3)):(dY($1,$2,$3)) via A, e_2_3
+plot '2.r_und_e.txt' using (X($1,$2,$3)):(Y($1,$2,$3)):(dX($1,$2,$3)):(dY($1,$2,$3)) with xyerrorbars notitle, f(x) notitle

@@ -1,0 +1,30 @@
+set terminal pdf
+set output '1.pdf'
+
+set autoscale
+
+set xlabel 'I/mA'
+set ylabel 'U/V'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+set key bottom right
+
+dU = 0.02
+dI = 0.2
+
+f(x) = Ra*x + b
+g(x) = Rb*x + d
+
+Rx = 149.1
+Ux(x) = Rx * x
+
+fit f(x) '1.a.txt' using 1:2:(dI) via Ra, b
+fit g(x) '1.b.txt' using 1:2:(dI) via Rb, d
+
+set title 'Variante A'
+plot '1.a.txt' using 1:2:(dI):(dU) with xyerrorbars notitle, Ux(x/1000) title 'mit errechnetem Rx', f(x) title 'Fit durch die Messwerte'
+
+set title 'Variante B'
+plot '1.b.txt' using 1:2:(dI):(dU) with xyerrorbars notitle, Ux(x/1000) title 'mit errechnetem Rx', g(x) title 'Fit durch die Messwerte'

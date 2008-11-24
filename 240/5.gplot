@@ -1,0 +1,42 @@
+set terminal pdf
+set output '5.pdf'
+
+set autoscale
+set fit errorvariables
+FIT_LIMIT=1E-15
+
+set xlabel 'T/∞C'
+set ylabel 'R/Ohm'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+dT(x) = 1
+
+Kelvin(x) = 273.51 + x
+dKelvin(x) = 1
+A = 0.002
+B = 4000
+f(x) = A * exp(B / x)
+g(x) = a * x + b
+h(x) = c * x + d
+
+fit g(x) '5.txt' using 1:3:(dT($1)) via a, b
+fit h(x) '5.txt' using 1:4:(dT($1)) via c, d
+fit f(x) '5.txt' using (Kelvin($1)):2:(dKelvin($1)) via A, B
+
+
+set title 'Platin'
+plot '5.txt' using 1:4:(dT($1)) with xerrorbars notitle, h(x) notitle
+
+set yrange [600:700]
+set title 'Manganin'
+plot '5.txt' using 1:3:(dT($1)) with xerrorbars notitle, g(x) notitle
+
+set autoscale
+set xlabel 'T/K'
+set logscale y
+
+set title 'Heiﬂleiter'
+plot '5.txt' using (Kelvin($1)):2:(dKelvin($1)) with xerrorbars notitle, f(x) notitle

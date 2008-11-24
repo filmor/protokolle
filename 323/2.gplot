@@ -1,0 +1,22 @@
+set terminal pdf # monochrome size 29cm, 21cm
+set output '2.pdf'
+
+set autoscale
+
+set xlabel 'Ordnung'
+set ylabel 'phi_m/rad'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+# set yrange [0:10**-29]
+
+f(x,y) = x * lambda_1 * sin(y/2) + d
+g(x,y) = x * lambda_2 * sin(y/2) + d
+
+
+fit f(x,y) '2.a.txt' via lambda_1, d
+fit g(x,y) '2.a.txt' via lambda_2, d
+
+plot f, g

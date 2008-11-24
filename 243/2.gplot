@@ -1,0 +1,21 @@
+set terminal pdf
+set output 'entladungszeit.pdf'
+
+set title 'Ballistisches Galvanometer'
+
+set autoscale
+
+set logscale y
+
+set xlabel 't/s'
+set ylabel 'phi/Skt'
+
+f(x) = Q*exp(-x*1/RC)
+RC = 1/0.008
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+fit f(x) '2' using 1:2 via Q, RC
+plot '2' using 1:2:(0.5):($2 * 0.1) with xyerrorbars notitle, f(x) notitle

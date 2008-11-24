@@ -1,0 +1,39 @@
+set terminal pdf monochrome size 29cm, 21cm
+set output 'versuch.pdf'
+
+set autoscale
+
+set ylabel 'P/W'
+set xlabel 'I/A'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+R1 = 0.6
+R2 = 0.6
+
+PCu(x,y)=R1*x*x + R2*y*y
+PWmax = 31
+
+I2(x)=x+0.25
+delta_I2(x)=I2(x)*0.01
+
+set title 'Primärleistung'
+plot 'versuch' using (I2($5)):3:(delta_I2($5)):($3*0.01) with xyerrorbars notitle
+
+set title 'Sekundärleistung'
+plot 'versuch' using (I2($5)):7:(delta_I2($5)):($7*0.01) with xyerrorbars notitle
+
+set title 'Verlustleistung'
+plot 'versuch' using (I2($5)):($3 - $7):(delta_I2($5)):(($3-$7)*0.015) with xyerrorbars notitle, PWmax notitle
+
+set title 'Kupferverlustleistung'
+plot 'versuch' using 5:(PCu($1,$4)):($5*0.1):(0.05) with xyerrorbars notitle, PWmax notitle
+
+set title 'Eisenverlustleistung'
+plot 'versuch' using 5:($3 - $7 - PCu($1,$4)):($5*0.1):(0.05) with xyerrorbars notitle, PWmax notitle
+
+set title 'Leistungsverhältnis'
+set ylabel 'Eta'
+plot 'versuch' using (I2($5)):($7/$3):(delta_I2($5)):($5*0.005) with xyerrorbars notitle

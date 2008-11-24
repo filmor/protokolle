@@ -1,0 +1,18 @@
+set terminal pdf
+set output 'innenwiderstand.pdf'
+
+set title 'Stromempfindlichkeit und Innenwiderstand'
+
+set autoscale
+
+set xlabel 'R/Ohm'
+set ylabel 'Skt/phi'
+
+v(x) = a*x + b
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+fit v(x) '1' using 1:(1.0/$2) via a, b
+plot '1' using 1:(1.0/$2):($1*0.03):(1/($2*$2)) with xyerrorbars notitle, v(x) notitle

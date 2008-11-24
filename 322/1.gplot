@@ -1,0 +1,28 @@
+set terminal pdf size 16cm, 10cm
+set output '1.pdf'
+
+set autoscale
+
+set xlabel '(1/D) / (1/m)'
+set ylabel 'alpha'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+set key bottom right
+
+f(x) = k*x + b
+
+# Entfernung in m
+E = 5.8
+dE = 0.1
+
+dD = 0.000001
+dD_1(x) = 1.0 / (x ** 2) * dD
+
+dalpha(x) = sqrt((x * 0.01 / E) ** 2 + (dE * x / E**2) ** 2)
+alpha(x) = x / E
+
+fit f(x) '1.txt' using (1.0/$1):(alpha($2)) via k, b
+
+plot '1.txt' using (1.0/$1):(alpha($2)):(dalpha($2)) with yerrorbars notitle, f(x) notitle

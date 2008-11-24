@@ -1,0 +1,36 @@
+set terminal pdf
+set output '2.pdf'
+
+set autoscale
+
+set ylabel 'U/V'
+
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+dU = 0.01
+dI = 0.2
+
+f(x) = - Ri*x + U0
+set title 'Spannungsteiler'
+set xlabel 'I/mA'
+fit f(x) '2.kaskade.txt' using 3:2:(dI) via Ri, U0
+plot '2.kaskade.txt' using 3:2:(dI):(dU) with xyerrorbars notitle, f(x) notitle
+
+set xlabel 'x/cm'
+dx = 0.0005
+
+set title 'Potentiometer'
+set xrange [0:100]
+set key right bottom
+plot '2.poti.txt' using 1:2:(dx):(dU) with xyerrorbars title 'ohne Last',\
+     '2.poti.20.txt' using 1:2:(dx):(dU) with xyerrorbars title '20 Ohm',\
+     '2.poti.50.txt' using 1:2:(dx):(dU) with xyerrorbars title '50 Ohm'
+
+dP(x,y) = 2 * x * dU / y
+P(x,y) = x**2 / y
+
+set title 'Leistungen'
+plot '2.poti.20.txt' using 1:(P($2,20)):(dx):(dP($2,20)) with xyerrorbars title '20 Ohm',\
+     '2.poti.50.txt' using 1:(P($2,50)):(dx):(dP($2,50)) with xyerrorbars title '50 Ohm'
