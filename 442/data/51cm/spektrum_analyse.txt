@@ -1,0 +1,3 @@
+Breite: 3cm, Time/DIV: 2ms
+Abstände: 0.8cm, 0.7cm, 0.7c
+

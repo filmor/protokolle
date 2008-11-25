@@ -1,0 +1,4 @@
+Breite: 3cm, Time/DIV: 2ms
+Abstände: 0.4cm, 0.3cm, 0.4cm, 0.4cm
+
+delta_f: 192.022
