@@ -1,0 +1,55 @@
+
+# X-Werte und Fehler
+X(x) = x
+dX(x) = 0.05
+
+# Y-Werte und Fehler
+Y(y) = y > 0.0 ? sqrt(y) : 1/0 # : y # -sqrt(-y)
+dY(y) = 1/(2*Y(y)) * 0.01
+
+set grid
+set fit errorvariables
+
+# Zu fittende Gerade
+f(x) = m * x + b
+
+# Fehlerberechnung für die Nullstelle (-b/m)
+dN(b,db,m,dm) = db/m + b/m**2 * dm
+
+# Ausgabe in nullstellen.txt umleiten
+set print 'nullstellen.txt'
+
+# Für alle Wellenlängen die Gegenspannungen in eine Tabelle eintragen
+print '# Wellenlänge/nm Gegenspannung/V Fehler/V'
+fit f(x) 'l366.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
+print 366, -b/m, dN(b,b_err,m,m_err)
+fit f(x) 'l405.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
+print 405, -b/m, dN(b,b_err,m,m_err)
+fit f(x) 'l436.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
+print 436, -b/m, dN(b,b_err,m,m_err)
+fit f(x) 'l546.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
+print 546, -b/m, dN(b,b_err,m,m_err)
+fit f(x) 'l578.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
+print 578, -b/m, dN(b,b_err,m,m_err)
+
+# Zur Sicherheit mal plotten
+plot 'l366.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars,\
+     'l405.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '405nm' w xyerrorbars,\
+     'l436.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '436nm' w xyerrorbars,\
+     'l546.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '546nm' w xyerrorbars,\
+     'l578.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars
+
+# Jetzt fitten wir 1/x + b (da gilt: W = h * c/lambda - W_a)
+f(x) = m * 1/x + b
+fit f(x) 'nullstellen.txt' using 1:2:(1) via m, b
+plot 'nullstellen.txt' using (1/$1):2:(0):($3) with xyerrorbars, m * x + b
+
+e = 1.6022e-19
+c = 3e8
+
+# Umrechnungsfaktor:
+k = e / c * 1e-9
+
+# Zuletzt wird noch das Ergebnis auf die Konsole ausgegeben
+set print 
+print "(", k * m, " +- ", k * m_err, ") Js"
