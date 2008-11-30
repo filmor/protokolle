@@ -1,12 +1,29 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{protokoll}[2008/10/23 v0.0]
 
-\LoadClass[a4paper]{scrartcl}
+\LoadClass[a4paper,oneside]{scrartcl}
 
-\RequirePackage{amsmath, amsthm, amssymb}
+%\RequirePackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\RequirePackage{amsmath, amsthm, amssymb, amsrefs}
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
-\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots}
+\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{\scriptsize \versuch\\
+       Kian Salimkhani, Benedikt Sauer}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.1pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
 
 \usepgflibrary{plotmarks}
 
@@ -19,8 +36,16 @@
 \renewenvironment{document}
 {\begin{origdoc}
     \begin{titlepage}
-        \title{\Large{Physikalisches Praktikum IV} \\ \large{Atome, Moleküle, Festkörper} \\ \vspace{0.5cm}  \textnormal{Wintersemester 08/09} \\ \vspace{2cm} \large\textnormal{Protokoll ad}  \\ \vspace{0.5cm}\Huge{\versuch} \vspace{1cm}}
-        \author{Kian Salimkhani, Benedikt Sauer \\ Gruppe $\alpha 4$ \\ \\ \large\textnormal{Assistent: \assistent}}
+        \title{\Large{Physikalisches Praktikum IV} \\
+               \large{Atome, Moleküle, Festkörper} \\
+                \vspace{0.5cm} \textnormal{Wintersemester 08/09} \\
+                \vspace{2cm} \large\textnormal{Protokoll ad}  \\
+                \vspace{0.5cm}\Huge{\versuch} \vspace{1cm}
+        }
+        \author{Kian Salimkhani, Benedikt Sauer \\
+                Gruppe $\alpha 4$ \\
+                 \\ \large\textnormal{Assistent: \assistent}
+        }
         \date{\vspace{1cm} Universität Bonn \\ \today}
     \end{titlepage}
     \maketitle
@@ -28,7 +53,17 @@
     \tableofcontents
     \newpage
 }
-{\end{origdoc}}
+{
+    \end{origdoc}
+}
+
+\newcommand{\Literatur}[1]
+{
+    \section{Literatur}
+        \begin{biblist}
+            \bibselect*{#1}
+        \end{biblist}
+}
 
 \DeclareMathSymbol{,}{\mathpunct}{letters}{"3B}
 \DeclareMathSymbol{.}{\mathord}{letters}{"3B}
