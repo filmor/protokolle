@@ -8,12 +8,12 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
 \RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr, float}
+\RequirePackage{wrapfig}
 
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{\scriptsize \versuch\\
-       Kian Salimkhani, Benedikt Sauer}
+\rhead{\scriptsize K. Salimkhani, B. Sauer - Versuch \nummer: \versuch}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.1pt}
 
