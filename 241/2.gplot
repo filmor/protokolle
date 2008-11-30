@@ -1,0 +1,24 @@
+set terminal pdf
+set output '2.pdf'
+
+set title 'RC-Phasenschieber'
+
+set xrange [-1:1]
+set yrange [0:1.5]
+
+# v(x) = a*x + b
+set mxtics 5
+set mytics 5
+set grid xtics ytics mxtics mytics
+
+Ue = 1
+X(Ur,Ua) = Ur
+Y(Ur,Ua) = Ua
+dX(Ur,Ua) = 0.01
+dY(Ur,Ua) = 0
+
+f(x) = sqrt(r**2-x**2)
+
+fit f(x) 'phasenschieber' using (X($1,$2)):(Y($1,$2)):(dX($1,$2)) via r
+
+plot 'phasenschieber' using (X($1,$2)):(Y($1,$2)):(dX($1,$2)):(dY($1,$2)) with xyerrorbars notitle, sqrt(1-x**2) notitle
