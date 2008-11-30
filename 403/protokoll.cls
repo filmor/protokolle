@@ -7,7 +7,7 @@
 \RequirePackage{amsmath, amsthm, amssymb, amsrefs}
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
-\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr}
+\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr, float}
 
 \pagestyle{fancy}
 
