@@ -8,7 +8,7 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
 \RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr, float}
-\RequirePackage{wrapfig}
+\RequirePackage{wrapfig, subfig}
 
 \pagestyle{fancy}
 

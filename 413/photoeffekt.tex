@@ -9,35 +9,6 @@ every head row/.style={before row=\toprule,after row=\midrule},
 every last row/.style={after row=\bottomrule}} 
 
 \newcommand{\Datei}{}
-\newcommand{\Graph}[1]
-{
-    \renewcommand{\Datei}{data/l#1.txt}
-    \begin{figure}[H]
-        \begin{tikzpicture}
-            \begin{axis}[
-                    xlabel=$U/\unit{V}$,
-                    ylabel=$I/\unit{nA}$,
-                    axis x line=middle,
-                    axis y line=middle,
-                    xmajorgrids,
-                    ymajorgrids
-                ]
-                \addplot plot[
-                        error bars/.cd,
-                        x dir=both,
-                        y dir=both,
-                        x fixed={0.05},
-                        y fixed={1}
-                    ]
-                    file {\Datei};
-                %\addplot+[mark=none] (\x, 0);
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Graph für $\lambda = \unit[#1]{nm}$}
-    \end{figure}
-}
-
-
 
 \begin{document}
 
@@ -68,16 +39,17 @@ des Elektrons vor.
 
 \subsection{Photozelle}
 \label{cha:zelle}
-Eine Photozelle (siehe Abb. \ref{fig:zelle}) ist zum Nachweis von Licht geeignet
+Eine Photozelle %(siehe Abb. \ref{fig:zelle})
+ist zum Nachweis von Licht geeignet
 und besteht im Wesentlichen aus einem evakuierten Glaskolben und zwei
 Elektroden, der Anode und der Kathode.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{zelle}
-    \caption[Photozelle]{Aufbau einer Photozelle.}
-    \label{fig:zelle}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{zelle}
+%    \caption[Photozelle]{Aufbau einer Photozelle.}
+%    \label{fig:zelle}
+%\end{figure}
 
 Während die Kathode Elektronen bereitstellt, sammelt die Anode diese ein. Die
 Kathode ist aus einem Metall (z. B. Cäsium) gefertigt und i.\ a.\ großflächiger
@@ -142,19 +114,20 @@ sogenanntes Kontaktpotential, welches sich durch die Differenz der
 Austrittsarbeiten der beiden Metalle ergibt.
 
 Im Versuch entsteht ein solches Kontaktpotential zwischen den beiden Elektroden,
-da die Gegenspannungselektrode eine deutlich höhere Austrittsarbeit haben muss
-als die Photokathode, die über das Messgerät verbunden sind. Dies stellt sicher,
-dass die Photonen tatsächlich nur aus der Photokathode Elektronen ausgelösen.
-Das Kontaktpotential ist der Bewegungsrichtung der Elektronen entgegen gerichtet
-und liefert den letzten Term der Einsteingleichung:
+die über das Messgerät verbunden sind, da die Gegenspannungselektrode eine
+deutlich höhere Austrittsarbeit haben muss als die Photokathode. Dies stellt
+sicher, dass die Photonen im Wesentlichen nur aus der Photokathode Elektronen
+auslösen.  Das Kontaktpotential ist dabei der Bewegungsrichtung der Elektronen
+entgegen gerichtet und liefert einen zusätzlichen Term in der Einsteingleichung:
 
 \begin{align}
-    E_{kin} = h \nu - W_A - eU_k
+    E_{kin} = h \nu - W_A - eU_K
     \label{eq:einstein_voll}
 \end{align}
-wobei $U_k$ die Kontaktspannung ist. Sie ist in unserem Experiment nicht
+
+wobei $U_K$ die Kontaktspannung ist. Sie ist in unserem Experiment nicht
 ermittelbar, sondern ist in unserem Ergebnis für die Austrittsarbeit enthalten.
-Da wir aber $h$, also die Steigung bestimmen wollen, ist diese Korrektur des
+Da wir ohnehin $h$, also die Steigung bestimmen wollen, ist diese Korrektur des
 Y-Achsenabschnitts für die Auswertung nicht weiter relevant.
 
 \section{Versuchsaufbau}
@@ -183,7 +156,7 @@ U_G = E_{kin}$  berechenbar. Gegenspannung und Photostrom sind über Messgeräte
 ablesbar. Im folgenden ist nun der beschriebene Aufbau noch einmal graphisch
 dargestellt.
 
-\begin{figure}[!h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{aufbau}
     \caption[Versuchsaufbau]{Versuchsaufbau zur Bestimmung des
@@ -209,50 +182,79 @@ dann zunächst exaktere Werte für $U_0$ bestimmt werden und aus diesen dann das
 \textsc{Planck}sche Wirkungsquantum $h$.
 
 \section{Messdaten und Auswertung}
-\def\Lambdas{366, 405, 436, 546, 578}
-\foreach \x in \Lambdas {\Graph{\x}}
+Im Folgenden sind die gemessenen Strom-Spannungskurven geplotet. Für die
+konkreten Messwerte siehe Anhang \ref{cha:messwerte}. 
 
-Für die konkreten Messwerte siehe Anhang \ref{cha:messwerte}. Zu bestimmen sind
-nun jeweils die Nullstellen der Graphen. Dazu betrachten wir (da $I\sim U^2$)
-die Wurzel der gemessenen Stromstärke und fitten eine Gerade durch die Werte. Da
-die Wurzelfunktion die Nullstelle erhält, sind mit der Fitgerade $f(U) = mU + b$ 
-der Nulldurchgang (also die Grenzspannung) und sein Fehler
+Zu bestimmen sind nun jeweils die Nullstellen der Graphen. Dazu betrachten wir
+(da $I \propto U^2$) die Wurzel der gemessenen Stromstärke und fitten eine
+Gerade durch die Werte. Da die Wurzelfunktion die Nullstelle erhält, sind mit
+der Fitgerade $f_{(U)} = mU + b$ der Nulldurchgang (also die Grenzspannung) und
+sein Fehler gegeben durch:
 \begin{align}
     U_0 &= -\frac{b}{m} \\
-    \Delta U_0 &= \left|\frac{\Delta b}{m}\right| + \left|\frac{b}{m^2}\right|
-                    \Delta m
+    \Delta U_0 &= \sqrt{\left|\frac{\Delta b}{m}\right|^2
+                + \left(\left|\frac{b}{m^2}\right| \Delta m\right)^2}
 \end{align}
-% Dabei ergeben die Fehler $\Delta m$ und $\Delta b$ sich aus den 
+Die Fehler der Steigung und des Y-Achsenabschnitts ergeben sich aus dem
+Geradenfit mithilfe der Standardabweichungen und der angenommenen Werte für
+$\Delta U = \unit[5]{mV}$ und $\Delta I = \unit[0.5]{I}$. Daraus erhält man dann
+den Fehler $\Delta U_0 \approx \unit[0.07]{V}$.
 
 \begin{figure}[H]
+    \centering
+    \subfloat{
+        \pgfplotstabletypesetfile[
+                display columns/0/.style={column name=$\lambda/\unit{nm}$},
+                display columns/1/.style={column name=$U_0/\unit{V}$},
+                columns={0,1}
+            ]
+            {data/nullstellen.txt}
+        \label{fig:nullstellen}
+        %\caption{Gegenspannung}
+    }
 
-    %Graph
-    \pgfplotstabletypesetfile[
-        display columns/0/.style={column name=$\lambda/\unit{nm}$},
-        display columns/1/.style={column name=$U_0/\unit{V}$},
-        columns={0,1}
-        ]
-        {data/nullstellen.txt}
-    \label{fig:nullstellen}
-    \caption{Gegenspannung}
+    \subfloat{
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$\frac{1}{\lambda}\cdot 10^{-3}/\frac{1}{\unit{nm}}$},
+                    ylabel={$U/\unit{V}$},
+                    %only marks,
+                    xmin={1.8},
+                    xmax={2.8}
+                ]
+                \addplot plot[%
+                    only marks,
+                    error bars/.cd,
+                    y dir=both,
+                    y fixed={0.07}
+                    ]
+                    function {'data/nullstellen.txt' u (1/$1*1e3):($2) };
+                \addplot[mark=none] (\x, 0.68889 * \x - 0.445572);
+            \end{axis}
+        \end{tikzpicture}
+        \label{fig:graph_gegen}
+    }
+
+    \caption{Graph und Tabelle der Gegenspannungen}
+
 \end{figure}
 
 Nun tragen wir die Gegenspannungen gegen die inversen Wellenlängen auf. Wir
-erhalten wie man in \ref{fig:graph_gegen} sieht eine etwa lineare Verteilung.
-Aus dem Geradenfit erhalten wir eine Funktion $U(\nu) = m \nu + b$. Über die
-Einsteingleichung (\ref{eq:einstein_voll}) erhalten wir die Identitäten
+erhalten wie man in Abbildung \ref{fig:graph_gegen} sieht eine etwa lineare
+Verteilung.  Aus dem Geradenfit erhalten wir eine Funktion $U(\nu) = m \nu + b$.
+Über die Einsteingleichung (\ref{eq:einstein_voll}) erhalten wir die Identitäten
 
 \begin{align}
     h &= \frac{e}{c} m \\
-    W_A + eU_b &= eb
+    W_A + eU_K &= eb
 \end{align}
 
 Der Fehler der Vorfaktoren ist vernachlässigbar, es gilt also $\Delta h =
-\frac{e}{c} \Delta m$. Der Fehler der Steigung der Fitgerade beträgt $\Delta m =
-bla$, damit kommen wir zum Ergebnis:
+\frac{e}{c} \Delta m$. Wie oben erhalten wir also den Fehler aus dem Fehler der
+Steigung der Fitgerade. Damit ist unser Ergebnis:
 
 \begin{align}
-    h = \unit[(3.89 \pm blubb)\cdot 10^{-34}]{Js}
+    h = \unit[(3.89 \pm 1.2)\cdot 10^{-34}]{Js}
     \label{eq:ergebnis}
 \end{align}
 
@@ -263,40 +265,74 @@ ist, für verschiedene Wellenlängen $\lambda$ einfallender elektromagnetischer
 Strahlung kann in der Tat das \textsc{Planck}sche Wirkungsquantum $h$ bestimmt
 werden. Unser Wert ist allerdings etwas zu gering (der Literaturwert beträgt
 $\unit[6.626\cdot10^{-34}]{Js}$) und er liegt somit auch nicht in unseren
-Fehlergrenzen, die vermutlich auch etwas gering eingeschätzt sind.
+Fehlergrenzen, die vermutlich auch etwas gering eingeschätzt sind. Vor allem ein
+nicht beachteter systematischer Fehler könnte die Ursache hierfür sein.
 
 \begin{appendix}
 \Literatur{quellen}
 
 \section{Messwerte}
 \label{cha:messwerte}
-\newcommand{\Tabelle}[1]
-{
-    \renewcommand{\Datei}{data/l#1.txt}
-    \subsection{Werte für die Wellenlänge $\lambda = \unit[#1]{nm}$}
-    \pgfplotstabletypesetfile[
-       display columns/0/.style={%
-            select equal part entry of={0}{2},
-            column name=$U/\unit{V}$
-            },
-       display columns/1/.style={%
-            select equal part entry of={0}{2},
-            column name=$I/\unit{nA}$
-            },
-       display columns/2/.style={%
-            select equal part entry of={1}{2},
-            column name=$U/\unit{V}$
-            },
-       display columns/3/.style={%
-            select equal part entry of={1}{2},
-            column name=$I/\unit{nA}$
-            },
-       columns={0,1,0,1}
-       ]
-    {\Datei}
 
+\input{lambdas}
+
+\foreach \x/\stg/\abs in \Lambdas {%
+    \renewcommand{\Datei}{data/l\x.txt}
+    \subsection*{Werte für die Wellenlänge $\lambda = \unit[\x]{nm}$}
+
+    \begin{figure}[H]
+        \centering
+        \subfloat{
+            \pgfplotstabletypesetfile[
+               display columns/0/.style={%
+                    select equal part entry of={0}{2},
+                    column name=$U/\unit{V}$
+                    },
+               display columns/1/.style={%
+                    select equal part entry of={0}{2},
+                    column name=$I/\unit{nA}$
+                    },
+               display columns/2/.style={%
+                    select equal part entry of={1}{2},
+                    column name=$U/\unit{V}$
+                    },
+               display columns/3/.style={%
+                    select equal part entry of={1}{2},
+                    column name=$I/\unit{nA}$
+                    },
+               columns={0,1,0,1}
+               ]
+            {\Datei}
+        }
+
+        \subfloat{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel=$U/\unit{V}$,
+                        ylabel=$\sqrt{I}/\unit{\sqrt{nA}}$,
+                        axis x line=middle,
+                        axis y line=middle,
+                        xmajorgrids,
+                        ymajorgrids
+                    ]
+                    \addplot plot[
+                            only marks,
+                            error bars/.cd,
+                            x dir=both,
+                            y dir=both,
+                            x fixed={0.05},
+                            y fixed relative={0.1}
+                        ]
+                        function {'\Datei' u ($1):($2>0?sqrt($2):-sqrt(-$2))};
+
+                    \addplot[mark=none]
+                        function {'\Datei' u (($1)):(($1)*\stg + \abs)};
+                \end{axis}
+            \end{tikzpicture}
+     %       \caption{Graph für $\lambda = \unit[\x]{nm}$}
+        }
+    \end{figure}
 }
-\foreach \x in \Lambdas {\Tabelle{\x}}
 
 \end{appendix}
 
