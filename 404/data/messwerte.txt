@@ -1,0 +1,25 @@
+Eichkonstante: k_0 32.5 Gauß/A
+Vertikalkomponente: (273 ± 1) mA
+Temperatur: (44 ± 1) °C
+
+Teil 1:
+    Für 100 Hz:
+    H_0 = (3.5 ± 0.25) mA * k_0
+
+Teil 2:
+    Für 50 Hz:
+    H_0_unten = (-8.9 ± 0.1) mA * k_0
+    H_0_oben = (17.9 ± 0.1) mA * k_0
+
+Teil 4:
+    zeiten.txt: ∆A = 0.1
+
+Teil 5:
+    hf_punkte{1,2}.txt: ∆I = 2% * I, ∆f = 1% * f       + 2% * f
+                                          ^laut Gerät    ^laut Kian
+
+Teil 8:
+    g_faktor{1,2}.txt: ∆I = 0.5 mA, ∆f wie oben
+    
+    
+
