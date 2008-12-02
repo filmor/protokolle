@@ -3,6 +3,7 @@
 \newcommand{\versuch}{Photoelektrische Bestimmung des Planckschen Wirkungsquantums}
 \newcommand{\nummer}{P413}
 
+\usepackage{caption}
 \usepackage{booktabs}
 \pgfplotstableset{ 
 every head row/.style={before row=\toprule,after row=\midrule}, 
@@ -22,10 +23,26 @@ Wirkungsquantums $h$.
 
 \subsection{Photoelektrischer Effekt}
 \label{cha:effekt}
-Fällt Licht oder allgemeiner elektromagnetische Strahlung auf ein Metall, so kann Elektronenemission des Metalls beobachtet werden. Bei genauerer Untersuchung stellt man dabei fest, dass zwar die Anzahl der emittierten Elektronen mit der Lichtintensität schwankt, die maximale Energie der Elektronen jedoch nicht. Diese ist vielmehr von der Frequenz $\nu$ der einfallenden Strahlung abhängig. Offenbar ist diese Beobachtung nicht mit der lange angenommenen Wellennatur des Lichtes verträglich, welche eine kontinuierliche, intensitätsabhängige Energieabgabe annimmt. Erst durch \textsc{Einstein}s Lichtquantenhypothese konnte der photoelektrische Effekt erklärt werden. Bekanntermaßen wird demnach Strahlungsenergie über Photonen quantisiert übertragen. Dabei gilt für die Energie eines Photons allgemein $E_{Photon} = h \nu$.
+Fällt Licht oder allgemeiner elektromagnetische Strahlung auf ein Metall, so
+kann Elektronenemission des Metalls beobachtet werden. Bei genauerer
+Untersuchung stellt man dabei fest, dass zwar die Anzahl der emittierten
+Elektronen mit der Lichtintensität schwankt, die maximale Energie der Elektronen
+jedoch nicht. Diese ist vielmehr von der Frequenz $\nu$ der einfallenden
+Strahlung abhängig. Offenbar ist diese Beobachtung nicht mit der lange
+angenommenen Wellennatur des Lichtes verträglich, welche eine kontinuierliche,
+intensitätsabhängige Energieabgabe annimmt. Erst durch \textsc{Einstein}s
+Lichtquantenhypothese konnte der photoelektrische Effekt erklärt werden.
+Bekanntermaßen wird demnach Strahlungsenergie über Photonen quantisiert
+übertragen. Dabei gilt für die Energie eines Photons allgemein $E_{Photon} = h
+\nu$.
 
-Durch die Annahme quantisierter Energie, werden die Beobachtungen auf natürliche Weise erklärt. Trifft ein Photon auf das Metall, so kann es nur dann ein Elektron auslösen, falls die Photonenenergie ausreicht, um die Austrittsarbeit aus dem Metall für das Elektron zu leisten (siehe hierzu auch Abschnitt \ref{cha:austritt}).
-Die Energiebilanz für ein Elektron, welches durch ein Photon der Frequenz $\nu$ ausgelöst werden soll, ist durch die \textsc{Einstein}-Gleichung gegeben.
+Durch die Annahme quantisierter Energie, werden die Beobachtungen auf natürliche
+Weise erklärt. Trifft ein Photon auf das Metall, so kann es nur dann ein
+Elektron auslösen, falls die Photonenenergie ausreicht, um die Austrittsarbeit
+aus dem Metall für das Elektron zu leisten (siehe hierzu auch Abschnitt
+\ref{cha:austritt}).
+Die Energiebilanz für ein Elektron, welches durch ein Photon der Frequenz $\nu$
+ausgelöst werden soll, ist durch die \textsc{Einstein}-Gleichung gegeben.
 
 \begin{equation}
     E_{kin} = h \nu - W_A
@@ -39,24 +56,23 @@ des Elektrons vor.
 
 \subsection{Photozelle}
 \label{cha:zelle}
-Eine Photozelle %(siehe Abb. \ref{fig:zelle})
-ist zum Nachweis von Licht geeignet
+Eine Photozelle (siehe Abb. \ref{fig:zelle}) ist zum Nachweis von Licht geeignet
 und besteht im Wesentlichen aus einem evakuierten Glaskolben und zwei
 Elektroden, der Anode und der Kathode.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{zelle}
-%    \caption[Photozelle]{Aufbau einer Photozelle.}
-%    \label{fig:zelle}
-%\end{figure}
-
 Während die Kathode Elektronen bereitstellt, sammelt die Anode diese ein. Die
-Kathode ist aus einem Metall (z. B. Cäsium) gefertigt und i.\ a.\ großflächiger
+Kathode ist aus einem Metall (z. B. Cäsium) gefertigt und i.\ A.\ großflächiger
 angelegt, damit mehr Photonen auftreffen können. Die Anode hingegen ist meist
 als Drahtring realisiert, da hier möglichst wenig Licht auftreffen soll. Des
 Weiteren ist die Austrittsarbeit der Anode oft höher als die der Kathode. Diese
 beiden Umstände sorgen dafür, dass die Anode im Wesentlichen nur absorbiert.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{zelle}
+    \caption[Photozelle]{Aufbau einer Photozelle.}
+    \label{fig:zelle}
+\end{figure}
 
 Es existieren zwei Betriebsmöglichkeiten. Entweder wird mit einer Saug- oder mit
 einer Gegenspannung gearbeitet. Im ersten Fall wird die Anode auf ein positives
@@ -85,9 +101,10 @@ Energieniveaus des Festkörpers als verschmierte Bänder approximiert werden
 (Bändermodell). Innerhalb dieser Bänder ergibt sich ein kontinuierlicher
 Energieverlauf. Jenes Energieband, welches dabei für $T = \unit[0]{K}$ über dem
 höchsten mit Elektronen vollständig besetzten Energieband (Valenzband) liegt,
-bezeichnet man i.\ a.\ als Leitungsband. Im Leitungsband befindliche Elektronen
-sind im Gegensatz zu denen im Valenzband frei beweglich, d.h. sie lassen sich
-nicht mehr einzelnen Atomrümpfen zuordnen, sondern nur noch dem Festkörper als
+bezeichnet man im Allgemeinen als Leitungsband. Im Leitungsband befindliche
+Elektronen sind im Gegensatz zu denen im Valenzband frei beweglich, d.h. sie
+lassen sich nicht mehr einzelnen Atomrümpfen zuordnen, sondern nur noch dem
+Festkörper als
 ganzem.
 
 Als Austrittsarbeit $W_A$ bezeichnet man nun den zur Auslösung eines Elektrons
@@ -117,8 +134,9 @@ Im Versuch entsteht ein solches Kontaktpotential zwischen den beiden Elektroden,
 die über das Messgerät verbunden sind, da die Gegenspannungselektrode eine
 deutlich höhere Austrittsarbeit haben muss als die Photokathode. Dies stellt
 sicher, dass die Photonen im Wesentlichen nur aus der Photokathode Elektronen
-auslösen.  Das Kontaktpotential ist dabei der Bewegungsrichtung der Elektronen
-entgegen gerichtet und liefert einen zusätzlichen Term in der Einsteingleichung:
+auslösen. Das Kontaktpotential ist dabei der Bewegungsrichtung der Elektronen
+entgegen gerichtet und liefert einen zusätzlichen Term in der
+\textsc{Einstein}-Gleichung:
 
 \begin{align}
     E_{kin} = h \nu - W_A - eU_K
@@ -126,9 +144,9 @@ entgegen gerichtet und liefert einen zusätzlichen Term in der Einsteingleichung:
 \end{align}
 
 wobei $U_K$ die Kontaktspannung ist. Sie ist in unserem Experiment nicht
-ermittelbar, sondern ist in unserem Ergebnis für die Austrittsarbeit enthalten.
-Da wir ohnehin $h$, also die Steigung bestimmen wollen, ist diese Korrektur des
-Y-Achsenabschnitts für die Auswertung nicht weiter relevant.
+ermittelbar, sondern im Ergebnis für die Austrittsarbeit enthalten und soll im
+Folgenden auch vernachlässigt werden.  Für die Bestimmung von $h$, also der
+Steigung, ist diese Korrektur des Y-Achsenabschnitts nicht relevant.
 
 \section{Versuchsaufbau}
 \label{cha:aufbau}
@@ -140,20 +158,20 @@ Spektrum einer Quecksilberdampflampe filtern.
 Um die Verfälschung des Messergebnisses auf Grund von Streulichteinfall zu
 begrenzen, ist die übrige Apparatur baulich abgedunkelt. So fällt das Licht der
 Wellenlänge $\lambda$ in ein Rohr und wird über eine Linse auf die Kathode der
-CsO-Photozelle gebündelt.  Hg-Lampe und Kathode befinden sich jeweils in
+CsO-Photozelle gebündelt. Hg-Lampe und Kathode befinden sich jeweils in
 doppelter Brennweitenentfernung von der Linse. Dadurch werden gemäß Abschnitt
 \ref{cha:effekt} Elektronen aus der Kathode gelöst, deren kinetische Energie
-sich nach Gleichung \ref{eq:einstein_voll} als Differenz aus Photonenenergie und
-Austrittsarbeit des Kathodenmaterials ergibt.
+sich nach Gleichung (\ref{eq:einstein_voll}) im Wesentlichen als Differenz aus
+Photonenenergie und Austrittsarbeit des Kathodenmaterials ergibt.
 
 Die kinetische Energie der ausgelösten Elektronen ist messtechnisch über die
 sogenannte Gegenfeldmethode bestimmbar. Mittels einer variablen Spannungsquelle
 ($\unit[0]{V} \leq U \leq \unit[0]{V}$) kann zwischen Kathode und Anode der
-Photozelle eine Gegenspannung $U_G$ anngelegt werden. Für einen gerade
+Photozelle eine Gegenspannung $U_G$ angelegt werden. Für einen gerade
 verschwindenden Photostrom von Kathode zu Anode ist die kinetische Energie der
 Photoelektronen gerade durch das Gegenfeld kompensiert und über die Beziehung $e
 U_G = E_{kin}$  berechenbar. Gegenspannung und Photostrom sind über Messgeräte
-ablesbar. Im folgenden ist nun der beschriebene Aufbau noch einmal graphisch
+ablesbar. Im Folgenden ist nun der beschriebene Aufbau noch einmal graphisch
 dargestellt.
 
 \begin{figure}[H]
@@ -164,7 +182,6 @@ dargestellt.
     \label{fig:aufbau}
 \end{figure}
 
-% \newpage
 \section{Versuchsdurchführung}
 Die einzelnen verkabelten Komponenten der Apparatur werden angeschaltet. Nun
 muss zunächst die Quecksilberdampflampe so vor dem Filterrad positioniert
@@ -182,23 +199,26 @@ dann zunächst exaktere Werte für $U_0$ bestimmt werden und aus diesen dann das
 \textsc{Planck}sche Wirkungsquantum $h$.
 
 \section{Messdaten und Auswertung}
-Im Folgenden sind die gemessenen Strom-Spannungskurven geplotet. Für die
-konkreten Messwerte siehe Anhang \ref{cha:messwerte}. 
+Die konkreten Messwerte, sowie die Plots der gemessenen Strom-Spannungskurven
+mit den entsprechenden Fitgeraden sind im Anhang \ref{cha:messwerte} zu finden.
 
 Zu bestimmen sind nun jeweils die Nullstellen der Graphen. Dazu betrachten wir
-(da $I \propto U^2$) die Wurzel der gemessenen Stromstärke und fitten eine
-Gerade durch die Werte. Da die Wurzelfunktion die Nullstelle erhält, sind mit
-der Fitgerade $f_{(U)} = mU + b$ der Nulldurchgang (also die Grenzspannung) und
+(da $I \propto U^2$) die Wurzel der gemessenen Stromstärke (abgezüglich der
+geringsten gemessenen Stromstärke $I_0$) und fitten eine Gerade durch die Werte.
+Mit der Fitgerade $f(U) = mU + b$ der Nulldurchgang (also die Grenzspannung) und
 sein Fehler gegeben durch:
+
 \begin{align}
     U_0 &= -\frac{b}{m} \\
     \Delta U_0 &= \sqrt{\left|\frac{\Delta b}{m}\right|^2
                 + \left(\left|\frac{b}{m^2}\right| \Delta m\right)^2}
 \end{align}
+
 Die Fehler der Steigung und des Y-Achsenabschnitts ergeben sich aus dem
-Geradenfit mithilfe der Standardabweichungen und der angenommenen Werte für
-$\Delta U = \unit[5]{mV}$ und $\Delta I = \unit[0.5]{I}$. Daraus erhält man dann
+Geradenfit mit Hilfe der Standardabweichungen und der angenommenen Werte für
+$\Delta U = \unit[5]{mV}$ und $\Delta I = \unit[0.05]{nA}$. Daraus erhält man dann
 den Fehler $\Delta U_0 \approx \unit[0.07]{V}$.
+
 
 \begin{figure}[H]
     \centering
@@ -209,18 +229,19 @@ den Fehler $\Delta U_0 \approx \unit[0.07]{V}$.
                 columns={0,1}
             ]
             {data/nullstellen.txt}
-        \label{fig:nullstellen}
-        %\caption{Gegenspannung}
     }
 
     \subfloat{
         \begin{tikzpicture}
             \begin{axis}[
                     xlabel={$\frac{1}{\lambda}\cdot 10^{-3}/\frac{1}{\unit{nm}}$},
-                    ylabel={$U/\unit{V}$},
+                    ylabel={$U_0/\unit{V}$},
                     %only marks,
-                    xmin={1.8},
-                    xmax={2.8}
+                    xmin={0},
+                    xmax={2.8},
+                    ymin={-1},
+                    xmajorgrids,
+                    ymajorgrids
                 ]
                 \addplot plot[%
                     only marks,
@@ -229,20 +250,21 @@ den Fehler $\Delta U_0 \approx \unit[0.07]{V}$.
                     y fixed={0.07}
                     ]
                     function {'data/nullstellen.txt' u (1/$1*1e3):($2) };
-                \addplot[mark=none] (\x, 0.68889 * \x - 0.445572);
+                \addplot[mark=none] (\x, 1.0144 * \x - 0.787727);
             \end{axis}
         \end{tikzpicture}
-        \label{fig:graph_gegen}
-    }
 
-    \caption{Graph und Tabelle der Gegenspannungen}
+    }
+    \caption{Graph der Gegenspannungen}    
+    \label{fig:graph}
 
 \end{figure}
 
 Nun tragen wir die Gegenspannungen gegen die inversen Wellenlängen auf. Wir
-erhalten wie man in Abbildung \ref{fig:graph_gegen} sieht eine etwa lineare
-Verteilung.  Aus dem Geradenfit erhalten wir eine Funktion $U(\nu) = m \nu + b$.
-Über die Einsteingleichung (\ref{eq:einstein_voll}) erhalten wir die Identitäten
+erhalten wie man in Abbildung \ref{fig:graph} sieht eine etwa lineare
+Verteilung. Aus dem Geradenfit erhalten wir eine Funktion $U_0(\nu) = m \nu + b$.
+Über die \textsc{Einstein}-Gleichung (\ref{eq:einstein_voll}) erhalten wir die
+Identitäten
 
 \begin{align}
     h &= \frac{e}{c} m \\
@@ -254,19 +276,30 @@ Der Fehler der Vorfaktoren ist vernachlässigbar, es gilt also $\Delta h =
 Steigung der Fitgerade. Damit ist unser Ergebnis:
 
 \begin{align}
-    h = \unit[(3.89 \pm 1.2)\cdot 10^{-34}]{Js}
+    h = \unit[(5.42 \pm 1.4)\cdot 10^{-34}]{Js}
     \label{eq:ergebnis}
 \end{align}
 
+Der auf diese Weise bestimmte Wert für $h$ ist etwas zu klein verglichen
+mit dem Literaturwert von $\unit[6.626\cdot 10^{-34}]{Js}$, dieser liegt aber in
+den Fehlergrenzen.
+
+Die Austrittsarbeit $W_A$ von Cäsium können wir aus dem Y-Achsenabschnitt
+abschätzen, der Fehler ergibt sich entsprechend. Dabei ist zu beachten, dass das
+Kontaktpotential (über das wir keine Information haben) auch darin enthalten ist:
+
+\begin{align}
+    W_A + eU_K = \unit[(2.6 \pm 0.5)]{eV}
+    \label{eq:ergebnis_w_a}
+\end{align}
 
 \section{Zusammenfassung}
 Aus der Messung der Grenzspannung $U_0$, welche der Austrittsarbeit proportional
 ist, für verschiedene Wellenlängen $\lambda$ einfallender elektromagnetischer
 Strahlung kann in der Tat das \textsc{Planck}sche Wirkungsquantum $h$ bestimmt
-werden. Unser Wert ist allerdings etwas zu gering (der Literaturwert beträgt
-$\unit[6.626\cdot10^{-34}]{Js}$) und er liegt somit auch nicht in unseren
-Fehlergrenzen, die vermutlich auch etwas gering eingeschätzt sind. Vor allem ein
-nicht beachteter systematischer Fehler könnte die Ursache hierfür sein.
+werden. Unser Wert ist allerdings etwas zu gering, da der Literaturwert von
+$\unit[6.626\cdot10^{-34}]{Js}$ am oberen Rand unserer Fehlergrenzen liegt.
+Die Ursache hierfür könnte ein nicht beachteter systematischer Fehler sein.
 
 \begin{appendix}
 \Literatur{quellen}
@@ -276,7 +309,7 @@ nicht beachteter systematischer Fehler könnte die Ursache hierfür sein.
 
 \input{lambdas}
 
-\foreach \x/\stg/\abs in \Lambdas {%
+\foreach \x/\stg/\abs/\Inull in \Lambdas {%
     \renewcommand{\Datei}{data/l\x.txt}
     \subsection*{Werte für die Wellenlänge $\lambda = \unit[\x]{nm}$}
 
@@ -309,7 +342,7 @@ nicht beachteter systematischer Fehler könnte die Ursache hierfür sein.
             \begin{tikzpicture}
                 \begin{axis}[
                         xlabel=$U/\unit{V}$,
-                        ylabel=$\sqrt{I}/\unit{\sqrt{nA}}$,
+                        ylabel=$\sqrt{I - I_0}/\unit{\sqrt{nA}}$,
                         axis x line=middle,
                         axis y line=middle,
                         xmajorgrids,
@@ -323,7 +356,7 @@ nicht beachteter systematischer Fehler könnte die Ursache hierfür sein.
                             x fixed={0.05},
                             y fixed relative={0.1}
                         ]
-                        function {'\Datei' u ($1):($2>0?sqrt($2):-sqrt(-$2))};
+                        function {'\Datei' u ($1):(sqrt($2 + \Inull))};
 
                     \addplot[mark=none]
                         function {'\Datei' u (($1)):(($1)*\stg + \abs)};

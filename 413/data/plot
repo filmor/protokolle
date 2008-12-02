@@ -5,7 +5,7 @@ dX(x) = 0.05
 
 # Y-Werte und Fehler
 #Y(y) = y > 0.00 ? sqrt(y) : y>-0.5 ? -sqrt(-y) : 1/0 # 1/0 # : y # -sqrt(-y)
-Y(y) = y > 0.1 ? sqrt(y) : 1/0
+Y(y, k) =  y > 0 ? sqrt(y + k) : 1/0
 dY(y) = 1/(2*Y(y)) * 0.1
 
 set grid
@@ -21,38 +21,38 @@ dN(b,db,m,dm) = db/m + b/m**2 * dm
 set print 'nullstellen.txt'
 
 print '# Wellenlänge/nm Gegenspannung/V Fehler/V'
-fit f(x) 'l366.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 366, -b/m
-fit f(x) 'l405.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 405, -b/m
-fit f(x) 'l436.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 436, -b/m
-fit f(x) 'l546.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 546, -b/m
-fit f(x) 'l578.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 578, -b/m
+fit f(x) 'l366.txt' using (X($1)):(Y($2,2.03)):(dX($1)) via m, b
+print 366, -b/m, 2.03
+fit f(x) 'l405.txt' using (X($1)):(Y($2,2.34)):(dX($1)) via m, b
+print 405, -b/m, 2.34
+fit f(x) 'l436.txt' using (X($1)):(Y($2,0.94)):(dX($1)) via m, b
+print 436, -b/m, 0.94
+fit f(x) 'l546.txt' using (X($1)):(Y($2,1.01)):(dX($1)) via m, b
+print 546, -b/m, 1.01
+fit f(x) 'l578.txt' using (X($1)):(Y($2,0.69)):(dX($1)) via m, b
+print 578, -b/m, 0.69
 
 set print '../lambdas.tex'
 
 print '\def\Lambdas{'
 # Für alle Wellenlängen die Gegenspannungen in eine Tabelle eintragen
-fit f(x) 'l366.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 366, '/', m, '/', b, ','
-fit f(x) 'l405.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 405, '/', m, '/', b, ','
-fit f(x) 'l436.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 436, '/', m, '/', b, ','
-fit f(x) 'l546.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 546, '/', m, '/', b, ','
-fit f(x) 'l578.txt' using (X($1)):(Y($2)):(dX($1)) via m, b
-print 578, '/', m, '/', b, '}'
+fit f(x) 'l366.txt' using (X($1)):(Y($2,2.03)):(dX($1)) via m, b
+print 366, '/', m, '/', b, '/', 2.03, ','
+fit f(x) 'l405.txt' using (X($1)):(Y($2,2.34)):(dX($1)) via m, b
+print 405, '/', m, '/', b, '/', 2.34, ','
+fit f(x) 'l436.txt' using (X($1)):(Y($2,0.94)):(dX($1)) via m, b
+print 436, '/', m, '/', b, '/', 0.94, ','
+fit f(x) 'l546.txt' using (X($1)):(Y($2,1.01)):(dX($1)) via m, b
+print 546, '/', m, '/', b, '/', 1.01, ','
+fit f(x) 'l578.txt' using (X($1)):(Y($2,0.69)):(dX($1)) via m, b
+print 578, '/', m, '/', b, '/', 0.69, '}'
 
 # Zur Sicherheit mal plotten
-plot 'l366.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars,\
-     'l405.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '405nm' w xyerrorbars,\
-     'l436.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '436nm' w xyerrorbars,\
-     'l546.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '546nm' w xyerrorbars,\
-     'l578.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars
+#plot 'l366.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars,\
+#     'l405.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '405nm' w xyerrorbars,\
+#     'l436.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '436nm' w xyerrorbars,\
+#     'l546.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '546nm' w xyerrorbars,\
+#     'l578.txt' using (X($1)):(Y($2)):(dX($1)):(dY($2)) title '366nm' w xyerrorbars
 
 # Jetzt fitten wir 1/x + b (da gilt: W = h * c/lambda - W_a)
 f(x) = m * 1/x + b
@@ -69,3 +69,4 @@ k = e / c * 1e-9
 set print 
 print m, b
 print "(", k * m, " +- ", k * m_err, ") Js"
+print "(", b/c,") J"
