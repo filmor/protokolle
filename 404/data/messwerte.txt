@@ -1,6 +1,7 @@
 Eichkonstante: k_0 32.5 Gauß/A
 Vertikalkomponente: (273 ± 1) mA
 Temperatur: (44 ± 1) °C
+Skala: Time/DIV: 2 ms, Y: 2 mV
 
 Teil 1:
     Für 100 Hz:
@@ -18,8 +19,9 @@ Teil 5:
     hf_punkte{1,2}.txt: ∆I = 2% * I, ∆f = 1% * f       + 2% * f
                                           ^laut Gerät    ^laut Kian
 
+Teil 7:
+    temp{1,2}.txt: ∆T = 1 K, ∆A = 0.1 (Ablesefehler, Rauschen)
+
 Teil 8:
     g_faktor{1,2}.txt: ∆I = 0.5 mA, ∆f wie oben
     
-    
-
