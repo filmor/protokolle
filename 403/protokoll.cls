@@ -8,7 +8,12 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
 \RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr, float}
-\RequirePackage{wrapfig, subfig}
+\RequirePackage{wrapfig, subfig, caption, booktabs}
+
+\pgfplotstableset{ 
+    every head row/.style={before row=\toprule,after row=\midrule}, 
+    every last row/.style={after row=\bottomrule}
+} 
 
 \pagestyle{fancy}
 
