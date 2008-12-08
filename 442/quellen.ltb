@@ -1,0 +1,39 @@
+\bib{gerthsen}{book}{
+    title={Gerthsen Physik},
+    editor={Dieter Meschede},
+    publisher={Springer, Berlin},
+    year={2006},
+    month={3},
+    edition={23., überarbeitete Aufl.},
+    isbn={9783540254218},
+    url={http://amazon.de/o/ASIN/3540254218/},
+    price={EUR 39,95},
+    totalpages={1162},
+    timestamp={2008.11.30},
+}
+
+\bib{skript}{article}{
+    title={Skript zum physikalischen Praktikum Teil IV},
+    author={Universität Bonn},
+    year={2008},
+}
+
+\bib{meschi}{book}{ 
+title={Optik, Licht und Laser},
+author={Dieter Meschede},
+publisher={Teubner B.G. GmbH},
+year={2005},
+month={12},
+edition={2. A.},
+isbn={9783519132486},
+url={http://amazon.de/o/ASIN/3519132486/},
+price={EUR 36,90},
+totalpages={568},
+timestamp={2008.12.08},
+}
+
+\bib{skriptlaser}{article}{
+    title={Physikalisches Praktikum für Fortgeschrittene: Versuch A142, Laser},
+    author={Universität Bonn},
+    year={2005},
+}

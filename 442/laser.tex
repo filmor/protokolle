@@ -1,0 +1,348 @@
+\documentclass{protokoll}
+\newcommand{\assistent}{C. Weber}
+\newcommand{\versuch}{Laser}
+\newcommand{\nummer}{P442}
+
+
+\newcommand{\Datei}{}
+\newcommand{\Laengen}{51, 65, 77}
+
+\begin{document}
+
+\section{Einleitung}
+In diesem Versuch soll die Funktionsweise eines Lasers verstanden werden. Es
+wird ein Helium-Neon-Laser aus Einzelkomponenten aufgebaut, welcher anschließend
+bezüglich seiner Eigenschaften wie Wellenlänge, Polarisation und Modenstruktur
+untersucht wird.
+
+\section{Theoretische Grundlagen}
+\subsection{Aktives Medium}
+\label{cha:medium}
+
+\subsubsection{Voraussetzung für Lichtverstärkung}
+
+\subsubsection{Einsteinkoeffizienten}
+
+\subsubsection{Homogene und inhomogene Linenebreiten}
+
+\subsubsection{Drei- und Vier-Niveau-Schemata gepumpter aktiver Medien}
+
+
+
+\subsection{Resonatoren}
+\label{cha:resonator}
+\subsubsection{Stabilitätskriterien}
+Ein optischer Resonator besteht aus zwei sich gegenüberstehenden parallel
+ausgerichteten Spiegeln (plan oder sphärisch). Bei axialer Lichteinstrahlung
+findet dann eine periodische Reflektion statt. Der Resonator speichert also
+Strahlungsenergie, welche jedoch auf Grund vonn Verlusten exponentiell abnimmt
+($E(t) = E_0 e^{-\frac{t}{\tau}}$, mit der eingestrahlten Energie $E_0$ und der
+Abklingzeit $\tau$).
+
+Damit ein solcher periodischer Strahlverlauf stabil ist, müssen gewisse
+Bedingungen erfüllt sein. Diese können in einem Stabilitätsdiagramm (siehe Abb.
+\ref{fig:stabdia}) auch graphisch dargestellt werden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{stabdia}
+   \caption[Stabilitätsdiagramm]{Stabilitätsdiagramm für optische Resonatoren. \cite{meschi}.}
+    \label{fig:stabdia}
+\end{figure}
+
+
+\subsubsection{Frequenzspektrum und Modenabstände}
+Ein weiteres entscheidendes Charakteristikum des Resonators stellt sein Spektrum
+der Resonanzfrequenzen oder Moden dar. Bei einer solchen Resonanzfrequenz
+$\nu_{res}$ bilden sich stehende Wellen, sogenannte longitudinale Moden oder
+Eigenschwingungen endlicher Breite $\Delta \nu_R$ aus. Der Abstand zwischen zwei
+Moden beträgt dabei $\Delta \nu = \frac{c}{2 L}$.
+
+Innerhalb des Resonators lässt sich der Strahl als Gaußstrahl behandeln. Man
+erwartet somit für den Strahlradius $w(z)$:
+
+\begin{align}
+    w(z) = w_0 \cdot \sqrt{1 + \left(\frac{\lambda \cdot z}{\pi \cdot
+                            w^2_0}\right)^2}
+\end{align}
+
+Hierbei bezeichnet $z$ den Abstand von der Strahltaille $w_0$, für welche mit
+dem Radius des sphärischen Spiegels $R_{sph}$ weiter gilt:
+
+\begin{align}
+w_0 = \sqrt{\frac{\lambda}{\pi} \cdot \sqrt{L \cdot (R_{sph} - L)}}
+\end{align}
+
+Die Strahltaille ist dabei der Punkt des engsten Strahlradius. Bei symmetrischen Resonatoren liegt er in der Mitte des Resonators, bei einem semisphärischen Resonator aus Planspiegel und spärischem Spiegel hingegen am Ort des Planspiegels.
+
+
+...
+
+\subsubsection{konfokaler und semisphärischer Resonator}
+
+\subsubsection{Fabry-Perot-Resonator}
+
+
+
+\subsection{Funktion des Helium-Neon-Lasers}
+\label{cha:hene}
+
+\subsubsection{Niveau-Schema}
+
+\subsubsection{Verstärkungsprofil eines Gaslasers}
+
+\subsubsection{Verlustgrade}
+
+\subsubsection{Modenkonkurrenz}
+
+\subsection{Brewster-Fenster}
+\label{cha:brewster}
+
+\subsection{Mischung der Moden des Laserlichts auf einer Photodiode}
+
+
+
+
+
+\section{Bestimmung der Wellenlänge mittels eines Reflektionsgitters}
+\label{cha:lineal}
+\subsection{Versuchsaufbau}
+Es wird der Aufbau wie in Abbildung \ref{fig:linealaufbau} realisiert.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{linealaufbau}
+    \caption[Versuchsaufbau]{Aufbau zur Bestimmung der Wellenlänge mittels eines Reflektionsgitters.}
+    \label{fig:linealaufbau}
+\end{figure}
+
+
+\subsection{Versuchsdurchführung}
+Zunächst wird zur Bestimmung der Helium-Neon-Laser-Wellenlänge $\lambda$ der
+Laserstrahl des Pilotlasers streifend auf ein horizontales Lineal geleitet und
+das Interferenzmuster an der Wand beobachtet (siehe
+Abb.~\ref{fig:linealaufbau}). Durch Variation des auf dem Lineal ausgenutzten
+Bereiches und des Einfallswinkels $\theta$ wird eine geeignete Einstellung
+gesucht, in welcher die Interferenzbilder auf der Wand gut vermessen werden
+können (Punktabstand und Punktschärfe). Anschließend wird der direkt
+durchgehende Strahl $- \tilde{y}_0$ vermessen, indem das Lineal aus dem
+Strahlengang entfernt wird, da er bei richtiger Einstellung vollständig verdeckt
+wird.
+
+Über die Beziehung $\frac{\left|\tilde{y}_0 - (-\tilde{y}_0)\right|}{2}$ erhält
+man den Nullpunkt und kann nun die Abstände $y_n$ der Maxima verschiedener
+Ordnung $n$ bezüglich des Nullpunktes angeben.  Die Wellenlänge $\lambda$ des
+Lasers ergibt sich schließlich über folgende Gleichung, wobei $y_n$ und $y_0$
+bezüglich des bestimmten Nullpunktes angegeben sind.
+
+\begin{align}
+n \lambda = \frac{1}{2} d \frac{y^2_n - y^2_0}{x^2_0}
+\end{align}
+
+Diese Formel ist jedoch eine Approximation für kleine Winkel (paraxiale
+Näherung). Der Einfallswinkel $\theta$ sollte also möglichst klein bleiben.
+Ferner erwarten wir, dass die Werte für $\lambda$ mit steigender Ordnung $n$
+schlechter werden.
+
+
+\subsection{Messdaten und Auswertung}
+Der Gitterabstand beträgt $d = \unit[(1 \pm 0,001)]{mm}$ und die Entfernung zur
+Wand wurde zu $x_0 = \unit[(140 \pm 2)]{cm}$ vermessen. Als Interferenzmuster
+ergab sich das Folgende.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{laser_lineal}
+    \caption[Interferenzmuster]{Durch Reflektionsgitter (Lineal) entstehendes
+    Interferenzmuster.}
+    \label{fig:lineal}
+\end{figure}
+
+Nun können wie in Abschnitt \ref{cha:lineal} beschrieben die Abstände $y_n$
+extrahiert  und somit einzelne Werte für $\lambda$ berechnet werden. 
+
+\begin{figure}[H]
+    \centering
+        \pgfplotstabletypesetfile[
+                display columns/0/.style={column name={$n$}},
+                display columns/1/.style={column name={$y_n/\unit{cm}$}},
+                display columns/2/.style={column name={$\Delta y_n/\unit{cm}$}},
+                display columns/3/.style={column name={$\lambda/\unit{nm}$}},
+                display columns/4/.style={column name={$\Delta \lambda/\unit{nm}$}},
+            ]
+        {data/lineal.txt}
+        \caption{}
+        \label{fig:werte_lineal}
+\end{figure}
+
+Der Fehler $\Delta y_n$ resultiert im Wesentlichen aus der Breite der Maxima. Der
+Fehler des Abstandes zwischen Lineal und Wand wurde deshalb so hoch angesetzt,
+da dieser Abstand mit einem nicht mehr völlig funktionstüchtigen, d.h. zu
+kurzen, Zollstock vermessen wurde. Der Fehler des Gitterabstandes $\Delta d$
+soll im Folgenden vernachlässigt werden. Der Fehler für die Wellenlänge $\Delta
+\lambda$ ergibt sich  nach \textsc{Gauß} demnach zu:
+
+\begin{align}
+    \Delta \lambda = \frac{d}{2 n}
+        \sqrt{
+            \left(\frac{2 y_n}{x^2_0} \Delta y_n\right)^2
+           +\left(\frac{2 y_0}{x^2_0} \Delta y_0\right)^2
+           +\left(\frac{2\left(y^2_n - y^2_0\right)}{x^3_0}\Delta x_0\right)^2}
+\end{align}
+
+Offensichtlich werden die Werte für die Wellenlänge $\lambda$ mit steigender
+Ordnung $n$ schlechter, wie bereits erwähnt. Berechnet man den Mittelwert der
+ersten fünf Werte, so erhält man $\lambda = \unit[(... \pm ...)]{nm}$, was bis
+auf eine Abweichung von $... \%$ dem Literaturwert $\lambda = \unit[...]{nm}$
+entspricht. Betrachtet man jedoch alle Werte, ergibt sich $\lambda = \unit[(...
+\pm ...)]{nm}$, was einer Abweichung von $... \%$ entspricht. Dies ist jedoch
+durchaus unproblematisch, da der Literaturwert innerhalb der Fehlergrenzen liegt.
+
+
+
+\section{Aufbau des Helium-Neon-Experimentierlasers}
+
+
+\section{Polarisation}
+\label{cha:pol}
+\subsection{Versuchsaufbau}
+
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{polaufbau}
+%    \caption[Versuchsaufbau]{Aufbau zur Bestimmung des Polarisationszustandes. ~\cite{skript}.}
+%    \label{fig:polaufbau}
+%\end{figure}
+
+
+\subsection{Versuchsdurchführung}
+Es sind die Polarisationszustände der beiden Laser mit Hilfe des Polarisationsprismas und der Photodiode zu vermessen (siehe Abb. \ref{fig:polaufbau}).
+
+\subsection{Messdaten und Auswertung}
+Für den Pilotlaser ergibt sich in Polarkoordinatendarstellung folgendes.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}
+            \addplot file {data/polarisation_pilot.txt};
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:polpilot}
+    \caption{Winkelabhängigkeit der Intensität des Experimentierlasers}
+\end{figure}
+
+Offensichtlich ist der Pilotlaser also in sehr guter Näherung unpolarisiert.
+Keine Polarisationsrichtung geht aus Abb.~\ref{fig:polpilot} als bevorzugt
+hervor.
+
+Für den Experimentierlaser ergibt sich in Polarkoordinatendarstellung folgendes.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}
+            \addplot file {data/polarisation_eigener.txt};
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:polex}
+    \caption{Winkelabhängigkeit der Intensität des Experimentierlasers}
+\end{figure}
+
+Hier stellt es sich anders als beim Pilotlaser dar. Der Experimentierlaser zeigt
+deutlich eine bevorzugte Polarisationsrichtung, emittiert also linear
+polarisiertes Licht. Dies wurde auf Grund der \textsc{Brewster}-Fenster auch
+nicht anders erwartet (siehe Abschnitt~\ref{cha:brewster}). 
+
+\section{Strahlprofil}
+\subsection{Versuchsaufbau}
+\subsection{Versuchsdurchführung}
+Das Strahlprofil des Experimentierlasers in semi-sphärischer Resonatorkonfiguration ist für drei verschiedene Spiegelabstände zu vermessen. Hierzu wird ein Messschieber verwendet. Dieser wird auf etwa $\unit[1.5]{mm}$ eingestellt und in den Strahlengang gebracht. Nun wird der Abstand der Messschieberbacken variiert bis der Laser gerade erlischt, bis also die Verluste so groß sind, dass sie den Laserbetrieb gerade verhindern. Der kleinste Abstand zwischen den Messschieberbacken, bei welchem noch Lasertätigkeit zu beobachten ist, soll hier als Maß für den Strahlradius $w(z)$ gelten.
+Der Strahlradius $w(z)$ ist über die gesamte Länge des Lasers in Abständen von $\unit[5 - 10]{cm}$ zu vermessen. Begonnen wird dabei am planen Spiegel, an welchem sich die Strahltaille $w_0$ befindet.
+
+\foreach \x in \Laengen {
+    \renewcommand{\Datei}{data/\x cm/strahlprofil.txt}
+
+    \def\bla{sqrt(\x / 100.0 * (1 - \x / 100.0))}
+    
+    \begin{figure}[H]
+        \begin{tikzpicture}
+            \begin{axis}[
+                    ylabel={$\text{Strahldurchmesser}/\unit{mm}$},
+                    xlabel={$\text{Länge}/\unit{cm}$}
+                ]
+                \addplot plot[
+                        error bars/.cd,
+                        x dir=both,
+                        y dir=both,
+                        x fixed={0.5},
+                        y fixed={0.05}
+                    ]
+                    file {\Datei};
+                \addplot[smooth, red] plot[domain=0:\x, mark=none]
+                        function {2 * sqrt(0.6328 / pi * ( \bla + (x/100) ** 2 / \bla ))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Strahlprofil für eine Resonatorlänge von $\unit[\x]{cm}$}
+    \end{figure}
+}
+    
+
+\subsection{Messdaten und Auswertung}
+
+\section{Optischen Diode}
+\label{cha:diode}
+\subsection{Versuchsaufbau}
+In vielen Fällen wird durch die aufgebauten optischen Komponenten eines Experimentes Licht zurück in den Laser gestreut. Dieses zurücklaufende Licht bedeutet eine zusätzliche Rückkopplung. Durch Variation der Rückkopplung wird der Oszillator
+in Frequenz und Amplitude verändert. Da die für die Rückkopplung verantwortlichen externen Elemente meist nicht so stabil aufgebaut sind wie für einen Laser erforderlich, findet eine fortlaufende Änderung dieser zusätzlichen Rückkopplung statt. Dadurch führt jedoch der Laser regellose Änderungen seiner Oszillation aus. Zur Verhinderung dieses Umstandes dient nun eine optische Diode, welche Licht nur in der Vorwärtsrichtung passieren lässt. Rücklaufendes Licht erreicht somit den Laser nicht.
+
+Im vorliegenden Versuch ist die optische Diode aus einem Polarisator (\textsc{Nicol}sches Prisma) und einer $\frac{\lambda}{4}$-Platte aus Glimmer aufgebaut (siehe Abb. \ref{fig:diode}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{diode}
+    \caption[Diode]{Aufbau der optischen Diode.~\cite{skriptlaser}.}
+    \label{fig:diode}
+\end{figure}
+
+Der Laserstrahl tritt zunächst durch den Polarisator, wo er linear polarisiert wird. Nachgeschaltet ist eine $\frac{\lambda}{4}$-Platte, welche so ausgerichtet wird, dass die schnelle Achse in einem Winkel von $45 \textdegree$ zur Polarisationsrichtung des auftreffenden Lichtes steht. Auf diese Weise erhält man hinter der $\frac{\lambda}{4}$-Platte zirkular polarisiertes Licht. Im Falle einer unerwünschten Reflektion an Komponenten der Apparatur ist das rücklaufende Licht weiterhin zirkular polarisiert und wird nun durch das $\frac{\lambda}{4}$-Plättchen in linear polarisiertes Licht umgewandelt. Allerdings steht der E-Vektor wegen der zweifachen Verzögerung um $\frac{\pi}{2}$ durch die $\frac{\lambda}{4}$-Platte nun senkrecht auf dem des hinlaufenden Strahls. Der rücklaufende Strahl kann somit den Polarisator nicht passieren, wie gewünscht wird eine derartige Rückkopplung also unterbunden.
+
+\subsection{Versuchsdurchführung}
+Um eine Rückkopplung durch in den Laser zurücklaufendes Licht zu verhindern und somit das Laserverhalten zu optimieren, wird nun eine optische Diode, wie in Abbildung \ref{fig:diode} dargestellt, aufgebaut, welche Licht nur in einer Richtung passieren lässt. Zur Einstellung der Komponenten wird nun wie folgt vorgegangen.
+Zunächst wird der Polarisator so eingestellt, dass der Laserstrahl optimal durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90 \textdegree$ gedreht wird. Nun erfolgt die Einstellung des $\frac{\lambda}{4}$-Plättchens. Ist dieses nicht richtig positioniert, so existiert im rücklaufenden Strahl eine außerordentliche Komponente, welche den Polarisator durchläuft und als Reflex des Strahlteilers beobachtet werden kann. Eine richtige Einstellung liegt also dann vor, wenn der rücklaufende Strahl minimal wird.
+
+\section{Optischer Spektrumsanalysator}
+\subsection{Versuchsaufbau}
+\subsection{Versuchsdurchführung}
+\subsection{Messwerte und Auswertung}
+Für die Breite der verschiedenen Dispersionsgebiete ergibt sich nun folgendes.
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{}
+%    \caption[Spektrum]{}
+%    \label{fig:}
+%\end{figure}
+
+
+
+\section{Modenabstand}
+\subsection{Versuchsaufbau}
+\subsection{Versuchsdurchführung}
+\subsection{Messwerte und Auswertung}
+
+\section{Bestimmung der Lichtgeschwindigkeit}
+
+\section{Zusammenfassung}
+
+
+\begin{appendix}
+\Literatur{quellen}
+
+\section{Messwerte}
+\label{cha:messwerte}
+
+
+\end{appendix}
+
+\end{document}
+
