@@ -45,7 +45,7 @@
                \large{Atome, Moleküle, Festkörper} \\
                 \vspace{0.5cm} \textnormal{Wintersemester 08/09} \\
                 \vspace{2cm} \large\textnormal{Protokoll ad}  \\
-                \vspace{0.5cm}\Huge{\versuch} \vspace{1cm}
+                \vspace{0.5cm}\Huge{\versuch}\vspace{1cm}
         }
         \author{Kian Salimkhani, Benedikt Sauer \\
                 Gruppe $\alpha 4$ \\

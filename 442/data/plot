@@ -15,10 +15,10 @@ set terminal pdf
 set xrange [0:4]
 set yrange [-2:2]
 set output '../grafiken/polex.pdf'
-plot 'polex.txt' u ($1-85):($2-0.09)
+plot 'polex.txt' u ($1-85):($2-0.09) with points
 
 set output '../grafiken/polpilot.pdf'
 set xrange [0:20]
 set yrange [-10:10]
-plot [0:10] 'polpilot.txt' u ($1-85):($2-0.09)
+plot [0:10] 'polpilot.txt' u ($1-85):($2-0.09) with points
 

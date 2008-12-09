@@ -23,7 +23,7 @@ untersucht wird.
 
 \subsubsection{Einsteinkoeffizienten}
 
-\subsubsection{Homogene und inhomogene Linenebreiten}
+\subsubsection{Homogene und inhomogene Linienbreiten}
 
 \subsubsection{Drei- und Vier-Niveau-Schemata gepumpter aktiver Medien}
 
@@ -163,10 +163,6 @@ ergab sich das Folgende.
 
 Zunächst wird der Nullpunkt wie in Abschnitt \ref{cha:lineal} beschrieben bestimmt. Anschließend können die Abstände $y_n$ extrahiert und somit einzelne Werte für $\lambda$ berechnet werden. 
 
-%-------------------------------------------------------------------------------------
-%----Kann dort nicht besser Tabelle bla stehen? momentan noch als Abb. deklariert!----
-%-------------------------------------------------------------------------------------
-
 \begin{table}[H]
     \centering
         \pgfplotstabletypesetfile[
@@ -301,7 +297,7 @@ eine Verstärkung von $14.5$.
 \subsection{Versuchsaufbau}
 Nun wird der Aufbau aus Abbildung~\ref{fig:polaufbau} realisiert. Die Photodiode
 kann hierzu aus ihrer Halterung auf der optischen Bank entfernt und in einer
-Laborklemme befestigt werden. Achten Sie bei der Justierung darauf, dass das
+Laborklemme befestigt werden. Bei der Justierung ist darauf zu achten, dass das
 Prisma so in den Strahlengang gebracht wird, dass es keinen Strahlversatz und
 keine Strahlverkippung verursacht.
 
@@ -318,7 +314,7 @@ Polarisationsprismas und der Photodiode zu vermessen (siehe
 Abb.~\ref{fig:polaufbau}).
 
 \subsection{Messdaten und Auswertung}
-Für den Pilotlaser ergibt sich in Polarkoordinatendarstellung folgendes.
+Für den Pilotlaser ergibt sich folgendes.
 
 \newcommand{\PolPlot}[2]
 {
@@ -356,7 +352,7 @@ Offensichtlich ist der Pilotlaser also in sehr guter Näherung unpolarisiert.
 Keine Polarisationsrichtung geht aus Abb.~\ref{fig:polpilot} als bevorzugt
 hervor.
 
-Für den Experimentierlaser ergibt sich in Polarkoordinatendarstellung folgendes.
+Für den Experimentierlaser ergibt sich hingegen folgendes.
 
 \PolPlot{polex}{Experimentier}
 
@@ -383,7 +379,7 @@ Ergebnisse mit den theoretischen Berechnungen nach der \textsc{Gauß}schen
 Theorie zu vergleichen.
 
 \subsection{Messdaten und Auswertung}
-welchem sich die Strahltaille $w_0$ befindet.
+Im Folgenden sind die für die verschiedenen Spiegelabstände erhaltenen Messergebnisse tabellarisch und graphisch dargestellt. Die Graphen wurden zusätzlich jeweils mit einer die theoretische Vorhersage der \textsc{Gauß}schen Theorie wiedergebenden Kurve versehen.
 
 \foreach \x in \Laengen {
 \subsubsection*{Strahlprofil für eine Resonatorlänge von $\unit[\x]{cm}$}
@@ -522,7 +518,7 @@ Abb.~\ref{fig:aufbauspektrum}).
     \label{fig:aufbauspektrum}
 \end{figure}
 
-Die Moden $q$, $n$, $m$ haben die Eigenfrequenzen
+Die Moden $q$, $n$, $m$ haben die Eigenfrequenzen:
 
 \begin{align}
 \nu_{qmn} = \frac{c}{2 L} \left( q + \frac{m+n+1}{2} \right)
@@ -548,9 +544,9 @@ geleitet.
 
 \subsection{Versuchsdurchführung}
 Zu Beginn ist der externe Analysator so zu justieren, dass seine optische Achse
-mit der Strahlachse des Lasers zusammenfällt. Der Abstand der beiden i.\~a.\
+mit der Strahlachse des Lasers zusammenfällt. Der Abstand der beiden i.\ a.\
 windschiefen Geraden wird dabei im Wesentlichen durch Kippung des zweiten
-Planspiegels verringert, der Winkel zwischen den beiden Achsen hingegen v.\~a.\
+Planspiegels verringert, der Winkel zwischen den beiden Achsen hingegen v.\a.\
 durch die Kippung des konfokalen Interferometers.  Nach erfolgter Grobjustage
 wird selbige kontrolliert, indem man die Wechselspannung am Piezoelement so
 einstellt, dass mindestens ein Dispersionsgebiet durchfahren wird, und das
@@ -647,14 +643,16 @@ dann noch die Lichtgeschwindigkeit $c$ ermittelt werden.
 
 Es gilt:
 \begin{align}
-    c &= 4L\Delta\nu \\
-    \Delta c &= 4 \sqrt{\left(L\Delta(\Delta\nu)\right)^2+\left(\Delta
-    L\Delta\nu\right)^2} \approx 4 \Delta L\Delta \nu
-    \text{, da $\Delta(\Delta\nu)$ sehr klein gegen $\Delta L$}
+    c &= 4 \ L \ \Delta \nu \\
+    \Delta c &= 4 \ \sqrt{\left(L \ \Delta(\Delta\nu)\right)^2+\left(\Delta
+    L \ \Delta\nu\right)^2}\\
+    &\approx 4 \ \Delta L \ \Delta \nu \ \ \ \ \
+    \text{,~da $\Delta(\Delta\nu)$ sehr klein gegen $\Delta L$}
 \end{align}
 
-Mit unseren Messwerten für die Längen (für die wir einen Fehler von
-$\unit[1]{cm}$ annehmen) erhalten wir damit folgende Tabelle:
+Mit unseren Messwerten für die Längen, für welche wir einen Fehler von
+$\unit[1]{cm}$ annehmen, erhalten wir folgende Werte.
+
 \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
@@ -666,17 +664,18 @@ $\unit[1]{cm}$ annehmen) erhalten wir damit folgende Tabelle:
     \caption{}
     \label{tab:lichtgeschw}
 \end{table}
-Daraus erhalten wir als Ergebnis für die Lichtgeschwindigkeit als gewichtetes
+
+Daraus erhalten wir als Ergebnis für die Lichtgeschwindigkeit $c$ als gewichtetes
 Mittel dieser Werte:
+
 \begin{align}
     c = \unit[(299625\pm 265)]{\frac{km}{s}}
 \end{align}
 
 Dieses stimmt gut mit dem definierten Wert der Vakuumlichtgeschwindigkeit von
 $c_0 = \unit[299792.458]{\frac{km}{s}}$ überein. Die Abweichung der
-Lichtgeschwindigkeit in Luft von diesem Wert ist dabei etwa eine Größenordnung
-kleiner als unsere
-Fehlergrenzen.
+Lichtgeschwindigkeit in Luft $c_L$ von $c_0$ ist dabei etwa eine Größenordnung
+kleiner als unsere Fehlergrenzen.
 
 \section{Zusammenfassung}
 
