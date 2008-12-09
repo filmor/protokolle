@@ -35,7 +35,7 @@ untersucht wird.
 Ein optischer Resonator besteht aus zwei sich gegenüberstehenden parallel
 ausgerichteten Spiegeln (plan oder sphärisch). Bei axialer Lichteinstrahlung
 findet dann eine periodische Reflektion statt. Der Resonator speichert also
-Strahlungsenergie, welche jedoch auf Grund vonn Verlusten exponentiell abnimmt
+Strahlungsenergie, welche jedoch auf Grund von Verlusten exponentiell abnimmt
 ($E(t) = E_0 e^{-\frac{t}{\tau}}$, mit der eingestrahlten Energie $E_0$ und der
 Abklingzeit $\tau$).
 
@@ -45,10 +45,13 @@ Bedingungen erfüllt sein. Diese können in einem Stabilitätsdiagramm (siehe Abb.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{stabdia}
-   \caption[Stabilitätsdiagramm]{Stabilitätsdiagramm für optische Resonatoren. \cite{meschi}.}
+    \includegraphics[width=0.6\textwidth]{grafiken/stabdia}
+   \caption[Stabilitätsdiagramm]{Stabilitätsdiagramm für optische Resonatoren~\cite{meschi}.}
     \label{fig:stabdia}
 \end{figure}
+
+
+...
 
 
 \subsubsection{Frequenzspektrum und Modenabstände}
@@ -111,7 +114,7 @@ Es wird der Aufbau wie in Abbildung \ref{fig:linealaufbau} realisiert.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{linealaufbau}
+    \includegraphics[width=0.6\textwidth]{grafiken/linealaufbau}
     \caption[Versuchsaufbau]{Aufbau zur Bestimmung der Wellenlänge mittels eines Reflektionsgitters.}
     \label{fig:linealaufbau}
 \end{figure}
@@ -125,13 +128,13 @@ Abb.~\ref{fig:linealaufbau}). Durch Variation des auf dem Lineal ausgenutzten
 Bereiches und des Einfallswinkels $\theta$ wird eine geeignete Einstellung
 gesucht, in welcher die Interferenzbilder auf der Wand gut vermessen werden
 können (Punktabstand und Punktschärfe). Anschließend wird der direkt
-durchgehende Strahl $- \tilde{y}_0$ vermessen, indem das Lineal aus dem
+durchgehende Strahl $- y_0$ vermessen, indem das Lineal aus dem
 Strahlengang entfernt wird, da er bei richtiger Einstellung vollständig verdeckt
 wird.
 
-Über die Beziehung $\frac{\left|\tilde{y}_0 - (-\tilde{y}_0)\right|}{2}$ erhält
-man den Nullpunkt und kann nun die Abstände $y_n$ der Maxima verschiedener
-Ordnung $n$ bezüglich des Nullpunktes angeben.  Die Wellenlänge $\lambda$ des
+Über Mittelung der Werte für $- y_0$ und für die nullte Ordnung erhält
+man den Nullpunkt. Man kann nun die Abstände $y_n$ der Maxima verschiedener
+Ordnung $n$ bezüglich des Nullpunktes angeben. Die Wellenlänge $\lambda$ des
 Lasers ergibt sich schließlich über folgende Gleichung, wobei $y_n$ und $y_0$
 bezüglich des bestimmten Nullpunktes angegeben sind.
 
@@ -147,19 +150,22 @@ schlechter werden.
 
 \subsection{Messdaten und Auswertung}
 Der Gitterabstand beträgt $d = \unit[(1 \pm 0,001)]{mm}$ und die Entfernung zur
-Wand wurde zu $x_0 = \unit[(140 \pm 2)]{cm}$ vermessen. Als Interferenzmuster
+Wand wurde zu $x_0 = \unit[(155 \pm 2)]{cm}$ vermessen. Als Interferenzmuster
 ergab sich das Folgende.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{laser_lineal}
+    \includegraphics[width=1.0\textwidth]{grafiken/laser_lineal}
     \caption[Interferenzmuster]{Durch Reflektionsgitter (Lineal) entstehendes
-    Interferenzmuster.}
+    Interferenzmuster mit Markierung des bestimmten Nullpunktes.}
     \label{fig:lineal}
 \end{figure}
 
-Nun können wie in Abschnitt \ref{cha:lineal} beschrieben die Abstände $y_n$
-extrahiert  und somit einzelne Werte für $\lambda$ berechnet werden. 
+Zunächst wird der Nullpunkt wie in Abschnitt \ref{cha:lineal} beschrieben bestimmt. Anschließend können die Abstände $y_n$ extrahiert und somit einzelne Werte für $\lambda$ berechnet werden. 
+
+%-------------------------------------------------------------------------------------
+%----Kann dort nicht besser Tabelle bla stehen? momentan noch als Abb. deklariert!----
+%-------------------------------------------------------------------------------------
 
 \begin{figure}[H]
     \centering
@@ -174,6 +180,7 @@ extrahiert  und somit einzelne Werte für $\lambda$ berechnet werden.
         \caption{}
         \label{fig:werte_lineal}
 \end{figure}
+
 
 Der Fehler $\Delta y_n$ resultiert im Wesentlichen aus der Breite der Maxima. Der
 Fehler des Abstandes zwischen Lineal und Wand wurde deshalb so hoch angesetzt,
@@ -190,14 +197,8 @@ soll im Folgenden vernachlässigt werden. Der Fehler für die Wellenlänge $\Delta
            +\left(\frac{2\left(y^2_n - y^2_0\right)}{x^3_0}\Delta x_0\right)^2}
 \end{align}
 
-Offensichtlich werden die Werte für die Wellenlänge $\lambda$ mit steigender
-Ordnung $n$ schlechter, wie bereits erwähnt. Berechnet man den Mittelwert der
-ersten fünf Werte, so erhält man $\lambda = \unit[(... \pm ...)]{nm}$, was bis
-auf eine Abweichung von $... \%$ dem Literaturwert $\lambda = \unit[...]{nm}$
-entspricht. Betrachtet man jedoch alle Werte, ergibt sich $\lambda = \unit[(...
-\pm ...)]{nm}$, was einer Abweichung von $... \%$ entspricht. Dies ist jedoch
-durchaus unproblematisch, da der Literaturwert innerhalb der Fehlergrenzen liegt.
-
+Berechnet man den Mittelwert der bestimmten Werte, so erhält man $\lambda = \unit[(633.79 \pm 0.32)]{nm}$, was bis auf eine Abweichung von weniger als $0.2 \%$ dem Literaturwert $\lambda = \unit[632.8]{nm}$ entspricht.
+Offensichtlich kann ferner nicht bestätigt werden, dass die Werte für die Wellenlänge $\lambda$ mit steigender Ordnung $n$ schlechter werden. Für kleine $n$ errechnet sich eine tendenziell zu große, für große $n$ eine tendenziell zu kleine Wellenlänge.
 
 
 \section{Aufbau des Helium-Neon-Experimentierlasers}
@@ -208,12 +209,12 @@ durchaus unproblematisch, da der Literaturwert innerhalb der Fehlergrenzen liegt
 \subsection{Versuchsaufbau}
 
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{polaufbau}
-%    \caption[Versuchsaufbau]{Aufbau zur Bestimmung des Polarisationszustandes. ~\cite{skript}.}
-%    \label{fig:polaufbau}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/polaufbau}
+    \caption[Versuchsaufbau]{Aufbau zur Bestimmung des Polarisationszustandes~\cite{skriptlaser}.}
+    \label{fig:polaufbau}
+\end{figure}
 
 
 \subsection{Versuchsdurchführung}
@@ -222,15 +223,34 @@ Es sind die Polarisationszustände der beiden Laser mit Hilfe des Polarisationspr
 \subsection{Messdaten und Auswertung}
 Für den Pilotlaser ergibt sich in Polarkoordinatendarstellung folgendes.
 
+\newcommand{\PolPlot}[2]
+{
 \begin{figure}[H]
-    \begin{tikzpicture}
-        \begin{axis}
-            \addplot file {data/polarisation_pilot.txt};
-        \end{axis}
-    \end{tikzpicture}
-    \label{fig:polpilot}
-    \caption{Winkelabhängigkeit der Intensität des Experimentierlasers}
+    \subfloat{
+        \begin{tikzpicture}
+            \begin{axis}[xlabel={$\text{Winkel}/^\circ$},
+                         ylabel=Gain,
+                         xtick={0, 30, ..., 180},
+                         ymin=0]
+                \addplot+[only marks, mark=.]
+                    plot[error bars/.cd,
+                         x dir=both,
+                         x fixed=1,
+                         y dir=both,
+                         y fixed=0.5]
+                    file {data/#1.txt};
+            \end{axis}
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \includegraphics{grafiken/#1}
+    }
+    \label{fig:#1}
+    \caption{Winkelabhängigkeit der Intensität des #2lasers}
 \end{figure}
+}
+
+\PolPlot{polpilot}{Pilot}
 
 Offensichtlich ist der Pilotlaser also in sehr guter Näherung unpolarisiert.
 Keine Polarisationsrichtung geht aus Abb.~\ref{fig:polpilot} als bevorzugt
@@ -238,15 +258,7 @@ hervor.
 
 Für den Experimentierlaser ergibt sich in Polarkoordinatendarstellung folgendes.
 
-\begin{figure}[H]
-    \begin{tikzpicture}
-        \begin{axis}
-            \addplot file {data/polarisation_eigener.txt};
-        \end{axis}
-    \end{tikzpicture}
-    \label{fig:polex}
-    \caption{Winkelabhängigkeit der Intensität des Experimentierlasers}
-\end{figure}
+\PolPlot{polex}{Experimentier}
 
 Hier stellt es sich anders als beim Pilotlaser dar. Der Experimentierlaser zeigt
 deutlich eine bevorzugte Polarisationsrichtung, emittiert also linear
@@ -292,23 +304,56 @@ Der Strahlradius $w(z)$ ist über die gesamte Länge des Lasers in Abständen von $
 \section{Optischen Diode}
 \label{cha:diode}
 \subsection{Versuchsaufbau}
-In vielen Fällen wird durch die aufgebauten optischen Komponenten eines Experimentes Licht zurück in den Laser gestreut. Dieses zurücklaufende Licht bedeutet eine zusätzliche Rückkopplung. Durch Variation der Rückkopplung wird der Oszillator
-in Frequenz und Amplitude verändert. Da die für die Rückkopplung verantwortlichen externen Elemente meist nicht so stabil aufgebaut sind wie für einen Laser erforderlich, findet eine fortlaufende Änderung dieser zusätzlichen Rückkopplung statt. Dadurch führt jedoch der Laser regellose Änderungen seiner Oszillation aus. Zur Verhinderung dieses Umstandes dient nun eine optische Diode, welche Licht nur in der Vorwärtsrichtung passieren lässt. Rücklaufendes Licht erreicht somit den Laser nicht.
+In vielen Fällen wird durch die aufgebauten optischen Komponenten eines
+Experimentes Licht zurück in den Laser gestreut. Dieses zurücklaufende Licht
+bedeutet eine zusätzliche Rückkopplung. Durch Variation der Rückkopplung wird
+der Oszillator in Frequenz und Amplitude verändert. Da die für die Rückkopplung
+verantwortlichen externen Elemente meist nicht so stabil aufgebaut sind wie für
+einen Laser erforderlich, findet eine fortlaufende Änderung dieser zusätzlichen
+Rückkopplung statt. Dadurch führt jedoch der Laser regellose Änderungen seiner
+Oszillation aus. Zur Verhinderung dieses Umstandes dient nun eine optische
+Diode, welche Licht nur in der Vorwärtsrichtung passieren lässt. Rücklaufendes
+Licht erreicht somit den Laser nicht.
 
-Im vorliegenden Versuch ist die optische Diode aus einem Polarisator (\textsc{Nicol}sches Prisma) und einer $\frac{\lambda}{4}$-Platte aus Glimmer aufgebaut (siehe Abb. \ref{fig:diode}).
+Im vorliegenden Versuch ist die optische Diode aus einem Polarisator
+(\textsc{Nicol}sches Prisma) und einer $\frac{\lambda}{4}$-Platte aus Glimmer
+aufgebaut (siehe Abb. \ref{fig:diode}).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{diode}
-    \caption[Diode]{Aufbau der optischen Diode.~\cite{skriptlaser}.}
+    \includegraphics[width=0.6\textwidth]{grafiken/diode}
+    \caption[Diode]{Aufbau der optischen Diode~\cite{skriptlaser}.}
     \label{fig:diode}
 \end{figure}
 
-Der Laserstrahl tritt zunächst durch den Polarisator, wo er linear polarisiert wird. Nachgeschaltet ist eine $\frac{\lambda}{4}$-Platte, welche so ausgerichtet wird, dass die schnelle Achse in einem Winkel von $45 \textdegree$ zur Polarisationsrichtung des auftreffenden Lichtes steht. Auf diese Weise erhält man hinter der $\frac{\lambda}{4}$-Platte zirkular polarisiertes Licht. Im Falle einer unerwünschten Reflektion an Komponenten der Apparatur ist das rücklaufende Licht weiterhin zirkular polarisiert und wird nun durch das $\frac{\lambda}{4}$-Plättchen in linear polarisiertes Licht umgewandelt. Allerdings steht der E-Vektor wegen der zweifachen Verzögerung um $\frac{\pi}{2}$ durch die $\frac{\lambda}{4}$-Platte nun senkrecht auf dem des hinlaufenden Strahls. Der rücklaufende Strahl kann somit den Polarisator nicht passieren, wie gewünscht wird eine derartige Rückkopplung also unterbunden.
+Der Laserstrahl tritt zunächst durch den Polarisator, wo er linear polarisiert
+wird. Nachgeschaltet ist eine $\frac{\lambda}{4}$-Platte, welche so ausgerichtet
+wird, dass die schnelle Achse in einem Winkel von $45 \textdegree$ zur
+Polarisationsrichtung des auftreffenden Lichtes steht. Auf diese Weise erhält
+man hinter der $\frac{\lambda}{4}$-Platte zirkular polarisiertes Licht. Im Falle
+einer unerwünschten Reflektion an Komponenten der Apparatur ist das rücklaufende
+Licht weiterhin zirkular polarisiert und wird nun durch das
+$\frac{\lambda}{4}$-Plättchen in linear polarisiertes Licht umgewandelt.
+Allerdings steht der E-Vektor wegen der zweifachen Verzögerung um
+$\frac{\pi}{2}$ durch die $\frac{\lambda}{4}$-Platte nun senkrecht auf dem des
+hinlaufenden Strahls. Der rücklaufende Strahl kann somit den Polarisator nicht
+passieren, wie gewünscht wird eine derartige Rückkopplung also unterbunden.
 
 \subsection{Versuchsdurchführung}
-Um eine Rückkopplung durch in den Laser zurücklaufendes Licht zu verhindern und somit das Laserverhalten zu optimieren, wird nun eine optische Diode, wie in Abbildung \ref{fig:diode} dargestellt, aufgebaut, welche Licht nur in einer Richtung passieren lässt. Zur Einstellung der Komponenten wird nun wie folgt vorgegangen.
-Zunächst wird der Polarisator so eingestellt, dass der Laserstrahl optimal durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90 \textdegree$ gedreht wird. Nun erfolgt die Einstellung des $\frac{\lambda}{4}$-Plättchens. Ist dieses nicht richtig positioniert, so existiert im rücklaufenden Strahl eine außerordentliche Komponente, welche den Polarisator durchläuft und als Reflex des Strahlteilers beobachtet werden kann. Eine richtige Einstellung liegt also dann vor, wenn der rücklaufende Strahl minimal wird.
+Um eine Rückkopplung durch in den Laser zurücklaufendes Licht zu verhindern und
+somit das Laserverhalten zu optimieren, wird nun eine optische Diode, wie in
+Abbildung \ref{fig:diode} dargestellt, aufgebaut, welche Licht nur in einer
+Richtung passieren lässt. Zur Einstellung der Komponenten wird nun wie folgt
+vorgegangen.
+
+Zunächst wird der Polarisator so eingestellt, dass der Laserstrahl optimal
+durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90
+\textdegree$ gedreht wird. Nun erfolgt die Einstellung des
+$\frac{\lambda}{4}$-Plättchens. Ist dieses nicht richtig positioniert, so
+existiert im rücklaufenden Strahl eine außerordentliche Komponente, welche den
+Polarisator durchläuft und als Reflex des Strahlteilers beobachtet werden kann.
+Eine richtige Einstellung liegt also dann vor, wenn der rücklaufende Strahl
+minimal wird.
 
 \section{Optischer Spektrumsanalysator}
 \subsection{Versuchsaufbau}
@@ -333,7 +378,6 @@ Für die Breite der verschiedenen Dispersionsgebiete ergibt sich nun folgendes.
 \section{Bestimmung der Lichtgeschwindigkeit}
 
 \section{Zusammenfassung}
-
 
 \begin{appendix}
 \Literatur{quellen}
