@@ -46,7 +46,8 @@ Bedingungen erfüllt sein. Diese können in einem Stabilitätsdiagramm (siehe Abb.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/stabdia}
-   \caption[Stabilitätsdiagramm]{Stabilitätsdiagramm für optische Resonatoren~\cite{meschi}.}
+    \caption[Stabilitätsdiagramm]{Stabilitätsdiagramm für optische
+        Resonatoren~\cite{meschi}.}
     \label{fig:stabdia}
 \end{figure}
 
@@ -76,7 +77,10 @@ dem Radius des sphärischen Spiegels $R_{sph}$ weiter gilt:
 w_0 = \sqrt{\frac{\lambda}{\pi} \cdot \sqrt{L \cdot (R_{sph} - L)}}
 \end{align}
 
-Die Strahltaille ist dabei der Punkt des engsten Strahlradius. Bei symmetrischen Resonatoren liegt er in der Mitte des Resonators, bei einem semisphärischen Resonator aus Planspiegel und spärischem Spiegel hingegen am Ort des Planspiegels.
+Die Strahltaille ist dabei der Punkt des engsten Strahlradius. Bei symmetrischen
+Resonatoren liegt er in der Mitte des Resonators, bei einem semisphärischen
+Resonator aus Planspiegel und spärischem Spiegel hingegen am Ort des
+Planspiegels.
 
 
 ...
@@ -100,10 +104,6 @@ Die Strahltaille ist dabei der Punkt des engsten Strahlradius. Bei symmetrischen
 
 \subsection{Brewster-Fenster}
 \label{cha:brewster}
-
-\subsection{Mischung der Moden des Laserlichts auf einer Photodiode}
-
-
 
 
 
@@ -139,7 +139,7 @@ Lasers ergibt sich schließlich über folgende Gleichung, wobei $y_n$ und $y_0$
 bezüglich des bestimmten Nullpunktes angegeben sind.
 
 \begin{align}
-n \lambda = \frac{1}{2} d \frac{y^2_n - y^2_0}{x^2_0}
+n \lambda = \frac{d}{2} \frac{y^2_n - y^2_0}{x^2_0}
 \end{align}
 
 Diese Formel ist jedoch eine Approximation für kleine Winkel (paraxiale
@@ -167,26 +167,40 @@ Zunächst wird der Nullpunkt wie in Abschnitt \ref{cha:lineal} beschrieben bestim
 %----Kann dort nicht besser Tabelle bla stehen? momentan noch als Abb. deklariert!----
 %-------------------------------------------------------------------------------------
 
-\begin{figure}[H]
+\begin{table}[H]
     \centering
         \pgfplotstabletypesetfile[
                 display columns/0/.style={column name={$n$}},
                 display columns/1/.style={column name={$y_n/\unit{cm}$}},
                 display columns/2/.style={column name={$\Delta y_n/\unit{cm}$}},
-                display columns/3/.style={column name={$\lambda/\unit{nm}$}},
-                display columns/4/.style={column name={$\Delta \lambda/\unit{nm}$}},
+                display columns/3/.style={%
+                    column name={$\lambda/\unit{nm}$},
+                    postproc cell content/.append code={%
+                        \ifnum\pgfplotstablerow=0
+                            \pgfkeyssetvalue{/pgfplots/table/@cell content}{}%
+                        \fi
+                        }
+                    },
+                display columns/4/.style={%
+                    column name={$\Delta \lambda/\unit{nm}$},
+                    postproc cell content/.append code={%
+                        \ifnum\pgfplotstablerow=0
+                            \pgfkeyssetvalue{/pgfplots/table/@cell content}{}%
+                        \fi
+                        }
+                    },
             ]
         {data/lineal.txt}
-        \caption{}
+        \caption{Messwerte und Ergebnisse}
         \label{fig:werte_lineal}
-\end{figure}
+\end{table}
 
 
 Der Fehler $\Delta y_n$ resultiert im Wesentlichen aus der Breite der Maxima. Der
 Fehler des Abstandes zwischen Lineal und Wand wurde deshalb so hoch angesetzt,
 da dieser Abstand mit einem nicht mehr völlig funktionstüchtigen, d.h. zu
 kurzen, Zollstock vermessen wurde. Der Fehler des Gitterabstandes $\Delta d$
-soll im Folgenden vernachlässigt werden. Der Fehler für die Wellenlänge $\Delta
+ist vernachlässigbar. Der Fehler für die Wellenlänge $\Delta
 \lambda$ ergibt sich  nach \textsc{Gauß} demnach zu:
 
 \begin{align}
@@ -197,17 +211,99 @@ soll im Folgenden vernachlässigt werden. Der Fehler für die Wellenlänge $\Delta
            +\left(\frac{2\left(y^2_n - y^2_0\right)}{x^3_0}\Delta x_0\right)^2}
 \end{align}
 
-Berechnet man den Mittelwert der bestimmten Werte, so erhält man $\lambda = \unit[(633.79 \pm 0.32)]{nm}$, was bis auf eine Abweichung von weniger als $0.2 \%$ dem Literaturwert $\lambda = \unit[632.8]{nm}$ entspricht.
-Offensichtlich kann ferner nicht bestätigt werden, dass die Werte für die Wellenlänge $\lambda$ mit steigender Ordnung $n$ schlechter werden. Für kleine $n$ errechnet sich eine tendenziell zu große, für große $n$ eine tendenziell zu kleine Wellenlänge.
+Berechnet man den Mittelwert der bestimmten Werte, so erhält man $\lambda =
+\unit[(633.79 \pm 0.32)]{nm}$, was bis auf eine Abweichung von weniger als $0.2
+\%$ dem Literaturwert $\lambda = \unit[632.8]{nm}$ entspricht.  Offensichtlich
+kann ferner nicht bestätigt werden, dass die Werte für die Wellenlänge $\lambda$
+mit steigender Ordnung $n$ schlechter werden. Für kleine $n$ errechnet sich eine
+tendenziell zu große, für große $n$ eine tendenziell zu kleine Wellenlänge.
 
 
 \section{Aufbau des Helium-Neon-Experimentierlasers}
+Nun soll der im Weiteren zu verwendende Helium-Neon-Experimentierlaser aufgebaut
+werden. Dabei dient der Pilotlaser (ebenfalls ein Helium-Neon-Laser) zur
+Vorjustierung des Experimentierlasers.
 
+Zunächst werden zwei Blenden an den Enden der optischen Schiene aufgebaut. Sie
+definieren die optische Achse entlang der Schiene. Mit Hilfe zweier Planspiegel
+wird anschließend der Pilotstrahl mit dieser Achse zur Deckung gebracht. Hierzu
+wird zunächst mit Hilfe des in Abbildung \ref{fig:aufbau1} oben liegenden
+Spiegels der Laserstrahl durch die erste Blende geführt und daraufhin mit Hilfe
+des zweiten Spiegels direkt an der optischen Bank der Strahl auch durch die
+zweite Blende am Ende der Bank geführt. Die Blenden bleiben bis zum Abschluß der
+Justage auf der Schiene, um gegebenenfalls die Position des Pilotstrahls
+kontrollieren zu können.
+
+\begin{figure}[H]
+ \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbau1}
+    \caption[Versuchsaufbau]{Aufbau des Experimentierlasers. Justage der optischen Achse~\cite{skriptlaser}.}
+    \label{fig:aufbau1}
+\end{figure}
+
+Nun wird das Laserrohr eingesetzt (siehe Abb. \ref{fig:aufbau2}). Seine Position
+wird mit Hilfe der Justierschrauben so verändert, dass der Pilotstrahl die
+Kapillare des Entladungsrohrs ohne Störung passiert. Zur Kontrolle ist die Form
+des Lichtfleckes vor und hinter der Röhre auf einem Schirm zu kontrollieren.
+
+\begin{figure}[H]
+ \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbau2}
+    \caption[Versuchsaufbau]{Aufbau des Experimentierlasers. Einsetzen des Laserrohres~\cite{skriptlaser}.}
+    \label{fig:aufbau2}
+\end{figure}
+
+Im Anschluss wird das Laserrohr vorerst wieder von der Schiene genommen, damit
+der Resonator aufgebaut werden kann (siehe Abb. \ref{fig:aufbau3}). Der
+sphärische Spiegel ($R = \unit[1000]{mm}$) wird ungefähr in Mitte der Schiene
+gesetzt und so justiert, dass der reflektierte Strahl zentrisch auf der rechten
+Blende liegt. Der zweite Spiegel, ein Planspiegel, wird etwa $\unit[50]{cm}$
+rechts vom Hohlspiegel auf die Schiene gesetzt und ist analog zu justieren,
+d.~h.\, es ist der Rückreflex, welcher nun von der Rückseite des Spiegels
+stammt, auf die rechte Blende zu zentrieren. Es soll noch angemerkt werden, dass
+die Reflexionskoeffizienten der verwendeten dieelektrischen Spiegel größer als
+\unit[99,98]{\%} sind.
+
+\begin{figure}[H]
+ \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbau3}
+    \caption[Versuchsaufbau]{Aufbau des Experimentierlasers. Resonatoraufbau~\cite{skriptlaser}.}
+    \label{fig:aufbau3}
+\end{figure}
+
+Bei hinreichend guter Justage der beiden Spiegel bilden sie einen externen
+Resonator für die Strahlung des Pilotlasers. Dies äußert sich in einem Pulsieren
+des Flecks des Pilotlaserstrahls auf dem Hohlspiegel. Bedingt durch geringfügige
+Schwankungen der Positionen und des Abstands der Spiegel koppelt der
+longitudinale Mode des Pilotlasers an verschiedene longitudinale und
+transversale Moden des externen Resonators. Man kann nun diesen Effekt noch zur
+Feinjustierung ausnutzen, indem man beide Spiegel so bewegt, dass die
+Reflexionen annähernd auf den Spiegelzentren erscheinen.
+
+Nun wird das Laserrohr etwa $\unit[3]{cm}$ vom rechten Spiegel entfernt wieder
+auf die Schiene gesetzt. Der Pilot-Laser wird ausgeschaltet und die Entladung in
+der Röhre des Experimentierlasers gezündet. Bei ausreichender Qualität der
+Justierung sollte der Laser beginnen zu arbeiten. In unserem Fall war dem leider
+nicht so. Zur Korrektur der Justage werden nun die Befestigungsschrauben des
+linken Spiegelhalters gelöst und der Spiegel vorsichtig um die horizontale und
+die vertikale Achse bewegt bis ein Aufblitzen des Laserstrahles festgestellt
+wird.
+
+Zum Abschluss des Laseraufbaus ist seine Leistung zu optimieren. Hierzu wird die
+Photodiode hinter dem sphärischen Spiegel auf die Schiene gesetzt. Nun werden
+die Laserspiegel nacheinander mit Hilfe der Einstellschrauben um ihre
+horizontale und vertikale Achse so verkippt, dass die von der Photodiode
+angezeigte Laserleistung zunimmt. Nach diesen Justageschritten erreichten wir
+eine Verstärkung von $14.5$.
 
 \section{Polarisation}
 \label{cha:pol}
 \subsection{Versuchsaufbau}
-
+Nun wird der Aufbau aus Abbildung~\ref{fig:polaufbau} realisiert. Die Photodiode
+kann hierzu aus ihrer Halterung auf der optischen Bank entfernt und in einer
+Laborklemme befestigt werden. Achten Sie bei der Justierung darauf, dass das
+Prisma so in den Strahlengang gebracht wird, dass es keinen Strahlversatz und
+keine Strahlverkippung verursacht.
 
 \begin{figure}[H]
     \centering
@@ -216,9 +312,10 @@ Offensichtlich kann ferner nicht bestätigt werden, dass die Werte für die Wellen
     \label{fig:polaufbau}
 \end{figure}
 
-
 \subsection{Versuchsdurchführung}
-Es sind die Polarisationszustände der beiden Laser mit Hilfe des Polarisationsprismas und der Photodiode zu vermessen (siehe Abb. \ref{fig:polaufbau}).
+Es sind die Polarisationszustände der beiden Laser mit Hilfe des
+Polarisationsprismas und der Photodiode zu vermessen (siehe
+Abb.~\ref{fig:polaufbau}).
 
 \subsection{Messdaten und Auswertung}
 Für den Pilotlaser ergibt sich in Polarkoordinatendarstellung folgendes.
@@ -226,28 +323,31 @@ Für den Pilotlaser ergibt sich in Polarkoordinatendarstellung folgendes.
 \newcommand{\PolPlot}[2]
 {
 \begin{figure}[H]
-    \subfloat{
-        \begin{tikzpicture}
-            \begin{axis}[xlabel={$\text{Winkel}/^\circ$},
-                         ylabel=Gain,
-                         xtick={0, 30, ..., 180},
-                         ymin=0]
-                \addplot+[only marks, mark=.]
-                    plot[error bars/.cd,
-                         x dir=both,
-                         x fixed=1,
-                         y dir=both,
-                         y fixed=0.5]
-                    file {data/#1.txt};
-            \end{axis}
-        \end{tikzpicture}
-    }
-    \subfloat{
-        \includegraphics{grafiken/#1}
-    }
-    \label{fig:#1}
-    \caption{Winkelabhängigkeit der Intensität des #2lasers}
-\end{figure}
+    \CenterFloatBoxes
+    \begin{floatrow}
+        \ffigbox{}{
+            \begin{tikzpicture}
+                \begin{axis}[xlabel={$\text{Winkel}/^\circ$},
+                             ylabel=Verstärkung,
+                             xtick={0, 30, ..., 180},
+                             ymin=0]
+                    \addplot+[only marks, mark=.]
+                        plot[error bars/.cd,
+                             x dir=both,
+                             x fixed=0.5,
+                             y dir=both,
+                             y fixed=0.01]
+                        function {'data/#1.txt' u 1:($2 - 0.09)};
+                \end{axis}
+            \end{tikzpicture}
+            \caption{Winkelabhängigkeit der Intensität des #2lasers}
+            \label{fig:#1}
+        }
+        \ffigbox{}{
+            \includegraphics[width=0.6\textwidth]{grafiken/#1}
+        }
+    \end{floatrow}
+    \end{figure}
 }
 
 \PolPlot{polpilot}{Pilot}
@@ -266,40 +366,81 @@ polarisiertes Licht. Dies wurde auf Grund der \textsc{Brewster}-Fenster auch
 nicht anders erwartet (siehe Abschnitt~\ref{cha:brewster}). 
 
 \section{Strahlprofil}
-\subsection{Versuchsaufbau}
 \subsection{Versuchsdurchführung}
-Das Strahlprofil des Experimentierlasers in semi-sphärischer Resonatorkonfiguration ist für drei verschiedene Spiegelabstände zu vermessen. Hierzu wird ein Messschieber verwendet. Dieser wird auf etwa $\unit[1.5]{mm}$ eingestellt und in den Strahlengang gebracht. Nun wird der Abstand der Messschieberbacken variiert bis der Laser gerade erlischt, bis also die Verluste so groß sind, dass sie den Laserbetrieb gerade verhindern. Der kleinste Abstand zwischen den Messschieberbacken, bei welchem noch Lasertätigkeit zu beobachten ist, soll hier als Maß für den Strahlradius $w(z)$ gelten.
-Der Strahlradius $w(z)$ ist über die gesamte Länge des Lasers in Abständen von $\unit[5 - 10]{cm}$ zu vermessen. Begonnen wird dabei am planen Spiegel, an welchem sich die Strahltaille $w_0$ befindet.
+Das Strahlprofil des Experimentierlasers in semi-sphärischer
+Resonatorkonfiguration ist für drei verschiedene Spiegelabstände zu vermessen.
+Hierzu wird ein Messschieber verwendet. Dieser wird auf etwa $\unit[1.5]{mm}$
+eingestellt und in den Strahlengang gebracht. Nun wird der Abstand der
+Messschieberbacken variiert bis der Laser gerade erlischt, bis also die Verluste
+so groß sind, dass sie den Laserbetrieb gerade verhindern. Der kleinste Abstand
+zwischen den Messschieberbacken, bei welchem noch Lasertätigkeit zu beobachten
+ist, soll hier als Maß für den Strahlradius $w(z)$ gelten.
+
+Der Strahlradius $w(z)$ ist über die gesamte Länge des Lasers in Abständen von
+$\unit[5 - 10]{cm}$ zu vermessen. Begonnen wird dabei am planen Spiegel, an
+welchem sich die Strahltaille $w_0$ befindet. Anschließend sind die gewonnenen
+Ergebnisse mit den theoretischen Berechnungen nach der \textsc{Gauß}schen
+Theorie zu vergleichen.
+
+\subsection{Messdaten und Auswertung}
+welchem sich die Strahltaille $w_0$ befindet.
 
 \foreach \x in \Laengen {
+\subsubsection*{Strahlprofil für eine Resonatorlänge von $\unit[\x]{cm}$}
     \renewcommand{\Datei}{data/\x cm/strahlprofil.txt}
-
     \def\bla{sqrt(\x / 100.0 * (1 - \x / 100.0))}
-    
     \begin{figure}[H]
-        \begin{tikzpicture}
-            \begin{axis}[
-                    ylabel={$\text{Strahldurchmesser}/\unit{mm}$},
-                    xlabel={$\text{Länge}/\unit{cm}$}
-                ]
-                \addplot plot[
-                        error bars/.cd,
-                        x dir=both,
-                        y dir=both,
-                        x fixed={0.5},
-                        y fixed={0.05}
-                    ]
-                    file {\Datei};
-                \addplot[smooth, red] plot[domain=0:\x, mark=none]
-                        function {2 * sqrt(0.6328 / pi * ( \bla + (x/100) ** 2 / \bla ))};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Strahlprofil für eine Resonatorlänge von $\unit[\x]{cm}$}
+        \CenterFloatBoxes
+        \begin{floatrow}
+            \ffigbox{}{
+                \begin{tikzpicture}
+                    \begin{axis}[
+                            ylabel={$w(z)/\unit{mm}$},
+                            xlabel={$z/\unit{cm}$}
+                        ]
+                        \addplot+[only marks, mark=.]
+                            plot[
+                                error bars/.cd,
+                                x dir=both,
+                                y dir=both,
+                                x fixed={0.5},
+                                y fixed={0.05}
+                            ]
+                            function
+                            {'\Datei' u ($1):($2/2.0)};
+                        \addplot+[smooth, mark=none]
+                            plot[domain=0:\x]
+                            function
+                            {sqrt(0.6328/pi*(\bla + (x/100) ** 2 / \bla ))};
+                    \end{axis}
+                \end{tikzpicture}
+            }
+            \ffigbox{}{
+                \pgfplotstabletypesetfile[
+                    display columns/0/.style={column name={$z/\unit{cm}$}},
+                    display columns/1/.style={column name={$2w(z)/\unit{mm}$}}
+                ]{\Datei}
+            }
+        \end{floatrow}
     \end{figure}
 }
     
 
-\subsection{Messdaten und Auswertung}
+Bei allen Spiegelabständen, insbesondere bei der letzten Konfiguration
+(\unit[77]{cm}), sind deutliche Abweichungen von den theoretischen Vorhersagen
+zu erkennen. Dies ist jedoch recht unproblematisch, da zwei unterschiedliche
+Definitionen des Strahlradius verwendet wurden. So wurde in der Messung $w(z)$
+über die Lasertätigkeit definiert. In der Theorie der \textsc{Gauß}strahlen
+hingegen definiert man $w(z)$ als den Abstand zur Achse, bei welchem die
+Intensität des Strahls auf $\frac{1}{e}$ der Amplitude der Achse abgefallen ist
+(Strahlquerschnitt hat {Gauß}-Profil). Offensichtlich wird also nicht erwartet,
+dass die Absolutwerte für $w(z)$ übereinstimmen. Es wird nur erwartet, dass die
+Entwicklung des Strahlradius $w(z)$ mit $z$ in Messung und Theorie korreliert
+ist. Dies ist im Rahmen der Messgenauigkeit in der Tat erfüllt. 
+
+Die Divergenz des Strahls geht deutlich aus den Graphen hervor. In der Tat liegt
+die Strahltaille am Ort des planen Spiegels. Dies entspricht beim symmetrischen
+Aufbau einer Lage in der Mitte der beiden sphärischen Spiegel.
 
 \section{Optischen Diode}
 \label{cha:diode}
@@ -328,7 +469,7 @@ aufgebaut (siehe Abb. \ref{fig:diode}).
 
 Der Laserstrahl tritt zunächst durch den Polarisator, wo er linear polarisiert
 wird. Nachgeschaltet ist eine $\frac{\lambda}{4}$-Platte, welche so ausgerichtet
-wird, dass die schnelle Achse in einem Winkel von $45 \textdegree$ zur
+wird, dass die schnelle Achse in einem Winkel von $45^\circ$ zur
 Polarisationsrichtung des auftreffenden Lichtes steht. Auf diese Weise erhält
 man hinter der $\frac{\lambda}{4}$-Platte zirkular polarisiertes Licht. Im Falle
 einer unerwünschten Reflektion an Komponenten der Apparatur ist das rücklaufende
@@ -339,27 +480,125 @@ $\frac{\pi}{2}$ durch die $\frac{\lambda}{4}$-Platte nun senkrecht auf dem des
 hinlaufenden Strahls. Der rücklaufende Strahl kann somit den Polarisator nicht
 passieren, wie gewünscht wird eine derartige Rückkopplung also unterbunden.
 
+Für den Versuch wird nun folgender Aufbau realisiert.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbaudiode}
+    \caption[Diode]{Aufbau der optischen Diode für den Versuch~\cite{skriptlaser}.}
+    \label{fig:aufbaudiode}
+\end{figure}
+
 \subsection{Versuchsdurchführung}
 Um eine Rückkopplung durch in den Laser zurücklaufendes Licht zu verhindern und
 somit das Laserverhalten zu optimieren, wird nun eine optische Diode, wie in
-Abbildung \ref{fig:diode} dargestellt, aufgebaut, welche Licht nur in einer
+Abbildung \ref{fig:aufbaudiode} dargestellt, aufgebaut, welche Licht nur in einer
 Richtung passieren lässt. Zur Einstellung der Komponenten wird nun wie folgt
 vorgegangen.
 
 Zunächst wird der Polarisator so eingestellt, dass der Laserstrahl optimal
-durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90
-\textdegree$ gedreht wird. Nun erfolgt die Einstellung des
-$\frac{\lambda}{4}$-Plättchens. Ist dieses nicht richtig positioniert, so
-existiert im rücklaufenden Strahl eine außerordentliche Komponente, welche den
-Polarisator durchläuft und als Reflex des Strahlteilers beobachtet werden kann.
-Eine richtige Einstellung liegt also dann vor, wenn der rücklaufende Strahl
-minimal wird.
+durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90^\circ$
+gedreht wird. Nun erfolgt die Einstellung des $\frac{\lambda}{4}$-Plättchens.
+Ist dieses nicht richtig positioniert, so existiert im rücklaufenden Strahl eine
+außerordentliche Komponente, welche den Polarisator durchläuft und als Reflex
+des Strahlteilers beobachtet werden kann.  Eine richtige Einstellung liegt also
+dann vor, wenn der rücklaufende Strahl minimal wird. 
+
+Dies wurde von uns sorgfältig ausgeführt.
 
 \section{Optischer Spektrumsanalysator}
 \subsection{Versuchsaufbau}
+Es ist bekannt, dass ein Laser in verschiedenen Moden schwingen kann. Welche
+Moden dabei angeregt werden, ist u.\~a.\ von der Justierung des Resonators
+abhängig. Im Folgenden wird nun untersucht, auf welchen Frequenzen der
+aufgebaute Experimentierlaser schwingt. Hierzu wird der Ausgangsstrahl in einem
+optischen Spektrumsanalysator untersucht (Aufbau siehe
+Abb.~\ref{fig:aufbauspektrum}). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbauspektrum}
+    \caption[Diode]{Aufbau der optischen Diode~\cite{skriptlaser}.}
+    \label{fig:aufbauspektrum}
+\end{figure}
+
+Die Moden $q$, $n$, $m$ haben die Eigenfrequenzen
+
+\begin{align}
+\nu_{qmn} = \frac{c}{2 L} \left( q + \frac{m+n+1}{2} \right)
+\end{align}
+
+Der Abstand zwischen zwei benachbarten Transversalmoden ergibt sich somit zu
+$\Delta \nu = \frac{c}{4 L}$. Dies nennt man Dispersionsgebiet.
+
+Ist die Laserfrequenz $\nu_{Laser}$ in Resonanz mit dem externen Resonator, gilt
+also $\nu_{Laser} = \nu_{qmn}$, so wird die Transmission des Resonators maximal.
+Durch piezoelektrische Variation der Resonatorlänge $l$ wird die Frequenz
+$\nu_{qmn}$ kontinuierlich variiert und die durchgelassene Lichtintensität als
+Funktion der Länge $l$ (bzw. der die Länge bestimmenden Piezospannung $U$)
+beobachtet.
+
+Das Piezoelement wird über ein Steuergerät bedient, welches die Einstellung der
+Gleichspannung und der Amplitude der 50-Hz-Modulationswechselspannung erlaubt.
+Auch eine zur Modulationsspannung proportionale Wechselspannung, welche als
+Steuersignal an die x-Ablenkplatten des Oszilloskops angelegt wird, ist über das
+Steuergerät regulierbar. Das Oszilloskop wird dabei auf x-y-Betrieb eingestellt.
+Auf den Signaleingang wird das mit einer Photodiode gemessene Intensitätssignal
+geleitet.
+
 \subsection{Versuchsdurchführung}
+Zu Beginn ist der externe Analysator so zu justieren, dass seine optische Achse
+mit der Strahlachse des Lasers zusammenfällt. Der Abstand der beiden i.\~a.\
+windschiefen Geraden wird dabei im Wesentlichen durch Kippung des zweiten
+Planspiegels verringert, der Winkel zwischen den beiden Achsen hingegen v.\~a.\
+durch die Kippung des konfokalen Interferometers.  Nach erfolgter Grobjustage
+wird selbige kontrolliert, indem man die Wechselspannung am Piezoelement so
+einstellt, dass mindestens ein Dispersionsgebiet durchfahren wird, und das
+Muster der durchgelassenen Intensität auf einem Papier beobachtet. Es sollten
+zwei Punkte zu sehen sein. Der eine markiert die Fortsetzung des Laserstrahles,
+der andere den am hinteren und vorderen Interferometerspiegel reflektierten
+Strahl. Diese beiden Punkte sind nun zur Deckung zu bringen (siehe auch Abb.
+\ref{fig:dejust}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/dejust}
+    \caption[Diode]{Strahlengang im externen Resonator bei Dejustierung~\cite{skriptlaser}.}
+    \label{fig:dejust}
+\end{figure}
+
+Die Feinjustierung erfolgt schließlich anhand des Oszilloskopbildes. Dazu wird
+die Photodiode hinter dem Resonator aufgebaut und so verschoben, dass das
+Oszilloskop ein maximales Signal anzeigt. Eine der Linien des Spektrums wird auf
+maximale Intensität, was mit minimaler Breite identisch ist, durch kleine
+Kippungen am Interferometer justiert.  Das nun zu beobachtende Frequenzspektrum
+wiederholt sich nach jeweils einem Dispersionsgebiet periodisch. Man stelle die
+Piezospannungsamplitude und die Steuerspannung für das Oszilloskop so ein, dass
+etwas mehr als ein Dispersionsgebiet auf dem Bildschirm erscheint und bestimme
+die geometrische Breite des Dispersionsgebietes. Die spektrale Breite des
+Dispersionsgebietes ergibt sich aus den geometrischen Abmessungen des Resonators
+(hier: 1.5 GHz).
+
+Der Laser kann sehr unterschiedliche Spektren aufweisen. Im einfachsten Fall
+schwingt er in einem Mode, es ist also nur eine Linie pro Dispersionsgebiet zu
+erkennen. Auf Grund von thermischen Längenänderungen des Laserresonators
+verschiebt sich die Frequenz dieser Linie mit der Zeit. Es ist aber auch
+möglich, dass mehrere Moden anschwingen.
+
+Es werden nun der Frequenzabstand zweier Moden in Einheiten des
+Interferometer-Dispersionsgebietes gemessen. Anschließend kann damit die
+absolute Frequenz bestimmt werden.
+
 \subsection{Messwerte und Auswertung}
-Für die Breite der verschiedenen Dispersionsgebiete ergibt sich nun folgendes.
+Für die geometrischen Breiten der Dispersionsgebiete bei verschiedenen Längen
+ergibt sich stets:
+
+\begin{align}
+b_{geom} = \unit[3.0 \pm 0.3]{cm}
+\end{align}
+
+Die Unabhängigkeit von der Laserresonatoreinstellung ist erwartet, da sich die
+spektrale Breite ...
 
 %\begin{figure}[H]
 %    \centering
@@ -372,20 +611,78 @@ Für die Breite der verschiedenen Dispersionsgebiete ergibt sich nun folgendes.
 
 \section{Modenabstand}
 \subsection{Versuchsaufbau}
+Nun wird der Modenabstand präzise über eine optische Schwebung gemessen. Hierfür
+wird folgender Aufbau realisiert.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/hf}
+    \caption[Diode]{Messung des Modenabstandes mittels Frequenzmischung~\cite{skriptlaser}.}
+    \label{fig:hf}
+\end{figure}
+
 \subsection{Versuchsdurchführung}
+Wegen der kleinen Fläche der Photodiode wird der Laserstrahl mit einer Linse auf
+selbige fokussiert. Dabei wird der Aufbau so vollzogen, dass der optische
+Spektrumanalysator nicht abgebaut werden muss. 
+
+Das Diodensignal wird wie in Abbildung \ref{fig:hf} über einen Verstärker in
+einen Mischer gegeben, wo es zu dem Signal eines Hochfrequenzgenerators
+($\nu_{HF}$) addiert wird. Am Ausgang des Mischers erhält man dann ein Signal
+mit der Differenzfrequenz $\nu = \left|\omega_1 - \omega_2 \right| - \nu_{HF}$).
+Dieses Signal wird am Oszilloskop betrachtet (Bandbreite des Oszilloskops:
+$\unit[35]{MHz}$). Sobald das Diodensignal und die Frequenz des Generators um
+weniger als diese $\unit[35]{MHz}$ abweichen, ist daher eine Sinuskurve mit der
+Differenzfrequenz auf dem Oszilloskop zu beobachten. Variiert man die Frequenz
+des Generators, so lassen sich die beiden Differenzen weiter angleichen, so dass
+man schließlich am Frequenzzähler die Diodenfrequenz und damit die
+Differenzfrequenz zwischen zwei Lasermoden ablesen kann.
+
+Das Signal auf dem Oszilloskop ist zu beschreiben. Des Weiteren sind die
+gefundenen Werte für die Modenabstände mit denen aus dem vorigen Versuchsteil zu
+vergleichen. Aus diesen Ergebnissen und der Entfernung der Laserspiegel kann
+dann noch die Lichtgeschwindigkeit $c$ ermittelt werden.
+
 \subsection{Messwerte und Auswertung}
 
-\section{Bestimmung der Lichtgeschwindigkeit}
+Es gilt:
+\begin{align}
+    c &= 4L\Delta\nu \\
+    \Delta c &= 4 \sqrt{\left(L\Delta(\Delta\nu)\right)^2+\left(\Delta
+    L\Delta\nu\right)^2} \approx 4 \Delta L\Delta \nu
+    \text{, da $\Delta(\Delta\nu)$ sehr klein gegen $\Delta L$}
+\end{align}
+
+Mit unseren Messwerten für die Längen (für die wir einen Fehler von
+$\unit[1]{cm}$ annehmen) erhalten wir damit folgende Tabelle:
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+            display columns/0/.style={column name={$\frac{L}{2}/\unit{cm}$}},
+            display columns/1/.style={column name={$\Delta\nu/\unit{MHz}$}},   
+            display columns/2/.style={column name={$c/\unit{\frac{km}{s}}$}},   
+            display columns/3/.style={column name={$\Delta c/\unit{\frac{km}{s}}$}}
+        ]{data/moden.txt}
+    \caption{}
+    \label{tab:lichtgeschw}
+\end{table}
+Daraus erhalten wir als Ergebnis für die Lichtgeschwindigkeit als gewichtetes
+Mittel dieser Werte:
+\begin{align}
+    c = \unit[(299625\pm 265)]{\frac{km}{s}}
+\end{align}
+
+Dieses stimmt gut mit dem definierten Wert der Vakuumlichtgeschwindigkeit von
+$c_0 = \unit[299792.458]{\frac{km}{s}}$ überein. Die Abweichung der
+Lichtgeschwindigkeit in Luft von diesem Wert ist dabei etwa eine Größenordnung
+kleiner als unsere
+Fehlergrenzen.
 
 \section{Zusammenfassung}
 
+
 \begin{appendix}
 \Literatur{quellen}
-
-\section{Messwerte}
-\label{cha:messwerte}
-
-
 \end{appendix}
 
 \end{document}

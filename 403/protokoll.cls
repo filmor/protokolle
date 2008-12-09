@@ -7,8 +7,8 @@
 \RequirePackage{amsmath, amsthm, amssymb, amsrefs}
 \RequirePackage[ngerman]{babel}
 \RequirePackage[latin1]{inputenc}
-\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr, float}
-\RequirePackage{wrapfig, subfig, caption, booktabs}
+\RequirePackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr}
+\RequirePackage{wrapfig, subfig, caption, booktabs, floatrow}
 
 \pgfplotstableset{ 
     every head row/.style={before row=\toprule,after row=\midrule}, 
