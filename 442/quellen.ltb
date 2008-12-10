@@ -37,3 +37,9 @@ timestamp={2008.12.08},
     author={Universität Bonn},
     year={2005},
 }
+
+\bib{schawlow}{article}{
+    title={Measuring the wavelength of Light with a Ruler},
+    author={A. L. Schawlow},
+    year={1965},
+}
