@@ -1,0 +1,267 @@
+\documentclass{protokoll}
+\newcommand{\assistent}{Dr. H. Dutz}
+\newcommand{\versuch}{Optisches Pumpen}
+\newcommand{\nummer}{P404}
+
+\begin{document}
+
+\section{Einleitung}
+Optisches Pumpen beschreibt das zielgerichtete Umbesetzen atomarer Niveaus mit
+Hilfe elektromagnetischer Felder geeigneter Frequenz. Die durch optische
+Spektroskopie nicht erreichbaren Übergänge können auf diese Weise bequem
+beobachtet werden. Dieses Verfahren eignet sich somit zur Untersuchung der
+\textsc\{Zeeman\}-Aufspaltungen der Hyperfeinstruktur und zur Bestimmung der
+g-Faktoren und somit des Kernspins. Auch das Ausmessen sehr kleiner magnetischer
+Felder ist möglich.
+
+\section{Theorie}
+\subsection{Atomphysikalische Grundlagen}
+
+\subsubsection*{Energieniveaus von Alkalimetallen}
+
+\subsubsection*{Auswahlregeln}
+
+\subsubsection*{Spektrumstruktur}
+
+\subsubsection*{Linienbreiten}
+
+\subsection{Erzeugung und Eigenschaften polarisierten Lichtes}
+
+\subsection{Interferenzfilter}
+
+\subsection{Photonennachweis, Photodioden}
+
+\subsection{Optisches Pumpen}
+
+\subsection{Induzierte Emission durch Einwirkung magnetischer Hochfrequenzfelder}
+
+\subsection{Thermodynamik der Phasenübergänge in Einstoffsystemen}
+
+\subsection{Gaskinetik}
+
+\section{Theoretische Aufgaben}
+\subsection*{Aufgabe (a)}
+Der Abschnitt über den \textsc{Einstein}schen Ansatz für die Wechselwirkung
+eines Strahlungsfeldes mit Atomen wurde erfolgreich gelesen.
+
+Die Absorptionsrate $W_{abs}$ eines Atoms ist gegeben durch ($\rho$: spektrale
+Strahlungsenergiedichte, $B$: \textsc{Einstein}-Koeffizient für die Absorption):
+\begin{align}
+  W_{abs} = B \rho
+\end{align}
+
+Weiter gilt ($\lambda$: Wellenlänge, $h$: \textsc{Planck}sches Wirkungsquantum,
+$\tau$: Lebensdauer des Niveaus):
+\begin{align}
+  B = \frac{\lambda^3}{8 \pi h\tau}
+\end{align}
+
+Sowie ($S$: \textsc{Poynting}-Vektor, $c$: Lichtgeschwindigkeit,
+$\nu_D$: Dopplerverbreiterung):
+\begin{align}
+  \rho = \frac{S}{c \nu_D}
+\end{align}
+
+\subsection*{Aufgabe (b)}
+\subsubsection*{Herleitung des linearen Absorptionskoeffizienten $\kappa$}
+Nach dem \textsc{Lambert-Beer}schen-Gesetz ergibt sich die Abschwächung der
+Lichtintensität $I$ beim Durchgang durch ein Medium allgemein zu
+$\mathrm{d}I = - \kappa I \mathrm{d}s$, wobei $\kappa$ den sogenannten linearen
+Absorptionskoeffizienten angibt. Die Gleichung lässt sich auch in einer
+Energiebetrachtung aufstellen. Es ergibt sich:
+\begin{align}
+  \mathrm{d}E = - \kappa E \mathrm{d}s
+\end{align}
+
+Des Weiteren ergibt sich über die atomare Absorptionsrate folgendes:
+\begin{align}
+  \mathrm{d}E = - h \nu W_{abs} \mathrm{d}N
+\end{align}
+
+Es folgt nach Gleichsetzen und Einsetzen der Relation $E = S A$, mit
+$S = \rho c \nu_D$, sowie $\mathrm{d}V = A \mathrm{d}s$:
+\begin{align}
+  \kappa \rho c \nu_D \mathrm{d}V = h \nu W_{abs} \mathrm{d}N
+\end{align}
+
+Über $W = B \rho$ und $B = \frac{\lambda^3}{8 \pi h\tau}$ ergibt sich
+schließlich in der Tat das gewünschte Ergebnis.
+
+\begin{align*}
+\kappa \rho c \nu_D \mathrm{d}V &= h \nu W_{abs} \mathrm{d}N  \\
+\kappa \rho c \nu_D \mathrm{d}V
+            &= h \nu \frac{\lambda^3}{8 \pi h\tau} \rho \mathrm{d}N \\
+\kappa  &= \frac{\lambda^3 h \nu}{8 \pi h\tau c \nu_D} \frac{dN}{dV} \\
+\kappa  &= \frac{\lambda^2}{8 \pi \tau \nu_D} \frac{\mathrm{d}N}{\mathrm{d}V}
+\end{align*}
+\qed
+
+\subsubsection*{Freie Weglänge der Photonen}
+Die mittlere freie Weglänge $\Lambda$ gibt die Strecke an, nach welcher die
+Intensität auf $\frac{1}{e}$ gefallen ist. Dies entspricht gerade
+$\Lambda = \frac{1}{\kappa}$. Somit gilt:
+\begin{align}
+\Lambda = \frac{1}{\kappa}  = \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N}
+\end{align}
+
+Zur Bestimmung der freien Weglänge der Photonen berechnen wir zunächst die
+Dopplerbreite der im Versuch verwendeten Spektrallinie der Wellenlänge
+$\lambda = \unit{794,76}[nm]$, welche des Weiteren die Lebensdauer
+$\tau = \unit[2,941 \cdot 10^{-8}]{s}$ besitzt. Es gilt:
+\begin{align}
+  \nu_D = \nu_0 \sqrt{\frac{k T}{m_{Rb} c^2}}
+\end{align}
+
+Mit $m_{Rb} = \unit[85.56]{u} = \unit[1.421 \cdot 10^{-25}]{kg}$,
+$\nu_0 = \frac{c}{\lambda} = \unit[3.77 \cdot 10^14]{Hz}$ und unter der Annahme
+einer mittleren Temperatur von $T = \unit[40]{^\circ C} = \unit[313]{K}$ ergibt
+sich somit für die Dopplerbreite $\nu_D = \unit[2.2 \cdot 10^8]{Hz}$.
+
+Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B T}{p}$ eine
+weitere nötige Relation. Der Dampfdruck $p$ innerhalb der Messzelle kann dabei
+über die im Skript angegebene Formel $log(p) = - \frac{A}{T} + B$ berechnet
+werden (wobei $A = \unit[4347.11]{K}$ und $B = \unit[7.70]{K}$) und ergibt sich
+zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.
+
+Somit ergibt sich insgesamt schließlich:
+\begin{align*}
+\Lambda &=& \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N} \\
+        &=& \unit[11.66]{cm}
+\end{align*}
+
+Die freie Weglänge liegt also in der Größenordnung der Abmessung der Messzelle.
+
+\subsection*{Aufgabe (c)}
+Wir kennen bereits die Relation $S = \rho c \nu_D$ für den
+\textsc{Poynting}-Vektor. Mit dem angegebenen Wert von
+$S = \unit[15]{\frac{\mu W}{cm^2}}$, sowie der bereits berechneten Dopplerbreite
+erhält man die spektrale Leistungsdichte zu
+$\rho = \unit[2.27 \cdot 10^{-18}]{\frac{W s^2}{m^3}}$.
+
+Zur Ermittlung der Anzahl der pro Sekunde absorbierten Photonen setzt man nun
+das für $\rho$ erhaltene Ergebnis in die Formel für $W_{abs}$ ein. Es ergibt
+sich:
+\begin{align*}
+  W_{abs} &= B \rho \\
+          &= \frac{\lambda^3}{8 \pi h \tau} \rho \\
+          &\approx 2330
+\end{align*}
+
+Im Mittel werden also $\unit[2330]{\frac{Photonen}{s}}$ absorbiert.
+
+\subsection*{Aufgabe (d)}
+Für Rb-Rb-Stöße allein ergibt sich mit dem gaskinetischen Querschnitt
+$\sigma_{Rb} = \unit[5.8 \cdot 10^{-19}]{m^2}$ und der bereits berechneten
+Teilchendichte $n = \frac{N}{V}$ die mittlere freie Weglänge zu:
+
+\begin{align*}
+  \Lambda_{Rb} &= \frac{1}{n \sigma_{Rb}} \\
+               &= \unit[78.15]{m}
+\end{align*}
+
+Mit Hilfe der mittleren Geschwindigkeit $\langle v \rangle$ der Rubidiumatome
+kann nun die Anzahl der Wandstöße berechnet werden.
+
+\begin{align*}
+  \langle v \rangle &= \sqrt{\frac{8 k_B T}{\pi m_Rb}} \\
+                    &= \unit[278.8]{\frac{m}{s}}
+\end{align*}
+
+Es ergibt sich somit, dass bei einer Kolbengröße von etwa \unit[5]{cm} ein Atom
+ungefähr $5500$ Wandstöße pro Sekunde erleidet.
+
+\subsection*{Aufgabe (e)}
+Auch der Abschnitt über die Zugabe eines Puffergases wurde erfolgreich gelesen.
+
+\subsection*{Aufgabe (f)}
+Wir berechnen nun die Diffusionszeit $\tau_D$ und die freie Weglänge $\Lambda$
+bei vorhandenem Puffergas, welches hier durch Helium repräsentiert wird. Für
+die Diffusionszeit gilt:
+\begin{align}
+  \tau_D = \frac{d^2}{6 D_0}
+\end{align}
+
+Wobei die Diffusionskonstante von Helium durch
+$D_0 = \unit[0.54]{\frac{cm^2}{s \unit[101325]{Pa}}}$ gegeben ist. Bei einer
+Dicke von $d=\unit[5]{cm}$ und einem Druck von
+$p = \unit[1]{mbar} = \unit[100]{Pa}$ ergibt sich dadurch schließlich
+$\tau_D = \unit[7.6]{ms}$.
+
+Als die freie Weglänge wird hier die Strecke zwischen zwei depolarisierenden
+Stößen von Rubidium und Helium (Puffergas) bezeichnet. Man erhält für
+$\Lambda_{\mathrm{depol}} = \frac{1}{n \sigma}$ bei einer Teilchendichte von
+$n = \frac{p}{k_B T} = 2.3 \cdot 10^{22}$ dann $\Lambda_{\mathrm{depol}}
+\approx \unit[700]{km}$.
+
+Zur Berechnung der Zeitdifferenz $\tau_{\mathrm{depol}}$ zwischen zwei
+derartigen Stößen, muss zunächst die Relativgeschwindigkeit zwischen Helium-
+und Rubidiumatomen bestimmt werden.
+
+\begin{align}
+  \langle v_{rel} \rangle = \langle |v_{Rb}-v_{He}| \rangle
+\end{align}
+
+Es gilt dabei $\langle v^2 \rangle = \frac{3 k_B T}{m}$ und
+${\langle v \rangle}^2 = \frac{8}{3 \pi} \langle v^2 \rangle$. Nun folgt:
+
+\begin{align*}
+\langle v_{rel} \rangle &= \langle |v_{Rb}-v_{He}| \rangle \\
+                        &= \sqrt{\frac{8}{3 \pi}}
+                           \sqrt{\langle {|v_{Rb}-v_{He}|}^2 \rangle} \\
+                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb}
+                          - 2 v_{Rb} v_{He}  + v^2_{He} \rangle}\\
+                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle
+                          - 2 \langle v_{Rb} v_{He} \rangle
+                          + \langle v^2_{He}\rangle} \\
+                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle
+                          - 2 \langle v_{Rb}  \rangle \langle  v_{He} \rangle
+                          + \langle v^2_{He}\rangle} \\
+                        &= \sqrt{{\langle v_{Rb} \rangle}^2
+                          - \frac{3 \pi}{4} \langle v_{Rb}  \rangle
+                            \langle v_{He} \rangle
+                          + {\langle v_{He}\rangle}^2}
+\end{align*}
+
+Nach Einsetzen der mittleren Geschwindigkeiten $\langle v \rangle$ für Rb und
+He, erhält man $\langle v_{rel} \rangle \approx \unit[950]{\frac{m}{s}}$.
+Direkt folgt daraus dann $\tau_{\mathrm{depol}} =
+\frac{\Lambda_{depol}}{\langle v_{rel} \rangle} \approx \unit[740]{s}$.
+Offenbar ist es also sehr sinnvoll ein solches Puffergas mit einzubringen.
+
+\subsection*{Aufgabe (g)}
+Die natürliche Linienbreite kann aus $\Delta \nu = \frac{1}{2 \pi \tau}$
+bestimmt werden und ergibt sich hier zu $\Delta \nu = \unit[15.9]{Hz}$
+(Lebensdauer des P-Zustandes: $\tau = \unit[10]{ns}$). Die bereits berechnete
+Dopplerverbreiterung beträgt $\Delta \nu_D = \unit[221]{MHz}$. Wir beobachten
+also die dopplerverbreiterte Linie. Sowohl die Hyperfeinstrukturaufspaltung,
+als auch die Zeemanaufspaltung liegen bei diesem Aufbau im MHz-Bereich. Somit
+können mit der dopplerverbreiterten Spektrallinie alle unterschiedlichen
+Niveaus angeregt werden.
+
+
+\section{Versuchsaufbau}
+\label{cha:aufbau}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{grafiken/aufbau}
+\caption[Versuchsaufbau]{Versuchsaufbau zum optischen Pumpen [2].}
+\label{fig:aufbau}
+\end{figure}
+
+\section{Versuchsdurchführung}
+
+
+
+\section{Messdaten und Auswertung}
+
+
+\section{Zusammenfassung}
+
+\begin{appendix}
+\Literatur{quellen}
+\section{Messwerte}
+
+\end{appendix}
+
+\end{document}
