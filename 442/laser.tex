@@ -16,81 +16,173 @@ untersucht wird.
 \section{Theoretische Grundlagen}
 \subsection{Aktives Medium}
 \label{cha:medium}
-Im aktiven Medium wird Licht durch Übergänge zwischen Energieniveaus
-erzeugt.
+Im aktiven Medium des Lasers findet gewissermaßen die Strahlerzzeugung statt,
+das heißt, dass durch stimulierte Emission kohärente Photonen bereitgestellt
+werden. Die stimulierte Emission ist der entscheidende Mechanismus der
+Strahlerzeugung in einem Laser.
 
-\subsubsection{Voraussetzung für Lichtverstärkung}
-Ob eine Materieprobe ein Lichtfeld eher absorbiert oder emittiert, hängt davon
-ab, ob sich mehr Teilchen im angeregten oder im Grundzustand befinden.
-Bezeichnet man die Besetzungszahl des Grundzustandes mit $n_0$ und die des
-angeregten Zustandes mit $n_*$, so überwiegt bei $n_0 > n_*$ die Absorption und
-bei $n_* > n_0$ die stimulierte Emission. Im letzteren Fall tritt Verstärkung
-eines Lichtfeldes auf. Ein Medium, das sich so verhält, nennt man invertiert.
-Diese Inversion ist die Vorraussetzung für die Verstärkung eines einfallenden
-Lichtfeldes. 
+\subsubsection{Ratengleichung und Einsteinkoeffizienten}
+Wenn sich ein Atom in einem Energieniveau $E_2 > E_1$ befindet, kann es durch
+ein Strahlungsfeld der Differenzenergie dazu angeregt werden, in das
+Energieniveau $E_1$ überzugehen. Die Photonenzahl des Strahlungsfeldes erhöht
+sich dabei um eins. Alle auf diese Weise erzeugten Photonen besitzen die
+gleichen Quantenzahlen, das Strahlungsfeld wird also kohärent verstärkt. Mit der
+spektralen Energiedichte des Strahlungsfeldes $w(\nu)$, dem
+\textsc{Einstein}-Koeffizienten der stimulierten Emission $B_{21}$ und der
+Anzahl an Photonen im höheren Energiezustand $N_2$ folgt daraus:
 
-\subsubsection{Einsteinkoeffizienten}
-Der Einsteinkoeffizient gibt die Wahrscheinlichkeit eines bestimmten Übergangs
-zwischen zwei Energienive- aus innerhalb einer Sekunde. Es gibt
-Einsteinkoeffizienten für spontane Emission und Absorption, stimulierte Emission
-und stimulierte Absorption. 
+\begin{align}
+    \mathrm{d}N^{ind}_{21} = B_{21}\ w(\nu) \ N_2 \ \mathrm{d}t
+\end{align}
+
+Dabei gibt $\nu$ die der Energiedifferenz entsprechende Frequenz an.
+
+Der gegenläufige Prozess ist auch möglich und nennt sich induzierte Absorption.
+Man erhält mit dem \textsc{Einstein}-Koeffizienten der induzierten Absorption
+$B_{21}$ nun:
+
+\begin{align}
+    \mathrm{d}N^{ind}_{12} = B_{12}\ w(\nu)\ N_1\ \mathrm{d}t
+\end{align}
+
+Hierbei wird die Photonenzahl des Strahlungsfeldes also um ein Photon
+erniedrigt. Es gilt im Übrigen $g_1 B_{12} = g_2 B_{21}$, wobei $g_1$ und $g_2$
+den Entartungsgrad des jeweiligen Energieniveaus $E_1$ bzw.\ $E_2$ angeben.
+
+Zu guter Letzt ist noch die spontane Emission mit dem
+\textsc{Einstein}-Koeffizienten $A_{21}$ zu betrachten. Insgesamt erhält man
+dann für die Änderung der Photonendichte $n$ bei der Energie $E_2 - E_1 = h \nu$
+somit die Ratengleichung.
+
+\begin{align}
+    \label{eq:raten}
+    \frac{\mathrm{d}n}{\mathrm{d}t}
+        = A_{21} N_2 + B_{21} w(\nu) \left(N_2 - \frac{g_2}{g_1} N_1 \right)
+\end{align}
+
+Aus Gleichung (\ref{eq:raten}) ist direkt abzulesen, dass für eine Verstärkung
+des Strahlungsfeldes, welches man beim Laser erreichen will, die folgende
+Gleichung erfüllt seien muss. Ist dies der Fall, so spricht man von
+Besetzungsinversion.
+
+\begin{align}
+    \label{eq:raten2}
+    \frac{N_2}{g_2} > \frac{N_1}{g_1}
+\end{align}
+
+Da beim realen Laser jedoch auch Verluste (Auskopplungs-, Streuungs-,
+Absorptions- und Beugungsverluste) zu betrachten sind, muss die
+Besetzungsinversion dies zusätzlich noch kompensieren.
 
 \subsubsection{Homogene und inhomogene Linienbreiten}
-Bei der Absorption bzw. Emission elektromagnetischer Strahlung ist die Frequenz
-der entsprechenden Spektrallinie nicht streng monoton. Das Frequenzintervall
-zwischen den Frequenzen, bei denen die emittierte bzw.  absorbierte Intensität
-auf die Hälfte des Maximalwertes abgesunken ist, heißt volle Halbwertsbreite.
-Für ein normiertes Intensitätsprofil (Lorentz-Profil) nennt man die volle
-Halbwertsbreite auch natürliche Linienbreite. Ist die Wahrscheinlichkeit für die
-Emission bzw.\ Absorption von Licht der Frequenz $\nu$, die einen Übergang $E_i
-\to E_k$ bewirkt, für alle Moleküle im Zustand $E_i$ gleich groß, so nennt man
-das Spektralprofil dieses Übergangs homogen. Die entsprechende Absorptions-
-bzw.\ Emissionslinie ist dann homogen verbreitert. Die natürliche Linienbreite
-ist also ein Beispiel für ein homogen verbreitertes Linienprofil. Das
-Lorentz-Profil und die natürliche Linienbreite lassen sich im allgemeinen
-aufgrund anderer Verbreiterungseffekte nicht direkt beobachten. Durch Stöße
-werden die Spektrallinienprofile auf zwei Arten beeinflusst. Inelastische Stöße
-führen zu einer Linienverbreiterung. Elastische Stöße bewirken sowohl eine
-Linienverbreiterung, als auch eine -verschiebung. Die Stoßverbreiterung führt zu
-einer homogenen Linienverbreiterung. Das Standard-Beispiel für die inhomogene
-Linienverbreiterung ist die Dopplerverbreiterung. Bewegt sich ein angeregtes
-Molekül mit einer Geschwindigkeit $\vec v = (v_x , v_y , v_z)^t$, so wird die
-Frequenz des emittierten Lichts relativ zu einem ruhenden Beobachter als Folge
-des Dopplereffekts verschoben. Dieser Vorgang zieht eine inhomogene
-Verbreiterung der entsprechenden Spektrallinie nach sich. 
+Bei Absorption und Emission elektromagnetischer Strahlung ist die Frequenz der
+beteiligten Strahlung nicht streng monochromatisch. Es zeigt sich vielmehr eine
+gewisse Spektralbreite. Man definiert die volle Halbwertsbreite als das
+Frequenzintervall innerhalb dessen die Intensität des absorbierten oder
+emittierten Lichtes auf die Hälfte der Amplitude abgefallen ist. Für ein
+normiertes Intensitätsprofil (Lorentz-Profil) nennt man die volle
+Halbwertsbreite auch natürliche Linienbreite.
+
+Ist die Wahrscheinlichkeit für die Emission bzw.\ Absorption von Licht der
+Frequenz $\nu$, die einen Übergang $E_i \to E_k$ bewirkt, für alle Moleküle im
+Zustand $E_i$ gleich groß, so nennt man das Spektralprofil dieses Übergangs
+homogen. Die entsprechende Absorptions- bzw.\ Emissionslinie ist dann homogen
+verbreitert. Somit ist die natürliche Linienbreite ein Beispiel für ein homogen
+verbreitertes Linienprofil. 
+
+Diese lässt sich im Allgemeinen jedoch nicht direkt beobachten, da andere
+Verbreiterungseffekte dominieren. So werden die Spektrallinienprofile z.\ B.\
+durch Stöße beeinflusst. Dabei führen elastische wie inelastische Stöße zu einer
+Linienverbreiterung, elastische Stöße bewirken jedoch zusätzlich noch eine
+Linienverschiebung. Auch die Stoßverbreiterung führt zu einer homogenen
+Verbreiterung der Spektrallinie.
+
+Eine inhomogene Linienverbreiterung ist durch die Dopplerverbreiterung gegeben.
+Bewegt sich ein angeregtes Molekül mit einer Geschwindigkeit $\vec v$, so wird
+die Frequenz des emittierten Lichtes relativ zu einem ruhenden Beobachter in
+Folge des Dopplereffektes verschoben. Hierbei findet eine inhomogene
+Verbreiterung der entsprechenden Spektrallinie statt. 
 
 \subsubsection{Drei- und Vier-Niveau-Schemata gepumpter aktiver Medien}
-Um die Inversionsbedingung zu erfüllen, führt man dem System Energie zu (man
-pumpt es). Zusätzlich benötigt man noch mindestens einen Hilfszustand. Klarere
-Bedingungen erhält man jedoch für ein Vier-Zustandssystem, das man als Modell
-für einen Laser betrachten kann. 
+\label{cha:pump}
+Um das aktive Medium aus dem thermodynamischen Gleichgewicht heraus in einen
+Zustand der Besetzungsinversion zu bringen muss dem System Energie zugefügt
+werden. Dies nennt man im Allgemeinen \emph{Pumpen}. Im vorliegenden Fall des
+Gaslasers wird die Anregung durch Gasentladung sowie Stöße genutzt.
 
-Durch Pumpen (z.B. Absorption von Licht, Elektronenstoß in einer Entladung oder
-andere Mechanismen) wird das Lasermedium in einen angeregten Zustand versetzt.
-Dieser Pumpzustand zerfällt dann in den angeregten (oberen) Laserzustand. Der
-obere Laserzustand muss stabiler sein als der untere, damit die
-Inversionsbedingung aufrechterhalten wird. Damit also $n_* > n_0$ gilt, muss für
-die Zerfallsraten die Bedingung $A_0 > A$ gelten. Vom oberen Laserzustand geht
-das Medium unter Abgabe von Energie in Form von Photonen in den unteren
-Laserzustand über, um von da aus vergleichsweise schnell in den unteren
-Pumpzustand zurückzukehren. Von dort aus wiederholt sich der Vorgang. Der
-Pumpprozess hat die Aufgabe, die Inversion durch Energiezufuhr aufrecht zu
-erhalten. Das Pumpniveau kann man auch gleichzeitig als oberen Laserzustand
-verwenden. Damit hat man einen Drei-Niveau-Laser.
+Nun können verschiedene Systeme realisiert werden, welche sich durch die Anzahl
+an verwendeten Energiezuständen auszeichnen. Bei einem Zwei-Niveau-System (es
+existiert nur der strahlende Übergang $E_2 \to E_1$) besteht jedoch das Problem,
+dass eine Besetzungsinversion i.\ A.\ nicht erzeugt werden kann, da bei direktem
+Pumpen von $E_1 \to E_2$ die Absorption der Pumpenergie gegen Null strebt,
+sobald $N_2 \to N_1$ geht. Es kann also nie eine Besetzungsinversion aufgebaut
+werden, zu welcher man mindestens die Hälfte aller Atome im Zustand $E_2$ wissen
+muss.
+
+Man benötigt also noch mindestens ein zusätzliches Niveau (Drei-Niveau-Laser).
+Dabei wäre dann das Besetzungsinversionsniveau gleichzeitig das Pumpniveau. Dies
+hat jedoch praktische Nachteile. So muss mindestens die Hälfte aller Atome
+gepumpt werden. Beim Vier-Niveau-Laser hingegen führt prinzipiell bereits ein
+einzelnes angeregtes Atom zur Besetzungsinversion, da hier ein weiteres, im
+Idealfall unbesetztes Niveau als unteres Niveau des Laserübergangs verwendet
+wird. Ein Beispiel hierfür ist der vorliegende Helium-Neon-Laser. Zunächst wird
+das System durch Stöße in einer Gasentladung gepumpt. 
+
+Dabei werden die Heliumatome in zwei metastabile Zustände gebracht
+($2^1\mathrm{S}_0$ und $2^3\mathrm{S}_1$), welche fast in Energieresonanz mit
+angeregten Zuständen der Neonatome liegen. Durch inelastische Stöße kann dann
+die Anregungsenergie auf die Neonatome übertragen werden. Somit können die
+$3\mathrm{S}$ Niveaus bevölkert werden. Auf diese Weise wird nun eine
+Besetzungsinversion der Neonatome erzeugt. Dabei muss, wie gesagt, nur ein
+Bruchteil der Neonatome in das obere Laserniveau gepumt werden, da das untere in
+erster Näherung unbesetzt ist. Unter Photonenemission (vor allem
+$\unit[3.39]{\mu m}$ [infrarot], $\unit[632.8]{nm}$ [rot] und $\unit[1.15]{\mu
+m}$ [infrarot]) regen sich die Neonatome dann zunächst auf das
+$2\mathrm{P}$-Niveau ab, um dann über Wandstöße wieder in den Grundzustand zu
+gelangen. Letzteres, also die Leerung der jeweils tieferen Niveaus, ist
+entscheidend, damit eine Besetzungsinversion zwischen den jeweiligen Niveaus
+möglich ist. Es ist also für einen guten Pumpmechanismus notwendig, dass der
+Querschnitt der Röhre, in der sich das aktive Medium befindet, nicht allzu groß
+ist. Der Pumpprozess hat dann die Aufgabe, die Inversion durch Energiezufuhr
+wiederherzustellen, also insgesamt aufrecht zu erhalten.
 
 \subsection{Resonatoren}
 \label{cha:resonator}
-\subsubsection{Stabilitätskriterien}
 Ein optischer Resonator besteht aus zwei sich gegenüberstehenden parallel
-ausgerichteten Spiegeln (plan oder sphärisch). Bei axialer Lichteinstrahlung
-findet dann eine periodische Reflektion statt. Der Resonator speichert also
-Strahlungsenergie, welche jedoch auf Grund von Verlusten exponentiell abnimmt
-($E(t) = E_0 e^{-\frac{t}{\tau}}$, mit der eingestrahlten Energie $E_0$ und der
-Abklingzeit $\tau$).
+ausgerichteten Spiegeln (plan oder sphärisch) und zeichnet sich dadurch aus,
+dass sich zwischen den Spiegeln stehende Wellen ausbilden können. Bei axialer
+Lichteinstrahlung findet also periodische Reflektion statt. Der Resonator
+speichert somit Strahlungsenergie, welche jedoch auf Grund von Verlusten
+exponentiell abnimmt ($E(t) = E_0 e^{-\frac{t}{\tau}}$, mit der eingestrahlten
+Energie $E_0$ und der Abklingzeit $\tau$). Beim Laserresonator ist einer der
+Spiegel üblicherweise leicht transmittierend gefertigt, um Strahlung auskoppeln
+zu können.
+
+Das Feld innerhalb des Resonators kann durch \textsc{Gauß}sche Moden angenähert
+werden. Während der Grundmode ein radiales \textsc{Gauß}-Profil aufweist,
+besitzen höhere Moden kompliziertere Muster.
+
+\subsubsection{Stabilitätskriterien}
+Der Strahlengang zwischen zwei Spiegeln kann durch ein periodisches Linsensystem
+beschrieben werden, wie es in Abb.~\ref{fig:peri} dargestellt ist. Mit Hilfe des
+Matrizenformalismus, welcher hier ebenso wie die Theorie der
+\textsc{Gauß}-Strahlen ausgespart und als bekannt vorausgesetzt werden soll,
+kann somit das Verhalten eines Resonators berechnet werden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/peri}
+    \caption[Periodisches Linsensystem]
+        {Vielfachreflektionen in einem Resonator können als periodisches
+         Linsensystem betrachtet werden~\cite{meschi}.}
+    \label{fig:peri}
+\end{figure}
 
 Damit ein solcher periodischer Strahlverlauf stabil ist, müssen gewisse
-Bedingungen erfüllt sein. Diese können in einem Stabilitätsdiagramm (siehe Abb.
-\ref{fig:stabdia}) auch graphisch dargestellt werden.
+Bedingungen erfüllt sein. Diese können in einem Stabilitätsdiagramm (siehe
+Abb.~\ref{fig:stabdia}) auch graphisch dargestellt werden. Jeder Punkt stellt
+einen Resonator mit den entsprechenden Brennweiten dar, die stabilen Resonatoren
+liegen in den schraffierten Bereichen.
 
 \begin{figure}[H]
     \centering
@@ -106,7 +198,7 @@ Ein weiteres entscheidendes Charakteristikum des Resonators stellt sein Spektrum
 der Resonanzfrequenzen oder Moden dar. Bei einer solchen Resonanzfrequenz
 $\nu_{res}$ bilden sich stehende Wellen, sogenannte longitudinale Moden oder
 Eigenschwingungen endlicher Breite $\Delta \nu_R$ aus. Der Abstand zwischen zwei
-Moden beträgt dabei $\Delta \nu = \frac{c}{2 L}$.
+Moden beträgt dabei bei zwei planen Spiegeln $\Delta \nu = \frac{c}{2 L}$.
 
 Innerhalb des Resonators lässt sich der Strahl als Gaußstrahl behandeln. Man
 erwartet somit für den Strahlradius $w(z)$:
@@ -128,66 +220,96 @@ Resonatoren liegt er in der Mitte des Resonators, bei einem semisphärischen
 Resonator aus Planspiegel und spärischem Spiegel hingegen am Ort des
 Planspiegels.
 
+In Abb.~\ref{fig:spek} ist beipielhaft ein typisches atomares Linienprofil mit
+ein paar Resonatormoden aufgetragen. Die Lichtverstärkung kann dabei nur in den
+duch den Resonator vorgegeben Moden stattfinden, zugleich werden allerdings auch
+prinzipiell mögliche Moden, durch das Linienprofil des atomaren Übergangs
+unterdrückt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/spek}
+    \caption[Spektrum]{Modenspektrum eines Resonators und atomares Linienprofil.}
+    \label{fig:spek}
+\end{figure}
+
 \subsubsection{konfokaler und semisphärischer Resonator}
-Bei einem konfokalen Resonator handelt es sich um einen Resonator dessen Spiegel
-identisch sind und deren Radius gerade dem Abstand zwischen beiden Spiegeln
-entspricht ($R_1 = R_2 = L$) und jener der doppelten Brennweite. Die Brennpunkte
-der beiden Spiegel fallen also in der Mitte des Resonators zusammen. 
+Bei einem konfokalen Resonator ist der gemeinsame Brennpunkt in der Mitte
+zwischen den beiden Spiegeln lokalisiert.
 
+Ein semisphärischer Resonator ist aus einem Plan- und einem sphärischen Spiegel
+aufgebaut, dessen Brennweite gleich dem doppelten Abstand ist. Solch ein
+Resonator verhält sich wie ein sphärischer Resonator der doppelten Länge.
 
-Bei einem semisphärischen Resonator handelt es sich um einen Resonator aus einem
-Plan- und einem sphärischen Spiegel. Solch ein Resonator verhält sich wie ein
-sphärischer Resonator der Länge 2L. Die Strahltaille liegt am Ort des
-Planspiegels.
+Es sei in diesem Zusammenhang auch auf Abbildung~\ref{fig:stabdia} hingewiesen.
 
 \subsection{Funktion des Helium-Neon-Lasers}
 \label{cha:hene}
-Ein Helium-Neon-Laser hat typischerweise eine Leistung zwischen $1$ und
-$\unit[10]{mW}$. Sein aktives Medium ist ein Gasgemisch aus Helium und Neon. Die
-Laserübergänge finden hierbei im Neonatom statt, während das Heliumatom, welches
-durch Stöße mit Entladungselektronen in die metastabilen $2^1\mathrm{S}_0$ bzw.
-$2^3\mathrm{S}_1$ Zustände angeregt wird, den Pumpmechanismus, der dafür sorgt,
-dass eine Besetzungsinversion für das Neon erreicht werden kann darstellt.
+Der Helium-Neon-Laser stellt den ersten kontinuierlichen Laser dar (1960
+erfunden). Er hat typischerweise eine Leistung zwischen $1$ und $\unit[10]{mW}$
+und strahlt im Sichtbaren Strahlung der Wellenlänge $\lambda = \unit[632.8]{nm}$
+aus. Sein aktives Medium ist ein Gasgemisch aus Helium und Neon. Die
+Laserübergänge finden hierbei in den Neonatomen statt, während die Heliumatome,
+welche durch Stöße mit Entladungselektronen in die metastabilen
+$2^1\mathrm{S}_0$ bzw. $2^3\mathrm{S}_1$ Zustände angeregt werden, den
+Pumpmechanismus, der dafür sorgt, dass eine Besetzungsinversion für Neon
+erreicht werden kann, realisieren (siehe Abschnitt \ref{cha:pump} und
+Abb.~\ref{fig:hene}).
 
-Durch einen Stoß 2.~Art mit dem Neon werden Elektronen im Neon auf die $3s$-
-bzw.\ $2s$-Schale angeregt. Dies ist möglich, da die Energien der jeweiligen
-Niveaus dicht beieinander liegen.  Die intensivsten Laserübergänge finden
-zwischen den Niveaus $3s$ und $3p$ mit $\unit[3.39]{\mu m}$ (infrarot), zwischen
-$3s$ und $2p$ mit $\unit[0.63]{\mu m}$ (sichtbar rot) bzw.\ zwischen $2s$ und
-$2p$ mit $\unit[1.15]{\mu m}$ (infrarot) statt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/level}
+    \caption[Energielevel]{Energieniveaus für Helium und Neon mit
+                           eingezeichnetem Laserprozess~\cite{skriptlaser}.}
+    \label{fig:hene}
+\end{figure}
 
-Damit eine Besetzungsinversion zwischen den jeweiligen Niveaus möglich ist, ist
-es wichtig, dass die jeweils tieferen Niveaus wieder geleert werden. Dies
-geschieht durch Stöße mit der Wand. Es ist also für einen guten Pumpmechanismus
-notwendig, dass der Querschnitt der Röhre, in der sich das aktive Medium
-befindet, nicht allzu groß ist.
+Die intensivsten Laserübergänge finden zwischen den Niveaus $3s$ und $3p$ mit
+$\unit[3.39]{\mu m}$ (infrarot), zwischen $3s$ und $2p$ mit $\unit[0.63]{\mu m}$
+(sichtbar rot) bzw.\ zwischen $2s$ und $2p$ mit $\unit[1.15]{\mu m}$ (infrarot)
+statt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/level3}
+    \caption[Energielevel]{Energieniveaus für Helium und Neon mit eingezeichneten Laserübergängen~\cite{skriptlaser}.}
+    \label{fig:hene2}
+\end{figure}
 
 Die Laserröhre befindet sich nun innerhalb eines Resonators, der dafür sorgt,
-dass die emittierten Lichtquanten immer wieder durch das aktive Medium gehen und
-damit Emissionen gleicher Richtung, Phase und Wellenlänge induzieren.  Wir
-erhalten somit eine Lichtverstärkung des Lasers. Die Verstärkung kann man anhand
-eines Verstärkungsprofils näher betrachten.
+dass die emittierten Lichtquanten immer wieder durch das aktive Medium
+propagieren und damit Emissionen gleicher Richtung, Phase und Wellenlänge
+induzieren. Wir erhalten somit die gewünschte Lichtverstärkung des Lasers.
 
-Der einzelne Laserübergang ist kein Peak sondern verbreitert. Diese
-Verbreiterung ist so groß, dass mehrere longitudinale Moden innerhalb eines
-Laserüberganges liegen. Dies führt dazu, dass im Resonator mehrere Moden
-schwingen. Bei inhomogener Linienverbreiterung tritt deswegen das Problem der
-Modenkonkurrenz auf. Die Strahlung des Modes, welches auf Grund der maximalen
-Verstärkung erst oszilliert tritt mit allen Molekülen, die zum
-Verstärkungsprofil beitragen, in Wechselwirkung. Bei Sättigung führt dies zu
-einem Abschwächen der Verstärkung, jedoch bleibt die verantwortliche Mode
-weiterhin jene mit der größten Vertärkung. 
+Der einzelne Laserübergang weist eine Verbreiterung auf (im Wesentlichen
+Dopplerverbreiterung der Atomspektren). Diese beträgt bei Zimmertemperatur für
+einen Helium-Neon-Laser typischerweise $\unit[1.5]{GHz}$. Nur in diesem Bereich
+kann der Laser anschwingen, da die Verstärkung die Verluste übersteigt.
 
+Die Moden $q$, $n$, $m$ haben die Eigenfrequenzen:
+\begin{align}
+\nu_{qmn} = \frac{c}{2 L} \left( q + \frac{m+n+1}{2} \right)
+\end{align}
+
+Der Abstand zwischen zwei benachbarten Transversalmoden ergibt sich somit zu
+$\Delta \nu = \frac{c}{4 L}$. Bei im Versuch gängigen Resonatorlängen von $50$
+bis $\unit[100]{cm}$ ergibt sich so ein Modenabstand von einigen wenigen
+$\unit[100]{MHz}$, d.\ h.\, dass in dem Helium-Neon-Laser mehrere Moden
+gleichzeitig anschwingen können. Diese werden jedoch einen unterschiedlichen
+Anteil an der Gesamtleistung des Lasers ausmachen, wobei manche Moden auf Grund
+des Verstärkungsprofils stärker anschwingen können. Dies bezeichnet der Begriff
+der Modenkonkurrenz.
 
 \section{Bestimmung der Wellenlänge mittels eines Reflektionsgitters}
 \label{cha:lineal}
 \subsection{Versuchsaufbau}
-Es wird der Aufbau wie in Abbildung \ref{fig:linealaufbau} realisiert.
+Es wird der Aufbau wie in Abbildung~\ref{fig:linealaufbau} realisiert.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/linealaufbau}
-    \caption[Versuchsaufbau]{Aufbau zur Bestimmung der Wellenlänge mittels eines Reflektionsgitters~\cite{schawlow}.}
+    \caption[Versuchsaufbau]{Aufbau zur Bestimmung der Wellenlänge mittels eines
+                             Reflektionsgitters~\cite{schawlow}.}
     \label{fig:linealaufbau}
 \end{figure}
 
@@ -200,9 +322,8 @@ Abb.~\ref{fig:linealaufbau}). Durch Variation des auf dem Lineal ausgenutzten
 Bereiches und des Einfallswinkels $\theta$ wird eine geeignete Einstellung
 gesucht, in welcher die Interferenzbilder auf der Wand gut vermessen werden
 können (Punktabstand und Punktschärfe). Anschließend wird der direkt
-durchgehende Strahl $- y_0$ vermessen, indem das Lineal aus dem
-Strahlengang entfernt wird, da er bei richtiger Einstellung vollständig verdeckt
-wird.
+durchgehende Strahl $- y_0$ vermessen, indem das Lineal aus dem Strahlengang
+entfernt wird, da er bei richtiger Einstellung vollständig verdeckt wird.
 
 Über Mittelung der Werte für $- y_0$ und für die nullte Ordnung erhält
 man den Nullpunkt. Man kann nun die Abstände $y_n$ der Maxima verschiedener
@@ -211,7 +332,7 @@ Lasers ergibt sich schließlich über folgende Gleichung, wobei $y_n$ und $y_0$
 bezüglich des bestimmten Nullpunktes angegeben sind.
 
 \begin{align}
-n \lambda = \frac{d}{2} \frac{y^2_n - y^2_0}{x^2_0}
+    n \lambda = \frac{d}{2} \frac{y^2_n - y^2_0}{x^2_0}
 \end{align}
 
 Diese Formel ist jedoch eine Approximation für kleine Winkel (paraxiale
@@ -229,12 +350,13 @@ ergab sich das Folgende.
     \centering
     \includegraphics[width=1.0\textwidth]{grafiken/laser_lineal}
     \caption[Interferenzmuster]{Durch Reflektionsgitter (Lineal) entstehendes
-    Interferenzmuster mit Markierung des bestimmten Nullpunktes. Abstand von $y_0$ zum Nullpunkt beträgt $\unit[3.6 \pm 0.6]{cm}$}
+    Interferenzmuster mit Markierung des bestimmten Nullpunktes. Der Abstand von $y_0$ zum Nullpunkt beträgt $\unit[3.6 \pm 0.6]{cm}$.}
     \label{fig:lineal}
 \end{figure}
 
-Zunächst wird der Nullpunkt wie in Abschnitt \ref{cha:lineal} beschrieben bestimmt. Anschließend können die Abstände $y_n$ extrahiert und somit einzelne Werte für $\lambda$ berechnet werden. 
-
+Zunächst wird der Nullpunkt, wie in Abschnitt \ref{cha:lineal} beschrieben,
+bestimmt. Anschließend können die Abstände $y_n$ extrahiert und somit einzelne
+Werte für $\lambda$ berechnet werden. 
 \begin{table}[H]
     \centering
         \pgfplotstabletypesetfile[
@@ -263,7 +385,6 @@ Zunächst wird der Nullpunkt wie in Abschnitt \ref{cha:lineal} beschrieben bestim
         \label{fig:werte_lineal}
 \end{table}
 
-
 Der Fehler $\Delta y_n$ resultiert im Wesentlichen aus der Breite der Maxima. Der
 Fehler des Abstandes zwischen Lineal und Wand wurde deshalb so hoch angesetzt,
 da dieser Abstand mit einem nicht mehr völlig funktionstüchtigen, d.h. zu
@@ -286,7 +407,6 @@ kann ferner nicht bestätigt werden, dass die Werte für die Wellenlänge $\lambda$
 mit steigender Ordnung $n$ schlechter werden. Für kleine $n$ errechnet sich eine
 tendenziell zu große, für große $n$ eine tendenziell zu kleine Wellenlänge.
 
-
 \section{Aufbau des Helium-Neon-Experimentierlasers}
 Nun soll der im Weiteren zu verwendende Helium-Neon-Experimentierlaser aufgebaut
 werden. Dabei dient der Pilotlaser (ebenfalls ein Helium-Neon-Laser) zur
@@ -295,7 +415,7 @@ Vorjustierung des Experimentierlasers.
 Zunächst werden zwei Blenden an den Enden der optischen Schiene aufgebaut. Sie
 definieren die optische Achse entlang der Schiene. Mit Hilfe zweier Planspiegel
 wird anschließend der Pilotstrahl mit dieser Achse zur Deckung gebracht. Hierzu
-wird zunächst mit Hilfe des in Abbildung \ref{fig:aufbau1} oben liegenden
+wird zunächst mit Hilfe des in Abbildung~\ref{fig:aufbau1} oben liegenden
 Spiegels der Laserstrahl durch die erste Blende geführt und daraufhin mit Hilfe
 des zweiten Spiegels direkt an der optischen Bank der Strahl auch durch die
 zweite Blende am Ende der Bank geführt. Die Blenden bleiben bis zum Abschluß der
@@ -305,11 +425,12 @@ kontrollieren zu können.
 \begin{figure}[H]
  \centering
     \includegraphics[width=0.6\textwidth]{grafiken/aufbau1}
-    \caption[Versuchsaufbau]{Aufbau des Experimentierlasers. Justage der optischen Achse~\cite{skriptlaser}.}
+    \caption[Versuchsaufbau]{Aufbau des Experimentierlasers.
+                             Justage der optischen Achse~\cite{skriptlaser}.}
     \label{fig:aufbau1}
 \end{figure}
 
-Nun wird das Laserrohr eingesetzt (siehe Abb. \ref{fig:aufbau2}). Seine Position
+Nun wird das Laserrohr eingesetzt (siehe Abb.~\ref{fig:aufbau2}). Seine Position
 wird mit Hilfe der Justierschrauben so verändert, dass der Pilotstrahl die
 Kapillare des Entladungsrohrs ohne Störung passiert. Zur Kontrolle ist die Form
 des Lichtfleckes vor und hinter der Röhre auf einem Schirm zu kontrollieren.
@@ -322,14 +443,14 @@ des Lichtfleckes vor und hinter der Röhre auf einem Schirm zu kontrollieren.
 \end{figure}
 
 Im Anschluss wird das Laserrohr vorerst wieder von der Schiene genommen, damit
-der Resonator aufgebaut werden kann (siehe Abb. \ref{fig:aufbau3}). Der
+der Resonator aufgebaut werden kann (siehe Abb.~\ref{fig:aufbau3}). Der
 sphärische Spiegel ($R = \unit[1000]{mm}$) wird ungefähr in Mitte der Schiene
 gesetzt und so justiert, dass der reflektierte Strahl zentrisch auf der rechten
 Blende liegt. Der zweite Spiegel, ein Planspiegel, wird etwa $\unit[50]{cm}$
-rechts vom Hohlspiegel auf die Schiene gesetzt und ist analog zu justieren,
-d.~h.\, es ist der Rückreflex, welcher nun von der Rückseite des Spiegels
-stammt, auf die rechte Blende zu zentrieren. Es soll noch angemerkt werden, dass
-die Reflexionskoeffizienten der verwendeten dieelektrischen Spiegel größer als
+rechts vom Hohlspiegel auf die Schiene gesetzt und ist analog zu justieren, das
+heißt, es ist der Rückreflex, welcher nun von der Rückseite des Spiegels stammt,
+auf die rechte Blende zu zentrieren. Es soll noch angemerkt werden, dass die
+Reflexionskoeffizienten der verwendeten dieelektrischen Spiegel größer als
 \unit[99,98]{\%} sind.
 
 \begin{figure}[H]
@@ -376,7 +497,8 @@ keine Strahlverkippung verursacht.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/polaufbau}
-    \caption[Versuchsaufbau]{Aufbau zur Bestimmung des Polarisationszustandes~\cite{skriptlaser}.}
+    \caption[Versuchsaufbau]{Aufbau zur Bestimmung des
+                             Polarisationszustandes~\cite{skriptlaser}.}
     \label{fig:polaufbau}
 \end{figure}
 
@@ -386,7 +508,8 @@ Polarisationsprismas und der Photodiode zu vermessen (siehe
 Abb.~\ref{fig:polaufbau}).
 
 \subsection{Messdaten und Auswertung}
-Für den Pilotlaser ergibt sich nach Bereinigung der Messwerte um den Wert der Leerlaufverstärkung von $0.09$ folgendes.
+Für den Pilotlaser ergibt sich nach Bereinigung der Messwerte um den Wert der
+Leerlaufverstärkung von $0.09$ folgendes.
 
 \newcommand{\PolPlot}[2]
 {
@@ -424,14 +547,15 @@ Offensichtlich ist der Pilotlaser also in sehr guter Näherung unpolarisiert.
 Keine Polarisationsrichtung geht aus Abb.~\ref{fig:polpilot} als bevorzugt
 hervor.
 
-Für den Experimentierlaser ergibt sich hingegen nach Bereinigung der Messwerte um den Wert der Leerlaufverstärkung von $0.09$ folgendes.
+Für den Experimentierlaser ergibt sich hingegen nach Bereinigung der Messwerte
+um den Wert der Leerlaufverstärkung von $0.09$ folgendes.
 
 \PolPlot{polex}{Experimentier}
 
 Hier stellt es sich anders als beim Pilotlaser dar. Der Experimentierlaser zeigt
 deutlich eine bevorzugte Polarisationsrichtung, emittiert also linear
 polarisiertes Licht. Dies wurde auf Grund der \textsc{Brewster}-Fenster auch
-nicht anders erwartet (siehe Abschnitt~\ref{cha:brewster}). 
+nicht anders erwartet. 
 
 \section{Strahlprofil}
 \subsection{Versuchsdurchführung}
@@ -451,7 +575,10 @@ Ergebnisse mit den theoretischen Berechnungen nach der \textsc{Gauß}schen
 Theorie zu vergleichen.
 
 \subsection{Messdaten und Auswertung}
-Im Folgenden sind die für die verschiedenen Spiegelabstände erhaltenen Messergebnisse tabellarisch und graphisch dargestellt. Die Graphen wurden zusätzlich jeweils mit einer die theoretische Vorhersage der \textsc{Gauß}schen Theorie wiedergebenden Kurve versehen.
+Im Folgenden sind die für die verschiedenen Spiegelabstände erhaltenen
+Messergebnisse tabellarisch und graphisch dargestellt. Die Graphen wurden
+zusätzlich jeweils mit einer die theoretische Vorhersage der \textsc{Gauß}schen
+Theorie wiedergebenden Kurve versehen.
 
 \foreach \x in \Laengen {
 \subsubsection*{Strahlprofil für eine Resonatorlänge von $\unit[\x]{cm}$}
@@ -504,7 +631,7 @@ Intensität des Strahls auf $\frac{1}{e}$ der Amplitude der Achse abgefallen ist
 (Strahlquerschnitt hat {Gauß}-Profil). Offensichtlich wird also nicht erwartet,
 dass die Absolutwerte für $w(z)$ übereinstimmen. Es wird nur erwartet, dass die
 Entwicklung des Strahlradius $w(z)$ mit $z$ in Messung und Theorie korreliert
-ist. Dies ist im Rahmen der Messgenauigkeit in der Tat erfüllt. 
+ist, also ein konstanter Faktor $c$ gefunden werden kann so, dass $c \ w(z)$ das Messergebnis reproduziert. Dies ist im Rahmen der Messgenauigkeit in der Tat erfüllt. 
 
 Die Divergenz des Strahls geht deutlich aus den Graphen hervor. In der Tat liegt
 die Strahltaille am Ort des planen Spiegels. Dies entspricht beim symmetrischen
@@ -526,7 +653,7 @@ Licht erreicht somit den Laser nicht.
 
 Im vorliegenden Versuch ist die optische Diode aus einem Polarisator
 (\textsc{Nicol}sches Prisma) und einer $\frac{\lambda}{4}$-Platte aus Glimmer
-aufgebaut (siehe Abb. \ref{fig:diode}).
+aufgebaut (siehe Abb.~\ref{fig:diode}).
 
 \begin{figure}[H]
     \centering
@@ -548,8 +675,7 @@ $\frac{\pi}{2}$ durch die $\frac{\lambda}{4}$-Platte nun senkrecht auf dem des
 hinlaufenden Strahls. Der rücklaufende Strahl kann somit den Polarisator nicht
 passieren, wie gewünscht wird eine derartige Rückkopplung also unterbunden.
 
-Für den Versuch wird nun folgender Aufbau realisiert.
-
+Für den Versuch wird nun folgender Aufbau realisiert:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/aufbaudiode}
@@ -560,9 +686,9 @@ Für den Versuch wird nun folgender Aufbau realisiert.
 \subsection{Versuchsdurchführung}
 Um eine Rückkopplung durch in den Laser zurücklaufendes Licht zu verhindern und
 somit das Laserverhalten zu optimieren, wird nun eine optische Diode, wie in
-Abbildung \ref{fig:aufbaudiode} dargestellt, aufgebaut, welche Licht nur in einer
+Abbildung~\ref{fig:aufbaudiode} dargestellt, aufgebaut, welche Licht nur in einer
 Richtung passieren lässt. Zur Einstellung der Komponenten wird nun wie folgt
-vorgegangen.
+vorgegangen:
 
 Zunächst wird der Polarisator so eingestellt, dass der Laserstrahl optimal
 durchgelassen wird, indem nach Einstellung des Minimums das Prisma um $90^\circ$
@@ -577,10 +703,11 @@ Dies wurde von uns sorgfältig ausgeführt.
 \section{Optischer Spektrumsanalysator}
 \subsection{Versuchsaufbau}
 Es ist bekannt, dass ein Laser in verschiedenen Moden schwingen kann. Welche
-Moden dabei angeregt werden, ist u.\ a.\ von der Justierung des Resonators
+Moden dabei angeregt werden, ist unter anderem von der Justierung des Resonators
 abhängig. Im Folgenden wird nun untersucht, auf welchen Frequenzen der
 aufgebaute Experimentierlaser schwingt. Hierzu wird der Ausgangsstrahl in einem
-optischen Spektrumsanalysator (einem konfokalen Resonator, dessen Länge mit einem Piezoelement elektronisch moduliert werden kann) untersucht (Aufbau siehe
+optischen Spektrumsanalysator (einem konfokalen Resonator, dessen Länge mit
+einem Piezoelement elektronisch moduliert werden kann) untersucht (Aufbau siehe
 Abb.~\ref{fig:aufbauspektrum}).
 
 \begin{figure}[H]
@@ -589,15 +716,6 @@ Abb.~\ref{fig:aufbauspektrum}).
     \caption[Diode]{Aufbau der optischen Diode~\cite{skriptlaser}.}
     \label{fig:aufbauspektrum}
 \end{figure}
-
-Die Moden $q$, $n$, $m$ haben die Eigenfrequenzen:
-
-\begin{align}
-\nu_{qmn} = \frac{c}{2 L} \left( q + \frac{m+n+1}{2} \right)
-\end{align}
-
-Der Abstand zwischen zwei benachbarten Transversalmoden ergibt sich somit zu
-$\Delta \nu = \frac{c}{4 L}$. Dies nennt man Dispersionsgebiet.
 
 Ist die Laserfrequenz $\nu_{Laser}$ in Resonanz mit dem externen Resonator, gilt
 also $\nu_{Laser} = \nu_{qmn}$, so wird die Transmission des Resonators maximal.
@@ -616,22 +734,23 @@ geleitet.
 
 \subsection{Versuchsdurchführung}
 Zu Beginn ist der externe Analysator so zu justieren, dass seine optische Achse
-mit der Strahlachse des Lasers zusammenfällt. Der Abstand der beiden i.\ a.\
-windschiefen Geraden wird dabei im Wesentlichen durch Kippung des zweiten
-Planspiegels verringert, der Winkel zwischen den beiden Achsen hingegen v.\a.\
-durch die Kippung des konfokalen Interferometers.  Nach erfolgter Grobjustage
-wird selbige kontrolliert, indem man die Wechselspannung am Piezoelement so
-einstellt, dass mindestens ein Dispersionsgebiet durchfahren wird, und das
-Muster der durchgelassenen Intensität auf einem Papier beobachtet. Es sollten
-zwei Punkte zu sehen sein. Der eine markiert die Fortsetzung des Laserstrahles,
-der andere den am hinteren und vorderen Interferometerspiegel reflektierten
-Strahl. Diese beiden Punkte sind nun zur Deckung zu bringen (siehe auch Abb.
-\ref{fig:dejust}).
+mit der Strahlachse des Lasers zusammenfällt. Der Abstand der beiden im
+Allgemeinen windschiefen Geraden wird dabei im Wesentlichen durch Kippung des
+zweiten Planspiegels verringert, der Winkel zwischen den beiden Achsen hingegen
+vor allem durch die Kippung des konfokalen Interferometers.  Nach erfolgter
+Grobjustage wird selbige kontrolliert, indem man die Wechselspannung am
+Piezoelement so einstellt, dass mindestens ein Dispersionsgebiet durchfahren
+wird, und das Muster der durchgelassenen Intensität auf einem Papier beobachtet.
+Es sollten zwei Punkte zu sehen sein. Der eine markiert die Fortsetzung des
+Laserstrahles, der andere den am hinteren und vorderen Interferometerspiegel
+reflektierten Strahl. Diese beiden Punkte sind nun zur Deckung zu bringen (siehe
+auch Abb.~\ref{fig:dejust}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/dejust}
-    \caption[Diode]{Strahlengang im externen Resonator bei Dejustierung~\cite{skriptlaser}.}
+    \caption[Diode]{Strahlengang im externen Resonator bei
+                    Dejustierung~\cite{skriptlaser}.}
     \label{fig:dejust}
 \end{figure}
 
@@ -642,10 +761,10 @@ maximale Intensität, was mit minimaler Breite identisch ist, durch kleine
 Kippungen am Interferometer justiert. Das nun zu beobachtende Frequenzspektrum
 wiederholt sich nach jeweils einem Dispersionsgebiet periodisch. Man stelle die
 Piezospannungsamplitude und die Steuerspannung für das Oszilloskop so ein, dass
-etwas mehr als ein Dispersionsgebiet auf dem Bildschirm erscheint und lese
-die geometrische Breite des Dispersionsgebietes ab. Die spektrale Breite des
+etwas mehr als ein Dispersionsgebiet auf dem Bildschirm erscheint und lese die
+geometrische Breite des Dispersionsgebietes ab. Die spektrale Breite des
 Dispersionsgebietes ergibt sich aus den geometrischen Abmessungen des Resonators
-(hier: 1.5 GHz).
+(hier: $\unit[1.5]{GHz}$).
 
 Der Laser kann sehr unterschiedliche Spektren aufweisen. Im einfachsten Fall
 schwingt er in einem Mode, es ist also nur eine Linie pro Dispersionsgebiet zu
@@ -654,7 +773,8 @@ verschiebt sich die Frequenz dieser Linie mit der Zeit. Es ist aber auch
 möglich, dass mehrere Moden anschwingen.
 
 Es werden nun der Frequenzabstand zweier Moden in Einheiten des
-Interferometer-Dispersionsgebietes gemessen. Anschließend kann aus diesem Abstand der Moden des Lasers die absolute Frequenz bestimmt werden.
+Interferometer-Dispersionsgebietes gemessen. Anschließend kann aus diesem
+Abstand der Moden des Lasers die absolute Frequenz bestimmt werden.
 
 \subsection{Messwerte und Auswertung}
 Wir konnten bei allen Laserresonatorlängen auf dem Oszilloskop stets mehrere
@@ -665,23 +785,22 @@ waren teilweise drastische Schwankungen in Modenposition, -intensität und
 -anzahl zu beobachten (Modenkonkurrenz). Alle Veränderungen traten sehr
 unregelmäßig auf. Im Wesentlichen ergaben sich die folgenden
 Oszillographenbilder:
-
 \begin{figure}[H]
     \begin{floatrow}[3]
         \ffigbox{}{
-            \includegraphics[width=0.1\textwidth]{grafiken/moden1}
+            \includegraphics[height=0.2\textwidth]{grafiken/moden1}
             \caption[Dispersionsgebiet]
                 {\scriptsize Dispersionsgebiet mit Moden bei $L=\unit[51]{cm}$.}
             \label{fig:moden1}
         }
         \ffigbox{}{
-            \includegraphics[width=0.1\textwidth]{grafiken/moden2}
+            \includegraphics[height=0.2\textwidth]{grafiken/moden2}
             \caption[Dispersionsgebiet]
                 {\scriptsize Dispersionsgebiet mit Moden bei $L=\unit[65]{cm}$.}
             \label{fig:moden2}
         }
         \ffigbox{}{
-            \includegraphics[width=0.1\textwidth]{grafiken/moden3}
+            \includegraphics[height=0.2\textwidth]{grafiken/moden3}
             \caption[Dispersionsgebiet]
                 {\scriptsize Dispersionsgebiet mit Moden bei $L=\unit[77]{cm}$.}
             \label{fig:moden3}
@@ -696,7 +815,7 @@ Schwankungen sollte die Ursache dafür sein, dass dies in unserer Messung nicht
 bestätigt werden konnte.
 
 Es wurden folgende Messwerte aufgenommen, wobei $\Delta L = \unit[1]{cm}$ und
-$\Delta B = \unit[0.1]{\text{Kästchen}}$.
+$\Delta B = \unit[0.1]{\text{Kästchen}}$ betragen.
 
 \begin{table}[H]
     \centering
@@ -716,11 +835,9 @@ Die Unabhängigkeit von $B$ von der Laserresonatorlänge wurde, wie beschrieben
 erwartet, da $B$ nur von den Abmessungen des externen Resonators beeinflusst
 wird.
 
-
 Der Frequenzabstand $\Delta\nu$ der einzelnen Moden ergibt sich nun aus:
-
 \begin{align}
-\frac{d}{B} = \frac{\Delta\nu}{\nu_{Disp}}
+    \frac{d}{B} = \frac{\Delta\nu}{\nu_{Disp}}
 \end{align}
 
 Wobei $\nu_{Disp} = \unit[1.5]{GHz}$ die bekannte Frequenzbreite des
@@ -730,16 +847,24 @@ gleich gewählt wurden. Somit ergibt sich:
 
 \begin{table}[H]
     \centering
-    %\pgfplotstabletypesetfile[
-    %        columns/0/.style={column name={$L/\unit{cm}$}},
-    %        columns/4/.style={column name={$\Delta\nu/\unit{MHz}$}},
-    %        columns/5/.style={column name={$\Delta(\Delta\nu)/\unit{MHz}$}},
-    %        columns={0,4,5}
-    %    ]
-    %    {data/ana.txt}
-    \caption{Messwerte und Ergebnisse}
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$L/\unit{cm}$}},
+            columns/4/.style={column name={$\Delta\nu/\unit{MHz}$}},
+            columns/5/.style={column name={$\Delta(\Delta\nu)/\unit{MHz}$}},
+            columns={0,4,5}
+        ]
+        {data/ana.txt}
+    \caption{Ergebnisse}
     \label{fig:ana2}
 \end{table}
+
+Wobei der Fehler $\Delta(\Delta\nu)$ nach \textsc{Gauß} über folgende Relation
+errechnet wird.
+
+\begin{align}
+    \Delta(\Delta\nu) = \nu_{Disp} \sqrt{\left( \frac{\Delta d}{B} \right)^2
+                      + \left( \frac{d}{B^2} \ \Delta B \right)^2}
+\end{align}
 
 Die regellose Änderung der Moden ist dabei als hauptverantwortlich für die
 Ungenauigkeit der Frequenzbestimmung anzusehen. Schließlich konnten die
@@ -753,7 +878,8 @@ wird folgender Aufbau realisiert.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/hf}
-    \caption[Diode]{Messung des Modenabstandes mittels Frequenzmischung~\cite{skriptlaser}.}
+    \caption[Diode]{Messung des Modenabstandes mittels
+                    Frequenzmischung~\cite{skriptlaser}.}
     \label{fig:hf}
 \end{figure}
 
@@ -762,10 +888,10 @@ Wegen der kleinen Fläche der Photodiode wird der Laserstrahl mit einer Linse auf
 selbige fokussiert. Dabei wird der Aufbau so vollzogen, dass der optische
 Spektrumanalysator nicht abgebaut werden muss. 
 
-Das Diodensignal wird wie in Abbildung \ref{fig:hf} über einen Verstärker in
+Das Diodensignal wird wie in Abbildung~\ref{fig:hf} über einen Verstärker in
 einen Mischer gegeben, wo es zu dem Signal eines Hochfrequenzgenerators
 ($\nu_{HF}$) addiert wird. Am Ausgang des Mischers erhält man dann ein Signal
-mit der Differenzfrequenz $\nu = \left|\omega_1 - \omega_2 \right| - \nu_{HF}$).
+mit der Differenzfrequenz $\nu = \left|\omega_1 - \omega_2 \right| - \nu_{HF}$.
 Dieses Signal wird am Oszilloskop betrachtet (Bandbreite des Oszilloskops:
 $\unit[35]{MHz}$). Sobald das Diodensignal und die Frequenz des Generators um
 weniger als diese $\unit[35]{MHz}$ abweichen, ist daher eine Sinuskurve mit der
@@ -780,8 +906,18 @@ vergleichen. Aus diesen Ergebnissen und der Entfernung der Laserspiegel kann
 dann noch die Lichtgeschwindigkeit $c$ ermittelt werden.
 
 \subsection{Messwerte und Auswertung}
+Im Rahmen der Messgenauigkeit stimmen die auf diese Weise gemessenen Werte
+(siehe Tabelle~\ref{tab:lichtgeschw}) für $\Delta\nu$ grobwegs mit den zuvor
+bestimmten überein. Die letzten beiden Werte stimmen im Rahmen des Messfehlers
+überein, nur beim ersten Wert ist eine größere Abweichung festzustellen. Somit
+stimmen jedoch befriedigenderweise zwei von drei Werten im Rahmen der Messfehler
+überein. Unsicherheiten ergaben sich bei der ersten Messung über die regellose
+Veränderung des Modenspektrums. Bei dieser Messung ist die Frequenzanzeige ein
+möglicher Unsicherheitsfaktor. Die nun benutzte Methode scheint dennoch sehr
+viel genauer zu sein. Der statistische Fehler der Frequenzanzeige ist mit
+weniger als $\unit[10]{kH}$ jedenfalls völlig zu vernachlässigen.
 
-Es gilt:
+Es kann nun die Lichtgeschwindigkeit bestimmt werden. Es gilt:
 \begin{align}
     c &= 4 \ L \ \Delta \nu \\
     \Delta c &= 4 \ \sqrt{\left(L \ \Delta(\Delta\nu)\right)^2+\left(\Delta
@@ -791,8 +927,7 @@ Es gilt:
 \end{align}
 
 Mit unseren Messwerten für die Längen, für welche wir einen Fehler von
-$\unit[1]{cm}$ annehmen, erhalten wir folgende Werte.
-
+$\unit[1]{cm}$ annehmen, erhalten wir folgende Werte:
 \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
@@ -807,7 +942,6 @@ $\unit[1]{cm}$ annehmen, erhalten wir folgende Werte.
 
 Daraus erhalten wir als Ergebnis für die Lichtgeschwindigkeit $c$ als gewichtetes
 Mittel dieser Werte:
-
 \begin{align}
     c = \unit[(299625\pm 265)]{\frac{km}{s}}
 \end{align}
@@ -817,12 +951,45 @@ $c_0 = \unit[299792.458]{\frac{km}{s}}$ überein. Die Abweichung der
 Lichtgeschwindigkeit in Luft $c_L$ von $c_0$ ist dabei etwa eine Größenordnung
 kleiner als unsere Fehlergrenzen.
 
-Offenbar ergibt sich jedoch für die einzelnen Werte der Lichtgeschwindigkeit $c$ eine nicht unerhebliche Abweichung vom Literaturwert der Vakkuumlichtgeschwindigkeit. Dies ist durch eine möglicherweise doch nicht so genau bekannte Hochfrequenz des Hochfrequenzgenerators zu erklären. Ferner nimmt der Fehler für eine steigende Anzahl an Messwerten ab. Werden diese dann, wie bei uns geschehen, noch gewichtet, so ergibt sich der deutlich bessere Wert für $c$, wie er bei der Betrachtung aller Messwerte errechnet wurde.
+Offenbar ergibt sich jedoch für die einzelnen Werte der Lichtgeschwindigkeit $c$
+eine nicht unerhebliche Abweichung vom Literaturwert der
+Vakkuumlichtgeschwindigkeit. Dies ist durch eine möglicherweise doch nicht so
+genau bekannte Hochfrequenz des Hochfrequenzgenerators zu erklären. Ferner nimmt
+der Fehler für eine steigende Anzahl an Messwerten ab. Werden diese dann, wie
+bei uns geschehen, noch gewichtet, so ergibt sich der deutlich bessere Wert für
+$c$, wie er bei der Betrachtung aller Messwerte errechnet wurde.
 
-Absichtlich wurde $c$ durch gewichtetes Mittel der einzelnen Werte bestimmt und nicht via Geradenfit, da letzteres bei nur drei Messwerten wenig sinnvoll erschien.
+Absichtlich wurde $c$ durch gewichtetes Mittel der einzelnen Werte bestimmt und
+nicht via Geradenfit, da letzteres bei nur drei Messwerten wenig sinnvoll
+erschien.
 
 \section{Zusammenfassung}
+Für die Wellenlänge des Pilotlasers (Helium-Neon-Laser)) erhält man $\lambda =
+\unit[(633.79 \pm 0.32)]{nm}$, was bis auf eine Abweichung von weniger als $0.2
+\%$ dem Literaturwert $\lambda = \unit[632.8]{nm}$ entspricht.
 
+Während der Pilotlaser in guter Näherung unpolarisierte Strahlung emittiert,
+zeigt der Experimentierlaser auf Grund der eingebauten \textsc{Brewster}-Fenster
+eine ausgeprägte Polarisation.
+
+Der gemessene Strahlradius $w(z)$ stimmt bis auf einen konstanten Faktor im
+Rahmen der Messfehler mit der Theorie überein. Ferner geht die Divergenz des
+Strahls deutlich aus den Graphen hervor und die Strahltaille liegt in der Tat am
+Ort des planen Spiegels.
+
+Für die Modenabstände ergeben sich wie erwartet mittels des Spektrum-Analysators
+mit steigender Laserresonatorlänge $L$ sinkende Werte im
+$\unit[100]{MHz}$-Bereich.
+
+Die mit Hilfe der optischen Schwebung bestimmten Werte der Modenabstände weisen
+eine wesentlich bessere Genauigkeit auf und stimmen mit den zuvor bestimmten
+Werten grobwegs überein.
+
+Der ermittelte Wert der Lichtgeschwindigkeit konnte mit $c = \unit[(299625\pm
+265)]{\frac{km}{s}}$ erstaunlich gut bestimmt werden, was jedoch auch auf das
+vom im Skript vorgeschlagenen Verfahren abweichende genutzte Verfahren
+zurückzuführen ist. Der Wert dürfte jedoch wohl etwas zu gut sein, schließlich
+wurden zu wenige Messungen gemacht.
 
 \begin{appendix}
 \Literatur{quellen}
