@@ -3,6 +3,8 @@
 \newcommand{\versuch}{Optisches Pumpen}
 \newcommand{\nummer}{P404}
 
+\input{data/fit_daten.tex}
+
 \begin{document}
 
 \section{Einleitung}
@@ -10,24 +12,44 @@ Optisches Pumpen beschreibt das zielgerichtete Umbesetzen atomarer Niveaus mit
 Hilfe elektromagnetischer Felder geeigneter Frequenz. Die durch optische
 Spektroskopie nicht erreichbaren Übergänge können auf diese Weise bequem
 beobachtet werden. Dieses Verfahren eignet sich somit zur Untersuchung der
-\textsc\{Zeeman\}-Aufspaltungen der Hyperfeinstruktur und zur Bestimmung der
+\textsc{Zeeman}-Aufspaltungen der Hyperfeinstruktur und zur Bestimmung der
 g-Faktoren und somit des Kernspins. Auch das Ausmessen sehr kleiner magnetischer
 Felder ist möglich.
 
 \section{Theorie}
 \subsection{Atomphysikalische Grundlagen}
+\subsubsection{Energieniveaus von Alkalimetallen}
 
-\subsubsection*{Energieniveaus von Alkalimetallen}
+\subsubsection{Auswahlregeln}
 
-\subsubsection*{Auswahlregeln}
+\subsubsection{Spektrumstruktur}
 
-\subsubsection*{Spektrumstruktur}
-
-\subsubsection*{Linienbreiten}
+\subsubsection{Linienbreiten}
 
 \subsection{Erzeugung und Eigenschaften polarisierten Lichtes}
 
-\subsection{Interferenzfilter}
+\subsection{Optische Elemente}
+\subsubsection{Vielstrahl-Interferenzfilter}
+Das hier verwendete Vielstrahl-Interferenzfilter besteht aus zwei planparallelen
+Glasplatten mit dazwischen befindlichem Luftspalt, welcher ein oder zwei
+Wellenlängen breit ist.
+...
+
+\subsubsection{$\frac{\lambda}{4}$-Platte}
+\label{cha:platte}
+Eine $\frac{\lambda}{4}$-Platte kann zur Erzeugung zirkular polarisierten
+Lichtes eingesetzt werden. Entscheidend hierfür ist, dass im Kristall zwei
+Achsen unterschiedlicher Brechungsindizes existieren. Trifft eine linear
+polarisierte Welle auf einen solchen Kristall, so wird der Anteil in x-Richtung
+das Material beispielsweise mit einer geringeren Geschwindigkeit durchlaufen als
+der senkrecht dazu stehende Anteil. Auf diese Weise kommt es zu einer
+Phasenverschiebung. In Abhängigkeit von der Wellenlänge erreicht man dabei für
+eine geeignete Dicke des Plättchens gerade eine Phasenverschiebung der beiden
+Komponenten von $\frac{\lambda}{4}$. Für eine in einem Winkel von $45 \circ$ zu
+den Achsen der $\frac{\lambda}{4}$-Platte stehende Polarisationsachse des
+einfallenden linear polarisierten Lichtes erhält man zirkular polarisiertes
+Licht. Für allgemeine Wahl des Winkels wird elliptisch polarisiertes Licht
+erzeugt.
 
 \subsection{Photonennachweis, Photodioden}
 
@@ -46,201 +68,207 @@ eines Strahlungsfeldes mit Atomen wurde erfolgreich gelesen.
 
 Die Absorptionsrate $W_{abs}$ eines Atoms ist gegeben durch ($\rho$: spektrale
 Strahlungsenergiedichte, $B$: \textsc{Einstein}-Koeffizient für die Absorption):
+
 \begin{align}
-  W_{abs} = B \rho
+    W_{abs} = B \rho
 \end{align}
 
 Weiter gilt ($\lambda$: Wellenlänge, $h$: \textsc{Planck}sches Wirkungsquantum,
 $\tau$: Lebensdauer des Niveaus):
+
 \begin{align}
-  B = \frac{\lambda^3}{8 \pi h\tau}
+    B = \frac{\lambda^3}{8 \pi h\tau}
 \end{align}
 
-Sowie ($S$: \textsc{Poynting}-Vektor, $c$: Lichtgeschwindigkeit,
-$\nu_D$: Dopplerverbreiterung):
+Sowie ($S$: \textsc{Poynting}-Vektor, $c$: Lichtgeschwindigkeit, $\nu_D$:
+Dopplerverbreiterung):
+
 \begin{align}
-  \rho = \frac{S}{c \nu_D}
+    \rho = \frac{S}{c \ \nu_D}
 \end{align}
 
 \subsection*{Aufgabe (b)}
 \subsubsection*{Herleitung des linearen Absorptionskoeffizienten $\kappa$}
 Nach dem \textsc{Lambert-Beer}schen-Gesetz ergibt sich die Abschwächung der
-Lichtintensität $I$ beim Durchgang durch ein Medium allgemein zu
-$\mathrm{d}I = - \kappa I \mathrm{d}s$, wobei $\kappa$ den sogenannten linearen
-Absorptionskoeffizienten angibt. Die Gleichung lässt sich auch in einer
-Energiebetrachtung aufstellen. Es ergibt sich:
+Lichtintensität $I$ beim Durchgang durch ein Medium allgemein zu $dI = - \kappa
+I ds$, wobei $\kappa$ den sogenannten linearen Absorptionskoeffizienten angibt.
+Die Gleichung lässt sich auch in einer Energiebetrachtung aufstellen. Es ergibt
+sich:
+
 \begin{align}
-  \mathrm{d}E = - \kappa E \mathrm{d}s
+    \mathrm{d}E = - \kappa \ E \ \mathrm{d}s
 \end{align}
 
 Des Weiteren ergibt sich über die atomare Absorptionsrate folgendes:
+
 \begin{align}
-  \mathrm{d}E = - h \nu W_{abs} \mathrm{d}N
+    \mathrm{d}E = - h \ \nu \ W_{abs} \ \mathrm{d}N
 \end{align}
 
-Es folgt nach Gleichsetzen und Einsetzen der Relation $E = S A$, mit
-$S = \rho c \nu_D$, sowie $\mathrm{d}V = A \mathrm{d}s$:
+Es folgt nach Gleichsetzen und Einsetzen der Relation $E = S \ A$, mit $S = \rho
+\ c \ \nu_D$, sowie $\mathrm{d}V = A \ \mathrm{d}s$:
+
 \begin{align}
-  \kappa \rho c \nu_D \mathrm{d}V = h \nu W_{abs} \mathrm{d}N
+    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V = h \ \nu \ W_{abs} \ \mathrm{d}N
 \end{align}
 
-Über $W = B \rho$ und $B = \frac{\lambda^3}{8 \pi h\tau}$ ergibt sich
+Über $W = B \ \rho$ und $B = \frac{\lambda^3}{8 \pi h \tau}$ ergibt sich
 schließlich in der Tat das gewünschte Ergebnis.
 
 \begin{align*}
-\kappa \rho c \nu_D \mathrm{d}V &= h \nu W_{abs} \mathrm{d}N  \\
-\kappa \rho c \nu_D \mathrm{d}V
-            &= h \nu \frac{\lambda^3}{8 \pi h\tau} \rho \mathrm{d}N \\
-\kappa  &= \frac{\lambda^3 h \nu}{8 \pi h\tau c \nu_D} \frac{dN}{dV} \\
-\kappa  &= \frac{\lambda^2}{8 \pi \tau \nu_D} \frac{\mathrm{d}N}{\mathrm{d}V}
+    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V &= h \ \nu  \ W_{abs} \ \mathrm{d}N \\
+    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V &= h \ \nu \ \frac{\lambda^3}{8 \pi
+        h\tau} \ \rho \ \mathrm{d}N \\
+    \kappa  &= \frac{\lambda^3 \ h \ \nu}{8 \ \pi \ h \ \tau \ c \ \nu_D}
+        \frac{\mathrm{d}N}{\mathrm{d}V} \\
+    \kappa  &= \frac{\lambda^2}{8 \ \pi \ \tau \ \nu_D}
+        \frac{\mathrm{d}N}{\mathrm{d}V}
 \end{align*}
 \qed
 
 \subsubsection*{Freie Weglänge der Photonen}
 Die mittlere freie Weglänge $\Lambda$ gibt die Strecke an, nach welcher die
-Intensität auf $\frac{1}{e}$ gefallen ist. Dies entspricht gerade
-$\Lambda = \frac{1}{\kappa}$. Somit gilt:
+Intensität auf $\frac{1}{e}$ gefallen ist. Dies entspricht gerade $\Lambda =
+\frac{1}{\kappa}$. Somit gilt:
+
 \begin{align}
-\Lambda = \frac{1}{\kappa}  = \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N}
+    \Lambda = \frac{1}{\kappa}  = \frac{8 \ \pi \ \tau \ \nu_D}{\lambda^2} \frac{V}{N}
 \end{align}
 
 Zur Bestimmung der freien Weglänge der Photonen berechnen wir zunächst die
-Dopplerbreite der im Versuch verwendeten Spektrallinie der Wellenlänge
-$\lambda = \unit{794,76}[nm]$, welche des Weiteren die Lebensdauer
-$\tau = \unit[2,941 \cdot 10^{-8}]{s}$ besitzt. Es gilt:
+Dopplerbreite der im Versuch verwendeten Spektrallinie der Wellenlänge $\lambda
+= \unit{794.76}[nm]$, welche des Weiteren die Lebensdauer $\tau = \unit[2.941
+\cdot 10^{-8}]{s}$ besitzt. Es gilt:
+
 \begin{align}
-  \nu_D = \nu_0 \sqrt{\frac{k T}{m_{Rb} c^2}}
+    \nu_D = \nu_0 \ \sqrt{\frac{k_B \ T}{m_{\mathrm{Rb}} \ c^2}}
 \end{align}
 
-Mit $m_{Rb} = \unit[85.56]{u} = \unit[1.421 \cdot 10^{-25}]{kg}$,
-$\nu_0 = \frac{c}{\lambda} = \unit[3.77 \cdot 10^14]{Hz}$ und unter der Annahme
-einer mittleren Temperatur von $T = \unit[40]{^\circ C} = \unit[313]{K}$ ergibt
-sich somit für die Dopplerbreite $\nu_D = \unit[2.2 \cdot 10^8]{Hz}$.
+Mit $m_{\mathrm{Rb}} = \unit[85.56]{u} = \unit[1.421 \cdot 10^{-25}]{kg}$,
+$\nu_0 = \frac{c}{\lambda} = \unit[3.77 \cdot 10^{14}]{Hz}$ und unter der
+Annahme einer mittleren Temperatur von $T = \unit[40]{^\circ C} = \unit[313]{K}$
+ergibt sich somit für die Dopplerbreite $\nu_D = \unit[2.2 \cdot 10^8]{Hz}$.
 
-Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B T}{p}$ eine
-weitere nötige Relation. Der Dampfdruck $p$ innerhalb der Messzelle kann dabei
-über die im Skript angegebene Formel $log(p) = - \frac{A}{T} + B$ berechnet
-werden (wobei $A = \unit[4347.11]{K}$ und $B = \unit[7.70]{K}$) und ergibt sich
-zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.
-
+Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B \ T}{p}$
+eine weitere nötige Relation. Der Dampfdruck $p$ innerhalb der Messzelle kann
+dabei über die im Skript angegebene Formel $\log(p) = - \frac{A}{T} + B$
+berechnet werden (wobei $A = \unit[4347.11]{K}$ und $B = \unit[7.70]{K}$) und
+ergibt sich zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.
 Somit ergibt sich insgesamt schließlich:
+
 \begin{align*}
-\Lambda &=& \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N} \\
-        &=& \unit[11.66]{cm}
+    \Lambda &= \frac{8 \ \pi \ \tau \ \nu_D}{\lambda^2} \frac{V}{N} \\
+            &= \unit[11.66]{cm}
 \end{align*}
 
 Die freie Weglänge liegt also in der Größenordnung der Abmessung der Messzelle.
 
 \subsection*{Aufgabe (c)}
-Wir kennen bereits die Relation $S = \rho c \nu_D$ für den
-\textsc{Poynting}-Vektor. Mit dem angegebenen Wert von
-$S = \unit[15]{\frac{\mu W}{cm^2}}$, sowie der bereits berechneten Dopplerbreite
-erhält man die spektrale Leistungsdichte zu
-$\rho = \unit[2.27 \cdot 10^{-18}]{\frac{W s^2}{m^3}}$.
+Wir kennen bereits die Relation $S = \rho \ c \ \nu_D$ für den
+\textsc{Poynting}-Vektor. Mit dem angegebenen Wert von $S = \unit[15]{\frac{\mu
+W}{cm^2}}$, sowie der bereits berechneten Dopplerbreite erhält man die spektrale
+Leistungsdichte zu $\rho = \unit[2.27 \cdot 10^{-18}]{\frac{W \ s^2}{m^3}}$.
+Zur Ermittlung der Anzahl der pro Sekunde absorbierten Photonen setzt man nun das für $\rho$ erhaltene Ergebnis in die Formel für $W_{abs}$ ein. Es ergibt sich:
 
-Zur Ermittlung der Anzahl der pro Sekunde absorbierten Photonen setzt man nun
-das für $\rho$ erhaltene Ergebnis in die Formel für $W_{abs}$ ein. Es ergibt
-sich:
 \begin{align*}
-  W_{abs} &= B \rho \\
-          &= \frac{\lambda^3}{8 \pi h \tau} \rho \\
-          &\approx 2330
+W_{abs} &= B \ \rho \\
+        &= \frac{\lambda^3}{8 \ \pi \ h \ \tau} \rho \\
+        &\approx 2330
 \end{align*}
 
-Im Mittel werden also $\unit[2330]{\frac{Photonen}{s}}$ absorbiert.
+Im Mittel werden also $\unit[2330]{\frac{\text{Photonen}}{s}}$ absorbiert.
 
 \subsection*{Aufgabe (d)}
 Für Rb-Rb-Stöße allein ergibt sich mit dem gaskinetischen Querschnitt
-$\sigma_{Rb} = \unit[5.8 \cdot 10^{-19}]{m^2}$ und der bereits berechneten
+$\sigma_{\mathrm{Rb}} = \unit[5.8 \cdot 10^{-19}]{m^2}$ und der bereits berechneten
 Teilchendichte $n = \frac{N}{V}$ die mittlere freie Weglänge zu:
 
 \begin{align*}
-  \Lambda_{Rb} &= \frac{1}{n \sigma_{Rb}} \\
-               &= \unit[78.15]{m}
+    \Lambda_{\mathrm{Rb}} &= \frac{1}{n \ \sigma_{\mathrm{Rb}}} \\
+                          &= \unit[78.15]{m}
 \end{align*}
 
 Mit Hilfe der mittleren Geschwindigkeit $\langle v \rangle$ der Rubidiumatome
 kann nun die Anzahl der Wandstöße berechnet werden.
 
 \begin{align*}
-  \langle v \rangle &= \sqrt{\frac{8 k_B T}{\pi m_Rb}} \\
-                    &= \unit[278.8]{\frac{m}{s}}
+    \langle v \rangle &= \sqrt{\frac{8 \ k_B \ T}{\pi \ m_{\mathrm{Rb}}}} \\
+                      &= \unit[278.8]{\frac{m}{s}}
 \end{align*}
 
 Es ergibt sich somit, dass bei einer Kolbengröße von etwa \unit[5]{cm} ein Atom
-ungefähr $5500$ Wandstöße pro Sekunde erleidet.
+ungefähr 5500 Wandstöße pro Sekunde erleidet.
 
 \subsection*{Aufgabe (e)}
 Auch der Abschnitt über die Zugabe eines Puffergases wurde erfolgreich gelesen.
 
 \subsection*{Aufgabe (f)}
 Wir berechnen nun die Diffusionszeit $\tau_D$ und die freie Weglänge $\Lambda$
-bei vorhandenem Puffergas, welches hier durch Helium repräsentiert wird. Für
-die Diffusionszeit gilt:
+bei vorhandenem Puffergas, welches hier durch Helium repräsentiert wird. Für die
+Diffusionszeit gilt:
+
 \begin{align}
-  \tau_D = \frac{d^2}{6 D_0}
+    \tau_D = \frac{d^2}{6 D_0}
 \end{align}
 
-Wobei die Diffusionskonstante von Helium durch
-$D_0 = \unit[0.54]{\frac{cm^2}{s \unit[101325]{Pa}}}$ gegeben ist. Bei einer
-Dicke von $d=\unit[5]{cm}$ und einem Druck von
-$p = \unit[1]{mbar} = \unit[100]{Pa}$ ergibt sich dadurch schließlich
-$\tau_D = \unit[7.6]{ms}$.
+Wobei die Diffusionskonstante von Helium durch $D_0 =
+\unit[0.54]{\frac{cm^2}{\unit[101325]{Pa} \ s}}$ gegeben ist. Bei einer Dicke
+von $d=\unit[5]{cm}$ und einem Druck von $p = \unit[1]{mbar} = \unit[100]{Pa}$
+ergibt sich dadurch schließlich $\tau_D = \unit[7.6]{ms}$.
 
 Als die freie Weglänge wird hier die Strecke zwischen zwei depolarisierenden
-Stößen von Rubidium und Helium (Puffergas) bezeichnet. Man erhält für
-$\Lambda_{\mathrm{depol}} = \frac{1}{n \sigma}$ bei einer Teilchendichte von
-$n = \frac{p}{k_B T} = 2.3 \cdot 10^{22}$ dann $\Lambda_{\mathrm{depol}}
-\approx \unit[700]{km}$.
+Stößen von Rb und He (Puffergas) bezeichnet. Man erhält für $\Lambda_{depol} =
+\frac{1}{n \sigma}$ bei einer Teilchendichte von $n = \frac{p}{k_B T} = 2.3
+\cdot 10^{22}$ dann $\Lambda_{\text{depol}} \approx \unit[700]{km}$.
 
-Zur Berechnung der Zeitdifferenz $\tau_{\mathrm{depol}}$ zwischen zwei
-derartigen Stößen, muss zunächst die Relativgeschwindigkeit zwischen Helium-
-und Rubidiumatomen bestimmt werden.
+Zur Berechnung der Zeitdifferenz $\tau_{\text{depol}}$ zwischen zwei derartigen
+Stößen, muss zunächst die Relativgeschwindigkeit zwischen Helium- und
+Rubidiumatomen bestimmt werden.
 
 \begin{align}
-  \langle v_{rel} \rangle = \langle |v_{Rb}-v_{He}| \rangle
+    \langle v_{rel} \rangle = \langle |v_{\mathrm{Rb}}-v_{\mathrm{He}}| \rangle
 \end{align}
 
-Es gilt dabei $\langle v^2 \rangle = \frac{3 k_B T}{m}$ und
-${\langle v \rangle}^2 = \frac{8}{3 \pi} \langle v^2 \rangle$. Nun folgt:
+Es gilt dabei $\langle v^2 \rangle = \frac{3 \ k_B \ T}{m}$ und ${\langle v
+\rangle}^2 = \frac{8}{3 \pi} \langle v^2 \rangle$. Nun folgt:
 
 \begin{align*}
-\langle v_{rel} \rangle &= \langle |v_{Rb}-v_{He}| \rangle \\
-                        &= \sqrt{\frac{8}{3 \pi}}
-                           \sqrt{\langle {|v_{Rb}-v_{He}|}^2 \rangle} \\
-                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb}
-                          - 2 v_{Rb} v_{He}  + v^2_{He} \rangle}\\
-                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle
-                          - 2 \langle v_{Rb} v_{He} \rangle
-                          + \langle v^2_{He}\rangle} \\
-                        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle
-                          - 2 \langle v_{Rb}  \rangle \langle  v_{He} \rangle
-                          + \langle v^2_{He}\rangle} \\
-                        &= \sqrt{{\langle v_{Rb} \rangle}^2
-                          - \frac{3 \pi}{4} \langle v_{Rb}  \rangle
-                            \langle v_{He} \rangle
-                          + {\langle v_{He}\rangle}^2}
+    \langle v_{rel} \rangle &= \langle |v_{\mathrm{Rb}}-v_{\mathrm{He}}| \rangle \\
+        &= \sqrt{\frac{8}{3 \pi}} \sqrt{
+            \langle{|v_{\mathrm{Rb}}-v_{\mathrm{He}}|}^2 \rangle} \\
+        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{\mathrm{Rb}} - 2
+            v_{\mathrm{Rb}} \ v_{\mathrm{He}}  + v^2_{\mathrm{He}} \rangle} \\
+        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle - 2
+            \langle v_{\mathrm{Rb}} \ v_{\mathrm{He}} \rangle + \langle
+            v^2_{\mathrm{He}}\rangle} \\
+        &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{\mathrm{Rb}} \rangle 
+            - 2 \langle v_{\mathrm{Rb}} \rangle \langle v_{\mathrm{He}} \rangle +
+            \langle v^2_{\mathrm{He}}\rangle} \\
+        &= \sqrt{{\langle v_{\mathrm{Rb}} \rangle}^2 - \frac{3 \pi}{4} \langle
+            v_{\mathrm{Rb}} \rangle \langle v_{\mathrm{He}} \rangle + {\langle
+            v_{\mathrm{He}}\rangle}^2}
 \end{align*}
 
 Nach Einsetzen der mittleren Geschwindigkeiten $\langle v \rangle$ für Rb und
-He, erhält man $\langle v_{rel} \rangle \approx \unit[950]{\frac{m}{s}}$.
-Direkt folgt daraus dann $\tau_{\mathrm{depol}} =
-\frac{\Lambda_{depol}}{\langle v_{rel} \rangle} \approx \unit[740]{s}$.
-Offenbar ist es also sehr sinnvoll ein solches Puffergas mit einzubringen.
+He, erhält man $\langle v_{\text{rel}} \rangle \approx \unit[950]{\frac{m}{s}}$.
+Direkt folgt daraus dann $\tau_{\text{depol}} =
+\frac{\Lambda_{\text{depol}}}{\langle v_{\text{rel}} \rangle} \approx
+\unit[740]{s}$.  Offenbar ist es also sehr sinnvoll ein solches Puffergas mit
+einzubringen.
 
 \subsection*{Aufgabe (g)}
 Die natürliche Linienbreite kann aus $\Delta \nu = \frac{1}{2 \pi \tau}$
 bestimmt werden und ergibt sich hier zu $\Delta \nu = \unit[15.9]{Hz}$
 (Lebensdauer des P-Zustandes: $\tau = \unit[10]{ns}$). Die bereits berechnete
 Dopplerverbreiterung beträgt $\Delta \nu_D = \unit[221]{MHz}$. Wir beobachten
-also die dopplerverbreiterte Linie. Sowohl die Hyperfeinstrukturaufspaltung,
-als auch die Zeemanaufspaltung liegen bei diesem Aufbau im MHz-Bereich. Somit
-können mit der dopplerverbreiterten Spektrallinie alle unterschiedlichen
-Niveaus angeregt werden.
-
+also die dopplerverbreiterte Linie. Sowohl die Hyperfeinstrukturaufspaltung, als
+auch die Zeemanaufspaltung liegen bei diesem Aufbau im MHz-Bereich. Somit können
+mit der dopplerverbreiterten Spektrallinie alle unterschiedlichen Niveaus
+angeregt werden.
 
 \section{Versuchsaufbau}
 \label{cha:aufbau}
+In der folgenden Abbildung ist der Versuchsaufbau skizziert.
 
 \begin{figure}[h]
 \centering
@@ -249,18 +277,139 @@ Niveaus angeregt werden.
 \label{fig:aufbau}
 \end{figure}
 
-\section{Versuchsdurchführung}
+Das benötigte Licht wird durch eine hochfrequenzbetriebene Rubidiumdampflampe
+erzeugt, welche im Brennpunkt einer Kollimationslinse $L_1$ steht. Somit wird
+ein in etwa paralleler Strahlgang erzeugt (ebene Wellenfronten), welcher den
+Polarisator $P$, die $\frac{\lambda}{4}$-Platte, das Interferenzfilter $I$ und
+die heizbare Absorptionszelle durchsetzt. Dabei sind Polarisator $P$ und
+$\frac{\lambda}{4}$-Platte so gegeneinander gedreht, dass zirkular polarisiertes
+Licht auf die Absorptionszelle trifft (siehe auch \ref{cha:platte}). Ferner ist
+das Interferenzfilter auf die D1-Linie abgestimmt, lässt also nur diese durch.
+
+Anschließend wird eine Fokussierung auf die Photodiode mittels der zweiten Linse
+$L_2$ vorgenommen. Die Absorptionzelle enthält festes Rubidium in natürlicher
+Zusammensetzung. Die Temperatur der Absorptionszelle ist über ein angebrachtes
+Thermometer digital abzulesen (Genauigkeit $\Delta T = \unit[0.5]{K}$).
+
+Die Absorptionszelle wird von insgesamt fünf Magnetfeldern durchsetzt. So
+erzeugen drei Helmholtzspulen bei Stromfluss parallel zur optischen Achse
+stehende statische Felder $H_0$ und $H_{\parallel}$ sowie ein variables Feld
+$H_{~}$ mit $\unit[50]{Hz}$. Die Stärke der als homogen anzusehenden
+Magnetfelder kann über Potentiometer geregelt werden.
+
+Das Hauptfeld $H_0$ ist dabei für die eigentliche \textsc{Zeeman}-Aufspaltung
+zuständig und wird von dem Modulationsfeld $H_{~}$ überlagert.
+
+Des Weiteren ist mit den Magnetfeldern $H_{\parallel}$ und $H_{\bot}$ eine
+Kompensation von Störfeldern (z.\ B.\ Erdmagnetfeld) möglich. 
+
+Des Weiteren kann noch ein Hochfrequenzfeld $H_{hf}$ überlagert werden, dessen
+Achse orthogonal zr Strahlrichtung steht. Es wird durch einen um die Glaskugel
+gewickelten Draht erzeugt, welche an einem geeichten und regelbaren Meßsender
+angeschlossen ist. Dieses Feld wird zur Induktion bestimmter Übergänge benötigt. 
+
+Auf einem Zweistrahloszillographen werden dann die Spannung an der
+Modulationsfeldspule und das Signal der Photodiode gegeben.
+
+\section{Messung und Kompensation des Erdmagnetfeldes}
+\subsection{Versuchsdurchführung}
+Zunächst soll die Horizontalkomponente des Erdmagnetfeldes bestimmt werden.
+Hierzu wird zunächst wegen der Induktion der Stromkreis des horizontalen Feldes
+$H_{\parallel}$ aufgetrennt. Dieses kann, da es nicht geeicht ist, nicht
+verwendet werden. Ferner stellen wir in der Absorptionszelle eine Temperatur von
+$T=\unit[44]{^\circ C}$ ein.
+
+Nun wird dem geeichten Hauptfeld $H_0$ das Modulationsfeld $H_{\sim}$ mit einer
+Stromstärke von $I_{\sim} = \unit[...]{mA}$ überlagert. Des Weiteren wird das
+Feld $H_{\bot}$ so eingestellt, dass möglichst scharfe Spitzen auf dem
+Oszilloskop abzulesen sind.
+
+Das Magnetfeld wird nun .... 
+
+
+Wurde dies durchgeführt, wird mit Hilfe des horizontalen und des vertikalen
+Kompensationsfeldes das Erdmagnetfeld kompensiert. Diese Konfiguration wird im
+weiteren Verlauf nicht mehr verändert.
+
+
+Der gewonnene Wert ist dann mit dem theoretischen Wert für das Dipolmodell zu
+vergleichen.
+
+
+\subsection{Messdaten und Auswertung}
 
 
 
-\section{Messdaten und Auswertung}
+\section{Pump- und Relaxationszeit}
 
 
-\section{Zusammenfassung}
+
+\section{Bestimmung des Isotopenverhältnisses}
+
+%\begin{figure}[H]
+%    \begin{tikzpicture}
+%        \begin{axis}
+%            %\addplot file {data/hf_daten1.txt};
+%            \foreach \M/\B in \HFPunkteEins;
+%        \end{axis}
+%    \end{tikzpcture}
+%\end{figure}
+
+\section{Bestimmung der \textsc{Landé}-Faktoren und des Kernspins}
+\subsection{g-Faktoren}
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=$I_0$,
+                ylabel=$\nu/\unit{MHz}$,
+                ]
+            \addplot+[only marks, mark=.] plot[domain=50:150]
+                function {'data/g_faktor1.txt' u ($1):(($2+$3+$4)/3)};
+            \addplot+[only marks, mark=.] plot[domain=50:150]
+                function {'data/g_faktor2.txt' u ($1):(($2+$3+$4)/3)};
+            \foreach \M/\B in \GFaktoren
+                \addplot+[mark=none] plot[domain=50:150] function {\M * x + \B};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+Mit Hilfe der Formel
+\begin{align}
+    h\nu &= \Delta E = \left| g_F \mu_B B \right| \\
+    \Leftrightarrow \left| g_F \right| &= \mu_B \mu_0 k_0 \frac{I_0}{\nu}
+\end{align}
+können wir aus den gemessenen Relaxationsfrequenzen bei Variation des Hauptfelds
+$H_0$ die $g_F$-Faktoren der beiden Isotope ($^{85}\text{Rb}$ und
+$^{87}\text{Rb}$) mit einem Geradenfit bestimmen.
 
 \begin{appendix}
 \Literatur{quellen}
+
 \section{Messwerte}
+\subsection{$g$-Faktoren}
+\begin{table}[H]
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$I_0/\unit{mA}$}},
+            columns/1/.style={column name={$f_{50-}/\unit{MHz}$}},
+            columns/2/.style={column name={$f_{100}/\unit{MHz}$}},
+            columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
+        ]
+        {data/g_faktor1.txt}
+    \label{tbl:g_faktor1}
+    \caption{}
+\end{table}
+
+\begin{table}[H]
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$I_0/\unit{mA}$}},
+            columns/1/.style={column name={$f_{50-}/\unit{MHz}$}},
+            columns/2/.style={column name={$f_{100}/\unit{MHz}$}},
+            columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
+        ]
+        {data/g_faktor1.txt}
+    \label{tbl:g_faktor2}
+    \caption{}
+\end{table}
 
 \end{appendix}
 
