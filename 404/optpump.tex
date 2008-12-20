@@ -16,6 +16,11 @@ beobachtet werden. Dieses Verfahren eignet sich somit zur Untersuchung der
 g-Faktoren und somit des Kernspins. Auch das Ausmessen sehr kleiner magnetischer
 Felder ist möglich.
 
+\subsubsection*{Anmerkung}
+\emph{Es wird im Folgenden in Abweichung vom Skript die aktuelle Bezeichnung der
+magnetischen Flussdichte $B$ mit $[B] = \unit{Gs} = 10^{-4} \unit{T}$ zwecks
+besserer Lesbarkeit durchgängig verwendet.}
+
 \section{Theorie}
 \subsection{Atomphysikalische Grundlagen}
 \subsubsection{Energieniveaus von Alkalimetallen}
@@ -271,10 +276,10 @@ angeregt werden.
 In der folgenden Abbildung ist der Versuchsaufbau skizziert.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{grafiken/aufbau}
-\caption[Versuchsaufbau]{Versuchsaufbau zum optischen Pumpen [2].}
-\label{fig:aufbau}
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbau}
+    \caption[Versuchsaufbau]{Versuchsaufbau zum optischen Pumpen.~\cite{skript}.}
+    \label{fig:aufbau}
 \end{figure}
 
 Das benötigte Licht wird durch eine hochfrequenzbetriebene Rubidiumdampflampe
@@ -293,52 +298,106 @@ Thermometer digital abzulesen (Genauigkeit $\Delta T = \unit[0.5]{K}$).
 
 Die Absorptionszelle wird von insgesamt fünf Magnetfeldern durchsetzt. So
 erzeugen drei Helmholtzspulen bei Stromfluss parallel zur optischen Achse
-stehende statische Felder $H_0$ und $H_{\parallel}$ sowie ein variables Feld
-$H_{~}$ mit $\unit[50]{Hz}$. Die Stärke der als homogen anzusehenden
+stehende statische Felder $B_0$ und $B_{\parallel}$ sowie ein variables Feld
+$B_{~}$ mit $\unit[50]{Hz}$. Die Stärke der als homogen anzusehenden
 Magnetfelder kann über Potentiometer geregelt werden.
 
-Das Hauptfeld $H_0$ ist dabei für die eigentliche \textsc{Zeeman}-Aufspaltung
-zuständig und wird von dem Modulationsfeld $H_{~}$ überlagert.
+Das Hauptfeld $B_0$ ist dabei für die eigentliche \textsc{Zeeman}-Aufspaltung
+zuständig und wird von dem Modulationsfeld $B_{~}$ überlagert.
 
-Des Weiteren ist mit den Magnetfeldern $H_{\parallel}$ und $H_{\bot}$ eine
+Des Weiteren ist mit den Magnetfeldern $B_{\parallel}$ und $B_{\bot}$ eine
 Kompensation von Störfeldern (z.\ B.\ Erdmagnetfeld) möglich. 
 
-Des Weiteren kann noch ein Hochfrequenzfeld $H_{hf}$ überlagert werden, dessen
-Achse orthogonal zr Strahlrichtung steht. Es wird durch einen um die Glaskugel
+Ferner kann noch ein Hochfrequenzfeld $B_{hf}$ überlagert werden, dessen
+Achse orthogonal zur Strahlrichtung steht. Es wird durch einen um die Glaskugel
 gewickelten Draht erzeugt, welche an einem geeichten und regelbaren Meßsender
 angeschlossen ist. Dieses Feld wird zur Induktion bestimmter Übergänge benötigt. 
 
-Auf einem Zweistrahloszillographen werden dann die Spannung an der
-Modulationsfeldspule und das Signal der Photodiode gegeben.
+Auf Grund der Empfindlichkeit der Photodiode wird das Licht im Raum gedimmt. Auf
+einem angeschlossenen Oszillographen kann dann eine zur Lichtintensität
+proportionale Spannung gegen die Zeit aufgetragen abgelesen werden.
 
 \section{Messung und Kompensation des Erdmagnetfeldes}
 \subsection{Versuchsdurchführung}
 Zunächst soll die Horizontalkomponente des Erdmagnetfeldes bestimmt werden.
 Hierzu wird zunächst wegen der Induktion der Stromkreis des horizontalen Feldes
-$H_{\parallel}$ aufgetrennt. Dieses kann, da es nicht geeicht ist, nicht
+$B_{\parallel}$ aufgetrennt. Dieses kann, da es nicht geeicht ist, nicht
 verwendet werden. Ferner stellen wir in der Absorptionszelle eine Temperatur von
-$T=\unit[44]{^\circ C}$ ein.
+$T=\unit[(44 \pm 1)]{^\circ C}$ ein.
 
-Nun wird dem geeichten Hauptfeld $H_0$ das Modulationsfeld $H_{\sim}$ mit einer
-Stromstärke von $I_{\sim} = \unit[...]{mA}$ überlagert. Des Weiteren wird das
-Feld $H_{\bot}$ so eingestellt, dass möglichst scharfe Spitzen auf dem
-Oszilloskop abzulesen sind.
+Nun wird dem geeichten Hauptfeld $B_0$ das Modulationsfeld $B_{\sim}$ mit einer
+Stromstärke von $I_{\sim} = \unit[...]{mA}$ überlagert. Des Weiteren wird mit
+dem Feld $B_{\bot}$ die Signalqualität optimiert. Möglichst scharfe Spitzen auf
+dem Oszilloskop sind dabei für $I_{\bot} = \unit[...]{mA}$ abzulesen.
 
-Das Magnetfeld wird nun .... 
+Über Variation von $B_0$ wird nun versucht, das Erdmagnetfeld zu kompensieren.
+Die erfolgte Kompensation ist anhand eines 100-Hz-Signals mit äqudistanten
+Maxima zu erkennen. Es existiert dann wegen $B_ges = 0$ keine
+\textsc{Zeeman}-Aufspaltung.  Über den bekannten Eichfaktor $k_0$ kann nun nach
+Ablesen des Stromes $I_0$ über die Relation $B_0 = k_0 \cdot I_0$ direkt das
+Erdmagnetfeld bestimmt werden. 
 
+Zur Einschätzung der Qualität des Ergebnisses kann nun noch ein Vergleich mit
+dem theoretisch zu berechnenden Wertes nach dem Dipolmodell vorgenommen werden.
+Es gilt:
+\begin{align}
+    B &= \frac{M \cos{\phi}}{R^3}
+\end{align}
 
-Wurde dies durchgeführt, wird mit Hilfe des horizontalen und des vertikalen
+Hierbei ist $M=\unit[7.95 \cdot 10^{25}]{\text{Gs} \ cm^3}$ das magnetische
+Dipolmoment der Erde, $R=\unit[6371]{km}$ der Erdradius und $\phi =
+\unit[51.7]{^\circ}$ die geographische Breite Bonns. Es ergibt sich daraus:
+\begin{align*}
+    B = \unit[0.1905]{\text{Gauß}}
+\end{align*}
+
+Über Variation von $B_0$ wird nun versucht, das Erdmagnetfeld zu kompensieren. Die erfolgte Kompensation ist anhand eines 100-Hz-Signals mit äqudistanten Maxima zu erkennen. Es existiert dann wegen $B_ges = 0$ keine \textsc{Zeeman}-Aufspaltung.
+Über den bekannten Eichfaktor $k_0$ kann nun nach Ablesen des Stromes $I_0$ über die Relation $B_0 = k_0 \cdot I_0$ direkt das Erdmagnetfeld bestimmt werden. 
+
+Zur Einschätzung der Qualität des Ergebnisses kann nun noch ein Vergleich mit dem theoretisch zu berechnenden Wertes nach dem Dipolmodell vorgenommen werden. Es gilt:
+\begin{align}
+B &= \frac{M \cos{\phi}}{R^3}
+\end{align}
+
+Hierbei ist $M=\unit[7.95 \cdot 10^{25}]{\text{Gauß} \ cm^3}$ das magnetische Dipolmoment der Erde, $R=\unit[6371]{km}$ der Erdradius und $\phi = \unit[51.7]{^\circ}$ die geographische Breite von Bonn. Es ergibt sich daraus:
+\begin{align}
+B &= \unit[0.1905]{\text{Gauß}} \nonumber
+\end{align}
+
+Anschließend wird eine weitere Messung zur Bestimmung des Erdmagnetfeldes durchgeführt. Diesmal werden die beiden 50-Hz-Signale betrachtet und die gewonnenen Messwerte gemittelt.
+
+Wurden die Messungen durchgeführt, wird mit Hilfe des horizontalen und des vertikalen
 Kompensationsfeldes das Erdmagnetfeld kompensiert. Diese Konfiguration wird im
-weiteren Verlauf nicht mehr verändert.
-
-
-Der gewonnene Wert ist dann mit dem theoretischen Wert für das Dipolmodell zu
-vergleichen.
-
+weiteren Verlauf dann nicht mehr verändert.
 
 \subsection{Messdaten und Auswertung}
+Für einen Strom von $I_0 = \unit[(3.5 \pm 0.25)]{mA}$ konnte Kompensation der horizontalen Komponente des Erdmagnetfeldes erreicht werden. Mit der Eichkonstanten $k_0 = \unit[32.5]{\frac{\text{Gauß}}{A}}$ ergibt sich das Magnetfeld zu:
+\begin{align*}
+    B_{Erde} &= \unit[(0.114 \pm 0.008)]{\Gs}
+\end{align*}
 
+Dies weicht jedoch recht stark von dem oben berechneten theoretischen Wert ab.
+Systematische Fehler wie Störfelder, unreichend geeichte Messapparate oder eine
+nicht mehr aktuelle Konstante $M$ könnten vorliegen, vor allem aber sollte die
+Abweichung des Messwertes darüber erklärbar sein, dass nur eine Komponente des
+Erdmagnetfeldes gemessen wurde. Konkret wurde also nicht die Messung des
+theoretischen Wertes erwartet, sondern vielmehr, dass die Größenordnung in etwa
+getroffen wird und der Messwert nicht deutlich größer als der theoretische Wert
+ist. Dies ist erfüllt.
 
+Nun werden die beiden 50-Hz-Signale betrachtet. Wir erhalten $I^{unten}_0 =
+\unit[(-8.9 \pm 0.1)]{mA}$ und $I^{oben}_0 = \unit[(17.9 \pm 0.1)]{mA}$.  Als
+Mittelwert ergibt sich also $\unit[(4.5 \pm 0.1)]{mA}$. Das Erdmagnetfeld wird
+somit zu
+\begin{align}
+B_{Erde} &= \unit[(0.146 \pm 0.003)]{\text{Gauß}} \nonumber
+\end{align}
+berechnet.
+
+Über diese Methode erhalten wir also einen wesentlich näher am theoretischen
+liegenden Wert des Erdmagnetfeldes. Dies ist über ........ zu erklären.
+
+%erklärung!!!!!!!!!
 
 \section{Pump- und Relaxationszeit}
 
@@ -356,37 +415,116 @@ vergleichen.
 %\end{figure}
 
 \section{Bestimmung der \textsc{Landé}-Faktoren und des Kernspins}
-\subsection{g-Faktoren}
+\subsection{Versuchsdurchführung}
+
+%----------------------------------------------------------------
+%-hier muss noch mal die sache mit H_0 oder B_0 überprüft werden-
+%----------------------------------------------------------------
+
+Über Variation des Hauptfeldes $H_0$ bei konstanter Temperatur $T$ und Aufsuchen
+der Hochfrequenz-Resonanzfrequenzen (untere und obere \unit[50]{Hz} sowie der
+\unit[100]{Hz}) sind die \textsc{Landé}-Faktoren $g_{F,\mathrm{Rb}_{85}}$ und
+$g_{F,\mathrm{Rb}_{87}}$ der beiden Rubidium-Isotope $^{85}\mathrm{Rb}$ und
+$^{87}\mathrm{Rb}$ zu bestimmen. Anschließend können dann die jeweiligen
+Kernspins ermittelt werden.
+
+\subsubsection{Messdaten und Auswertung}
+Bei einer Temperatur von $T = \unit[(44 \pm 1)]{^\circ C}$ erhalten wir folgende
+Messwerte.
+
+%-----------
+%--tabelle--
+%-----------
+
+Für die Messfehler gilt dabei $\Delta \nu = 0.03 \ \nu$ und $\Delta I_0 =
+\unit[0.5]{mA}$. Die auf drei verschiedene Weisen bestimmten Werte für $\nu$
+(siehe oben) werden gemittelt. Anschließend tragen wir die gemessenen mittleren
+Resonanzfrequenzen $\overline{\nu}$ gegen die eingestellte Stromstärke $I_0$
+auf.
+
+Die im Graphen eingetragenen Fehler der ermittelten Werte wurden dabei mittels
+\begin{align}
+    \Delta \overline{\nu} = \frac{1}{\sqrt{3}} \Delta\nu \approx 0.02 \ \nu
+\end{align}
+sowie
+\begin{align}
+    \Delta I_0 = \unit[0.5]{mA}
+\end{align}
+bestimmt.
+
 \begin{figure}[H]
     \begin{tikzpicture}
-        \begin{axis}[
-                xlabel=$I_0$,
-                ylabel=$\nu/\unit{MHz}$,
-                ]
-            \addplot+[only marks, mark=.] plot[domain=50:150]
-                function {'data/g_faktor1.txt' u ($1):(($2+$3+$4)/3)};
-            \addplot+[only marks, mark=.] plot[domain=50:150]
-                function {'data/g_faktor2.txt' u ($1):(($2+$3+$4)/3)};
+        \begin{axis}[xlabel=$H_0/\unit{mA}$,
+                     ylabel=$\nu/\unit{MHz}$]
+            \foreach \f in {g_faktor1.txt, g_faktor2.txt}
+                \addplot+[only marks, mark=.]
+                    plot[domain=50:150,
+                         error bars/.cd,
+                         x dir=both, x fixed=0.5,
+                         y dir=both, y fixed relative=0.01732]
+                    function {'data/\f' u ($1):(($2+$3+$4)/3)}
+                    ;
             \foreach \M/\B in \GFaktoren
                 \addplot+[mark=none] plot[domain=50:150] function {\M * x + \B};
         \end{axis}
     \end{tikzpicture}
+    \label{fig:g}
 \end{figure}
 
-Mit Hilfe der Formel
+\subsubsection*{Bestimmung der \textsc{Landé}-Faktoren}
+Mit Hilfe der Formel (wobei $\mu_B$ \textsc{Bohr}sches Magneton)
 \begin{align}
-    h\nu &= \Delta E = \left| g_F \mu_B B \right| \\
-    \Leftrightarrow \left| g_F \right| &= \mu_B \mu_0 k_0 \frac{I_0}{\nu}
+  \Delta E  &= h \overline{\nu} \\
+            &= g_F \mu_B \mu_0 H_0
 \end{align}
-können wir aus den gemessenen Relaxationsfrequenzen bei Variation des Hauptfelds
-$H_0$ die $g_F$-Faktoren der beiden Isotope ($^{85}\text{Rb}$ und
-$^{87}\text{Rb}$) mit einem Geradenfit bestimmen.
+sind nun aus den gemessenen Relaxationsfrequenzen die $g_F$-Faktoren der beiden
+Isotope ($^{85}\text{Rb}$ und $^{87}\text{Rb}$) bestimmbar. Nach der Relation
+$B_0 = k_0 \cdot I_0$ kann hierzu die Feldstärke $H_0$ durch die Stromstärke
+$I_0$ ausgedrückt werden. Es folgt schließlich:
+\begin{align}
+    \overline{\nu} &= \frac{g_F \ \mu_B \ \mu_0 \ k_0}{h} \cdot I_0
+\end{align}
+
+Die \textsc{Landé}-Faktoren können also offenbar aus der Steigung des Graphen bestimmt werden. Hierzu wird nun an die Messwerte ein Geradenfit $f(x) = m x + c$ gelegt.
+Für die jeweiligen Steigungen ergibt sich dann:
+\begin{align}
+m_1 &= \unit[(.. \pm ..)]{\frac{Hz}{A}}& 
+m_2 &= \unit[(.. \pm ..)]{\frac{Hz}{A}} \nonumber
+\end{align}
+
+Mittels $g_F = \frac{m h}{\mu_B \ \mu_0 \ k_0}$ errechnen sich die \textsc{Landé}-Faktoren somit zu:
+\begin{align}
+g_{F,\mathrm{Rb}_{85}} &= (.. \pm ..)&
+g_{F,\mathrm{Rb}_{87}} &= (.. \pm ..) \nonumber
+\end{align}
+
+Dies stimmt sehr gut mit den theoretischen Werten $g_{F,\mathrm{Rb}_{85}} = \frac{1}{3}$ und $g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ überein ($bla \%$ bzw. $bla \%$ Abweichung).
+
+\subsubsection*{Bestimmung des Kernsspins $I$}
+Nun kann der Kernsspin $I$ ermittelt werden. Es gilt:
+\begin{align}
+g_J &= 1 + \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)} \nonumber \\
+g_F &= g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)} \nonumber
+\end{align}
+
+Daraus folgt:
+\begin{align}
+I = - \frac{J(g_F - g_J)}{g_F}
+\end{align}
+
+Mit den Quantenzahlen des "Pumpzustandes" (höchstes Hyperfeinniveau des Grundzustandes) der beiden Isotope ($^{85}\text{Rb}$: $J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=3$ sowie für $^{87}\text{Rb}$: $J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=2$) ergibt sich dann $g_J = 2$ und somit für die jeweiligen Kernsspins:
+\begin{align}
+I_{\mathrm{Rb}_{85}} &= (.. \pm ..)&
+I_{\mathrm{Rb}_{87}} &= (.. \pm ..) \nonumber
+\end{align}
+
+Dies stimmt ebenfalls sehr gut mit den theoretischen Werten $I_{\mathrm{Rb}_{85}} = \frac{5}{2}$ und $I_{\mathrm{Rb}_{87}} = \frac{3}{2}$ überein ($bla \%$ bzw. $bla \%$ Abweichung).
 
 \begin{appendix}
 \Literatur{quellen}
 
 \section{Messwerte}
-\subsection{$g$-Faktoren}
+\subsection{Landé-Faktoren}
 \begin{table}[H]
     \pgfplotstabletypesetfile[
             columns/0/.style={column name={$I_0/\unit{mA}$}},

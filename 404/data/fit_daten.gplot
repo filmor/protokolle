@@ -3,12 +3,14 @@ f(x) = m * x + b
 
 set print 'fit_daten.tex'
 
+c = 0.02216424459034e3
 fit f(x) 'g_faktor1.txt' u 1:(($2+$3+$4)/3) via m, b
+print '\def\GFaktorEins{', c * m, '}'
 print '\def\GFaktoren{', m, '/', b, ','
 
 fit f(x) 'g_faktor2.txt' u 1:(($2+$3+$4)/3) via m, b
 print m, '/', b, '}'
-
+print '\def\GFaktorZwei{', c * m, '}'
 
 fit f(x) 'hf_punkte1.txt' u 1:2 via m, b
 print '\def\HFPunkteEins{', m, '/', b, ','
