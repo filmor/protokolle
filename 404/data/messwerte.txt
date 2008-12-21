@@ -24,4 +24,4 @@ Teil 7:
 
 Teil 8:
     g_faktor{1,2}.txt: ∆I = 0.5 mA, ∆f wie oben
-    
+

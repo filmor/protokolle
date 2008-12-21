@@ -6,7 +6,6 @@
 \input{data/fit_daten.tex}
 
 \begin{document}
-
 \section{Einleitung}
 Optisches Pumpen beschreibt das zielgerichtete Umbesetzen atomarer Niveaus mit
 Hilfe elektromagnetischer Felder geeigneter Frequenz. Die durch optische
@@ -24,21 +23,106 @@ besserer Lesbarkeit durchgängig verwendet.}
 \section{Theorie}
 \subsection{Atomphysikalische Grundlagen}
 \subsubsection{Energieniveaus von Alkalimetallen}
+Entscheidend zum Verständnis dieses Versuches ist insbesondere die Kenntnis der
+Energieniveaus eines Atoms in quantenmechanischer Beschreibung. Um den Rahmen
+dieses Protokolles nicht zu sprengen werden wir hier die Atomphysik jedoch im
+Wesentlichen als bekannt voraussetzen und uns auf die Darstellung der für diesen
+Versuch interessanten Details für Alkaliatome beschränken.
 
-\subsubsection{Auswahlregeln}
+%In Abbildung \ref{fig:alkali} ist ...
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{grafiken/alkali}
+%    \caption[]{.~\cite{skript}.}
+%    \label{fig:alkali}
+%\end{figure}
+
+
+\subsubsection{optische Übergänge und Auswahlregeln}
+Befindet sich ein Atom in einem angeregten Zustand, so verbleibt es
+typischerweise etwa $\unit[10^{-8}]{s}$ in diesem und wird sich dann unter
+Emission eines Photons geeigneter Energie wieder relaxieren. Auch stufenweise
+Relaxation unter Aussendung mehrerer Photonen ist möglich. 
+
+Nicht alle kombinatorisch möglichen optischen Übergänge zwischen Energieniveaus
+werden jedoch beobachtet. Einige sind über sogenannte Auswahlregeln verboten.
+Diese Auswahlregeln für optische Übergänge können aus dem
+\textsc{Wignert-Eckart}-Theorem gewonnen werden. Über dieses Theorem ist die
+Bestimmung der nicht verschwindenden Matrixelemente, also der erlaubten
+Kombinationen von Anfangs- und Endzustand, eines Tensoroperators wie des
+Dipoloperators möglich.
+
+Somit erhält man für einen optischen Dipolübergang folgende Auswahlregeln.
+\begin{align*}
+    \Delta m &= 0, \pm 1 \\
+    \Delta l &= \pm 1 \\
+    \Delta s &= 0
+\end{align*}
+
+Dabei bezeichnet $\Delta m = 0$ den sogenannten $\pi$-Übergang (linear polarisierte Photonen) und $\Delta m = \pm 1$ den sogenannten $\sigma$-Übergang (zirkular polarisierte Photonen). Im vorliegenden Versuch wird polarisiertes Licht mittels einer $\frac{\lambda}{4}$-Platte erzeugt (siehe hierzu Abschnitt \ref{cha:platte}).
+
+%noch was zu pol. Licht
+
+In einem Ensemble an Atomen in einem angeregten Zustand nimmt die Anzahl der
+angeregten Atome durch derartige optische Übergänge exponentiell mit der Zeit
+ab. Die Zeit $\tau$, in welcher die Zahl der angeregten Atome auf $\frac{1}{e}$
+abgesunken ist, bezeichnet man dann als Lebensdauer dieses Zustandes.
 
 \subsubsection{Spektrumstruktur}
 
 \subsubsection{Linienbreiten}
+Bei Absorption und Emission elektromagnetischer Strahlung ist die Frequenz der
+beteiligten Strahlung nicht streng monochromatisch. Es zeigt sich vielmehr eine
+gewisse Spektralbreite. Man definiert die volle Halbwertsbreite als das
+Frequenzintervall innerhalb dessen die Intensität des absorbierten oder
+emittierten Lichtes auf die Hälfte der Amplitude abgefallen ist. Für ein
+normiertes Intensitätsprofil (Lorentz-Profil) nennt man die volle
+Halbwertsbreite auch natürliche Linienbreite.
 
-\subsection{Erzeugung und Eigenschaften polarisierten Lichtes}
+Ist die Wahrscheinlichkeit für die Emission bzw.\ Absorption von Licht der
+Frequenz $\nu$, die einen Übergang $E_i \to E_k$ bewirkt, für alle Moleküle im
+Zustand $E_i$ gleich groß, so nennt man das Spektralprofil dieses Übergangs
+homogen. Die entsprechende Absorptions- bzw.\ Emissionslinie ist dann homogen
+verbreitert. Somit ist die natürliche Linienbreite ein Beispiel für ein homogen
+verbreitertes Linienprofil. 
+
+Diese lässt sich im Allgemeinen jedoch nicht direkt beobachten, da andere
+Verbreiterungseffekte dominieren. So werden die Spektrallinienprofile z.\ B.\
+durch Stöße beeinflusst. Dabei führen elastische wie inelastische Stöße zu einer
+Linienverbreiterung, elastische Stöße bewirken jedoch zusätzlich noch eine
+Linienverschiebung. Auch die Stoßverbreiterung führt zu einer homogenen
+Verbreiterung der Spektrallinie.
+
+Eine inhomogene Linienverbreiterung ist durch die Dopplerverbreiterung gegeben.
+Bewegt sich ein angeregtes Molekül mit einer Geschwindigkeit $\vec v$, so wird
+die Frequenz des emittierten Lichtes relativ zu einem ruhenden Beobachter in
+Folge des Dopplereffektes verschoben. Hierbei findet eine inhomogene
+Verbreiterung der entsprechenden Spektrallinie statt. 
 
 \subsection{Optische Elemente}
-\subsubsection{Vielstrahl-Interferenzfilter}
-Das hier verwendete Vielstrahl-Interferenzfilter besteht aus zwei planparallelen
-Glasplatten mit dazwischen befindlichem Luftspalt, welcher ein oder zwei
-Wellenlängen breit ist.
-...
+\subsubsection{Interferenzfilter}
+Ein Interferenzfilter besteht im Wesentlichen aus einem
+\textsc{Fabry-Perot}-Interferometer (siehe Abb. \ref{fig:fabry}). Dieses besteht
+aus zwei planparallelen, transparenten Platten mit Brechungsindex $n$, welche
+mit einem Abstand $d$ aufgebaut werden.  Fällt elektromagnetische Strahlung der
+Wellenlänge $\lambda$ unter einem Winkel $\theta$ ein, so ergibt sich für
+$\lambda = \frac{2 n d}{m} \cos{\theta}$, wobei $m \in \mathbb{N}$, konstruktive
+Interferenz. Somit kann der Aufbau genutzt werden, um nur eine bestimmte
+Frequenz durchzulassen, alle anderen Frequenzen werden unterdrückt. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/fabry}
+    \caption[Fabry-Perot-Interferometer]{Prinzip des
+    Fabry-Perot-Interferometers~\cite{demi2}, bearbeitet.}
+    \label{fig:fabry}
+\end{figure}
+
+In dem vorliegenden Experiment soll mit Hilfe eines Interferenzfilters die
+$\mathrm{D_1}$-Linie der Wellenlänge $\lambda = \unit[794.76]{nm}$
+herausgefiltert werden, welche zum "`Pumpen"' der Rubidiumatome dient (siehe
+\ref{cha:pump}).
 
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 \label{cha:platte}
@@ -59,6 +143,7 @@ erzeugt.
 \subsection{Photonennachweis, Photodioden}
 
 \subsection{Optisches Pumpen}
+\label{cha:pump}
 
 \subsection{Induzierte Emission durch Einwirkung magnetischer Hochfrequenzfelder}
 
@@ -95,10 +180,10 @@ Dopplerverbreiterung):
 \subsection*{Aufgabe (b)}
 \subsubsection*{Herleitung des linearen Absorptionskoeffizienten $\kappa$}
 Nach dem \textsc{Lambert-Beer}schen-Gesetz ergibt sich die Abschwächung der
-Lichtintensität $I$ beim Durchgang durch ein Medium allgemein zu $dI = - \kappa
-I ds$, wobei $\kappa$ den sogenannten linearen Absorptionskoeffizienten angibt.
-Die Gleichung lässt sich auch in einer Energiebetrachtung aufstellen. Es ergibt
-sich:
+Lichtintensität $I$ beim Durchgang durch ein Medium allgemein zu $\mathrm{d}I =
+- \kappa I \mathrm{d}s$, wobei $\kappa$ den sogenannten linearen
+Absorptionskoeffizienten angibt.  Die Gleichung lässt sich auch in einer
+Energiebetrachtung aufstellen. Es ergibt sich:
 
 \begin{align}
     \mathrm{d}E = - \kappa \ E \ \mathrm{d}s
@@ -142,7 +227,7 @@ Intensität auf $\frac{1}{e}$ gefallen ist. Dies entspricht gerade $\Lambda =
 
 Zur Bestimmung der freien Weglänge der Photonen berechnen wir zunächst die
 Dopplerbreite der im Versuch verwendeten Spektrallinie der Wellenlänge $\lambda
-= \unit{794.76}[nm]$, welche des Weiteren die Lebensdauer $\tau = \unit[2.941
+= \unit[794.76]{nm}$, welche des Weiteren die Lebensdauer $\tau = \unit[2.941
 \cdot 10^{-8}]{s}$ besitzt. Es gilt:
 
 \begin{align}
@@ -157,9 +242,9 @@ ergibt sich somit für die Dopplerbreite $\nu_D = \unit[2.2 \cdot 10^8]{Hz}$.
 Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B \ T}{p}$
 eine weitere nötige Relation. Der Dampfdruck $p$ innerhalb der Messzelle kann
 dabei über die im Skript angegebene Formel $\log(p) = - \frac{A}{T} + B$
-berechnet werden (wobei $A = \unit[4347.11]{K}$ und $B = \unit[7.70]{K}$) und
-ergibt sich zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.
-Somit ergibt sich insgesamt schließlich:
+berechnet werden (wobei $A = \unit[4347.11]{K}$ und $B = 7.70$) und ergibt sich
+zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.  Somit ergibt sich insgesamt
+schließlich:
 
 \begin{align*}
     \Lambda &= \frac{8 \ \pi \ \tau \ \nu_D}{\lambda^2} \frac{V}{N} \\
@@ -181,7 +266,7 @@ W_{abs} &= B \ \rho \\
         &\approx 2330
 \end{align*}
 
-Im Mittel werden also $\unit[2330]{\frac{\text{Photonen}}{s}}$ absorbiert.
+Im Mittel werden also $2330$ Photonen pro Sekunde absorbiert.
 
 \subsection*{Aufgabe (d)}
 Für Rb-Rb-Stöße allein ergibt sich mit dem gaskinetischen Querschnitt
@@ -289,7 +374,7 @@ Polarisator $P$, die $\frac{\lambda}{4}$-Platte, das Interferenzfilter $I$ und
 die heizbare Absorptionszelle durchsetzt. Dabei sind Polarisator $P$ und
 $\frac{\lambda}{4}$-Platte so gegeneinander gedreht, dass zirkular polarisiertes
 Licht auf die Absorptionszelle trifft (siehe auch \ref{cha:platte}). Ferner ist
-das Interferenzfilter auf die D1-Linie abgestimmt, lässt also nur diese durch.
+das Interferenzfilter auf die $\mathrm{D_{1}}$-Linie abgestimmt, lässt also nur diese durch.
 
 Anschließend wird eine Fokussierung auf die Photodiode mittels der zweiten Linse
 $L_2$ vorgenommen. Die Absorptionzelle enthält festes Rubidium in natürlicher
@@ -332,7 +417,7 @@ dem Oszilloskop sind dabei für $I_{\bot} = \unit[...]{mA}$ abzulesen.
 
 Über Variation von $B_0$ wird nun versucht, das Erdmagnetfeld zu kompensieren.
 Die erfolgte Kompensation ist anhand eines 100-Hz-Signals mit äqudistanten
-Maxima zu erkennen. Es existiert dann wegen $B_ges = 0$ keine
+Maxima zu erkennen. Es existiert dann wegen $B_{ges} = 0$ keine
 \textsc{Zeeman}-Aufspaltung.  Über den bekannten Eichfaktor $k_0$ kann nun nach
 Ablesen des Stromes $I_0$ über die Relation $B_0 = k_0 \cdot I_0$ direkt das
 Erdmagnetfeld bestimmt werden. 
@@ -344,36 +429,27 @@ Es gilt:
     B &= \frac{M \cos{\phi}}{R^3}
 \end{align}
 
-Hierbei ist $M=\unit[7.95 \cdot 10^{25}]{\text{Gs} \ cm^3}$ das magnetische
+Hierbei ist $M=\unit[7.95 \cdot 10^{25}]{Gs\ cm^3}$ das magnetische
 Dipolmoment der Erde, $R=\unit[6371]{km}$ der Erdradius und $\phi =
-\unit[51.7]{^\circ}$ die geographische Breite Bonns. Es ergibt sich daraus:
+\unit[51.7]{^\circ}$ die geographische Breite von Bonn. Es ergibt sich daraus:
 \begin{align*}
-    B = \unit[0.1905]{\text{Gauß}}
+    B &= \unit[0.1905]{Gs}
 \end{align*}
 
-Über Variation von $B_0$ wird nun versucht, das Erdmagnetfeld zu kompensieren. Die erfolgte Kompensation ist anhand eines 100-Hz-Signals mit äqudistanten Maxima zu erkennen. Es existiert dann wegen $B_ges = 0$ keine \textsc{Zeeman}-Aufspaltung.
-Über den bekannten Eichfaktor $k_0$ kann nun nach Ablesen des Stromes $I_0$ über die Relation $B_0 = k_0 \cdot I_0$ direkt das Erdmagnetfeld bestimmt werden. 
+Anschließend wird eine weitere Messung zur Bestimmung des Erdmagnetfeldes
+durchgeführt. Diesmal werden die beiden 50-Hz-Signale betrachtet und die
+gewonnenen Messwerte gemittelt.
 
-Zur Einschätzung der Qualität des Ergebnisses kann nun noch ein Vergleich mit dem theoretisch zu berechnenden Wertes nach dem Dipolmodell vorgenommen werden. Es gilt:
-\begin{align}
-B &= \frac{M \cos{\phi}}{R^3}
-\end{align}
-
-Hierbei ist $M=\unit[7.95 \cdot 10^{25}]{\text{Gauß} \ cm^3}$ das magnetische Dipolmoment der Erde, $R=\unit[6371]{km}$ der Erdradius und $\phi = \unit[51.7]{^\circ}$ die geographische Breite von Bonn. Es ergibt sich daraus:
-\begin{align}
-B &= \unit[0.1905]{\text{Gauß}} \nonumber
-\end{align}
-
-Anschließend wird eine weitere Messung zur Bestimmung des Erdmagnetfeldes durchgeführt. Diesmal werden die beiden 50-Hz-Signale betrachtet und die gewonnenen Messwerte gemittelt.
-
-Wurden die Messungen durchgeführt, wird mit Hilfe des horizontalen und des vertikalen
-Kompensationsfeldes das Erdmagnetfeld kompensiert. Diese Konfiguration wird im
-weiteren Verlauf dann nicht mehr verändert.
+Wurden die Messungen durchgeführt, wird mit Hilfe des horizontalen und des
+vertikalen Kompensationsfeldes das Erdmagnetfeld kompensiert. Diese
+Konfiguration wird im weiteren Verlauf dann nicht mehr verändert.
 
 \subsection{Messdaten und Auswertung}
-Für einen Strom von $I_0 = \unit[(3.5 \pm 0.25)]{mA}$ konnte Kompensation der horizontalen Komponente des Erdmagnetfeldes erreicht werden. Mit der Eichkonstanten $k_0 = \unit[32.5]{\frac{\text{Gauß}}{A}}$ ergibt sich das Magnetfeld zu:
+Für einen Strom von $I_0 = \unit[(3.5 \pm 0.25)]{mA}$ konnte Kompensation der
+horizontalen Komponente des Erdmagnetfeldes erreicht werden. Mit der
+Eichkonstanten $k_0 = \unit[32.5]{\frac{Gs}{A}}$ ergibt sich das Magnetfeld zu:
 \begin{align*}
-    B_{Erde} &= \unit[(0.114 \pm 0.008)]{\Gs}
+    B_{Erde} &= \unit[(0.114 \pm 0.008)]{Gs}
 \end{align*}
 
 Dies weicht jedoch recht stark von dem oben berechneten theoretischen Wert ab.
@@ -390,7 +466,7 @@ Nun werden die beiden 50-Hz-Signale betrachtet. Wir erhalten $I^{unten}_0 =
 Mittelwert ergibt sich also $\unit[(4.5 \pm 0.1)]{mA}$. Das Erdmagnetfeld wird
 somit zu
 \begin{align}
-B_{Erde} &= \unit[(0.146 \pm 0.003)]{\text{Gauß}} \nonumber
+    B_{Erde} &= \unit[(0.146 \pm 0.003)]{Gs}
 \end{align}
 berechnet.
 
@@ -399,20 +475,191 @@ liegenden Wert des Erdmagnetfeldes. Dies ist über ........ zu erklären.
 
 %erklärung!!!!!!!!!
 
+Nun werden die vertikale und horizontale Komponente des Erdmagnetfeldes mit den
+beiden Kompensationsfeldern $H_{\bot}$ und $H_{\parallel}$ kompensiert. Für
+$H_{\bot}$ wird hierzu ein Strom von $I_{\bot} = \unit[...]{mA}$ eingestellt
+(Signalflanken weisen maximale Steilheit auf). Nun wird das Hauptfeld
+ausgeschaltet. Anhand einer möglichst sauberen 100-Hz-Form des Spannungssignals
+am Oszillographen wird der Strom $I_{\parallel} = \unit[...]{mA}$ eingestellt.
+Diese Einstellungen bleiben nun unverändert.
+
 \section{Pump- und Relaxationszeit}
+\subsection{Versuchsdurchführung}
+Als nächstes werden nun die Pump- und Relaxationszeit vermessen, also die
+Zeitspannen, in welchen die Besetzungsinversion vollständig auf- bzw. abgebaut
+wird. Auf Grund der besseren Sichtbarkeit der jeweiligen Flanken werden hierzu
+die 50-Hz-Signale verwendet. Hierzu werden die An- und Abstiegszeiten des am
+Oszillographen liegenden Spannungssignals der Photodiode vermessen. Der
+Signalanstieg entspricht dabei dem Abbau der Besetzungsinversion und das
+Abfallen des Signales dem Aufbau der selben.
+
+Es wird angenommen, dass der Aufbau durch eine Exponentialfunktion der Form
+\begin{align}
+    f(t) = A \exp{\left(-\frac{t}{\tau_{\text{auf}}}\right)}
+    \label{eq:exp}
+\end{align}
+beschrieben werden kann.
+
+Gleichung (\ref{eq:exp}) lässt sich nun in eine \textsc{Taylor}-Reihe
+entwickeln. Man erhält die lineare Relation:
+\begin{align}
+    f(t) = A \left(1 - \frac{1}{\tau_{\text{auf}}} \cdot t\right) + \mathcal{O}(t^2)
+\end{align}
+% Linear = in erster Näherung ..
+Wir erwarten also, dass sich die Messergebnisse in erster Näherung linear
+verhalten.
+
+Analoges gilt für den Signalabbau.
+\begin{align}
+    f(t) = B \left(1 - \exp{-\left(\frac{t}{\tau_{\text{ab}}}\right)}\right)
+\end{align}
+In linearer Näherung erhalten wir demnach:
+\begin{align}
+    f(t) = \frac{B}{\tau_{\text{ab}}} \cdot t + \mathcal{O}(t^2)
+\end{align}
+Erneut wird also eine in erster Näherung lineare Verteilung der Messergebnisse
+erwartet.
+
+Anhand der Ergebnisse für die An- und Abstiegszeit lassen sich dann die Pump-
+und die Relaxationszeit $\tau_P$ und $\tau_R$ über die Relationen
+\begin{align}
+    \frac{1}{\tau_{\text{auf}}} &= \frac{1}{\tau_p} - \frac{1}{\tau_r} \\
+    \frac{1}{\tau_{\text{ab}}} &= \frac{1}{\tau_p} + \frac{1}{\tau_r}
+\end{align}
+bestimmen.
+
+\subsubsection{Messdaten und Auswertung}
+\subsubsection*{Anstiegszeit}
+Für den Signalaufbau erhalten wir folgende Messwerte:
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile{data/zeit_aufsteigend.txt}
+    \caption{}
+    \label{tab:aufsteigend}
+\end{table}
+
+Die recht großen Fehler ergeben sich dabei hauptsächlich aus der starken
+Verbereiterung des Osilloskopsignals.
+
+Nun kann das gemessene Spannungssignal $U$ gegen die Zeit $t$ aufgetragen
+werden.
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[xlabel=$U/\unit{V}$, ylabel=$t/\unit{s}$]
+            \addplot+[only marks, mark=.]
+                file
+                {data/zeit_aufsteigend.txt};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 
 
+Offensichtlich ergibt sich also in der Tat ein in etwa lineares Verhalten der
+Messwerte. Die Steigung der Fitgeraden beträgt dabei $m = \unit[(... \pm
+...)]{\frac{V}{s}}$.
+
+Daraus kann mit $\tau_{\text{auf}} = ....$ nun die Anstiegszeit zu 
+\begin{align}
+    \tau_{\text{auf}} = \unit[(... \pm ...)]{s} \nonumber 
+\end{align}
+bestimmt werden.
+
+Die Fehler wurden über ..... bestimmt.
+
+\subsubsection*{Abstiegszeit}
+Nun wird völlig analog für den Signalabbau vorgegangen. Wir erhalten folgende
+Messwerte:
+% Tabellen zusammen
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile{data/zeit_abfallend.txt}
+    \caption{}
+    \label{tab:abfallend}
+\end{table}
+
+Die recht großen Fehler ergeben sich erneut hauptsächlich aus der starken
+Verbereiterung des Osilloskopsignals.
+
+Nun kann das gemessene Spannungssignal $U$ gegen die Zeit $t$ aufgetragen
+werden.
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[xlabel=$U/\unit{V}$, ylabel=$t/\unit{s}$]
+            \addplot+[only marks, mark=.]
+                file
+                {data/zeit_aufsteigend.txt};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+Offensichtlich ergibt sich wieder ein in etwa lineares Verhalten der Messwerte.
+Die Steigung der Fitgeraden beträgt $m = \unit[(... \pm ...)]{\frac{V}{s}}$.
+
+Nun kann mit $\tau_{\text{ab}} = ....$ die Abstiegszeit zu 
+\begin{align}
+    \tau_{\text{ab}} = \unit[(... \pm ...)]{s} \nonumber 
+\end{align}
+bestimmt werden.
+
+Die Fehler wurden über ..... bestimmt.
+
+\subsubsection*{Pump- und Relaxationszeit}
+Nun werden mit $\tau_{\text{auf}}$ und $\tau_{\text{ab}}$ die Pumpzeit $\tau_p$
+sowie die Relaxationszeit $\tau_r$ errechnet. Es ergibt sich:
+\begin{align*}
+    \tau_{p} &= \frac{2 \tau_{\text{auf}} \tau_{\text{ab}}}{2 \tau_{\text{auf}}
+              + \tau_{\text{ab}}} = \unit[(... \pm ...)]{s} \\
+    \tau_{p} &= \frac{2 \tau_{\text{auf}} \tau_{\text{ab}}}{2 \tau_{\text{auf}}
+              - \tau_{\text{ab}}} = \unit[(... \pm ...)]{s}
+\end{align*}
+
+Die Fehler ergeben sich dabei aus \textsc{Gauß}scher Fehlerfortpflanzung
+mittels:
+\begin{align}
+    bla
+\end{align}
 
 \section{Bestimmung des Isotopenverhältnisses}
 
-%\begin{figure}[H]
-%    \begin{tikzpicture}
-%        \begin{axis}
-%            %\addplot file {data/hf_daten1.txt};
-%            \foreach \M/\B in \HFPunkteEins;
-%        \end{axis}
-%    \end{tikzpcture}
-%\end{figure}
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}
+            \foreach \x in {2,3,4}
+                \addplot+[only marks]
+                    plot[domain=0:300]
+                    function {'data/hf_punkte1.txt' u ($1):($\x)};
+            \foreach \M/\B in \HFPunkteEins
+                \addplot+[mark=none]
+                    plot[domain=0:300]
+                    function {\M * x + \B};
+            \foreach \x in {2,3,4}
+                \addplot+[only marks]
+                    plot[domain=0:300]
+                    function {'data/hf_punkte2.txt' u ($1):($\x)};
+            \foreach \M/\B in \HFPunkteZwei
+                \addplot+[mark=none]
+                    plot[domain=0:300]
+                    function {\M * x + \B};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\section{Brabbel}
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[xlabel=$n/\unit{10^{15}\frac{1}{m^3}}$,
+                     ylabel=$\overline{A}$]
+            \foreach \x in {1, 2}
+            {
+                \addplot+[only marks] plot[domain=:] function {'data/temp\x.txt'
+                u (10**($1<38.84 ?  (-4503.74 / (273.15 + $1) + 8.21):(-4347.11
+                / (273.15 + $1) + 7.7)) / ((273.15 + $1) *
+                1.3806504e-8)):((($2+$2)/2+$3+$4)/3)};
+            }
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 
 \section{Bestimmung der \textsc{Landé}-Faktoren und des Kernspins}
 \subsection{Versuchsdurchführung}
@@ -432,11 +679,7 @@ Kernspins ermittelt werden.
 Bei einer Temperatur von $T = \unit[(44 \pm 1)]{^\circ C}$ erhalten wir folgende
 Messwerte.
 
-%-----------
-%--tabelle--
-%-----------
-
-Für die Messfehler gilt dabei $\Delta \nu = 0.03 \ \nu$ und $\Delta I_0 =
+Für die Messfehler gilt dabei $\Delta \nu = 0.03 \nu$ und $\Delta I_0 =
 \unit[0.5]{mA}$. Die auf drei verschiedene Weisen bestimmten Werte für $\nu$
 (siehe oben) werden gemittelt. Anschließend tragen wir die gemessenen mittleren
 Resonanzfrequenzen $\overline{\nu}$ gegen die eingestellte Stromstärke $I_0$
@@ -485,38 +728,45 @@ $I_0$ ausgedrückt werden. Es folgt schließlich:
     \overline{\nu} &= \frac{g_F \ \mu_B \ \mu_0 \ k_0}{h} \cdot I_0
 \end{align}
 
-Die \textsc{Landé}-Faktoren können also offenbar aus der Steigung des Graphen bestimmt werden. Hierzu wird nun an die Messwerte ein Geradenfit $f(x) = m x + c$ gelegt.
-Für die jeweiligen Steigungen ergibt sich dann:
-\begin{align}
-m_1 &= \unit[(.. \pm ..)]{\frac{Hz}{A}}& 
-m_2 &= \unit[(.. \pm ..)]{\frac{Hz}{A}} \nonumber
-\end{align}
+Die \textsc{Landé}-Faktoren können also offenbar aus der Steigung des Graphen
+bestimmt werden. Hierzu wird nun an die Messwerte ein Geradenfit $f(x) = m x +
+c$ gelegt.  Für die jeweiligen Steigungen ergibt sich dann:
+\begin{align*}
+    m_1 &= \unit[(\GFaktorSteigungEins \pm ..)]{\frac{MHz}{mA}}& 
+    m_2 &= \unit[(\GFaktorSteigungZwei \pm ..)]{\frac{MHz}{mA}}
+\end{align*}
 
 Mittels $g_F = \frac{m h}{\mu_B \ \mu_0 \ k_0}$ errechnen sich die \textsc{Landé}-Faktoren somit zu:
-\begin{align}
-g_{F,\mathrm{Rb}_{85}} &= (.. \pm ..)&
-g_{F,\mathrm{Rb}_{87}} &= (.. \pm ..) \nonumber
-\end{align}
+\begin{align*}
+    g_{F,\mathrm{Rb}_{85}} &= (\GFaktorEins \pm ..)&
+    g_{F,\mathrm{Rb}_{87}} &= (\GFaktorZwei \pm ..)
+\end{align*}
 
-Dies stimmt sehr gut mit den theoretischen Werten $g_{F,\mathrm{Rb}_{85}} = \frac{1}{3}$ und $g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ überein ($bla \%$ bzw. $bla \%$ Abweichung).
+Dies stimmt sehr gut mit den theoretischen Werten $g_{F,\mathrm{Rb}_{85}} =
+\frac{1}{3}$ und $g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ überein ($bla \%$ bzw.
+$bla \%$ Abweichung).
 
 \subsubsection*{Bestimmung des Kernsspins $I$}
 Nun kann der Kernsspin $I$ ermittelt werden. Es gilt:
-\begin{align}
-g_J &= 1 + \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)} \nonumber \\
-g_F &= g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)} \nonumber
-\end{align}
+\begin{align*}
+g_J &= 1 + \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)} \\
+g_F &= g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
+\end{align*}
 
 Daraus folgt:
 \begin{align}
 I = - \frac{J(g_F - g_J)}{g_F}
 \end{align}
 
-Mit den Quantenzahlen des "Pumpzustandes" (höchstes Hyperfeinniveau des Grundzustandes) der beiden Isotope ($^{85}\text{Rb}$: $J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=3$ sowie für $^{87}\text{Rb}$: $J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=2$) ergibt sich dann $g_J = 2$ und somit für die jeweiligen Kernsspins:
-\begin{align}
-I_{\mathrm{Rb}_{85}} &= (.. \pm ..)&
-I_{\mathrm{Rb}_{87}} &= (.. \pm ..) \nonumber
-\end{align}
+Mit den Quantenzahlen des "`Pumpzustandes"' (höchstes Hyperfeinniveau des
+Grundzustandes) der beiden Isotope ($^{85}\text{Rb}$: $J=\frac{1}{2}$,
+$S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=3$ sowie für $^{87}\text{Rb}$:
+$J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=2$) ergibt sich
+dann $g_J = 2$ und somit für die jeweiligen Kernsspins:
+\begin{align*}
+    I_{\mathrm{Rb}_{85}} &= (.. \pm ..)&
+    I_{\mathrm{Rb}_{87}} &= (.. \pm ..)
+\end{align*}
 
 Dies stimmt ebenfalls sehr gut mit den theoretischen Werten $I_{\mathrm{Rb}_{85}} = \frac{5}{2}$ und $I_{\mathrm{Rb}_{87}} = \frac{3}{2}$ überein ($bla \%$ bzw. $bla \%$ Abweichung).
 
@@ -548,6 +798,30 @@ Dies stimmt ebenfalls sehr gut mit den theoretischen Werten $I_{\mathrm{Rb}_{85}
     \label{tbl:g_faktor2}
     \caption{}
 \end{table}
+\subsection{Temperaturen}
+\begin{figure}[H]
+    \begin{floatrow}
+        \ttabbox{}{
+            \pgfplotstabletypesetfile[
+                    columns/0/.style={column name={$T/\unit{^\circ C}$}},
+                    columns/1/.style={column name={$A_{50-}$}},
+                    columns/2/.style={column name={$A_{100}$}},
+                    columns/3/.style={column name={$A_{50+}$}}
+                ]
+            {data/temp1.txt}
+        }
+        \ttabbox{}{
+            \pgfplotstabletypesetfile[
+                    columns/0/.style={column name={$T/\unit{^\circ C}$}},
+                    columns/1/.style={column name={$A_{50-}$}},
+                    columns/2/.style={column name={$A_{100}$}},
+                    columns/3/.style={column name={$A_{50+}$}}
+                ]
+            {data/temp1.txt}
+        }
+    \end{floatrow}
+\end{figure}
+
 
 \end{appendix}
 
