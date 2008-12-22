@@ -20,18 +20,20 @@ Eigenschaft des Atomkerns, nämlich des Kernspins, über Messungen an der
 Atomhülle erlaubt.
 
 \subsubsection*{Anmerkung}
-\emph{Es wird im Folgenden in Abweichung vom Skript die aktuelle Bezeichnung der
-magnetischen Flussdichte $B$ mit $[B] = \unit{Gs} = 10^{-4} \unit{T}$ zwecks
-besserer Lesbarkeit durchgängig verwendet.}
+\emph{Es wird im Folgenden in leichter Abweichung vom Skript die aktuelle
+Bezeichnung der magnetischen Flussdichte $B$ mit $[B] = \unit{Gs} = 10^{-4}
+\unit{T}$ zwecks besserer Lesbarkeit im Wesentlichen durchgängig verwendet.}
 
-\section{Theorie}
+\section{Theoretische Grundlagen}
+Im Folgenden werden die theoretischen Grundlagen des Versuches dargelegt. Im Abschnitt \ref{cha:aufg} finden sich hierzu noch Ergänzungen.
 \subsection{Atomphysikalische Grundlagen}
-\subsubsection{Energieniveaus von Alkalimetallen}
 Entscheidend zum Verständnis dieses Versuches ist insbesondere die Kenntnis der
 Energieniveaus eines Atoms in quantenmechanischer Beschreibung. Um den Rahmen
 dieses Protokolles nicht zu sprengen werden wir hier die Atomphysik jedoch im
 Wesentlichen als bekannt voraussetzen und uns auf die Darstellung der für diesen
 Versuch interessanten Details für Alkaliatome beschränken.
+
+\subsubsection{Energieniveaus von Alkalimetallen}
 
 %In Abbildung \ref{fig:alkali} ist ...
 
@@ -72,8 +74,6 @@ In einem Ensemble an Atomen in einem angeregten Zustand nimmt die Anzahl der
 angeregten Atome durch derartige optische Übergänge exponentiell mit der Zeit
 ab. Die Zeit $\tau$, in welcher die Zahl der angeregten Atome auf $\frac{1}{e}$
 abgesunken ist, bezeichnet man dann als Lebensdauer dieses Zustandes.
-
-\subsubsection{Spektrumstruktur}
 
 \subsubsection{Linienbreiten}
 Bei Absorption und Emission elektromagnetischer Strahlung ist die Frequenz der
@@ -138,7 +138,7 @@ das Material beispielsweise mit einer geringeren Geschwindigkeit durchlaufen als
 der senkrecht dazu stehende Anteil. Auf diese Weise kommt es zu einer
 Phasenverschiebung. In Abhängigkeit von der Wellenlänge erreicht man dabei für
 eine geeignete Dicke des Plättchens gerade eine Phasenverschiebung der beiden
-Komponenten von $\frac{\lambda}{4}$. Für eine in einem Winkel von $45 \circ$ zu
+Komponenten von $\frac{\lambda}{4}$. Für eine in einem Winkel von $45 ^\circ$ zu
 den Achsen der $\frac{\lambda}{4}$-Platte stehende Polarisationsachse des
 einfallenden linear polarisierten Lichtes erhält man zirkular polarisiertes
 Licht. Für allgemeine Wahl des Winkels wird elliptisch polarisiertes Licht
@@ -151,11 +151,59 @@ erzeugt.
 
 \subsection{Induzierte Emission durch Einwirkung magnetischer Hochfrequenzfelder}
 
-\subsection{Thermodynamik der Phasenübergänge in Einstoffsystemen}
-
 \subsection{Gaskinetik}
+In der kinetischen Gastheorie approximiert man die Konstituenten (Atome und
+Moleküle) eines Gases als harte Kugeln, deren Bewegung nur statistisch erfasst
+werden kann. Diese Modellvorstellung impliziert, dass zwei Gasteilchen nur
+wechselwirken, falls ihr Abstand geringer als die Summer ihrer Radien ist. Dies
+führt direkt zur Definition des geometrischen Wirkungsquerschnitts $\sigma$
+(siehe Gleichung (\ref{eq:wq})).
+
+\begin{equation}
+\sigma = \pi (r_1 + r_2)^2
+\label{eq:wq}
+\end{equation}
+
+Für ein solches ideales Gas gilt allgemein: 
+
+\begin{equation}
+p = n k_B T
+\label{eq:igas}
+\end{equation} 
+
+Hierbei beschreibt $p$ den Impuls, $n$ die Teilchendichte, $k_B$ die
+\textsc{Boltzmann}-Konstante und $T$ die Temperatur des Gases.
+
+Schickt man einen Teilchenstrahl durch ein solches Gas, so werden während der
+Propagation Teilchen aus dem Strahl herausgestreut, die Anzahl $N(x)$ der im
+Strahl verbleibenden Teilchen gehorcht dabei der Differentialgleichung
+(\ref{eq:dgl}) mit Lösung (\ref{eq:dgll}).
+
+\begin{equation}
+    \frac{\mathrm{d}N(x)}{\mathrm{d}x}= - n \sigma N(x)
+\label{eq:dgl}
+\end{equation}
+
+\begin{equation}
+N(x)= N_0 \exp(- n \sigma x)
+\label{eq:dgll}
+\end{equation}
+
+Mit Hilfe von Gleichung (\ref{eq:dgll}) kann nun die freie Weglänge $\Lambda$
+wie folgt berechnet werden.
+
+\begin{eqnarray}
+    \Lambda & \equiv & \frac{1}{N_0} \int_{0}^{\infty} \mathrm{d}x\ x \left| \frac{\mathrm{d}N(x)}{\mathrm{d}x} \right| \nonumber \\
+    &    =   & n \sigma \int_{0}^{\infty} \mathrm{d}x \exp(-n\sigma x) \nonumber \\
+        &    =   & \frac{1}{n\sigma} \label{eq:weg}
+\end{eqnarray}
+
+Über die mittlere freie Weglänge der Konstituenten kann die mittlere
+Kollisionszeit $\tau$ zu $\tau = \frac{\Lambda}{\langle v \rangle}$ bestimmt
+werden, wobei $\langle v \rangle$ die mittlere Geschwindigkeit bezeichnet.
 
 \section{Theoretische Aufgaben}
+\label{cha:aufg}
 \subsection*{Aufgabe (a)}
 Der Abschnitt über den \textsc{Einstein}schen Ansatz für die Wechselwirkung
 eines Strahlungsfeldes mit Atomen wurde erfolgreich gelesen.
@@ -416,10 +464,10 @@ $B_{\parallel}$ aufgetrennt. Dieses kann, da es nicht geeicht ist, nicht
 verwendet werden. Ferner stellen wir in der Absorptionszelle eine Temperatur von
 $T=\unit[(44 \pm 1)]{^\circ C}$ ein.
 
-Nun wird dem geeichten Hauptfeld $B_0$ das Modulationsfeld $B_{\sim}$ mit einer
-Stromstärke von $I_{\sim} = \unit[...]{mA}$ überlagert. Des Weiteren wird mit
-dem Feld $B_{\bot}$ die Signalqualität optimiert. Möglichst scharfe Spitzen auf
-dem Oszilloskop sind dabei für $I_{\bot} = \unit[...]{mA}$ abzulesen.
+Nun wird dem geeichten Hauptfeld $B_0$ das Modulationsfeld $B_{\sim}$
+überlagert. Des Weiteren wird mit dem Feld $B_{\bot}$ die Signalqualität
+optimiert. Möglichst scharfe Spitzen auf dem Oszilloskop sind dabei für
+$I_{\bot} = \unit[(273\pm 1)]{mA}$ abzulesen.
 
 Über Variation von $B_0$ wird nun versucht, das Erdmagnetfeld zu kompensieren.
 Die erfolgte Kompensation ist anhand eines 100-Hz-Signals mit äqudistanten
@@ -460,12 +508,7 @@ Eichkonstanten $k_0 = \unit[32.5]{\frac{Gs}{A}}$ ergibt sich das Magnetfeld zu:
 
 Dies weicht jedoch recht stark von dem oben berechneten theoretischen Wert ab.
 Systematische Fehler wie Störfelder, unreichend geeichte Messapparate oder eine
-nicht mehr aktuelle Konstante $M$ könnten vorliegen, vor allem aber sollte die
-Abweichung des Messwertes darüber erklärbar sein, dass nur eine Komponente des
-Erdmagnetfeldes gemessen wurde. Konkret wurde also nicht die Messung des
-theoretischen Wertes erwartet, sondern vielmehr, dass die Größenordnung in etwa
-getroffen wird und der Messwert nicht deutlich größer als der theoretische Wert
-ist. Dies ist erfüllt.
+nicht mehr aktuelle Konstante $M$ könnten vorliegen und die Abweichung erklären.
 
 Nun werden die beiden 50-Hz-Signale betrachtet. Wir erhalten $I^{unten}_0 =
 \unit[(-8.9 \pm 0.1)]{mA}$ und $I^{oben}_0 = \unit[(17.9 \pm 0.1)]{mA}$.  Als
@@ -477,17 +520,15 @@ somit zu
 berechnet.
 
 Über diese Methode erhalten wir also einen wesentlich näher am theoretischen
-liegenden Wert des Erdmagnetfeldes. Dies ist über ........ zu erklären.
-
-%erklärung!!!!!!!!!
+liegenden Wert des Erdmagnetfeldes. Dies könnte über eine schlechte Nullpunktseichung des Messgerätes zu erklären sein. Insgesamt erscheint jedoch diese Art der Bestimmung des Erdmagnetfeldes als eher ungenau.
 
 Nun werden die vertikale und horizontale Komponente des Erdmagnetfeldes mit den
 beiden Kompensationsfeldern $H_{\bot}$ und $H_{\parallel}$ kompensiert. Für
 $H_{\bot}$ wird hierzu ein Strom von $I_{\bot} = \unit[(273\pm 1)]{mA}$
 eingestellt (Signalflanken weisen maximale Steilheit auf). Nun wird das
 Hauptfeld ausgeschaltet. Anhand einer möglichst sauberen 100-Hz-Form des
-Spannungssignals am Oszillographen wird der Strom $I_{\parallel} =
-\unit[...]{mA}$ eingestellt.  Diese Einstellungen bleiben nun unverändert.
+Spannungssignals am Oszillographen wird der Strom $I_{\parallel}$ eingestellt.
+Diese Einstellungen bleiben nun unverändert.
 
 \section{Pump- und Relaxationszeit}
 \subsection{Versuchsdurchführung}
@@ -612,16 +653,17 @@ als:
 
 \section{Einstrahlung eines Hochfrequenzfeldes}
 \subsection{Versuchsdurchführung}
-Über ein Hochfrequenzfeld $B_{hf}$ werden nun magnetische Dipolübergänge
-zwischen den einzelnen \textsc{Zeeman}-Niveaus der Hyperfeinstruktur des
-Grundzustandes induziert. Dies führt zu einer Umbesetzung der Niveaus ins
-thermische Gleichgewicht, baut also den gepumpten Zustand ab. Hierzu muss die
-Frequenz des Hochfrequenzfeldes gerade der Energiedifferenz benachbarter
-\textsc{Zeeman}-Niveaus der Hyperfeinstruktur entsprechen, das heißt $h \nu
-\overset{!}{=} g_F \mu_B B$, wobei $\mu_B$ das \textsc{Bohr}sche Magneton darstellt.
+Über ein Hochfrequenzfeld $B_{\mathrm{hf}}$ werden nun magnetische
+Dipolübergänge zwischen den einzelnen \textsc{Zeeman}-Niveaus der
+Hyperfeinstruktur des Grundzustandes induziert. Dies führt zu einer Umbesetzung
+der Niveaus ins thermische Gleichgewicht, baut also den gepumpten Zustand ab.
+Hierzu muss die Frequenz des Hochfrequenzfeldes gerade der Energiedifferenz
+benachbarter \textsc{Zeeman}-Niveaus der Hyperfeinstruktur entsprechen, das
+heißt $h \nu \overset{!}{=} g_F \mu_B B$, wobei $\mu_B$ das \textsc{Bohr}sche
+Magneton darstellt.
 
-Bei konstantem Hauptfeld ($I_0 = \unit[...]{mA}$) wird hierzu die Amplitude des
-Hochfrequenzfeldes $B_{hf}$ variiert. Es werden dann die Frequenzen der beiden
+Bei konstantem Hauptfeld wird hierzu die Amplitude des Hochfrequenzfeldes
+$B_{\mathrm{hf}}$ variiert. Es werden dann die Frequenzen der beiden
 50-Hz-Modulationspunkte und der 100-Hz-Modulationspunkt aufgenommen.
 
 Man kann nun sowohl bestimmen, ob mehrere Isotope in der Absorptionszelle
@@ -631,22 +673,22 @@ Verhältnis der \textsc{Landé}-Faktoren ermitteln.
 \subsection{Messwerte und Auswertung}
 \subsubsection*{Zuordnung der Isotope}
 Die Temperatur der Absorptionszelle beträgt weiterhin $T = \unit[(44 \pm
-1)]{^\circ C}$. Die erhaltenen Messwerte sind in Abschnitt \ref{cha:iso}
+1)]{^\circ C}$. Die erhaltenen Messwerte sind in Anhang \ref{cha:iso}
 tabellarisch aufgeführt. Bei Auftragen der Frequenzen $\nu$ gegen das Feld
-$B_{hf}$ bzw. gegen den Strom $I_{hf}$ erhalten wir Abbildung \ref{fig:iso}.
-Dabei ergeben sich die Messfehler zu $\Delta \nu = 0.03\ \nu$ sowie $\Delta
-I_{hf} = 0.02\ I_{hf}$. Es werden zusätzlich Geradenfits der Form $I_{hf} = m
-\nu + c$ durch die Messpunkte gelegt.
+$B_{\mathrm{hf}}$ bzw. gegen den Strom $I_{\mathrm{hf}}$ erhalten wir Abbildung
+\ref{fig:iso}.  Dabei ergeben sich die Messfehler zu $\Delta \nu = 0.02\ \nu$
+sowie $\Delta I_{\mathrm{hf}} = 0.02\ I_{\mathrm{hf}}$. Es werden zusätzlich
+Geradenfits der Form $I_{\mathrm{hf}} = m \nu + c$ durch die Messpunkte gelegt.
 
 \begin{figure}[H]
     \begin{tikzpicture}
-        \begin{axis}
+        \begin{axis}[xlabel=$I/\unit{mA}$, ylabel=$\nu/\unit{MHz}$]
             \foreach \x in {2,3,4}
                 \addplot[only marks, mark=., color=red]
                     plot[domain=0:300,
                          error bars/.cd,
-                         x dir=both, x fixed=0.5,
-                         y dir=both, y fixed relative=0.03]
+                         x dir=both, x fixed relative=0.02,
+                         y dir=both, y fixed relative=0.02]
                     function {'data/hf_punkte1.txt' u ($1):($\x)};
             \foreach \M/\B in \HFPunkteEins
                 \addplot[mark=none]
@@ -656,8 +698,8 @@ I_{hf} = 0.02\ I_{hf}$. Es werden zusätzlich Geradenfits der Form $I_{hf} = m
                 \addplot[only marks, mark=., color=blue]
                     plot[domain=0:300,
                          error bars/.cd,
-                         x dir=both, x fixed=0.5,
-                         y dir=both, y fixed relative=0.03]
+                         x dir=both, x fixed relative=0.02,
+                         y dir=both, y fixed relative=0.02]
                     function {'data/hf_punkte2.txt' u ($1):($\x)};
             \foreach \M/\B in \HFPunkteZwei
                 \addplot[mark=none]
@@ -665,18 +707,19 @@ I_{hf} = 0.02\ I_{hf}$. Es werden zusätzlich Geradenfits der Form $I_{hf} = m
                     function {\M * x + \B};
         \end{axis}
     \end{tikzpicture}
+    \caption{Hochfrequenzpunkte}
     \label{fig:iso}
 \end{figure}
 
-Offensichtlich erhalten wir zwei Geradenscharen á drei Geraden für die drei
+Offensichtlich erhalten wir zwei Geradenscharen à drei Geraden für die drei
 Modulationspunkte ($\unit[100]{Hz}$ sowie obere und untere $\unit[50]{Hz}$).
 Deutlich ist das bei jeder Messreihe vorhandene lineare Verhalten zu erkennen.
 Ferner ist eine nahezu vollkommene Konstanz, also eine Unabhängigkeit vom Strom
-$I_{hf}$, der Frequenz bei den beiden 100-Hz-Messreihen auszumachen. Dies wurde
-erwartet, da diese Signale nur von $H_0$ (bzw. $I_0$) abhängen.
+$I_{\mathrm{hf}}$, der Frequenz bei den beiden 100-Hz-Messreihen auszumachen.
+Dies wurde erwartet, da diese Signale nur von $B_0$ (bzw. $I_0$) abhängen.
 
-Da bei $I_{hf} = 0$ keine \textsc{Zeeman}-Aufspaltung auftritt, sollten sich
-hierfür alle drei Geraden treffen. Dies kann im Rahmen der Messgenauigkeit
+Da bei $I_{\mathrm{hf}} = 0$ keine \textsc{Zeeman}-Aufspaltung auftritt, sollten
+sich hierfür alle drei Geraden treffen. Dies kann im Rahmen der Messgenauigkeit
 bestätigt werden.  Die Ungenauigkeiten werden dabei vor allem durch
 Ablesefehler, aber wohl auch durch kleinere Störfelder verursacht. Die
 Einordnung in die beiden Tripletts wird dadurch jedoch nicht beeinträchtigt.
@@ -687,7 +730,7 @@ B$ ist bekannt, dass die Frequenz $\nu$ proportional zum \textsc{Landé}-Faktor
 $g_F$ ist. Ferner ist bekannt, dass der \textsc{Landé}-Faktor der
 Hyperfeinstrukturkomponente $F=2$ des Grundzustands von $^{85}\mathrm{Rb}$
 gegeben ist durch $g_{F,^{85}\mathrm{Rb}} = \frac{1}{3}$ sowie weiterhin
-$g_{F,^{85}\mathrm{Rb}_{87}} = \frac{1}{2}$ gilt.
+$g_{F,^{85}\mathrm{Rb}} = \frac{1}{2}$ gilt.
 
 Somit kann das obere Triplett mit dem Isotop $^{85}\text{Rb}$ und das untere mit
 $^{87}\text{Rb}$ identifiziert werden.
@@ -698,13 +741,14 @@ Verhältnis der Frequenzen das Verhältnis der \textsc{Landé}-Faktoren der beiden
 Isotope bestimmen. Hierfür werden zunächst die mittleren Frequenzen $\bar{\nu}$
 der beiden Tripletts berechnet. Es ergibt sich folgendes.
 \begin{align*}
-    \bar{\nu_{^{85}\mathrm{Rb}}} &= \unit[... \pm ...]{MHz} \\
-    \bar{\nu_{^{87}\mathrm{Rb}}} &= \unit[... \pm ...]{MHz}
+    \overline{\nu}_{^{85}\mathrm{Rb}} &= \unit[(1.5098 \pm 0.0045)]{MHz} \\
+    \overline{\nu}_{^{87}\mathrm{Rb}} &= \unit[(2.267 \pm 0.0068)]{MHz}
 \end{align*}
 
 Für das Verhältnis folgt:
 \begin{align*}
-    \frac{\bar{\nu_{^{85}\mathrm{Rb}}}}{\bar{\nu_{^{87}\mathrm{Rb}}}} &= ... \pm ...
+    \frac{\overline{\nu}_{^{85}\mathrm{Rb}}}{\overline{\nu}_{^{87}\mathrm{Rb}}}
+        &= 0.66599 \pm 0.00282
 \end{align*}
 
 Über
@@ -712,12 +756,10 @@ Für das Verhältnis folgt:
     \frac{\nu_{^{85}\mathrm{Rb}}}{\nu_{^{87}\mathrm{Rb}}} &=
     \frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}}
 \end{align}
-ergibt sich nun direkt das Verhältnis der \textsc{Landé}-Faktoren bestimmen. Mit
-den bekannten Werten der \textsc{Landé}-Faktoren erwarten wir ein Verhältnis von
-$\frac{2}{3}$. Dies können wir somit experimentell mit großer Genauigkeit
-bestätigen ($\frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}} = ... \pm
-...$). 
-
+ergibt sich nun direkt das Verhältnis der \textsc{Landé}-Faktoren, für das wir
+mit den bekannten Werten der \textsc{Landé}-Faktoren einen Wert von
+$\frac{2}{3}$ erwarten. Dies können wir somit experimentell mit großer
+Genauigkeit bestätigen (Abweichung $0.1\ \%$). 
 
 \section{Bestimmung der Isotopenhäufigkeiten}
 \subsection{Versuchsdurchführung}
@@ -725,7 +767,7 @@ Im Folgenden wird die Signalstärke an der Photodiode in Abhängigkeit von der
 Teilchendichte $n$ in der Absorptionszelle gemessen. Hierzu variieren wir die
 Temperatur $T$ und somit nach
 \begin{align}
-\log{(p)} = - \frac{A}{T} + B
+    \log{(p)} = - \frac{A}{T} + B
 \end{align}
 den Druck $p$, also auch die Teilchendichte $n$ wegen der idealen Gasgleichung
 $p V=n k_B T$. 
@@ -736,7 +778,7 @@ Modulationspunkten der beiden Isotope.
 Anschließend kann die Isotopenhäufigkeit bestimmt werden.
 
 \subsection{Messwerte und Auswertung}
-Die Messwerte sind in Abschnitt \ref{cha:temp} tabellarisch dargestellt. Da die
+Die Messwerte sind im Anhang \ref{cha:temp} tabellarisch dargestellt. Da die
 Temperatur nicht immer konstant blieb während einer Messung und das Signal am
 Oszillographen vor allem bei kleinen Amplituden eine signifikante Breite aufwies
 (Signalbreite und -amplitude etwa gleich groß), ergeben sich große Fehler von
@@ -753,7 +795,7 @@ Im Folgenden sind unsere Messergebnisse graphisch dargestellt.
 \begin{figure}[H]
     \begin{tikzpicture}
         \begin{axis}[xlabel=$n/\unit{10^{15}\frac{1}{m^3}}$,
-                     ylabel=$\overline{A}$]
+                     ylabel=$\overline{A}/\unit{Skt}$]
             \foreach \x in {1, 2}
             {
                 \addplot+[only marks]
@@ -765,6 +807,8 @@ Im Folgenden sind unsere Messergebnisse graphisch dargestellt.
                     + 7.7)) / ((273.15 + $1) *
                     1.3806504e-7)):((($2+$2)/2+$3+$4)/3)};
             }
+            \addlegendentry{$^{87}\mathrm{Rb}$};
+            \addlegendentry{$^{85}\mathrm{Rb}$};
         \end{axis}
     \end{tikzpicture}
 \end{figure}
@@ -783,23 +827,51 @@ Stoßwahrscheinlichkeit zwischen den Atomen zu hoch ist. Schließlich relaxieren
 die Rubidiumatome über diese Stöße wieder. 
 
 Nun gilt offensichtlich, dass die Maxima der beiden Kurven den
-Transmissionsmaxima der jeweiligen Isotope entsprechen. 
+Transmissionsmaxima der jeweiligen Isotope entsprechen, welche also bei den
+Maxima die gleiche Teilchendichte $n$ aufweisen. Ferner ist die Teilchendichte
+$n$ der Isotopenhäufigkeit $\gamma$ proportional ($n = \gamma N$), wobei $N$ die
+Teilchenanzahl meint. Somit kann mittels des Dichteverhältnisses das
+Isotopenverhälnis in der Absorptionszelle festgestellt werden. Hierbei ist die
+Kurve größerer Amplitude mit dem häufigeren Isotop zu identifizieren.
+
+Es ist anzumerken, dass in beiden Kurven jeweils vier Werte stark nach unten
+abweichen. Da diese acht Ausreißer bei den gleichen vier verschiedenen
+Teilchendichten $n$ auftreten, ist von einem systematischen Messfehler
+auszugehen. Offenbar wurde nach Einstellen der Temperatur nicht lange genug
+gewartet, dass sich der entsprechende Gasdruck einstellen kann.
+
+Wir bestimmen nun durch Ablesen, welches leider eine recht massive Ungenauigkeit
+verursacht, die Teilchendichten $n$ bei den beiden Maxima.
+\begin{align*}
+    n_1 &= \unit[(6.5 \pm 0.2)]{\frac{1}{m^3}} \\
+    n_2 &= \unit[(2.6 \pm 0.2)]{\frac{1}{m^3}}
+\end{align*}
+
+Somit erhalten wir:
+\begin{align*}
+    \frac{\gamma_{\mathrm{F, {Rb}_{85}}}}{\gamma_{\mathrm{F, {Rb}_{87}}}}
+        &= \frac{n_1}{n_2} = 2.5 \pm 0.207
+\end{align*}
+
+Dieses Ergebnis ist mit dem Literaturwert von $2.6$ konsistent, allerdings haben
+wir aufgrund der geringen Ablesegenauigkeit (da wir die Verteilungsfunktion
+nicht kennen) einen relativ großen Fehler.
+
+Eine weitere Möglichkeit zur Erhöhung der Genauigkeit könnte darin bestehen,
+über längere Wartezeiten für ein Temperaturgleichgewicht in der Zelle zu sorgen.
+Schließlich sind bei der Verdampfung des Rubidiums gewisse Trägheiten zu
+beachten.
 
 \section{Bestimmung der \textsc{Landé}-Faktoren und des Kernspins}
 \subsection{Versuchsdurchführung}
-
-%----------------------------------------------------------------
-%-hier muss noch mal die sache mit H_0 oder B_0 überprüft werden-
-%----------------------------------------------------------------
-
-Über Variation des Hauptfeldes $H_0$ bei konstanter Temperatur $T$ und Aufsuchen
+Über Variation des Hauptfeldes $B_0$ bei konstanter Temperatur $T$ und Aufsuchen
 der Hochfrequenz-Resonanzfrequenzen (untere und obere \unit[50]{Hz} sowie der
 \unit[100]{Hz}) sind die \textsc{Landé}-Faktoren $g_{F,^{85}\mathrm{Rb}}$ und
 $g_{F,^{87}\mathrm{Rb}}$ der beiden Rubidium-Isotope $^{85}\mathrm{Rb}$ und
 $^{87}\mathrm{Rb}$ zu bestimmen. Anschließend können dann die jeweiligen
 Kernspins ermittelt werden.
 
-\subsubsection{Messdaten und Auswertung}
+\subsection{Messdaten und Auswertung}
 Bei einer Temperatur von $T = \unit[(44 \pm 1)]{^\circ C}$ erhalten wir folgende
 Messwerte.
 
@@ -835,26 +907,29 @@ bestimmt.
                 \addplot[mark=none] plot[domain=50:150] function {\M * x + \B};
         \end{axis}
     \end{tikzpicture}
+    \caption{}
     \label{fig:g}
 \end{figure}
 
 \subsubsection*{Bestimmung der \textsc{Landé}-Faktoren}
-Mit Hilfe der Formel (in der $\mu_B$ das \textsc{Bohr}sche Magneton ist)
+Mit Hilfe der Formel
 \begin{align}
   \Delta E  &= h \overline{\nu} \\
             &= g_F \mu_B \mu_0 H_0
 \end{align}
-sind nun aus den gemessenen Relaxationsfrequenzen die $g_F$-Faktoren der beiden
-Isotope ($^{85}\text{Rb}$ und $^{87}\text{Rb}$) bestimmbar. Nach der Relation
-$B_0 = k_0 \cdot I_0$ kann hierzu die Feldstärke $H_0$ durch die Stromstärke
-$I_0$ ausgedrückt werden. Es folgt schließlich:
+(in welcher $\mu_B$ das \textsc{Bohr}sche Magneton darstellt) sind nun aus den
+gemessenen Relaxationsfrequenzen die $g_F$-Faktoren der beiden Isotope
+($^{85}\mathrm{Rb}$ und $^{87}\mathrm{Rb}$) bestimmbar. Nach der Relation $B_0 =
+k_0 \cdot I_0$ kann hierzu die Feldstärke $H_0 = \mu_0 B_0$ durch die
+Stromstärke $I_0$ ausgedrückt werden, wobei $\mu_0$ die magnetische
+Feldkonstante meint. Es folgt schließlich:
 \begin{align}
     \overline{\nu} &= \frac{g_F \mu_B \mu_0 k_0}{h} \cdot I_0
 \end{align}
 
 Die \textsc{Landé}-Faktoren können also offenbar aus der Steigung des Graphen
 bestimmt werden. Hierzu wird nun an die Messwerte ein Geradenfit $f(x) = m x +
-b$ gelegt.  Für die jeweiligen Steigungen ergibt sich dann:
+b$ gelegt. Für die jeweiligen Steigungen ergibt sich dann:
 \begin{align*}
     m_1 &= \unit[(0.015045 \pm 0.01)]{\frac{GHz}{A}}& 
     m_2 &= \unit[(0.02255 \pm 0.01)]{\frac{GHz}{A}}
@@ -893,7 +968,9 @@ dann $g_J = 2$ und somit für die jeweiligen Kernspins:
 
 Dies stimmt ebenfalls sehr gut mit den theoretischen Werten
 $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
-überein (beide Male weniger als $0.05\ \%$ Abweichung).
+überein (jeweils weniger als $0.05\ \%$ Abweichung).
+
+\section{Zusammenfassung}
 
 \begin{appendix}
 \Literatur{quellen}
@@ -908,8 +985,8 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
             columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
         ]
         {data/g_faktor1.txt}
-    \label{tbl:g_faktor1}
     \caption{}
+    \label{tbl:g_faktor1}
 \end{table}
 
 \begin{table}[H]
@@ -920,10 +997,12 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
             columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
         ]
         {data/g_faktor1.txt}
-    \label{tbl:g_faktor2}
     \caption{}
+    \label{tbl:g_faktor2}
 \end{table}
-\subsection{Hochfrequenzpunkte}
+
+\subsection{Hochfrequenzfeld}
+\label{cha:iso}
 \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
@@ -933,8 +1012,10 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
             columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
         ]
         {data/hf_punkte1.txt}
+    \caption{}
     \label{tab:hf_punkte1}
 \end{table}
+
 \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
@@ -944,6 +1025,7 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
             columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
         ]
         {data/hf_punkte2.txt}
+    \caption{}
     \label{tab:hf_punkte2}
 \end{table}
 
@@ -954,18 +1036,18 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
         \ttabbox{}{
             \pgfplotstabletypesetfile[
                     columns/0/.style={column name={$T/\unit{^\circ C}$}},
-                    columns/1/.style={column name={$A_{50-}$}},
-                    columns/2/.style={column name={$A_{100}$}},
-                    columns/3/.style={column name={$A_{50+}$}}
+                    columns/1/.style={column name={$A_{50-}/\unit{Skt}$}},
+                    columns/2/.style={column name={$A_{100}/\unit{Skt}$}},
+                    columns/3/.style={column name={$A_{50+}/\unit{Skt}$}}
                 ]
             {data/temp1.txt}
         }
         \ttabbox{}{
             \pgfplotstabletypesetfile[
                     columns/0/.style={column name={$T/\unit{^\circ C}$}},
-                    columns/1/.style={column name={$A_{50-}$}},
-                    columns/2/.style={column name={$A_{100}$}},
-                    columns/3/.style={column name={$A_{50+}$}}
+                    columns/1/.style={column name={$A_{50-}/\unit{Skt}$}},
+                    columns/2/.style={column name={$A_{100}/\unit{Skt}$}},
+                    columns/3/.style={column name={$A_{50+}/\unit{Skt}$}}
                 ]
             {data/temp1.txt}
         }
