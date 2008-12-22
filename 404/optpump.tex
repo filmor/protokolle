@@ -52,7 +52,7 @@ Relaxation unter Aussendung mehrerer Photonen ist möglich.
 Nicht alle kombinatorisch möglichen optischen Übergänge zwischen Energieniveaus
 werden jedoch beobachtet. Einige sind über sogenannte Auswahlregeln verboten.
 Diese Auswahlregeln für optische Übergänge können aus dem
-\textsc{Wignert-Eckart}-Theorem gewonnen werden. Über dieses Theorem ist die
+\textsc{Wigner-Eckart}-Theorem gewonnen werden. Über dieses Theorem ist die
 Bestimmung der nicht verschwindenden Matrixelemente, also der erlaubten
 Kombinationen von Anfangs- und Endzustand, eines Tensoroperators wie des
 Dipoloperators möglich.
@@ -117,7 +117,7 @@ Frequenz durchzulassen, alle anderen Frequenzen werden unterdrückt.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/fabry}
+    \includegraphics[height=0.4\textwidth]{grafiken/fabry}
     \caption[Fabry-Perot-Interferometer]{Prinzip des
     Fabry-Perot-Interferometers~\cite{demi2}, bearbeitet.}
     \label{fig:fabry}
@@ -519,12 +519,12 @@ und die Relaxationszeit $\tau_P$ und $\tau_R$ über die Relationen
 \end{align}
 bestimmen.
 
-\subsubsection{Messdaten und Auswertung}
+\subsection{Messdaten und Auswertung}
 \subsubsection*{Anstiegszeit}
 Für den Signalaufbau erhalten wir die unten aufgelisteten Messwerte.
 
 Die recht großen Fehler ergeben sich dabei hauptsächlich aus der starken
-Verbereiterung des Osilloskopsignals.
+Verbreiterung des Oszilloskopsignals.
 
 \begin{figure}[H]
     \CenterFloatBoxes
@@ -552,13 +552,11 @@ Fittet man an die Messpunkte eine Exponentialfunktion, so erhält man:
 \begin{align*} 
     \tau_{\text{auf}} = \unit[(6.47 \pm 0.67)]{ms}
 \end{align*}
-bestimmt werden.
 
 \subsubsection*{Abstiegszeit}
-Nun wird völlig analog für den Signalabbau vorgegangen.
-
-Die recht großen Fehler ergeben sich erneut hauptsächlich aus der starken
-Verbereiterung des Osilloskopsignals.
+Nun wird völlig analog für den Signalabbau vorgegangen. Die recht großen Fehler
+ergeben sich erneut hauptsächlich aus der starken Verbreiterung des
+Oszilloskopsignals.
 
 \begin{figure}[H]
     \CenterFloatBoxes
@@ -583,7 +581,7 @@ Verbereiterung des Osilloskopsignals.
     \end{floatrow}
 \end{figure}
 
-Wiederum durch einen Fit kann
+Wiederum kann durch einen Fit
 \begin{align*}
     \tau_{\text{ab}} = \unit[(0.32 \pm 0.07)]{s}
 \end{align*}
@@ -620,17 +618,17 @@ Grundzustandes induziert. Dies führt zu einer Umbesetzung der Niveaus ins
 thermische Gleichgewicht, baut also den gepumpten Zustand ab. Hierzu muss die
 Frequenz des Hochfrequenzfeldes gerade der Energiedifferenz benachbarter
 \textsc{Zeeman}-Niveaus der Hyperfeinstruktur entsprechen, das heißt $h \nu
-\overset{!}{=} g_F \mu_B B$.
+\overset{!}{=} g_F \mu_B B$, wobei $\mu_B$ das \textsc{Bohr}sche Magneton darstellt.
 
-Bei konstantem Hauptfeld wird hierzu die Amplitude des Hochfrequenzfeldes
-$B_{hf}$ variiert. Es werden dann die Frequenzen der beiden
-50-Hz-Modulationspunkte und des 100-Hz-Modulationspunktes aufgenommen.
+Bei konstantem Hauptfeld ($I_0 = \unit[...]{mA}$) wird hierzu die Amplitude des
+Hochfrequenzfeldes $B_{hf}$ variiert. Es werden dann die Frequenzen der beiden
+50-Hz-Modulationspunkte und der 100-Hz-Modulationspunkt aufgenommen.
 
 Man kann nun sowohl bestimmen, ob mehrere Isotope in der Absorptionszelle
 vorhanden sind und Ihnen die jeweiligen Messkurven zuordnen, als auch das
 Verhältnis der \textsc{Landé}-Faktoren ermitteln.
 
-\subsubsection{Messwerte und Auswertung}
+\subsection{Messwerte und Auswertung}
 \subsubsection*{Zuordnung der Isotope}
 Die Temperatur der Absorptionszelle beträgt weiterhin $T = \unit[(44 \pm
 1)]{^\circ C}$. Die erhaltenen Messwerte sind in Abschnitt \ref{cha:iso}
@@ -687,9 +685,9 @@ Anhand dieser beiden Kurventripletts ist auszumachen, dass in der
 Absorptionszelle zwei Rubidiumisotope vorliegen müssen. Über $h \nu = g_F \mu_B
 B$ ist bekannt, dass die Frequenz $\nu$ proportional zum \textsc{Landé}-Faktor
 $g_F$ ist. Ferner ist bekannt, dass der \textsc{Landé}-Faktor der
-Hyperfeinstrukturkomponente $F=2$ des Grundzustands von $^{85}\mathrm{Rb}$ gegeben
-ist durch $g_{F,\mathrm{Rb}_{85}} = \frac{1}{3}$ sowie weiterhin
-$g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ gilt.
+Hyperfeinstrukturkomponente $F=2$ des Grundzustands von $^{85}\mathrm{Rb}$
+gegeben ist durch $g_{F,^{85}\mathrm{Rb}} = \frac{1}{3}$ sowie weiterhin
+$g_{F,^{85}\mathrm{Rb}_{87}} = \frac{1}{2}$ gilt.
 
 Somit kann das obere Triplett mit dem Isotop $^{85}\text{Rb}$ und das untere mit
 $^{87}\text{Rb}$ identifiziert werden.
@@ -721,7 +719,36 @@ bestätigen ($\frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}} = ... \pm
 ...$). 
 
 
-\section{Brabbel}
+\section{Bestimmung der Isotopenhäufigkeiten}
+\subsection{Versuchsdurchführung}
+Im Folgenden wird die Signalstärke an der Photodiode in Abhängigkeit von der
+Teilchendichte $n$ in der Absorptionszelle gemessen. Hierzu variieren wir die
+Temperatur $T$ und somit nach
+\begin{align}
+\log{(p)} = - \frac{A}{T} + B
+\end{align}
+den Druck $p$, also auch die Teilchendichte $n$ wegen der idealen Gasgleichung
+$p V=n k_B T$. 
+
+Wir bestimmen dann für jede Temperatur $T$ die Amplituden der Signale an den
+Modulationspunkten der beiden Isotope.
+
+Anschließend kann die Isotopenhäufigkeit bestimmt werden.
+
+\subsection{Messwerte und Auswertung}
+Die Messwerte sind in Abschnitt \ref{cha:temp} tabellarisch dargestellt. Da die
+Temperatur nicht immer konstant blieb während einer Messung und das Signal am
+Oszillographen vor allem bei kleinen Amplituden eine signifikante Breite aufwies
+(Signalbreite und -amplitude etwa gleich groß), ergeben sich große Fehler von
+$\Delta T = \unit[1]{K}$ für die eingestellte Temperatur und $\Delta A =
+\unit[0.1]{Skt}$ für die abgelesene Amplitude. 
+
+Nun mitteln wir die drei Amplitudenwerte bei konstanter Temperatur für jedes
+Isotop. Der Fehler der Amplituden berechnet sich aus der \textsc{Gauß}schen
+Fehlerfortpflanzung zu $\Delta A = \unit[0.0577]{Skt}$. Die Fehler der
+Teilchendichte $n$ jedoch vernachlässigen wir wegen mangelnder Erheblichkeit.
+
+Im Folgenden sind unsere Messergebnisse graphisch dargestellt.
 
 \begin{figure}[H]
     \begin{tikzpicture}
@@ -732,7 +759,7 @@ bestätigen ($\frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}} = ... \pm
                 \addplot+[only marks]
                     plot[domain=:,
                          error bars/.cd,
-                         y dir=both, y fixed=0.1732]
+                         y dir=both, y fixed=0.0577]
                     function {'data/temp\x.txt' u (133.32 * 10**($1<38.84 ?
                     (-4503.74 / (273.15 + $1) + 8.21):(-4347.11 / (273.15 + $1)
                     + 7.7)) / ((273.15 + $1) *
@@ -741,6 +768,22 @@ bestätigen ($\frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}} = ... \pm
         \end{axis}
     \end{tikzpicture}
 \end{figure}
+
+Offenbar sind die Kurven der beiden Isotope nicht kongruent. Mit steigender
+Temperatur  $T$ nimmt bei beiden Kurven zunächst das Signal an der Photodiode
+und somit die Transmission des Gases zu, da für kleine Temperaturen das Rubidium
+noch nicht vollständig in den gasförmigen Zustand übergegangen ist. Des Weiteren
+mag es auch daran liegen, dass der Betrag der Dopplerverbreiterung der
+$D_1$-Linie mit der Temperatur steigt und somit die Anregungen der Rubidiumatome
+wahrscheinlicher werden. 
+
+Es existiert nun weiter eine charakteristische Temperatur, ab welcher die
+Transmission wieder abnimmt, da die Teilchendichte und somit die
+Stoßwahrscheinlichkeit zwischen den Atomen zu hoch ist. Schließlich relaxieren
+die Rubidiumatome über diese Stöße wieder. 
+
+Nun gilt offensichtlich, dass die Maxima der beiden Kurven den
+Transmissionsmaxima der jeweiligen Isotope entsprechen. 
 
 \section{Bestimmung der \textsc{Landé}-Faktoren und des Kernspins}
 \subsection{Versuchsdurchführung}
@@ -905,6 +948,7 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
 \end{table}
 
 \subsection{Temperaturen}
+\label{cha:temp}
 \begin{figure}[H]
     \begin{floatrow}
         \ttabbox{}{
