@@ -15,6 +15,10 @@ beobachtet werden. Dieses Verfahren eignet sich somit zur Untersuchung der
 g-Faktoren und somit des Kernspins. Auch das Ausmessen sehr kleiner magnetischer
 Felder ist möglich.
 
+Das Verfahren ist deshalb besonders eindrucksvoll, da es die Bestimmung einer
+Eigenschaft des Atomkerns, nämlich des Kernspins, über Messungen an der
+Atomhülle erlaubt.
+
 \subsubsection*{Anmerkung}
 \emph{Es wird im Folgenden in Abweichung vom Skript die aktuelle Bezeichnung der
 magnetischen Flussdichte $B$ mit $[B] = \unit{Gs} = 10^{-4} \unit{T}$ zwecks
@@ -174,7 +178,7 @@ Sowie ($S$: \textsc{Poynting}-Vektor, $c$: Lichtgeschwindigkeit, $\nu_D$:
 Dopplerverbreiterung):
 
 \begin{align}
-    \rho = \frac{S}{c \ \nu_D}
+    \rho = \frac{S}{c \nu_D}
 \end{align}
 
 \subsection*{Aufgabe (b)}
@@ -186,32 +190,32 @@ Absorptionskoeffizienten angibt.  Die Gleichung lässt sich auch in einer
 Energiebetrachtung aufstellen. Es ergibt sich:
 
 \begin{align}
-    \mathrm{d}E = - \kappa \ E \ \mathrm{d}s
+    \mathrm{d}E = - \kappa E \ \mathrm{d}s
 \end{align}
 
 Des Weiteren ergibt sich über die atomare Absorptionsrate folgendes:
 
 \begin{align}
-    \mathrm{d}E = - h \ \nu \ W_{abs} \ \mathrm{d}N
+    \mathrm{d}E = - h \nu W_{abs} \ \mathrm{d}N
 \end{align}
 
 Es folgt nach Gleichsetzen und Einsetzen der Relation $E = S \ A$, mit $S = \rho
-\ c \ \nu_D$, sowie $\mathrm{d}V = A \ \mathrm{d}s$:
+c \nu_D$, sowie $\mathrm{d}V = A \ \mathrm{d}s$:
 
 \begin{align}
-    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V = h \ \nu \ W_{abs} \ \mathrm{d}N
+    \kappa \rho c \nu_D \ \mathrm{d}V = h \nu W_{abs} \ \mathrm{d}N
 \end{align}
 
-Über $W = B \ \rho$ und $B = \frac{\lambda^3}{8 \pi h \tau}$ ergibt sich
+Über $W = B \rho$ und $B = \frac{\lambda^3}{8 \pi h \tau}$ ergibt sich
 schließlich in der Tat das gewünschte Ergebnis.
 
 \begin{align*}
-    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V &= h \ \nu  \ W_{abs} \ \mathrm{d}N \\
-    \kappa \ \rho \ c \ \nu_D \ \mathrm{d}V &= h \ \nu \ \frac{\lambda^3}{8 \pi
-        h\tau} \ \rho \ \mathrm{d}N \\
-    \kappa  &= \frac{\lambda^3 \ h \ \nu}{8 \ \pi \ h \ \tau \ c \ \nu_D}
+    \kappa \rho c \nu_D \ \mathrm{d}V &= h \nu W_{abs} \ \mathrm{d}N \\
+    \kappa \rho c \nu_D \ \mathrm{d}V &= h \nu \ \frac{\lambda^3}{8 \pi
+        h\tau} \rho \ \mathrm{d}N \\
+    \kappa  &= \frac{\lambda^3 h \nu}{8 \pi h \tau c \nu_D} \ 
         \frac{\mathrm{d}N}{\mathrm{d}V} \\
-    \kappa  &= \frac{\lambda^2}{8 \ \pi \ \tau \ \nu_D}
+    \kappa  &= \frac{\lambda^2}{8 \pi \tau \nu_D} \
         \frac{\mathrm{d}N}{\mathrm{d}V}
 \end{align*}
 \qed
@@ -222,7 +226,7 @@ Intensität auf $\frac{1}{e}$ gefallen ist. Dies entspricht gerade $\Lambda =
 \frac{1}{\kappa}$. Somit gilt:
 
 \begin{align}
-    \Lambda = \frac{1}{\kappa}  = \frac{8 \ \pi \ \tau \ \nu_D}{\lambda^2} \frac{V}{N}
+    \Lambda = \frac{1}{\kappa}  = \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N}
 \end{align}
 
 Zur Bestimmung der freien Weglänge der Photonen berechnen wir zunächst die
@@ -231,7 +235,7 @@ Dopplerbreite der im Versuch verwendeten Spektrallinie der Wellenlänge $\lambda
 \cdot 10^{-8}]{s}$ besitzt. Es gilt:
 
 \begin{align}
-    \nu_D = \nu_0 \ \sqrt{\frac{k_B \ T}{m_{\mathrm{Rb}} \ c^2}}
+    \nu_D = \nu_0 \ \sqrt{\frac{k_B T}{m_{\mathrm{Rb}} c^2}}
 \end{align}
 
 Mit $m_{\mathrm{Rb}} = \unit[85.56]{u} = \unit[1.421 \cdot 10^{-25}]{kg}$,
@@ -239,7 +243,7 @@ $\nu_0 = \frac{c}{\lambda} = \unit[3.77 \cdot 10^{14}]{Hz}$ und unter der
 Annahme einer mittleren Temperatur von $T = \unit[40]{^\circ C} = \unit[313]{K}$
 ergibt sich somit für die Dopplerbreite $\nu_D = \unit[2.2 \cdot 10^8]{Hz}$.
 
-Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B \ T}{p}$
+Aus der idealen Gasgleichung erhält man mit $\frac{V}{N} = \frac{k_B T}{p}$
 eine weitere nötige Relation. Der Dampfdruck $p$ innerhalb der Messzelle kann
 dabei über die im Skript angegebene Formel $\log(p) = - \frac{A}{T} + B$
 berechnet werden (wobei $A = \unit[4347.11]{K}$ und $B = 7.70$) und ergibt sich
@@ -247,22 +251,24 @@ zu $p = \unit[9.564 \cdot 10^{-5}]{Pa}$.  Somit ergibt sich insgesamt
 schließlich:
 
 \begin{align*}
-    \Lambda &= \frac{8 \ \pi \ \tau \ \nu_D}{\lambda^2} \frac{V}{N} \\
+    \Lambda &= \frac{8 \pi \tau \nu_D}{\lambda^2} \frac{V}{N} \\
             &= \unit[11.66]{cm}
 \end{align*}
 
 Die freie Weglänge liegt also in der Größenordnung der Abmessung der Messzelle.
 
 \subsection*{Aufgabe (c)}
-Wir kennen bereits die Relation $S = \rho \ c \ \nu_D$ für den
+Wir kennen bereits die Relation $S = \rho c \nu_D$ für den
 \textsc{Poynting}-Vektor. Mit dem angegebenen Wert von $S = \unit[15]{\frac{\mu
 W}{cm^2}}$, sowie der bereits berechneten Dopplerbreite erhält man die spektrale
 Leistungsdichte zu $\rho = \unit[2.27 \cdot 10^{-18}]{\frac{W \ s^2}{m^3}}$.
-Zur Ermittlung der Anzahl der pro Sekunde absorbierten Photonen setzt man nun das für $\rho$ erhaltene Ergebnis in die Formel für $W_{abs}$ ein. Es ergibt sich:
+Zur Ermittlung der Anzahl der pro Sekunde absorbierten Photonen setzt man nun
+das für $\rho$ erhaltene Ergebnis in die Formel für $W_{abs}$ ein. Es ergibt
+sich:
 
 \begin{align*}
 W_{abs} &= B \ \rho \\
-        &= \frac{\lambda^3}{8 \ \pi \ h \ \tau} \rho \\
+        &= \frac{\lambda^3}{8 \pi h \tau} \rho \\
         &\approx 2330
 \end{align*}
 
@@ -282,7 +288,7 @@ Mit Hilfe der mittleren Geschwindigkeit $\langle v \rangle$ der Rubidiumatome
 kann nun die Anzahl der Wandstöße berechnet werden.
 
 \begin{align*}
-    \langle v \rangle &= \sqrt{\frac{8 \ k_B \ T}{\pi \ m_{\mathrm{Rb}}}} \\
+    \langle v \rangle &= \sqrt{\frac{8 k_B T}{\pi m_{\mathrm{Rb}}}} \\
                       &= \unit[278.8]{\frac{m}{s}}
 \end{align*}
 
@@ -302,7 +308,7 @@ Diffusionszeit gilt:
 \end{align}
 
 Wobei die Diffusionskonstante von Helium durch $D_0 =
-\unit[0.54]{\frac{cm^2}{\unit[101325]{Pa} \ s}}$ gegeben ist. Bei einer Dicke
+\unit[\frac{0.54}{101325}]{\frac{cm^2}{Pa\ s}}$ gegeben ist. Bei einer Dicke
 von $d=\unit[5]{cm}$ und einem Druck von $p = \unit[1]{mbar} = \unit[100]{Pa}$
 ergibt sich dadurch schließlich $\tau_D = \unit[7.6]{ms}$.
 
@@ -319,7 +325,7 @@ Rubidiumatomen bestimmt werden.
     \langle v_{rel} \rangle = \langle |v_{\mathrm{Rb}}-v_{\mathrm{He}}| \rangle
 \end{align}
 
-Es gilt dabei $\langle v^2 \rangle = \frac{3 \ k_B \ T}{m}$ und ${\langle v
+Es gilt dabei $\langle v^2 \rangle = \frac{3 k_B T}{m}$ und ${\langle v
 \rangle}^2 = \frac{8}{3 \pi} \langle v^2 \rangle$. Nun folgt:
 
 \begin{align*}
@@ -327,9 +333,9 @@ Es gilt dabei $\langle v^2 \rangle = \frac{3 \ k_B \ T}{m}$ und ${\langle v
         &= \sqrt{\frac{8}{3 \pi}} \sqrt{
             \langle{|v_{\mathrm{Rb}}-v_{\mathrm{He}}|}^2 \rangle} \\
         &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{\mathrm{Rb}} - 2
-            v_{\mathrm{Rb}} \ v_{\mathrm{He}}  + v^2_{\mathrm{He}} \rangle} \\
+            v_{\mathrm{Rb}} v_{\mathrm{He}}  + v^2_{\mathrm{He}} \rangle} \\
         &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{Rb} \rangle - 2
-            \langle v_{\mathrm{Rb}} \ v_{\mathrm{He}} \rangle + \langle
+            \langle v_{\mathrm{Rb}} v_{\mathrm{He}} \rangle + \langle
             v^2_{\mathrm{He}}\rangle} \\
         &= \sqrt{\frac{8}{3 \pi}} \sqrt{\langle v^2_{\mathrm{Rb}} \rangle 
             - 2 \langle v_{\mathrm{Rb}} \rangle \langle v_{\mathrm{He}} \rangle +
@@ -391,7 +397,7 @@ Das Hauptfeld $B_0$ ist dabei für die eigentliche \textsc{Zeeman}-Aufspaltung
 zuständig und wird von dem Modulationsfeld $B_{~}$ überlagert.
 
 Des Weiteren ist mit den Magnetfeldern $B_{\parallel}$ und $B_{\bot}$ eine
-Kompensation von Störfeldern (z.\ B.\ Erdmagnetfeld) möglich. 
+Kompensation von Störfeldern (zum Beispiel dem Erdmagnetfeld) möglich. 
 
 Ferner kann noch ein Hochfrequenzfeld $B_{hf}$ überlagert werden, dessen
 Achse orthogonal zur Strahlrichtung steht. Es wird durch einen um die Glaskugel
@@ -477,11 +483,11 @@ liegenden Wert des Erdmagnetfeldes. Dies ist über ........ zu erklären.
 
 Nun werden die vertikale und horizontale Komponente des Erdmagnetfeldes mit den
 beiden Kompensationsfeldern $H_{\bot}$ und $H_{\parallel}$ kompensiert. Für
-$H_{\bot}$ wird hierzu ein Strom von $I_{\bot} = \unit[...]{mA}$ eingestellt
-(Signalflanken weisen maximale Steilheit auf). Nun wird das Hauptfeld
-ausgeschaltet. Anhand einer möglichst sauberen 100-Hz-Form des Spannungssignals
-am Oszillographen wird der Strom $I_{\parallel} = \unit[...]{mA}$ eingestellt.
-Diese Einstellungen bleiben nun unverändert.
+$H_{\bot}$ wird hierzu ein Strom von $I_{\bot} = \unit[(273\pm 1)]{mA}$
+eingestellt (Signalflanken weisen maximale Steilheit auf). Nun wird das
+Hauptfeld ausgeschaltet. Anhand einer möglichst sauberen 100-Hz-Form des
+Spannungssignals am Oszillographen wird der Strom $I_{\parallel} =
+\unit[...]{mA}$ eingestellt.  Diese Einstellungen bleiben nun unverändert.
 
 \section{Pump- und Relaxationszeit}
 \subsection{Versuchsdurchführung}
@@ -500,25 +506,10 @@ Es wird angenommen, dass der Aufbau durch eine Exponentialfunktion der Form
 \end{align}
 beschrieben werden kann.
 
-Gleichung (\ref{eq:exp}) lässt sich nun in eine \textsc{Taylor}-Reihe
-entwickeln. Man erhält die lineare Relation:
-\begin{align}
-    f(t) = A \left(1 - \frac{1}{\tau_{\text{auf}}} \cdot t\right) + \mathcal{O}(t^2)
-\end{align}
-% Linear = in erster Näherung ..
-Wir erwarten also, dass sich die Messergebnisse in erster Näherung linear
-verhalten.
-
 Analoges gilt für den Signalabbau.
 \begin{align}
-    f(t) = B \left(1 - \exp{-\left(\frac{t}{\tau_{\text{ab}}}\right)}\right)
+    f(t) = B \left(1 - \exp{\left(-\frac{t}{\tau_{\text{ab}}}\right)}\right)
 \end{align}
-In linearer Näherung erhalten wir demnach:
-\begin{align}
-    f(t) = \frac{B}{\tau_{\text{ab}}} \cdot t + \mathcal{O}(t^2)
-\end{align}
-Erneut wird also eine in erster Näherung lineare Verteilung der Messergebnisse
-erwartet.
 
 Anhand der Ergebnisse für die An- und Abstiegszeit lassen sich dann die Pump-
 und die Relaxationszeit $\tau_P$ und $\tau_R$ über die Relationen
@@ -530,119 +521,205 @@ bestimmen.
 
 \subsubsection{Messdaten und Auswertung}
 \subsubsection*{Anstiegszeit}
-Für den Signalaufbau erhalten wir folgende Messwerte:
-\begin{table}[H]
-    \centering
-    \pgfplotstabletypesetfile{data/zeit_aufsteigend.txt}
-    \caption{}
-    \label{tab:aufsteigend}
-\end{table}
+Für den Signalaufbau erhalten wir die unten aufgelisteten Messwerte.
 
 Die recht großen Fehler ergeben sich dabei hauptsächlich aus der starken
 Verbereiterung des Osilloskopsignals.
 
-Nun kann das gemessene Spannungssignal $U$ gegen die Zeit $t$ aufgetragen
-werden.
 \begin{figure}[H]
-    \begin{tikzpicture}
-        \begin{axis}[xlabel=$U/\unit{V}$, ylabel=$t/\unit{s}$]
-            \addplot+[only marks, mark=.]
-                file
-                {data/zeit_aufsteigend.txt};
-        \end{axis}
-    \end{tikzpicture}
+    \CenterFloatBoxes
+    \begin{floatrow}
+        \ffigbox{}{
+            \begin{tikzpicture}
+                \begin{axis}[xlabel=$t/\unit{ms}$, ylabel=Amplitude]
+                    \addplot+[only marks]
+                        plot[error bars/.cd,
+                             y dir=both, y fixed=0.1]
+                        file {data/zeit_aufsteigend.txt};
+                \end{axis}
+            \end{tikzpicture}
+        }
+        \ffigbox{}{
+            \pgfplotstabletypesetfile[
+                    columns/0/.style={column name={$t/\unit{ms}$}},
+                    columns/1/.style={column name={Amplitude}},
+                ]
+                {data/zeit_aufsteigend.txt}
+        }
+    \end{floatrow}
 \end{figure}
-
-
-Offensichtlich ergibt sich also in der Tat ein in etwa lineares Verhalten der
-Messwerte. Die Steigung der Fitgeraden beträgt dabei $m = \unit[(... \pm
-...)]{\frac{V}{s}}$.
-
-Daraus kann mit $\tau_{\text{auf}} = ....$ nun die Anstiegszeit zu 
-\begin{align}
-    \tau_{\text{auf}} = \unit[(... \pm ...)]{s} \nonumber 
-\end{align}
+Fittet man an die Messpunkte eine Exponentialfunktion, so erhält man:
+\begin{align*} 
+    \tau_{\text{auf}} = \unit[(6.47 \pm 0.67)]{ms}
+\end{align*}
 bestimmt werden.
 
-Die Fehler wurden über ..... bestimmt.
-
 \subsubsection*{Abstiegszeit}
-Nun wird völlig analog für den Signalabbau vorgegangen. Wir erhalten folgende
-Messwerte:
-% Tabellen zusammen
-\begin{table}[H]
-    \centering
-    \pgfplotstabletypesetfile{data/zeit_abfallend.txt}
-    \caption{}
-    \label{tab:abfallend}
-\end{table}
+Nun wird völlig analog für den Signalabbau vorgegangen.
 
 Die recht großen Fehler ergeben sich erneut hauptsächlich aus der starken
 Verbereiterung des Osilloskopsignals.
 
-Nun kann das gemessene Spannungssignal $U$ gegen die Zeit $t$ aufgetragen
-werden.
 \begin{figure}[H]
-    \begin{tikzpicture}
-        \begin{axis}[xlabel=$U/\unit{V}$, ylabel=$t/\unit{s}$]
-            \addplot+[only marks, mark=.]
-                file
-                {data/zeit_aufsteigend.txt};
-        \end{axis}
-    \end{tikzpicture}
+    \CenterFloatBoxes
+    \begin{floatrow}
+        \ffigbox{}{
+            \begin{tikzpicture}
+                \begin{axis}[xlabel=$t/\unit{ms}$, ylabel=Amplitude]
+                    \addplot+[only marks]
+                        plot[error bars/.cd,
+                             y dir=both, y fixed=0.1]
+                        file {data/zeit_abfallend.txt};
+                \end{axis}
+            \end{tikzpicture}
+        }
+        \ffigbox{}{
+            \pgfplotstabletypesetfile[
+                    columns/0/.style={column name={$t/\unit{ms}$}},
+                    columns/1/.style={column name={Amplitude}},
+                ]
+                {data/zeit_abfallend.txt}
+        }
+    \end{floatrow}
 \end{figure}
 
-Offensichtlich ergibt sich wieder ein in etwa lineares Verhalten der Messwerte.
-Die Steigung der Fitgeraden beträgt $m = \unit[(... \pm ...)]{\frac{V}{s}}$.
-
-Nun kann mit $\tau_{\text{ab}} = ....$ die Abstiegszeit zu 
-\begin{align}
-    \tau_{\text{ab}} = \unit[(... \pm ...)]{s} \nonumber 
-\end{align}
+Wiederum durch einen Fit kann
+\begin{align*}
+    \tau_{\text{ab}} = \unit[(0.32 \pm 0.07)]{s}
+\end{align*}
 bestimmt werden.
-
-Die Fehler wurden über ..... bestimmt.
 
 \subsubsection*{Pump- und Relaxationszeit}
 Nun werden mit $\tau_{\text{auf}}$ und $\tau_{\text{ab}}$ die Pumpzeit $\tau_p$
 sowie die Relaxationszeit $\tau_r$ errechnet. Es ergibt sich:
-\begin{align*}
-    \tau_{p} &= \frac{2 \tau_{\text{auf}} \tau_{\text{ab}}}{2 \tau_{\text{auf}}
-              + \tau_{\text{ab}}} = \unit[(... \pm ...)]{s} \\
-    \tau_{p} &= \frac{2 \tau_{\text{auf}} \tau_{\text{ab}}}{2 \tau_{\text{auf}}
-              - \tau_{\text{ab}}} = \unit[(... \pm ...)]{s}
-\end{align*}
-
-Die Fehler ergeben sich dabei aus \textsc{Gauß}scher Fehlerfortpflanzung
-mittels:
 \begin{align}
-    bla
+    \tau_{p} &= 2 \left( \frac{1}{\tau_{\text{ab}}}
+              + \frac{1}{\tau_{\text{auf}}} \right)^{-1} = \unit[(0.608 \pm 0.125)]{ms}\\
+    \tau_{r} &= 2 \left( \frac{1}{\tau_{\text{ab}}}
+              - \frac{1}{\tau_{\text{auf}}} \right)^{-1} = \unit[(0.674 \pm 0.154)]{ms}
 \end{align}
 
-\section{Bestimmung des Isotopenverhältnisses}
+Die Fehler ergeben sich dabei aus \textsc{Gauß}scher Fehlerfortpflanzung
+als:
+\begin{align}
+    \Delta \tau_p &= \frac{\tau_p^2}{2} \ \sqrt{
+                     \left(\frac{\Delta\tau_{\text{auf}}}{\tau_{\text{auf}}^2}\right)^2
+                   + \left(\frac{\Delta\tau_{\text{ab}}}{\tau_{\text{ab}}^2}\right)^2
+                   } \\
+    \Delta \tau_r &= \frac{\tau_r^2}{2} \ \sqrt{
+                     \left(\frac{\Delta\tau_{\text{auf}}}{\tau_{\text{auf}}^2}\right)^2
+                   + \left(\frac{\Delta\tau_{\text{ab}}}{\tau_{\text{ab}}^2}\right)^2
+                   }
+\end{align}
+
+\section{Einstrahlung eines Hochfrequenzfeldes}
+\subsection{Versuchsdurchführung}
+Über ein Hochfrequenzfeld $B_{hf}$ werden nun magnetische Dipolübergänge
+zwischen den einzelnen \textsc{Zeeman}-Niveaus der Hyperfeinstruktur des
+Grundzustandes induziert. Dies führt zu einer Umbesetzung der Niveaus ins
+thermische Gleichgewicht, baut also den gepumpten Zustand ab. Hierzu muss die
+Frequenz des Hochfrequenzfeldes gerade der Energiedifferenz benachbarter
+\textsc{Zeeman}-Niveaus der Hyperfeinstruktur entsprechen, das heißt $h \nu
+\overset{!}{=} g_F \mu_B B$.
+
+Bei konstantem Hauptfeld wird hierzu die Amplitude des Hochfrequenzfeldes
+$B_{hf}$ variiert. Es werden dann die Frequenzen der beiden
+50-Hz-Modulationspunkte und des 100-Hz-Modulationspunktes aufgenommen.
+
+Man kann nun sowohl bestimmen, ob mehrere Isotope in der Absorptionszelle
+vorhanden sind und Ihnen die jeweiligen Messkurven zuordnen, als auch das
+Verhältnis der \textsc{Landé}-Faktoren ermitteln.
+
+\subsubsection{Messwerte und Auswertung}
+\subsubsection*{Zuordnung der Isotope}
+Die Temperatur der Absorptionszelle beträgt weiterhin $T = \unit[(44 \pm
+1)]{^\circ C}$. Die erhaltenen Messwerte sind in Abschnitt \ref{cha:iso}
+tabellarisch aufgeführt. Bei Auftragen der Frequenzen $\nu$ gegen das Feld
+$B_{hf}$ bzw. gegen den Strom $I_{hf}$ erhalten wir Abbildung \ref{fig:iso}.
+Dabei ergeben sich die Messfehler zu $\Delta \nu = 0.03\ \nu$ sowie $\Delta
+I_{hf} = 0.02\ I_{hf}$. Es werden zusätzlich Geradenfits der Form $I_{hf} = m
+\nu + c$ durch die Messpunkte gelegt.
 
 \begin{figure}[H]
     \begin{tikzpicture}
         \begin{axis}
             \foreach \x in {2,3,4}
-                \addplot+[only marks]
-                    plot[domain=0:300]
+                \addplot[only marks, mark=., color=red]
+                    plot[domain=0:300,
+                         error bars/.cd,
+                         x dir=both, x fixed=0.5,
+                         y dir=both, y fixed relative=0.03]
                     function {'data/hf_punkte1.txt' u ($1):($\x)};
             \foreach \M/\B in \HFPunkteEins
-                \addplot+[mark=none]
+                \addplot[mark=none]
                     plot[domain=0:300]
                     function {\M * x + \B};
             \foreach \x in {2,3,4}
-                \addplot+[only marks]
-                    plot[domain=0:300]
+                \addplot[only marks, mark=., color=blue]
+                    plot[domain=0:300,
+                         error bars/.cd,
+                         x dir=both, x fixed=0.5,
+                         y dir=both, y fixed relative=0.03]
                     function {'data/hf_punkte2.txt' u ($1):($\x)};
             \foreach \M/\B in \HFPunkteZwei
-                \addplot+[mark=none]
+                \addplot[mark=none]
                     plot[domain=0:300]
                     function {\M * x + \B};
         \end{axis}
     \end{tikzpicture}
+    \label{fig:iso}
 \end{figure}
+
+Offensichtlich erhalten wir zwei Geradenscharen á drei Geraden für die drei
+Modulationspunkte ($\unit[100]{Hz}$ sowie obere und untere $\unit[50]{Hz}$).
+Deutlich ist das bei jeder Messreihe vorhandene lineare Verhalten zu erkennen.
+Ferner ist eine nahezu vollkommene Konstanz, also eine Unabhängigkeit vom Strom
+$I_{hf}$, der Frequenz bei den beiden 100-Hz-Messreihen auszumachen. Dies wurde
+erwartet, da diese Signale nur von $H_0$ (bzw. $I_0$) abhängen.
+
+Da bei $I_{hf} = 0$ keine \textsc{Zeeman}-Aufspaltung auftritt, sollten sich
+hierfür alle drei Geraden treffen. Dies kann im Rahmen der Messgenauigkeit
+bestätigt werden.  Die Ungenauigkeiten werden dabei vor allem durch
+Ablesefehler, aber wohl auch durch kleinere Störfelder verursacht. Die
+Einordnung in die beiden Tripletts wird dadurch jedoch nicht beeinträchtigt.
+
+Anhand dieser beiden Kurventripletts ist auszumachen, dass in der
+Absorptionszelle zwei Rubidiumisotope vorliegen müssen. Über $h \nu = g_F \mu_B
+B$ ist bekannt, dass die Frequenz $\nu$ proportional zum \textsc{Landé}-Faktor
+$g_F$ ist. Ferner ist bekannt, dass der \textsc{Landé}-Faktor der
+Hyperfeinstrukturkomponente $F=2$ des Grundzustands von $^{85}\mathrm{Rb}$ gegeben
+ist durch $g_{F,\mathrm{Rb}_{85}} = \frac{1}{3}$ sowie weiterhin
+$g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ gilt.
+
+Somit kann das obere Triplett mit dem Isotop $^{85}\text{Rb}$ und das untere mit
+$^{87}\text{Rb}$ identifiziert werden.
+
+\subsubsection*{Bestimmung des Verhältnisses der \textsc{Landé}-Faktoren}
+Mittels der Proportionalität von $g_F$ zu $\nu$ kann man nun noch über das
+Verhältnis der Frequenzen das Verhältnis der \textsc{Landé}-Faktoren der beiden
+Isotope bestimmen. Hierfür werden zunächst die mittleren Frequenzen $\bar{\nu}$
+der beiden Tripletts berechnet. Es ergibt sich folgendes.
+\begin{align*}
+    \bar{\nu_{^{85}\mathrm{Rb}}} &= \unit[... \pm ...]{MHz} \\
+    \bar{\nu_{^{87}\mathrm{Rb}}} &= \unit[... \pm ...]{MHz}
+\end{align*}
+
+Für das Verhältnis folgt:
+\begin{align*}
+    \frac{\bar{\nu_{^{85}\mathrm{Rb}}}}{\bar{\nu_{^{87}\mathrm{Rb}}}} &= ... \pm ...
+\end{align*}
+
+Über
+\begin{align}
+    \frac{\nu_{^{85}\mathrm{Rb}}}{\nu_{^{87}\mathrm{Rb}}} &=
+    \frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}}
+\end{align}
+ergibt sich nun direkt das Verhältnis der \textsc{Landé}-Faktoren bestimmen. Mit
+den bekannten Werten der \textsc{Landé}-Faktoren erwarten wir ein Verhältnis von
+$\frac{2}{3}$. Dies können wir somit experimentell mit großer Genauigkeit
+bestätigen ($\frac{g_{F,{^{85}\mathrm{Rb}}}}{g_{F,{^{87}\mathrm{Rb}}}} = ... \pm
+...$). 
+
 
 \section{Brabbel}
 
@@ -652,10 +729,14 @@ mittels:
                      ylabel=$\overline{A}$]
             \foreach \x in {1, 2}
             {
-                \addplot+[only marks] plot[domain=:] function {'data/temp\x.txt'
-                u (10**($1<38.84 ?  (-4503.74 / (273.15 + $1) + 8.21):(-4347.11
-                / (273.15 + $1) + 7.7)) / ((273.15 + $1) *
-                1.3806504e-8)):((($2+$2)/2+$3+$4)/3)};
+                \addplot+[only marks]
+                    plot[domain=:,
+                         error bars/.cd,
+                         y dir=both, y fixed=0.1732]
+                    function {'data/temp\x.txt' u (133.32 * 10**($1<38.84 ?
+                    (-4503.74 / (273.15 + $1) + 8.21):(-4347.11 / (273.15 + $1)
+                    + 7.7)) / ((273.15 + $1) *
+                    1.3806504e-7)):((($2+$2)/2+$3+$4)/3)};
             }
         \end{axis}
     \end{tikzpicture}
@@ -670,8 +751,8 @@ mittels:
 
 Über Variation des Hauptfeldes $H_0$ bei konstanter Temperatur $T$ und Aufsuchen
 der Hochfrequenz-Resonanzfrequenzen (untere und obere \unit[50]{Hz} sowie der
-\unit[100]{Hz}) sind die \textsc{Landé}-Faktoren $g_{F,\mathrm{Rb}_{85}}$ und
-$g_{F,\mathrm{Rb}_{87}}$ der beiden Rubidium-Isotope $^{85}\mathrm{Rb}$ und
+\unit[100]{Hz}) sind die \textsc{Landé}-Faktoren $g_{F,^{85}\mathrm{Rb}}$ und
+$g_{F,^{87}\mathrm{Rb}}$ der beiden Rubidium-Isotope $^{85}\mathrm{Rb}$ und
 $^{87}\mathrm{Rb}$ zu bestimmen. Anschließend können dann die jeweiligen
 Kernspins ermittelt werden.
 
@@ -679,7 +760,7 @@ Kernspins ermittelt werden.
 Bei einer Temperatur von $T = \unit[(44 \pm 1)]{^\circ C}$ erhalten wir folgende
 Messwerte.
 
-Für die Messfehler gilt dabei $\Delta \nu = 0.03 \nu$ und $\Delta I_0 =
+Für die Messfehler gilt dabei $\Delta \nu = 0.03\ \nu$ und $\Delta I_0 =
 \unit[0.5]{mA}$. Die auf drei verschiedene Weisen bestimmten Werte für $\nu$
 (siehe oben) werden gemittelt. Anschließend tragen wir die gemessenen mittleren
 Resonanzfrequenzen $\overline{\nu}$ gegen die eingestellte Stromstärke $I_0$
@@ -708,14 +789,14 @@ bestimmt.
                     function {'data/\f' u ($1):(($2+$3+$4)/3)}
                     ;
             \foreach \M/\B in \GFaktoren
-                \addplot+[mark=none] plot[domain=50:150] function {\M * x + \B};
+                \addplot[mark=none] plot[domain=50:150] function {\M * x + \B};
         \end{axis}
     \end{tikzpicture}
     \label{fig:g}
 \end{figure}
 
 \subsubsection*{Bestimmung der \textsc{Landé}-Faktoren}
-Mit Hilfe der Formel (wobei $\mu_B$ \textsc{Bohr}sches Magneton)
+Mit Hilfe der Formel (in der $\mu_B$ das \textsc{Bohr}sche Magneton ist)
 \begin{align}
   \Delta E  &= h \overline{\nu} \\
             &= g_F \mu_B \mu_0 H_0
@@ -725,50 +806,51 @@ Isotope ($^{85}\text{Rb}$ und $^{87}\text{Rb}$) bestimmbar. Nach der Relation
 $B_0 = k_0 \cdot I_0$ kann hierzu die Feldstärke $H_0$ durch die Stromstärke
 $I_0$ ausgedrückt werden. Es folgt schließlich:
 \begin{align}
-    \overline{\nu} &= \frac{g_F \ \mu_B \ \mu_0 \ k_0}{h} \cdot I_0
+    \overline{\nu} &= \frac{g_F \mu_B \mu_0 k_0}{h} \cdot I_0
 \end{align}
 
 Die \textsc{Landé}-Faktoren können also offenbar aus der Steigung des Graphen
 bestimmt werden. Hierzu wird nun an die Messwerte ein Geradenfit $f(x) = m x +
-c$ gelegt.  Für die jeweiligen Steigungen ergibt sich dann:
+b$ gelegt.  Für die jeweiligen Steigungen ergibt sich dann:
 \begin{align*}
-    m_1 &= \unit[(\GFaktorSteigungEins \pm ..)]{\frac{MHz}{mA}}& 
-    m_2 &= \unit[(\GFaktorSteigungZwei \pm ..)]{\frac{MHz}{mA}}
+    m_1 &= \unit[(0.015045 \pm 0.01)]{\frac{GHz}{A}}& 
+    m_2 &= \unit[(0.02255 \pm 0.01)]{\frac{GHz}{A}}
 \end{align*}
 
-Mittels $g_F = \frac{m h}{\mu_B \ \mu_0 \ k_0}$ errechnen sich die \textsc{Landé}-Faktoren somit zu:
+Mittels $g_F = \frac{m h}{\mu_B \mu_0 k_0}$ errechnen sich die
+\textsc{Landé}-Faktoren somit zu:
 \begin{align*}
-    g_{F,\mathrm{Rb}_{85}} &= (\GFaktorEins \pm ..)&
-    g_{F,\mathrm{Rb}_{87}} &= (\GFaktorZwei \pm ..)
+    g_{F,^{85}\mathrm{Rb}} &= (0.33346 \pm 0.00022)&
+    g_{F,^{87}\mathrm{Rb}} &= (0.49982 \pm 0.00022)
 \end{align*}
 
-Dies stimmt sehr gut mit den theoretischen Werten $g_{F,\mathrm{Rb}_{85}} =
-\frac{1}{3}$ und $g_{F,\mathrm{Rb}_{87}} = \frac{1}{2}$ überein ($bla \%$ bzw.
-$bla \%$ Abweichung).
+Dies stimmt sehr gut mit den theoretischen Werten $g_{F,^{85}\mathrm{Rb}} =
+\frac{1}{3}$ und $g_{F,^{87}\mathrm{Rb}} = \frac{1}{2}$ überein.
 
-\subsubsection*{Bestimmung des Kernsspins $I$}
-Nun kann der Kernsspin $I$ ermittelt werden. Es gilt:
+\subsubsection*{Bestimmung des Kernspins $I$}
+Nun kann der Kernspin $I$ ermittelt werden. Es gilt:
 \begin{align*}
 g_J &= 1 + \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)} \\
 g_F &= g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
 \end{align*}
-
 Daraus folgt:
 \begin{align}
-I = - \frac{J(g_F - g_J)}{g_F}
+    I = \frac{J(g_J - g_F)}{g_F} = J\left(\frac{g_J}{g_F} - 1\right)
 \end{align}
 
 Mit den Quantenzahlen des "`Pumpzustandes"' (höchstes Hyperfeinniveau des
 Grundzustandes) der beiden Isotope ($^{85}\text{Rb}$: $J=\frac{1}{2}$,
 $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=3$ sowie für $^{87}\text{Rb}$:
 $J=\frac{1}{2}$, $S=\frac{1}{2}$, $J=\frac{1}{2}$, $L=0$ und $F=2$) ergibt sich
-dann $g_J = 2$ und somit für die jeweiligen Kernsspins:
+dann $g_J = 2$ und somit für die jeweiligen Kernspins:
 \begin{align*}
-    I_{\mathrm{Rb}_{85}} &= (.. \pm ..)&
-    I_{\mathrm{Rb}_{87}} &= (.. \pm ..)
+    I_{^{85}\mathrm{Rb}} &= (2.49885 \pm 0.002)&
+    I_{^{87}\mathrm{Rb}} &= (1.50072 \pm 0.001)
 \end{align*}
 
-Dies stimmt ebenfalls sehr gut mit den theoretischen Werten $I_{\mathrm{Rb}_{85}} = \frac{5}{2}$ und $I_{\mathrm{Rb}_{87}} = \frac{3}{2}$ überein ($bla \%$ bzw. $bla \%$ Abweichung).
+Dies stimmt ebenfalls sehr gut mit den theoretischen Werten
+$I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
+überein (beide Male weniger als $0.05\ \%$ Abweichung).
 
 \begin{appendix}
 \Literatur{quellen}
@@ -798,6 +880,30 @@ Dies stimmt ebenfalls sehr gut mit den theoretischen Werten $I_{\mathrm{Rb}_{85}
     \label{tbl:g_faktor2}
     \caption{}
 \end{table}
+\subsection{Hochfrequenzpunkte}
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$I/\unit{mA}$}},
+            columns/1/.style={column name={$f_{50-}/\unit{MHz}$}},
+            columns/2/.style={column name={$f_{100}/\unit{MHz}$}},
+            columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
+        ]
+        {data/hf_punkte1.txt}
+    \label{tab:hf_punkte1}
+\end{table}
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$I/\unit{mA}$}},
+            columns/1/.style={column name={$f_{50-}/\unit{MHz}$}},
+            columns/2/.style={column name={$f_{100}/\unit{MHz}$}},
+            columns/3/.style={column name={$f_{50+}/\unit{MHz}$}}
+        ]
+        {data/hf_punkte2.txt}
+    \label{tab:hf_punkte2}
+\end{table}
+
 \subsection{Temperaturen}
 \begin{figure}[H]
     \begin{floatrow}
