@@ -25,27 +25,16 @@ Bezeichnung der magnetischen Flussdichte $B$ mit $[B] = \unit{Gs} = 10^{-4}
 \unit{T}$ zwecks besserer Lesbarkeit im Wesentlichen durchgängig verwendet.}
 
 \section{Theoretische Grundlagen}
-Im Folgenden werden die theoretischen Grundlagen des Versuches dargelegt. Im Abschnitt \ref{cha:aufg} finden sich hierzu noch Ergänzungen.
+Im Folgenden werden die theoretischen Grundlagen des Versuches dargelegt. Im
+Abschnitt \ref{cha:aufg} finden sich hierzu noch Ergänzungen.
 \subsection{Atomphysikalische Grundlagen}
 Entscheidend zum Verständnis dieses Versuches ist insbesondere die Kenntnis der
 Energieniveaus eines Atoms in quantenmechanischer Beschreibung. Um den Rahmen
 dieses Protokolles nicht zu sprengen werden wir hier die Atomphysik jedoch im
 Wesentlichen als bekannt voraussetzen und uns auf die Darstellung der für diesen
-Versuch interessanten Details für Alkaliatome beschränken.
+Versuch interessanten Details für Alkalimetalle beschränken.
 
-\subsubsection{Energieniveaus von Alkalimetallen}
-
-%In Abbildung \ref{fig:alkali} ist ...
-
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{grafiken/alkali}
-%    \caption[]{.~\cite{skript}.}
-%    \label{fig:alkali}
-%\end{figure}
-
-
-\subsubsection{optische Übergänge und Auswahlregeln}
+\subsubsection{Optische Übergänge und Auswahlregeln}
 Befindet sich ein Atom in einem angeregten Zustand, so verbleibt es
 typischerweise etwa $\unit[10^{-8}]{s}$ in diesem und wird sich dann unter
 Emission eines Photons geeigneter Energie wieder relaxieren. Auch stufenweise
@@ -66,14 +55,80 @@ Somit erhält man für einen optischen Dipolübergang folgende Auswahlregeln.
     \Delta s &= 0
 \end{align*}
 
-Dabei bezeichnet $\Delta m = 0$ den sogenannten $\pi$-Übergang (linear polarisierte Photonen) und $\Delta m = \pm 1$ den sogenannten $\sigma$-Übergang (zirkular polarisierte Photonen). Im vorliegenden Versuch wird polarisiertes Licht mittels einer $\frac{\lambda}{4}$-Platte erzeugt (siehe hierzu Abschnitt \ref{cha:platte}).
-
-%noch was zu pol. Licht
+Dabei bezeichnet $\Delta m = 0$ den sogenannten $\pi$-Übergang (linear
+polarisierte Photonen) und $\Delta m = \pm 1$ den sogenannten $\sigma$-Übergang
+(zirkular polarisierte Photonen). Im vorliegenden Versuch wird polarisiertes
+Licht mittels einer $\frac{\lambda}{4}$-Platte erzeugt (siehe hierzu Abschnitt
+\ref{cha:platte}).
 
 In einem Ensemble an Atomen in einem angeregten Zustand nimmt die Anzahl der
 angeregten Atome durch derartige optische Übergänge exponentiell mit der Zeit
 ab. Die Zeit $\tau$, in welcher die Zahl der angeregten Atome auf $\frac{1}{e}$
 abgesunken ist, bezeichnet man dann als Lebensdauer dieses Zustandes.
+
+
+\subsection{Optisches Pumpen von Alkalis}
+\label{cha:pump}
+Über optisches Pumpen erzeugt man hier eine nicht-thermische Verteilung der
+Elektronen auf die \textsc{Zeeman}-Niveaus der Hyperfeinstruktur. Der
+Pumpmechanismus wird im vorliegenden Versuch durch das Einstrahlen von zirkular
+polarisiertem Licht der $D_1$-Linie der Wellenlänge $\unit[794.7][nm]$
+repräsentiert (siehe auch Abb.~\ref{fig:linien}). 
+
+
+\subsubsection{Optisches Pumpen von Alkalimetallen}
+Beim optischen Pumpen wird (anders als der Namen es suggeriert) keine Materie
+transportiert, stattdessen werden die Spinzustände der Atome aus dem
+gleichverteilten Zustand in einen Zustand "`gepumpt'", in dem die meisten Spins
+eine bestimmte Ausrichtung haben.
+
+Für Alkalimetalle, die einen Grundzustand von $^2 S_{\frac{1}{2}}$ haben, sind
+die Energieabstände zu dem ersten angeregten Zustand ($L=1$, also ein
+$P$-Zustand) groß genug, um sichtbares Licht zu erzeugen. Der
+Gesamtelektronenspin ist $S=\frac{1}{2}$, damit erhalten wir zwei mögliche Werte
+für den Gesamtdrehimpuls: $J=\frac{3}{2}$ und $J=\frac{1}{2}$. Durch die
+Spin-Bahn-Kopplung haben die zugehörigen Zustände eine leicht unterschiedliche
+Energie.
+
+Betrachtet man nun zusätzlich den Kernspin, so spalten diese Zustände weiter in
+die \emph{Hyperfeinstruktur} auf. Jeder dieser Zustände hat eine leicht
+unterschiedliche Energie, bedingt durch die Wechselwirkung zwischen den
+magnetischen Momenten des Kerns und des Elektrons.  Für den Gesamtdrehimpuls des
+Atoms sind dann die Werte $F = I + J, I + J - 1, \ldots, I - J$ erlaubt, wobei
+$I$ die Kernspinquantenzahl ist.
+
+Legt man nun ein schwaches äußeres Magnetfeld an (schwach gegenüber dem
+atominternem Magnetfeld), so spalten die Zustände weiter auf
+(\textsc{Zeeman}aufspaltung). Dies kommt durch die verschiedenen Energien, die
+mit den verschiedenen Ausrichtungen für ein gegebenes $F$ gegenüber dem äußeren
+Feld $H$ verbunden sind zustande und ist proportional zur Feldstärke.  Wiederum
+sind nur solche Orientierungen von $F$ erlaubt, deren Projektion entlang der
+Richtung des Magnetfeldes $m_F = F, F-1, \ldots, -F$ beträgt. Die Gesamtheit der
+Zustände im Alkaliatom mit Kernspin $I=\frac{3}{2}$ ist in
+Abbildung~\ref{fig:aufspalt} zu sehen. Übergänge zwischen den verschiedenen $F$
+müssen der Auswahlregel $\left|\Delta F\right| \leq 1$ genügen. Übergänge
+zwischen verschiedenen $m_F$-Zuständen, bei denen aber $F$ konstant bleibt
+genügen der Auswahlregel $\left|\Delta m_F\right| \leq 1$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.4\textwidth]{grafiken/aufspalt}
+    \caption[Rubidium]{Aufspaltung der Energieniveaus von
+                       Rubidium~\cite{optskript}.}
+    \label{fig:linien}
+\end{figure}
+
+Beim optischen Pumpen haben wir nun (in diesem Versuch) ein Gas aus
+Rubidium-Atomen in einem Magnetfeld. Durch dieses leiten wir nun einen Strahl
+zirkular polarisierten Lichts der zum $D_1$-Übergang zwischen dem Grundzustand
+und dem unteren angeregten Zustand gehörenden Wellenlänge. Absorbiert ein Atom
+im Grundzustand ein solches Photon, so befindet es sich danach im $^2
+P_{\frac{1}{2}}$-Zustand. Ist das Licht aber linkszirkular polarisiert, so muss
+nach der Absorption das Atom ein um $1$ erhöhte Drehimpulsquantenzahl haben,
+wenn wir das Licht in Richtung des magnetischen Feldvektors einstrahlen, da die
+Drehimpulse des Photons immer parallel zur Ausbreitungsrichtung ausgerichtet
+sind.
+
 
 \subsubsection{Linienbreiten}
 Bei Absorption und Emission elektromagnetischer Strahlung ist die Frequenz der
@@ -144,10 +199,31 @@ einfallenden linear polarisierten Lichtes erhält man zirkular polarisiertes
 Licht. Für allgemeine Wahl des Winkels wird elliptisch polarisiertes Licht
 erzeugt.
 
-\subsection{Photonennachweis, Photodioden}
+\subsection{Photodiode}
+Photodioden sind Halbleiterbauelemente, welche zur Detektion von Photonen
+dienen. Hierbei wird an einem pn-Übergang durch den Inneren Photoeffekt
+einfallende Strahlung in ein Spannungssignal umgewandelt.
 
-\subsection{Optisches Pumpen}
+Treffen Photonen auf die Photodiode, so werden in der Raumladungszone
+Ladungsträger, also Elektron-Loch-Paare, und somit ein Stromfluss erzeugt, da
+die Ladungsträger auf Grund der Diffusionsspannung in die jeweils
+entgegengesetzt dotierten Zonen wandern. Offenbar müssen die Photonen also
+genügend energetisch sein, um das Überwinden der Bandlücke bewirken zu können.
+
+Im Idealfall hat man eine Quantenausbeute von $1$, das heißt jedes Photon,
+dessen Energie die der Bandlücke des Halbleiters übersteigt, trägt zum
+Stromfluss bei.  Dies wird in der Praxis jedoch nicht erreicht.
+
+Photodioden haben eine recht kurze Reaktionszeit, welche im Bereich weniger
+Nanosekunden liegt, teilweise sogar darunter.
+
+\subsection{Optisches Pumpen von Alkalis}
 \label{cha:pump}
+Über optisches Pumpen erzeugt man hier eine nicht-thermische Verteilung der
+Elektronen auf die \textsc{Zeeman}-Niveaus der Hyperfeinstruktur. Der
+Pumpmechanismus wird im vorliegenden Versuch durch das Einstrahlen von zirkular
+polarisiertem Licht der $D_1$-Linie der Wellenlänge $\unit[794.7][nm]$
+repräsentiert (siehe auch Abb.~\ref{fig:linien}). 
 
 \subsection{Induzierte Emission durch Einwirkung magnetischer Hochfrequenzfelder}
 
@@ -428,7 +504,8 @@ Polarisator $P$, die $\frac{\lambda}{4}$-Platte, das Interferenzfilter $I$ und
 die heizbare Absorptionszelle durchsetzt. Dabei sind Polarisator $P$ und
 $\frac{\lambda}{4}$-Platte so gegeneinander gedreht, dass zirkular polarisiertes
 Licht auf die Absorptionszelle trifft (siehe auch \ref{cha:platte}). Ferner ist
-das Interferenzfilter auf die $\mathrm{D_{1}}$-Linie abgestimmt, lässt also nur diese durch.
+das Interferenzfilter auf die $\mathrm{D_{1}}$-Linie abgestimmt, lässt also nur
+diese durch.
 
 Anschließend wird eine Fokussierung auf die Photodiode mittels der zweiten Linse
 $L_2$ vorgenommen. Die Absorptionzelle enthält festes Rubidium in natürlicher
@@ -520,7 +597,9 @@ somit zu
 berechnet.
 
 Über diese Methode erhalten wir also einen wesentlich näher am theoretischen
-liegenden Wert des Erdmagnetfeldes. Dies könnte über eine schlechte Nullpunktseichung des Messgerätes zu erklären sein. Insgesamt erscheint jedoch diese Art der Bestimmung des Erdmagnetfeldes als eher ungenau.
+liegenden Wert des Erdmagnetfeldes. Dies könnte über eine schlechte
+Nullpunktseichung des Messgerätes zu erklären sein. Insgesamt erscheint jedoch
+diese Art der Bestimmung des Erdmagnetfeldes als eher ungenau.
 
 Nun werden die vertikale und horizontale Komponente des Erdmagnetfeldes mit den
 beiden Kompensationsfeldern $H_{\bot}$ und $H_{\parallel}$ kompensiert. Für
@@ -559,6 +638,9 @@ und die Relaxationszeit $\tau_P$ und $\tau_R$ über die Relationen
     \frac{1}{\tau_{\text{ab}}} &= \frac{1}{\tau_p} + \frac{1}{\tau_r}
 \end{align}
 bestimmen.
+
+\subsubsection*{Anmerkung:}
+\emph{Da unsere Messwerte deutlich besser über den Fit einer Exponentialfunktion reproduziert werden, wurde von der im Skript vorgeschlagenen Approximation mittels \textsc{Taylor}-Entwicklung abgesehen.}
 
 \subsection{Messdaten und Auswertung}
 \subsubsection*{Anstiegszeit}
@@ -971,6 +1053,30 @@ $I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$
 überein (jeweils weniger als $0.05\ \%$ Abweichung).
 
 \section{Zusammenfassung}
+Das Erdmagnetfeld konnte mittels der 100-Hz-Modulationspunkte zu $B_{Erde} = \unit[(0.114 \pm 0.008)]{Gs}$ bestimmt werden. Dies weicht jedoch recht stark vom theoretisch erwarteten Wert $B = \unit[0.1905]{Gs}$ ab. Systematische Fehler wie Störfelder, unreichend geeichte Messapparate oder eine nicht mehr aktuelle Konstante $M$ könnten vorliegen und die Abweichung erklären.
+
+Über die beiden 50-Hz-Modulationspunkte erhalten  wir $B_{Erde} = \unit[(0.146 \pm 0.003)]{Gs}$. Dieses Ergebnis ist verträglicher mit dem theoretischen Wert. Eine schlechte Nullpunktseichung des Messgerätes mag also in der Tat eine Begründung darstellen. 
+
+Die Pumpzeit und die Relaxationszeit werden zu $\tau_{p} = \unit[(0.608 \pm 0.125)]{ms}$ und $\tau_{r} = \unit[(0.674 \pm 0.154)]{ms}$ bestimmt.
+
+Anhand dieser beiden Kurventripletts ist auszumachen, dass in der
+Absorptionszelle zwei Rubidiumisotope vorliegen müssen. Über $h \nu = g_F \mu_B
+B$ ist bekannt, dass die Frequenz $\nu$ proportional zum \textsc{Landé}-Faktor
+$g_F$ ist. Ferner ist bekannt, dass der \textsc{Landé}-Faktor der
+Hyperfeinstrukturkomponente $F=2$ des Grundzustands von $^{85}\mathrm{Rb}$
+gegeben ist durch $g_{F,^{85}\mathrm{Rb}} = \frac{1}{3}$ sowie weiterhin
+$g_{F,^{85}\mathrm{Rb}} = \frac{1}{2}$ gilt.
+
+Somit kann das obere Triplett mit dem Isotop $^{85}\text{Rb}$ und das untere mit
+$^{87}\text{Rb}$ identifiziert werden.
+
+Es sind deutlich zwei Isotope zu identifizieren. Das Verhältnis der \textsc{Landé}-Faktoren bestimmten wir in sehr guter Übereinstimmung mit der Theorie zu $0.66599 \pm 0.00282$.
+
+Das Verhältnis der Isotopenhäufigkeit bestimmen wir zu $\frac{\gamma_{\mathrm{F, {Rb}_{85}}}}{\gamma_{\mathrm{F, {Rb}_{87}}}} = 2.5 \pm 0.207$. Dieses Ergebnis ist mit dem Literaturwert von $2.6$ konsistent, der Fehler ist wegen der geringen Ablesegenauigkeit relativ groß.
+
+Die \textsc{Landé}-Faktoren errechnen sich nach unseren Messungen zu $g_{F,^{85}\mathrm{Rb}} = (0.33346 \pm 0.00022)$ und $g_{F,^{87}\mathrm{Rb}} = (0.49982 \pm 0.00022)$. Dies stimmt sehr gut mit den theoretischen Werten $g_{F,^{85}\mathrm{Rb}} = \frac{1}{3}$ und $g_{F,^{87}\mathrm{Rb}} = \frac{1}{2}$ überein.
+
+Zu guter Letzt bestimmten wir die jeweiligen Kernspins in Übereinstimmung mit der Theorie ($I_{^{85}\mathrm{Rb}} = \frac{5}{2}$ und $I_{^{87}\mathrm{Rb}} = \frac{3}{2}$) mit großer Genauigkeit zu $I_{^{85}\mathrm{Rb}} = (2.49885 \pm 0.002)$ sowie $I_{^{87}\mathrm{Rb}} = (1.50072 \pm 0.001)$.
 
 \begin{appendix}
 \Literatur{quellen}
