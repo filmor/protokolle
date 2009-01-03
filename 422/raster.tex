@@ -1,0 +1,251 @@
+\documentclass{protokoll}
+\newcommand{\assistent}{P. Eich, M. Grüner}
+\newcommand{\versuch}{Rastertunnelmikroskop}
+\newcommand{\nummer}{P422}
+
+\begin{document}
+
+\section{Einleitung}
+Das 1981 entwickelte Rastertunnelmikroskop ermöglicht die Untersuchung
+elektrisch leitender Oberflächen mit bis dahin unerreichter Genauigkeit. Im
+folgenden Versuch soll nun die Funktionsweise des Rastertunnelmikroskops
+verstanden und verschiedene Verfahren zur Spitzenherstellung kennengelernt
+werden. Es werden eine Graphit- und eine Goldoberfläche in atomarer Auflösung
+abgebildet.
+
+\section{Theoretische Grundlagen}
+\subsection{Tunneleffekt}
+Beim Tunneleffekt handelt es sich um einen quantenmechanischen Effekt, welcher
+das Phänomen beschreibt, dass ein Teilchen mit Energie $E < V$ eine
+Potentialbarriere $V$ durchschreiten kann, obwohl dies klassisch verboten ist.
+
+Im Folgenden soll dies beispielhaft anhand des eindimensionalen Kastenpotentials
+näher beschrieben werden (siehe hierzu Abb. \ref{fig:tunnel}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/tunnel}
+    \caption[Tunneleffekt]{Skizze zum Tunneleffekt}
+    \label{fig:tunnel}
+\end{figure}
+
+Die Wellenfunktion des Teilchens muss die \textsc{Schrödinger}-Gleichung
+erfüllen. Teilt man den Raum anhand des Kastenpotentials geeignet in drei
+Gebiete auf, so erhält man als allgemeine Lösungen in den einzelnen Gebieten
+folgendes.
+
+Für $x < - \frac{a}{2}$ ergibt sich die Wellenfunktion zu $\Psi_1 = A_1
+\exp{(ikx)} + B_1 \exp{(-ikx)}$, für $- \frac{a}{2} < x < \frac{a}{2}$ erhält
+man $\Psi_2 = A_2 \exp{(-\kappa x)}$ und für $x > \frac{a}{2}$ löst $\Psi_3 =
+A_3 \exp{(ikx)} + B_3 \exp{(-ikx)}$ die \textsc{Schrödinger}-Gleichung. Dabei
+gilt $k=\sqrt{\frac{2mE}{\hbar^2}}$ sowie
+$\kappa=\sqrt{\frac{2m(E-V)}{\hbar^2}}$.
+
+Die Vorfaktoren $A_1$, $B_1$, $A_2$, $A_3$ und $B_3$ sind über die Bedingung der
+Stetigkeit der Funktion und ihrer Ableitung ermittelbar.
+
+Nach der Quantenmechanik ergibt sich also trotz des Potentialwalls eine nicht
+verschwindende Aufenthaltswahrscheinlichkeit rechts von der Potentialbarriere
+für ein von links einlaufendes Teilchen mit $E < V$. 
+
+Auf Grund der exponentiellen Abnahme der Amplitude von $\Psi_2$ mit der
+Potentialbreite $a$ ist über die Messung der Amplitude von $\Psi_3$ die Breite
+$a$ sehr genau bestimmbar. Dies wird bei der Rastertunnelmikroskopie ausgenutzt.
+
+\subsection{Das Rastertunnelmikroskop}
+
+
+\subsubsection{Aufbau und Funktionsweise}
+
+
+\subsubsection{Betriebsmodi}
+Das Rastertunnelmikroskop kann in zwei unterschiedlichen Modi betrieben werden,
+welche im Folgenden kurz vorgestellt werden sollen.
+
+\subsubsection*{Messung bei konstantem Abstand}
+Beim \emph{Constant Height Mode} (CHM) wird die Spitze in einer konstanten Höhe
+über die Probe gefahren und die Änderung des Tunnelstroms $I_T$ gemessen.
+Dadurch muss die Spitze nach der ersten Justage nicht weiter justiert werden.
+Jedoch können Unebenheiten in der Oberfläche der Probe die Spitze beschädigen
+(siehe Abb. \ref{fig:chm}). Ferner ist es auch möglich, dass der Abstand
+zwischen Spitze und Probe  während der Messung zu groß wird und kein Tunnelstrom
+mehr gemessen werden kann.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{grafiken/chm}
+    \caption[CHM]{Skizze zum Constant Height Mode}
+    \label{fig:chm}
+\end{figure}
+
+\subsubsection*{Messung bei konstantem Tunnelstrom}
+Beim \emph{Constant Current Mode} (CCM) hingegen wird der Tunnelstrom konstant
+gehalten. Vernachlässigt man die Abhängigkeit des Stroms von der
+Materialzusammensetzung der Probe und der Spitze (Verunreinigungen verursachen
+wegen anderer Austrittsarbeiten Schwankungen im Potential), so ist ein
+konstanter Strom gleichbedeutend mit einem konstanten Abstand zwischen Probe und
+Spitze (siehe Abb. \ref{fig:ccm}). Auf diese Weise  können die Nachteile des CHM
+beseitigt werden. Das Nachjustieren der Spitze während der Messung ist
+allerdings recht zeitintensiv.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{grafiken/ccm}
+    \caption[CCM]{Skizze zum Constant Current Mode}
+    \label{fig:ccm}
+\end{figure}
+
+\subsubsection{Verwandte Rastermethoden}
+Neben dem Rastertunnelmikroskop wurden noch weitere vergleichbare Mikroskope
+entwickelt, beispielsweise das Rasterelektronenmikroskop (1935) und das
+Rasterkraftmikroskop (1986). 
+
+Beim Rasterelektronenmikroskop wird die Probe mittels eines Elektronenstrahls
+untersucht und erreicht so höhere Auflösungen als Lichtmikroskope.
+
+Das Rasterkraftmikroskop hingegen ist ähnlich dem Rastertunnelmikroskop mit
+einer Spitze ausgerüstet. Es misst jedoch keinen Tunnelstrom, sondern z.\ B.\
+die direkte Berührung von Atomen. Ein großer Vorteil dieses Mikroskops ist, dass
+ohne weiteres auch nicht-leitende Oberflächen untersucht werden können. 
+
+\subsection{Spitzenherstellung}
+Neben der Aufnahme der Oberflächenstrukturen von Graphit und Gold ist auch die
+Herstellung der hierzu benötigten Messspitzen Gegenstand der
+Versuchsdurchführung. Angestrebt wird dabei eine kugelsymmetrische Spitze,
+welche mit nur einem einzelnen Atom abschließt. Diese Anforderung an die Dicke
+der Spitze muss gestellt werden, will man eine atomare Auflösung erreichen.
+Somit kommt der Herstellung einer brauchbaren Messspitze eine große Bedeutung
+zu.
+
+Die Messspitzen wurden auf zwei verschiedene Arten hergestellt. Zum einen sollte
+mittels Reißen eines Platin-Iridium-Drahtes, zum anderen mittels Ätzen eines
+Wolfram-Drahtes jeweils eine Spitze angefertigt werden. Die Details der
+Durchführung sind den Abschnitten \ref{cha:spitzen1} und \ref{cha:spitzen2} zu
+entnehmen.
+
+\subsection{Kristallstrukturen}
+
+
+\subsubsection{Graphit}
+
+\subsubsection{Gold}
+
+\section{Versuchsaufbau}
+\label{cha:aufbau}
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.6\textwidth]{aufbau}
+%\caption[]{}
+%\label{fig:aufbau}
+%\end{figure}
+
+\section{Versuchsdurchführung und -beobachtung}
+\subsection{Spitzenherstellung durch Reißen}
+\label{cha:spitzen1}
+Zunächst wird eine sorgfältige Reinigung aller zu benutzenden Werkzeuge und des
+Platin-Iridium-Drahtes mit Ethanol vorgenommen. Nun wird vom
+Platin-Iridium-Draht etwa $\unit[1]{cm}$ mit dem Seitenschneider abgeschnitten.
+Mit der Zange wird dieses Drahtstück nun möglichst am Rand der Zangenflächen so
+festgeklemmt, dass ein paar Millimeter des Drahtes die Zangenspitze überragen.
+Nun wird der Seitenschneider in einem möglichst Spitzen Winkel an den Draht
+angesetzt und dann leicht zusammengekniffen. Die Spitze wird nun aber nicht wie
+in üblicher Verwendung des Seitenschneiders zugeschnitten, sondern es wird eine
+Spitze mittels Reißens bzw. Ziehens des Seitenschneiders erzeugt. Man erhält so
+eine asymmetrische Spitze, welche bei guter Durchführung hinreichend dünn sein
+sollte. 
+
+Prinzipiell funktioniert diese Methode der Herstellung recht gut, da der Draht
+relativ weich ist, jedoch erwiesen sich die auf diese Weise hergestellten
+Spitzen meist als zu grob. Nach unserer Erfahrung bedarf die richtige Dosis von
+Reißen, Ziehen und Drücken einiger Übung, welche uns offenbar fehlte.
+
+% Mit den mit dieser Methode erzeugten Spitzen konnte wir leider keine guten Bilder aufnehmen ....
+
+\subsection{Spitzenherstellung durch Ätzen}
+\label{cha:spitzen2}
+Zunächst wird die Vorrichtung zum Ätzen der Spitzen aufgebaut (siehe
+Abbildung~\ref{fig:aetzen}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/aufbauaetzen}
+    \caption[Aufbau zum Ätzen]{Schematische Darstellung der
+             Ätzvorrichtung~\cite{skript}}
+    \label{fig:aetzen}
+\end{figure}
+
+Da Wolfram an Luft recht schnell oxidiert, ist der Draht vor der Verwendung mit
+einem Schleifpapier zu bearbeiten. Nun wird ein etwa $\unit[5]{cm}$ langes Stück
+des Drahtes abgeschnitten und als Elektrode in die Spitzenhalterung so
+eingebaut, dass der Draht etwa im Zentrum der Ringelektrode sitzt. Nun wird
+unter diesen Aufbau ein Behälter mit der als Ätzlösung dienenden Kalilauge
+gebracht. Die Ringelektrode sollte sich dabei wenige Millimeter unterhalb der
+Flüssigkeitsoberfläche befinden. Der Wolframdraht wird dann so justiert, dass er
+etwa $\unit[5-10]{mm}$ in die Lauge reicht.
+
+Nun wird eine Ätzspannung von $\unit[10]{V}$ angelegt. Es ist ein anfänglicher
+Stromfluss von etwa $\unit[100]{mA}$ zu beobachten. Er ist bei konstanter
+Spannung von der Eintauchtiefe des Drahtes abhängig. Nach Anschalten des Stromes
+beginnt nun der Ätzvorgang und Wolfram wird auf atomarer Ebene abgetragen.
+Dieser Prozess ist dabei in der Ringebene am stärksten. Während des Ätzprozesses
+nimmt also die Querschnittsfläche des Wolframdrahtes in dieser Ebene langsam ab.
+Dies hat ein Sinken des Stromes zu Folge. Entscheidend ist nun, den Moment
+abzupassen, an welchem deer Strom abrupt verschwindet, also der untere Teil des
+Drahtes abfällt. Im Moment des Abreißens muss der Stromfluss unterbrochen werden
+um weiteres Ätzen zu unterbinden, welches die Spitze abstumpfen würde. Hierzu
+wird der Schalter, welcher zuvor stets gedrückt sein musste, losgelassen. Die
+Reaktionszeit des Experimentators ist dabei ein großer Ungenauigkeitsfaktor.
+
+Die geätzte Messspitze wird nun vorsichtig der Apparatur entnommen, auf die
+richtige Länge gekürzt und mit destilliertem Wasser und Ethanol gereinigt. Es
+ist darauf zu achten, dass diese Schritte wegen der erwähnten Oxidation recht
+zügig erfolgen sollten.
+
+% noch n bissl bla bla?
+
+\subsection{Einbauen der Spitzen und Annähern}
+Nach erfolgter Herstellung wird die jeweilige Messspitze nun in das
+Rastertunnelmikroskop eingesetzt. Hierzu greift man mit einer Pinzette
+vorsichtig die Spitze und führt sie in die vorgesehene Klemmhalterung des
+Rastertunnelmikroskops ein.
+
+Als nächstes ist die Probenhalterung mit Ethanol zu säubern und die Probe mit
+einer Pinzette der Aufbewahrungsbox zu entnehmen und auf der Halterung zu
+platzieren.
+
+Vorsichtig wird die Probenhalterung nun in das Rastertunnelmikroskop eingesetzt.
+Nach Augenmaß wird die Probe an die Messspitze herangeschoben bis nur noch ein
+geringer Abstand zu erkennen ist. Die Abdeckung kann nun über das
+Rastertunnelmikroskop gesetzt werden. Durch eine angebrachte Lupe kann der
+Abstand grobwegs kontrolliert werden. Entweder über die automatische Annäherung
+oder durch manuellen Betrieb des Piezoschlittens wird anschließend der
+Betriebsabstand eingestellt. Ist beim Blick durch die Lupe noch ein deutlicher
+Abstand erkennbar, so sollte zunächst eine manuell gesteuerte Annäherung gewählt
+werden. Es ist jedoch die Gefahr des Auffahrens zu beachten. Deshalb sollte man
+besser zu früh als zu spät auf den automatischen Betrieb umsteigen.
+
+Das Heranfahren der Probe erweist sich jedoch als sehr schwierig und
+zeitintensiv. Oft versagt die automatische Annäherung, vor allem indem sie gar
+nicht heranfährt, aber auch, indem die Probe auf die Spitze auffährt.
+
+% weiteres bla?
+
+\subsection{Bildaufnahme Graphit}
+
+\subsection{Bildaufnahme Gold}
+
+\section{Messdaten und Auswertung}
+
+
+\section{Zusammenfassung}
+
+\begin{appendix}
+\section{Literatur}
+
+
+\section{Messwerte}
+
+\end{appendix}
+
+\end{document}
