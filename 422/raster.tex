@@ -25,7 +25,7 @@ näher beschrieben werden (siehe hierzu Abb. \ref{fig:tunnel}).
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{grafiken/tunnel}
-    \caption[Tunneleffekt]{Skizze zum Tunneleffekt}
+    \caption[Tunneleffekt]{Skizze zum Tunneleffekt.}
     \label{fig:tunnel}
 \end{figure}
 
@@ -54,9 +54,11 @@ $a$ sehr genau bestimmbar. Dies wird bei der Rastertunnelmikroskopie ausgenutzt.
 
 \subsection{Das Rastertunnelmikroskop}
 
-
 \subsubsection{Aufbau und Funktionsweise}
-
+Beim Rastertunnelmikroskop wird die Oberfläche einer leitenden Probe mithilfe
+des Tunneleffekts untersucht. Dazu wird eine sehr dünne (idealisiert einatomige)
+Spitze, an der eine Spannung anliegt an die Probe herangefahren, so dass
+Elektronen die Potentialbarriere durchtunneln können.
 
 \subsubsection{Betriebsmodi}
 Das Rastertunnelmikroskop kann in zwei unterschiedlichen Modi betrieben werden,
@@ -74,7 +76,7 @@ mehr gemessen werden kann.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth]{grafiken/chm}
-    \caption[CHM]{Skizze zum Constant Height Mode}
+    \caption[CHM]{Skizze zum Constant Height Mode.}
     \label{fig:chm}
 \end{figure}
 
@@ -91,9 +93,23 @@ allerdings recht zeitintensiv.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth]{grafiken/ccm}
-    \caption[CCM]{Skizze zum Constant Current Mode}
+    \caption[CCM]{Skizze zum Constant Current Mode.}
     \label{fig:ccm}
 \end{figure}
+
+\subsubsection{Bewegung der Spitze}
+Die Spitze wird mithilfe von Piezokristallen über die Probe bewegt. Diese dehnen
+sich proportional zu der angelegten Spannung aus:
+\begin{align}
+    \Delta x = \frac{U}{\rho}
+    \label{eqn:piezo}
+\end{align}
+wobei der piezoelektrische Koeffizient $\rho$ größenordnungsmäßig
+$\unit[0.1]{nm}$ beträgt. Wir können also mit Spannungsänderungen im Voltbereich
+sehr kleine Veränderungen der Spitzenposition erreichen und so einen sehr
+kleinen Bereich der Oberfläche durch Anlegen von Sägezahnspannungen abrastern.
+
+% Erklärung Piezoeffekt
 
 \subsubsection{Verwandte Rastermethoden}
 Neben dem Rastertunnelmikroskop wurden noch weitere vergleichbare Mikroskope
@@ -104,7 +120,7 @@ Beim Rasterelektronenmikroskop wird die Probe mittels eines Elektronenstrahls
 untersucht und erreicht so höhere Auflösungen als Lichtmikroskope.
 
 Das Rasterkraftmikroskop hingegen ist ähnlich dem Rastertunnelmikroskop mit
-einer Spitze ausgerüstet. Es misst jedoch keinen Tunnelstrom, sondern z.\ B.\
+einer Spitze ausgerüstet. Es misst jedoch keinen Tunnelstrom, sondern z.\ B.\ 
 die direkte Berührung von Atomen. Ein großer Vorteil dieses Mikroskops ist, dass
 ohne weiteres auch nicht-leitende Oberflächen untersucht werden können. 
 
@@ -127,19 +143,26 @@ entnehmen.
 
 
 \subsubsection{Graphit}
-Graphit besteht aus Schichten von kovalent sechseckig gebundenen
+Graphit besteht aus Schichten von kovalent hexagonal gebundenen
 Kohlenstoffatomen. Zwischen diesen Schichten herrscht die schwächere
-\textsc{Van-der-Waals}-Bindung, die nur etwa $1/50$ der Bindungsenergie bei der
-kovalenten Bindung ist. Die Entfernung der Schichten voneinander beträgt etwa
+\textsc{Van-der-Waals}-Bindung, deren Energie nur etwa $2\,\%$ derer der
+kovalenten Bindung beträgt. Der Abstand der Schichten ergibt sich zu etwa
 $\unit[0.67]{nm}$.
 
 Die Kohlenstoffebenen liegen dabei wie in Abbildung~\ref{fig:schichten} zu sehen
 übereinander, wir erwarten also drei verschiedene Helligkeiten in dem
-entstehenden Bild. Die dunkelsten Bereiche sind diejenigen, in denen erst in der
-unteren Schicht ein Atom liegt, dort ist offenbar der Abstand der
-Elektronenhülle zur Spitze größer als in den beiden anderen Fällen. 
-
-% Gebrabbel, warum Van-der-Waals die Elektronen runterzieht
+entstehenden Bild: Am dunkelsten erscheinen jene Bereiche, in welchen nur in der
+unteren Schicht ein Atom liegt. Dies ist darüber einzusehen, dass dort offenbar
+der Abstand der Elektronenverteilung zur Spitze größer ist als in den beiden
+anderen Fällen. Diese sind gegeben über entweder einem Atom in der oberen
+Schicht oder zwei übereinanderliegenden Atomen aus beiden Schichten (wie in
+Abbildung~\ref{fig:schichten} zusehen ist). Dabei erscheint entgegen der
+Intuition ein Bereich mit zwei übereinanderliegenden Atomen nicht so hell wie
+ein Bereich mit einem Atom aus der oberen Schicht, da auf Grund der
+\textsc{Van-der-Waals}-Bindung zwischen den Schichten Dipole ausgebildet
+werden, welche die Elektronenverteilung jeweils zwischen die beiden Atome verschieben.
+An der Graphitoberfläche registriert man also eine leicht geringere
+Elektronenkonzentration.
 
 %\begin{figure}
     %\tikzset{}
@@ -155,24 +178,19 @@ Elektronenhülle zur Spitze größer als in den beiden anderen Fällen.
                 
 
 \subsubsection{Gold}
-Gold ist in einem kubisch-flächenzentrierten Gitter angeordnet. Da es aber ein
-Metall ist und somit die Elektronendichte über das gesamte Gitter in etwa gleich
-ist, erwarten wir nur wenig Struktur in der Abbildung mit dem
-Rastertunnelmikroskop, welches uns ja gerade das Quadrat der Wellenfunktion an
-einem Ort, also die Aufenthaltswahrscheinlichkeit der Elektronen liefert. Von
-Auflösungen die einzelne Atome sichtbar machen kann nicht ausgegangen werden.
+\label{cha:gold}
+Gold ist in einem kubisch-flächenzentrierten Gitter angeordnet. Dieses wird
+jedoch in der Aufnahme des Rastertunnelmikroskops nicht zu erkennen sein.
+Schließlich handelt es sich bei Gold um ein Metall, das Leitungsband ist also
+teilweise mit Elektronen besetzt. Man kann die Elektronen somit keinem einzelnen
+Atom mehr zuordnen, sie gehören gewissermaßen dem gesamten Gitter, d.\ h.\ die
+Elektronendichte ist für das gesamte Gitter in etwa konstant. Wir erwarten nur
+wenig Struktur in der Abbildung des Rastertunnelmikroskopes, welches uns ja
+gerade das Quadrat der Wellenfunktion an einem Ort, also die
+Aufenthaltswahrscheinlichkeit der Elektronen liefert. Maximal ist
+dementsprechend eine grobe Sichtbarmachung der Oberflächenstruktur möglich.
 
-\section{Versuchsaufbau}
-\label{cha:aufbau}
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.6\textwidth]{aufbau}
-%\caption[]{}
-%\label{fig:aufbau}
-%\end{figure}
-
-\section{Versuchsdurchführung und -beobachtung}
+\section{Versuchsaufbau, -durchführung und Beobachtungen}
 \subsection{Spitzenherstellung durch Reißen}
 \label{cha:spitzen1}
 Zunächst wird eine sorgfältige Reinigung aller zu benutzenden Werkzeuge und des
@@ -190,9 +208,9 @@ sollte.
 Prinzipiell funktioniert diese Methode der Herstellung recht gut, da der Draht
 relativ weich ist, jedoch erwiesen sich die auf diese Weise hergestellten
 Spitzen meist als zu grob. Nach unserer Erfahrung bedarf die richtige Dosis von
-Reißen, Ziehen und Drücken einiger Übung, welche uns offenbar fehlte.
-
-% Mit den mit dieser Methode erzeugten Spitzen konnte wir leider keine guten Bilder aufnehmen ....
+Reißen, Ziehen und Drücken einiger Übung, welche uns offenbar fehlte. Mit den
+mit dieser Methode erzeugten Spitzen konnte wir somit leider keine guten
+Bilder aufnehmen (siehe unten).
 
 \subsection{Spitzenherstellung durch Ätzen}
 \label{cha:spitzen2}
@@ -223,7 +241,7 @@ beginnt nun der Ätzvorgang und Wolfram wird auf atomarer Ebene abgetragen.
 Dieser Prozess ist dabei in der Ringebene am stärksten. Während des Ätzprozesses
 nimmt also die Querschnittsfläche des Wolframdrahtes in dieser Ebene langsam ab.
 Dies hat ein Sinken des Stromes zu Folge. Entscheidend ist nun, den Moment
-abzupassen, an welchem deer Strom abrupt verschwindet, also der untere Teil des
+abzupassen, an welchem der Strom abrupt verschwindet, also der untere Teil des
 Drahtes abfällt. Im Moment des Abreißens muss der Stromfluss unterbrochen werden
 um weiteres Ätzen zu unterbinden, welches die Spitze abstumpfen würde. Hierzu
 wird der Schalter, welcher zuvor stets gedrückt sein musste, losgelassen. Die
@@ -234,7 +252,9 @@ richtige Länge gekürzt und mit destilliertem Wasser und Ethanol gereinigt. Es
 ist darauf zu achten, dass diese Schritte wegen der erwähnten Oxidation recht
 zügig erfolgen sollten.
 
-% noch n bissl bla bla?
+Trotz der erwähnten Schwierigkeiten beim Abpassen des Abbruchs des Ätzvorganges
+war diese Methode der Spitzenherstellung recht erfolgreich und wir konnten ein
+paar brauchbare Messspitzen produzieren.
 
 \subsection{Einbauen der Spitzen und Annähern}
 Nach erfolgter Herstellung wird die jeweilige Messspitze nun in das
@@ -255,29 +275,88 @@ oder durch manuellen Betrieb des Piezoschlittens wird anschließend der
 Betriebsabstand eingestellt. Ist beim Blick durch die Lupe noch ein deutlicher
 Abstand erkennbar, so sollte zunächst eine manuell gesteuerte Annäherung gewählt
 werden. Es ist jedoch die Gefahr des Auffahrens zu beachten. Deshalb sollte man
-besser zu früh als zu spät auf den automatischen Betrieb umsteigen.
+nach unserer Erfahrung besser zu früh als zu spät auf den automatischen Betrieb
+umsteigen.
 
 Das Heranfahren der Probe erweist sich jedoch als sehr schwierig und
 zeitintensiv. Oft versagt die automatische Annäherung, vor allem indem sie gar
 nicht heranfährt, aber auch, indem die Probe auf die Spitze auffährt.
 
-% weiteres bla?
+Bei nicht funktionstüchtiger Annäherung stellte es sich als vorteilhaft heraus,
+die Probenhalterung erneut mit Ethanol zu reinigen.
 
 \subsection{Bildaufnahme Graphit}
+Zunächst versuchten wir mit einer Platin-Iridium-Messspitze eine
+Graphitoberfläche auszumessen. Leider war dies lange Zeit nicht sonderlich
+erfolgreich (wir erhielten kein einziges Bild), sodass wir erst nach der
+Versuchsdurchführung mit geätzter Spitze in einem weiteren Anlauf Erfolg hatten.
+Dabei erhielten wir folgendes Ergebnis.
+
+\begin{floatrow}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/PtIr-Graphit/image29}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
+    \label{fig:g1}}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GI4nm}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
+    \label{fig:gi4nm}}
+\end{floatrow}
+
+Vergleicht man unser Ergebnis (Abb.~\ref{fig:g1}) mit dem einer anderen Gruppe (Abb.~\ref{fig:gi4nm}, so sieht man einen offensichtlichen Qualitätsunterschied zu unseren Ungunsten. Betrachtet man auch unsere anderen erhaltenen Bilder, so ergibt sich, dass bei unseren Bildern der atomaren Struktur ein recht starkes periodisches Störsignal überlagert ist.
+Es wurden ebenfalls Aufnahmen einer geringeren Vergrößerung gemacht:
+
+\begin{floatrow}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/PtIr-Graphit/image30}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
+    \label{fig:g2}}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GI200nm}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
+    \label{fig:gi200nm}}
+\end{floatrow}
+
+Es ist sowohl in unserem, als auch in dem Bild der anderen Gruppe eine grobe Oberflächenstruktur zu erkennen. Es sind die unterschiedlichen Skalen zu beachten.
+
+
+Nun wurde eine Wolframmessspitze zur Untersuchung der Graphitoberfläche verwendet. Es konnten diesmal deutlich schneller Ergebnisse erzielt werden, jedoch leider erneut nur mit schlechter Qualität, weshalb wir zur Referenz wieder Bilder der anderen Gruppe angeben.
+
+\begin{floatrow}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/Wolfram-Graphit/image28}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
+    \label{fig:g3}}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/Wolfram-Graphit/image29}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
+    \label{fig:g4}}
+\end{floatrow}
+
+Zur Referenz nun die deutlich besseren Bilder, welche uns von einer anderen Gruppe freundlicherweise zur Verfügung gestellt wurden.
+
+\begin{floatrow}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GW2nm2}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
+    \label{fig:GW2nm2}}
+    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GW1nm3}
+    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
+    \label{fig:GW1nm3}}
+\end{floatrow}
+
+Die Auswertung werden wir aus offensichtlichen Gründen anhand der Abbildungen \ref{fig:GW2nm2} und \ref{fig:GW1nm3} durchführen.
 
 \subsection{Bildaufnahme Gold}
+Zu guter Letzt sollten nun noch mit einer geeigneten Messspitze Aufnahmen einer
+Goldoberfläche gemacht werden. Wie bereits in Abschnitt \ref{cha:gold}
+beschrieben, ist nichts weiter als einer groben Oberflächenstruktur zu erwarten. 
 
-\section{Messdaten und Auswertung}
+Aus Zeitgründen konnten wir dabei ein solches Bild nur mit einer Wolframspitze
+aufnehmen, da wir wie oben erwähnt erst kurz vor Schluss eine
+Platin-Iridium-Spitze geeigneter Qualität herstellten.
+
+
+\section{Auswertung}
 
 
 \section{Zusammenfassung}
 
 \begin{appendix}
-\section{Literatur}
-
-
-\section{Messwerte}
-
+\Literatur{quellen}
 \end{appendix}
 
 \end{document}
