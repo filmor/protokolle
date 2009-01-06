@@ -15,6 +15,7 @@ abgebildet.
 
 \section{Theoretische Grundlagen}
 \subsection{Tunneleffekt}
+\label{cha:tunnel}
 Beim Tunneleffekt handelt es sich um einen quantenmechanischen Effekt, welcher
 das Phänomen beschreibt, dass ein Teilchen mit Energie $E < V$ eine
 Potentialbarriere $V$ durchschreiten kann, obwohl dies klassisch verboten ist.
@@ -29,10 +30,11 @@ näher beschrieben werden (siehe hierzu Abb. \ref{fig:tunnel}).
     \label{fig:tunnel}
 \end{figure}
 
-Die Wellenfunktion des Teilchens muss die \textsc{Schrödinger}-Gleichung
-erfüllen. Teilt man den Raum anhand des Kastenpotentials geeignet in drei
-Gebiete auf, so erhält man als allgemeine Lösungen in den einzelnen Gebieten
-folgendes.
+Die Wellenfunktion des Teilchens, deren Betragsquadrat die
+Aufenthaltswahrscheinlichkeit des Teilchens am Ort $\vec{x}$ angibt, muss die
+\textsc{Schrödinger}-Gleichung erfüllen. Teilt man den Raum anhand des
+Kastenpotentials geeignet in drei Gebiete auf, so erhält man als allgemeine
+Lösungen in den einzelnen Gebieten folgendes.
 
 Für $x < - \frac{a}{2}$ ergibt sich die Wellenfunktion zu $\Psi_1 = A_1
 \exp{(ikx)} + B_1 \exp{(-ikx)}$, für $- \frac{a}{2} < x < \frac{a}{2}$ erhält
@@ -55,10 +57,38 @@ $a$ sehr genau bestimmbar. Dies wird bei der Rastertunnelmikroskopie ausgenutzt.
 \subsection{Das Rastertunnelmikroskop}
 
 \subsubsection{Aufbau und Funktionsweise}
-Beim Rastertunnelmikroskop wird die Oberfläche einer leitenden Probe mithilfe
-des Tunneleffekts untersucht. Dazu wird eine sehr dünne (idealisiert einatomige)
-Spitze, an der eine Spannung anliegt an die Probe herangefahren, so dass
-Elektronen die Potentialbarriere durchtunneln können.
+Beim Rastertunnelmikroskop wird die Oberfläche einer elektrisch leitenden Probe
+mithilfe des Tunneleffekts (siehe Abschnitt \ref{cha:tunnel}) untersucht. Dazu
+wird eine sehr dünne (idealisiert einatomig endende) Messspitze auf einen in
+atomarer Größenordnung liegenden Abstand an die Probe herangefahren. Das Vakuum
+zwischen Messspitze und Probe stellt somit eine Potentialbarriere für Elektronen
+des Probenmaterials dar. Nun wird an Messspitze und Probe eine externe Spannung
+angelegt, mit deren Hilfe den tunnelnden Elektronen eine Vorzugsrichtung gegeben
+werden kann. Somit kann bei hinreichend kleinem Abstand ein Tunnelstrom gemessen
+werden. Dies erklärt im Übrigen auch die gestellte Forderung elektrischer
+Leitfähigkeit für das Probenmaterial.
+
+Der Tunnelstrom $I_T$ ist dabei vom Abstand $a$ zwischen Spitze und Probe, der
+Austrittsarbeit $W_A$ des Probenmaterials und der Elektronendichte an der
+Probenoberfläche abhängig. Es gilt:
+
+\begin{align}
+    I_T &\propto blablabla.....
+\end{align}
+
+Wobei ...
+Die Potentialbarriere setzt sich dabei zusammen aus ....
+
+Wie bereits erwähnt ist der Tunnelstrom also sehr empfindlich auf Änderungen des
+Abstandes. Die Auflösung des Rastertunnelmikroskops ist somit sehr gut. Ihre
+Grenzen sind dabei durch mechanische und elektrische Störungen bestimmt. Vor
+allem die Qualität der Spitze ist entscheidend. Ebenso beeinflussen die
+Hysterese des Piezokristalls und der thermodynamische Drift das Messergebnis.
+Die vertikale Auflösung beträgt bis zu $\unit[5]{pm}$, die laterale bei idealer
+Messspitze etwa $\unit[200]{pm}$. Im vorliegenden Fall vermindert die
+Erschütterungsempfindlichkeit jedoch die erreichbaren Genauigkeiten.
+
+% sind die zahlen noch irgendw angegeben außer in nem alten proto.?
 
 \subsubsection{Betriebsmodi}
 Das Rastertunnelmikroskop kann in zwei unterschiedlichen Modi betrieben werden,
@@ -113,16 +143,19 @@ kleinen Bereich der Oberfläche durch Anlegen von Sägezahnspannungen abrastern.
 
 \subsubsection{Verwandte Rastermethoden}
 Neben dem Rastertunnelmikroskop wurden noch weitere vergleichbare Mikroskope
-entwickelt, beispielsweise das Rasterelektronenmikroskop (1935) und das
-Rasterkraftmikroskop (1986). 
+entwickelt, beispielsweise das Rasterkraftmikroskop (1986) und die
+rasterthermische oder photothermische Mikroskopie (lokale Temperatur- oder
+Infrarotstrahlungsvariationen der Oberfläche werden abgetastet). Alle Verfahren
+nutzen dabei den Umstand aus, dass mit Hilfe von Piezokristallen Abstände in
+atomarer Größenordnung reguliert werden können. 
 
-Beim Rasterelektronenmikroskop wird die Probe mittels eines Elektronenstrahls
-untersucht und erreicht so höhere Auflösungen als Lichtmikroskope.
-
-Das Rasterkraftmikroskop hingegen ist ähnlich dem Rastertunnelmikroskop mit
-einer Spitze ausgerüstet. Es misst jedoch keinen Tunnelstrom, sondern z.\ B.\ 
-die direkte Berührung von Atomen. Ein großer Vorteil dieses Mikroskops ist, dass
-ohne weiteres auch nicht-leitende Oberflächen untersucht werden können. 
+Das wichtigste dieser Verfahren stellt jedoch die Rasterkraftmikroskopie dar.
+Hier wird die Probe mechanisch mit einer Nadel, welche an einer mikroskopischen
+Blattfeder (Cantilever) angebracht ist, abgetastet. Die Auslenkung der
+Blattfeder wird nun gemessen. Dies geschieht beispielsweise mittels optischer
+Sensoren.  Der entscheidende Vorteil der Rasterkraftmikroskopie ist, dass ohne
+weiteres auch Messungen an nicht-leitenden Proben durchgeführt werden können.
+Dabei werden ähnliche Auflösungen wie beim Rastertunnelmikroskop erreicht.
 
 \subsection{Spitzenherstellung}
 Neben der Aufnahme der Oberflächenstrukturen von Graphit und Gold ist auch die
@@ -140,10 +173,8 @@ Durchführung sind den Abschnitten \ref{cha:spitzen1} und \ref{cha:spitzen2} zu
 entnehmen.
 
 \subsection{Kristallstrukturen}
-
-
 \subsubsection{Graphit}
-Graphit besteht aus Schichten von kovalent hexagonal gebundenen
+Graphit besteht aus parallelen Schichten von kovalent hexagonal gebundenen
 Kohlenstoffatomen. Zwischen diesen Schichten herrscht die schwächere
 \textsc{Van-der-Waals}-Bindung, deren Energie nur etwa $2\,\%$ derer der
 kovalenten Bindung beträgt. Der Abstand der Schichten ergibt sich zu etwa
@@ -151,7 +182,8 @@ $\unit[0.67]{nm}$.
 
 Die Kohlenstoffebenen liegen dabei wie in Abbildung~\ref{fig:schichten} zu sehen
 übereinander, wir erwarten also drei verschiedene Helligkeiten in dem
-entstehenden Bild: Am dunkelsten erscheinen jene Bereiche, in welchen nur in der
+entstehenden Bild (je heller ein Bereich erscheint, desto größer ist dort die
+Elektronendichte): Am dunkelsten erscheinen jene Bereiche, in welchen nur in der
 unteren Schicht ein Atom liegt. Dies ist darüber einzusehen, dass dort offenbar
 der Abstand der Elektronenverteilung zur Spitze größer ist als in den beiden
 anderen Fällen. Diese sind gegeben über entweder einem Atom in der oberen
@@ -159,8 +191,8 @@ Schicht oder zwei übereinanderliegenden Atomen aus beiden Schichten (wie in
 Abbildung~\ref{fig:schichten} zusehen ist). Dabei erscheint entgegen der
 Intuition ein Bereich mit zwei übereinanderliegenden Atomen nicht so hell wie
 ein Bereich mit einem Atom aus der oberen Schicht, da auf Grund der
-\textsc{Van-der-Waals}-Bindung zwischen den Schichten Dipole ausgebildet
-werden, welche die Elektronenverteilung jeweils zwischen die beiden Atome verschieben.
+\textsc{Van-der-Waals}-Bindung zwischen den Schichten Dipole ausgebildet werden,
+welche die Elektronenverteilung jeweils zwischen die beiden Atome verschieben.
 An der Graphitoberfläche registriert man also eine leicht geringere
 Elektronenkonzentration.
 
@@ -198,19 +230,19 @@ Platin-Iridium-Drahtes mit Ethanol vorgenommen. Nun wird vom
 Platin-Iridium-Draht etwa $\unit[1]{cm}$ mit dem Seitenschneider abgeschnitten.
 Mit der Zange wird dieses Drahtstück nun möglichst am Rand der Zangenflächen so
 festgeklemmt, dass ein paar Millimeter des Drahtes die Zangenspitze überragen.
-Nun wird der Seitenschneider in einem möglichst Spitzen Winkel an den Draht
+Nun wird der Seitenschneider in einem möglichst spitzen Winkel an den Draht
 angesetzt und dann leicht zusammengekniffen. Die Spitze wird nun aber nicht wie
 in üblicher Verwendung des Seitenschneiders zugeschnitten, sondern es wird eine
 Spitze mittels Reißens bzw. Ziehens des Seitenschneiders erzeugt. Man erhält so
-eine asymmetrische Spitze, welche bei guter Durchführung hinreichend dünn sein
-sollte. 
+in Abweichung vom oben diskutierten Ideal eine asymmetrische Spitze, welche bei
+guter Durchführung jedoch hinreichend dünn sein sollte. 
 
 Prinzipiell funktioniert diese Methode der Herstellung recht gut, da der Draht
 relativ weich ist, jedoch erwiesen sich die auf diese Weise hergestellten
 Spitzen meist als zu grob. Nach unserer Erfahrung bedarf die richtige Dosis von
 Reißen, Ziehen und Drücken einiger Übung, welche uns offenbar fehlte. Mit den
-mit dieser Methode erzeugten Spitzen konnte wir somit leider keine guten
-Bilder aufnehmen (siehe unten).
+mit dieser Methode erzeugten Spitzen konnte wir somit leider keine guten Bilder
+aufnehmen (siehe unten).
 
 \subsection{Spitzenherstellung durch Ätzen}
 \label{cha:spitzen2}
@@ -290,8 +322,8 @@ Zunächst versuchten wir mit einer Platin-Iridium-Messspitze eine
 Graphitoberfläche auszumessen. Leider war dies lange Zeit nicht sonderlich
 erfolgreich (wir erhielten kein einziges Bild), sodass wir erst nach der
 Versuchsdurchführung mit geätzter Spitze in einem weiteren Anlauf Erfolg hatten.
-Dabei erhielten wir folgendes Ergebnis.
-
+Dabei erhielten wir folgendes Resultat:
+\begin{figure}[h!]
 \begin{floatrow}
     \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/PtIr-Graphit/image29}
     \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
@@ -300,10 +332,16 @@ Dabei erhielten wir folgendes Ergebnis.
     \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
     \label{fig:gi4nm}}
 \end{floatrow}
+\end{figure}
 
-Vergleicht man unser Ergebnis (Abb.~\ref{fig:g1}) mit dem einer anderen Gruppe (Abb.~\ref{fig:gi4nm}, so sieht man einen offensichtlichen Qualitätsunterschied zu unseren Ungunsten. Betrachtet man auch unsere anderen erhaltenen Bilder, so ergibt sich, dass bei unseren Bildern der atomaren Struktur ein recht starkes periodisches Störsignal überlagert ist.
+Vergleicht man unser Ergebnis (Abb.~\ref{fig:g1}) mit dem einer anderen Gruppe
+(Abb.~\ref{fig:gi4nm}, so sieht man einen offensichtlichen Qualitätsunterschied
+zu unseren Ungunsten. Betrachtet man auch unsere anderen erhaltenen Bilder, so
+ergibt sich, dass bei unseren Bildern der atomaren Struktur ein recht starkes
+periodisches Störsignal überlagert ist.
+
 Es wurden ebenfalls Aufnahmen einer geringeren Vergrößerung gemacht:
-
+\begin{figure}[H]
 \begin{floatrow}
     \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/PtIr-Graphit/image30}
     \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
@@ -312,43 +350,95 @@ Es wurden ebenfalls Aufnahmen einer geringeren Vergrößerung gemacht:
     \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
     \label{fig:gi200nm}}
 \end{floatrow}
+\end{figure}
 
-Es ist sowohl in unserem, als auch in dem Bild der anderen Gruppe eine grobe Oberflächenstruktur zu erkennen. Es sind die unterschiedlichen Skalen zu beachten.
+Es ist sowohl in unserem, als auch in dem Bild der anderen Gruppe eine grobe
+Oberflächenstruktur zu erkennen. Es sind die unterschiedlichen Skalen zu
+beachten.
 
+Nun wurde eine Wolframmessspitze zur Untersuchung der Graphitoberfläche
+verwendet. Es konnten diesmal deutlich schneller Ergebnisse erzielt werden,
+jedoch leider erneut nur mit schlechter Qualität, weshalb wir zur Referenz
+wieder Bilder der anderen Gruppe angeben.
 
-Nun wurde eine Wolframmessspitze zur Untersuchung der Graphitoberfläche verwendet. Es konnten diesmal deutlich schneller Ergebnisse erzielt werden, jedoch leider erneut nur mit schlechter Qualität, weshalb wir zur Referenz wieder Bilder der anderen Gruppe angeben.
-
-\begin{floatrow}
-    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/Wolfram-Graphit/image28}
-    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
-    \label{fig:g3}}
-    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/Wolfram-Graphit/image29}
-    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze von uns aufgenommen.}
-    \label{fig:g4}}
-\end{floatrow}
+\begin{figure}[H]
+    \begin{minipage}{0.495\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/Wolfram-Graphit/image28}
+    \end{minipage}
+    \begin{minipage}{0.495\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/Wolfram-Graphit/image29}
+    \end{minipage}
+    \caption[Graphit]{\small Graphit mit Wolfram-Messspitze von uns aufgenommen.}
+    \label{fig:gw}
+\end{figure}
 
 Zur Referenz nun die deutlich besseren Bilder, welche uns von einer anderen Gruppe freundlicherweise zur Verfügung gestellt wurden.
 
+\begin{figure}[H]
 \begin{floatrow}
-    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GW2nm2}
-    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
-    \label{fig:GW2nm2}}
-    \ffigbox{}{\includegraphics[width=0.5\textwidth]{data/GW1nm3}
-    \caption[Graphit]{\small Graphit mit Platin-Iridium-Messspitze aufgenommen~\cite{jan}.}
-    \label{fig:GW1nm3}}
+    \ffigbox{}
+    {
+        \includegraphics[width=0.5\textwidth]{data/GW2nm2}
+        \caption[Graphit]{\small Graphit mit Wolfram-Messspitze aufgenommen~\cite{jan}.}
+        \label{fig:gw2nm2}
+    }
+    \ffigbox{}
+    {
+        \includegraphics[width=0.5\textwidth]{data/GW1nm3}
+        \caption[Graphit]{\small Graphit mit Wolfram-Messspitze aufgenommen~\cite{jan}.}
+        \label{fig:gw1nm3}
+    }
 \end{floatrow}
+\end{figure}
 
-Die Auswertung werden wir aus offensichtlichen Gründen anhand der Abbildungen \ref{fig:GW2nm2} und \ref{fig:GW1nm3} durchführen.
+Die Auswertung werden wir aus offensichtlichen Gründen anhand der Abbildungen
+\ref{fig:gw2nm2} und \ref{fig:gw1nm3} durchführen.
+
+Offenbar lassen sich mit den Wolfram-Spitzen also bessere Bilder als mit den
+Platin-Iridium-Spitzen produzieren. Die Platin-Iridium-Spitzen scheinen sich
+also doch nur schwerlich hinreichend dünn herstellen zu lassen, was wohl auf
+persönliches Unvermögen in Folge mangelnder Übung im Reißen zurückzuführen ist.
 
 \subsection{Bildaufnahme Gold}
 Zu guter Letzt sollten nun noch mit einer geeigneten Messspitze Aufnahmen einer
 Goldoberfläche gemacht werden. Wie bereits in Abschnitt \ref{cha:gold}
-beschrieben, ist nichts weiter als einer groben Oberflächenstruktur zu erwarten. 
+beschrieben, ist nichts weiter als eine Abbildung der groben Oberflächenstruktur
+zu erwarten. 
 
-Aus Zeitgründen konnten wir dabei ein solches Bild nur mit einer Wolframspitze
+Aus Zeitgründen konnten wir dabei ein solches Bild nur mit einer Wolfram-Spitze
 aufnehmen, da wir wie oben erwähnt erst kurz vor Schluss eine
-Platin-Iridium-Spitze geeigneter Qualität herstellten.
+Platin-Iridium-Spitze geeigneter Qualität herstellten. Bei der zu erwartenden
+Qualität des Bildes ist dies jedoch nicht wirklich problematisch.
 
+Mit der Wolfram-Messspitze erhielten wir folgendes:
+\begin{figure}[H]
+    \begin{minipage}{0.495\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/Wolfram-Gold/image27}
+    \end{minipage}
+    \begin{minipage}{0.495\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/Wolfram-Gold/image28}
+    \end{minipage}
+    \caption[Gold]{\small Gold mit Wolfram-Messspitze von uns aufgenommen.}
+    \label{fig:go}
+\end{figure}
+
+Zur Referenz erneut die Bilder, welche uns von der anderen Gruppe
+freundlicherweise zur Verfügung gestellt wurden:
+\begin{figure}[H]
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/GoW200nm}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/GoW200nm4}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=1.0\textwidth]{data/GoW200nm5}
+    \end{minipage}
+    \label{fig:gojan}
+    \caption[Gold]{\small Gold mit Wolfram-Messspitze aufgenommen~\cite{jan}.}
+\end{figure}
 
 \section{Auswertung}
 
