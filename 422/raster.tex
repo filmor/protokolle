@@ -81,12 +81,12 @@ konstanter Vorfaktor mit $A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
 \begin{figure}[h]
     \center
     \includegraphics{grafiken/prinzip}
-    \caption{Prinzip des Rastertunnelmikroskops}
+    \caption{Prinzip des Rastertunnelmikroskops~\cite{skriptrtm}.}
     \label{fig:prinzip}
 \end{figure}
 
 Die Potentialbarriere setzt sich dabei zusammen aus den Austrittsarbeiten der
-Probe und der Spitze sowie dem zwischen Spitze und Probe liegenden Bereich.
+Probe und der Spitze sowie dem zwischen Spitze und Probe liegenden Vakuum.
 
 % Größenordnungen der Änderungen
 
@@ -198,7 +198,7 @@ sich zu etwa $\unit[0.34]{nm}$.
 
 \begin{figure}[h]
     \centering
-    \includegraphics{grafiken/graphit_gitter}
+    \includegraphics[width=0.3\textwidth]{grafiken/graphit_gitter}
     \caption{Gitterstruktur von Graphit}
     \label{fig:graphit_gitter}
 \end{figure}
@@ -492,10 +492,6 @@ wir Abbildung \ref{fig:gw1nm3}, da dies die maximal erreichte Vergrößerung
 darstellt. Es sei hier erneut angemerkt, dass es sich dabei um ein Bild der
 anderen Gruppe handelt.
 
-Logischerweise darf die Größe des Bild für diese Auswertung nicht digital
-manipuliert werden. Dies ist durch den direkten Export der Aufnahme aus dem
-verwendeten Programm gewährleistet.
-
 Anhand der Abbildung \ref{fig:gw1nm3} können wir die Kantenlänge des
 aufgenommenen Bereiches zu $d = \unit[1.02]{nm}$ angeben. Vertikale und
 horizontale Kantenlänge sind dabei identisch und werden ferner als nicht
@@ -505,22 +501,25 @@ Wir bestimmen nun die horizontale und vertikale Kantenlänge $L_{\mathrm{h}}$
 bzw. $L_{\mathrm{v}}$ des Bildes mit Hilfe des Opensource-Vektorgrafik
 Programmes \emph{Inkscape}. Sie ergeben sich zu $L_{\mathrm{h}}=\unit[(72.248
 \pm 0.001)]{mm}$ und $L_{\mathrm{v}}=\unit[(72.248 \pm 0.001)]{mm}$. Die Fehler
-resultieren dabei aus der Genauigkeit der Abstandsangabe des Programmes.
+resultieren dabei aus der Genauigkeit der Abstandsangabe des Programmes. Ferner
+bestimmen wir die Kantenlängen eines Pixels zu $l_{\mathrm{h}}=\unit[(0.564 \pm
+0.001)]{mm}$ und $l_{\mathrm{v}}=\unit[(0.564 \pm 0.001)]{mm}$.
 
 Wir erhalten somit für die Auflösungen $A_{\mathrm{h}}$ und $A_{\mathrm{v}}$ mit
 Hilfe von
 \begin{align}
-    A &= \frac{L}{d}
+    A &= \frac{L}{l \cdot d}
 \end{align}
-folgende Werte für die horizontale und vertikale Auflösung:
+folgende Werte für die horizontale und vertikale Auflösung (in Pixel pro Meter):
 \begin{align*}
-    A_{\mathrm{h}} &= (70.831 \pm 0.001) \cdot 10^6
-    A_{\mathrm{v}} &= (70.831 \pm 0.001) \cdot 10^6
+    A_{\mathrm{h}} &= \unit[(1.256 \pm 0.002)]{10^{11} \frac{px}{m}} \\
+    A_{\mathrm{v}} &= \unit[(1.256 \pm 0.002)]{10^{11} \frac{px}{m}}
 \end{align*}
 Der Fehler errechnet sich dabei mittels der \textsc{Gauß}schen
 Fehlerfortpflanzung zu:
 \begin{align}
-    \Delta A &= \frac{\Delta L}{d}
+    \Delta A &= \sqrt{\left( \frac{\Delta L}{l \cdot d} \right)^2 + \left(
+                      \frac{\Delta l \cdot L}{l^2 \cdot d} \right)^2}
 \end{align}
 
 Da ein Unterscheidung zwischen vertikaler und horizontaler Auflösung nicht
@@ -528,7 +527,7 @@ sinnvoll ist, da es sich prinzipiell um die gleiche Auflösung handeln sollte,
 kann nun noch eine Mittelung erfolgen. Entsprechend der ohnehin schon als
 identisch berechneten Auflösungen erhält man:
 \begin{align*}
-    A &= (70.831 \pm 0.001) \cdot 10^6
+    A &= \unit[(1.256 \pm 0.001)]{10^{11} \frac{px}{m}}
 \end{align*}
 
 Angesichts dieses Auflösungsvermögens erscheint es realistisch, dass es sich bei
@@ -538,6 +537,20 @@ handelt.
 \subsection{Bindungslänge und -winkel bei Graphit}
 \label{cha:auswg}
 
+
+\subsubsection{Winkel}
+Wie in Abbildung~\ref{fig:winkel} zu sehen wurden die Winkel im Graphitgitter
+vermessen. Dabei erhielten wir die Werte $\unit[123.71]{^\circ}$,
+$\unit[124.3]{^\circ}$ und $\unit[114.5]{^\circ}$. Der recht große Unterschied
+des letzten Wertes zu den anderen ergibt sich aus der Verzerrung des Bildes
+(siehe auch Abbildung~\ref{fig:sechsecke}), diese rechnet sich aber durch den
+Mittelwert im nächsten Schritt (auch theoretisch) heraus:
+\begin{align}
+    \overline{\alpha} = \unit[(120.83\pm 1.15)]{^\circ}
+\end{align}
+bei einem angenommen Fehler von $\unit[2]{^\circ}$ für jeden einzelnen Winkel.
+Wie erwartet stimmt also das Ergebnis sehr gut mit dem theoretischen Wert von
+$\unit[120]{^\circ}$ überein.
 
 \section{Zusammenfassung}
 
