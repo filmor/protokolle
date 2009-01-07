@@ -1,5 +1,5 @@
 \documentclass{protokoll}
-\newcommand{\assistent}{P. Eich, M. Grüner}
+\newcommand{\assistent}{P. Eich}
 \newcommand{\versuch}{Rastertunnelmikroskop}
 \newcommand{\nummer}{P422}
 
@@ -55,29 +55,40 @@ Potentialbreite $a$ ist über die Messung der Amplitude von $\Psi_3$ die Breite
 $a$ sehr genau bestimmbar. Dies wird bei der Rastertunnelmikroskopie ausgenutzt.
 
 \subsection{Das Rastertunnelmikroskop}
-
 \subsubsection{Aufbau und Funktionsweise}
 Beim Rastertunnelmikroskop wird die Oberfläche einer elektrisch leitenden Probe
 mithilfe des Tunneleffekts (siehe Abschnitt \ref{cha:tunnel}) untersucht. Dazu
 wird eine sehr dünne (idealisiert einatomig endende) Messspitze auf einen in
-atomarer Größenordnung liegenden Abstand an die Probe herangefahren. Das Vakuum
-zwischen Messspitze und Probe stellt somit eine Potentialbarriere für Elektronen
-des Probenmaterials dar. Nun wird an Messspitze und Probe eine externe Spannung
-angelegt, mit deren Hilfe den tunnelnden Elektronen eine Vorzugsrichtung gegeben
-werden kann. Somit kann bei hinreichend kleinem Abstand ein Tunnelstrom gemessen
-werden. Dies erklärt im Übrigen auch die gestellte Forderung elektrischer
-Leitfähigkeit für das Probenmaterial.
+atomarer Größenordnung liegenden Abstand an die Probe herangefahren. Bei diesen
+Größenordnungen kann der Bereich zwischen Spitze und Probe als Vakuum angesehen
+werden, dass eine eine Potentialbarriere für Elektronen des Probenmaterials
+darstellt. Nun wird an Messspitze und Probe eine externe Spannung angelegt, mit
+deren Hilfe den tunnelnden Elektronen eine Vorzugsrichtung gegeben werden kann.
+Somit kann bei hinreichend kleinem Abstand ein Tunnelstrom gemessen werden. Dies
+erklärt im Übrigen auch die gestellte Forderung elektrischer Leitfähigkeit für
+das Probenmaterial.
 
 Der Tunnelstrom $I_T$ ist dabei vom Abstand $a$ zwischen Spitze und Probe, der
 Austrittsarbeit $W_A$ des Probenmaterials und der Elektronendichte an der
-Probenoberfläche abhängig. Es gilt:
-
+Probenoberfläche abhängig. Es gilt:~\cite{skriptrtm}
 \begin{align}
-    I_T &\propto blablabla.....
+    I_T &\propto \exp{\left(-A\sqrt{\varphi}s\right)}
 \end{align}
+Wobei $s$ der Abstand der Spitze zur Probe und $\varphi$ die Höhe der
+Potentialbarriere (siehe auch Abbildung~\ref{fig:prinzip}) ist. $A$ ist ein
+konstanter Vorfaktor mit $A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
 
-Wobei ...
-Die Potentialbarriere setzt sich dabei zusammen aus ....
+\begin{figure}[h]
+    \center
+    \includegraphics{grafiken/prinzip}
+    \caption{Prinzip des Rastertunnelmikroskops}
+    \label{fig:prinzip}
+\end{figure}
+
+Die Potentialbarriere setzt sich dabei zusammen aus den Austrittsarbeiten der
+Probe und der Spitze sowie dem zwischen Spitze und Probe liegenden Bereich.
+
+% Größenordnungen der Änderungen
 
 Wie bereits erwähnt ist der Tunnelstrom also sehr empfindlich auf Änderungen des
 Abstandes. Die Auflösung des Rastertunnelmikroskops ist somit sehr gut. Ihre
@@ -99,7 +110,7 @@ Beim \emph{Constant Height Mode} (CHM) wird die Spitze in einer konstanten Höhe
 über die Probe gefahren und die Änderung des Tunnelstroms $I_T$ gemessen.
 Dadurch muss die Spitze nach der ersten Justage nicht weiter justiert werden.
 Jedoch können Unebenheiten in der Oberfläche der Probe die Spitze beschädigen
-(siehe Abb. \ref{fig:chm}). Ferner ist es auch möglich, dass der Abstand
+(siehe Abbildung~\ref{fig:chm}). Ferner ist es auch möglich, dass der Abstand
 zwischen Spitze und Probe  während der Messung zu groß wird und kein Tunnelstrom
 mehr gemessen werden kann.
 
@@ -116,8 +127,8 @@ gehalten. Vernachlässigt man die Abhängigkeit des Stroms von der
 Materialzusammensetzung der Probe und der Spitze (Verunreinigungen verursachen
 wegen anderer Austrittsarbeiten Schwankungen im Potential), so ist ein
 konstanter Strom gleichbedeutend mit einem konstanten Abstand zwischen Probe und
-Spitze (siehe Abb. \ref{fig:ccm}). Auf diese Weise  können die Nachteile des CHM
-beseitigt werden. Das Nachjustieren der Spitze während der Messung ist
+Spitze (siehe Abbildung~\ref{fig:ccm}). Auf diese Weise  können die Nachteile
+des CHM beseitigt werden. Das Nachjustieren der Spitze während der Messung ist
 allerdings recht zeitintensiv.
 
 \begin{figure}[h]
@@ -179,12 +190,20 @@ werden. Die Details der Durchführung sind den Abschnitten \ref{cha:spitzen1} und
 \subsection{Kristallstrukturen}
 \subsubsection{Graphit}
 Graphit besteht aus parallelen Schichten von kovalent sechseckig gebundenen
-Kohlenstoffatomen und besitzt somit eine hexagonale Kristallstruktur. Zwischen
-diesen Schichten herrscht die schwächere \textsc{Van-der-Waals}-Bindung, deren
-Bindungsenergie nur etwa $2\,\%$ derer der kovalenten Bindung beträgt. Der
-Abstand der Schichten ergibt sich zu etwa $\unit[0.34]{nm}$.
+Kohlenstoffatomen und besitzt somit eine hexagonale Kristallstruktur (siehe
+Abbildung~\ref{fig:graphit_gitter}). Zwischen diesen Schichten herrscht die
+schwächere \textsc{Van-der-Waals}-Bindung, deren Bindungsenergie nur etwa
+$2\,\%$ derer der kovalenten Bindung beträgt. Der Abstand der Schichten ergibt
+sich zu etwa $\unit[0.34]{nm}$.
 
-Die Kohlenstoffebenen liegen dabei wie in Abbildung~\ref{fig:schichten} zu sehen
+\begin{figure}[h]
+    \centering
+    \includegraphics{grafiken/graphit_gitter}
+    \caption{Gitterstruktur von Graphit}
+    \label{fig:graphit_gitter}
+\end{figure}
+
+Die Kohlenstoffebenen liegen dabei wie in Abbildung~\ref{fig:ggitter} zu sehen
 übereinander, wir erwarten also drei verschiedene Helligkeiten in dem
 entstehenden Bild (je heller ein Bereich erscheint, desto größer ist dort die
 Elektronendichte): Am dunkelsten erscheinen jene Bereiche, in welchen nur in der
@@ -192,7 +211,7 @@ unteren Schicht ein Atom liegt. Dies ist darüber einzusehen, dass dort offenbar
 der Abstand der Elektronenverteilung zur Spitze größer ist als in den beiden
 anderen Fällen. Diese sind gegeben über entweder einem Atom in der oberen
 Schicht oder zwei übereinanderliegenden Atomen aus beiden Schichten (wie in
-Abbildung~\ref{fig:schichten} zusehen ist). Dabei erscheint entgegen der
+Abbildung~\ref{fig:ggitter} zu sehen ist). Dabei erscheint entgegen der
 Intuition ein Bereich mit zwei übereinanderliegenden Atomen nicht so hell wie
 ein Bereich mit einem Atom aus der oberen Schicht, da auf Grund der
 \textsc{Van-der-Waals}-Bindung zwischen den Schichten Dipole ausgebildet werden,
@@ -200,18 +219,12 @@ welche die Elektronenverteilung jeweils zwischen die beiden Atome verschieben.
 An der Graphitoberfläche registriert man also eine leicht geringere
 Elektronenkonzentration.
 
-%\begin{figure}
-    %\tikzset{}
-%    \newcommand{\hexagon}[2]{
-%        \newdimen\A \A=0.8cm
-%        \draw[#2] #1 \foreach \x in {0,60,...,360}{-- ++(\x:\A) node {}} ;
-%    }
-%    \begin{tikzpicture}
-%        \foreach \x in {(0,0), (2,0)}{\hexagon{\x}{}}
-%    \end{tikzpicture}
-%    \label{fig:schichten}
-%\end{figure}
-                
+\begin{figure}
+\centering
+    \includegraphics[width=0.6\textwidth]{grafiken/ggitter}
+    \caption[Graphit-Gitter]{\small Schematische Darstellung der Gitterstruktur von Graphit. Es sind nur zwei Ebenen (schwarz bzw. rot) eingezeichnet. Entsprechend des Erscheinens auf der Aufnahme mit dem Rastertunnelmikroskop sind die Atome dargestellt.}
+    \label{fig:ggitter}
+\end{figure}
 
 \subsubsection{Gold}
 \label{cha:gold}
