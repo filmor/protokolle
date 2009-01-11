@@ -70,13 +70,14 @@ das Probenmaterial.
 
 Der Tunnelstrom $I_T$ ist dabei vom Abstand $a$ zwischen Spitze und Probe, der
 Austrittsarbeit $W_A$ des Probenmaterials und der Elektronendichte an der
-Probenoberfläche abhängig. Es gilt:~\cite{skriptrtm}
+Probenoberfläche abhängig. Es gilt nach~\cite{skriptrtm}:
 \begin{align}
     I_T &\propto \exp{\left(-A\sqrt{\varphi}s\right)}
 \end{align}
 Wobei $s$ der Abstand der Spitze zur Probe und $\varphi$ die Höhe der
-Potentialbarriere (siehe auch Abbildung~\ref{fig:prinzip}) ist. $A$ ist ein
-konstanter Vorfaktor mit $A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
+Potentialbarriere, welche von der Elektronendichte abhängt, ist (siehe auch
+Abbildung~\ref{fig:prinzip}). $A$ ist ein konstanter Vorfaktor mit
+$A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
 
 \begin{figure}[h]
     \center
@@ -88,6 +89,8 @@ konstanter Vorfaktor mit $A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
 Die Potentialbarriere setzt sich dabei zusammen aus den Austrittsarbeiten der
 Probe und der Spitze sowie dem zwischen Spitze und Probe liegenden Vakuum.
 
+% genauer beschreiben mit bezug auf bild, was bei verunreinigung passiert
+% modulation um \Delta s erklären (grob)
 % Größenordnungen der Änderungen
 
 Wie bereits erwähnt ist der Tunnelstrom also sehr empfindlich auf Änderungen des
@@ -222,7 +225,7 @@ Elektronenkonzentration.
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{grafiken/ggitter}
-    \caption[Graphit-Gitter]{\small Schematische Darstellung der Gitterstruktur von Graphit. Es sind nur zwei Ebenen (schwarz bzw. rot) eingezeichnet. Entsprechend des Erscheinens auf der Aufnahme mit dem Rastertunnelmikroskop sind die Atome dargestellt.}
+    \caption[Graphit-Gitter]{\small Schematische Darstellung der Gitterstruktur von Graphit. Es sind nur zwei Ebenen (schwarz bzw. grau) eingezeichnet. Entsprechend des Erscheinens auf der Aufnahme mit dem Rastertunnelmikroskop sind die Atome dargestellt.}
     \label{fig:ggitter}
 \end{figure}
 
@@ -334,7 +337,16 @@ nicht heranfährt, aber auch, indem die Probe auf die Spitze auffährt.
 Bei nicht funktionstüchtiger Annäherung stellte es sich als vorteilhaft heraus,
 die Probenhalterung erneut mit Ethanol zu reinigen.
 
-\subsection{Bildaufnahme Graphit}
+\subsection{Bildaufnahme}
+Die Bildaufnahme läuft nach dem Heranfahren automatisch ab. Um ein homogenes
+Bild zu erhalten ist es notwendig, die Neigung der Aufnahmeebene zumindest in
+x-Richtung zu verändern, was aber durch einen zusätzlichen Graphen im unteren
+Anzeigebereich des Programmes recht unproblematisch ist. Während der Aufnahme
+haben wir versucht, die Erschütterungen im Raum so gering wie möglich zu halten,
+da man trotz der Lagerung auf einer schweren Metallplatte diese auf dem
+Bildschirm erkennen kann und die Spitze dabei auffahren könnte.
+
+\subsubsection{Graphit}
 Zunächst versuchten wir mit einer Platin-Iridium-Messspitze eine
 Graphitoberfläche auszumessen. Immer wieder mussten wir die Spitze entnehmen,
 erneuern, wieder einsetzen und die Probe annähern. Leider war dies lange Zeit
@@ -434,7 +446,7 @@ also doch nur schwerlich hinreichend dünn herstellen zu lassen, was wohl auf
 unser persönliches Unvermögen in Folge mangelnder Übung im Reißen zurückzuführen
 ist.
 
-\subsection{Bildaufnahme Gold}
+\subsubsection{Gold}
 Zu guter Letzt sollten nun noch mit einer geeigneten Messspitze Aufnahmen einer
 Goldoberfläche gemacht werden. Wie bereits in Abschnitt \ref{cha:gold}
 beschrieben, ist nichts weiter als eine Abbildung der groben Oberflächenstruktur
@@ -475,8 +487,8 @@ freundlicherweise zur Verfügung gestellt wurden:
     \begin{minipage}{0.3\textwidth}
         \includegraphics[width=1.0\textwidth]{data/GoW200nm5}
     \end{minipage}
-    \label{fig:gojan}
     \caption[Gold]{\small Gold mit Wolfram-Messspitze aufgenommen~\cite{jan}.}
+    \label{fig:gojan}
 \end{figure}
 
 Sehr schön sind hier Strukturen auf der Goldoberfläche zu sehen, welche sich als
@@ -522,7 +534,7 @@ Fehlerfortpflanzung zu:
                       \frac{\Delta l \cdot L}{l^2 \cdot d} \right)^2}
 \end{align}
 
-Da ein Unterscheidung zwischen vertikaler und horizontaler Auflösung nicht
+Da eine Unterscheidung zwischen vertikaler und horizontaler Auflösung nicht
 sinnvoll ist, da es sich prinzipiell um die gleiche Auflösung handeln sollte,
 kann nun noch eine Mittelung erfolgen. Entsprechend der ohnehin schon als
 identisch berechneten Auflösungen erhält man:
@@ -534,25 +546,126 @@ Angesichts dieses Auflösungsvermögens erscheint es realistisch, dass es sich bei
 der Rastertunnelmikroskopie um eine der hochauflösensten Mikroskopieverfahren
 handelt.
 
-\subsection{Bindungslänge und -winkel bei Graphit}
+\subsection{Bindungslänge und  -winkel bei Graphit}
 \label{cha:auswg}
 
+\begin{figure}[h]
+    \includegraphics{grafiken/messung.png}
+    \caption{Messung der Winkel und Längen.}
+    \label{fig:messung}
+\end{figure}
 
-\subsubsection{Winkel}
-Wie in Abbildung~\ref{fig:winkel} zu sehen wurden die Winkel im Graphitgitter
+\subsubsection{Länge} 
+\begin{table}
+    \centering
+    \pgfplotstabletypesetfile[
+            columns/0/.style={column name={$n_I$}},
+            columns/1/.style={column name={$c/\unit{px}$}},
+            columns/2/.style={column name={$c/\unit{pm}$}},
+            display columns/0/.style={select equal part entry of={0}{3},
+                                column name={\textcolor{green}{$n_I$}}},
+            display columns/1/.style={select equal part entry of={0}{3},
+                                column name={\textcolor{green}{$c/\unit{px}$}}},
+            display columns/2/.style={select equal part entry of={0}{3},
+                                column name={\textcolor{green}{$c/\unit{nm}$}}},
+            display columns/3/.style={select equal part entry of={1}{3},
+                                column name={\textcolor{blue}{$n_I$}}},
+            display columns/4/.style={select equal part entry of={1}{3},
+                                column name={\textcolor{blue}{$c/\unit{px}$}}},
+            display columns/5/.style={select equal part entry of={1}{3},
+                                column name={\textcolor{blue}{$c/\unit{nm}$}}},
+            display columns/6/.style={select equal part entry of={2}{3},
+                                column name={\textcolor{red}{$n_I$}}},
+            display columns/7/.style={select equal part entry of={2}{3},
+                                column name={\textcolor{red}{$c/\unit{px}$}}},
+            display columns/8/.style={select equal part entry of={2}{3},
+                                column name={\textcolor{red}{$c/\unit{nm}$}}},
+            columns={0,1,2,0,1,2,0,1,2}
+        ]
+        {data/laengen.txt}
+    \caption{Gemessene Daten: Für die \textcolor{green}{grünen},
+        \textcolor{blue}{blauen} und \textcolor{red}{roten} Linien}
+    \label{tab:laengen}
+\end{table}
+Die Bindungslängen wurden bestimmt, indem wir die Länge zwischen zwei entfernten
+Maxima in einer Reihe bestimmten und den Wert durch die Anzahl der Intervalle
+teilten. Die zugehörigen Werte sind in Tabelle~\ref{tab:laengen} aufgelistet.
+Über die Gesamtheit dieser Werte wurde dann das gewichtete Mittel berechnet:
+\begin{align*}
+    \overline{c} = \frac{\sum_i (\Delta c_i)^{-1} c_i}{\sum_i (\Delta
+                    c_i)^{-1}}
+\end{align*}
+
+Den Fehler der Längenmessung schätzen wir als $\Delta x = \unit[0.1]{nm}$. Damit
+ist der Fehler der mittleren Intervalllängen $\Delta c = \frac{\Delta x}{n_i}$,
+woraus sich wiederum der Fehler des gewichteten Mittelwerts (und damit unseres
+Zwischenergebnisses ergibt):
+\begin{align*}
+    \Delta \overline{c} &= \frac{\sqrt{n}}{\sum_i (\Delta c_i)^{-1}} \\
+                        &= \frac{\Delta c \sqrt{n}}{\sum_i n_i}
+\end{align*}
+
+Damit erhalten wir letztlich die Werte:
+\begin{align*}
+    \overline{c}_\text{\textcolor{red}{rot}} &= \unit[(226.3 \pm 8)]{pm} \\
+    \overline{c}_\text{\textcolor{blue}{blau}} &= \unit[(276.5 \pm 5)]{pm} \\
+    \overline{c}_\text{\textcolor{green}{grün}} &= \unit[(202.8 \pm 12)]{pm} \\
+    \Rightarrow \quad \overline{c} &= \unit[(241.3 \pm 3)]{pm}
+\end{align*}
+
+Der große Unterschied der einzelnen Werte ergibt sich aus einer Verzerrung des
+Bildes, die auch im folgenden Teil zur Winkelmessung wieder deutlich wird.
+
+Der so bestimmte Abstand ist der mittlere Abstand zwischen zwei gleich gefärbten
+Punkten (siehe auch Abbildung~\ref{fig:ggitter}). Damit erhalten wir den
+Atomabstand aus folgendem Bild:
+\begin{figure}[h]
+    \center
+    \begin{tikzpicture}
+        \def\R{100pt}
+        \begin{scope}[yshift=-3\R]
+            \draw (0:\R) \foreach \x in {60,120,...,359} {
+                    -- (\x:\R)
+                }-- cycle (200:\R) node {$a$};
+            \draw[color=red] (120:\R) -- (240:\R) (180:70pt) node[left] {$c$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{$\frac{c}{2} = a \sin \frac{\pi}{3}$}
+    \label{fig:laenge}
+\end{figure}
+
+Der gemessene Atomabstand ist also:
+\begin{align*}
+    a = \frac{\overline{c}}{\sqrt{3}} = \unit[(139.3 \pm 1.7)]{pm}
+\end{align*}
+Dieser fällt etwas geringer aus als der Literaturwert von $a=\unit[142]{pm}$,
+dieser liegt aber gerade noch in den Fehlergrenzen.
+
+\subsubsection{Winkel} 
+Wie in Abbildung~\ref{fig:messung} zu sehen wurden die Winkel im Graphitgitter
 vermessen. Dabei erhielten wir die Werte $\unit[123.71]{^\circ}$,
 $\unit[124.3]{^\circ}$ und $\unit[114.5]{^\circ}$. Der recht große Unterschied
-des letzten Wertes zu den anderen ergibt sich aus der Verzerrung des Bildes
-(siehe auch Abbildung~\ref{fig:sechsecke}), diese rechnet sich aber durch den
-Mittelwert im nächsten Schritt (auch theoretisch) heraus:
-\begin{align}
+des letzten Wertes zu den beiden anderen ergibt sich aus der Verzerrung des
+Bildes. Wir betrachten jedoch keine isolierten Winkel, sondern Winkel innerhalb
+einer Sechseckstruktur. Deren mittlerer Winkel muss selbstverständlich auch bei
+Verzerrungen konstant $\unit[120]{^\circ}$ betragen. Bei einer Mittelung der
+Messwerte erwarten wir also genau diesen Wert. In der Tat ergibt sich
+\begin{align*} 
     \overline{\alpha} = \unit[(120.83\pm 1.15)]{^\circ}
-\end{align}
+\end{align*}
 bei einem angenommen Fehler von $\unit[2]{^\circ}$ für jeden einzelnen Winkel.
 Wie erwartet stimmt also das Ergebnis sehr gut mit dem theoretischen Wert von
 $\unit[120]{^\circ}$ überein.
 
 \section{Zusammenfassung}
+Im Versuch haben wir zum Einen die Struktur von Gold und Graphit bei sehr
+starken Vergrößerungen betrachtet, zum Anderen letztere auch genauer
+ausgemessen. So erhielten wir einen mittleren Bindungswinkel von $120.83^\circ$
+was sehr gut mit dem erwarteten Wert von $120^\circ$ für ein hexagonales Gitter
+übereinstimmt und eine mittlere Bindungslänge $\unit[139.3]{pm}$, was zumindest
+im Rahmen des Messfehlers mit dem Literaturwert von $\unit[142]{pm}$ konsistent
+ist. Die Auflösung des Mikroskops betrug bei dem dafür ausgewerteten Bild
+$\unit[1.256 \cdot 10^{11}] {\frac{px}{m}}$.
 
 \begin{appendix}
 \Literatur{quellen}
