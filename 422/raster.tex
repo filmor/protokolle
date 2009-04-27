@@ -68,7 +68,7 @@ Somit kann bei hinreichend kleinem Abstand ein Tunnelstrom gemessen werden. Dies
 erklärt im Übrigen auch die gestellte Forderung elektrischer Leitfähigkeit für
 das Probenmaterial.
 
-Der Tunnelstrom $I_T$ ist dabei vom Abstand $a$ zwischen Spitze und Probe, der
+Der Tunnelstrom $I_T$ ist dabei vom Abstand $s$ zwischen Spitze und Probe, der
 Austrittsarbeit $W_A$ des Probenmaterials und der Elektronendichte an der
 Probenoberfläche abhängig. Es gilt nach~\cite{skriptrtm}:
 \begin{align}
@@ -89,9 +89,18 @@ $A=\unit[1.025]{\frac{1}{\text{Å}\sqrt{eV}}}$.
 Die Potentialbarriere setzt sich dabei zusammen aus den Austrittsarbeiten der
 Probe und der Spitze sowie dem zwischen Spitze und Probe liegenden Vakuum.
 
-% genauer beschreiben mit bezug auf bild, was bei verunreinigung passiert
-% modulation um \Delta s erklären (grob)
-% Größenordnungen der Änderungen
+Demzufolge wird bei einer Verunreinigung des Probenmaterials mit Fremdatomen
+wegen der unterschiedlichen Austrittsarbeiten eine Veränderung des Tunnelstromes
+zu messen sein. Man kann diesen Effekt zunächst nicht von einer Abstandsänderung
+unterscheiden. Dies ist auch in Abbildung \ref{fig:prinzip} dargestellt
+(Verunreinigung C wird als topografische Veränderung B fehlinterpretiert). Es
+besteht jedoch auf Grund der unterschiedlichen Grade der Abhängigkeit des
+Tunnelstromes von einer Abstandsänderung oder einer Potentialänderung die
+Möglichkeit, diese Interpretationsfehler zu unterbinden. Hierzu wird der Abstand
+$s$ (siehe Abb. \ref{fig:prinzip}), mit welchem die Messspitze über die Probe
+fährt, hochfrequent leicht um $\Delta s$ moduliert. 
+
+% Größenordnungen der Änderungen <-- was ist gemeint?
 
 Wie bereits erwähnt ist der Tunnelstrom also sehr empfindlich auf Änderungen des
 Abstandes. Die Auflösung des Rastertunnelmikroskops ist somit sehr gut. Ihre
@@ -142,9 +151,6 @@ allerdings recht zeitintensiv.
 \end{figure}
 
 
-%noch was zu dieser geschichte mit der modulation wegen der austrittsarbeit
-
-
 \subsubsection{Bewegung der Spitze}
 Die Spitze wird mithilfe von Piezokristallen über die Probe bewegt. Diese dehnen
 sich proportional zu der angelegten Spannung aus:
@@ -156,8 +162,6 @@ wobei der piezoelektrische Koeffizient $\rho$ größenordnungsmäßig
 $\unit[0.1]{nm}$ beträgt. Wir können also mit Spannungsänderungen im Voltbereich
 sehr kleine Veränderungen der Spitzenposition erreichen und so einen sehr
 kleinen Bereich der Oberfläche durch Anlegen von Sägezahnspannungen abrastern.
-
-% Erklärung Piezoeffekt
 
 \subsubsection{Verwandte Rastermethoden}
 Neben dem Rastertunnelmikroskop wurden noch weitere vergleichbare Mikroskope
@@ -546,7 +550,7 @@ Angesichts dieses Auflösungsvermögens erscheint es realistisch, dass es sich bei
 der Rastertunnelmikroskopie um eine der hochauflösensten Mikroskopieverfahren
 handelt.
 
-\subsection{Bindungslänge und  -winkel bei Graphit}
+\subsection{Bindungslänge und -winkel bei Graphit}
 \label{cha:auswg}
 
 \begin{figure}[h]
@@ -555,7 +559,7 @@ handelt.
     \label{fig:messung}
 \end{figure}
 
-\subsubsection{Länge} 
+\subsubsection{Länge}
 \begin{table}
     \centering
     \pgfplotstabletypesetfile[
@@ -641,7 +645,7 @@ Der gemessene Atomabstand ist also:
 Dieser fällt etwas geringer aus als der Literaturwert von $a=\unit[142]{pm}$,
 dieser liegt aber gerade noch in den Fehlergrenzen.
 
-\subsubsection{Winkel} 
+\subsubsection{Winkel}
 Wie in Abbildung~\ref{fig:messung} zu sehen wurden die Winkel im Graphitgitter
 vermessen. Dabei erhielten wir die Werte $\unit[123.71]{^\circ}$,
 $\unit[124.3]{^\circ}$ und $\unit[114.5]{^\circ}$. Der recht große Unterschied
@@ -650,7 +654,7 @@ Bildes. Wir betrachten jedoch keine isolierten Winkel, sondern Winkel innerhalb
 einer Sechseckstruktur. Deren mittlerer Winkel muss selbstverständlich auch bei
 Verzerrungen konstant $\unit[120]{^\circ}$ betragen. Bei einer Mittelung der
 Messwerte erwarten wir also genau diesen Wert. In der Tat ergibt sich
-\begin{align*} 
+\begin{align*}
     \overline{\alpha} = \unit[(120.83\pm 1.15)]{^\circ}
 \end{align*}
 bei einem angenommen Fehler von $\unit[2]{^\circ}$ für jeden einzelnen Winkel.
@@ -658,14 +662,26 @@ Wie erwartet stimmt also das Ergebnis sehr gut mit dem theoretischen Wert von
 $\unit[120]{^\circ}$ überein.
 
 \section{Zusammenfassung}
-Im Versuch haben wir zum Einen die Struktur von Gold und Graphit bei sehr
-starken Vergrößerungen betrachtet, zum Anderen letztere auch genauer
-ausgemessen. So erhielten wir einen mittleren Bindungswinkel von $120.83^\circ$
-was sehr gut mit dem erwarteten Wert von $120^\circ$ für ein hexagonales Gitter
-übereinstimmt und eine mittlere Bindungslänge $\unit[139.3]{pm}$, was zumindest
-im Rahmen des Messfehlers mit dem Literaturwert von $\unit[142]{pm}$ konsistent
-ist. Die Auflösung des Mikroskops betrug bei dem dafür ausgewerteten Bild
+Mit den Wolfram-Spitzen konnten bessere Bilder als mit den
+Platin-Iridium-Spitzen produziert werden. Die Platin-Iridium-Spitzen scheinen
+sich also nur schwerlich hinreichend dünn herstellen zu lassen, was aber wohl
+auf persönliches Unvermögen zurückzuführen ist.
+
+Wir betrachteten die Struktur von Gold und Graphit bei sehr starken
+Vergrößerungen und konnten, wie erwartet, bei Gold (einem Metall mit Elektronen
+im Leitungsband) nur eine grobe Oberflächenstruktur, bei Graphit hingegen eine
+hexagonale Gitterstruktur mit atomarer Auflösung beobachten. Allerdings gelang
+uns letzteres nicht selber.
+
+Für Graphit erhielten wir einen mittleren Bindungswinkel von $(120.83\pm
+1.15)^\circ$, was sehr gut mit dem erwarteten Wert von $120^\circ$ für ein
+hexagonales Gitter übereinstimmt und eine mittlere Bindungslänge von
+$\unit[(139.3 \pm 1.7)]{pm}$, was im Rahmen des Messfehlers mit dem
+Literaturwert von $\unit[142]{pm}$ konsistent ist. 
+
+Die Auflösung des Rastertunnelmikroskops betrug bei dem dafür ausgewerteten Bild
 $\unit[1.256 \cdot 10^{11}] {\frac{px}{m}}$.
+
 
 \begin{appendix}
 \Literatur{quellen}
