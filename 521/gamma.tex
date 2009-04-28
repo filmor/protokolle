@@ -6,8 +6,11 @@
 \begin{document}
 
 \section{Einleitung}
-Das Ziel dieses Versuchs ist es, die $\gamma$-Spektroskopie mit Szintillations- und Ge-
-Halbleiterdetektoren zu untersuchen. Die charakteristischen Eigenschaften wie Energieauflösung und Nachweiswahrscheinlichkeit der beiden Detektortypen werden bestimmt und mit einander verglichen. Als Anwendung des Ge-Detektors wird abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
+Das Ziel dieses Versuchs ist es, die $\gamma$-Spektroskopie mit Szintillations-
+und Ge-Halbleiterdetektoren zu untersuchen. Die charakteristischen Eigenschaften
+wie Energieauflösung und Nachweiswahrscheinlichkeit der beiden Detektortypen
+werden bestimmt und mit einander verglichen. Als Anwendung des Ge-Detektors wird
+abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
 
 \section{Theoretische Grundlagen}
 \subsection{Radioaktivität}
@@ -54,6 +57,51 @@ Zu guter letzt besteht die Möglichkeit, dass ein angeregter Atomkern in einen en
 \subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
 % photoeffekt, compton, paarbild., abhängigkeit des wq dieser effekte von der energie
 % nd von Z des absorbers
+$\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
+\begin{description}
+    \item[Photoeffekt] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
+        Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird
+        ein Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat,
+        wobei $W_B$ die Bindungsenergie des Elektrons ist.
+
+        Für den Wirkungsquerschnitt dieser Wechselwirkung gilt:
+        \begin{align}
+            \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
+            \label{eqn:wq-photo}
+        \end{align}
+    \item[Compton-Effekt] Der Compton-Effekt tritt auf, wenn das Photon mit
+        einem freien oder quasi-freien (schwach gebundenen) Elektron
+        wechselwirkt. Das Photon stößt elastisch (in dem Sinne, das keine
+        Energie umgewandelt wird) auf das Elektron, Energie und Impuls der
+        beiden Teilchen ergeben sich aus der relativistischen
+        Energie-Impuls-Beziehung. Die Energie vor und nach dem Stoß hängt wie
+        folgt zusammen:
+        \begin{align}
+            \frac{E_{nach}}{E_{vor}} = \frac{1}{1 + \frac{h\nu}{m_ec^2}(1-\cos
+            \vartheta)}
+            \label{eqn:compton-energie}
+        \end{align}
+        wobei $\vartheta$ der Streuwinkel ist.
+
+        Da die Energie von $\gamma$-Quanten deutlich größer als die
+        Bindungsenergie der Elektronen ist, können letztere bei derartiger
+        Streuung als quasi-frei angesehen werden. Für den Wirkungsquerschnitt
+        gilt (wenn wir annehmen, dass $E_\gamma \gg m_ec^2$):
+        \begin{align}
+            \sigma_c \propto \frac{Z}{E_\gamma}
+            \label{eqn:wq-compton}
+        \end{align}
+
+        Der Grenzfall geringer Photonenenergien nennt sich Thomson-Streuung.
+        Dabei wird, wie man Formel \ref{eqn:compton-energie} leicht entnehmen
+        kann, die Photonenenergie nicht verändert, der Wirkungsquerschnitt
+        beträgt:
+        \begin{align}
+            \sigma_{th} = Z\frac{2\pi}{3}r_0^3
+            \label{eqn:wq-thomson}
+        \end{align}
+        wobei $r_0$ der klassische Elektronenradius ist.
+\end{description}
 
 \subsection{Szintillationsdetektor}
 
