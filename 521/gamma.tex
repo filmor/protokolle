@@ -15,10 +15,10 @@ abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
 \section{Theoretische Grundlagen}
 \subsection{Radioaktivität}
 % quellen, natürliche, zerfallsreihen
+Die Begriffe Radioaktivität, radioaktiver Zerfall und Kernzerfall beschreiben die Eigenschaft instabiler Atomkerne sich spontan unter Energieabgabe umzuwandeln. Die freiwerdende Energie wird als ionisierende Strahlung (energiereiche Teilchen und/oder Gammastrahlung) abgegeben. Dem entsprechend unterscheidet man grob drei verschiedene Arten von radioaktivem Zerfall. Die wichtigsten Zerfallsformen sollen im Folgenden erläutert werden.
 
-Die Begriffe Radioaktivität, radioaktiver Zerfall und Kernzerfall beschreiben die Eigenschaft instabiler Atomkerne sich spontan unter Energieabgabe umzuwandeln. Die freiwerdende Energie wird als ionisierende Strahlung (energiereiche Teilchen und/oder Gammastrahlung) abgegeben. Dem entsprechend unterscheidet man drei verschiedene Arten von radioaktivem Zerfall.
-
-\subsubsection*{$\alpha$-Zerfall}
+\begin{description}
+\item[$\alpha$-Zerfall:]
 Ein Atomkern der Massenzahl $A$ und Kernladungszahl $Z$ kann unter Aussendung eines $\alpha$-Teilchens, also eines Heliumkerns, zerfallen: 
 \begin{align}
 ^A_ZX \to ^{A-4}_{Z-2}Y + ^{4}_{2}He^{++}
@@ -29,7 +29,8 @@ Ein $\alpha$-Teilchen stellt einen sehr stabilen Zustand zweier Neutronen und zw
 Auf Grund des Tunneleffektes gibt es jedoch eine endliche Aufenthaltswahrscheinlichkeit des $\alpha$-Teilchens außerhalb der Potentialbarriere. Hier überwiegt das abstoßende Coulombpotential.
 Die Energie der $\alpha$-Teilchen $E_\alpha$ ist, da es sich hier um einen Zweikörper-Zerfall handelt, direkt von der Energie des Kerns abhängig, also diskret. Es ist die Möglichkeit der Kernanregung zu beachten, $E_\alpha$ kann also varrieren. 
 
-\subsubsection*{$\beta$-Zerfall}
+
+\item[$\beta$-Zerfall:]
 Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins ändert, $A$ jedoch konstant bleibt. Beim $\beta^-$-Zerfall zerfällt ein Neutron innerhalb des Kerns in ein Proton, ein Elektron sowie ein Anti-Elektronneutrino:
 \begin{align}
 n \to p + e^- + \bar\nu_e
@@ -48,18 +49,36 @@ p + e^- \to n + \nu_e
 \end{align}
 Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{Bind}$ energetisch möglich, wobei $E^{e^-}_{Bind}$ die Bindungsenergie des Elektrons darstellt. In der jeweiligen Elektronenschale wird eine Lücke hinterlassen. Der Atomkern ist nun angeregt.
 
-\subsubsection*{$\gamma$-Zerfall}
+\item[$\gamma$-Zerfall:]
 Zu guter letzt besteht die Möglichkeit, dass ein angeregter Atomkern in einen energetisch tiefer gelegenen Zustand übergeht und dabei ein Photon der Differenzenergie aussendet analog zu den Vorgängen in der Atomhülle. Die bei Kernübergängen erreichbaren Energien der $\gamma$-Quanten $E_{\gamma}$ liegen jedoch wesentlich höher (keV- oder MeV-Bereich).
+\end{description}
 
-% noch weiter
+Es ist, v.a. bei schwereren Elementen, möglich, dass der Kern über mehrere Zwischenprodukte zerfällt, bis schließlich eine stabile Konfiguration erreicht ist. Da die schweren, instabilen Isotope in Supernova-Explosionen vor der Entstehung des Sonnensystems erzeugt wurden, finden wir heute nur noch Isotope mit einer Lebensdauer von mindestens etwa $10^9$ Jahren. Alle anderen Kerne und ihre Zerfallsreihen sind somit bereits "`ausgestorben"'. In Abbildung (\ref{fig:zerfallsreihen}) sind die heute noch vorkommenden natürlichen Zerfallsreihen dargestellt.
 
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{zerfallsreihen}
+%    \caption[Zerfallsreihen]{Heute in der Natur vorkommende Zerfallsreihen.~\cite{}}
+%    \label{fig:zerfallsreihen}
+%\end{figure}
 
+Als Quellen natürlicher Radioaktivität sind die Höhenstrahlung und beispielsweise $^{14}C$, sowie $^{40}K$ zu nennen. $^{14}C$ wird durch Elektroneneinfang aus $^{14}N$ in der Atmosphäre gebildet, letzteres ist ein metastabiles Isotop, welches in vielen Mineralien vorkommt.
+
+Zusätzlich zur natürlichen Strahlenbelastung ist man künstlicher, also menschengemachter Umgebungsstrahlung ausgesetzt. Diese werden v.a. durch Kernwaffentest und das Kernreaktorunglück von Tschernobyl verursacht. Es sind somit Nuklide mittlerer Lebensdauer (einige Jahre) wie beispielsweise $^{60}Co$, $^{90}Sr$ $^{137}Cs$ in der Umwelt nachweisbar.
+
+Es erweist sich als nützlich die sogenannte Aktivität einer radioaktiven Quelle zu definieren. Es gilt:
+\begin{align}
+A(t) := - \frac{dN}{dt} = \lambda N(t)
+\end{align}
+Hierbei beschreibt $\lambda$ die Zerfallskonstante. Es ergibt sich somit eine exponentiell abklingende Aktivität.
+
+ 
 \subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
 % photoeffekt, compton, paarbild., abhängigkeit des wq dieser effekte von der energie
 % nd von Z des absorbers
 $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
 \begin{description}
-    \item[Photoeffekt] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
+    \item[Photoeffekt:] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
         Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird
         ein Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat,
         wobei $W_B$ die Bindungsenergie des Elektrons ist.
@@ -69,7 +88,7 @@ $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
             \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
             \label{eqn:wq-photo}
         \end{align}
-    \item[Compton-Effekt] Der Compton-Effekt tritt auf, wenn das Photon mit
+    \item[Compton-Effekt:] Der Compton-Effekt tritt auf, wenn das Photon mit
         einem freien oder quasi-freien (schwach gebundenen) Elektron
         wechselwirkt. Das Photon stößt elastisch (in dem Sinne, das keine
         Energie umgewandelt wird) auf das Elektron, Energie und Impuls der
