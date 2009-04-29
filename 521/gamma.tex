@@ -1,6 +1,6 @@
 \documentclass{protokoll}
 
-\newcommand{\assistent}{}
+\newcommand{\assistent}{Thomas Pups}
 \newcommand{\versuch}{$\gamma$-Spektroskopie mit Szintillations- und
                       Halbleiterdetektoren}
 \newcommand{\nummer}{P521}
@@ -144,10 +144,61 @@ $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
 % Gesamtwirkungsquerschnitt
 
 \subsection{Szintillationsdetektor}
+\subsubsection{Photomultiplier}
+\label{cha:photo}
+Ein Photomultiplier ist ein lichtsensitives Bauteil, welches einfallende
+Photonen in einen messbaren elektrischen Strom umwandelt. Dies geschieht wie
+folgt (siehe auch Abb.~\ref{fig:photo}). Fällt Strahlung auf die Photokathode
+aus photosensitivem Material, so werden Elektronen über den photoelektrischen
+Effekt emittiert. Hierbei werden Effizienzen von etwa $\unit[30]{\%}$ erreicht.
+Über ein angelegtes elektrisches Feld werden diese Elektronen nun auf die erste
+Dynode hin beschleunigt. Dort werden pro einfallenden Elektrons bis zu zehn
+Sekundärelektronen ausgeschlagen. Zwischen den einzelnen Dynoden, insgesamt gibt
+es etwa zehn Stück, liegen ebenfalls Spannungen an. Die Potentiale sind so
+gewählt, dass die Elektronen stets allesamt zur nächsten Dynode beschleunigt
+werden, wo sie erneut Sekundärelektronen ausschlagen usw.. Auf diese Weise kann
+eine Verstärkung des Eingangssignals von etwa $10^6 - 10^7$ an der Anode
+erreicht werden. Dabei ist die Amplitude des Ausgangssignals proportional zur
+Energie des einfallenden Photons.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/photo}
+    \caption[Photomultiplier]{Prinzip eines Photomultipliers.~\cite{dem3},
+                              bearbeitet.}
+    \label{fig:photo}
+\end{figure}
 
 \subsection{Halbleiterdetektor}
+Bei einem Halbleiterdetektor wird an einem pn-Übergang einfallende Strahlung in
+einen messbaren Strompuls umgewandelt. Zum Verständnis der Vorgänge dabei
+benötigt man das Bändermodell.
+
 \subsubsection{Bändermodell}
-%blabla
+Für die nachfolgenden Betrachtungen benutzen wir das Modell des freien
+Elektronengases erklärt werden. Dabei nehmen wir an, dass sich die in dem
+Festkörper am schwächsten gebundenen Elektronen im Ionengitter frei bewegen
+können, die Wechselwirkung mit dem Gitter und anderen Elektronen wird
+vernachlässigt und das Potential im Kristall durch ein Kastenpotential
+angenähert, welches verschiedene Energieniveaus besitzt. Die Energie des
+höchsten Niveaus, welches bei minimaler Gesamtenergie noch mit den Elektronen
+besetzt ist, wobei die Zustände von unten aufgefüllt werden, heißt
+\textsc{Fermi}-Energie $E_F$.
+
+Ausgehed von einer Boltzmann-Verteilung der Atomzustände kann man eine
+Verteilungsfunktion für die Wahrscheinlichkeit, dass ein Zustand der Energie $E$
+mit Elektronen besetzt ist herleiten, die
+\textsc{Fermi}-\textsc{Dirac}-Verteilung:
+\begin{align}
+    f(E,T) = \frac{1}{1+\exp(\frac{E-E_F}{k_BT}}
+    \label{eqn:fermi-dirac}
+\end{align}
+
+Für reale Festkörper kann die Gitterwechselwirkung nicht mehr vernachlässigen
+und die Lösungen der Schrödingergleichung sind die sogenannten
+\textsc{Bloch}funktionen. Diese zeigen kein kontinuierliches Energiespektrum
+mehr.
+
 
 \subsection{Impulshöhenspektrum}
 
