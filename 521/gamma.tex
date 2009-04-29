@@ -82,8 +82,6 @@ jedoch wesentlich höher (keV- oder MeV-Bereich).
 
 
 \subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
-% photoeffekt, compton, paarbild., abhängigkeit des wq dieser effekte von der energie
-% nd von Z des absorbers
 $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
 \begin{description}
     \item[Photoeffekt] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
@@ -128,7 +126,22 @@ $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
             \label{eqn:wq-thomson}
         \end{align}
         wobei $r_0$ der klassische Elektronenradius ist.
+    \item[Paarbildung:] Ist die Energie des Photons größer als $2m_ec^2$ (also
+        $> \unit[1.02]{MeV}$), so kann dieses ein Elektron-Positron-Paar bilden.
+        Um dabei den Impulserhaltungssatz zu erfüllen muss sich allerdings ein
+        schweres Objekt, hier ein Atomkern in der Nähe befinden, dass den
+        Rückstoß aufnehmen kann.
+
+        Für den Wirkungsquerschnitt dieses Prozesses gilt:
+        \begin{align}
+            \sigma_{pb} \propto Z^2 \ln{E_\gamma}
+            \label{eqn:wq-paarbildung}
+        \end{align}
+        Der Beitrag ist allerdings erst bei Energien von mehreren $\unit{MeV}$
+        im Spektrum sichtbar.
 \end{description}
+
+% Gesamtwirkungsquerschnitt
 
 \subsection{Szintillationsdetektor}
 
