@@ -1,0 +1,21 @@
+Isotop: Cs137
+
+Szintillationsdetektor:
+    Vor HV:
+        U = 0.2 V
+        t = 1 µs
+    Nach HV:
+        U = 2 V
+        t = 0.5 µs
+    Entfernung:
+        l = 42 cm
+
+Halbleiterdetektor:
+    Vor HV:
+        U = 50 mV
+        t = 0.1 ms
+    Nach HV:
+        U = 0.5 V
+        t = 5 µs
+    Entfernung:
+        l = 18 cm

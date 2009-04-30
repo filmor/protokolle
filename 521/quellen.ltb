@@ -1,0 +1,12 @@
+\bib{skript}{article}{
+    title={Skript zum physikalischen Praktikum Teil V},
+    author={Universität Bonn},
+    year={2009},
+}
+
+\bib{dem3}{book}{
+    title={Experimentalphysik 3},
+    author={Wolfgang Demtröder},
+    year={2005},
+    edition={3.},
+}
