@@ -16,7 +16,6 @@ abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
 
 \section{Theoretische Grundlagen}
 \subsection{Radioaktivität}
-% quellen, natürliche, zerfallsreihen
 Die Begriffe Radioaktivität, radioaktiver Zerfall und Kernzerfall beschreiben
 die Eigenschaft instabiler Atomkerne sich spontan unter Energieabgabe
 umzuwandeln. Die freiwerdende Energie wird als ionisierende Strahlung
@@ -91,12 +90,12 @@ ihre Zerfallsreihen sind somit bereits "`ausgestorben"'. In Abbildung
 (\ref{fig:zerfallsreihen}) sind die heute noch vorkommenden natürlichen
 Zerfallsreihen dargestellt.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{zerfallsreihen}
-%    \caption[Zerfallsreihen]{Heute in der Natur vorkommende Zerfallsreihen.~\cite{}}
-%    \label{fig:zerfallsreihen}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/zerfallsreihen}
+    \caption[Zerfallsreihen]{Heute in der Natur vorkommende Zerfallsreihen.~\cite{demtröd4}}
+    \label{fig:zerfallsreihen}
+\end{figure}
 
 Als Quellen natürlicher Radioaktivität sind die Höhenstrahlung und
 beispielsweise $^{14}C$, sowie $^{40}K$ zu nennen. $^{14}C$ wird durch
@@ -179,7 +178,14 @@ $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
         im Spektrum sichtbar.
 \end{description}
 
-% Gesamtwirkungsquerschnitt
+Insgesamt ergibt sich auf diese Weise beispielsweise für Blei ($Z=82$) folgender Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/wq}
+    \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für Blei~\cite{demtröd4}}
+    \label{fig:zerfallsreihen}
+\end{figure}
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
@@ -190,25 +196,32 @@ umgewandelt wird. Als Szintillatormaterial werden anorganische Einkristalle wie
 $NaI$ verwendet (so auch in diesem Versuch) oder organische Flüssigkeiten und
 organisches Plastikmaterial oder Edelgase.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{szinti}
-%    \caption[Szintillationsdetektor]{Schematischer Aufbau eines Szintillationsdetektors~\cite{}}
-%    \label{fig:szinti}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/szinti}
+    \caption[Szintillationsdetektor]{Schematischer Aufbau eines Szintillationsdetektors~\cite{leo}}
+    \label{fig:szinti}
+\end{figure}
 
-Je nach Verwendungszweck wird der Szintillator ausgewählt. Im vorliegenden Fall ergeben sich die Szintillationsmechanismen aus den im Bändermodell (siehe Abschnitt \ref{cha:halb}) offensichtlich werdenden Eigenschaften des anorganischen Kristalls. Das einfallende Teilchen wird entweder ein Elektron vom Valenz- ins Leitungsband heben, wobei auch ein Loch im Valenzband entsteht, oder es wird ein sogenanntes Exciton erzeugen. Dieses ist ein direkt unter das Leitungsband angeregtes Elektron (in Abb. \ref{fig:szinti} als Excitonband bezeichnet). Elektron und Loch bleiben, wie in der Abbildung auch angedeutet, dabei jedoch aneinander gebunden und bewegen sich so, ohne zum Ladungstransport im Kristall beizutragen, frei durch selbigen. Unter der Emission eines Photons der Bandlückenenergie können diese Elektron-Loch-Paare anschließend wieder rekombinieren. Da somit natürlich die Energie der Photonen gerade der Bandlücke entspricht, würde eine sofortige Absorption durch den Kristall erfolgen, was selbstverständlich nicht gewünscht ist. Deshalb dotiert man den Kristall mit Fremdatomen und legt so energetisch erlaubte Zwischenzustände in der Bandlücke (verbotene Zone) an (siehe erneut Abb. \ref{fig:szinti}). Bei der Rekombination über ein solches Lumineszenszentrum erfolgt die Emission einiger niederenergetischer Photonen. Diese können dann wegen der geringen Dotierungsdichte ungehindert den Photomultiplier erreichen und detektiert werden.
+Je nach Verwendungszweck wird der Szintillator ausgewählt. Im vorliegenden Fall ergeben sich die Szintillationsmechanismen aus den im Bändermodell (siehe Abschnitt \ref{cha:halb}) offensichtlich werdenden Eigenschaften des anorganischen Kristalls. Das einfallende Teilchen wird entweder ein Elektron vom Valenz- ins Leitungsband heben, wobei auch ein Loch im Valenzband entsteht, oder es wird ein sogenanntes Exciton erzeugen. Dieses ist ein direkt unter das Leitungsband angeregtes Elektron (in Abb. \ref{fig:szinti2} als Excitonband bezeichnet). Elektron und Loch bleiben, wie in der Abbildung auch angedeutet, dabei jedoch aneinander gebunden und bewegen sich so, ohne zum Ladungstransport im Kristall beizutragen, frei durch selbigen. Unter der Emission eines Photons der Bandlückenenergie können diese Elektron-Loch-Paare anschließend wieder rekombinieren. Da somit natürlich die Energie der Photonen gerade der Bandlücke entspricht, würde eine sofortige Absorption durch den Kristall erfolgen, was selbstverständlich nicht gewünscht ist. Deshalb dotiert man den Kristall mit Fremdatomen und legt so energetisch erlaubte Zwischenzustände in der Bandlücke (verbotene Zone) an (siehe erneut Abb. \ref{fig:szinti2}). Bei der Rekombination über ein solches Lumineszenszentrum erfolgt die Emission einiger niederenergetischer Photonen. Diese können dann wegen der geringen Dotierungsdichte ungehindert den Photomultiplier erreichen und detektiert werden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/szinti2}
+    \caption[Szintillationsdetektor]{Bandstruktur eines Szintillationsdetektors~\cite{leo}}
+    \label{fig:szinti2}
+\end{figure}
 
 Wie in Abschnitt (\ref{cha:ww}) erläutert wurde, ergibt sich eine Abhängigkeit der Wirkungsquerschnitte der drei Wechselwirkungsmöglichkeiten von der Ordnungszahl $Z$ des Absorbers. Da eine maximale Energiedeponierung im Kristall erreicht werden soll, muss der \textsc{Compton}-Effekt minimiert werden, man verwendet also Materialien hoher Kernladungszahl $Z$. So gehen lediglich die Energie des beim Photoeffekt angeregten Atoms und die $\unit[511]{keV}$ Photonen der Positronenannihilation nach einer Paarerzeugung verloren.
 
 Die bei der Detektion von $\gamma$-Strahlung am Photomultiplier ankommenden Lumineszenzblitze werden in selbigem in Ladung, also in messbare Spannungspulse umgewandelt (siehe Abschnitt \ref{cha:photo}). Diese Pulse sind idealerweise zeitlich und energetisch direkt mit den einfallenden Photonen korreliert. Die zeitliche Auflösung des Detektors hängt somit vor allem vom zeitlichen Verlauf des Lichtsignals des Szintillators und von der Laufzeit der Ladungsträger im Photomultiplier ab. Eine typische Lichtkurve eines Szintillators ist in Abbildung (\ref{fig:lichtkurve}) zu sehen.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{lichtkurve}
-%    \caption[Lichtkurve]{Lichtkurve eines Szintillators~\cite{}}
-%    \label{fig:lichtkurve}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{grafiken/lichtkurve}
+    \caption[Lichtkurve]{Lichtkurve eines Szintillators~\cite{leo}}
+    \label{fig:lichtkurve}
+\end{figure}
 
 Zunächst ist ein steiler Anstieg (Anstiegszeit liegt bei etwa $\unit[10^{-10}]{s}$) zu beobachten. Die durch die Lebensdauer der angeregten Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[10^{-9} - 10^{-5}]{s}$. Eine kurze Lebensdauer ist also ein Auswahlkriterium für ein Szintillatormaterial, um die Zeitauflösung zu verbessern und die Totzeit zu verkürzen.
 %mehr???
@@ -283,12 +296,12 @@ solchen
 \subsection{Impulshöhenspektrum}
 Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei Verwendung des Vielkanalanalysators [siehe Abschnitt \ref{cha:mca}]) nicht einen einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}). Dieses wird als Impulshöhenspektrum bezeichnet.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{imph}
-%    \caption[Szintillationsdetektor]{Impulshöhenspektrum~\cite{}}
-%    \label{fig:imph}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/imph}
+    \caption[Szintillationsdetektor]{Impulshöhenspektrum~\cite{rietzler}}
+    \label{fig:imph}
+\end{figure}
 
 Der mit "`A'" gekennzeichnete Peak wird Photopeak oder Full Energy Peak genannt. Er entsteht, wenn ein einfallendes $\gamma$-Quant seine gesamte Energie im Kristall deponiert. Es ist bemerkenswert, dass dennoch auch dieser Peak eine endliche Breite besitzt und nicht etwa diskreter Natur ist. Dies ist dadurch erklärbar, dass die beteiligten Prozesse statistische sind (radioaktiver Zerfall, unterschiedliche Lichtausbeute für verschiedene Photonen gleicher Energie, elektronische Störungen etc.).
 
@@ -296,9 +309,10 @@ Betrachten wir nun Peak "`B'". Hierfür zeigt sich der \textsc{Compton}-Effekt ve
 
 Die mit "`C'" und "`D'" gekennzeichneten Peaks gehen auf die Paarerzeugung (siehe Abschnitt \ref{cha:ww}) zurück. Hierbei steht stets das Elektron mit seiner Energie für die Erzeugung eines Signals zur Verfügung. Das Positron jedoch wird nach kurzer Zeit mit einem der Elektronen aus dem Kristall annihilieren und dabei zwei entgegengesetzt propagierende Photonen erzeugen. Verlässt nun eines dieser Photonen den Kristall, so geht die dort deponierte Energie dem Detektor verloren und man erhält den sogenannten Single-Escape-Peak "`C'". Völlig analog verhält es sich, falls beide Photonen nicht weiter wechselwirken. Dies äußert sich dann im Double-Escape-Peak "`D'". Auf Grund der niedrigen Energien werden diese beiden Peaks jedoch für diesen Versuch irrelevant sein.
 
-Ferner ergibt sich im niederenergetischen Bereich des Spektrums ein sogenannter Rückstreu-Peak (in der Grafik nicht dargestellt). Grund ist die Streuung eines Teils der $\gamma$-Quanten am den Begrenzungsflächen des Szintillators und anderen Materialien außerhalb des Detektors. 
+Ferner erhält das Photon beim \textsc{Compton}-Effekt die niedrigste Energie, wenn es zurückgestreut wird. Dies ergibt dann im niederenergetischen Bereich des Spektrums einen sogenannten Rückstreu-Peak (in der Grafik nicht dargestellt). 
 
-%noch mehr zu letzerem? weil wirs ja nicht hinbekamen in der abfrage...
+Grund ist die Streuung eines Teils der $\gamma$-Quanten am den Begrenzungsflächen des Szintillators und anderen Materialien außerhalb des Detektors. 
+
 
 \subsection{Vielkanalanalysator}
 \label{cha:mca}
@@ -331,12 +345,12 @@ Da Szintillations- und Halbleiterdetektoren auf unterschiedlichen physikalischen
 Ein weiterer Vorteil des Szintillatordetektors ist, dass hier keine Kühlung erforderlich ist. Allerdings sind die NaI-Sintillatoren hygroskopisch und benötigen somit eine Verkapselung. Das zeitliche Auflösungsvermögen liegt für Szintillationsdetektoren bei etwa $\unit[10^{-9}]{s}$ und wird wesentlich durch die Abklingzeit des Materials und die Propagationszeit durch den Photomultiplier bestimmt. Das zeitliche Auflösungsvermögen des Ge-Halbleiterdetektors erreicht einen etwas schlechteren Wert, da die Ladugsträgergeschwindigkeit im Halbleiter nur etwa $\unit[10^{7}]{\frac{cm}{s}}$ beträgt.
 Die Energieauflösung jedoch ist bei den Ge-Detektoren signifikant besser (siehe hierzu Abb. \ref{fig:vergleich}).
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{vergleich}
-%    \caption[Vergleich]{Spektrum einer Co-Quelle mit beiden Detektoren aufgenommen~\cite{}}
-%    \label{fig:vergleich}
-%\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafiken/vergleich}
+    \caption[Vergleich]{Spektrum einer Co-Quelle mit beiden Detektoren aufgenommen~\cite{leo}}
+    \label{fig:vergleich}
+\end{figure}
 
 \subsection{Anwendungen der Detektoren}
 Einige Beispiele der vielfältigen Anwendungsmöglichkeiten von Halbleiter- und Szintillationsdetektoren zum Nachweis von $\gamma$-Strahlung sind die nuklearmedizinischen Diagnostik (Positronen-Emissions-Tomographie) oder die Radiokarbon-Altersbestimmung im Rahmen der Archäologie. Speziell werden die Szintillationsdetektoren auch als sogenannte Trigger-Detektoren in der Hochenergie- und Kernphysik eingesetzt. Sie dienen also dazu, andere Detektoren mit höherem Auflösungsvermögen auszulösen.
