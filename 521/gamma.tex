@@ -466,7 +466,68 @@ Hochenergie- und Kernphysik eingesetzt. Sie dienen also dazu, andere Detektoren
 mit höherem Auflösungsvermögen auszulösen.
 %mehr????
 
-\section{Versuchsaufbau, -durchführung und Beobachtungen}
+\section{Versuchsaufbau}
+Prinzipiell findet sich bei beiden Detektoren der gleiche Versuchsaufbau. So werden die radioaktiven Proben jeweils so vor dem Detektor in einer Halterung aus Holz positioniert, dass in etwa eine Zählrate von $\unit[2000]{\frac{Ereignisse}{s}}$ erreicht wird. Der eingestellte Abstand zwischen Detektor und Probe wird dabei stets vermessen.
+
+Die Detektorsignale werden dann zunächst in einen Vorverstärker geschickt, um schließlich den Hauptverstärker zu erreichen. Dem nachgeschaltet ist der Vielkanalanalysator, welcher vom Computer aus gesteuert werden kann. Ferner wird mittels eines Oszilloskops auch nach dem Vor- und danach hinter dem Hauptverstärker das Signal abgegriffen und dargestellt.
+
+Der grobe Versuchsaufbau inklusive der nötigen Spannungseinstellung war bereits durchgeführt, sodass wir diesbezüglich nur die Proben ($^{137}Cs$, $^{60}Co$ und $^{152}Eu$) platzieren, den Hauptverstärker feinregeln sowie den Oszillator anschließen mussten.
+
+Es sei noch angemerkt, dass in Folge der Notwendigkeit der Halbleiterdetektor noch über eine bereits aufgebaute Kühlung verfügte.
+
+\section{Versuchsdurchführung und Auswertung}
+\subsection{Beobachtung der Detektorsignale}
+Zunächst haben wir die $^{137}Cs$-Quelle in der Holzhalterung mit einem Abstand zum Detektor von $l=\unit[42 \pm 0.5]{cm}$ beim Szintillationsdetektor und beim  $l=\unit[18 \pm 0.5]{cm}$ Germanium-Detektor aufgestellt. Die erhaltenen Detektorsignale wurden dann mit Hilfe des Oszilloskops jeweils nach dem Vor- und nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=1.0\textwidth]{grafiken/szinti_vor}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
+    \end{minipage}
+%  \caption[Signalformen Szinti]{\small Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{\frac{V}{Kästchen}}$ und $\unit[1]{\frac{\mu s}{Kästchen}}$ bzw. HV: $\unit[2]{\frac{V}{Kästchen}}$ und $\unit[0.5]{\frac{\mu s}{Kästchen}}$)}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=1.0\textwidth]{grafiken/ge_vor}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
+    \end{minipage}
+%   \caption[Signalformen Ge]{\small Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{\frac{mV}{Kästchen}}$ und $\unit[0.1]{\frac{ms}{Kästchen}}$ bzw. HV: $\unit[0.5]{\frac{V}{Kästchen}}$ und $\unit[5]{\frac{\mu s}{Kästchen}}$)}
+\end{figure}
+
+Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Haputverstärker.
+Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und Amplituden zu:
+
+%\begin{figure}[H]
+%    \CenterFloatBoxes
+%    \begin{floatrow}
+%        \ffigbox{}{
+%            \pgfplotstabletypesetfile[
+%                    columns/0/.style={column name={}},
+%                   columns/1/.style={column name={}},
+%                    columns/2/.style={column name={Signaldauer}},
+%                    columns/3/.style={column name={Amplitude}},
+%                    columns/1/.style={column name={Anstiegszeit}},
+%                ]
+%              {data/_daten}
+%        }
+%    \end{floatrow}
+%\end{figure}
+
+
+\subsection{Aufnahme der $\gamma$-Spektren}
+\subsection{Energieeichung}
+\subsection{Bestimmung der Halbwertsbreiten}
+\subsection{Bestimmung des Peak-to-Total Verhältnisses}
+\subsection{Bestimmung der absoluten Peakeffizienz}
+\subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
+\subsection{Bodenprobe}
 
 \section{Zusammenfassung}
 
