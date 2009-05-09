@@ -16,6 +16,7 @@ abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
 
 \section{Theoretische Grundlagen}
 \subsection{Radioaktivität}
+\label{cha:radioakt}
 Die Begriffe Radioaktivität, radioaktiver Zerfall und Kernzerfall beschreiben
 die Eigenschaft instabiler Atomkerne sich spontan unter Energieabgabe
 umzuwandeln. Die freiwerdende Energie wird als ionisierende Strahlung
@@ -501,7 +502,7 @@ Zunächst haben wir die $^{137}Cs$-Quelle in der Holzhalterung mit einem Abstand 
 %   \caption[Signalformen Ge]{\small Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{\frac{mV}{Kästchen}}$ und $\unit[0.1]{\frac{ms}{Kästchen}}$ bzw. HV: $\unit[0.5]{\frac{V}{Kästchen}}$ und $\unit[5]{\frac{\mu s}{Kästchen}}$)}
 \end{figure}
 
-Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Haputverstärker.
+Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Hauptverstärker.
 Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und Amplituden zu:
 
 %\begin{figure}[H]
@@ -521,13 +522,88 @@ Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und Ampl
 %\end{figure}
 
 
-\subsection{Aufnahme der $\gamma$-Spektren}
-\subsection{Energieeichung}
+\subsection{Aufnahme der $\gamma$-Spektren und Energieeichung}
+\label{cha:spekeich}
+Hierzu musste zunächst die Verstärkung des Hauptverstärkers so eingestellt werden, dass die 8192 Kanäle des Vielkanalanalysators einen Energiebereich von etwa $\unit[1550]{keV}$ umfassen. Als Anhaltspunkt diente hierfür die höherenergetische Linie der $^{60}\mathrm{Co}$-Quelle (1332 keV). Nach einmaliger Einstellung wird diesbezüglich keine Veränderung mehr vorgenommen.
+
+% die haben bei dem anderen protokoll da die werte der einstellung aufgeschrieben, mal bitte nachgucken, ob das sinn macht und ob wirs könnten. ich finds komisch
+
+Nun geben wir nach einander die drei Proben in die Halterung und nehmen jeweils $\unit[15]{min}$ lang ohne Bleiabschirmung, um die Rückstreuung zu minimieren, die jeweiligen Spektren auf. Der Abstand Detektor-Probe wurde dabei so gewählt, dass die Zählrate konstant etwa $\unit[2000]{\frac{Ereignisse}{Sekunde}}$ beträgt.
+
+% die haben so ne tabelle mit parametern der messungen angelegt... brauch nicht, oder?
+
+Nun musste zunächst eine Energie-Eichung vorgenommen werden. Hierbei gingen wir wie folgt vor. %bitte vorgehen hinschreiben .... (im anderen protokoll haben die zuerst gaußkurven gefittet, bitte genauso vorgehen wie gefordert, also im skript nachsehen, denk bitte an die sache mit blum damals!!! auch graphen zur eichung angeben, siehe anderes prot.
+
+Im Folgenden sind nun die jeweils aufgenommenen Spektren inklusive der Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
+
+\begin{figure}[H]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{grafiken/coszinti}
+    \caption[Co-Spektrum Szintillator]{$^{60}\mathrm{Co}$-Spektrum (Szintillationdetektor}
+    \label{fig:cospekszinti}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
+    \caption[Co-Spektrum Ge-Detektor]{$^{60}\mathrm{Co}$-Spektrum (Germanium-Detektor}
+    \label{fig:cospekge}
+\end{figure}
+
+Das $^{60}\mathrm{Co}$-Spektrum zeigt wie erwartet ... Beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor eine deutlich bessere Energieauflösung erreicht.
+%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
+\begin{figure}[H]
+    \centering
+ %   \includegraphics[width=0.8\textwidth]{grafiken/csszinti}
+    \caption[Cs-Spektrum Szintillator]{$^{137}\mathrm{Cs}$-Spektrum (Szintillationdetektor}
+    \label{fig:csspekszinti}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{grafiken/cshalb}
+    \caption[Cs-Spektrum Ge-Detektor]{$^{137}\mathrm{Cs}$-Spektrum (Germanium-Detektor}
+    \label{fig:csspekge}
+\end{figure}
+
+Das $^{137}\mathrm{Cs}$-Spektrum zeigt ... Beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor erneut eine deutlich bessere Energieauflösung erreicht.
+%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
+\begin{figure}[H]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{grafiken/euszinti}
+    \caption[Eu-Spektrum Szintillator]{$^{152}\mathrm{Eu}$-Spektrum (Szintillationdetektor}
+    \label{fig:euspekszinti}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
+    \caption[Eu-Spektrum Ge-Detektor]{$^{152}\mathrm{Eu}$-Spektrum (Germanium-Detektor}
+    \label{fig:euspekge}
+\end{figure}
+
+Das $^{152}\mathrm{Eu}$-Spektrum zeigt ... Auch hier weist der Germanium-Detektor die deutlich bessere Energieauflösung auf.
+%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
+
 \subsection{Bestimmung der Halbwertsbreiten}
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
 \subsection{Bodenprobe}
+Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf ihre Radioaktivität untersucht. Hierzu wurde zunächst die Bleiabschirmung durch den uns betreuenden Assistenten aufgebaut, um Störeffekte, wie sie durch kosmische Höhenstrahlung und Umgebungsstrahlung entstehen, zu minimieren. Nach Einsetzen der Probe, wurde dann eine $\unit[18]{h}$ Messung gestartet, auf welche wir nach Beendigung am nächsten Tag eine ebenso lange Untergrundmessung folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung \ref{fig:bodenprobe} ist nun das untergrundbereinigte Spektrum dargestellt.
+
+%bild
+
+
+Die in Abschnitt \ref{cha:spekeich} vorgenommene Energieeichung wurde hierbei verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie, sowie die Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt \ref{cha:radioakt} beachtet werden. Beispielsweise ist ein kurzlebiges Isotop, welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in unserer Probe wohl eher nicht vorhanden.
+
+In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren Eigenschaften aufgeführt:
+
+
+Auffällig ist die stark ausgeprägte Linie bei ..., welche wohl auf den inzwischen etwa $23$ Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zurückgeht.
+
+%weiteres blabla
 
 \section{Zusammenfassung}
 
