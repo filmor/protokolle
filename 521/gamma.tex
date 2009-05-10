@@ -5,14 +5,20 @@
                       Halbleiterdetektoren}
 \newcommand{\nummer}{P521}
 
+\newcommand{\Isotop}[2]{\ensuremath{^{#2}\!\mathrm{#1}}}
+\newcommand{\Cs}{\Isotop{Cs}{137}}
+\newcommand{\Co}{\Isotop{Co}{60}}
+\newcommand{\Eu}{\Isotop{Eu}{152}}
+
 \begin{document}
 
 \section{Einleitung}
 Das Ziel dieses Versuchs ist es, die $\gamma$-Spektroskopie mit Szintillations-
-und Ge-Halbleiterdetektoren zu untersuchen. Die charakteristischen Eigenschaften
-wie Energieauflösung und Nachweiswahrscheinlichkeit der beiden Detektortypen
-werden bestimmt und mit einander verglichen. Als Anwendung des Ge-Detektors wird
-abschießend eine Bodenprobe auf Spuren von Radioaktivität untersucht.
+und Germanium-Halbleiterdetektoren zu untersuchen. Die charakteristischen
+Eigenschaften wie Energieauflösung und Nachweiswahrscheinlichkeit der beiden
+Detektortypen werden bestimmt und mit einander verglichen. Als Anwendung des
+Ge-Detektors wird abschießend eine Bodenprobe auf Spuren von Radioaktivität
+untersucht.
 
 \section{Theoretische Grundlagen}
 \subsection{Radioaktivität}
@@ -25,61 +31,60 @@ unterscheidet man grob drei verschiedene Arten von radioaktivem Zerfall. Die
 wichtigsten Zerfallsformen sollen im Folgenden erläutert werden.
 
 \begin{description}
-\item[$\alpha$-Zerfall:]
-Ein Atomkern der Massenzahl $A$ und Kernladungszahl $Z$ kann unter Aussendung
-eines $\alpha$-Teilchens, also eines Heliumkerns, zerfallen: 
-\begin{align}
-    ^A_ZX \to ^{A-4}_{Z-2}Y + ^{4}_{2}He^{++}
-\end{align}
-Der Zerfall ist energetisch möglich, falls $m(A,Z) > m(A-4, Z-2) + m(\alpha)$
-gilt.
+  \item[$\alpha$-Zerfall:] Ein Atomkern der Massenzahl $A$ und Kernladungszahl
+    $Z$ kann unter Aussendung eines $\alpha$-Teilchens, also eines Heliumkerns,
+    zerfallen: 
+    \begin{align}
+      _Z\Isotop{X}{A} \to _{Z-2}\Isotop{Y}{A-4} + _{2}\Isotop{He}{4}^{++}
+    \end{align}
+    Der Zerfall ist energetisch möglich, falls $m(A,Z) > m(A-4, Z-2) +
+    m(\alpha)$ gilt.
 
-Ein $\alpha$-Teilchen stellt einen sehr stabilen Zustand zweier Neutronen und
-zweier Protonen dar. Finden sich also die vier Konstituenten in einem Atomkern
-zusammen, so haben sie eine hohe Bindungsenergie, müssen aber noch das
-attraktive Kernpotential überwinden.  Auf Grund des Tunneleffektes gibt es
-jedoch eine endliche Aufenthaltswahrscheinlichkeit des $\alpha$-Teilchens
-außerhalb der Potentialbarriere. Hier überwiegt das abstoßende Coulombpotential.
-Die Energie der $\alpha$-Teilchen $E_\alpha$ ist, da es sich hier um einen
-Zweikörper-Zerfall handelt, direkt von der Energie des Kerns abhängig, also
-diskret. Es ist die Möglichkeit der Kernanregung zu beachten, $E_\alpha$ kann
-also varrieren. 
+    Ein $\alpha$-Teilchen stellt einen sehr stabilen Zustand zweier Neutronen
+    und zweier Protonen dar. Finden sich also die vier Konstituenten in einem
+    Atomkern zusammen, so haben sie eine hohe Bindungsenergie, müssen aber noch
+    das attraktive Kernpotential überwinden.  Auf Grund des Tunneleffektes gibt
+    es jedoch eine endliche Aufenthaltswahrscheinlichkeit des $\alpha$-Teilchens
+    außerhalb der Potentialbarriere. Hier überwiegt das abstoßende
+    Coulombpotential.  Die Energie der $\alpha$-Teilchen $E_\alpha$ ist, da es
+    sich hier um einen Zweikörper-Zerfall handelt, direkt von der Energie des
+    Kerns abhängig, also diskret. Es ist die Möglichkeit der Kernanregung zu
+    beachten, $E_\alpha$ kann also varrieren. 
 
+  \item[$\beta$-Zerfall:] Der $\beta$-Zerfall subsummiert drei Zerfälle, bei
+    denen sich $Z$ um eins ändert, $A$ jedoch konstant bleibt. Beim
+    $\beta^-$-Zerfall zerfällt ein Neutron innerhalb des Kerns in ein Proton,
+    ein Elektron sowie ein Anti-Elektronneutrino:
+    \begin{align}
+      n \to p + e^- + \bar\nu_e
+    \end{align}
+    Dieser Zerfall ist bei $m(A,Z) > m(A,Z+1)$ energetisch möglich.
 
-\item[$\beta$-Zerfall:]
-Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins
-ändert, $A$ jedoch konstant bleibt. Beim $\beta^-$-Zerfall zerfällt ein Neutron
-innerhalb des Kerns in ein Proton, ein Elektron sowie ein Anti-Elektronneutrino:
-\begin{align}
-    n \to p + e^- + \bar\nu_e
-\end{align}
-Dieser Zerfall ist bei $m(A,Z) > m(A,Z+1)$ energetisch möglich.
+    Beim $\beta^+$-Zerfall hingegen zerfällt ein gebundenes Proton in ein
+    Neutron, ein Positron und ein Elektronneutrino:
+    \begin{align}
+      p \to n + e^+ + \nu_e
+    \end{align}
+    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
 
-Beim $\beta^+$-Zerfall hingegen zerfällt ein gebundenes Proton in ein Neutron,
-ein Positron und ein Elektronneutrino:
-\begin{align}
-    p \to n + e^+ + \nu_e
-\end{align}
-Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
+    Des Weiteren existiert noch die Möglichkeit des Elektroneneinfangs. Da die
+    Elektronen im Atom eine endliche Aufenthaltswahrscheinlichkeit im Kern
+    haben, können diese Elektronen von einem Proton eingefangen werden. Hierbei
+    entsteht ein Neutron und ein Elektronneutrino:
+    \begin{align}
+      p + e^- \to n + \nu_e
+    \end{align}
+    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{\text{Bind}}$
+    energetisch möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des
+    Elektrons darstellt.  In der jeweiligen Elektronenschale wird eine Lücke
+    hinterlassen.  Der Atomkern ist nun angeregt.
 
-Des Weiteren existiert noch die Möglichkeit des Elektroneneinfangs. Da die
-Elektronen im Atom eine endliche Aufenthaltswahrscheinlichkeit im Kern haben,
-können diese Elektronen von einem Proton eingefangen werden. Hierbei entsteht
-ein Neutron und ein Elektronneutrino:
-\begin{align}
-    p + e^- \to n + \nu_e
-\end{align}
-Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{Bind}$ energetisch möglich,
-wobei $E^{e^-}_{Bind}$ die Bindungsenergie des Elektrons darstellt. In der
-jeweiligen Elektronenschale wird eine Lücke hinterlassen. Der Atomkern ist nun
-angeregt.
-
-\item[$\gamma$-Zerfall:]
-Zu guter letzt besteht die Möglichkeit, dass ein angeregter Atomkern in einen
-energetisch tiefer gelegenen Zustand übergeht und dabei ein Photon der
-Differenzenergie aussendet analog zu den Vorgängen in der Atomhülle. Die bei
-Kernübergängen erreichbaren Energien der $\gamma$-Quanten $E_{\gamma}$ liegen
-jedoch wesentlich höher (keV- oder MeV-Bereich).
+  \item[$\gamma$-Zerfall:] Zu guter letzt besteht die Möglichkeit, dass ein
+    angeregter Atomkern in einen energetisch tiefer gelegenen Zustand übergeht
+    und dabei ein Photon der Differenzenergie aussendet analog zu den Vorgängen
+    in der Atomhülle. Die bei Kernübergängen erreichbaren Energien der
+    $\gamma$-Quanten $E_{\gamma}$ liegen jedoch wesentlich höher ($\unit{keV}$-
+    oder \unit{MeV}-Bereich).
 \end{description}
 
 Es ist, vor allem bei schwereren Elementen, möglich, dass der Kern über mehrere
@@ -92,27 +97,28 @@ ihre Zerfallsreihen sind somit bereits "`ausgestorben"'. In Abbildung
 Zerfallsreihen dargestellt.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/zerfallsreihen}
-    \caption[Zerfallsreihen]{Heute in der Natur vorkommende Zerfallsreihen.~\cite{demtröd4}}
-    \label{fig:zerfallsreihen}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/zerfallsreihen}
+  \caption[Zerfallsreihen]{Heute in der Natur vorkommende
+  Zerfallsreihen.~\cite{demtroed4}}
+  \label{fig:zerfallsreihen}
 \end{figure}
 
 Als Quellen natürlicher Radioaktivität sind die Höhenstrahlung und
-beispielsweise $^{14}C$, sowie $^{40}K$ zu nennen. $^{14}C$ wird durch
-Elektroneneinfang aus $^{14}N$ in der Atmosphäre gebildet, letzteres ist ein
-metastabiles Isotop, welches in vielen Mineralien vorkommt.
+beispielsweise \Isotop{C}{14}, sowie \Isotop{K}{40} zu nennen. \Isotop{C}{14}
+wird durch Elektroneneinfang aus \Isotop{N}{14} in der Atmosphäre gebildet,
+letzteres ist ein metastabiles Isotop, welches in vielen Mineralien vorkommt.
 
 Zusätzlich zur natürlichen Strahlenbelastung ist man künstlicher, also
 menschengemachter Umgebungsstrahlung ausgesetzt. Diese werden v.a. durch
 Kernwaffentest und das Kernreaktorunglück von Tschernobyl verursacht. Es sind
-somit Nuklide mittlerer Lebensdauer (einige Jahre) wie beispielsweise $^{60}Co$,
-$^{90}Sr$ $^{137}Cs$ in der Umwelt nachweisbar.
+somit Nuklide mittlerer Lebensdauer (einige Jahre) wie beispielsweise \Co,
+\Isotop{Sr}{90} oder \Cs in der Umwelt nachweisbar.
 
 Es erweist sich als nützlich die sogenannte Aktivität einer radioaktiven Quelle
 zu definieren. Es gilt:
 \begin{align}
-    A(t) := - \frac{\mathrm dN}{\mathrm dt} = \lambda N(t)
+  A(t) := - \frac{\mathrm dN}{\mathrm dt} = \lambda N(t)
 \end{align}
 Hierbei beschreibt $\lambda$ die Zerfallskonstante. Es ergibt sich somit eine
 exponentiell abklingende Aktivität.
@@ -122,70 +128,71 @@ exponentiell abklingende Aktivität.
 \label{cha:ww}
 $\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
 \begin{description}
-    \item[Photoeffekt:] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
-        Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird
-        ein Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat,
-        wobei $W_B$ die Bindungsenergie des Elektrons ist.
+  \item[Photoeffekt:] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
+    Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird ein
+    Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat, wobei
+    $W_B$ die Bindungsenergie des Elektrons ist.
 
-        Für den Wirkungsquerschnitt dieser Wechselwirkung gilt:
-        \begin{align}
-            \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
-            \label{eqn:wq-photo}
-        \end{align}
-    \item[Compton-Effekt:] Der Compton-Effekt tritt auf, wenn das Photon mit
-        einem freien oder quasi-freien (schwach gebundenen) Elektron
-        wechselwirkt. Das Photon stößt elastisch (in dem Sinne, das keine
-        Energie umgewandelt wird) auf das Elektron, Energie und Impuls der
-        beiden Teilchen ergeben sich aus der relativistischen
-        Energie-Impuls-Beziehung. Die Energie vor und nach dem Stoß hängt wie
-        folgt zusammen:
-        \begin{align}
-            \frac{E_{nach}}{E_{vor}} = \frac{1}{1 + \frac{h\nu}{m_ec^2}(1-\cos
-            \vartheta)}
-            \label{eqn:compton-energie}
-        \end{align}
-        wobei $\vartheta$ der Streuwinkel ist.
+    Für den Wirkungsquerschnitt dieser Wechselwirkung gilt:
+    \begin{align}
+      \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
+      \label{eqn:wq-photo}
+    \end{align}
+  \item[Compton-Effekt:] Der Compton-Effekt tritt auf, wenn das Photon mit einem
+    freien oder quasi-freien (schwach gebundenen) Elektron wechselwirkt. Das
+    Photon stößt elastisch (in dem Sinne, das keine Energie umgewandelt wird)
+    auf das Elektron, Energie und Impuls der beiden Teilchen ergeben sich aus
+    der relativistischen Energie-Impuls-Beziehung. Die Energie vor und nach dem
+    Stoß hängt wie folgt zusammen:
+    \begin{align}
+      \frac{E_{nach}}{E_{vor}} = \frac{1}{1 + \frac{h\nu}{m_ec^2}(1-\cos
+      \vartheta)}
+      \label{eqn:compton-energie}
+    \end{align}
+    wobei $\vartheta$ der Streuwinkel ist.
 
-        Da die Energie von $\gamma$-Quanten deutlich größer als die
-        Bindungsenergie der Elektronen ist, können letztere bei derartiger
-        Streuung als quasi-frei angesehen werden. Für den Wirkungsquerschnitt
-        gilt (wenn wir annehmen, dass $E_\gamma \gg m_ec^2$):
-        \begin{align}
-            \sigma_c \propto \frac{Z}{E_\gamma}
-            \label{eqn:wq-compton}
-        \end{align}
+    Da die Energie von $\gamma$-Quanten deutlich größer als die Bindungsenergie
+    der Elektronen ist, können letztere bei derartiger Streuung als quasi-frei
+    angesehen werden. Für den Wirkungsquerschnitt gilt (wenn wir annehmen, dass
+    $E_\gamma \gg m_ec^2$):
+    \begin{align}
+      \sigma_c \propto \frac{Z}{E_\gamma}
+      \label{eqn:wq-compton}
+    \end{align}
 
-        Der Grenzfall geringer Photonenenergien nennt sich Thomson-Streuung.
-        Dabei wird, wie man Formel \ref{eqn:compton-energie} leicht entnehmen
-        kann, die Photonenenergie nicht verändert, der Wirkungsquerschnitt
-        beträgt:
-        \begin{align}
-            \sigma_{th} = Z\frac{2\pi}{3}r_0^3
-            \label{eqn:wq-thomson}
-        \end{align}
-        wobei $r_0$ der klassische Elektronenradius ist.
-    \item[Paarbildung:] Ist die Energie des Photons größer als $2m_ec^2$ (also
-        $> \unit[1.02]{MeV}$), so kann dieses ein Elektron-Positron-Paar bilden.
-        Um dabei den Impulserhaltungssatz zu erfüllen muss sich allerdings ein
-        schweres Objekt, hier ein Atomkern in der Nähe befinden, dass den
-        Rückstoß aufnehmen kann.
+    Der Grenzfall geringer Photonenenergien nennt sich Thomson-Streuung.  Dabei
+    wird, wie man Formel \ref{eqn:compton-energie} leicht entnehmen kann, die
+    Photonenenergie nicht verändert, der Wirkungsquerschnitt beträgt:
+    \begin{align}
+      \sigma_{th} = Z\frac{2\pi}{3}r_0^3
+      \label{eqn:wq-thomson}
+    \end{align}
+    wobei $r_0$ der klassische Elektronenradius ist.
 
-        Für den Wirkungsquerschnitt dieses Prozesses gilt:
-        \begin{align}
-            \sigma_{pb} \propto Z^2 \ln{E_\gamma}
-            \label{eqn:wq-paarbildung}
-        \end{align}
-        Der Beitrag ist allerdings erst bei Energien von mehreren $\unit{MeV}$
-        im Spektrum sichtbar.
+  \item[Paarbildung:] Ist die Energie des Photons größer als $2m_ec^2$ (also $>
+    \unit[1.02]{MeV}$), so kann dieses ein Elektron-Positron-Paar bilden.  Um
+    dabei den Impulserhaltungssatz zu erfüllen muss sich allerdings ein schweres
+    Objekt, hier ein Atomkern in der Nähe befinden, dass den Rückstoß aufnehmen
+    kann.
+
+    Für den Wirkungsquerschnitt dieses Prozesses gilt:
+    \begin{align}
+      \sigma_{pb} \propto Z^2 \ln{E_\gamma}
+      \label{eqn:wq-paarbildung}
+    \end{align}
+    Der Beitrag ist allerdings erst bei Energien von mehreren $\unit{MeV}$ im
+    Spektrum sichtbar.
 \end{description}
 
-Insgesamt ergibt sich auf diese Weise beispielsweise für Blei ($Z=82$) folgender Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
+Insgesamt ergibt sich auf diese Weise beispielsweise für Blei ($Z=82$) folgender
+Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/wq}
-    \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für Blei~\cite{demtröd4}}
-    \label{fig:zerfallsreihen}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/wq}
+  \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für
+  Blei~\cite{demtroed4}}
+  \label{fig:zerfallsreihen}
 \end{figure}
 
 \subsection{Szintillationsdetektor}
@@ -194,14 +201,15 @@ Photomultiplier (siehe Abb. \ref{fig:szinti}). Im Szintillator erzeugen die
 nachzuweisenden Teilchen einen Lichtblitz (Lumineszenzlicht), welches vom
 Photomultiplier (siehe Abschnitt \ref{cha:photo}) in ein elektrisches Signal
 umgewandelt wird. Als Szintillatormaterial werden anorganische Einkristalle wie
-$NaI$ verwendet (so auch in diesem Versuch) oder organische Flüssigkeiten und
+NaI verwendet (so auch in diesem Versuch) oder organische Flüssigkeiten und
 organisches Plastikmaterial oder Edelgase.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/szinti}
-    \caption[Szintillationsdetektor]{Schematischer Aufbau eines Szintillationsdetektors~\cite{leo}}
-    \label{fig:szinti}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/szinti}
+  \caption[Szintillationsdetektor]{Schematischer Aufbau eines
+  Szintillationsdetektors~\cite{leo}}
+  \label{fig:szinti}
 \end{figure}
 
 Je nach Verwendungszweck wird der Szintillator ausgewählt. Im vorliegenden Fall
@@ -226,10 +234,11 @@ Dotierungsdichte ungehindert den Photomultiplier erreichen und detektiert
 werden.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/szinti2}
-    \caption[Szintillationsdetektor]{Bandstruktur eines Szintillationsdetektors~\cite{leo}}
-    \label{fig:szinti2}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/szinti2}
+  \caption[Szintillationsdetektor]{Bandstruktur eines
+  Szintillationsdetektors~\cite{leo}}
+  \label{fig:szinti2}
 \end{figure}
 
 Wie in Abschnitt (\ref{cha:ww}) erläutert wurde, ergibt sich eine Abhängigkeit
@@ -250,10 +259,10 @@ Photomultiplier ab. Eine typische Lichtkurve eines Szintillators ist in
 Abbildung (\ref{fig:lichtkurve}) zu sehen.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{grafiken/lichtkurve}
-    \caption[Lichtkurve]{Lichtkurve eines Szintillators~\cite{leo}}
-    \label{fig:lichtkurve}
+  \centering
+  \includegraphics[width=0.4\textwidth]{grafiken/lichtkurve}
+  \caption[Lichtkurve]{Lichtkurve eines Szintillators~\cite{leo}}
+  \label{fig:lichtkurve}
 \end{figure}
 
 Zunächst ist ein steiler Anstieg (Anstiegszeit liegt bei etwa
@@ -277,16 +286,16 @@ Sekundärelektronen ausgeschlagen. Zwischen den einzelnen Dynoden, insgesamt gibt
 es etwa zehn Stück, liegen ebenfalls Spannungen an. Die Potentiale sind so
 gewählt, dass die Elektronen stets allesamt zur nächsten Dynode beschleunigt
 werden, wo sie erneut Sekundärelektronen ausschlagen usw.. Auf diese Weise kann
-eine Verstärkung des Eingangssignals von etwa $10^6 - 10^7$ an der Anode
+eine Verstärkung des Eingangssignals von etwa $10^6$ bis $10^7$ an der Anode
 erreicht werden. Dabei ist die Amplitude des Ausgangssignals proportional zur
 Energie des einfallenden Photons.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/photo}
-    \caption[Photomultiplier]{Prinzip eines Photomultipliers.~\cite{dem3},
-                              bearbeitet.}
-    \label{fig:photo}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/photo}
+  \caption[Photomultiplier]{Prinzip eines Photomultipliers.~\cite{dem3},
+  bearbeitet.}
+  \label{fig:photo}
 \end{figure}
 
 \subsection{Halbleiterdetektor}
@@ -310,8 +319,8 @@ Verteilungsfunktion für die Wahrscheinlichkeit, dass ein Zustand der Energie $E$
 mit Elektronen besetzt ist herleiten, die
 \textsc{Fermi}-\textsc{Dirac}-Verteilung:
 \begin{align}
-    f(E,T) = \frac{1}{1+\exp(\frac{E-E_F}{k_BT}}
-    \label{eqn:fermi-dirac}
+  f(E,T) = \frac{1}{1+\exp(\frac{E-E_F}{k_BT}}
+  \label{eqn:fermi-dirac}
 \end{align}
 
 Für reale Festkörper kann die Gitterwechselwirkung nicht mehr vernachlässigen
@@ -344,10 +353,10 @@ einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}).
 Dieses wird als Impulshöhenspektrum bezeichnet.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/imph}
-    \caption[Szintillationsdetektor]{Impulshöhenspektrum~\cite{rietzler}}
-    \label{fig:imph}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/imph}
+  \caption[Szintillationsdetektor]{Impulshöhenspektrum~\cite{rietzler}}
+  \label{fig:imph}
 \end{figure}
 
 Der mit "`A"' gekennzeichnete Peak wird Photopeak oder Full Energy Peak genannt.
@@ -398,42 +407,38 @@ werden.
 
 \subsection{Detektorcharakteristiken}
 \begin{description}
-    \item[Energieauflösung:]
-        Als Energieauflösung definiert man mit der mittleren Energie $E$ und der
-        Halbwertsbreite $\Delta E$ der \textsc{Gauß}kurve den Quotienten:
-        \begin{align}
-            R = \frac{\Delta E}{E} = \frac{\Delta n}{n}   %wofür steht das n noch mal?
-        \end{align}
-        als die Energieauflösung des Detektors. Sie ist ein Maß für die kleinste
-        noch auflösbare Energiedifferenz.
+  \item[Energieauflösung:] Als Energieauflösung definiert man mit der mittleren
+    Energie $E$ und der Halbwertsbreite $\Delta E$ der \textsc{Gauß}kurve den
+    Quotienten:
+    \begin{align}
+      R = \frac{\Delta E}{E} = \frac{\Delta n}{n}   %wofür steht das n noch mal?
+    \end{align}
+    als die Energieauflösung des Detektors. Sie ist ein Maß für die kleinste
+    noch auflösbare Energiedifferenz.
 
-    \item[Zeitauflösung:]
-        Die Zeitauflösung eines Detektors charakterisiert die minimale zeitliche
-        Differenz zwischen zwei Ereignissen, welche noch getrennt werden können.
-        Sie ist abhängig von der technischen Ausführung des Detektors und dem
-        zugrundeliegenden physikalischen Prinzip.
+  \item[Zeitauflösung:] Die Zeitauflösung eines Detektors charakterisiert die
+    minimale zeitliche Differenz zwischen zwei Ereignissen, welche noch getrennt
+    werden können.  Sie ist abhängig von der technischen Ausführung des
+    Detektors und dem zugrundeliegenden physikalischen Prinzip.
 
-    \item[Peak-to-Total Verhältnis:]
-        Über das Peak-to-Total Verhältnis kann der Anteil der im Photopeak
-        enthaltenen  $\gamma$-Quanten an Gesamtheit der im Detektor
-        registrierten $\gamma$-Quanten eines Übergangs quantifiziert werden. Es
-        handelt sich also um ein Maß für die Nachweisgüte des Detektors. Zur
-        Bestimmung dividiert man die Anzahl der Ereignisse im Photopeak durch
-        die Gesamtzahl aller Ereignisse.
+  \item[Peak-to-Total Verhältnis:] Über das Peak-to-Total Verhältnis kann der
+    Anteil der im Photopeak enthaltenen  $\gamma$-Quanten an Gesamtheit der im
+    Detektor registrierten $\gamma$-Quanten eines Übergangs quantifiziert
+    werden. Es handelt sich also um ein Maß für die Nachweisgüte des Detektors.
+    Zur Bestimmung dividiert man die Anzahl der Ereignisse im Photopeak durch
+    die Gesamtzahl aller Ereignisse.
 
-    \item[absolute Peakeffizienz:]
-        Mit der absoluten Peakeffizienz wird angegeben, welcher Anteil aller in
-        den Detektor eintretenden $\gamma$-Quanten detektiert wird. Will man
-        dies Bestimmen, so müssen sowohl die Aktivität der Strahlungsquelle, als
-        auch die Geometrie des Detektors bekannt sein.
+  \item[absolute Peakeffizienz:] Mit der absoluten Peakeffizienz wird angegeben,
+    welcher Anteil aller in den Detektor eintretenden $\gamma$-Quanten
+    detektiert wird. Will man dies Bestimmen, so müssen sowohl die Aktivität der
+    Strahlungsquelle, als auch die Geometrie des Detektors bekannt sein.
 
-    \item[relative Nachweiswahrscheinlichkeit:]
-        Die relative Nachweiswahrscheinlichkeit drückt die durch die
-        energieabhängigen Wirkungsquerschnitte der einzelnen
-        Wechselwirkungsmechanismen verursachten Energieabhängigkeiten der
-        Detektoreffizienz aus. Es ist dabei notwendig, die Photopeaks eine
-        bestimmenten Quelle zu normieren. Anschließend kann man auf die
-        tatsächlichen Intensitäten schließen.
+  \item[relative Nachweiswahrscheinlichkeit:] Die relative
+    Nachweiswahrscheinlichkeit drückt die durch die energieabhängigen
+    Wirkungsquerschnitte der einzelnen Wechselwirkungsmechanismen verursachten
+    Energieabhängigkeiten der Detektoreffizienz aus. Es ist dabei notwendig, die
+    Photopeaks eine bestimmenten Quelle zu normieren. Anschließend kann man auf
+    die tatsächlichen Intensitäten schließen.
 \end{description}
 
 \subsection{Vergleich der beiden Detektortypen}
@@ -453,14 +458,15 @@ die Abklingzeit des Materials und die Propagationszeit durch den Photomultiplier
 bestimmt. Das zeitliche Auflösungsvermögen des Ge-Halbleiterdetektors erreicht
 einen etwas schlechteren Wert, da die Ladugsträgergeschwindigkeit im Halbleiter
 nur etwa $\unit[10^{7}]{\frac{cm}{s}}$ beträgt. Die Energieauflösung jedoch ist
-bei den Ge-Detektoren signifikant besser (siehe hierzu Abb.
-\ref{fig:vergleich}).
+bei den Ge-Detektoren signifikant besser (siehe hierzu
+Abbildung~\ref{fig:vergleich}).
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{grafiken/vergleich}
-    \caption[Vergleich]{Spektrum einer Co-Quelle mit beiden Detektoren aufgenommen~\cite{leo}}
-    \label{fig:vergleich}
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/vergleich}
+  \caption[Vergleich]{Spektrum einer Kobalt-Quelle mit beiden Detektoren
+  aufgenommen~\cite{leo}}
+  \label{fig:vergleich}
 \end{figure}
 
 \subsection{Anwendungen der Detektoren}
@@ -474,42 +480,61 @@ mit höherem Auflösungsvermögen auszulösen.
 %mehr????
 
 \section{Versuchsaufbau}
-Prinzipiell findet sich bei beiden Detektoren der gleiche Versuchsaufbau. So werden die radioaktiven Proben jeweils so vor dem Detektor in einer Halterung aus Holz positioniert, dass in etwa eine Zählrate von $\unit[2000]{\frac{Ereignisse}{s}}$ erreicht wird. Der eingestellte Abstand zwischen Detektor und Probe wird dabei stets vermessen.
+Prinzipiell findet sich bei beiden Detektoren der gleiche Versuchsaufbau. So
+werden die radioaktiven Proben jeweils so vor dem Detektor in einer Halterung
+aus Holz positioniert, dass in etwa eine Zählrate von 2000 Ereignissen pro
+Sekunde erreicht wird. Der eingestellte Abstand zwischen Detektor und Probe wird
+dabei stets vermessen.
 
-Die Detektorsignale werden dann zunächst in einen Vorverstärker geschickt, um schließlich den Hauptverstärker zu erreichen. Dem nachgeschaltet ist der Vielkanalanalysator, welcher vom Computer aus gesteuert werden kann. Ferner wird mittels eines Oszilloskops auch nach dem Vor- und danach hinter dem Hauptverstärker das Signal abgegriffen und dargestellt.
+Die Detektorsignale werden dann zunächst in einen Vorverstärker geschickt, um
+schließlich den Hauptverstärker zu erreichen. Dem nachgeschaltet ist der
+Vielkanalanalysator, welcher vom Computer aus gesteuert werden kann. Ferner wird
+mittels eines Oszilloskops auch nach dem Vor- und danach hinter dem
+Hauptverstärker das Signal abgegriffen und dargestellt.
 
-Der grobe Versuchsaufbau inklusive der nötigen Spannungseinstellung war bereits durchgeführt, sodass wir diesbezüglich nur die Proben ($^{137}Cs$, $^{60}Co$ und $^{152}Eu$) platzieren, den Hauptverstärker feinregeln sowie den Oszillator anschließen mussten.
+Der grobe Versuchsaufbau inklusive der nötigen Spannungseinstellung war bereits
+durchgeführt, sodass wir diesbezüglich nur die Proben (\Cs, \Co und
+\Eu) platzieren, den Hauptverstärker feinregeln sowie den Oszillator
+anschließen mussten.
 
 Es sei noch angemerkt, dass in Folge der Notwendigkeit der Halbleiterdetektor noch über eine bereits aufgebaute Kühlung verfügte.
 
 \section{Versuchsdurchführung und Auswertung}
 \subsection{Beobachtung der Detektorsignale}
-Zunächst haben wir die $^{137}Cs$-Quelle in der Holzhalterung mit einem Abstand zum Detektor von $l=\unit[42 \pm 0.5]{cm}$ beim Szintillationsdetektor und beim  $l=\unit[18 \pm 0.5]{cm}$ Germanium-Detektor aufgestellt. Die erhaltenen Detektorsignale wurden dann mit Hilfe des Oszilloskops jeweils nach dem Vor- und nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
+Zunächst haben wir die \Cs-Quelle in der Holzhalterung mit einem Abstand
+zum Detektor von $l=\unit[42 \pm 0.5]{cm}$ beim Szintillationsdetektor und beim
+$l=\unit[18 \pm 0.5]{cm}$ Germanium-Detektor aufgestellt. Die erhaltenen
+Detektorsignale wurden dann mit Hilfe des Oszilloskops jeweils nach dem Vor- und
+nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
 
 \begin{figure}[H]
-    \begin{minipage}{0.45\textwidth}
-        \includegraphics[width=1.0\textwidth]{grafiken/szinti_vor}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
-    \end{minipage}
-%  \caption[Signalformen Szinti]{\small Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{\frac{V}{Kästchen}}$ und $\unit[1]{\frac{\mu s}{Kästchen}}$ bzw. HV: $\unit[2]{\frac{V}{Kästchen}}$ und $\unit[0.5]{\frac{\mu s}{Kästchen}}$)}
+  \begin{minipage}{0.45\textwidth}
+    %\includegraphics[width=1.0\textwidth]{grafiken/szinti_vor}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    %\includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
+  \end{minipage}
+  %  \caption[Signalformen Szinti]{\small Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{\frac{V}{Kästchen}}$ und $\unit[1]{\frac{\mu s}{Kästchen}}$ bzw. HV: $\unit[2]{\frac{V}{Kästchen}}$ und $\unit[0.5]{\frac{\mu s}{Kästchen}}$)}
 \end{figure}
 
 \begin{figure}[H]
-    \begin{minipage}{0.45\textwidth}
-        \includegraphics[width=1.0\textwidth]{grafiken/ge_vor}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
-    \end{minipage}
-%   \caption[Signalformen Ge]{\small Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{\frac{mV}{Kästchen}}$ und $\unit[0.1]{\frac{ms}{Kästchen}}$ bzw. HV: $\unit[0.5]{\frac{V}{Kästchen}}$ und $\unit[5]{\frac{\mu s}{Kästchen}}$)}
+  \begin{minipage}{0.45\textwidth}
+  %  \includegraphics[width=1.0\textwidth]{grafiken/ge_vor}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+  %  \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
+  \end{minipage}
+  %   \caption[Signalformen Ge]{\small Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{\frac{mV}{Kästchen}}$ und $\unit[0.1]{\frac{ms}{Kästchen}}$ bzw. HV: $\unit[0.5]{\frac{V}{Kästchen}}$ und $\unit[5]{\frac{\mu s}{Kästchen}}$)}
 \end{figure}
 
-Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Hauptverstärker.
-Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und Amplituden zu:
+Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem
+Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine
+deutlich verkürzte Signaldauer hinter dem Hauptverstärker.
+
+Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und
+Amplituden zu:
 
 %\begin{figure}[H]
 %    \CenterFloatBoxes
@@ -530,84 +555,131 @@ Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und Ampl
 
 \subsection{Aufnahme der $\gamma$-Spektren und Energieeichung}
 \label{cha:spekeich}
-Hierzu musste zunächst die Verstärkung des Hauptverstärkers so eingestellt werden, dass die 8192 Kanäle des Vielkanalanalysators einen Energiebereich von etwa $\unit[1550]{keV}$ umfassen. Als Anhaltspunkt diente hierfür die höherenergetische Linie der $^{60}\mathrm{Co}$-Quelle (1332 keV). Nach einmaliger Einstellung wird diesbezüglich keine Veränderung mehr vorgenommen.
+Hierzu musste zunächst die Verstärkung des Hauptverstärkers so eingestellt
+werden, dass die 8192 Kanäle des Vielkanalanalysators einen Energiebereich von
+etwa $\unit[1550]{keV}$ umfassen. Als Anhaltspunkt diente hierfür die
+höherenergetische Linie der \Co-Quelle ($\unit[1332]{keV}$). Nach
+einmaliger Einstellung wird diesbezüglich keine Veränderung mehr vorgenommen.
 
-% die haben bei dem anderen protokoll da die werte der einstellung aufgeschrieben, mal bitte nachgucken, ob das sinn macht und ob wirs könnten. ich finds komisch
+% die haben bei dem anderen protokoll da die werte der einstellung
+% aufgeschrieben, mal bitte nachgucken, ob das sinn macht und ob wirs könnten.
+% ich finds komisch
 
-Nun geben wir nach einander die drei Proben in die Halterung und nehmen jeweils $\unit[15]{min}$ lang ohne Bleiabschirmung, um die Rückstreuung zu minimieren, die jeweiligen Spektren auf. Der Abstand Detektor-Probe wurde dabei so gewählt, dass die Zählrate konstant etwa $\unit[2000]{\frac{Ereignisse}{Sekunde}}$ beträgt.
+Nun geben wir nach einander die drei Proben in die Halterung und nehmen jeweils
+$\unit[15]{min}$ lang ohne Bleiabschirmung, um die Rückstreuung zu minimieren,
+die jeweiligen Spektren auf. Der Abstand Detektor-Probe wurde dabei so gewählt,
+dass die Zählrate konstant etwa 2000 Ereignisse pro Sekunde beträgt.
 
-% die haben so ne tabelle mit parametern der messungen angelegt... brauch nicht, oder?
+% die haben so ne tabelle mit parametern der messungen angelegt... brauch nicht,
+% oder?
 
-Nun musste zunächst eine Energie-Eichung vorgenommen werden. Hierbei gingen wir wie folgt vor. %bitte vorgehen hinschreiben .... (im anderen protokoll haben die zuerst gaußkurven gefittet, bitte genauso vorgehen wie gefordert, also im skript nachsehen, denk bitte an die sache mit blum damals!!! auch graphen zur eichung angeben, siehe anderes prot.
+Nun musste zunächst eine Energie-Eichung vorgenommen werden. Hierbei gingen wir
+wie folgt vor.
+% bitte vorgehen hinschreiben .... (im anderen protokoll haben die zuerst
+% gaußkurven gefittet, bitte genauso vorgehen wie gefordert, also im skript
+% nachsehen, denk bitte an die sache mit blum damals!!! auch graphen zur eichung
+% angeben, siehe anderes prot.
 
-Im Folgenden sind nun die jeweils aufgenommenen Spektren inklusive der Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
+Im Folgenden sind nun die jeweils aufgenommenen Spektren inklusive der
+Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
 
 \begin{figure}[H]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{grafiken/coszinti}
-    \caption[Co-Spektrum Szintillator]{$^{60}\mathrm{Co}$-Spektrum (Szintillationdetektor}
-    \label{fig:cospekszinti}
+  \centering
+  %    \includegraphics[width=0.8\textwidth]{grafiken/coszinti}
+  \caption[Co-Spektrum Szintillator]
+  {\Co-Spektrum (Szintillationdetektor)}
+  \label{fig:cospekszinti}
 \end{figure}
 
 
 \begin{figure}[H]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
-    \caption[Co-Spektrum Ge-Detektor]{$^{60}\mathrm{Co}$-Spektrum (Germanium-Detektor}
-    \label{fig:cospekge}
+  \centering
+  %    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
+  \caption[Co-Spektrum Ge-Detektor]
+  {\Co-Spektrum (Germanium-Detektor)}
+  \label{fig:cospekge}
 \end{figure}
 
-Das $^{60}\mathrm{Co}$-Spektrum zeigt wie erwartet ... Beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor eine deutlich bessere Energieauflösung erreicht.
-%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
+Das \Co-Spektrum zeigt wie erwartet ... Beide Impulshöhenspektren
+stimmen gut überein, wobei der Germanium-Detektor eine deutlich bessere
+Energieauflösung erreicht.
+% details des spek beschreiben, formulierung noch erweitern und ändern bei
+% bedarf, siehe auch anderes protokoll
 \begin{figure}[H]
-    \centering
- %   \includegraphics[width=0.8\textwidth]{grafiken/csszinti}
-    \caption[Cs-Spektrum Szintillator]{$^{137}\mathrm{Cs}$-Spektrum (Szintillationdetektor}
-    \label{fig:csspekszinti}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{grafiken/cshalb}
-    \caption[Cs-Spektrum Ge-Detektor]{$^{137}\mathrm{Cs}$-Spektrum (Germanium-Detektor}
-    \label{fig:csspekge}
-\end{figure}
-
-Das $^{137}\mathrm{Cs}$-Spektrum zeigt ... Beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor erneut eine deutlich bessere Energieauflösung erreicht.
-%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
-\begin{figure}[H]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{grafiken/euszinti}
-    \caption[Eu-Spektrum Szintillator]{$^{152}\mathrm{Eu}$-Spektrum (Szintillationdetektor}
-    \label{fig:euspekszinti}
+  \centering
+  %   \includegraphics[width=0.8\textwidth]{grafiken/csszinti}
+  \caption[Cäsium-Spektrum Szintillator]
+  {\Cs-Spektrum (Szintillationdetektor)}
+  \label{fig:csspekszinti}
 \end{figure}
 
 \begin{figure}[H]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
-    \caption[Eu-Spektrum Ge-Detektor]{$^{152}\mathrm{Eu}$-Spektrum (Germanium-Detektor}
-    \label{fig:euspekge}
+  \centering
+  % \includegraphics[width=0.8\textwidth]{grafiken/cshalb}
+  \caption[Cäsium-Spektrum Ge-Detektor]
+  {\Cs-Spektrum (Germanium-Detektor)}
+  \label{fig:csspekge}
 \end{figure}
 
-Das $^{152}\mathrm{Eu}$-Spektrum zeigt ... Auch hier weist der Germanium-Detektor die deutlich bessere Energieauflösung auf.
-%details des spek beschreiben, formulierung noch erweitern und ändern bei bedarf, siehe auch anderes protokoll
+Das \Cs-Spektrum zeigt ... Beide Impulshöhenspektren stimmen gut
+überein, wobei der Germanium-Detektor erneut eine deutlich bessere
+Energieauflösung erreicht.
+% details des spek beschreiben, formulierung noch erweitern und ändern bei
+% bedarf, siehe auch anderes protokoll
+\begin{figure}[H]
+  \centering
+  %    \includegraphics[width=0.8\textwidth]{grafiken/euszinti}
+  \caption[Europium-Spektrum Szintillator]
+  {\Eu-Spektrum (Szintillationdetektor)}
+  \label{fig:euspekszinti}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  %    \includegraphics[width=0.8\textwidth]{grafiken/cohalb}
+  \caption[Europium-Spektrum Ge-Detektor]
+  {\Eu-Spektrum (Germanium-Detektor)}
+  \label{fig:euspekge}
+\end{figure}
+
+Das \Eu-Spektrum zeigt ... Auch hier weist der Germanium-Detektor die deutlich
+bessere Energieauflösung auf.
+% details des spek beschreiben, formulierung noch erweitern und ändern bei
+% bedarf, siehe auch anderes protokoll
 
 \subsection{Bestimmung der Halbwertsbreiten}
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
 \subsection{Bodenprobe}
-Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf ihre Radioaktivität untersucht. Hierzu wurde zunächst die Bleiabschirmung durch den uns betreuenden Assistenten aufgebaut, um Störeffekte, wie sie durch kosmische Höhenstrahlung und Umgebungsstrahlung entstehen, zu minimieren. Nach Einsetzen der Probe, wurde dann eine $\unit[18]{h}$ Messung gestartet, auf welche wir nach Beendigung am nächsten Tag eine ebenso lange Untergrundmessung folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung \ref{fig:bodenprobe} ist nun das untergrundbereinigte Spektrum dargestellt.
+Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf
+ihre Radioaktivität untersucht. Hierzu wurde zunächst die Bleiabschirmung durch
+den uns betreuenden Assistenten aufgebaut, um Störeffekte, wie sie durch
+kosmische Höhenstrahlung und Umgebungsstrahlung entstehen, zu minimieren. Nach
+Einsetzen der Probe, wurde dann eine $\unit[18]{h}$ Messung gestartet, auf
+welche wir nach Beendigung am nächsten Tag eine ebenso lange Untergrundmessung
+folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
+\ref{fig:bodenprobe} ist nun das untergrundbereinigte Spektrum dargestellt.
 
 %bild
 
 
-Die in Abschnitt \ref{cha:spekeich} vorgenommene Energieeichung wurde hierbei verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie, sowie die Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt \ref{cha:radioakt} beachtet werden. Beispielsweise ist ein kurzlebiges Isotop, welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in unserer Probe wohl eher nicht vorhanden.
+Die in Abschnitt \ref{cha:spekeich} vorgenommene Energieeichung wurde hierbei
+verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
+jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die
+Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie,
+sowie die Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt
+\ref{cha:radioakt} beachtet werden. Beispielsweise ist ein kurzlebiges Isotop,
+welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in
+unserer Probe wohl eher nicht vorhanden.
 
-In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren Eigenschaften aufgeführt:
+In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren
+Eigenschaften aufgeführt:
 
 
-Auffällig ist die stark ausgeprägte Linie bei ..., welche wohl auf den inzwischen etwa $23$ Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zurückgeht.
+Auffällig ist die stark ausgeprägte Linie bei ..., welche wohl auf den
+inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl
+zurückgeht.
 
 %weiteres blabla
 
