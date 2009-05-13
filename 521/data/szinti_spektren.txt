@@ -1,4 +1,4 @@
-"Cäsium"	"Cobalt"	"Europium"
+# "Cäsium"	"Cobalt"	"Europium"
 108	106	89
 0	0	2
 1	2	0
