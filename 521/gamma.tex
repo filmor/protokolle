@@ -1,5 +1,5 @@
 \documentclass{protokoll}
-
+\usepackage{booktabs,multirow}
 \newcommand{\assistent}{Thomas Geruschke}
 \newcommand{\versuch}{$\gamma$-Spektroskopie mit Szintillations- und
                       Halbleiterdetektoren}
@@ -510,49 +510,46 @@ nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
 
 \begin{figure}[H]
   \begin{minipage}{0.45\textwidth}
-    %\includegraphics[width=1.0\textwidth]{grafiken/szinti_vor}
+    \includegraphics[width=1.0\textwidth]{grafiken/szinti_vor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth}
-    %\includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
+    \includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
   \end{minipage}
-  %  \caption[Signalformen Szinti]{\small Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{\frac{V}{Kästchen}}$ und $\unit[1]{\frac{\mu s}{Kästchen}}$ bzw. HV: $\unit[2]{\frac{V}{Kästchen}}$ und $\unit[0.5]{\frac{\mu s}{Kästchen}}$)}
+  \caption[Signalformen Szinti]{\small{ Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{V/\text{Kästchen}}$ und $\unit[1]{\mu s/\text{Kästchen}}$ bzw. HV: $\unit[2]{V/\text{Kästchen}}$ und $\unit[0.5]{\mu s/\text{Kästchen}}$)}}
 \end{figure}
 
 \begin{figure}[H]
   \begin{minipage}{0.45\textwidth}
-  %  \includegraphics[width=1.0\textwidth]{grafiken/ge_vor}
+    \includegraphics[width=1.0\textwidth]{grafiken/ge_vor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth}
-  %  \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
+    \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
   \end{minipage}
-  %   \caption[Signalformen Ge]{\small Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{\frac{mV}{Kästchen}}$ und $\unit[0.1]{\frac{ms}{Kästchen}}$ bzw. HV: $\unit[0.5]{\frac{V}{Kästchen}}$ und $\unit[5]{\frac{\mu s}{Kästchen}}$)}
+  \caption[Signalformen Ge]{\small{Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{mV/\text{Kästchen}}$ und $\unit[0.1]{ms/\text{Kästchen}}$ bzw. HV: $\unit[0.5]{V/\text{Kästchen}}$ und $\unit[5]{\mu s/\text{Kästchen}}$)}}
 \end{figure}
-
-Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem
-Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine
-deutlich verkürzte Signaldauer hinter dem Hauptverstärker.
 
 Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und
 Amplituden zu:
 
-%\begin{figure}[H]
-%    \CenterFloatBoxes
-%    \begin{floatrow}
-%        \ffigbox{}{
-%            \pgfplotstabletypesetfile[
-%                    columns/0/.style={column name={}},
-%                   columns/1/.style={column name={}},
-%                    columns/2/.style={column name={Signaldauer}},
-%                    columns/3/.style={column name={Amplitude}},
-%                    columns/1/.style={column name={Anstiegszeit}},
-%                ]
-%              {data/_daten}
-%        }
-%    \end{floatrow}
-%\end{figure}
+\begin{table}[H]
+\begin{tabular}{lcccc}
+\toprule
+                & &$t_{ges}/\unit{\mu s}$ &  $U_{max}/\unit{V}$&  $t_{an}/\unit{\mu s}$ \\
+\midrule[0.75pt]
+\multirow{2}{*}{NaI-Detektor} & (VV) & $6.8\pm 0.1$  & $1.26\pm 0.02$ & $0.45\pm 0.1$ \\
+                              & (HV) & $3.9\pm 0.05$ & $12\pm 0.2$    & $0.375\pm 0.05$ \\
+\midrule[0.5pt]
+\multirow{2}{*}{Ge-Detektor}  & (VV) & $400 \pm 50$ & $0.25\pm 0.01$ & $300\pm 20$ \\
+                              & (HV) & $40\pm 2.5$    & $37\pm 0.5$  & $40\pm 2.5$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
+Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem
+Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine
+deutlich verkürzte Signaldauer hinter dem Hauptverstärker. Insgesamt ergibt sich eine kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor.
 
 \subsection{Aufnahme der $\gamma$-Spektren und Energieeichung}
 \label{cha:spekeich}
