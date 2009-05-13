@@ -1,5 +1,0 @@
-"Kanal" "Energie" "Fehler"
-4308    661.7   300     # Cäsium-Linie
-7150    1332.5  450     # Kobalt-Linie
-849     244.7   200     # Zweitstärkste Europium-Linie
-304     121.8   20      # Stärkste Europium-Linie
