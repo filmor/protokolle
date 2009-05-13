@@ -1,0 +1,30 @@
+set terminal pdf
+
+set xlabel 'Kanal'
+set ylabel 'Ereignisse'
+
+set style data boxes 
+
+datei = 'data/szinti_spektren.txt'
+
+set output 'grafiken/coszinti.pdf'
+plot datei u 0:2 notitle
+
+set output 'grafiken/csszinti.pdf'
+plot datei u 0:1 notitle
+
+set output 'grafiken/euszinti.pdf'
+plot datei u 0:3 notitle
+
+datei = 'data/halbleiter_spektren.txt'
+
+set logscale y
+
+set output 'grafiken/cohalb.pdf'
+plot datei u 0:2 notitle
+
+set output 'grafiken/cshalb.pdf'
+plot datei u 0:1 notitle
+
+set output 'grafiken/euhalb.pdf'
+plot datei u 0:3 notitle

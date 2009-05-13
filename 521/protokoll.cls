@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{protokoll}[2008/10/23 v0.0]
+\ProvidesClass{protokoll}[2009/05/03 v0.2]
 
 \LoadClass[a4paper,oneside]{scrartcl}
 
@@ -41,9 +41,9 @@
 \renewenvironment{document}
 {\begin{origdoc}
     \begin{titlepage}
-        \title{\Large{Physikalisches Praktikum IV}\\
-               \large{Atome, Moleküle, Festkörper}\\
-                \vspace{0.5cm}\textnormal{Wintersemester 08/09}\\
+        \title{\Large{Physikalisches Praktikum V}\\
+               \large{Kerne und Teilchen}\\
+                \vspace{0.5cm}\textnormal{Sommersemester 09}\\
                 \vspace{2cm}\large\textnormal{Protokoll ad}\\
                 \vspace{0.5cm}\Huge{\versuch}\vspace{1cm}
         }
