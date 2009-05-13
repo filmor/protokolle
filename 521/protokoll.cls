@@ -48,7 +48,7 @@
                 \vspace{0.5cm}\Huge{\versuch}\vspace{1cm}
         }
         \author{Kian Salimkhani, Benedikt Sauer\\
-                Gruppe $\alpha 4$\\
+                Gruppe $\beta 3$\\
                  \\\large\textnormal{Assistent: \assistent}
         }
         \date{\vspace{1cm} Universität Bonn \\ \today}
