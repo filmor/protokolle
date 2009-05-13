@@ -82,7 +82,7 @@ wichtigsten Zerfallsformen sollen im Folgenden erläutert werden.
   \item[$\gamma$-Zerfall:] Zu guter letzt besteht die Möglichkeit, dass ein
     angeregter Atomkern in einen energetisch tiefer gelegenen Zustand übergeht
     und dabei ein Photon der Differenzenergie aussendet analog zu den Vorgängen
-    in der Atomhülle. Die bei Kernübergängen erreichbaren Energien der
+    in der Atomhülle. Die bei den Kernübergängen erreichbaren Energien der
     $\gamma$-Quanten $E_{\gamma}$ liegen jedoch wesentlich höher ($\unit{keV}$-
     oder \unit{MeV}-Bereich).
 \end{description}
@@ -529,17 +529,19 @@ Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und
 Amplituden zu:
 
 \begin{table}[H]
-\begin{tabular}{lcccc}
-\toprule
-                & &$t_{ges}/\unit{\mu s}$ &  $U_{max}/\unit{V}$&  $t_{an}/\unit{\mu s}$ \\
-\midrule[0.75pt]
-\multirow{2}{*}{NaI-Detektor} & (VV) & $6.8\pm 0.1$  & $1.26\pm 0.02$ & $0.45\pm 0.1$ \\
-                              & (HV) & $3.9\pm 0.05$ & $12\pm 0.2$    & $0.375\pm 0.05$ \\
-\midrule[0.5pt]
-\multirow{2}{*}{Ge-Detektor}  & (VV) & $400 \pm 50$ & $0.25\pm 0.01$ & $300\pm 20$ \\
-                              & (HV) & $40\pm 2.5$    & $37\pm 0.5$  & $40\pm 2.5$ \\
-\bottomrule
-\end{tabular}
+  \begin{tabular}{lcccc}
+    \toprule
+    & &$t_{ges}/\unit{\mu s}$ &  $U_{max}/\unit{V}$&  $t_{an}/\unit{\mu s}$ \\
+    \midrule[0.75pt]
+    \multirow{2}{*}{NaI-Detektor} & (VV) & $6.8\pm 0.1$  & $1.26\pm 0.02$ &
+                                    $0.45\pm 0.1$ \\
+                                  & (HV) & $3.9\pm 0.05$ & $12\pm 0.2$ &
+                                    $0.375\pm 0.05$ \\
+    \midrule[0.5pt]
+    \multirow{2}{*}{Ge-Detektor}  & (VV) & $400 \pm 50$ & $0.25\pm 0.01$ & $300\pm 20$ \\
+    & (HV) & $40\pm 2.5$    & $37\pm 0.5$  & $40\pm 2.5$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem
@@ -640,6 +642,24 @@ als die anderen Elemente, weshalb es bei der folgenden Energieeichung zumindest
 für den Szintillationszähler außen vor bleibt (es trüge eh nur einen Wert bei).
 
 \subsubsection{Energieeichung}
+\begin{table}[H]
+  \centering
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={Kanal}},
+    columns/1/.style={column name={zugeordnete Energie/$\unit{eV}$}}
+  ]
+  {data/halbleiter_energien.txt}
+  \caption{Eichung des Halbleiterdetektors}
+  \label{tbl:eichung_halb}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/eichung_halbleiter}
+  \caption{Eichkurve des Halbleiterdetektors}
+  \label{fig:eichung_halb}
+\end{figure}
+
 
 Anhand des Abstandes des Photopeaks zur Comptonkante bei \Co hat sich wohl bei
 dieser Messung mit dem Szintillationszähler nur unser Messbereich verschoben.
