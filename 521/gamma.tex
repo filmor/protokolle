@@ -546,8 +546,8 @@ Offensichtlich ergibt sich jeweils ein stärkeres Signal hinter dem
 Hauptverstärker als vor selbigem. Außerdem erkennt man beim Ge-Detektor eine
 deutlich verkürzte Signaldauer hinter dem Hauptverstärker. Insgesamt ergibt sich eine kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor.
 
-\subsection{Aufnahme der $\gamma$-Spektren und Energieeichung}
-\label{cha:spekeich}
+\subsection{Aufnahme der $\gamma$-Spektren}
+\label{cha:spek}
 Hierzu musste zunächst die Verstärkung des Hauptverstärkers so eingestellt
 werden, dass die 8192 Kanäle des Vielkanalanalysators einen Energiebereich von
 etwa $\unit[1550]{keV}$ umfassen. Als Anhaltspunkt diente hierfür die
@@ -569,6 +569,7 @@ Fehlerabschätzung ergab sich jeweils aus den Halbwertsbreiten der Peaks.
 Im Folgenden sind nun die jeweils aufgenommenen Spektren inklusive der
 Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
 
+\subsubsection*{Kobalt}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{grafiken/coszinti}
@@ -584,10 +585,12 @@ Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
 \end{figure}
 
 Das \Co-Spektrum zeigt beim Szintillationsdetektor nicht wie erwartet zwei Peaks
-(siehe Anmerkung), der Rest entspricht aber der Erwartung.  Insbesondere stimmen
-beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor eine
-deutlich bessere Energieauflösung zeigt, die hier aber durch die große
+(siehe Anmerkung), der Rest entspricht aber der Erwartung. Insbesondere stimmen
+beide Impulshöhenspektren gut überein, wobei der Germanium-Detektor eine
+deutlich bessere Energieauflösung zeigt, welche hier aber durch die große
 Entfernung der Peaks kaum relevant ist.
+
+\subsubsection*{Caesium}
 
 \begin{figure}[H]
   \centering
@@ -608,13 +611,12 @@ niederenergetischen Bereich, der beim Halbleiterdetektor nicht zu sehen ist,
 allerdings scheint dieser auch den entsprechenden Energiebereich nicht erfasst
 zu haben. Wir vermuten, dass es sich bei diesem Peak um eine Röntgenlinie,
 beispielsweise eine K-Linie von den Bleiblöcken, die nah an der Apparatur
-standen handelt.
+standen, handelt.
 
-Beide Impulshöhenspektren stimmen gut
-überein, wobei der Germanium-Detektor erneut eine deutlich bessere
-Energieauflösung erreicht.
-% details des spek beschreiben, formulierung noch erweitern und ändern bei
-% bedarf, siehe auch anderes protokoll
+Beide Impulshöhenspektren stimmen gut überein, wobei der Germanium-Detektor erneut eine deutlich bessere Energieauflösung erreicht.
+
+\subsubsection*{Europium}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{grafiken/euszinti}
@@ -629,17 +631,16 @@ Energieauflösung erreicht.
   \label{fig:euspekge}
 \end{figure}
 
-Das \Eu-Spektrum zeigt ... Auch hier weist der Germanium-Detektor die deutlich
-bessere Energieauflösung auf, was für dieses Element dazu führt, dass deutlich
-mehr Linien zu sehen sind.
-% details des spek beschreiben, formulierung noch erweitern und ändern bei
-% bedarf, siehe auch anderes protokoll
+Das \Eu-Spektrum zeigt wie erwartet eine Fülle an Linie. Im Spektrum wurden deshalb nicht alle Linien beschriftet. Wie bereits beim \Cs-Spektrum zeigt sich auch hier beim Szintillationsdetektor ein unerwarteter Peak im niederenergetischen Bereich, der beim Halbleiterdetektor nicht zu sehen ist, wobei erneut dieser auch den entsprechenden Energiebereich nicht erfasst zu haben scheint. Wir vermuten, dass es sich auch hier um eine Röntgenlinie, beispielsweise eine K-Linie von den Bleiblöcken, handelt.
+
+Erneut ergibt sich eine deutlich bessere Energieauflösung für den Germanium-Detektor. Dies führt bei \Eu dazu, das deutlich mehr Linien zu sehen sind.
 
 Zusammenfassend ist vermutlich Kobalt mit einer anderen Einstellung aufgenommen
 als die anderen Elemente, weshalb es bei der folgenden Energieeichung zumindest
 für den Szintillationszähler außen vor bleibt (es trüge eh nur einen Wert bei).
 
-\subsubsection{Energieeichung}
+\subsection{Energieeichung}
+\label{cha:eich}
 
 Anhand des Abstandes des Photopeaks zur Comptonkante bei \Co hat sich wohl bei
 dieser Messung mit dem Szintillationszähler nur unser Messbereich verschoben.
@@ -661,7 +662,7 @@ folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
 %bild
 
 
-Die in Abschnitt \ref{cha:spekeich} vorgenommene Energieeichung wurde hierbei
+Die in Abschnitt \ref{cha:eich} vorgenommene Energieeichung wurde hierbei
 verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
 jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die
 Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie,
