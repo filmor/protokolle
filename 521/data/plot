@@ -3,7 +3,7 @@ set terminal pdf
 # Spektren
 set xlabel 'Kanal'
 set ylabel 'Ereignisse'
-set style data boxes 
+set style data impulses
 
 datei = 'data/szinti_spektren.txt'
 
@@ -62,11 +62,9 @@ set label '1408 keV' at 7320, 2600
 plot datei u 0:3 notitle
 unset label
 
-reset
-
 # Eichungen
 set xlabel 'Kanal'
-set ylabel 'Energie/eV'
+set ylabel 'Energie/keV'
 set style data points
 
 s(x) = s_m * x + s_b
@@ -81,4 +79,26 @@ datei = 'data/halbleiter_energien.txt'
 fit h(x) datei via h_m, h_b
 set output 'grafiken/eichung_halbleiter.pdf'
 plot datei notitle, h(x) notitle
+
+# geeichte Spektren
+set xlabel 'Energie/keV'
+set ylabel 'Ereignisse'
+set style data lines
+
+datei = 'data/szinti_spektren.txt'
+set output 'grafiken/spektren_szinti.pdf'
+plot datei u (s($0)):1 title 'Caesium', datei u (s($0)):2 title 'Kobalt',\
+     datei u (s($0)):3 title 'Europium'
+
+datei = 'data/halbleiter_spektren.txt'
+set logscale y
+set output 'grafiken/spektren_halbleiter.pdf'
+plot datei u (h($0)):1 title 'Caesium', datei u (h($0)):2 title 'Kobalt',\
+     datei u (h($0)):3 title 'Europium'
+
+# Bodenprobe
+set output 'grafiken/bodenprobe.pdf'
+unset logscale y
+set yrange [0:]
+plot 'data/bodenprobe.txt' u (h($0)):($1-$2) notitle w impulses
 

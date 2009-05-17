@@ -192,7 +192,7 @@ Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
   \includegraphics[width=0.6\textwidth]{grafiken/wq}
   \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für
   Blei~\cite{dem4}}
-  \label{fig:zerfallsreihen}
+  \label{fig:wq}
 \end{figure}
 
 \subsection{Szintillationsdetektor}
@@ -336,16 +336,28 @@ Bandlücke bestimmt die elektrischen Eigenschaften des Festkörpers.
 Für Halbleiter beträgt die Bandlücke etwa 0-3 $\unit{eV}$, also in einem
 Bereich, der durch thermische Anregung überwunden werden kann. Dotiert man einen
 solchen mit einem Donator oder Akzeptor, so bringt man quasi-freie Ladungen
-(negative als Elektronen, positive als "`Löcher"').
+(negative als Elektronen, positive als "`Löcher"'), man verändert dadurch im
+Prinzip die Position des \textsc{Fermi}niveaus innerhalb der Bandlücke.
+
+Grenzen nun zwei gegensätzlich dotierte Halbleiter aneinander, so gleichen sich
+durch Diffusion der Ladungsträger die \textsc{Fermi}niveaus an. Da diese ihre
+relative Position in der Bandlücke nicht verändern entsteht ein Potential, in
+einem (dotierungsabhängigen) Bereich entsteht eine Raumladungszone. Legt man
+nun eine Spannung an, so wird diese je nach Feldrichtung vergrößert oder
+verkleinert.
 
 \subsubsection{Quantendetektion am pn-Übergang}
-Für eine Photodiode, die letztlich unseren Detektor bildet benutzt man wie beim
-Szintillationszähler den Photoeffekt. Die Detektorfläche ist dabei ein
-np-Übergang wie bei einer gewöhnlichen Diode. Trifft nun ein Photon
-ausreichender Energie auf die Fläche, so werden Elektronen aus dem Gitter
-herausgelöst.
+Treffen Photonen auf das Material, so werden in dieser Raumladungszone
+Ladungsträger (Elektron-Loch-Paare) erzeugt, was zu einem Stromfluss führt, da
+die Ladungsträger durch die Diffusionsspannung in die jeweils entgegengesetzt
+dotierten Zonen wandern.
 
-%nochmal!
+Der Photostrom ist über viele Größenordnungen linear zum Lichteinfall, wenn
+keine Sättigung eintritt. Im Idealfall trägt jedes Lichtquant, das eine Energie
+besitzt, die größer als die Bandlücke des Halbleiters ist, zum Stromfluss bei.
+Praktisch ist der Wert jedoch kleiner und wird als Quantenausbeute bezeichnet.
+Die Reaktionszeit ist bei geeigneter Beschaltung sehr kurz; sie kann bis herab
+zu Bruchteilen einer Nanosekunde betragen.
 
 \subsection{Impulshöhenspektrum}
 Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei
@@ -515,7 +527,10 @@ nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
   \begin{minipage}{0.45\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/szinti_nach}
   \end{minipage}
-  \caption[Signalformen Szinti]{\small{ Signalformen des Szintillationsdetektors nach Vor- und Hauptverstärker (VV: $\unit[0.2]{V/\text{Kästchen}}$ und $\unit[1]{\mu s/\text{Kästchen}}$ bzw. HV: $\unit[2]{V/\text{Kästchen}}$ und $\unit[0.5]{\mu s/\text{Kästchen}}$)}}
+  \caption[Signalformen Szinti]{\small{ Signalformen des Szintillationsdetektors
+  nach Vor- und Hauptverstärker (VV: $\unit[0.2]{V/\text{Kästchen}}$ und
+  $\unit[1]{\mu s/\text{Kästchen}}$ bzw. HV: $\unit[2]{V/\text{Kästchen}}$ und
+  $\unit[0.5]{\mu s/\text{Kästchen}}$)}}
 \end{figure}
 
 \begin{figure}[H]
@@ -531,7 +546,6 @@ nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
 
 Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und
 Amplituden zu:
-
 \begin{table}[H]
   \begin{tabular}{lcccc}
     \toprule
@@ -595,10 +609,11 @@ Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
 \end{figure}
 
 Das \Co-Spektrum zeigt beim Szintillationsdetektor nicht wie erwartet zwei Peaks
-(siehe Anmerkung), der Rest entspricht aber der Erwartung. Insbesondere stimmen
-beide Impulshöhenspektren gut überein, wobei der Germanium-Detektor eine
-deutlich bessere Energieauflösung zeigt, welche hier aber durch die große
-Entfernung der Peaks kaum relevant ist.
+(siehe Anmerkung), der Rest entspricht aber der Erwartung, auch wenn hier nicht
+wie bei den anderen Spektren ein großer Peak auf den kleineren Kanälen zu sehen
+ist. Die beiden Impulshöhenspektren stimmen gut überein, wobei der
+Germanium-Detektor eine deutlich bessere Energieauflösung zeigt, welche hier
+aber durch die große Entfernung der Peaks kaum relevant ist.
 
 \subsubsection*{Caesium}
 
@@ -661,11 +676,17 @@ für den Szintillationszähler außen vor bleibt (es trüge eh nur einen Wert bei).
 
 \subsection{Energieeichung}
 \label{cha:eich}
+Zur Energieeichung identifizierten anhand der bekannten Spektren der Elemente
+Kanalnummern mit Energien. Da wir nach Konstruktion annehmen können, dass diese
+Zuordnung linear ist (siehe Abschnitte \ref{cha:photo} und \ref{cha:halb})
+führen wir danach einen Geradenfit aus. Weicht dabei ein Wert signifikant von
+der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ auf Höhe im
+Vergleich zu anderen (sicheren) Peaks.
 \begin{table}[H]
   \centering
   \pgfplotstabletypesetfile[
     columns/0/.style={column name={Kanal}},
-    columns/1/.style={column name={zugeordnete Energie/$\unit{eV}$}}
+    columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
   ]
   {data/halbleiter_energien.txt}
   \caption{Eichung des Halbleiterdetektors}
@@ -678,9 +699,6 @@ für den Szintillationszähler außen vor bleibt (es trüge eh nur einen Wert bei).
   \caption{Eichkurve des Halbleiterdetektors}
   \label{fig:eichung_halb}
 \end{figure}
-
-Anhand des Abstandes des Photopeaks zur Comptonkante bei \Co hat sich wohl bei
-dieser Messung mit dem Szintillationszähler nur unser Messbereich verschoben.
 
 \subsection{Bestimmung der Halbwertsbreiten}
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
@@ -696,15 +714,19 @@ welche wir nach Beendigung am nächsten Tag eine ebenso lange Untergrundmessung
 folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
 \ref{fig:bodenprobe} ist nun das untergrundbereinigte Spektrum dargestellt.
 
-%bild
-
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/bodenprobe.pdf}
+  \caption{Untergrundbereinigtes Spektrum der Bodenprobe}
+  \label{fig:bodenprobe}
+\end{figure}
 
 Die in Abschnitt \ref{cha:eich} vorgenommene Energieeichung wurde hierbei
 verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
 jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die
 Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie,
 sowie die Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt
-\ref{cha:radioakt} beachtet werden. Beispielsweise ist ein kurzlebiges Isotop,
+\ref{cha:radioakt}) beachtet werden. Beispielsweise ist ein kurzlebiges Isotop,
 welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in
 unserer Probe wohl eher nicht vorhanden.
 
