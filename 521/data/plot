@@ -66,6 +66,7 @@ unset label
 set xlabel 'Kanal'
 set ylabel 'Energie/keV'
 set style data points
+unset logscale y
 
 s(x) = s_m * x + s_b
 h(x) = h_m * x + h_b
