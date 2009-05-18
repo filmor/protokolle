@@ -103,3 +103,5 @@ unset logscale y
 set yrange [0:]
 plot 'data/bodenprobe.txt' u (h($0)):($1-$2) notitle w impulses
 
+set print 'data/halbwertsbreiten.txt'
+call 'data/plot_peak' '"data/szinti_spektren.txt"' 1 4319 400 

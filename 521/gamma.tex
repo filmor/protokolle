@@ -620,14 +620,14 @@ aber durch die große Entfernung der Peaks kaum relevant ist.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{grafiken/csszinti}
-  \caption[Cäsium-Spektrum Szintillator]{\Cs-Spektrum (Szintillationsdetektor)}
+  \caption[Caesium-Spektrum Szintillator]{\Cs-Spektrum (Szintillationsdetektor)}
   \label{fig:csspekszinti}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{grafiken/cshalb}
-  \caption[Cäsium-Spektrum Ge-Detektor]{\Cs-Spektrum (Germanium-Detektor)}
+  \caption[Caesium-Spektrum Ge-Detektor]{\Cs-Spektrum (Germanium-Detektor)}
   \label{fig:csspekge}
 \end{figure}
 
@@ -684,9 +684,13 @@ der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ auf Höhe im
 Vergleich zu anderen (sicheren) Peaks. Die sich ergebenden Eichkurven sind unten
 zu sehen, die Fehlerbalken in y-Richtung ergeben sich dabei aus der Unsicherheit
 der Daten in der Tabelle und sind zu klein um sinnvoll dargestellt werden zu
-können. Die x-Fehler ergeben sich aus Gauß-Fits an die Peaks und sind zumindest
-für den Halbleiterdetektor wiederum sehr klein. Die Tabellen zu den Eichkurven
-sind im Anhang \ref{app:eichung} zu finden.
+können. Die x-Fehler ergeben sich direkt aus den Halbwertsbreiten (siehe
+Tabellen im Anhang \ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
+\begin{align}
+  x_\mathrm{FWHM} = \sqrt{2\ln 2}\sigma
+  \label{eqn:fwhm}
+\end{align}
+Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
 \begin{figure}[H]
   \centering
   \includegraphics{grafiken/eichung_halbleiter}
@@ -701,6 +705,10 @@ sind im Anhang \ref{app:eichung} zu finden.
 \end{figure}
 
 \subsection{Bestimmung der Halbwertsbreiten}
+Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
+vorigem Abschnitt (Gleichung \ref{eqn:fwhm}) bestimmt oder aber einfach
+abgelesen werden, indem die Breite des Peaks auf halber Höhe einfach gemessen
+wird.
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
@@ -742,6 +750,7 @@ zurückgeht.
 
 \begin{appendix}
   \section{Tabellen}
+  \subsection{Halbwertsbreiten}
   \subsection{Eichung}
     \label{app:eichung}
     \begin{table}[H]
