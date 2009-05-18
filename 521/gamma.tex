@@ -681,23 +681,23 @@ Kanalnummern mit Energien. Da wir nach Konstruktion annehmen können, dass diese
 Zuordnung linear ist (siehe Abschnitte \ref{cha:photo} und \ref{cha:halb})
 führen wir danach einen Geradenfit aus. Weicht dabei ein Wert signifikant von
 der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ auf Höhe im
-Vergleich zu anderen (sicheren) Peaks.
-\begin{table}[H]
-  \centering
-  \pgfplotstabletypesetfile[
-    columns/0/.style={column name={Kanal}},
-    columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
-  ]
-  {data/halbleiter_energien.txt}
-  \caption{Eichung des Halbleiterdetektors}
-  \label{tbl:eichung_halb}
-\end{table}
-
+Vergleich zu anderen (sicheren) Peaks. Die sich ergebenden Eichkurven sind unten
+zu sehen, die Fehlerbalken in y-Richtung ergeben sich dabei aus der Unsicherheit
+der Daten in der Tabelle und sind zu klein um sinnvoll dargestellt werden zu
+können. Die x-Fehler ergeben sich aus Gauß-Fits an die Peaks und sind zumindest
+für den Halbleiterdetektor wiederum sehr klein. Die Tabellen zu den Eichkurven
+sind im Anhang \ref{app:eichung} zu finden.
 \begin{figure}[H]
   \centering
   \includegraphics{grafiken/eichung_halbleiter}
   \caption{Eichkurve des Halbleiterdetektors}
   \label{fig:eichung_halb}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/eichung_szinti}
+  \caption{Eichkurve des Szintillationsdetektors}
+  \label{fig:eichung_szinti}
 \end{figure}
 
 \subsection{Bestimmung der Halbwertsbreiten}
@@ -738,11 +738,34 @@ Auffällig ist die stark ausgeprägte Linie bei ..., welche wohl auf den
 inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl
 zurückgeht.
 
-%weiteres blabla
-
 \section{Zusammenfassung}
 
 \begin{appendix}
-    \Literatur{quellen}
+  \section{Tabellen}
+  \subsection{Eichung}
+    \label{app:eichung}
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Kanal}},
+        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
+      ]
+      {data/halbleiter_energien.txt}
+      \caption{Eichung des Halbleiterdetektors}
+      \label{tbl:eichung_halb}
+    \end{table}
+
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Kanal}},
+        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
+      ]
+      {data/szinti_energien.txt}
+      \caption{Eichung des Szintillationsdetektors}
+      \label{tbl:eichung_szinti}
+    \end{table}
+
+  \Literatur{quellen}
 \end{appendix}
 \end{document}
