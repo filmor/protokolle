@@ -9,6 +9,8 @@
 \newcommand{\Cs}{\Isotop{Cs}{137}}
 \newcommand{\Co}{\Isotop{Co}{60}}
 \newcommand{\Eu}{\Isotop{Eu}{152}}
+\newcommand{\Pb}{\Isotop{Pb}{212}}
+\newcommand{\K}{\Isotop{K}{40}}
 
 \begin{document}
 
@@ -743,13 +745,29 @@ In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren
 Eigenschaften aufgeführt:
 
 
-Auffällig ist die stark ausgeprägte Linie bei ..., welche wohl auf den
-inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl
-zurückgeht.
+Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}}$ ($\Pb$) sowie $\unit[1461.5]{keV}}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop ist ein starker natürlicher Strahler, welcher sich in vielen Mineralien befinden und somit auch im Boden mit höherem Anteil zu vermuten ist.
+
+Die $\Cs$-Linie bei $\unit[661.8]{keV}}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\~a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch [\cite{prot}] ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[20]{a}$ hätten wir jedoch mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/belast.jpg}
+  \caption{Bodenkontamination mit $\Cs$ in Deutschland 1986~[\cite{\quarks}]}
+  \label{fig:belast}
+\end{figure}
+
+Betrachtet man nämlich Abbildung \ref{fig:belast}, so erkennt man in der Tat eine die Messdifferenz befriedigend erklärende unterschiedliche Belastung von Rheine und Bonn mit $\Cs$ nach dem Unfall in Tschernobyl.
+
+Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die Isotope ... genau genommen nicht zutreffen. Sie wurden zwecks Vollständigkeit dennoch mit aufgenommen. Schließlich ergaben sich offensichtlich diese Isotope bei der Zuordnung.
 
 \section{Zusammenfassung}
 
 \begin{appendix}
+
+%bodenprobe unbereinigte plotten
+
+
+
   \section{Tabellen}
   \subsection{Halbwertsbreiten}
   \subsection{Eichung}
