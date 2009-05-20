@@ -1,4 +1,4 @@
-# set terminal pdf
+set terminal pdf
 
 # Spektren
 set xlabel 'Kanal'
@@ -11,7 +11,7 @@ set output 'grafiken/coszinti.pdf'
 set label 'Rückstreupeak' at 1360, 480
 set label 'Comptonkante' at 5380, 300
 set label 'Photopeak' at 7440, 650
-#plot datei u 0:2 notitle
+plot datei u 0:2 notitle
 unset label
 
 set output 'grafiken/csszinti.pdf'
@@ -19,7 +19,7 @@ set label '?-Peak' at 233, 1020
 set label 'Rückstreupeak' at 1280, 820
 set label 'Comptonkante' at 2850, 360
 set label 'Photopeak' at 4450, 1480
-#plot datei u 0:1 notitle
+plot datei u 0:1 notitle
 unset label
 
 set output 'grafiken/euszinti.pdf'
@@ -30,7 +30,7 @@ set label 'Peak 1' at 2350, 940
 set label 'Peak 2' at 5090, 260
 set label 'Peak 3' at 5850, 270
 set label 'Peak 4' at 6500, 280
-#plot datei u 0:3 notitle
+plot datei u 0:3 notitle
 unset label
 
 datei = 'data/halbleiter_spektren.txt'
@@ -42,14 +42,14 @@ set label 'Comptonkante 1' at 4836, 540
 set label 'Comptonkante 2' at 5650, 400
 set label 'Peak 1' at 6230, 4530
 set label 'Peak 2' at 7270, 4530
-#plot datei u 0:2 notitle
+plot datei u 0:2 notitle
 unset label
 
 set output 'grafiken/cshalb.pdf'
 set label 'Photopeak' at 3551, 30570
 set label 'Comptonkante' at 2270, 970
 set label 'Rückstreupeak' at 780, 990
-#plot datei u 0:1 notitle
+plot datei u 0:1 notitle
 unset label
 
 set output 'grafiken/euhalb.pdf'
@@ -59,7 +59,7 @@ set label '340 keV' at 1640, 15320
 set label '778 keV' at 4000, 3220
 set label '964 keV' at 4960, 2960
 set label '1408 keV' at 7320, 2600
-#plot datei u 0:3 notitle
+plot datei u 0:3 notitle
 unset label
 
 # Eichungen
@@ -74,12 +74,12 @@ h(x) = h_m * x + h_b
 datei = 'data/szinti_energien.txt'
 fit s(x) datei via s_m, s_b
 set output 'grafiken/eichung_szinti.pdf'
-#plot datei notitle, s(x) notitle
+plot datei notitle, s(x) notitle
 
 datei = 'data/halbleiter_energien.txt'
 fit h(x) datei via h_m, h_b
 set output 'grafiken/eichung_halbleiter.pdf'
-#plot datei notitle, h(x) notitle
+plot datei notitle, h(x) notitle
 
 # geeichte Spektren
 set xlabel 'Energie/keV'
@@ -88,20 +88,20 @@ set style data lines
 
 datei = 'data/szinti_spektren.txt'
 set output 'grafiken/spektren_szinti.pdf'
-#plot datei u (s($0)):1 title 'Caesium', datei u (s($0)):2 title 'Kobalt',\
-#     datei u (s($0)):3 title 'Europium'
+plot datei u (s($0)):1 title 'Caesium', datei u (s($0)):2 title 'Kobalt',\
+     datei u (s($0)):3 title 'Europium'
 
 datei = 'data/halbleiter_spektren.txt'
 set logscale y
 set output 'grafiken/spektren_halbleiter.pdf'
-#plot datei u (h($0)):1 title 'Caesium', datei u (h($0)):2 title 'Kobalt',\
-#     datei u (h($0)):3 title 'Europium'
+plot datei u (h($0)):1 title 'Caesium', datei u (h($0)):2 title 'Kobalt',\
+     datei u (h($0)):3 title 'Europium'
 
 # Bodenprobe
 set output 'grafiken/bodenprobe.pdf'
 unset logscale y
 set yrange [0:]
-#plot 'data/bodenprobe.txt' u (h($0)):($1-$2) notitle w impulses
+plot 'data/bodenprobe.txt' u (h($0)):($1-$2) notitle w impulses
 
 set print 'data/halbwertsbreiten.txt'
 call 'data/plot_peak' '"data/szinti_spektren.txt"' 1 4319 400 
