@@ -269,8 +269,8 @@ Abbildung (\ref{fig:lichtkurve}) zu sehen.
 
 Zunächst ist ein steiler Anstieg (Anstiegszeit liegt bei etwa
 $\unit[10^{-10}]{s}$) zu beobachten. Die durch die Lebensdauer der angeregten
-Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[(10^{-9} - 10^{-5})]{s}$.
-Eine kurze Lebensdauer ist also ein Auswahlkriterium für ein
+Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[(10^{-9} -
+10^{-5})]{s}$.  Eine kurze Lebensdauer ist also ein Auswahlkriterium für ein
 Szintillatormaterial, um die Zeitauflösung zu verbessern und die Totzeit zu
 verkürzen.
 
@@ -543,7 +543,10 @@ nach dem Hauptverstärker betrachtet. Es ergaben sich folgende Oszillogramme:
   \begin{minipage}{0.45\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/ge_nach}
   \end{minipage}
-  \caption[Signalformen Ge]{\small{Signalformen des Germanium-Detektors nach Vor- und Hauptverstärker (VV: $\unit[50]{mV/\text{Kästchen}}$ und $\unit[0.1]{ms/\text{Kästchen}}$ bzw. HV: $\unit[0.5]{V/\text{Kästchen}}$ und $\unit[5]{\mu s/\text{Kästchen}}$)}}
+  \caption[Signalformen Ge]{\small{Signalformen des Germanium-Detektors nach
+  Vor- und Hauptverstärker (VV: $\unit[50]{mV/\text{Kästchen}}$ und
+  $\unit[0.1]{ms/\text{Kästchen}}$ bzw. HV: $\unit[0.5]{V/\text{Kästchen}}$ und
+  $\unit[5]{\mu s/\text{Kästchen}}$)}}
 \end{figure}
 
 Anhand der Oszillogramme bestimmen wir die Anstiegszeiten, Signaldauern und
@@ -558,8 +561,10 @@ Amplituden zu:
                                   & (HV) & $3.9\pm 0.05$ & $12\pm 0.2$ &
                                     $0.375\pm 0.05$ \\
     \midrule[0.5pt]
-    \multirow{2}{*}{Ge-Detektor}  & (VV) & $400 \pm 50$ & $0.25\pm 0.01$ & $300\pm 20$ \\
-    & (HV) & $40\pm 2.5$    & $37\pm 0.5$  & $40\pm 2.5$ \\
+    \multirow{2}{*}{Ge-Detektor}  & (VV) & $400 \pm 50$ & $0.25\pm 0.01$ & 
+                                    $300\pm 20$ \\
+                                  & (HV) & $40\pm 2.5$    & $37\pm 0.5$  &
+                                    $40\pm 2.5$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -648,7 +653,8 @@ erneut eine deutlich bessere Energieauflösung erreicht.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{grafiken/euszinti}
-  \caption[Europium-Spektrum Szintillator]{\Eu-Spektrum (Szintillationsdetektor)}
+  \caption[Europium-Spektrum Szintillator]
+    {\Eu-Spektrum (Szintillationsdetektor)}
   \label{fig:euspekszinti}
 \end{figure}
 
@@ -678,17 +684,17 @@ für den Szintillationszähler außen vor bleibt (es trüge eh nur einen Wert bei).
 
 \subsection{Energieeichung}
 \label{cha:eich}
-Zur Energieeichung identifizierten wir anhand der bekannten Spektren der Elemente
-Kanalnummern mit Energien. Da wir nach Konstruktion annehmen können, dass diese
-Zuordnung linear ist (siehe Abschnitte \ref{cha:photo} und \ref{cha:halb})
-führen wir danach einen Geradenfit aus. Weicht dabei ein Wert signifikant von
-der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ in Bezug auf
-die Höhe des Peaks im Vergleich zu anderen (sicheren) Peaks. Die sich ergebenden
-Eichkurven sind unten zu sehen, die Fehlerbalken in y-Richtung ergeben sich dabei
-aus der Unsicherheit
-der Daten in der Tabelle und sind zu klein um sinnvoll dargestellt werden zu
-können. Die x-Fehler ergeben sich direkt aus den Halbwertsbreiten (siehe
-Tabellen im Anhang \ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
+Zur Energieeichung identifizierten wir anhand der bekannten Spektren der
+Elemente Kanalnummern mit Energien. Da wir nach Konstruktion annehmen können,
+dass diese Zuordnung linear ist (siehe Abschnitte \ref{cha:photo} und
+\ref{cha:halb}) führen wir danach einen Geradenfit aus. Weicht dabei ein Wert
+signifikant von der gefitteten Gerade ab untersuchen wir ihn nochmal genauer
+z.~B.\ in Bezug auf die Höhe des Peaks im Vergleich zu anderen (sicheren) Peaks.
+Die sich ergebenden Eichkurven sind unten zu sehen, die Fehlerbalken in
+y-Richtung ergeben sich dabei aus der Unsicherheit der Daten in der Tabelle und
+sind zu klein um sinnvoll dargestellt werden zu können. Die x-Fehler ergeben
+sich direkt aus den Halbwertsbreiten (siehe Tabellen im Anhang
+\ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
 \begin{align}
   x_\mathrm{FWHM} = \sqrt{2\ln 2}\sigma
   \label{eqn:fwhm}
@@ -711,10 +717,13 @@ Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
 Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
 vorigem Abschnitt (Gleichung \ref{eqn:fwhm}) bestimmt oder aber einfach
 abgelesen werden, indem die Breite des Peaks auf halber Höhe einfach gemessen
-wird.
+wird. Letzteres haben wir zur Plausibilitätsprüfung und für vernünftige
+Anfangswerte durchgeführt gemacht, die Tabellen zu ersterem finden sich im
+Anhang \ref{app:halbwertsbreiten}.
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
-\subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
+\subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
+            Ge-Detektors}
 \subsection{Bodenprobe}
 Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf
 ihre Radioaktivität untersucht. Hierzu wurde zunächst die Bleiabschirmung durch
@@ -770,6 +779,33 @@ Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die 
 
   \section{Tabellen}
   \subsection{Halbwertsbreiten}
+    \label{app:halbwertsbreiten}
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Standardabweichung $\sigma$}},
+        columns/1/.style={column name={$\Delta\sigma$}},
+        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        ]
+        {data/halbleiter_halbwertsbreiten.txt}
+      \caption{Halbwertsbreiten und Standardabweichungen beim
+               Halbleiterdetektor}
+    \end{table}
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Standardabweichung $\sigma$}},
+        columns/1/.style={column name={$\Delta\sigma$}},
+        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        ]
+        {data/szinti_halbwertsbreiten.txt}
+      \caption{Halbwertsbreiten und Standardabweichungen beim
+               Szintillationsdetektor}
+    \end{table}
+
+
   \subsection{Eichung}
     \label{app:eichung}
     \begin{table}[H]
@@ -787,7 +823,8 @@ Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die 
       \centering
       \pgfplotstabletypesetfile[
         columns/0/.style={column name={Kanal}},
-        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
+        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}},
+        columns={0,1}
       ]
       {data/szinti_energien.txt}
       \caption{Eichung des Szintillationsdetektors}

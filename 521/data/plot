@@ -103,5 +103,27 @@ unset logscale y
 set yrange [0:]
 plot 'data/bodenprobe.txt' u (h($0)):($1-$2) notitle w impulses
 
-set print 'data/halbwertsbreiten.txt'
-call 'data/plot_peak' '"data/szinti_spektren.txt"' 1 4319 400 
+set print 'data/szinti_halbwertsbreiten.txt'
+print '# sigma dsigma fwhm dfwhm'
+d = 'data/plot_peak'
+f = "data/szinti_spektren.txt"
+call d f 1 4319 400 1656
+call d f 2 7170 500 730
+call d f 3 2348 200 605
+call d f 3 289  200 3766
+call d f 3 4955 200 154
+call d f 3 6006 200 135
+call d f 3 6760 200 140
+
+set print 'data/halbleiter_halbwertsbreiten.txt'
+print '# sigma dsigma fwhm dfwhm'
+f = "data/halbleiter_spektren.txt"
+call d f 1 3500 8   21000
+call d f 2 6218 16  8800
+call d f 2 7065 15  7150
+call d f 3 632  8   25000
+call d f 3 1285 10  5400
+call d f 3 1814 10  12030
+call d f 3 4123 12  2295
+call d f 3 5108 12  1959
+call d f 3 7466 13  1753
