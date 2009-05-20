@@ -3,11 +3,14 @@ mu = $2
 intervall = sigma * 3
 datei = $0
 spalte = $1
+hoehe = 0$4 < 1e-30 ? 1000 : 0$4
 
-FIT_ERRORVARIABLES = 1
+set fit errorvariables
 
-f(x) = A*exp(-((x-mu)/sigma)**2)
+f(x) = hoehe*exp(-((x-mu)/sigma)**2) + C
 
-fit f(x) datei using ($$0<mu+intervall&&$$0>mu-intervall?$$0:1/0):spalte via A,mu,sigma
-print sprintf("%d   %d  %d  %d", mu, sigma, mu_err, sigma_err)
+fit f(x) datei using ($$0<mu+intervall&&$$0>mu-intervall?$$0:1/0):spalte via \
+hoehe,mu,sigma,C
+
+print sprintf("%f   %f  %f  %f", mu, sigma, mu_err, sigma_err)
 
