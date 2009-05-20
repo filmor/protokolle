@@ -715,8 +715,9 @@ Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
 Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
 vorigem Abschnitt (Gleichung \ref{eqn:fwhm}) bestimmt oder aber einfach
 abgelesen werden, indem die Breite des Peaks auf halber Höhe einfach gemessen
-wird. Letzteres haben wir zur Plausibilitätsprüfung gemacht, die Tabellen zu
-ersterem finden sich im Anhang \ref{tbl:halbwertsbreiten}
+wird. Letzteres haben wir zur Plausibilitätsprüfung und für vernünftige
+Anfangswerte durchgeführt gemacht, die Tabellen zu ersterem finden sich im
+Anhang \ref{app:halbwertsbreiten}.
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
@@ -760,6 +761,33 @@ zurückgeht.
 \begin{appendix}
   \section{Tabellen}
   \subsection{Halbwertsbreiten}
+    \label{app:halbwertsbreiten}
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Standardabweichung $\sigma$}},
+        columns/1/.style={column name={$\Delta\sigma$}},
+        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        ]
+        {data/halbleiter_halbwertsbreiten.txt}
+      \caption{Halbwertsbreiten und Standardabweichungen beim
+               Halbleiterdetektor}
+    \end{table}
+    \begin{table}[H]
+      \centering
+      \pgfplotstabletypesetfile[
+        columns/0/.style={column name={Standardabweichung $\sigma$}},
+        columns/1/.style={column name={$\Delta\sigma$}},
+        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        ]
+        {data/szinti_halbwertsbreiten.txt}
+      \caption{Halbwertsbreiten und Standardabweichungen beim
+               Szintillationsdetektor}
+    \end{table}
+
+
   \subsection{Eichung}
     \label{app:eichung}
     \begin{table}[H]
@@ -777,7 +805,8 @@ zurückgeht.
       \centering
       \pgfplotstabletypesetfile[
         columns/0/.style={column name={Kanal}},
-        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}}
+        columns/1/.style={column name={zugeordnete Energie/$\unit{keV}$}},
+        columns={0,1}
       ]
       {data/szinti_energien.txt}
       \caption{Eichung des Szintillationsdetektors}

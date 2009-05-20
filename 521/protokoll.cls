@@ -74,5 +74,10 @@
 \DeclareMathSymbol{.}{\mathord}{letters}{"3B}
 \DeclareMathSymbol{\decimal}{\mathord}{letters}{"3A}
 
+\pgfkeys{/pgf/number format/.cd,
+    fixed,
+    precision=3,
+    set thousands separator={}}
+
 \makeindex
 

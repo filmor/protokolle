@@ -1,9 +1,10 @@
-sigma = $3 * sqrt(2 * log(2))
+k = sqrt(2*log(2))
+sigma = $3 * k
 mu = $2
 intervall = sigma * 3
 datei = $0
 spalte = $1
-hoehe = 0$4 < 1e-30 ? 1000 : 0$4
+hoehe = $4
 
 set fit errorvariables
 
@@ -12,5 +13,6 @@ f(x) = hoehe*exp(-((x-mu)/sigma)**2) + C
 fit f(x) datei using ($$0<mu+intervall&&$$0>mu-intervall?$$0:1/0):spalte via \
 hoehe,mu,sigma,C
 
-print sprintf("%f   %f  %f  %f", mu, sigma, mu_err, sigma_err)
+print sprintf("%f   %f  %f  %f", abs(sigma), sigma_err, abs(sigma)/k, \
+        sigma_err/k)
 
