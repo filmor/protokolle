@@ -1,0 +1,13 @@
+sigma = $3 * sqrt(2 * log(2))
+mu = $2
+intervall = sigma * 3
+datei = $0
+spalte = $1
+
+FIT_ERRORVARIABLES = 1
+
+f(x) = A*exp(-((x-mu)/sigma)**2)
+
+fit f(x) datei using ($$0<mu+intervall&&$$0>mu-intervall?$$0:1/0):spalte via A,mu,sigma
+print sprintf("%d   %d  %d  %d", mu, sigma, mu_err, sigma_err)
+

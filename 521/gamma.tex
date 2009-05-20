@@ -680,11 +680,18 @@ Zur Energieeichung identifizierten wir anhand der bekannten Spektren der Element
 Kanalnummern mit Energien. Da wir nach Konstruktion annehmen können, dass diese
 Zuordnung linear ist (siehe Abschnitte \ref{cha:photo} und \ref{cha:halb})
 führen wir danach einen Geradenfit aus. Weicht dabei ein Wert signifikant von
-der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ in Bezug auf die Höhe des Peaks im Vergleich zu anderen (sicheren) Peaks. Die sich ergebenden Eichkurven sind unten zu sehen, die Fehlerbalken in y-Richtung ergeben sich dabei aus der Unsicherheit
+der gefitteten Gerade ab untersuchen wir ihn nochmal genauer z.~B.\ in Bezug auf
+die Höhe des Peaks im Vergleich zu anderen (sicheren) Peaks. Die sich ergebenden
+Eichkurven sind unten zu sehen, die Fehlerbalken in y-Richtung ergeben sich dabei
+aus der Unsicherheit
 der Daten in der Tabelle und sind zu klein um sinnvoll dargestellt werden zu
-können. Die x-Fehler ergeben sich aus Gauß-Fits an die Peaks und sind zumindest
-für den Halbleiterdetektor wiederum sehr klein. Die Tabellen zu den Eichkurven
-sind im Anhang \ref{app:eichung} zu finden.
+können. Die x-Fehler ergeben sich direkt aus den Halbwertsbreiten (siehe
+Tabellen im Anhang \ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
+\begin{align}
+  x_\mathrm{FWHM} = \sqrt{2\ln 2}\sigma
+  \label{eqn:fwhm}
+\end{align}
+Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
 \begin{figure}[H]
   \centering
   \includegraphics{grafiken/eichung_halbleiter}
@@ -699,8 +706,10 @@ sind im Anhang \ref{app:eichung} zu finden.
 \end{figure}
 
 \subsection{Bestimmung der Halbwertsbreiten}
-
-
+Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
+vorigem Abschnitt (Gleichung \ref{eqn:fwhm}) bestimmt oder aber einfach
+abgelesen werden, indem die Breite des Peaks auf halber Höhe einfach gemessen
+wird.
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des Ge-Detektors}
@@ -742,6 +751,7 @@ zurückgeht.
 
 \begin{appendix}
   \section{Tabellen}
+  \subsection{Halbwertsbreiten}
   \subsection{Eichung}
     \label{app:eichung}
     \begin{table}[H]
