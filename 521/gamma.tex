@@ -10,8 +10,13 @@
 \newcommand{\Co}{\Isotop{Co}{60}}
 \newcommand{\Eu}{\Isotop{Eu}{152}}
 \newcommand{\Pb}{\Isotop{Pb}{212}}
+\newcommand{\Pbs}{\Isotop{Pb}{214}}
 \newcommand{\K}{\Isotop{K}{40}}
-
+\newcommand{\Ac}{\Isotop{Ac}{228}}
+\newcommand{\Bi}{\Isotop{Bi}{214}}
+\newcommand{\Ra}{\Isotop{Ra}{226}}
+\newcommand{\Pa}{\Isotop{Pa}{234}}
+\newcommand{\Cos}{\Isotop{Co}{56}}
 \begin{document}
 
 \section{Einleitung}
@@ -753,14 +758,41 @@ unserer Probe wohl eher nicht vorhanden.
 In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren
 Eigenschaften aufgeführt:
 
+\begin{table}[H]
+  \begin{tabular}{cccccc}
+    \toprule
+    & $E_{\gamma}/\unit{keV}$ & Element & $E^{Lit.}_{\gamma}/\unit{keV}$&  $T_{1/2}$ & Intensität \\
+    \midrule[0.75pt]
+    & $74.8$  &     &          & $\unit[]{}$      &  \\
+    & $77.2$  &     &          & $\unit[]{}$      &  \\
+    & $87.2$  &     &          & $\unit[]{}$      &  \\
+    & $238.7$ & \Pb & $238.63$ & $\unit[10.6]{h}$ &  \\
+    & $295.4$ & \Pbs& $295.22$ & $\unit[26.8]{m}$ &  \\
+    & $338.5$ &     &          & $\unit[]{}$      &  \\
+    & $351.9$ & \Bi & $351.9$  & $\unit[20]{m}$   &  \\
+    & $511$   &     &          & $\unit[]{}$      &  \\
+    & $583.3$ &     &          & $\unit[]{}$      &  \\
+    &\multirow{3}{*}{$608.3$ - $610.8$} & \Pa & $609.00$ & $\unit[]{}$ & \\
+    &                                   & \Bi & $609.31$ & $\unit[]{}$ & \\
+    &                                   & \Ra & $609.32$ & $\unit[]{}$ & \\
+    & $661.8$ & \Cs & $661.66$ & $\unit[30.07]{a}$&  \\
+    & $911.8$ & \Ac & $911.2$  & $\unit[6.15]{h}$ &  \\
+    & $968.8$ &     &          & $\unit[]{}$      &  \\
+    &\multirow{2}{*}{$1461.5$} & \K   & $1460.83$ & $\unit[1.28 10^9]{a}$ & \\
+    &                          & \Cos & $1462.34$ & $\unit[77.3]{d}$ & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$) sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop ist ein starker natürlicher Strahler, welcher sich in vielen Mineralien befinden und somit auch im Boden mit höherem Anteil zu vermuten ist.
+Die drei niederenergetischen Linien konnten wir nicht zuordnen. Es ergaben sich als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder v.\ a.\ zu geringer Lebensdauer nur extrem unwahrscheinliche Elemente, sodass wir vermuten, dass es sich erneut um von den Bleiklötzen stammende Röntgenlinien handelt, welche in einem ähnlichen Energiebereich auftraten.
 
-Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\~a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch [\cite{prot}] ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[20]{a}$ hätten wir jedoch mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
+Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$) sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop stellt einen sehr starken natürlichen Strahler dar, welcher sich in vielen Mineralien befindet und somit auch im Boden mit höherem Anteil zu vermuten ist.
+
+Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\~a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch [\cite{prot}] ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[30]{a}$ hätten wir jedoch bei der Annahme einer homogenen Verteilung der Belastung mit $\Cs$ in NRW mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{grafiken/belast.jpg}
+  \includegraphics[width=0.5\textwidth]{grafiken/belast.jpg}
   \caption{Bodenkontamination mit $\Cs$ in Deutschland 1986~[\cite{quarks}]}
   \label{fig:belast}
 \end{figure}
@@ -772,7 +804,7 @@ Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die 
 \section{Zusammenfassung}
 
 \begin{appendix}
-
+%plots mit energieeichung auf x-achse
 %bodenprobe unbereinigte plotten
 
 
