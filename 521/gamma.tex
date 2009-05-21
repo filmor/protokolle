@@ -11,12 +11,12 @@
 \newcommand{\Eu}{\Isotop{Eu}{152}}
 \newcommand{\Pb}{\Isotop{Pb}{212}}
 \newcommand{\Pbs}{\Isotop{Pb}{214}}
+\newcommand{\Bis}{\Isotop{Bi}{212}}
 \newcommand{\K}{\Isotop{K}{40}}
 \newcommand{\Ac}{\Isotop{Ac}{228}}
 \newcommand{\Bi}{\Isotop{Bi}{214}}
 \newcommand{\Ra}{\Isotop{Ra}{226}}
 \newcommand{\Pa}{\Isotop{Pa}{234}}
-\newcommand{\Cos}{\Isotop{Co}{56}}
 \begin{document}
 
 \section{Einleitung}
@@ -750,12 +750,8 @@ folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
 
 Die in Abschnitt \ref{cha:eich} vorgenommene Energieeichung wurde hierbei
 verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
-jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die
-Halbwertszeit des infragekommenden Isotops, die relative Intensität der Linie,
-sowie die Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt
-\ref{cha:radioakt}) beachtet werden. Beispielsweise ist ein kurzlebiges Isotop,
-welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in
-unserer Probe wohl eher nicht vorhanden.
+jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt \ref{cha:radioakt}), also das natürliche Vorkommen des infragekommenden Isotops, seine Halbwertszeit sowie die relative Intensität der Linie beachtet werden. Beispielsweise ist ein kurzlebiges Isotop, welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in unserer Probe wohl eher nicht vorhanden.
+Es erwies sich als teilweise äußerst schwierig, diese Zuordnung vorzunehmen. Oft kamen gleich mehrere Isotope auf Grund ihres natürlichen Vorkommens in Betracht und es musste abgewogen werden, ob beispielsweise eine etwas besser passende Energie die kleine Halbwertszeit auszugleichen vermag. Manchmal ergab es sich, dass unter den infragekommenden Isotopen eines war, welches bereits zuvor identifiziert wurde. Dies wurde dann als ausschlaggebendes Argument für das Isotop gewertet.
 
 In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren
 Eigenschaften aufgeführt:
@@ -763,45 +759,44 @@ Eigenschaften aufgeführt:
 \begin{table}[H]
   \begin{tabular}{cccccc}
     \toprule
-    & $E_{\gamma}/\unit{keV}$ & Element & $E^{Lit.}_{\gamma}/\unit{keV}$&  $T_{1/2}$ & Intensität \\
+    & $E_{\gamma}/\unit{keV}$ & Element & $E^{Lit.}_{\gamma}/\unit{keV}$&  $T_{1/2}$ & Intensität/ \% \\
     \midrule[0.75pt]
     & $74.8$  &     &          & $\unit[]{}$      &  \\
     & $77.2$  &     &          & $\unit[]{}$      &  \\
     & $87.2$  &     &          & $\unit[]{}$      &  \\
-    & $238.7$ & \Pb & $238.63$ & $\unit[10.6]{h}$ &  \\
-    & $295.4$ & \Pbs& $295.22$ & $\unit[26.8]{m}$ &  \\
-    & $338.5$ &     &          & $\unit[]{}$      &  \\
-    & $351.9$ & \Bi & $351.9$  & $\unit[20]{m}$   &  \\
-    & $511$   &     &          & $\unit[]{}$      &  \\
-    & $583.3$ &     &          & $\unit[]{}$      &  \\
-    &\multirow{3}{*}{$608.3$ - $610.8$} & \Pa & $609.00$ & $\unit[]{}$ & \\
-    &                                   & \Bi & $609.31$ & $\unit[]{}$ & \\
-    &                                   & \Ra & $609.32$ & $\unit[]{}$ & \\
-    & $661.8$ & \Cs & $661.66$ & $\unit[30.07]{a}$&  \\
-    & $911.8$ & \Ac & $911.2$  & $\unit[6.15]{h}$ &  \\
-    & $968.8$ &     &          & $\unit[]{}$      &  \\
-    &\multirow{2}{*}{$1461.5$} & \K   & $1460.83$ & $\unit[1.28 10^9]{a}$ & \\
-    &                          & \Cos & $1462.34$ & $\unit[77.3]{d}$ & \\
+    & $238.7$ & \Pb & $238.632$& $\unit[10.6]{h}$ & $43.3$ \\
+    & $295.4$ & \Bis& $295.1$  & $\unit[60.55]{m}$& $0.024$   \\
+    & $338.5$ & \Ac & $338.320$& $\unit[6.15]{h}$ & $11.27$ \\
+    & $351.9$ & \Bi & $351.9$  & $\unit[19.9]{m}$ & $0.07$ \\
+    & $511$   & \Pbs& $511.0$  & $\unit[26.8]{m}$ & $0.032$ \\
+    & $583.3$ & \Ac & $583.41$ & $\unit[6.15]{m}$ & $0.111$ \\
+    &\multirow{3}{*}{$608.3$ - $610.8$} & \Pa & $609.00$ & $\unit[32760]{a}$& $0.0073$ \\
+    &                                   & \Bi & $609.31$ & $\unit[11.4]{d}$ & $0.056$ \\
+    &                                   & \Ra & $609.32$ & $\unit[15.3]{d}$ & $46.1$ \\
+    & $661.8$ & \Cs & $661.66$ & $\unit[30.07]{a}$& $85.1$ \\
+    & $911.8$ & \Ac & $911.2$  & $\unit[6.15]{h}$ & $25.8$ \\
+    & $968.8$ & \Ac & $968.971$& $\unit[6.15]{h}$ & $15.8$ \\
+    & $1461.5$& \K  & $1460.83$& $\unit[1.28 \cdot 10^9]{a}$ & $11$ \\
     \bottomrule
   \end{tabular}
+\caption{Identifizierung der $\gamma$-Linien mit Hilfe von~\cite{linien}}
 \end{table}
 
 Die drei niederenergetischen Linien konnten wir nicht zuordnen. Es ergaben sich als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder v.\ a.\ zu geringer Lebensdauer nur extrem unwahrscheinliche Elemente, sodass wir vermuten, dass es sich erneut um von den Bleiklötzen stammende Röntgenlinien handelt, welche in einem ähnlichen Energiebereich auftraten.
 
-Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$) sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop stellt einen sehr starken natürlichen Strahler dar, welcher sich in vielen Mineralien befindet und somit auch im Boden mit höherem Anteil zu vermuten ist.
+Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$) sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop stellt einen typischen und auch sehr starken natürlichen Strahler dar, welcher sich in vielen Mineralien befindet und somit auch im Boden mit höherem Anteil zu vermuten ist.
 
-Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\~a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch [\cite{prot}] ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[30]{a}$ hätten wir jedoch bei der Annahme einer homogenen Verteilung der Belastung mit $\Cs$ in NRW mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
+Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\ a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch~\cite{prot} ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[30]{a}$ hätten wir jedoch bei der Annahme einer homogenen Verteilung der Belastung mit $\Cs$ in NRW mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{grafiken/belast.jpg}
+  \includegraphics[height=0.59\textwidth]{grafiken/belast.jpg}
   \caption{Bodenkontamination mit $\Cs$ in Deutschland 1986~[\cite{quarks}]}
   \label{fig:belast}
 \end{figure}
 
 Betrachtet man nämlich Abbildung \ref{fig:belast}, so erkennt man in der Tat eine die Messdifferenz befriedigend erklärende unterschiedliche Belastung von Rheine und Bonn mit $\Cs$ nach dem Unfall in Tschernobyl.
 
-Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die Isotope ... genau genommen nicht zutreffen. Sie wurden zwecks Vollständigkeit dennoch mit aufgenommen. Schließlich ergaben sich offensichtlich diese Isotope bei der Zuordnung.
 
 \section{Zusammenfassung}
 Zuerst wurden die Detektorsignale der beiden Detektortypen nach dem Vor- sowie nach dem Hauptverstärker beobachtet und Signaldauer,-amplitude und Anstiegszeit wurden bestimmt. Die starke Verstärkung des Hauptverstärkers konnte bestätigt werden. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Hauptverstärker. Insgesamt ergibt sich jedoch eine kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor. Letzterer zeigt jedoch bei der Spektroskopie der Isotope $\Co$, $\Cs$ und $\Eu$ eine signifikant bessere Energieauflösung.
