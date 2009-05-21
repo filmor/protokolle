@@ -17,6 +17,9 @@
 \newcommand{\Ra}{\Isotop{Ra}{226}}
 \newcommand{\Pa}{\Isotop{Pa}{234}}
 \newcommand{\Cos}{\Isotop{Co}{56}}
+
+\newcommand{\FWHM}{E^\mathrm{FWHM}}
+
 \begin{document}
 
 \section{Einleitung}
@@ -703,11 +706,11 @@ sind zu klein um sinnvoll dargestellt werden zu können. Die x-Fehler ergeben
 sich direkt aus den Halbwertsbreiten (siehe Tabellen im Anhang
 \ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
 \begin{align}
-  x_\mathrm{FWHM} = \sqrt{2\ln 2}\sigma
+  x_\FWHM = \sqrt{2\ln 2}\sigma
   \label{eqn:fwhm}
 \end{align}
 Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
-\begin{figure}[H]
+\begin{figure}[H] 
   \centering
   \includegraphics{grafiken/eichung_halbleiter}
   \caption{Eichkurve des Halbleiterdetektors}
@@ -719,6 +722,8 @@ Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
   \caption{Eichkurve des Szintillationsdetektors}
   \label{fig:eichung_szinti}
 \end{figure}
+Der Fehler der Steigung bei der Eichung des Halbleiterdetektors ist hier so
+gering ($\ll \unit[0.01]{\%}$), dass er im Folgenden vernachlässigt wird.
 
 \subsection{Bestimmung der Halbwertsbreiten}
 Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
@@ -728,8 +733,46 @@ wird. Letzteres haben wir zur Plausibilitätsprüfung und für vernünftige
 Anfangswerte durchgeführt, die Tabellen zu ersterem finden sich im
 Anhang \ref{app:halbwertsbreiten}.
 
-%hier muss noch mehr hin, aufgabe nicht vollständig, tabellen viell doch hierin?
+Für die mit dem Germaniumdetektor aufgenommenen Europiumlinien ermitteln wir
+zusätzlich noch die energieabhängige intrinsische Halbwertsbreite. Diese
+erhalten wir mit folgender Formel aus der Halbwertsbreite:
+\begin{align}
+  \FWHM_i = \sqrt{(\FWHM)^2 - \FWHM_e}
+\end{align}
+Dabei ist $\FWHM_e$ die elektronische Komponente, die sich aus den
+Halbwertsbreiten der Bauteile der Messapparatur ergibt. Um diese zu bestimmen,
+messen wir die Halbwertsbreiten von scharfen Peaks, die wir von einem
+Pulsgenerator erzeugen lassen für verschiedene Amplituden. Der Pulsgenerator ist
+dabei genauso angeschlossen wie der Detektor. An die Peaks wird wiederum wie
+schon zuvor eine Gaußkurve gefittet und daraus die Halbwertsbreite bestimmt. Es
+ergeben sich folgende Werte:
+% Tabelle
 
+Die elektronische Komponente ist dann also als gewichtetes Mittel der einzelnen
+Halbwertsbreiten:
+\begin{align}
+  \FWHM_e = \unit[0.623 \pm 0.006]{keV}
+  \label{eqn:fwhm_e}
+\end{align}
+
+Für die Europiumlinien tragen wir nun die intrinsischen Halbwertsbreiten gegen
+die Wurzel der $\gamma$-Energie auf um die theoretische Formel für die
+Energieauflösung
+\begin{align}
+  \FWHM_d(E_\gamma) = k \cdot \sqrt{E_\gamma}
+%  \label{}
+\end{align}
+zu verifizieren und die Proportionalitätskonstante $k$ durch einen Geradenfit zu
+berechnen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/intrinsische_breite.pdf}
+  \caption{<+caption text+>}
+  \label{fig:<+label+>}
+\end{figure}
+
+% Werte
 
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
@@ -871,8 +914,8 @@ welches auf den Reaktorunfall von Tschernobyl zurückgeht.
         columns/0/.style={column name={Energie/$\unit{keV}$}},
         columns/1/.style={column name={Standardabweichung $\sigma$}},
         columns/2/.style={column name={$\Delta\sigma$}},
-        columns/3/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
-        columns/4/.style={column name={$\Delta\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\FWHM$}/$\unit{keV}$},
+        columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
         ]
         {data/halbleiter_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
@@ -884,8 +927,8 @@ welches auf den Reaktorunfall von Tschernobyl zurückgeht.
         columns/0/.style={column name={Energie/$\unit{keV}$}},
         columns/1/.style={column name={Standardabweichung $\sigma$}},
         columns/2/.style={column name={$\Delta\sigma$}},
-        columns/3/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
-        columns/4/.style={column name={$\Delta\mathrm{FWHM}$}},
+        columns/3/.style={column name={$\FWHM$/$\unit{keV}$}},
+        columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
         ]
         {data/szinti_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
