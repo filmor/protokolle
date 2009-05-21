@@ -72,9 +72,9 @@ s(x) = s_m * x + s_b
 h(x) = h_m * x + h_b
 
 datei = 'data/szinti_energien.txt'
-fit s(x) datei via s_m, s_b
+fit s(x) datei u 1:2:(1/$3**2) via s_m, s_b
 set output 'grafiken/eichung_szinti.pdf'
-plot datei notitle, s(x) notitle
+plot datei w xerrorbars notitle, s(x) notitle
 
 datei = 'data/halbleiter_energien.txt'
 fit h(x) datei via h_m, h_b
