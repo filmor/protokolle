@@ -729,6 +729,28 @@ Anhang \ref{app:halbwertsbreiten}.
 
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
 \subsection{Bestimmung der absoluten Peakeffizienz}
+Nun soll das Verhältnis der Ereignisse $N_A$ im Photopeak zur Gesamtzahl $N_{\gamma}$ der im Detektor auftreffenden Photonen bestimmt werden. Für die absolute Peakeffizienz $\Gamma$ gilt:
+\begin{align}
+\Gamma = \frac{N_A}{N_{\gamma}}
+\Delta \Gamma = \Gamma \sqrt{(\frac{\Delta N_A}{N_A})^2 + (\frac{\Delta N_{\gamma}}}{N_{\gamma}})^2}
+\end{align}
+
+Dabei ist $N_A$ bereits durch den \textsc{Gauß}-Fit an die zu verwendende Linie im $\Cs$-Spektrum bekannt. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$ beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
+\begin{align}
+  A(t=\unit[24]{a}) &=& A_0 \ \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}
+&=& 0.575 A_0
+&=& \unit[14.38]{\mu Ci}
+&=& \unit[5.32 \cdot 10^5]{Bq}
+\end{align}
+
+Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter Näherung:
+\begin{align}
+\zeta = \frac{\Omega}{4 \pi} \approx \frac{\pi r^2}{4 \pi d^2} = \frac{r^2}{4 d^2}
+\end{align}
+
+Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und Detektor dar, dieser wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d = \unit[1]{mm}$ behaftet. Man erhält also:
+
+
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
             Ge-Detektors}
 \subsection{Bodenprobe}
