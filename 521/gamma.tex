@@ -17,7 +17,7 @@
 \newcommand{\Bi}{\Isotop{Bi}{214}}
 \newcommand{\Ra}{\Isotop{Ra}{226}}
 \newcommand{\Pa}{\Isotop{Pa}{234}}
-\newcommand{\Cos}{\Isotop{Co}{56}}
+\newcommand{\Ba}{\Isotop{Ba}{137}}
 
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
 
@@ -466,6 +466,7 @@ werden.
 \end{description}
 
 \subsection{Vergleich der beiden Detektortypen}
+\label{cha:vergl}
 Da Szintillations- und Halbleiterdetektoren auf unterschiedlichen physikalischen
 Prinzipien beruhen, ist es nicht verwunderlich, dass sie sich hinsichtlich ihrer
 Eigenschaften teilweise deutlich unterscheiden. Zunächst einmal ist beim
@@ -768,7 +769,7 @@ berechnen.
 
 \begin{figure}[H]
   \centering
-  \includegraphics{grafiken/intrinsische_breite.pdf}
+%  \includegraphics{grafiken/intrinsische_breite.pdf}
   \caption{<+caption text+>}
   \label{fig:<+label+>}
 \end{figure}
@@ -784,8 +785,9 @@ durch die der in der gesamten Messung registrierten Ereignisse, wobei der
 Rückstreupeak explizit herausgenommen wird. Es gilt also:
 \begin{align}
   \rho = \frac{P}{S - R}, \quad
-  \Delta\rho = \sqrt{\left(\frac{\Delta N}{N}\right)^2 + \frac{\Delta S^2 +
+  \Delta \rho = \sqrt{\left(\frac{\Delta N}{N}\right)^2 + \frac{\Delta S^2 +
   \Delta R^2}{(S - R)^2}}
+%was ist N?????? muss da nicht P stehen?
   \label{eqn:ptt}
 \end{align}
 Die Werte $P$, $S$ und $R$ (Anzahl der im Photopeak, respektive im gesamten
@@ -801,8 +803,8 @@ abgezogen wurde. Damit kamen wir auf folgende Werte:
     \midrule
     \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779 & 0.118 \\
                                   & \Co  & 348599 & 24000 & 1802821 & 0.126 \\
-    \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & ~0 & 1957201    & 0.175 \\
-                                  & \Co  & 317599 & ~0 & 2036892    & 0.156 \\
+    \multirow{2}{*}{Ge-Detektor} & \Cs & 343950 & $\approx 0$& 1957201 & 0.175\\
+                                 & \Co & 317599 & $\approx 0$& 2036892 & 0.156\\
     \bottomrule
   \end{tabular}
   \caption{Total-to-Peakverhältnisse}
@@ -812,30 +814,87 @@ Die Gesamtzahl ist nicht fehlerbehaftet während die anderen beiden Anzahlen
 (geschätzt) einen Fehler von jeweils $\unit[5]{\%}$ haben.
     
 \subsection{Bestimmung der absoluten Peakeffizienz}
-Nun soll das Verhältnis der Ereignisse $N_A$ im Photopeak zur Gesamtzahl $N_{\gamma}$ der im Detektor auftreffenden Photonen bestimmt werden. Für die absolute Peakeffizienz $\Gamma$ gilt:
+Nun soll das Verhältnis der Ereignisse $P$ im Photopeak zur Gesamtzahl
+$N_{\gamma}$ der im Detektor auftreffenden Photonen bestimmt werden. Für die
+absolute Peakeffizienz $\Gamma$ gilt:
 \begin{align}
-\Gamma = \frac{N_A}{N_{\gamma}}
-\Delta \Gamma = \Gamma \sqrt{(\frac{\Delta N_A}{N_A})^2 + (\frac{\Delta N_{\gamma}}}{N_{\gamma}})^2}
+  \Gamma &= \frac{P}{N_{\gamma}} \\
+  \Delta \Gamma &= \Gamma \sqrt{(\frac{\Delta P}{P})^2
+                                +(\frac{\Delta N_{\gamma}}{N_{\gamma}})^2}
 \end{align}
 
-Dabei ist $N_A$ bereits durch den \textsc{Gauß}-Fit an die zu verwendende Linie im $\Cs$-Spektrum bekannt. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$ beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
+Dabei ist $P$ bereits durch den \textsc{Gauß}-Fit an die zu verwendende Linie im
+$\Cs$-Spektrum bekannt. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür
+wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$
+beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im
+April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) =
+A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
+\begin{align*}
+  A_{\gamma}(t=\unit[24]{a}) &= A_0\ \\
+                            \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
+        &= 0.575 A_0\\
+        &= \unit[14.38]{\mu Ci}\\
+        &= \unit[5.32 \cdot 10^5]{Bq}
+\end{align*}
+
+Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop
+Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der
+Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel
+meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter
+Näherung:
 \begin{align}
-  A(t=\unit[24]{a}) &=& A_0 \ \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}
-&=& 0.575 A_0
-&=& \unit[14.38]{\mu Ci}
-&=& \unit[5.32 \cdot 10^5]{Bq}
+  \zeta = \frac{\Omega}{4 \pi} \approx \frac{\pi r^2}{4 \pi d^2}
+        = \frac{r^2}{4 d^2}
 \end{align}
 
-Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter Näherung:
+Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler für die
+beiden Detektoren zu $2r_{Szinti} = \unit[37]{mm}$ und $2r_{Ge} = \unit[46]{mm}$
+gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und
+Detektor ($d_{Szinti} = \unit[42]{cm}$ und $d_{Ge} = \unit[18]{cm}$) dar, dieser
+wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d =
+\unit[1]{mm}$ behaftet. Man erhält also für den Fehler von $\zeta$:
 \begin{align}
-\zeta = \frac{\Omega}{4 \pi} \approx \frac{\pi r^2}{4 \pi d^2} = \frac{r^2}{4 d^2}
+  \Delta \zeta = \Delta d \frac{r^2}{2 d^3}
 \end{align}
 
-Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und Detektor dar, dieser wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d = \unit[1]{mm}$ behaftet. Man erhält also:
+Es ist jedoch auch zu berücksichtigen, dass nicht jeder Zerfall zur Emission
+eines Photons der charakteristischen Energie von $\unit[661.7]{keV}$ führt.
+Einige der Kerne gehen nämlich direkt in den Grundzustand von $\Ba$ über,
+teilweise findet Konversion statt. Im Praktikumsskript ist hierzu angegeben,
+dass sich die Erzeugung von Photonen mittels eines Faktors $0.944 \cdot 0.851$
+berechnet~\cite{skript}. Die Messdauer wurde auf $t=\unit[900]{s}$ eingestellt
+und wird als fehlerlos betrachtet. Es ergibt sich nun:
+\begin{align}
+  N_{\gamma} &= 0.944 \cdot 0.851 A_{\gamma} \zeta t \\
+  \Delta N_{\gamma} &= 0.944 \cdot 0.851 \sqrt{(\Delta A_{\gamma})^2
+                       + (\Delta \zeta)^2} t
+\end{align}
+
+Die Ergebnisse für die beiden Detektoren sind in Tabelle (\ref{tab:peakeff})
+dargestellt.
+
+\begin{table}[H]
+  \begin{tabular}{ccccccc}
+    \toprule
+    & $N_{\gamma}$ & $\Delta N_{\gamma}$  & $P$ & $\Delta P$ & $\Gamma$ &
+        $\Delta \Gamma$ \\
+    \midrule[0.75pt]
+    & Ge-Detektor  &  $1570024$  &      &    &       &  \\
+    & NaI-Detektor &  $186569$   &      &    &       &  \\
+    \bottomrule
+  \end{tabular}
+\caption{Absolute Peakeffizienz der Detektoren}
+\label{tab:peakeff}
+\end{table}
+
+
+% noch was schreiben
 
 
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
             Ge-Detektors}
+
+
 \subsection{Bodenprobe}
 Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf
 ihre Radioaktivität untersucht. Hierzu wurde zunächst die Bleiabschirmung durch
@@ -855,7 +914,7 @@ folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
 
 Die in Abschnitt \ref{cha:eich} vorgenommene Energieeichung wurde hierbei
 verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
-jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere
+jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere die
 Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt
 \ref{cha:radioakt}), also das natürliche Vorkommen des infragekommenden Isotops,
 seine Halbwertszeit sowie die relative Intensität der Linie beachtet werden.
@@ -877,7 +936,8 @@ Eigenschaften aufgeführt:
 \begin{table}[H]
   \begin{tabular}{cccccc}
     \toprule
-    & $E_{\gamma}/\unit{keV}$ & Element & $E^{Lit.}_{\gamma}/\unit{keV}$&  $T_{1/2}$ & Intensität/ \% \\
+    & $E_{\gamma}/\unit{keV}$ & Element & $E^{Lit.}_{\gamma}/\unit{keV}$ &
+        $T_{1/2}$ & Intensität/ \% \\
     \midrule[0.75pt]
     & $74.8$  &     &          & $\unit[]{}$      &  \\
     & $77.2$  &     &          & $\unit[]{}$      &  \\
@@ -888,9 +948,12 @@ Eigenschaften aufgeführt:
     & $351.9$ & \Bi & $351.9$  & $\unit[19.9]{m}$ & $0.07$ \\
     & $511$   & \Pbs& $511.0$  & $\unit[26.8]{m}$ & $0.032$ \\
     & $583.3$ & \Ac & $583.41$ & $\unit[6.15]{m}$ & $0.111$ \\
-    &\multirow{3}{*}{$608.3$ - $610.8$} & \Pa & $609.00$ & $\unit[32760]{a}$& $0.0073$ \\
-    &                                   & \Bi & $609.31$ & $\unit[11.4]{d}$ & $0.056$ \\
-    &                                   & \Ra & $609.32$ & $\unit[15.3]{d}$ & $46.1$ \\
+    &\multirow{3}{*}{$608.3$ - $610.8$} & \Pa & $609.00$ & $\unit[32760]{a}$&
+                                          $0.0073$ \\
+    &                                   & \Bi & $609.31$ & $\unit[11.4]{d}$ &
+                                          $0.056$ \\
+    &                                   & \Ra & $609.32$ & $\unit[15.3]{d}$ &
+                                          $46.1$ \\
     & $661.8$ & \Cs & $661.66$ & $\unit[30.07]{a}$& $85.1$ \\
     & $911.8$ & \Ac & $911.2$  & $\unit[6.15]{h}$ & $25.8$ \\
     & $968.8$ & \Ac & $968.971$& $\unit[6.15]{h}$ & $15.8$ \\
@@ -901,7 +964,7 @@ Eigenschaften aufgeführt:
 \end{table}
 
 Die drei niederenergetischen Linien konnten wir nicht zuordnen. Es ergaben sich
-als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder v.\ a.\
+als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder vor allem
 zu geringer Lebensdauer nur extrem unwahrscheinliche Elemente, sodass wir
 vermuten, dass es sich erneut um von den Bleiklötzen stammende Röntgenlinien
 handelt, welche in einem ähnlichen Energiebereich auftraten.
@@ -916,7 +979,7 @@ Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre
 zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei
 erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich
 nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout
-von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\ a.\ im
+von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. Vor allem im
 Vergleich mit einem älteren Protokoll zu diesem Versuch~\cite{prot} ergibt sich
 eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in
 NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur
@@ -940,10 +1003,6 @@ Betrachtet man nämlich Abbildung \ref{fig:belast}, so erkennt man in der Tat
 eine die Messdifferenz befriedigend erklärende unterschiedliche Belastung von
 Rheine und Bonn mit $\Cs$ nach dem Unfall in Tschernobyl.
 
-Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die
-Isotope ... genau genommen nicht zutreffen. Sie wurden zwecks Vollständigkeit
-dennoch mit aufgenommen. Schließlich ergaben sich offensichtlich diese Isotope
-bei der Zuordnung.
 
 \section{Zusammenfassung}
 Zuerst wurden die Detektorsignale der beiden Detektortypen nach dem Vor- sowie
