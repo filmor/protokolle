@@ -52,3 +52,11 @@
     edition={},
     publisher={}
 }
+
+\bib{linien}{article}{
+    title={Table of Radioactive Isotopes},
+    url={http://ie.lbl.gov/toi/}
+    year={},
+    edition={},
+    publisher={}
+}
