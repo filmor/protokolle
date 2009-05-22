@@ -748,7 +748,19 @@ Pulsgenerator erzeugen lassen für verschiedene Amplituden. Der Pulsgenerator ist
 dabei genauso angeschlossen wie der Detektor. An die Peaks wird wiederum wie
 schon zuvor eine Gaußkurve gefittet und daraus die Halbwertsbreite bestimmt. Es
 ergeben sich folgende Werte:
-% Tabelle
+\begin{table}[H]
+  \centering
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={Energie/$\unit{keV}$}},
+    columns/3/.style={column name={$\FWHM$}/$\unit{keV}$},
+    columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
+    columns/5/.style={column name={$A$}},
+    columns/6/.style={column name={$\Delta A$}},
+    columns={0,3,4,5,6}
+  ]
+  {data/halbleiter_pulserbreiten.txt}
+  \caption{Halbwertsbreiten und Peakhöhen für das Pulsersignal}
+\end{table}
 
 Die elektronische Komponente ist dann also als gewichtetes Mittel der einzelnen
 Halbwertsbreiten:
@@ -776,7 +788,7 @@ berechnen.
 
 % Werte
 
-\subsection{Bestimmung des Peak-to-Total Verhältnisses}
+\subsection{Bestimmung des Peak-to-Total-Verhältnisses}
 Das Peak-to-Total-Verhältnis $\rho$ wird für beide Detektoren sowohl für Caesium
 als auch für Kobalt bestimmt. Bei letzterem wird der Mittelwert der beiden Peaks
 betrachtet (was in unserem Fall für den Szintillationszähler nicht möglich war).
@@ -785,9 +797,8 @@ durch die der in der gesamten Messung registrierten Ereignisse, wobei der
 Rückstreupeak explizit herausgenommen wird. Es gilt also:
 \begin{align}
   \rho = \frac{P}{S - R}, \quad
-  \Delta \rho = \sqrt{\left(\frac{\Delta N}{N}\right)^2 + \frac{\Delta S^2 +
+  \Delta \rho = \sqrt{\left(\frac{\Delta P}{P}\right)^2 + \frac{\Delta S^2 +
   \Delta R^2}{(S - R)^2}}
-%was ist N?????? muss da nicht P stehen?
   \label{eqn:ptt}
 \end{align}
 Die Werte $P$, $S$ und $R$ (Anzahl der im Photopeak, respektive im gesamten
@@ -795,19 +806,23 @@ Spektrum bzw.  Rückstreupeak aufgetretenen Ereignisse) erhalten wir dabei durch
 einfaches aufsummieren der jeweiligen Datensätze, wobei für den Rückstreupeak
 der Comptonuntergrund sinnvoll fortgesetzt von der einfachen Aufsummierung
 abgezogen wurde. Damit kamen wir auf folgende Werte:
-\begin{table}
+\begin{table}[H]
   \centering
-  \begin{tabular}{cccccc}
+  \begin{tabular}{cc|ccc|cc}
     \toprule
-    & & P & R & S & $\rho$ \\
+    & & P & R & S & $\rho$ & $\Delta\rho$ \\
     \midrule
-    \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779 & 0.118 \\
-                                  & \Co  & 348599 & 24000 & 1802821 & 0.126 \\
-    \multirow{2}{*}{Ge-Detektor} & \Cs & 343950 & $\approx 0$& 1957201 & 0.175\\
-                                 & \Co & 317599 & $\approx 0$& 2036892 & 0.156\\
+    \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779
+                                  & 0.118 & \\
+                                  & \Co  & 348599 & 24000 & 1802821
+                                  & 0.126 & \\
+    \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & $\approx 0$& 1957201
+                                  & 0.175 & \\
+                                  & \Co  & 317599 & $\approx 0$& 2036892
+                                  & 0.156 & \\
     \bottomrule
   \end{tabular}
-  \caption{Total-to-Peakverhältnisse}
+  \caption{Peak-to-Total-Verhältnisse}
   \label{tab:ptt}
 \end{table}
 Die Gesamtzahl ist nicht fehlerbehaftet während die anderen beiden Anzahlen
@@ -1026,11 +1041,35 @@ vorgenommen. Hervorzuheben ist hierbei der gut nachweisbare Anteil von \Cs in
 der Bodenprobe, welches auf den Reaktorunfall von Tschernobyl zurückgeht.
 
 \begin{appendix}
-%plots mit energieeichung auf x-achse
-%bodenprobe unbereinigte plotten
   \section{Graphen}
+  \subsection{geeichte Spektren}
+  \begin{figure}[H]
+    \centering
+    \includegraphics{grafiken/spektren_halbleiter.pdf}
+    \caption{Geeichte Spektren des Halbleiterdetektors}
+    \label{fig:spektren_halbleiter}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics{grafiken/spektren_szinti.pdf}
+    \caption{Geeichte Spektren des Szintillationsdetektors}
+    \label{fig:spektren_szinti}
+  \end{figure}
 
+  \subsection{Bodenprobe}
+   \begin{figure}[H]
+    \centering
+    \includegraphics{grafiken/bodenprobe_unbereinigt.pdf}
+    \caption{Unbereinigtes Spektrum der Bodenprobe}
+    \label{fig:bodenprobe_unbereinigt}
+  \end{figure}
 
+ \begin{figure}[H]
+    \centering
+    \includegraphics{grafiken/bodenprobe_untergrund.pdf}
+    \caption{Untergrundmessung}
+    \label{fig:bodenprobe_untergrund}
+  \end{figure}
 
   \section{Tabellen}
   \subsection{Halbwertsbreiten}
@@ -1043,6 +1082,7 @@ der Bodenprobe, welches auf den Reaktorunfall von Tschernobyl zurückgeht.
         columns/2/.style={column name={$\Delta\sigma$}},
         columns/3/.style={column name={$\FWHM$}/$\unit{keV}$},
         columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
+        columns={0,1,2,3,4}
         ]
         {data/halbleiter_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
@@ -1056,6 +1096,7 @@ der Bodenprobe, welches auf den Reaktorunfall von Tschernobyl zurückgeht.
         columns/2/.style={column name={$\Delta\sigma$}},
         columns/3/.style={column name={$\FWHM$/$\unit{keV}$}},
         columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
+        columns={0,1,2,3,4}
         ]
         {data/szinti_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
