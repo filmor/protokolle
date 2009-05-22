@@ -863,22 +863,22 @@ Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \
                              &= \unit[5.32 \cdot 10^5]{Bq}
 \end{align*}
 
-Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler für die
-beiden Detektoren zu $2r_{Szinti} = \unit[37]{mm}$ und $2r_{Ge} = \unit[46]{mm}$
-gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und
-Detektor ($d_{Szinti} = \unit[42]{cm}$ und $d_{Ge} = \unit[18]{cm}$) dar, dieser
-wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d =
-\unit[1]{mm}$ behaftet. Man erhält also für den Fehler von $\zeta$:
+Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop
+Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der
+Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel
+meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter
+Näherung:
 \begin{align}
-  \Delta \zeta = \Delta d \frac{r^2}{2 d^3}
+  \zeta = \frac{\Omega}{4 \pi} \approx \frac{\pi r^2}{4 \pi d^2}
+        = \frac{r^2}{4 d^2}
 \end{align}
 
 Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler für die
 beiden Detektoren zu $2r_{Szinti} = \unit[37]{mm}$ und $2r_{Ge} = \unit[46]{mm}$
 gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und
-Detektor ($d_{Szinti} = \unit[42]{cm}$ und $d_{Ge} = \unit[18]{cm}$) dar, dieser
+Detektor ($d_{Szinti} = \unit[21]{cm}$ und $d_{Ge} = \unit[18]{cm}$) dar, dieser
 wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d =
-\unit[1]{mm}$ behaftet. Man erhält also für den Fehler von $\zeta$:
+\unit[5]{mm}$ behaftet. Man erhält also für den Fehler von $\zeta$:
 \begin{align}
   \Delta \zeta = \Delta d \frac{r^2}{2 d^3}
 \end{align}
@@ -900,22 +900,31 @@ Die Ergebnisse für die beiden Detektoren sind in Tabelle (\ref{tab:peakeff})
 dargestellt.
 
 \begin{table}[H]
-  \begin{tabular}{ccccccc}
+  \begin{tabular}{cccccccc}
     \toprule
-    & $N_{\gamma}$ & $\Delta N_{\gamma}$  & $P$ & $\Delta P$ & $\Gamma$ &
+    & & $N_{\gamma}$ & $\Delta N_{\gamma}$ & $P$ & $\Delta P$ & $\Gamma$ &
                       $\Delta \Gamma$ \\
     \midrule[0.75pt]
-    & Ge-Detektor  &  $1570024$  &      &    &       &  \\
-    & NaI-Detektor &  $186569$   &      &    &       &  \\
+    & NaI-Detektor & $755498$ & $52166$ & $538573$ & $26929$ & $\unit[71.3]{\%}$
+    & $\unit[6.1]{\%}$\\
+    & Ge-Detektor  & $1015056$ & $5070$ & $343950$ & $1718$ & $\unit[33.9]{\%}$
+    & $\unit[0.2]{\%}$  \\
     \bottomrule
   \end{tabular}
 \caption{Absolute Peakeffizienz der Detektoren}
 \label{tab:peakeff}
 \end{table}
 
-
-% noch was schreiben
-
+Es ergibt sich eine erstaunlich hohe Peakeffizienzen $\Gamma$ für den
+NaI-Detektor. Sie erscheint etwas sehr hoch, weshalb wir vermuten, dass dies
+möglicherweise an einem Rechenfehler liegt. Denn auch der Quotient
+$N_{\gamma}/S$ weicht mit etwa $\unit[42]{\%}$ etwas stärker nach unten ab als
+erwartet. Auch wenn ohne Bleiabschirmung gemessen wurde, scheint ein Untergrund
+in dieser Höhe doch eher unrealistisch. Für den Ge-Detektor ergibt sich hierfür
+mit etwa $\unit[80]{\%}$ ein wesentlich plausiblerer Wert. Leider konnten wir
+jedoch auch nach intensiver Suche einen Fehler nicht ausmachen. Es ist aber wie
+erwartet festzustellen, dass der NaI-Detektor die höhere
+Nachweiswahrschenlichkeit aufweist (siehe auch Abschnitt \ref{cha:vergl}).
 
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
             Ge-Detektors}
