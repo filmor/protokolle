@@ -808,14 +808,14 @@ der Comptonuntergrund sinnvoll fortgesetzt von der einfachen Aufsummierung
 abgezogen wurde. Damit kamen wir auf folgende Werte:
 \begin{table}[H]
   \centering
-  \begin{tabular}{cc|ccc|cc}
+  \begin{tabular}{cl|ccc|cc}
     \toprule
     & & P & R & S & $\rho$ & $\Delta\rho$ \\
     \midrule
-    \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779
-                                  & 0.118 & \\
-                                  & \Co  & 348599 & 24000 & 1802821
-                                  & 0.126 & \\
+    \multirow{2}{*}{NaI-Detektor} & \Cs  & 538573 & 26660 & 1808779
+                                  & 0.302 & 0.002 \\
+                                  & \Co  & 546170 & 24000 & 1802821
+                                  & 0.31 & 0.01 \\
     \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & $\approx 0$& 1957201
                                   & 0.175 & \\
                                   & \Co  & 317599 & $\approx 0$& 2036892
@@ -826,7 +826,13 @@ abgezogen wurde. Damit kamen wir auf folgende Werte:
   \label{tab:ptt}
 \end{table}
 Die Gesamtzahl ist nicht fehlerbehaftet während die anderen beiden Anzahlen
-(geschätzt) einen Fehler von jeweils $\unit[5]{\%}$ haben.
+(geschätzt) einen Fehler von jeweils etwa $\unit[5]{\%}$ für den
+Szintillationsdetektor und $\unit[0.5]{\%}$ für den Halbleiterdetektor haben,
+abgeschätzt durch die Höhe des Untergrundes und das aufsummierte Intervall. Für
+Kobalt haben die Peakhöhe des zweiten Peaks als nahezu gleich der des ersten
+angenommen (was aus alten Protokollen und unserer Messung mit dem
+Halbleiterdetektor auch hervorging) und daraus $P$ abgeschätzt, daher ist dort
+natürlich $\Delta P$ deutlich größer.
     
 \subsection{Bestimmung der absoluten Peakeffizienz}
 Nun soll das Verhältnis der Ereignisse $P$ im Photopeak zur Gesamtzahl
