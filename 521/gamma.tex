@@ -17,6 +17,10 @@
 \newcommand{\Bi}{\Isotop{Bi}{214}}
 \newcommand{\Ra}{\Isotop{Ra}{226}}
 \newcommand{\Pa}{\Isotop{Pa}{234}}
+\newcommand{\Cos}{\Isotop{Co}{56}}
+
+\newcommand{\FWHM}{E^\mathrm{FWHM}}
+
 \begin{document}
 
 \section{Einleitung}
@@ -430,10 +434,11 @@ werden.
     Energie $E$ und der Halbwertsbreite $\Delta E$ der \textsc{Gauß}kurve den
     Quotienten:
     \begin{align}
-      R = \frac{\Delta E}{E} = \frac{\Delta n}{n}   %wofür steht das n noch mal?
+      R = \frac{\Delta E}{E} = \frac{\Delta n}{n}
     \end{align}
-    als die Energieauflösung des Detektors. Sie ist ein Maß für die kleinste
-    noch auflösbare Energiedifferenz.
+    als die Energieauflösung des Detektors (dabei ist $n$ in diesem Fall die
+    Kanalnummer). Sie ist ein Maß für die kleinste noch auflösbare
+    Energiedifferenz.
 
   \item[Zeitauflösung:] Die Zeitauflösung eines Detektors charakterisiert die
     minimale zeitliche Differenz zwischen zwei Ereignissen, welche noch getrennt
@@ -598,7 +603,10 @@ $\unit[15]{min}$ lang ohne Bleiabschirmung, um die Rückstreuung zu minimieren,
 die jeweiligen Spektren auf. Der Abstand Detektor-Probe wurde dabei so gewählt,
 dass die Zählrate konstant etwa 2000 Ereignisse pro Sekunde beträgt.
 
-Nun musste zunächst eine Energieeichung vorgenommen werden (siehe nächster Abschnitt). Dazu haben wir zuerst die markanten Linien im Spektrum möglichst genau bestimmt. Die Fehlerabschätzung ergab sich jeweils aus den Halbwertsbreiten der Peaks.
+Nun musste zunächst eine Energieeichung vorgenommen werden (siehe nächster
+Abschnitt). Dazu haben wir zuerst die markanten Linien im Spektrum möglichst
+genau bestimmt. Die Fehlerabschätzung ergab sich jeweils aus den
+Halbwertsbreiten der Peaks.
 
 Im Folgenden sind nun die jeweils aufgenommenen Spektren inklusive der
 Beschriftung prominenter Linien und weiteren Merkmalen aufgeführt.
@@ -699,11 +707,11 @@ sind zu klein um sinnvoll dargestellt werden zu können. Die x-Fehler ergeben
 sich direkt aus den Halbwertsbreiten (siehe Tabellen im Anhang
 \ref{app:halbwertsbreiten}), da für Normalverteilungen gilt:
 \begin{align}
-  x_\mathrm{FWHM} = \sqrt{2\ln 2}\sigma
+  x_\FWHM = \sqrt{2\ln 2}\sigma
   \label{eqn:fwhm}
 \end{align}
 Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
-\begin{figure}[H]
+\begin{figure}[H] 
   \centering
   \includegraphics{grafiken/eichung_halbleiter}
   \caption{Eichkurve des Halbleiterdetektors}
@@ -715,6 +723,8 @@ Die Tabellen zu den Eichkurven sind im Anhang \ref{app:eichung} zu finden.
   \caption{Eichkurve des Szintillationsdetektors}
   \label{fig:eichung_szinti}
 \end{figure}
+Der Fehler der Steigung bei der Eichung des Halbleiterdetektors ist hier so
+gering ($\ll \unit[0.01]{\%}$), dass er im Folgenden vernachlässigt wird.
 
 \subsection{Bestimmung der Halbwertsbreiten}
 Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
@@ -724,10 +734,83 @@ wird. Letzteres haben wir zur Plausibilitätsprüfung und für vernünftige
 Anfangswerte durchgeführt, die Tabellen zu ersterem finden sich im
 Anhang \ref{app:halbwertsbreiten}.
 
-%hier muss noch mehr hin, aufgabe nicht vollständig, tabellen viell doch hierin?
+Für die mit dem Germaniumdetektor aufgenommenen Europiumlinien ermitteln wir
+zusätzlich noch die energieabhängige intrinsische Halbwertsbreite. Diese
+erhalten wir mit folgender Formel aus der Halbwertsbreite:
+\begin{align}
+  \FWHM_i = \sqrt{(\FWHM)^2 - \FWHM_e}
+\end{align}
+Dabei ist $\FWHM_e$ die elektronische Komponente, die sich aus den
+Halbwertsbreiten der Bauteile der Messapparatur ergibt. Um diese zu bestimmen,
+messen wir die Halbwertsbreiten von scharfen Peaks, die wir von einem
+Pulsgenerator erzeugen lassen für verschiedene Amplituden. Der Pulsgenerator ist
+dabei genauso angeschlossen wie der Detektor. An die Peaks wird wiederum wie
+schon zuvor eine Gaußkurve gefittet und daraus die Halbwertsbreite bestimmt. Es
+ergeben sich folgende Werte:
+% Tabelle
 
+Die elektronische Komponente ist dann also als gewichtetes Mittel der einzelnen
+Halbwertsbreiten:
+\begin{align}
+  \FWHM_e = \unit[0.623 \pm 0.006]{keV}
+  \label{eqn:fwhm_e}
+\end{align}
+
+Für die Europiumlinien tragen wir nun die intrinsischen Halbwertsbreiten gegen
+die Wurzel der $\gamma$-Energie auf um die theoretische Formel für die
+Energieauflösung
+\begin{align}
+  \FWHM_d(E_\gamma) = k \cdot \sqrt{E_\gamma}
+%  \label{}
+\end{align}
+zu verifizieren und die Proportionalitätskonstante $k$ durch einen Geradenfit zu
+berechnen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{grafiken/intrinsische_breite.pdf}
+  \caption{<+caption text+>}
+  \label{fig:<+label+>}
+\end{figure}
+
+% Werte
 
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
+Das Peak-to-Total-Verhältnis $\rho$ wird für beide Detektoren sowohl für Caesium
+als auch für Kobalt bestimmt. Bei letzterem wird der Mittelwert der beiden Peaks
+betrachtet (was in unserem Fall für den Szintillationszähler nicht möglich war).
+Zur Berechnung teilen wir die Anzahl der im Photopeak registrierten Ereignisse
+durch die der in der gesamten Messung registrierten Ereignisse, wobei der
+Rückstreupeak explizit herausgenommen wird. Es gilt also:
+\begin{align}
+  \rho = \frac{P}{S - R}, \quad
+  \Delta\rho = \sqrt{\left(\frac{\Delta N}{N}\right)^2 + \frac{\Delta S^2 +
+  \Delta R^2}{(S - R)^2}}
+  \label{eqn:ptt}
+\end{align}
+Die Werte $P$, $S$ und $R$ (Anzahl der im Photopeak, respektive im gesamten
+Spektrum bzw.  Rückstreupeak aufgetretenen Ereignisse) erhalten wir dabei durch
+einfaches aufsummieren der jeweiligen Datensätze, wobei für den Rückstreupeak
+der Comptonuntergrund sinnvoll fortgesetzt von der einfachen Aufsummierung
+abgezogen wurde. Damit kamen wir auf folgende Werte:
+\begin{table}
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    & & P & R & S & $\rho$ \\
+    \midrule
+    \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779 & 0.118 \\
+                                  & \Co  & 348599 & 24000 & 1802821 & 0.126 \\
+    \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & ~0 & 1957201    & 0.175 \\
+                                  & \Co  & 317599 & ~0 & 2036892    & 0.156 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Total-to-Peakverhältnisse}
+  \label{tab:ptt}
+\end{table}
+Die Gesamtzahl ist nicht fehlerbehaftet während die anderen beiden Anzahlen
+(geschätzt) einen Fehler von jeweils $\unit[5]{\%}$ haben.
+    
 \subsection{Bestimmung der absoluten Peakeffizienz}
 Nun soll das Verhältnis der Ereignisse $N_A$ im Photopeak zur Gesamtzahl $N_{\gamma}$ der im Detektor auftreffenden Photonen bestimmt werden. Für die absolute Peakeffizienz $\Gamma$ gilt:
 \begin{align}
@@ -772,8 +855,21 @@ folgen ließen. Die unkorrigierten Spektren finden sich im Anhang. In Abbildung
 
 Die in Abschnitt \ref{cha:eich} vorgenommene Energieeichung wurde hierbei
 verwendet. Auf diese Weise konnten wir schließlich den einzelnen Linien die
-jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt \ref{cha:radioakt}), also das natürliche Vorkommen des infragekommenden Isotops, seine Halbwertszeit sowie die relative Intensität der Linie beachtet werden. Beispielsweise ist ein kurzlebiges Isotop, welches nicht als Tochterkern in einer solchen Zerfallsreihe auffindbar ist, in unserer Probe wohl eher nicht vorhanden.
-Es erwies sich als teilweise äußerst schwierig, diese Zuordnung vorzunehmen. Oft kamen gleich mehrere Isotope auf Grund ihres natürlichen Vorkommens in Betracht und es musste abgewogen werden, ob beispielsweise eine etwas besser passende Energie die kleine Halbwertszeit auszugleichen vermag. Manchmal ergab es sich, dass unter den infragekommenden Isotopen eines war, welches bereits zuvor identifiziert wurde. Dies wurde dann als ausschlaggebendes Argument für das Isotop gewertet.
+jeweiligen radioaktiven Isotope zuordnen. Dabei musste insbesondere
+Zugehörigkeit zu einer natürlichen Zerfallsreihe (siehe Abschnitt
+\ref{cha:radioakt}), also das natürliche Vorkommen des infragekommenden Isotops,
+seine Halbwertszeit sowie die relative Intensität der Linie beachtet werden.
+Beispielsweise ist ein kurzlebiges Isotop, welches nicht als Tochterkern in
+einer solchen Zerfallsreihe auffindbar ist, in unserer Probe wohl eher nicht
+vorhanden.
+
+Es erwies sich als teilweise äußerst schwierig, diese Zuordnung vorzunehmen. Oft
+kamen gleich mehrere Isotope auf Grund ihres natürlichen Vorkommens in Betracht
+und es musste abgewogen werden, ob beispielsweise eine etwas besser passende
+Energie die kleine Halbwertszeit auszugleichen vermag. Manchmal ergab es sich,
+dass unter den infragekommenden Isotopen eines war, welches bereits zuvor
+identifiziert wurde. Dies wurde dann als ausschlaggebendes Argument für das
+Isotop gewertet.
 
 In der folgenden Tabelle sind nun noch einmal alle Linien mit ihren
 Eigenschaften aufgeführt:
@@ -804,11 +900,34 @@ Eigenschaften aufgeführt:
 \caption{Identifizierung der $\gamma$-Linien mit Hilfe von~\cite{linien}}
 \end{table}
 
-Die drei niederenergetischen Linien konnten wir nicht zuordnen. Es ergaben sich als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder v.\ a.\ zu geringer Lebensdauer nur extrem unwahrscheinliche Elemente, sodass wir vermuten, dass es sich erneut um von den Bleiklötzen stammende Röntgenlinien handelt, welche in einem ähnlichen Energiebereich auftraten.
+Die drei niederenergetischen Linien konnten wir nicht zuordnen. Es ergaben sich
+als Möglichkeiten auf Grund von zu geringem natürlichen Vorkommen oder v.\ a.\
+zu geringer Lebensdauer nur extrem unwahrscheinliche Elemente, sodass wir
+vermuten, dass es sich erneut um von den Bleiklötzen stammende Röntgenlinien
+handelt, welche in einem ähnlichen Energiebereich auftraten.
 
-Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$) sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe zuzuordnen. Letzteres Isotop stellt einen typischen und auch sehr starken natürlichen Strahler dar, welcher sich in vielen Mineralien befindet und somit auch im Boden mit höherem Anteil zu vermuten ist.
+Auffällig sind die stark ausgeprägten Linien bei $\unit[238.7]{keV}$ ($\Pb$)
+sowie $\unit[1461.5]{keV}$ ($\K$). Ersteres ist der Radon-Zerfallsreihe
+zuzuordnen. Letzteres Isotop stellt einen typischen und auch sehr starken
+natürlichen Strahler dar, welcher sich in vielen Mineralien befindet und somit
+auch im Boden mit höherem Anteil zu vermuten ist.
 
-Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\ a.\ im Vergleich mit einem älteren Protokoll zu diesem Versuch~\cite{prot} ergibt sich eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von ungefähr $\unit[30]{a}$ hätten wir jedoch bei der Annahme einer homogenen Verteilung der Belastung mit $\Cs$ in NRW mindestens ca. $320$ Ereignisse (als untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von 2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert und fanden folgendes. 
+Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre
+zurückliegenden Kernreaktorunfall in Tschernobyl zuzuordnen, da es sich hierbei
+erstens um ein synthetisches Isotop handelt, welches in der Natur eigentlich
+nicht vorkommen sollte, und zweitens Caesium gerade den Hauptanteil am Fallout
+von 1986 stellt. Sie fällt durch eine eher geringe Intensität auf. V.\ a.\ im
+Vergleich mit einem älteren Protokoll zu diesem Versuch~\cite{prot} ergibt sich
+eine deutliche Abweichung. So wurden $2005$ bei einer Bodenprobe aus Rheine in
+NRW etwa $380$ Ereignisse in $\unit[20]{h}$ gemessen, wir hingegen konnten nur
+etwa $130$ Ereignisse in $\unit[18]{h}$ aufnehmen. Mit der Halbwertszeit von
+ungefähr $\unit[30]{a}$ hätten wir jedoch bei der Annahme einer homogenen
+Verteilung der Belastung mit $\Cs$ in NRW mindestens ca. $320$ Ereignisse (als
+untere Grenze, da unsere Probe sehr wahrscheinlich eher eine etwas geringere
+Masse hatte) detektieren sollen (also ungefähr $\unit[90]{\%}$ des Wertes von
+2005). Offensichtlich müssen sich also die beiden Bodenproben qualitativ
+unterscheiden. Um diese These besser begründen zu können, haben wir recherchiert
+und fanden folgendes. 
 
 \begin{figure}[H]
   \centering
@@ -817,21 +936,40 @@ Die $\Cs$-Linie bei $\unit[661.8]{keV}$ ist dem inzwischen etwa 23 Jahre zurückl
   \label{fig:belast}
 \end{figure}
 
-Betrachtet man nämlich Abbildung \ref{fig:belast}, so erkennt man in der Tat eine die Messdifferenz befriedigend erklärende unterschiedliche Belastung von Rheine und Bonn mit $\Cs$ nach dem Unfall in Tschernobyl.
+Betrachtet man nämlich Abbildung \ref{fig:belast}, so erkennt man in der Tat
+eine die Messdifferenz befriedigend erklärende unterschiedliche Belastung von
+Rheine und Bonn mit $\Cs$ nach dem Unfall in Tschernobyl.
 
+Abschließend sei noch angemerkt, dass die oben angesprochenen Kriterien auf die
+Isotope ... genau genommen nicht zutreffen. Sie wurden zwecks Vollständigkeit
+dennoch mit aufgenommen. Schließlich ergaben sich offensichtlich diese Isotope
+bei der Zuordnung.
 
 \section{Zusammenfassung}
-Zuerst wurden die Detektorsignale der beiden Detektortypen nach dem Vor- sowie nach dem Hauptverstärker beobachtet und Signaldauer,-amplitude und Anstiegszeit wurden bestimmt. Die starke Verstärkung des Hauptverstärkers konnte bestätigt werden. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte Signaldauer hinter dem Hauptverstärker. Insgesamt ergibt sich jedoch eine kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor. Letzterer zeigt jedoch bei der Spektroskopie der Isotope $\Co$, $\Cs$ und $\Eu$ eine signifikant bessere Energieauflösung.
+Zuerst wurden die Detektorsignale der beiden Detektortypen nach dem Vor- sowie
+nach dem Hauptverstärker beobachtet und Signaldauer,-amplitude und Anstiegszeit
+wurden bestimmt. Die starke Verstärkung des Hauptverstärkers konnte bestätigt
+werden. Außerdem erkennt man beim Ge-Detektor eine deutlich verkürzte
+Signaldauer hinter dem Hauptverstärker. Insgesamt ergibt sich jedoch eine
+kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor.
+Letzterer zeigt jedoch bei der Spektroskopie der Isotope $\Co$, $\Cs$ und $\Eu$
+eine signifikant bessere Energieauflösung.
 
 % Ergebnisse des Rests
 
-Beide Detektoren haben konklusiv also ihre Vor- und Nachteile und eignen sich somit für unterschiedliche Anwendungsbereiche.
+Beide Detektoren haben konklusiv also ihre Vor- und Nachteile und eignen sich
+somit für unterschiedliche Anwendungsbereiche.
 
-Abschließend wurde das Spektrum einer Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf ihre Radioaktivität untersucht und mit Hilfe der zuvor durchgeführten Energieeichung eine Identifikation der enthaltenen Elemente vorgenommen. Hervorzuheben ist hierbei der gut nachweisbare Anteil von \Cs in der Bodenprobe, welches auf den Reaktorunfall von Tschernobyl zurückgeht.
+Abschließend wurde das Spektrum einer Bodenprobe (ca. $\unit[1]{kg}$) vom
+HISKP-Gelände auf ihre Radioaktivität untersucht und mit Hilfe der zuvor
+durchgeführten Energieeichung eine Identifikation der enthaltenen Elemente
+vorgenommen. Hervorzuheben ist hierbei der gut nachweisbare Anteil von \Cs in
+der Bodenprobe, welches auf den Reaktorunfall von Tschernobyl zurückgeht.
 
 \begin{appendix}
 %plots mit energieeichung auf x-achse
 %bodenprobe unbereinigte plotten
+  \section{Graphen}
 
 
 
@@ -841,10 +979,11 @@ Abschließend wurde das Spektrum einer Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-
     \begin{table}[H]
       \centering
       \pgfplotstabletypesetfile[
-        columns/0/.style={column name={Standardabweichung $\sigma$}},
-        columns/1/.style={column name={$\Delta\sigma$}},
-        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
-        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        columns/0/.style={column name={Energie/$\unit{keV}$}},
+        columns/1/.style={column name={Standardabweichung $\sigma$}},
+        columns/2/.style={column name={$\Delta\sigma$}},
+        columns/3/.style={column name={$\FWHM$}/$\unit{keV}$},
+        columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
         ]
         {data/halbleiter_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
@@ -853,10 +992,11 @@ Abschließend wurde das Spektrum einer Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-
     \begin{table}[H]
       \centering
       \pgfplotstabletypesetfile[
-        columns/0/.style={column name={Standardabweichung $\sigma$}},
-        columns/1/.style={column name={$\Delta\sigma$}},
-        columns/2/.style={column name={Halbwertsbreite $\mathrm{FWHM}$}},
-        columns/3/.style={column name={$\Delta\mathrm{FWHM}$}},
+        columns/0/.style={column name={Energie/$\unit{keV}$}},
+        columns/1/.style={column name={Standardabweichung $\sigma$}},
+        columns/2/.style={column name={$\Delta\sigma$}},
+        columns/3/.style={column name={$\FWHM$/$\unit{keV}$}},
+        columns/4/.style={column name={$\Delta\FWHM$/$\unit{keV}$}},
         ]
         {data/szinti_halbwertsbreiten.txt}
       \caption{Halbwertsbreiten und Standardabweichungen beim
