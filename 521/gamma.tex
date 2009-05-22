@@ -728,7 +728,7 @@ Der Fehler der Steigung bei der Eichung des Halbleiterdetektors ist hier so
 gering ($\ll \unit[0.01]{\%}$), dass er im Folgenden vernachlässigt wird.
 
 \subsection{Bestimmung der Halbwertsbreiten}
-Die Halbwertsbreiten können zum einen aus einem Gauß-Fit mit der Relation aus
+Die Halbwertsbreiten können zum einen aus einem \textsc{Gauß}-Fit mit der Relation aus
 vorigem Abschnitt (Gleichung \ref{eqn:fwhm}) bestimmt oder aber einfach
 abgelesen werden, indem die Breite des Peaks auf halber Höhe einfach gemessen
 wird. Letzteres haben wir zur Plausibilitätsprüfung und für vernünftige
@@ -746,7 +746,7 @@ Halbwertsbreiten der Bauteile der Messapparatur ergibt. Um diese zu bestimmen,
 messen wir die Halbwertsbreiten von scharfen Peaks, die wir von einem
 Pulsgenerator erzeugen lassen für verschiedene Amplituden. Der Pulsgenerator ist
 dabei genauso angeschlossen wie der Detektor. An die Peaks wird wiederum wie
-schon zuvor eine Gaußkurve gefittet und daraus die Halbwertsbreite bestimmt. Es
+schon zuvor eine \textsc{Gauß}-Kurve gefittet und daraus die Halbwertsbreite bestimmt. Es
 ergeben sich folgende Werte:
 \begin{table}[H]
   \centering
@@ -788,7 +788,6 @@ zu verifizieren und die Proportionalitätskonstante $k$ durch einen Geradenfit
   \label{fig:intr}
 \end{figure}
 
-% Werte
 
 \subsection{Bestimmung des Peak-to-Total-Verhältnisses}
 Das Peak-to-Total-Verhältnis $\rho$ wird für beide Detektoren sowohl für Caesium
@@ -835,6 +834,8 @@ Kobalt haben die Peakhöhe des zweiten Peaks als nahezu gleich der des ersten
 angenommen (was aus alten Protokollen und unserer Messung mit dem
 Halbleiterdetektor auch hervorging) und daraus $P$ abgeschätzt, daher ist dort
 natürlich $\Delta P$ deutlich größer.
+
+Es ist zu erkennen, dass die Nachweisgüte des NaI-Detektors die des Ge-Detektors deutlich übersteigt. Wegen der geringen Ordnungszahl von Germanium ($Z=32$) im Vergleich zu Iod ($Z=56$) ergibt sich ein wesentlich größerer Wirkungsquerschnitt für den Photoeffekt im NaI-Detektor. Auch erkennt man anhand des größeren Peak-to-Total-Verhältnisses für kleine Energien (nämlich beim \Cs-Peak), einen Beleg für den zu Beginn des Protokolls besprochenen Verlauf des Wirkungsquerschnittes des Photoeffekts.
     
 \subsection{Bestimmung der absoluten Peakeffizienz}
 Nun soll das Verhältnis der Ereignisse $P$ im Photopeak zur Gesamtzahl
@@ -857,7 +858,7 @@ Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \
 \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
 \begin{align*}
   A_{\gamma}(t=\unit[24]{a}) &= A_0 \
-                         \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
+                         \exp{\left(-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}\right)}\\
                              &= 0.575 A_0\\
                              &= \unit[14.38]{\mu Ci}\\
                              &= \unit[5.32 \cdot 10^5]{Bq}
@@ -952,7 +953,7 @@ bedingt durch den energieabhängigen Wirkungsquerschnitt. Aus dem Fit (siehe
 Abbildung \ref{fig:relintens}) erhalten wir allerdings einen betragsmäßig
 deutlich kleineren Exponenten von $-1.25 \pm 0.12$. Der Fehler ist zwar recht
 groß, aber da die Größenordnung klar ist kann man daraus schließen, dass in
-diesem Experiment nicht, wie angenommen der Photoeffekt stark überwiegt.
+diesem Experiment nicht, wie angenommen der Photoeffekt stark überwiegt. Wahrscheinlich ergibt sich noch ein nicht unerheblicher Beitrag durch den \textsc{Compton}-Effekt. 
 
 \begin{figure}[h]
   \includegraphics{grafiken/relative_intensitaeten.pdf}
@@ -1060,7 +1061,7 @@ und fanden folgendes.
 \begin{figure}[H]
   \centering
   \includegraphics[height=0.59\textwidth]{grafiken/belast.jpg}
-  \caption{Bodenkontamination mit $\Cs$ in Deutschland 1986~[\cite{quarks}]}
+  \caption{Bodenkontamination mit $\Cs$ in Deutschland 1986~\cite{quarks}}
   \label{fig:belast}
 \end{figure}
 
@@ -1079,10 +1080,11 @@ kürzere Signaldauer beim Szintillationsdetektor als beim Halbleiterdetektor.
 Letzterer zeigt jedoch bei der Spektroskopie der Isotope $\Co$, $\Cs$ und $\Eu$
 eine signifikant bessere Energieauflösung.
 
-% Ergebnisse des Rests
+Auch die weiteren Eigenschaften der Detektoren konnte erfolgreich vermessen werden.
+So ist die Nachweisgüte des NaI-Detektors deutlich höher als die des Ge-Detektors.
+Beide Detektoren haben demnach konklusiv ihre Vor- und Nachteile und eignen sich somit für unterschiedliche Anwendungsbereiche. 
 
-Beide Detektoren haben konklusiv also ihre Vor- und Nachteile und eignen sich
-somit für unterschiedliche Anwendungsbereiche.
+Ferner ergab sich, dass der Photoeffekt nicht, wie angenommen, überwiegt, sondern es offenbar auch höhere Beiträge durch den \textsc{Compton}-Effekt gibt.
 
 Abschließend wurde das Spektrum einer Bodenprobe (ca. $\unit[1]{kg}$) vom
 HISKP-Gelände auf ihre Radioaktivität untersucht und mit Hilfe der zuvor
