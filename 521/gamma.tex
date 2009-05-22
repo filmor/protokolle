@@ -917,7 +917,37 @@ dargestellt.
 
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
             Ge-Detektors}
+Die relative Nachweiswahrscheinlichkeit des Germaniumdetektors abhängig von der
+Energie der einfallenden Strahlung $E_\gamma$ wird anhand der Europiumlinien
+überprüft. Wir kennen dabei aus dem Skript genaue Werte der Intensitäten dieser
+Linien im Vergleich zur $\unit[1408]{keV}$-Linie, deren Intensität von uns auf 1
+gesetzt wird.
+\begin{table}[H]
+  \centering
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={Energie/$\unit{keV}$}},
+    columns/1/.style={column name={rel. Intensität}},
+    columns/2/.style={column name={rel. Intensität (gemessen)}},
+    columns={0,1,2}
+  ]
+  {data/relative_intensitaeten.txt}
 
+  \caption{Relative Intensitäten}
+  \label{tab:relintens}
+\end{table}
+Die Theorie sagt einen Zusammenhang der Art $\eta :=
+\frac{I_\text{exp}}{I_\text{th}} \propto E_\gamma^{-\frac{7}{2}}$ voraus,
+bedingt durch den energieabhängigen Wirkungsquerschnitt. Aus dem Fit (siehe
+Abbildung \ref{fig:relintens}) erhalten wir allerdings einen betragsmäßig
+deutlich kleineren Exponenten von $-1.25 \pm 0.12$. Der Fehler ist zwar recht
+groß, aber da die Größenordnung klar ist kann man daraus schließen, dass in
+diesem Experiment nicht, wie angenommen der Photoeffekt stark überwiegt.
+
+\begin{figure}[h]
+  \includegraphics{grafiken/relative_intensitaeten.pdf}
+  \caption{Relative Intensitäten}
+  \label{fig:relintens}
+\end{figure}
 
 \subsection{Bodenprobe}
 Abschließend wurde eine Bodenprobe (ca. $\unit[1]{kg}$) vom HISKP-Gelände auf

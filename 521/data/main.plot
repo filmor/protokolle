@@ -157,5 +157,16 @@ f(x) = sqrt(x**2 - E_e**2)
 g(x) = C * x + B
 set output 'grafiken/intrinsische_breite.pdf'
 fit g(x) 'data/halbleiter_halbwertsbreiten.txt' u (sqrt($1)):(f($4)) via C, B
-plot 'data/halbleiter_halbwertsbreiten.txt' u (sqrt($1)):(f($4)):(0) index 1 w yerrorbars notitle, g(x) notitle
+plot 'data/halbleiter_halbwertsbreiten.txt' u (sqrt($1)):(f($4)):(0) index 1 \
+    w yerrorbars notitle, g(x) notitle
+
+set output 'grafiken/relative_intensitaeten.pdf'
+e = 0.035
+a = 160
+c = -120
+f(x) = a * x**-e + c
+fit f(x) 'data/relative_intensitaeten.txt' u ($2>10?1/0:$1):($2/$3):(log($2)**2) \
+    via a,e,c
+plot 'data/relative_intensitaeten.txt' u 1:($2/$3):(log($3)-log($2)) w yerrorbars \
+    notitle, f(x) notitle
 
