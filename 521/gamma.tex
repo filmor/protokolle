@@ -774,16 +774,18 @@ die Wurzel der $\gamma$-Energie auf um die theoretische Formel für die
 Energieauflösung
 \begin{align}
   \FWHM_d(E_\gamma) = k \cdot \sqrt{E_\gamma}
-%  \label{}
 \end{align}
-zu verifizieren und die Proportionalitätskonstante $k$ durch einen Geradenfit zu
-berechnen.
+zu verifizieren und die Proportionalitätskonstante $k$ durch einen Geradenfit
+(siehe Abbildung \ref{fig:intr}) zu berechnen. Diese beträgt bei uns:
+\begin{align}
+  k = \unit[(0.36 \pm 0.2)]{\sqrt{keV}}
+\end{align}
 
-\begin{figure}[H]
+\begin{figure}
   \centering
-%  \includegraphics{grafiken/intrinsische_breite.pdf}
-  \caption{<+caption text+>}
-  \label{fig:<+label+>}
+  \includegraphics{grafiken/intrinsische_breite.pdf}
+  \caption{Intrinsische Halbwertsbreiten}
+  \label{fig:intr}
 \end{figure}
 
 % Werte
@@ -817,9 +819,9 @@ abgezogen wurde. Damit kamen wir auf folgende Werte:
                                   & \Co  & 546170 & 24000 & 1802821
                                   & 0.31 & 0.01 \\
     \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & $\approx 0$& 1957201
-                                  & 0.175 & \\
+                                  & 0.175 & 0.001\\
                                   & \Co  & 317599 & $\approx 0$& 2036892
-                                  & 0.156 & \\
+                                  & 0.156 & 0.001\\
     \bottomrule
   \end{tabular}
   \caption{Peak-to-Total-Verhältnisse}
