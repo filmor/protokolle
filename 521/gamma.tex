@@ -820,12 +820,12 @@ Nun soll das Verhältnis der Ereignisse $P$ im Photopeak zur Gesamtzahl $N_{\gamm
 \Delta \Gamma &= \Gamma \sqrt{(\frac{\Delta P}{P})^2 + (\frac{\Delta N_{\gamma}}{N_{\gamma}})^2}
 \end{align}
 
-Dabei ist $P$ bereits durch den \textsc{Gauß}-Fit an die zu verwendende Linie im $\Cs$-Spektrum bekannt. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$ beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
+Dabei ist $P$ bereits durch Abzählen der Ereignisse im verwendenden Peak im $\Cs$-Spektrum bekannt. Die Fehler werden anhand der jeweils aufgenommenen Spektren der beiden Detektoren abgeschätzt zu $\unit[5]{\%}$ für den Szintillationsdetektor, sowie $\unit[0.5]{\%}$ für den Ge-Detektor. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$ beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
 \begin{align*}
-  A_{\gamma}(t=\unit[24]{a}) &= A_0 \ \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
-&= 0.575 A_0\\
-&= \unit[14.38]{\mu Ci}\\
-&= \unit[5.32 \cdot 10^5]{Bq}
+A_{\gamma}(t=\unit[24]{a}) &= A_0 \ \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
+                           &= 0.575 A_0\\
+                           &= \unit[14.38]{\mu Ci}\\
+                           &= \unit[5.32 \cdot 10^5]{Bq}
 \end{align*}
 
 Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter Näherung:
