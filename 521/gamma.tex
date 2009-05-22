@@ -798,7 +798,7 @@ Rückstreupeak explizit herausgenommen wird. Es gilt also:
 \begin{align}
   \rho = \frac{P}{S - R}, \quad
   \Delta \rho = \sqrt{\left(\frac{\Delta P}{P}\right)^2 + \frac{\Delta S^2 +
-  \Delta R^2}{(S - R)^2}}
+                                  \Delta R^2}{(S - R)^2}}
   \label{eqn:ptt}
 \end{align}
 Die Werte $P$, $S$ und $R$ (Anzahl der im Photopeak, respektive im gesamten
@@ -840,32 +840,35 @@ $N_{\gamma}$ der im Detektor auftreffenden Photonen bestimmt werden. Für die
 absolute Peakeffizienz $\Gamma$ gilt:
 \begin{align}
   \Gamma &= \frac{P}{N_{\gamma}} \\
-  \Delta \Gamma &= \Gamma \sqrt{(\frac{\Delta P}{P})^2
-                                +(\frac{\Delta N_{\gamma}}{N_{\gamma}})^2}
+  \Delta \Gamma &= \Gamma \sqrt{(\frac{\Delta P}{P})^2 + (\frac{\Delta
+                    N_{\gamma}}{N_{\gamma}})^2}
 \end{align}
 
-Dabei ist $P$ bereits durch den \textsc{Gauß}-Fit an die zu verwendende Linie im
-$\Cs$-Spektrum bekannt. Es muss also nun $N_{\gamma}$ berechnet werden. Hierfür
-wird zunächst die Aktivität der Probe bestimmt. Die Halbwertszeit für $\Cs$
-beträgt $T_{1/2} = \unit[30.07]{a}$ und die Aktivität der Quelle ergab sich im
-April 1985 zu $A_0 = \unit[25]{\mu Ci}$~\cite{skript}. Somit folgt mit $A(t) =
-A_0 \ \exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
+Dabei ist $P$ bereits durch Abzählen der Ereignisse im verwendenden Peak im
+$\Cs$-Spektrum bekannt. Die Fehler werden anhand der jeweils aufgenommenen
+Spektren der beiden Detektoren abgeschätzt zu $\unit[5]{\%}$ für den
+Szintillationsdetektor, sowie $\unit[0.5]{\%}$ für den Ge-Detektor. Es muss also
+nun $N_{\gamma}$ berechnet werden. Hierfür wird zunächst die Aktivität der Probe
+bestimmt. Die Halbwertszeit für $\Cs$ beträgt $T_{1/2} = \unit[30.07]{a}$ und
+die Aktivität der Quelle ergab sich im April 1985 zu $A_0 = \unit[25]{\mu
+Ci}$~\cite{skript}. Somit folgt mit $A(t) = A_0 \
+\exp{-\frac{\ln{2}}{\tau_{1/2}}t}$ eine Aktivität von:
 \begin{align*}
-  A_{\gamma}(t=\unit[24]{a}) &= A_0\ \\
-                            \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
-        &= 0.575 A_0\\
-        &= \unit[14.38]{\mu Ci}\\
-        &= \unit[5.32 \cdot 10^5]{Bq}
+  A_{\gamma}(t=\unit[24]{a}) &= A_0 \
+                         \exp{-\frac{\ln{2}}{\unit[30.07]{a}}\unit[24]{a}}\\
+                             &= 0.575 A_0\\
+                             &= \unit[14.38]{\mu Ci}\\
+                             &= \unit[5.32 \cdot 10^5]{Bq}
 \end{align*}
 
-Eine radioaktive Punktquelle (approximiert) emittiert selbstverständlich isotrop
-Photonen. Somit erreicht nur ein Bruchteil $\zeta=\frac{\Omega}{4 \pi}$ der
-Strahlung den Detektor, wobei $\Omega$ den vom Detektor abgedeckten Raumwinkel
-meint. Da wir es mit einem kleinen Raumwinkel zu tun haben, gilt in guter
-Näherung:
+Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler für die
+beiden Detektoren zu $2r_{Szinti} = \unit[37]{mm}$ und $2r_{Ge} = \unit[46]{mm}$
+gegeben ist~\cite{skript}. Ferner stellt $d$ den Abstand zwischen Probe und
+Detektor ($d_{Szinti} = \unit[42]{cm}$ und $d_{Ge} = \unit[18]{cm}$) dar, dieser
+wurde von uns ausgemessen und ist mit einem abgeschätzten Fehler von $\Delta d =
+\unit[1]{mm}$ behaftet. Man erhält also für den Fehler von $\zeta$:
 \begin{align}
-  \zeta = \frac{\Omega}{4 \pi} \approx \frac{\pi r^2}{4 \pi d^2}
-        = \frac{r^2}{4 d^2}
+  \Delta \zeta = \Delta d \frac{r^2}{2 d^3}
 \end{align}
 
 Hierbei bezeichnet $r$ den Radius des Detektors, welcher ohne Fehler für die
@@ -887,8 +890,8 @@ berechnet~\cite{skript}. Die Messdauer wurde auf $t=\unit[900]{s}$ eingestellt
 und wird als fehlerlos betrachtet. Es ergibt sich nun:
 \begin{align}
   N_{\gamma} &= 0.944 \cdot 0.851 A_{\gamma} \zeta t \\
-  \Delta N_{\gamma} &= 0.944 \cdot 0.851 \sqrt{(\Delta A_{\gamma})^2
-                       + (\Delta \zeta)^2} t
+  \Delta N_{\gamma} &= 0.944 \cdot 0.851 \sqrt{(\Delta A_{\gamma})^2 + (\Delta
+                                                \zeta)^2} t
 \end{align}
 
 Die Ergebnisse für die beiden Detektoren sind in Tabelle (\ref{tab:peakeff})
@@ -898,7 +901,7 @@ dargestellt.
   \begin{tabular}{ccccccc}
     \toprule
     & $N_{\gamma}$ & $\Delta N_{\gamma}$  & $P$ & $\Delta P$ & $\Gamma$ &
-        $\Delta \Gamma$ \\
+                      $\Delta \Gamma$ \\
     \midrule[0.75pt]
     & Ge-Detektor  &  $1570024$  &      &    &       &  \\
     & NaI-Detektor &  $186569$   &      &    &       &  \\
