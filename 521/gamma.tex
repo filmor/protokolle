@@ -775,6 +775,41 @@ berechnen.
 % Werte
 
 \subsection{Bestimmung des Peak-to-Total Verhältnisses}
+Das Peak-to-Total-Verhältnis $\rho$ wird für beide Detektoren sowohl für Caesium
+als auch für Kobalt bestimmt. Bei letzterem wird der Mittelwert der beiden Peaks
+betrachtet (was in unserem Fall für den Szintillationszähler nicht möglich war).
+Zur Berechnung teilen wir die Anzahl der im Photopeak registrierten Ereignisse
+durch die der in der gesamten Messung registrierten Ereignisse, wobei der
+Rückstreupeak explizit herausgenommen wird. Es gilt also:
+\begin{align}
+  \rho = \frac{P}{S - R}, \quad
+  \Delta\rho = \sqrt{\left(\frac{\Delta N}{N}\right)^2 + \frac{\Delta S^2 + \Delta
+  R^2}{(S - R)^2}}
+  \label{eqn:ptt}
+\end{align}
+Die Werte $P$, $S$ und $R$ (Anzahl der im Photopeak, respektive im gesamten
+Spektrum bzw.  Rückstreupeak aufgetretenen Ereignisse) erhalten wir dabei durch
+einfaches aufsummieren der jeweiligen Datensätze, wobei für den Rückstreupeak
+der Comptonuntergrund sinnvoll fortgesetzt von der einfachen Aufsummierung
+abgezogen wurde. Damit kamen wir auf folgende Werte:
+\begin{table}
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    & & P & R & S & $\rho$ \\
+    \midrule
+    \multirow{2}{*}{NaI-Detektor} & \Cs  & 210187 & 26660 & 1808779 & 0.118 \\
+                                  & \Co  & 348599 & 24000 & 1802821 & 0.126 \\
+    \multirow{2}{*}{Ge-Detektor}  & \Cs  & 343950 & ~0 & 1957201    & 0.175 \\
+                                  & \Co  & 317599 & ~0 & 2036892    & 0.156 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Total-to-Peakverhältnisse}
+  \label{tab:ptt}
+\end{table}
+Die Gesamtzahl ist nicht fehlerbehaftet während die anderen beiden Anzahlen
+(geschätzt) einen Fehler von jeweils $\unit[5]{\%}$ haben.
+    
 \subsection{Bestimmung der absoluten Peakeffizienz}
 \subsection{Ermittlung der relativen Nachweiswahrscheinlichkeit des
             Ge-Detektors}
