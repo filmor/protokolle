@@ -1,0 +1,252 @@
+\documentclass{protokoll}
+\usepackage{booktabs,multirow,xspace}
+\newcommand{\assistent}{C. Brezina}
+\newcommand{\versuch}{Höhenstrahlung}
+\newcommand{\nummer}{P518}
+
+\begin{document}
+
+\section{Einleitung}
+
+\section{Theoretische Grundlagen}
+\subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
+\label{cha:ww}
+$\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
+\begin{description}
+  \item[Photoeffekt:] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
+    Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird ein
+    Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat, wobei
+    $W_B$ die Bindungsenergie des Elektrons ist.
+
+    Für den Wirkungsquerschnitt dieser Wechselwirkung gilt:
+    \begin{align}
+      \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
+      \label{eqn:wq-photo}
+    \end{align}
+  \item[Compton-Effekt:] Der Compton-Effekt tritt auf, wenn das Photon mit einem
+    freien oder quasi-freien (schwach gebundenen) Elektron wechselwirkt. Das
+    Photon stößt elastisch (in dem Sinne, das keine Energie umgewandelt wird)
+    auf das Elektron, Energie und Impuls der beiden Teilchen ergeben sich aus
+    der relativistischen Energie-Impuls-Beziehung. Die Energie vor und nach dem
+    Stoß hängt wie folgt zusammen:
+    \begin{align}
+      \frac{E_{nach}}{E_{vor}} = \frac{1}{1 + \frac{h\nu}{m_ec^2}(1-\cos
+      \vartheta)}
+      \label{eqn:compton-energie}
+    \end{align}
+    wobei $\vartheta$ der Streuwinkel ist.
+
+    Da die Energie von $\gamma$-Quanten deutlich größer als die Bindungsenergie
+    der Elektronen ist, können letztere bei derartiger Streuung als quasi-frei
+    angesehen werden. Für den Wirkungsquerschnitt gilt (wenn wir annehmen, dass
+    $E_\gamma \gg m_ec^2$):
+    \begin{align}
+      \sigma_c \propto \frac{Z}{E_\gamma}
+      \label{eqn:wq-compton}
+    \end{align}
+
+    Der Grenzfall geringer Photonenenergien nennt sich Thomson-Streuung.  Dabei
+    wird, wie man Formel \ref{eqn:compton-energie} leicht entnehmen kann, die
+    Photonenenergie nicht verändert, der Wirkungsquerschnitt beträgt:
+    \begin{align}
+      \sigma_{th} = Z\frac{2\pi}{3}r_0^3
+      \label{eqn:wq-thomson}
+    \end{align}
+    wobei $r_0$ der klassische Elektronenradius ist.
+
+  \item[Paarbildung:] Ist die Energie des Photons größer als $2m_ec^2$ (also $>
+    \unit[1.02]{MeV}$), so kann dieses ein Elektron-Positron-Paar bilden.  Um
+    dabei den Impulserhaltungssatz zu erfüllen muss sich allerdings ein schweres
+    Objekt, hier ein Atomkern in der Nähe befinden, dass den Rückstoß aufnehmen
+    kann.
+
+    Für den Wirkungsquerschnitt dieses Prozesses gilt:
+    \begin{align}
+      \sigma_{pb} \propto Z^2 \ln{E_\gamma}
+      \label{eqn:wq-paarbildung}
+    \end{align}
+    Der Beitrag ist allerdings erst bei Energien von mehreren $\unit{MeV}$ im
+    Spektrum sichtbar.
+\end{description}
+
+Insgesamt ergibt sich auf diese Weise beispielsweise für Blei ($Z=82$) folgender
+Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/wq}
+  \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für
+  Blei~\cite{dem4}}
+  \label{fig:wq}
+\end{figure}
+
+\subsection{Szintillationsdetektor}
+Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
+Photomultiplier (siehe Abb. \ref{fig:szinti}). Im Szintillator erzeugen die
+nachzuweisenden Teilchen einen Lichtblitz (Lumineszenzlicht), welches vom
+Photomultiplier (siehe Abschnitt \ref{cha:photo}) in ein elektrisches Signal
+umgewandelt wird. Als Szintillatormaterial werden anorganische Einkristalle wie
+NaI verwendet (so auch in diesem Versuch) oder organische Flüssigkeiten und
+organisches Plastikmaterial oder Edelgase.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/szinti}
+  \caption[Szintillationsdetektor]{Schematischer Aufbau eines
+  Szintillationsdetektors~\cite{leo}}
+  \label{fig:szinti}
+\end{figure}
+
+Je nach Verwendungszweck wird der Szintillator ausgewählt. Im vorliegenden Fall
+ergeben sich die Szintillationsmechanismen aus den im Bändermodell (siehe
+Abschnitt \ref{cha:halb}) offensichtlich werdenden Eigenschaften des
+anorganischen Kristalls. Das einfallende Teilchen wird entweder ein Elektron vom
+Valenz- ins Leitungsband heben, wobei auch ein Loch im Valenzband entsteht, oder
+es wird ein sogenanntes Exciton erzeugen. Dieses ist ein direkt unter das
+Leitungsband angeregtes Elektron (in Abb. \ref{fig:szinti2} als Excitonband
+bezeichnet). Elektron und Loch bleiben, wie in der Abbildung auch angedeutet,
+dabei jedoch aneinander gebunden und bewegen sich so, ohne zum Ladungstransport
+im Kristall beizutragen, frei durch selbigen. Unter der Emission eines Photons
+der Bandlückenenergie können diese Elektron-Loch-Paare anschließend wieder
+rekombinieren. Da somit natürlich die Energie der Photonen gerade der Bandlücke
+entspricht, würde eine sofortige Absorption durch den Kristall erfolgen, was
+selbstverständlich nicht gewünscht ist. Deshalb dotiert man den Kristall mit
+Fremdatomen und legt so energetisch erlaubte Zwischenzustände in der Bandlücke
+(verbotene Zone) an (siehe erneut Abb. \ref{fig:szinti2}). Bei der Rekombination
+über ein solches Lumineszenszentrum erfolgt die Emission einiger
+niederenergetischer Photonen. Diese können dann wegen der geringen
+Dotierungsdichte ungehindert den Photomultiplier erreichen und detektiert
+werden.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/szinti2}
+  \caption[Szintillationsdetektor]{Bandstruktur eines
+  Szintillationsdetektors~\cite{leo}}
+  \label{fig:szinti2}
+\end{figure}
+
+Wie in Abschnitt (\ref{cha:ww}) erläutert wurde, ergibt sich eine Abhängigkeit
+der Wirkungsquerschnitte der drei Wechselwirkungsmöglichkeiten von der
+Ordnungszahl $Z$ des Absorbers. Da eine maximale Energiedeponierung im Kristall
+erreicht werden soll, muss der \textsc{Compton}-Effekt minimiert werden, man
+verwendet also Materialien hoher Kernladungszahl $Z$. So gehen lediglich die
+Energie des beim Photoeffekt angeregten Atoms und die $\unit[511]{keV}$ Photonen
+der Positronenannihilation nach einer Paarerzeugung verloren.
+
+Die bei der Detektion von $\gamma$-Strahlung am Photomultiplier ankommenden
+Lumineszenzblitze werden in selbigem in Ladung, also in messbare Spannungspulse
+umgewandelt (siehe Abschnitt \ref{cha:photo}). Diese Pulse sind idealerweise
+zeitlich und energetisch direkt mit den einfallenden Photonen korreliert. Die
+zeitliche Auflösung des Detektors hängt somit vor allem vom zeitlichen Verlauf
+des Lichtsignals des Szintillators und von der Laufzeit der Ladungsträger im
+Photomultiplier ab. Eine typische Lichtkurve eines Szintillators ist in
+Abbildung (\ref{fig:lichtkurve}) zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\textwidth]{grafiken/lichtkurve}
+  \caption[Lichtkurve]{Lichtkurve eines Szintillators~\cite{leo}}
+  \label{fig:lichtkurve}
+\end{figure}
+
+Zunächst ist ein steiler Anstieg (Anstiegszeit liegt bei etwa
+$\unit[10^{-10}]{s}$) zu beobachten. Die durch die Lebensdauer der angeregten
+Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[(10^{-9} -
+10^{-5})]{s}$.  Eine kurze Lebensdauer ist also ein Auswahlkriterium für ein
+Szintillatormaterial, um die Zeitauflösung zu verbessern und die Totzeit zu
+verkürzen.
+
+\subsubsection{Photomultiplier}
+\label{cha:photo}
+Ein Photomultiplier ist ein lichtsensitives Bauteil, welches einfallende
+Photonen in einen messbaren elektrischen Strom umwandelt. Dies geschieht wie
+folgt (siehe auch Abb.~\ref{fig:photo}). Fällt Strahlung auf die Photokathode
+aus photosensitivem Material, so werden Elektronen über den photoelektrischen
+Effekt emittiert. Hierbei werden Effizienzen von etwa $\unit[30]{\%}$ erreicht.
+Über ein angelegtes elektrisches Feld werden diese Elektronen nun auf die erste
+Dynode hin beschleunigt. Dort werden pro einfallenden Elektrons bis zu zehn
+Sekundärelektronen ausgeschlagen. Zwischen den einzelnen Dynoden, insgesamt gibt
+es etwa zehn Stück, liegen ebenfalls Spannungen an. Die Potentiale sind so
+gewählt, dass die Elektronen stets allesamt zur nächsten Dynode beschleunigt
+werden, wo sie erneut Sekundärelektronen ausschlagen usw.. Auf diese Weise kann
+eine Verstärkung des Eingangssignals von etwa $10^6$ bis $10^7$ an der Anode
+erreicht werden. Dabei ist die Amplitude des Ausgangssignals proportional zur
+Energie des einfallenden Photons.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/photo}
+  \caption[Photomultiplier]{Prinzip eines Photomultipliers~\cite{dem3},
+  bearbeitet}
+  \label{fig:photo}
+\end{figure}
+
+\subsection{Impulshöhenspektrum}
+Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei
+Verwendung des Vielkanalanalysators [siehe Abschnitt \ref{cha:mca}]) nicht einen
+einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}).
+Dieses wird als Impulshöhenspektrum bezeichnet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/imph}
+  \caption[Szintillationsdetektor]{Impulshöhenspektrum~\cite{rietzler}}
+  \label{fig:imph}
+\end{figure}
+
+Der mit "`A"' gekennzeichnete Peak wird Photopeak oder Full Energy Peak genannt.
+Er entsteht, wenn ein einfallendes $\gamma$-Quant seine gesamte Energie im
+Kristall deponiert. Es ist bemerkenswert, dass dennoch auch dieser Peak eine
+endliche Breite besitzt und nicht etwa diskreter Natur ist. Dies ist dadurch
+erklärbar, dass die beteiligten Prozesse statistische sind (radioaktiver
+Zerfall, unterschiedliche Lichtausbeute für verschiedene Photonen gleicher
+Energie, elektronische Störungen etc.).
+
+Betrachten wir nun Peak "`B"'. Hierfür zeigt sich der \textsc{Compton}-Effekt
+verantwortlich. In einem solchen Streuprozess überträgt das einfallende Photon,
+wie in Abschnitt \ref{cha:ww} näher beschrieben, Energie auf ein Elektron.
+Wechselwirkt das Photon danach weiter im Kristall und gibt schlussendlich die
+gesamte Energie an den Kristall ab, so wird das Signal dem Photopeak
+zugerechnet. Erfolgt jedoch keine weitere Wechselwirkung und das Photon verlässt
+den Kristall, so wird lediglich die in der \textsc{Compton}-Streuung übertragene
+Energie detektiert. Für einen Streuwinkel $\pi$ ergibt sich dabei ein Maximum,
+welche dem Peak "`B"' entspricht. Er wird \textsc{Compton}-Kante genannt.
+
+Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung
+(siehe Abschnitt \ref{cha:ww}) zurück. Hierbei steht stets das Elektron mit
+seiner Energie für die Erzeugung eines Signals zur Verfügung. Das Positron
+jedoch wird nach kurzer Zeit mit einem der Elektronen aus dem Kristall
+annihilieren und dabei zwei entgegengesetzt propagierende Photonen erzeugen.
+Verlässt nun eines dieser Photonen den Kristall, so geht die dort deponierte
+Energie dem Detektor verloren und man erhält den sogenannten Single-Escape-Peak
+"`C"'. Völlig analog verhält es sich, falls beide Photonen nicht weiter
+wechselwirken. Dies äußert sich dann im Double-Escape-Peak "`D"'. Auf Grund der
+niedrigen Energien werden diese beiden Peaks jedoch für diesen Versuch
+irrelevant sein.
+
+Ferner erhält das Photon beim \textsc{Compton}-Effekt die niedrigste Energie
+gerade dann, wenn es zurückgestreut wird. Dies ergibt dann im
+niederenergetischen Bereich des Spektrums einen sogenannten Rückstreu-Peak (in
+der Grafik nicht dargestellt). Grund ist die Streuung eines Teils der
+$\gamma$-Quanten an den Begrenzungsflächen des Szintillators und anderen
+Materialien außerhalb des Detektors. 
+
+\subsection{Vielkanalanalysator}
+\label{cha:mca}
+Ein Vielkanalanalysator (Multi Channel Analysers, MCA) sortiert Eingangssignale
+nach ihrer Amplitude. Dabei werden die Signale mit einem Analog-Digital-Wandler
+digitalisiert und anschließend wird der zum sich ergebenden Wert gehörende Kanal
+um eins erhöht. Die gespeicherten Kanalwerte können dann graphisch ausgegeben
+werden.
+
+\section{Versuchsaufbau}
+\section{Versuchsdurchführung und Auswertung}
+\section{Zusammenfassung}
+
+\begin{appendix}
+  \section{Graphen}
+  \section{Tabellen}
+  \Literatur{quellen}
+\end{appendix}
+\end{document}
