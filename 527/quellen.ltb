@@ -1,0 +1,62 @@
+\bib{skript}{article}{
+    title={Skript zum physikalischen Praktikum Teil V},
+    author={Universität Bonn},
+    year={2009},
+}
+
+\bib{dem3}{book}{
+    title={Experimentalphysik 3},
+    author={Wolfgang Demtröder},
+    year={2005},
+    edition={3.},
+}
+
+\bib{dem4}{book}{
+    title={Experimentalphysik 4},
+    author={Wolfgang Demtröder},
+    year={2004},
+    edition={2.},
+}
+
+
+\bib{leo}{book}{
+    title={Techniques for Nuclear and Particle Physics Experiments},
+    author={William Leo},
+    year={},
+    edition={},
+    publisher={Springer-Verlag}
+}
+
+\bib{rietzler}{book}{
+    title={Kernphysikalisches Praktikum},
+    author={Wolfgang Rietzler u. Konrad Kopitzki},
+    year={},
+    edition={},
+    publisher={Teubner-Verlag}
+}
+
+
+\bib{prot}{article}{
+    title={$\gamma$-Spektroskopie mit Szintillations- und Halbleiterdetektoren},
+    author={Benjamin Joachimi u. Benedikt Klobes ($\beta$ 10)},
+    year={2005},
+    edition={},
+    publisher={}
+}
+
+\bib{quarks}{article}{
+    title={Strahlung in Deutschland},
+    author={Quarks und Co},
+    url={http://www.wdr.de/tv/quarks/sendungsbeitraege/2006/0411/004_tschernobyl.jsp?pbild=1}
+    year={2006},
+    edition={},
+    publisher={}
+}
+
+\bib{linien}{article}{
+    title={Table of Radioactive Isotopes},
+    url={http://ie.lbl.gov/toi/}
+    year={},
+    edition={},
+    publisher={}
+}
