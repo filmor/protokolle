@@ -10,7 +10,7 @@
 \begin{document}
 
 \section{Einleitung}
-
+Lange wurde in der Physik implizit unterstellt, dass alle Wechselwirkungen isotrop sind, also keine Richtung besonders ausgezeichnet ist. \textit{Wu et al.} zeigten jedoch 1956, dass aus einer radioaktiven Quelle mit ausgerichteten Spins der Nukleonen emittierte $\beta$-Strahlung anisotrop verteilt ist. Diese Paritätsverletzung der schwachen Wechselwirkung soll hier nun anhand der Asymmetrie der \textsc{Mott}-Streuung bei einem polarisierten Elektronenstrahl nachgewiesen werden.
 
 \section{Theoretische Grundlagen}
 \subsection{$\beta$-Zerfall}
@@ -44,6 +44,29 @@ Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins ändert
 %noch nicht fertig
  
 \subsection{Parität}
+Die Parität ist in der Quantenmechanik genau dann erhalten, wenn Symmetrie bezüglich Raumspiegelung vorliegt. Es gilt für den Paritätsoperator:
+\begin{align}
+P \psi(\vec{r},t) = \psi(-\vec{r},t)
+\end{align}
+Es ändern also sämtliche Raumkoordinaten das Vorzeichen. Offenbar muss demnach gelten, dass bei zweimaligem Anwenden von $P$ eine Identitätsoperation ausgeführt wurde ($P^2 = id$), also sind die Eigenwerte von $P$ durch $\pm 1$ gegeben. Im Fall der Paritätserhaltung kann sich die Zustandsfunktion $\psi(-\vec{r},t)$ somit nur durch das Vorzeichen von der ursprünglichen Zustandsfunktion unterscheiden. Es folgt:
+\begin{align}
+P \psi(\vec{r},t) = \pm \psi(\vec{r},t)
+\end{align}
+Man spricht entsprechend von gerader (EW: $+1$) bzw. ungerader (EW: $-1$) Parität.
+
+Physikalische Größen transformieren jedoch nicht alle gleich unter Raumspiegelung. So wechselt ein Polarvektor wie z.\ B.\ der Ort $\vec{r}$ das Vorzeichen, Axialvektoren wie der Drehimpuls $\vec{L}$ oder der Spin $\vec{s}$ jedoch nicht. In einer Messung werden entweder skalare oder pseudoskalare Größen untersucht. Letztere wechseln das Vorzeichen, erstere nicht. Ein Pseudoskalar ist also immer aus einem Polar- und einem Axialvektor zusammengesetzt. In unserem Fall sind dies der Elektronenspin und der Elektronenimpuls. Man erhält die Helizität zu:
+\begin{align}
+h = \frac{(\vec{\sigma} \cdot \vec{p})}{|\vec{\sigma}| \ |\vec{p}|}
+\end{align}
+Bei einem die Parität erhaltenden Prozess, muss gelten:
+\begin{align*}
+P \langle (\vec{\sigma} \cdot \vec{p}) \rangle = -\langle (\vec{\sigma} \cdot \vec{p}) \rangle = \langle (\vec{\sigma} \cdot \vec{p}) \rangle
+\end{align*}
+Somit muss gelten:
+\begin{align}
+\langle (\vec{\sigma} \cdot \vec{p}) \rangle = 0
+\end{align}
+Der Erwartungswert der Helizität sollte also bei Paritätserhaltung verschwinden. Ist dem in einer Messung nicht so, liegt Paritätsverletzung vor.
 
 \subsection{Spinpolarisation}
 
