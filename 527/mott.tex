@@ -10,12 +10,19 @@
 \begin{document}
 
 \section{Einleitung}
-
+Lange wurde in der Physik implizit unterstellt, dass alle Wechselwirkungen
+isotrop sind, also keine Richtung besonders ausgezeichnet ist. \textit{Wu et
+al.} zeigten jedoch 1956, dass aus einer radioaktiven Quelle mit ausgerichteten
+Spins der Nukleonen emittierte $\beta$-Strahlung anisotrop verteilt ist. Diese
+Paritätsverletzung der schwachen Wechselwirkung soll hier nun anhand der
+Asymmetrie der \textsc{Mott}-Streuung bei einem polarisierten Elektronenstrahl
+nachgewiesen werden.
 
 \section{Theoretische Grundlagen}
 \subsection{$\beta$-Zerfall}
 \label{cha:beta}
-Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins ändert, $A$ jedoch konstant bleibt. 
+Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich die Ordnungszahl
+$Z$ um eins ändert, die Nuklidzahl $A$ jedoch konstant bleibt.
 \begin{description}
 \item[$\beta^-$-Zerfall:] Beim $\beta^-$-Zerfall zerfällt ein Neutron innerhalb des Kerns in ein Proton, ein Elektron sowie ein Anti-Elektronneutrino:
     \begin{align}
@@ -23,27 +30,70 @@ Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins ändert
     \end{align}
     Dieser Zerfall ist bei $m(A,Z) > m(A,Z+1)$ energetisch möglich.
 
-\item[$\beta^+$-Zerfall:] Beim $\beta^+$-Zerfall hingegen zerfällt ein gebundenes Proton in ein Neutron, ein Positron und ein Elektronneutrino:
-    \begin{align}
-      p \to n + e^+ + \nu_e
-    \end{align}
-    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
+\item[$\beta^+$-Zerfall:] Beim $\beta^+$-Zerfall hingegen zerfällt ein
+  gebundenes Proton in ein Neutron, ein Positron und ein Elektronneutrino:
+  \begin{align}
+    p \to n + e^+ + \nu_e
+  \end{align}
+  Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
 
 \item[Elektroneneinfang:] Des Weiteren existiert noch die Möglichkeit des
-    Elektroneneinfangs. Da die Elektronen im Atom eine endliche
-    Aufenthaltswahrscheinlichkeit im Kern haben, können diese Elektronen von einem
-    Proton eingefangen werden. Hierbei entsteht ein Neutron und ein Elektronneutrino:
-    \begin{align}
-      p + e^- \to n + \nu_e
-    \end{align}
-    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{\text{Bind}}$
-    energetisch möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des
-    Elektrons darstellt. In der jeweiligen Elektronenschale wird eine Lücke
-    hinterlassen. Der Atomkern ist nun angeregt.
-
+  Elektroneneinfangs. Da die Elektronen im Atom eine endliche
+  Aufenthaltswahrscheinlichkeit im Kern haben, können diese Elektronen von einem
+  Proton eingefangen werden. Hierbei entsteht ein Neutron und ein
+  Elektronneutrino:
+  \begin{align}
+    p + e^- \to n + \nu_e
+  \end{align}
+  Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{\text{Bind}}$ energetisch
+  möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des Elektrons
+  darstellt. In der jeweiligen Elektronenschale wird eine Lücke hinterlassen.
+  Der Atomkern ist nun angeregt.
 %noch nicht fertig
+\end{description}
  
 \subsection{Parität}
+Die Parität ist in der Quantenmechanik genau dann erhalten, wenn Symmetrie
+bezüglich Raumspiegelung vorliegt. Es gilt für den Paritätsoperator:
+\begin{align}
+  P \psi(\vec{r},t) = \psi(-\vec{r},t)
+\end{align}
+Es ändern also sämtliche Raumkoordinaten das Vorzeichen. Offenbar muss demnach
+gelten, dass bei zweimaligem Anwenden von $P$ eine Identitätsoperation
+ausgeführt wurde ($P^2 = \operatorname{id}$), also sind die Eigenwerte von $P$
+durch $\pm 1$ gegeben. Im Fall der Paritätserhaltung kann sich die
+Zustandsfunktion $\psi(-\vec{r},t)$ somit nur durch das Vorzeichen von der
+ursprünglichen Zustandsfunktion unterscheiden. Es folgt:
+\begin{align}
+  P \psi(\vec{r},t) = \pm \psi(\vec{r},t)
+\end{align}
+Man spricht entsprechend von gerader (Eigenfunktion zum Eigenwert $+1$) bzw.
+ungerader (Eigenfunktion zum Eigenwert $-1$) Parität.
+
+Physikalische Größen transformieren jedoch nicht alle gleich unter
+Raumspiegelung. So wechselt ein Polarvektor wie z.~B.\ der Ort $\vec{r}$ das
+Vorzeichen, Axialvektoren wie der Drehimpuls $\vec{L}$ oder der Spin $\vec{s}$
+jedoch nicht. In einer Messung werden entweder skalare oder pseudoskalare Größen
+untersucht. Letztere wechseln das Vorzeichen, erstere nicht. Ein Pseudoskalar
+ist also immer aus einem Polar- und einem Axialvektor zusammengesetzt. In
+unserem Fall sind dies der Elektronenspin und der Elektronenimpuls. Man erhält
+die Helizität zu:
+\begin{align}
+    h = \frac{\vec{\sigma} \cdot \vec{p}}
+             {\left|\vec{\sigma}\right| \left|\vec{p}\right|}
+\end{align}
+Bei einem die Parität erhaltenden Prozess, muss gelten:
+\begin{align*}
+  P \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+    = -\left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+    = \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+\end{align*}
+Somit muss gelten:
+\begin{align}
+  \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle = 0
+\end{align}
+Der Erwartungswert der Helizität sollte also bei Paritätserhaltung verschwinden.
+Ist dem in einer Messung nicht so, liegt Paritätsverletzung vor.
 
 \subsection{Spinpolarisation}
 
@@ -52,14 +102,13 @@ Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich $Z$ um eins ändert
 \subsection{Messgrößen}
 
 \subsection{Szintillationsdetektor}
-%auf Details überprüfen, möglicherweise noch manches dazuschreiben und manches weg
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
 Photomultiplier (siehe Abb. \ref{fig:szinti}). Im Szintillator erzeugen die
-nachzuweisenden Teilchen einen Lichtblitz (Lumineszenzlicht), welches vom
-Photomultiplier (siehe Abschnitt \ref{cha:photo}) in ein elektrisches Signal
-umgewandelt wird. Als Szintillatormaterial werden anorganische Einkristalle wie
-NaI verwendet (so auch in diesem Versuch) oder organische Flüssigkeiten und
-organisches Plastikmaterial oder Edelgase.
+nachzuweisenden Teilchen (hier Elektronen) einen Lichtblitz (Lumineszenzlicht),
+welches vom Photomultiplier (siehe Abschnitt \ref{cha:photo}) in ein
+elektrisches Signal umgewandelt wird. Als Szintillatormaterial werden
+anorganische Einkristalle wie NaI, organische Flüssigkeiten und organisches
+Plastikmaterial (wie in diesem Versuch) oder Edelgase verwendet.
 
 \begin{figure}[H]
   \centering
@@ -69,6 +118,7 @@ organisches Plastikmaterial oder Edelgase.
   \label{fig:szinti}
 \end{figure}
 
+% Plastikszintillator!
 Je nach Verwendungszweck wird der Szintillator ausgewählt. Im vorliegenden Fall
 ergeben sich die Szintillationsmechanismen aus den im Bändermodell (siehe
 Abschnitt \ref{cha:halb}) offensichtlich werdenden Eigenschaften des
@@ -97,14 +147,6 @@ werden.
   Szintillationsdetektors~\cite{leo}}
   \label{fig:szinti2}
 \end{figure}
-
-Wie in Abschnitt (\ref{cha:ww}) erläutert wurde, ergibt sich eine Abhängigkeit
-der Wirkungsquerschnitte der drei Wechselwirkungsmöglichkeiten von der
-Ordnungszahl $Z$ des Absorbers. Da eine maximale Energiedeponierung im Kristall
-erreicht werden soll, muss der \textsc{Compton}-Effekt minimiert werden, man
-verwendet also Materialien hoher Kernladungszahl $Z$. So gehen lediglich die
-Energie des beim Photoeffekt angeregten Atoms und die $\unit[511]{keV}$ Photonen
-der Positronenannihilation nach einer Paarerzeugung verloren.
 
 Die bei der Detektion von $\gamma$-Strahlung am Photomultiplier ankommenden
 Lumineszenzblitze werden in selbigem in Ladung, also in messbare Spannungspulse
@@ -156,8 +198,21 @@ Energie des einfallenden Photons.
 
 \section{Versuchsaufbau}
 
-
 \section{Versuchsdurchführung und Auswertung}
+\newcommand{\plot}[1]{
+  \begin{tikzpicture}
+    \begin{axis}[xlabel={$\text{Winkel}/^\circ$},
+                 ylabel=Zählrate,
+                 xtick={0, 30, ..., 330}]
+      \addplot+[only marks, mark=.]
+        plot[error bars/.cd, x dir=both, x fixed=1, y dir=both, y fixed=100]
+          function {'data/#1.txt' u 1:2};
+    \end{axis}
+  \end{tikzpicture}
+}
+
+\subsection{Untergrundmessung}
+
 
 \section{Zusammenfassung}
 
