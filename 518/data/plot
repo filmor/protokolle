@@ -1,0 +1,12 @@
+set term lua
+
+set output 'grafiken/lebensdauer.tikz'
+N(x) = N_0 * exp(-lambda * x) + C
+N_0 = 5000
+
+fit N(x) 'data/lebensdauer.txt' via N_0, lambda, C
+
+set xlabel 't/$\unit{\mu s}$'
+set ylabel 'N'
+plot 'data/lebensdauer.txt' notitle, N(x) notitle
+

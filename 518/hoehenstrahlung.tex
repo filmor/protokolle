@@ -1,5 +1,5 @@
 \documentclass{protokoll}
-\usepackage{booktabs,multirow,xspace}
+\usepackage{booktabs,multirow,gnuplot-lua-tikz}
 \newcommand{\assistent}{C. Brezina}
 \newcommand{\versuch}{Höhenstrahlung}
 \newcommand{\nummer}{P518}
@@ -17,77 +17,6 @@ Die Höhenstrahlung setzt sich aus zwei Komponenten zusammen:
 \subsection{Primäre Höhenstrahlung}
 
 \subsection{Sekundäre Höhenstrahlung}
-
-\subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
-\label{cha:ww}
-$\gamma$-Strahlung kann auf verschiedene Arten mit Materie wechselwirken:
-\begin{description}
-  \item[Photoeffekt:] Das Photon wechselwirkt mit dem Atom (bzw. dem Gitter bei
-    Festkörpern) und gibt seine gesamte Energie an dieses ab. Dabei wird ein
-    Elektron frei, dass dann die kinetische Energie $W = h\nu - W_B$ hat, wobei
-    $W_B$ die Bindungsenergie des Elektrons ist.
-
-    Für den Wirkungsquerschnitt dieser Wechselwirkung gilt:
-    \begin{align}
-      \sigma_{ph} \propto Z^5 E_\gamma^{-\frac{7}{2}}
-      \label{eqn:wq-photo}
-    \end{align}
-  \item[Compton-Effekt:] Der Compton-Effekt tritt auf, wenn das Photon mit einem
-    freien oder quasi-freien (schwach gebundenen) Elektron wechselwirkt. Das
-    Photon stößt elastisch (in dem Sinne, das keine Energie umgewandelt wird)
-    auf das Elektron, Energie und Impuls der beiden Teilchen ergeben sich aus
-    der relativistischen Energie-Impuls-Beziehung. Die Energie vor und nach dem
-    Stoß hängt wie folgt zusammen:
-    \begin{align}
-      \frac{E_{nach}}{E_{vor}} = \frac{1}{1 + \frac{h\nu}{m_ec^2}(1-\cos
-      \vartheta)}
-      \label{eqn:compton-energie}
-    \end{align}
-    wobei $\vartheta$ der Streuwinkel ist.
-
-    Da die Energie von $\gamma$-Quanten deutlich größer als die Bindungsenergie
-    der Elektronen ist, können letztere bei derartiger Streuung als quasi-frei
-    angesehen werden. Für den Wirkungsquerschnitt gilt (wenn wir annehmen, dass
-    $E_\gamma \gg m_ec^2$):
-    \begin{align}
-      \sigma_c \propto \frac{Z}{E_\gamma}
-      \label{eqn:wq-compton}
-    \end{align}
-
-    Der Grenzfall geringer Photonenenergien nennt sich Thomson-Streuung.  Dabei
-    wird, wie man Formel \ref{eqn:compton-energie} leicht entnehmen kann, die
-    Photonenenergie nicht verändert, der Wirkungsquerschnitt beträgt:
-    \begin{align}
-      \sigma_{th} = Z\frac{2\pi}{3}r_0^3
-      \label{eqn:wq-thomson}
-    \end{align}
-    wobei $r_0$ der klassische Elektronenradius ist.
-
-  \item[Paarbildung:] Ist die Energie des Photons größer als $2m_ec^2$ (also $>
-    \unit[1.02]{MeV}$), so kann dieses ein Elektron-Positron-Paar bilden.  Um
-    dabei den Impulserhaltungssatz zu erfüllen muss sich allerdings ein schweres
-    Objekt, hier ein Atomkern in der Nähe befinden, dass den Rückstoß aufnehmen
-    kann.
-
-    Für den Wirkungsquerschnitt dieses Prozesses gilt:
-    \begin{align}
-      \sigma_{pb} \propto Z^2 \ln{E_\gamma}
-      \label{eqn:wq-paarbildung}
-    \end{align}
-    Der Beitrag ist allerdings erst bei Energien von mehreren $\unit{MeV}$ im
-    Spektrum sichtbar.
-\end{description}
-
-Insgesamt ergibt sich auf diese Weise beispielsweise für Blei ($Z=82$) folgender
-Verlauf der einzelnen und des gesamten Wirkungsquerschnittes:
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.55\textwidth]{grafiken/wq}
-  \caption[WQ]{Wirkungsquerschnitte aufgetragen gegen $E_{\gamma}$ für
-  Blei~\cite{dem4}}
-  \label{fig:wq}
-\end{figure}
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
@@ -251,9 +180,40 @@ werden.
 
 \section{Versuchsaufbau und -durchführung}
 \section{Auswertung}
-\subsection{Winkelverteilung und Pulshöhenspektrum}
+\subsection{Teil 1}
+\subsubsection{Winkelverteilung}
+Mit dem oben beschriebenen Aufbau wurde die Winkelverteilung der Höhenstrahlung.
+Angenommen wird eine $\cos²(\theta)$-Verteilung, daher fitten wir eine Funktion
+der Form
+\begin{align}
+  N = a \cos^n(\theta-b)
+\end{align}
+an die Daten.
 
+\subsubsection{Zufallskoinzidenzen}
+
+\subsubsection{Pulshöhenspektrum}
+
+\subsection{Teil 2}
 \subsection{Lebensdauer des Myons}
+
+\begin{align}
+  N(t) = N_0 \mathrm e^{-\lambda t}
+\end{align}
+
+Die Lebensdauer des Myons erhalten wir dann aus der Zerfallskonstante $\lambda$
+als $T = \frac{1}{\lambda}$. Der Fehler ist somit $\Delta T =
+\frac{\Delta\lambda}{\lambda^2}$. Den Fehler von $\lambda$ erhalten wir direkt
+aus dem Geradenfit an $\log N$.
+
+Daraus erhalten wir folgenden Graphen:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/lebensdauer.tikz}
+  \end{center}
+  \caption{Zerfallskurve des Myons}
+  \label{fig:lebensdauer}
+\end{figure}
 
 \section{Zusammenfassung}
 
