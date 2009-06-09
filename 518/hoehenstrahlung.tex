@@ -105,7 +105,7 @@ Boden erreichenden Höhenstrahlung.
 
 \subsection{Teilchenpropagation in Materie}
 \subsubsection{Bethe-Bloch-Formel}
-Der Energieverlust durch Ionisation und Anregung ist der Hauptmechanismus, über welchen geladene Teilchen Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel mathematisch beschreibbar:
+Da man die Teilchen über Wechselwirkungen in Targetmaterialien detektiert, muss die Progagation von Teilchen in Materie untersucht werden, um die zu erwartenden Energieverluste quantifizieren zu können. Der Energieverlust durch Ionisation und Anregung ist dabei der Hauptmechanismus, über welchen geladene Teilchen Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel mathematisch beschreibbar:
 \begin{align}
 -\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2} \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right) - \beta^2 - \frac{\delta}{2}\right]
 \end{align}
@@ -126,6 +126,19 @@ $T_{max}$   &-& $(2m_e p^2)/(m^2_0 + m^2_e + 2 m_e E/c^2)$\\
 $I$       &-& mittlere Ionisationsenergie des Targets\\
 $\delta$  &-& Dichtekorrektur
 \end{tabular*}
+
+In der folgenden Abbildung ist nun der Energieverlust geladener Teilchen nach der \textsc{Bethe-Bloch}-Formel für verschiedene Targetmaterialien graphisch dargestellt. Man erkennt einen quadratischen Abfall, dem ein logarithmischer Anstieg folgt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/bethe}
+  \caption[Bethe]{Energieverlust geladener Teilchen in verschiedenen Targetmaterialien~\cite{grupen}}
+  \label{fig:bethe}
+\end{figure}
+
+\subsubsection{Landau-Verteilung}
+
+
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
