@@ -96,12 +96,36 @@ ausbildenden Schauer, der Abfall zum Erdboden hin über die Abnahme der Energie
 nach mehreren Wechselwirkungen.
 
 Die in diversen Zerfällen entstehenden Myonen besitzen im Gegensatz zu den
-erwähnten Pionen und Kaonen mit etwa $\unit[2.2 \ cdot 10^{-6}]{s}$ eine relativ
+erwähnten Pionen und Kaonen mit etwa $\unit[2.2]{\mu s}$ eine relativ
 lange Lebensdauer in ihrem Ruhesystem. Da sie sich mit relativistischen
 Geschwindigkeiten bewegen und ferner nur sehr selten wechselwirken (relativ
 große Masse im Vergleich zu Elektronen), sind sie somit auf dem Erdboden
 detektierbar und stellen mit etwa $\unit[80]{\%}$ den größten Anteil der den
 Boden erreichenden Höhenstrahlung.
+
+\subsection{Teilchenpropagation in Materie}
+\subsubsection{Bethe-Bloch-Formel}
+Der Energieverlust durch Ionisation und Anregung ist der Hauptmechanismus, über welchen geladene Teilchen Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel mathematisch beschreibbar:
+\begin{align}
+-\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2} \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right) - \beta^2 - \frac{\delta}{2}\right]
+\end{align}
+Hierbei meint:
+
+\begin{tabular*}{4cm}{ccl}
+$K$       &-& $4 \pi N_A r^2_e m_e c^2$ \\
+$N_A$     &-& Avogadro-Zahl \\
+$r_e$     &-& klassischer Elektronenradius \\
+$m_e c^2$ &-& Elektronenruheenergie \\
+$z$       &-& Projektilladung\\
+$Z, A$    &-& Targetladung und -masse\\
+$\beta$   &-& Projektilgeschwindigkeit im Vergleich zu $c$\\
+$\gamma$  &-& $1/\sqrt{1-\beta^2}$\\
+$T_{max}$   &-& $(2m_e p^2)/(m^2_0 + m^2_e + 2 m_e E/c^2)$\\
+          & & $m_0$ - Masse des einfallenden Teilchens\\
+          & & $p$, $E$ - Impuls und Gesamtenergie des Projektils\\
+$I$       &-& mittlere Ionisationsenergie des Targets\\
+$\delta$  &-& Dichtekorrektur
+\end{tabular*}
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
@@ -124,7 +148,7 @@ werden Plastikszintillatoren verwendet. Bei solchen ist die Trägersubstanz ein
 festes durchsichtiges Medium, in das die Aktivatoren in Form einer festen Lösung
 hinein gegeben sind. Die einfallende elektromagnetische Strahlung erzeugt
 geladene Teilchen, die wiederum die Moleküle des Plastikmaterials anregen sowie
-die Anregungsenergie auf die Molekule der Aktivatorsubstanz übertragen. Die
+die Anregungsenergie auf die Moleküle der Aktivatorsubstanz übertragen. Die
 Energieniveaus der Moleküle der Aktivatorsubstanz sind verschieden von denen des
 Plastikmaterials, wodurch der Kristall für die emittierten Photonen transparent
 wird. Es kann somit den Szintillator verlassen und zur Photokathode des
