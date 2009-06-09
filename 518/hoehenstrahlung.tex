@@ -252,12 +252,11 @@ folgt aufgebaut:
     \node[draw,scale=0.7,circle,text width=1.3em,text centered] {Z25};
     \foreach \x in {1,2,...,24}
     {
-      \node[scale=0.8,rectangle,fill=lightgray,rotate={-\x*15}] at (-\x*15+90:\R)
-        { \ \ \ };
-      \node[draw,scale=0.7,circle,text width=1.3em,text centered] at (-\x * 15 + 90:\R)
-        {Z\x};
+      \node[scale=0.8,rectangle,fill=lightgray,rotate={-\x*15}] at
+        (-\x*15+90:\R) { \ \ \ };
+      \node[draw,scale=0.7,circle,text width=1.3em,text centered] at
+        (-\x*15+90:\R) {Z\x};
     }
-    
   \end{tikzpicture}
   \caption{Versuchsaufbau: Winkelmessung}
   \label{fig:winkel}
@@ -274,7 +273,14 @@ der Form
 \begin{align}
   N = a \cos^n(\theta-b)
 \end{align}
-an die Daten.
+an die Daten. Damit erhalten wir folgenden Graphen:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/winkelverteilung.tikz}
+  \end{center}
+  \caption{Winkelverteilung und Fit}
+  \label{fig:winkel_graph}
+\end{figure}
 
 \subsubsection{Zufallskoinzidenzen}
 
@@ -306,6 +312,8 @@ Daraus erhalten wir folgenden Graphen:
 \begin{appendix}
   \section{Graphen}
   \section{Tabellen}
+  % Winkelverteilung
+  % Lebensdauer
   \Literatur{quellen}
 \end{appendix}
 \end{document}

@@ -1,5 +1,20 @@
 set term lua
 
+set output 'grafiken/winkelverteilung.tikz'
+a= 1000
+b = 0
+n = 2
+d = 200 # TODO
+set angles degrees
+f(x) = a * abs(cos(x))**n + d
+
+fit f(x) 'data/winkelmessung.txt' u 1:2:(1/log($1)**2) via a,n
+
+set xlabel 'Winkel/$^\circ$'
+set ylabel 'N'
+plot 'data/winkelmessung.txt' u 1:2:(5):(log($1)) w xyerr notitle, f(x) notitle
+
+
 set output 'grafiken/lebensdauer.tikz'
 N(x) = N_0 * exp(-lambda * x) + C
 N_0 = 5000
