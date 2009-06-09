@@ -220,12 +220,23 @@ einstellbar ist (was wir in diesem Versuch auch tun).
 Um die Winkelverteilung zu messen werden insgesamt 25 Szintillationszähler wie
 folgt aufgebaut:
 
+\newdimen\R
+\R=3cm
 \begin{figure}[H]
   \begin{tikzpicture}
+    \node[scale=0.8,rectangle,fill=lightgray] { \ \ \ };
+    \node[draw,scale=0.7,circle,text width=1.3em,text centered] {Z25};
+    \foreach \x in {1,2,...,24}
+    {
+      \node[scale=0.8,rectangle,fill=lightgray,rotate={-\x*15}] at (-\x*15+90:\R)
+        { \ \ \ };
+      \node[draw,scale=0.7,circle,text width=1.3em,text centered] at (-\x * 15 + 90:\R)
+        {Z\x};
+    }
     
   \end{tikzpicture}
-  \caption{<+caption text+>}
-  \label{fig:<+label+>}
+  \caption{Versuchsaufbau: Winkelmessung}
+  \label{fig:winkel}
 \end{figure}
 
 
