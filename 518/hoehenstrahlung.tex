@@ -25,12 +25,13 @@ durch interstellare Materie. Die Häufigkeit der Atomkerne folgt dabei gut der
 solaren Elementhäufigkeit (siehe auch Abb. \ref{fig:element}).
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.55\textwidth]{grafiken/element}
-  \caption[Elementhäufigkeit]{Elementhäufigkeit in der primären Höhenstrahlung~\cite{grupen}}
+  \includegraphics[width=0.50\textwidth]{grafiken/element}
+  \caption[Elementhäufigkeit]{Elementhäufigkeit in der primären
+  Höhenstrahlung~\cite{grupen}}
   \label{fig:element}
 \end{figure}
-Nach heutigem wissenschaftlichen Stand entsteht die primäre Höhenstrahlung v.\
-a.\ in der Scheibe der Milchstraße, es existiert aber auch ein Anteil
+Nach heutigem wissenschaftlichen Stand entsteht die primäre Höhenstrahlung vor
+allem in der Scheibe der Milchstraße, es existiert aber auch ein Anteil
 extragalaktischer Herkunft. Als Quellen kommen dabei Supernovae, Pulsare und
 Doppelsternsysteme mit Neutronenstern in betracht.
 
@@ -38,8 +39,9 @@ In der folgenden Abbildung ist nun das Energiespektrum der primären
 Höhenstrahlung dargestellt.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.55\textwidth]{grafiken/primhoe}
-  \caption[Energiespektrum]{Energiespektrum der primären Höhenstrahlung (oberer Rand der Erdatmosphäre)~\cite{grupen}}
+  \includegraphics[height=0.6\textwidth]{grafiken/primhoe}
+  \caption[Energiespektrum]{Energiespektrum der primären Höhenstrahlung (oberer
+  Rand der Erdatmosphäre)~\cite{grupen}}
   \label{fig:primhoe}
 \end{figure}
 Niederenergetische Teilchen erreichen wegen des Sonnenwindes und -magnetfeldes
@@ -86,7 +88,7 @@ Elektron über, welche dann wiederum Bremsstrahlung emittieren. Es ergibt sich
 folgender Intensitätsverlauf in Abhängigkeit der Höhe der in der Atmosphäre:
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.55\textwidth]{grafiken/intens}
+  \includegraphics[width=0.40\textwidth]{grafiken/intens}
   \caption[Intensität]{Intensität der Höhenstrahlung in Abhängigkeit der Höhe in
   der Atmosphäre~\cite{grupen}}
   \label{fig:intens}
@@ -105,10 +107,17 @@ Boden erreichenden Höhenstrahlung.
 
 \subsection{Teilchenpropagation in Materie}
 \subsubsection{Bethe-Bloch-Formel}
-Da man die Teilchen über Wechselwirkungen in Targetmaterialien detektiert, muss die Progagation von Teilchen in Materie untersucht werden, um die zu erwartenden Energieverluste quantifizieren zu können. Der Energieverlust durch Ionisation und Anregung ist dabei der Hauptmechanismus, über welchen geladene Teilchen Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel mathematisch beschreibbar:
+Da man die Teilchen über Wechselwirkungen in Targetmaterialien detektiert, muss
+die Progagation von Teilchen in Materie untersucht werden, um die zu erwartenden
+Energieverluste quantifizieren zu können. Der Energieverlust durch Ionisation
+und Anregung ist dabei der Hauptmechanismus, über welchen geladene Teilchen
+Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel
+mathematisch beschreibbar:
 \begin{align}
--\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2} \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right) - \beta^2 - \frac{\delta}{2}\right]
-\label{eq:bethe}
+  -\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2}
+  \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right)
+  - \beta^2 - \frac{\delta}{2}\right]
+  \label{eq:bethe}
 \end{align}
 Hierbei meint:
 
@@ -128,17 +137,42 @@ $I$       &-& mittlere Ionisationsenergie des Targets\\
 $\delta$  &-& Dichtekorrektur
 \end{tabular*}
 
-In der folgenden Abbildung ist nun der Energieverlust geladener Teilchen nach der \textsc{Bethe-Bloch}-Formel für verschiedene Targetmaterialien graphisch dargestellt. Man erkennt einen quadratischen Abfall, dem ein logarithmischer Anstieg folgt.
+In der folgenden Abbildung ist nun der Energieverlust geladener Teilchen nach
+der \textsc{Bethe-Bloch}-Formel für verschiedene Targetmaterialien graphisch
+dargestellt. Man erkennt einen quadratischen Abfall, dem ein logarithmischer
+Anstieg folgt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.55\textwidth]{grafiken/bethe}
-  \caption[Bethe]{Energieverlust geladener Teilchen in verschiedenen Targetmaterialien~\cite{grupen}}
+  \includegraphics[width=0.45\textwidth]{grafiken/bethe}
+  \caption[Bethe]{Energieverlust geladener Teilchen in verschiedenen
+  Targetmaterialien~\cite{grupen}}
   \label{fig:bethe}
 \end{figure}
 
 \subsubsection{Landau-Verteilung}
-furz
+Die \textsc{Bethe-Bloch}-Gleichung gibt jedoch nur den mittleren Energieverlust
+der Teilchen an. Die Verteilung des Energieverlustes folgt dabei einer
+\textsc{Landau}-Verteilung. Es handelt sich bei dieser um eine asymmetrische
+Verteilung, welche einen langen hochenergetischen Schwanz besitzt (siehe
+Abbildung \ref{fig:landau}). 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/landau}
+  \caption[Landau-Verteilung]{Graphische Darstellung einer typischen
+  \textsc{Landau}-Verteilung~\cite{berg}}
+  \label{fig:landau}
+\end{figure}
+
+Der verglichen mit einer \textsc{Gauß}-Verteilung relativ große Anteil an hohen
+Energieverlusten erklärt sich hier über direkte Stöße der Projektile mit
+Elektronen des Szintillators, bei denen der Impuls fast vollständig übertragen
+werden kann. Die Elektronen können dann im Material weitere Elektronen
+herausschlagen. Mit zunehmender Dicke des Absorbermaterials sind
+Mehrfachwechselwirkungen der einfallenden Teilchen mit dem Absorber zu erwarten
+und die \textsc{Landau}-Verteilung wird sich dementsprechend immer stärker einer
+\textsc{Gauß}-Verteilung annähern.
 
 
 \subsection{Szintillationsdetektor}
@@ -176,14 +210,13 @@ Photomultipliers gelangen.
   \label{fig:szinti2}
 \end{figure}
 
-Die bei der Detektion von $\gamma$-Strahlung am Photomultiplier ankommenden
-Lumineszenzblitze werden in selbigem in Ladung, also in messbare Spannungspulse
-umgewandelt (siehe Abschnitt \ref{cha:photo}). Diese Pulse sind idealerweise
-zeitlich und energetisch direkt mit den einfallenden Photonen korreliert. Die
-zeitliche Auflösung des Detektors hängt somit vor allem vom zeitlichen Verlauf
-des Lichtsignals des Szintillators und von der Laufzeit der Ladungsträger im
-Photomultiplier ab. Eine typische Lichtkurve eines Szintillators ist in
-Abbildung (\ref{fig:lichtkurve}) zu sehen.
+Die am Photomultiplier ankommenden Lumineszenzblitze werden in selbigem in
+Ladung, also in messbare Spannungspulse umgewandelt (siehe Abschnitt
+\ref{cha:photo}). Diese Pulse sind idealerweise zeitlich und energetisch direkt
+mit den einfallenden Teilchen korreliert. Die zeitliche Auflösung des Detektors
+hängt somit vor allem vom zeitlichen Verlauf des Lichtsignals des Szintillators
+und von der Laufzeit der Ladungsträger im Photomultiplier ab. Eine typische
+Lichtkurve eines Szintillators ist in Abbildung (\ref{fig:lichtkurve}) zu sehen.
 
 \begin{figure}[H]
   \centering
@@ -239,22 +272,46 @@ der \emph{Diskriminator} (genauer der Schwellendiskriminator) und zum anderen
 die \emph{Koinzidenzschaltung}.
 
 Mit einem Schwellendiskriminator wird ein Spannungspuls, wie er vom
-Photomultiplier (oder einem nachgeschalteten Gerät) kommt in ein digitales
-Signal umgewandelt. Wird eine bestimmte einstellbare Schwelle überschritten,
-so liegt am Ausgang für eine ebenfalls einstellbare Zeit (in diesem Versuch fest
-$\unit[5]{ns}$. In dieser Zeit ist der Diskriminator "`tot"', er reagiert also
-nicht auf weitere Eingangspulse. Dadurch wird die zeitliche Auflösung der
+Photomultiplier (oder einem nachgeschalteten Gerät) kommt, in ein digitales
+Signal umgewandelt. Wird eine bestimmte einstellbare Schwelle überschritten, so
+liegt am Ausgang für eine ebenfalls einstellbare Zeit (in diesem Versuch fest
+$\unit[20]{ns}$) eine der logischen 1 entsprechende Spannung an. In dieser Zeit
+ist der Diskriminator "`tot"', er reagiert also nicht auf weitere Eingangspulse.
+Dabei ist wichtig, dass die zeitliche Verzögerung zwischen Ein- und
+Ausgangssignal einen festen Wert hat, möglichst unabhängig von der
+Eingangspulshöhe. Diese eingestellte Zeitspanne soll ausreichen, um
+Nachschwinger im Eingangspuls nicht als zweites Signal zu registrieren, sie muss
+andererseits aber auch hinreichend kurz sein, damit möglichst alle "`echten"'
+Signale aufgenommen. Schließlich wird dadurch wird die zeitliche Auflösung der
 Apparatur beschränkt.
 
 Eine Koinzidenzeinheit ist im Prinzip ein logisches UND, es liefert also einen
 (ebenfalls in Länge und Höhe festen) Puls, wenn an beiden Eingängen eine
 logische 1 anliegt. Da die exakte Gleichzeitigkeit von zwei Signalen durch die
 Verzögerungen im Kabel und in den Bauteilen nie gegeben ist, gibt die Schaltung
-auch dann eine 1 aus, wenn eines der Signale später eintrifft, wobei diese Zeit
-einstellbar ist (was wir in diesem Versuch auch tun).
+auch dann eine 1 aus, wenn eines der Signale später eintrifft.  Sie muss lang
+genug sein, um für nachfolgende Logikschaltungen verwendbar zu sein
+($\unit[5]{ns}$), aber auch kurz genug, um Zufallskoinzidenzraten in
+nachgeschalteten Koinzidenz-Modulen klein zu halten und die Totzeit der
+Anordnung nicht zu vergrößern.
+
+Die im Praktikum benutzten Zweifach-Koinzidenz-Einheiten haben im Übrigen
+zusätzlich einen Veto-Eingang. Das Vorhandensein eines Signals (logische 1) an
+diesem Veto-Eingang deaktiviert die Einheit. Im vorliegenden Versuch wird nun
+eine Dreifach-Koinzidenz verlangt (zwei äußere und der mittlere Szintillator).
+Man erhält diese mit den zu verwendenden Einheiten, indem man das diskriminierte
+Z25-Signal logisch invertiert und als Veto benutzt. Es ist dabei wichtig, sich
+vor Augen zu führen, dass eine Koinzidenz logisch einem Zeitpunkt entspricht,
+nicht aber einer Zeitdauer. Das Veto-Signal muss also früh genug am Eingang
+anliegen und eine hinreichende Länge besitzen, damit alle möglichen
+Zeitschwankungen der ersten Koinzidenz-Stufe von Zweifach-Einheiten abgedeckt
+werden können. Diese Bedingung wird praktisch so erfüllt, dass man für die
+Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
+\ref{cha:winkel_aufbau}.
 
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
+\label{cha:winkel_aufbau}
 Um die Winkelverteilung zu messen werden insgesamt 25 Szintillationszähler wie
 folgt aufgebaut:
 
