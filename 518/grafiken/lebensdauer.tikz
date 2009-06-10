@@ -1,6 +1,7 @@
 \begin{tikzpicture}[gnuplot]
 %% generated with GNUPLOT 4.2p5  (Lua 5.1.4; terminal rev. 90, script rev. 90)
-%% Mon Jun  8 14:49:10 2009
+%% Wed Jun 10 23:53:24 2009
+\gpsolidlines
 \gpcolor{gp lt color border}
 \gpsetlinetype{gp lt border}
 \gpsetlinewidth{1.00}

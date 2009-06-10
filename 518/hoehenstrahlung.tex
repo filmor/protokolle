@@ -333,12 +333,49 @@ folgt aufgebaut:
   \label{fig:winkel}
 \end{figure}
 
-Die Zähler werden dann (nach den Diskriminatoren, die für ein digitales Signal
+Die Zähler werden dann (nach den Diskriminatoren, die für einen Rechteckpuls
 sorgen) in Dreifachkoinzidenzen verschaltet, sodass diese genau dann einen Puls
-liefern, wenn ein Quant oder Teilchen gerade durch das Zentrum der Apparatur
-(Z25) fliegt, beispielsweise Z24-Z25-Z12. Die Diskriminatorschwellen und
-Koinzidenzzeiten aller Szintillationszähler bis auf Z12 sind bereits
-eingestellt, für den letzten Zähler nehmen wir die Einstellung vor.
+liefern, wenn ein Teilchen in gerader Linie durch das Zentrum der Apparatur
+(Z25) fliegt.  Dazu werden immer zwei gegenüberliegende Zähler (zum Beispiel Z12
+und Z24) mit einer Koinzidenzeinheit verbunden und der Ausgang von Z25 nach dem
+Diskriminator als Veto verwendet. Der Ausgang jeder dieser Koinzidenzen ist
+dabei an einen Zähler angeschlossen woran wir dann die Winkelverteilung ablesen
+können.
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    
+  \end{tikzpicture}
+  \caption{Blockschaltbild zur Messung der Winkelverteilung}
+  \label{fig:block_winkel}
+\end{figure}
+
+Die Diskriminatorschwellen und Koinzidenzzeiten aller Szintillationszähler bis
+auf Z12 sind bereits eingestellt, für den letzten Zähler nehmen wir die
+Einstellung selbst vor.
+
+\subsubsection{Einstellung der Verzögerungszeit}
+Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
+messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
+dieses auf die Zählrate von Z25 um ein (für genügend lange Messdauer)
+zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch Veränderung
+der Kabellänge) die Verzögerung des Ausgangs Z25 gegen % oder!
+Damit erhalten wir folgenden Graphen:
+
+\begin{figure}[H]
+  \input{grafiken/koinzidenz.tikz}
+  \caption{Koinzidenzkurve}
+  \label{fig:koinzidenz}
+\end{figure}
+
+% Fehler
+
+Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
+ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
+zu erwarten wären haben wir das nicht weiter verfolgt.
+
+Aus der 
+% Ergebnis
 
 \subsection{Lebensdauer des Myons}
 \section{Auswertung}
