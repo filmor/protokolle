@@ -26,11 +26,12 @@ solaren Elementhäufigkeit (siehe auch Abb. \ref{fig:element}).
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.50\textwidth]{grafiken/element}
-  \caption[Elementhäufigkeit]{Elementhäufigkeit in der primären Höhenstrahlung~\cite{grupen}}
+  \caption[Elementhäufigkeit]{Elementhäufigkeit in der primären
+  Höhenstrahlung~\cite{grupen}}
   \label{fig:element}
 \end{figure}
-Nach heutigem wissenschaftlichen Stand entsteht die primäre Höhenstrahlung v.\
-a.\ in der Scheibe der Milchstraße, es existiert aber auch ein Anteil
+Nach heutigem wissenschaftlichen Stand entsteht die primäre Höhenstrahlung vor
+allem in der Scheibe der Milchstraße, es existiert aber auch ein Anteil
 extragalaktischer Herkunft. Als Quellen kommen dabei Supernovae, Pulsare und
 Doppelsternsysteme mit Neutronenstern in betracht.
 
@@ -39,7 +40,8 @@ Höhenstrahlung dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[height=0.6\textwidth]{grafiken/primhoe}
-  \caption[Energiespektrum]{Energiespektrum der primären Höhenstrahlung (oberer Rand der Erdatmosphäre)~\cite{grupen}}
+  \caption[Energiespektrum]{Energiespektrum der primären Höhenstrahlung (oberer
+  Rand der Erdatmosphäre)~\cite{grupen}}
   \label{fig:primhoe}
 \end{figure}
 Niederenergetische Teilchen erreichen wegen des Sonnenwindes und -magnetfeldes
@@ -105,10 +107,17 @@ Boden erreichenden Höhenstrahlung.
 
 \subsection{Teilchenpropagation in Materie}
 \subsubsection{Bethe-Bloch-Formel}
-Da man die Teilchen über Wechselwirkungen in Targetmaterialien detektiert, muss die Progagation von Teilchen in Materie untersucht werden, um die zu erwartenden Energieverluste quantifizieren zu können. Der Energieverlust durch Ionisation und Anregung ist dabei der Hauptmechanismus, über welchen geladene Teilchen Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel mathematisch beschreibbar:
+Da man die Teilchen über Wechselwirkungen in Targetmaterialien detektiert, muss
+die Progagation von Teilchen in Materie untersucht werden, um die zu erwartenden
+Energieverluste quantifizieren zu können. Der Energieverlust durch Ionisation
+und Anregung ist dabei der Hauptmechanismus, über welchen geladene Teilchen
+Energie verlieren können. Er ist mit Hilfe der \textsc{Bethe-Bloch}-Formel
+mathematisch beschreibbar:
 \begin{align}
--\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2} \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right) - \beta^2 - \frac{\delta}{2}\right]
-\label{eq:bethe}
+  -\frac{\mathrm dE}{\mathrm dx} = K z^2\ \frac{Z}{A}\ \frac{1}{\beta^2}
+  \left[\frac{1}{2}\ln\left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_max}{I^2}\right)
+  - \beta^2 - \frac{\delta}{2}\right]
+  \label{eq:bethe}
 \end{align}
 Hierbei meint:
 
@@ -128,26 +137,42 @@ $I$       &-& mittlere Ionisationsenergie des Targets\\
 $\delta$  &-& Dichtekorrektur
 \end{tabular*}
 
-In der folgenden Abbildung ist nun der Energieverlust geladener Teilchen nach der \textsc{Bethe-Bloch}-Formel für verschiedene Targetmaterialien graphisch dargestellt. Man erkennt einen quadratischen Abfall, dem ein logarithmischer Anstieg folgt.
+In der folgenden Abbildung ist nun der Energieverlust geladener Teilchen nach
+der \textsc{Bethe-Bloch}-Formel für verschiedene Targetmaterialien graphisch
+dargestellt. Man erkennt einen quadratischen Abfall, dem ein logarithmischer
+Anstieg folgt.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.45\textwidth]{grafiken/bethe}
-  \caption[Bethe]{Energieverlust geladener Teilchen in verschiedenen Targetmaterialien~\cite{grupen}}
+  \caption[Bethe]{Energieverlust geladener Teilchen in verschiedenen
+  Targetmaterialien~\cite{grupen}}
   \label{fig:bethe}
 \end{figure}
 
 \subsubsection{Landau-Verteilung}
-Die \textsc{Bethe-Bloch}-Gleichung gibt jedoch nur den mittleren Energieverlust der Teilchen an. Die Verteilung des Energieverlustes folgt dabei einer \textsc{Landau}-Verteilung. Es handelt sich bei dieser um eine asymmetrische Verteilung, welche einen langen hochenergetischen Schwanz besitzt (siehe Abb. \ref{fig:landau}). 
+Die \textsc{Bethe-Bloch}-Gleichung gibt jedoch nur den mittleren Energieverlust
+der Teilchen an. Die Verteilung des Energieverlustes folgt dabei einer
+\textsc{Landau}-Verteilung. Es handelt sich bei dieser um eine asymmetrische
+Verteilung, welche einen langen hochenergetischen Schwanz besitzt (siehe
+Abbildung \ref{fig:landau}). 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.55\textwidth]{grafiken/landau}
-  \caption[Landau-Verteilung]{Graphische Darstellung einer typischen \textsc{Landau}-Verteilung~\cite{berg}}
+  \caption[Landau-Verteilung]{Graphische Darstellung einer typischen
+  \textsc{Landau}-Verteilung~\cite{berg}}
   \label{fig:landau}
 \end{figure}
 
-Der verglichen mit einer \textsc{Gauß}-Verteilung relativ große Anteil an hohen Energieverlusten erklärt sich hier über direkte Stöße der Projektile mit Elektronen des Szintillators, bei denen der Impuls fast vollständig übertragen werden kann. Die Elektronen können dann im Material weitere Elektronen herausschlagen. Mit zunehmender Dicke des Absorbermaterials sind Mehrfachwechselwirkungen der einfallenden Teilchen mit dem Absorber zu erwarten und die \textsc{Landau}-Verteilung wird sich dementsprechend immer stärker einer \textsc{Gauß}-Verteilung annähern.
+Der verglichen mit einer \textsc{Gauß}-Verteilung relativ große Anteil an hohen
+Energieverlusten erklärt sich hier über direkte Stöße der Projektile mit
+Elektronen des Szintillators, bei denen der Impuls fast vollständig übertragen
+werden kann. Die Elektronen können dann im Material weitere Elektronen
+herausschlagen. Mit zunehmender Dicke des Absorbermaterials sind
+Mehrfachwechselwirkungen der einfallenden Teilchen mit dem Absorber zu erwarten
+und die \textsc{Landau}-Verteilung wird sich dementsprechend immer stärker einer
+\textsc{Gauß}-Verteilung annähern.
 
 
 \subsection{Szintillationsdetektor}
@@ -185,8 +210,13 @@ Photomultipliers gelangen.
   \label{fig:szinti2}
 \end{figure}
 
-Die am Photomultiplier ankommenden Lumineszenzblitze werden in selbigem in Ladung, also in messbare Spannungspulse umgewandelt (siehe Abschnitt \ref{cha:photo}). Diese Pulse sind idealerweise zeitlich und energetisch direkt mit den einfallenden Teilchen korreliert. Die zeitliche Auflösung des Detektors hängt somit vor allem vom zeitlichen Verlauf des Lichtsignals des Szintillators und von der Laufzeit der Ladungsträger im
-Photomultiplier ab. Eine typische Lichtkurve eines Szintillators ist in Abbildung (\ref{fig:lichtkurve}) zu sehen.
+Die am Photomultiplier ankommenden Lumineszenzblitze werden in selbigem in
+Ladung, also in messbare Spannungspulse umgewandelt (siehe Abschnitt
+\ref{cha:photo}). Diese Pulse sind idealerweise zeitlich und energetisch direkt
+mit den einfallenden Teilchen korreliert. Die zeitliche Auflösung des Detektors
+hängt somit vor allem vom zeitlichen Verlauf des Lichtsignals des Szintillators
+und von der Laufzeit der Ladungsträger im Photomultiplier ab. Eine typische
+Lichtkurve eines Szintillators ist in Abbildung (\ref{fig:lichtkurve}) zu sehen.
 
 \begin{figure}[H]
   \centering
@@ -243,30 +273,45 @@ die \emph{Koinzidenzschaltung}.
 
 Mit einem Schwellendiskriminator wird ein Spannungspuls, wie er vom
 Photomultiplier (oder einem nachgeschalteten Gerät) kommt, in ein digitales
-Signal umgewandelt. Wird eine bestimmte einstellbare Schwelle überschritten,
-so liegt am Ausgang für eine ebenfalls einstellbare Zeit (in diesem Versuch fest
-$\unit[20]{ns}$) eine der logischen 1 entsprechende Spannung (hier $\unit[-0.7]{V}$) an. In dieser Zeit ist der Diskriminator "`tot"', er reagiert also
-nicht auf weitere Eingangspulse. Dabei ist wichtig, dass die zeitliche Verzögerung zwischen Ein- und Ausgangssignal einen festen Wert hat, möglichst unabhängig von der Eingangspulshöhe. Diese eingestellte Zeitspanne soll ausreichen, um mögliche Nachschwinger im Eingangspuls zu kompensieren, damit keine Doppelpulse am Ausgang auftreten, jedoch muss sie andererseits auch hinreichend kurz sein, damit die angesprochene Totzeit klein gehalten wird. Schließlich wird dadurch wird die zeitliche Auflösung der Apparatur beschränkt.
+Signal umgewandelt. Wird eine bestimmte einstellbare Schwelle überschritten, so
+liegt am Ausgang für eine ebenfalls einstellbare Zeit (in diesem Versuch fest
+$\unit[20]{ns}$) eine der logischen 1 entsprechende Spannung an. In dieser Zeit
+ist der Diskriminator "`tot"', er reagiert also nicht auf weitere Eingangspulse.
+Dabei ist wichtig, dass die zeitliche Verzögerung zwischen Ein- und
+Ausgangssignal einen festen Wert hat, möglichst unabhängig von der
+Eingangspulshöhe. Diese eingestellte Zeitspanne soll ausreichen, um
+Nachschwinger im Eingangspuls nicht als zweites Signal zu registrieren, sie muss
+andererseits aber auch hinreichend kurz sein, damit möglichst alle "`echten"'
+Signale aufgenommen werden. Schließlich wird dadurch die zeitliche Auflösung der
+Apparatur beschränkt.
 
 Eine Koinzidenzeinheit ist im Prinzip ein logisches UND, es liefert also einen
 (ebenfalls in Länge und Höhe festen) Puls, wenn an beiden Eingängen eine
 logische 1 anliegt. Da die exakte Gleichzeitigkeit von zwei Signalen durch die
 Verzögerungen im Kabel und in den Bauteilen nie gegeben ist, gibt die Schaltung
-auch dann eine 1 aus, wenn eines der Signale später eintrifft, ...!!!...
-% !!!!entweder das eine oder das andere, oder seh ich was falsch????!!!
-% sodass die Zeitauflösung auf die doppelte Impulslänge begrenzt ist.
-% oder:
-% wobei diese Zeit einstellbar ist (was wir in diesem Versuch auch tun).
-% beides stimmt ja, aber was ist in welchem kontext noch richtig? ich hab grad ka.
-% guck am besten nochmal im skript nach, oder im anderen protokoll, danke!
-Sie muss lang genug sein, um für nachfolgende Logikschaltungen verwendbar zu sein ($\unit[5]{ns}$), aber auch kurz genug, um Zufallskoinzidenzraten in nachgeschalteten Koinzidenz-Modulen klein zu halten und die Totzeit der Anordnung nicht zu vergrößern. 
-Die im Praktikum benutzten Zweifach-Koinzidenz-Einheiten haben im Übrigen zusätzlich einen Veto-Eingang. Das Vorhandensein eines Signals (logische 1) an diesem Veto-Eingang deaktiviert die Einheit. Im vorliegenden Versuch wird nun eine Dreifach-Koinzidenz verlangt (zwei äußere und der mittlere Szintillator). Man erhält diese mit den zu verwendenden Einheiten, indem man das diskriminierte Z25-Signal logisch invertiert
-und als Veto benutzt. Es ist dabei wichtig, sich vor Augen zu führen, dass eine Koinzidenz logisch einem Zeitpunkt entspricht, nicht aber einer Zeitdauer. Das Veto-Signal muss also früh genug am Eingang anliegen und eine hinreichende Länge besitzen, damit alle möglichen Zeitschwankungen der ersten Koinzidenz-Stufe von Zweifach-Einheiten abgedeckt werden können. Diese Bedingung wird praktisch so erfüllt,
-dass man für die Zähler Z1-Z24 längere Kabel als für Z25 verwendet.
+auch dann eine 1 aus, wenn eines der Signale später eintrifft. Sie muss lang
+genug sein, um für nachfolgende Logikschaltungen verwendbar zu sein
+($\unit[5]{ns}$), aber auch kurz genug, um Zufallskoinzidenzraten in
+nachgeschalteten Koinzidenz-Modulen klein zu halten und die Totzeit der
+Anordnung nicht zu vergrößern.
 
+Die im Praktikum benutzten Zweifach-Koinzidenz-Einheiten haben im Übrigen
+zusätzlich einen Veto-Eingang. Das Vorhandensein eines Signals (logische 1) an
+diesem Veto-Eingang deaktiviert die Einheit. Im vorliegenden Versuch wird nun
+eine Dreifach-Koinzidenz verlangt (zwei äußere und der mittlere Szintillator).
+Man erhält diese mit den zu verwendenden Einheiten, indem man das diskriminierte
+Z25-Signal logisch invertiert und als Veto benutzt. Es ist dabei wichtig, sich
+vor Augen zu führen, dass eine Koinzidenz logisch einem Zeitpunkt entspricht,
+nicht aber einer Zeitdauer. Das Veto-Signal muss also früh genug am Eingang
+anliegen und eine hinreichende Länge besitzen, damit alle möglichen
+Zeitschwankungen der ersten Koinzidenz-Stufe von Zweifach-Einheiten abgedeckt
+werden können. Diese Bedingung wird praktisch so erfüllt, dass man für die
+Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
+\ref{cha:winkel_aufbau}.
 
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
+\label{cha:winkel_aufbau}
 Um die Winkelverteilung zu messen werden insgesamt 25 Szintillationszähler wie
 folgt aufgebaut:
 
@@ -274,24 +319,33 @@ folgt aufgebaut:
 \R=3cm
 \begin{figure}[H]
   \begin{tikzpicture}
-    \node[scale=0.8,rectangle,fill=lightgray] { \ \ \ };
+    \node[circle,fill=lightgray] { \ \ };
     \node[draw,scale=0.7,circle,text width=1.3em,text centered] {Z25};
     \foreach \x in {1,2,...,24}
     {
-      \node[scale=0.8,rectangle,fill=lightgray,rotate={-\x*15}] at (-\x*15+90:\R)
-        { \ \ \ };
-      \node[draw,scale=0.7,circle,text width=1.3em,text centered] at (-\x * 15 + 90:\R)
-        {Z\x};
+      \node[scale=0.8,rectangle,fill=lightgray,rotate={-\x*15}] at
+        (-\x*15+90:\R) { \ \ \ };
+      \node[draw,scale=0.7,circle,text width=1.3em,text centered] at
+        (-\x*15+90:\R) {Z\x};
     }
-    
   \end{tikzpicture}
   \caption{Versuchsaufbau: Winkelmessung}
   \label{fig:winkel}
 \end{figure}
 
-\subsection{Lebensdauer des Myons}
-Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt. Hierzu werden die Zerfallszeiten der in einem Szintillatormaterial zur Ruhe kommenden Myonen gemessen. Der Aufbau ist in der folgenden Abbildung gezeigt.
+Die Zähler werden dann (nach den Diskriminatoren, die für einen Rechteckpuls
+sorgen) in Dreifachkoinzidenzen verschaltet, sodass diese genau dann einen Puls
+liefern, wenn ein Teilchen in gerader Linie durch das Zentrum der Apparatur
+(Z25) fliegt.  Dazu werden immer zwei gegenüberliegende Zähler (zum Beispiel Z12
+und Z24) mit einer Koinzidenzeinheit verbunden und der Ausgang von Z25 nach dem
+Diskriminator als Veto verwendet. Der Ausgang jeder dieser Koinzidenzen ist
+dabei an einen Zähler angeschlossen woran wir dann die Winkelverteilung ablesen
+können.
 
+\subsection{Lebensdauer des Myons}
+Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
+Hierzu werden die Zerfallszeiten der in einem Szintillatormaterial zur Ruhe
+kommenden Myonen gemessen. Der Aufbau ist in der folgenden Abbildung gezeigt.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.50\textwidth]{grafiken/myonaufbau}
@@ -299,13 +353,60 @@ Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt. 
   \label{fig:myonaufbau}
 \end{figure}
 
-Zunächst trifft die Strahlung auf eine etwa $\unit[5]{cm}$ dicke Bleiabschirmung. Hier werden die weichen Komponenten abgeschirmt und ferner werden die Myonen stark abgebremst. Darunter befinden sich zwei Szintillatoren. Ein einfallendes Teilchen der Höhenstrahlung erzeugt in Zähler 1 und Zähler 2 je einen Impuls mit fester zeitlicher Korrelation. Das mit geeigneter Verschaltung gewonnene Koinzidenz-Signal (entspricht einem Myonendurchgang) gibt so nach fester Verzögerungszeit das Startsignal. Kommt nun ein Myon in Z2 zur Ruhe, so zerfällt es dort und verursacht dadurch einen weiteren Impuls (Stoppsignal) in Z2. Da man mit jedem Startsignal auch ein Stoppsignal erhält, wird das Startsignal um etwa $\unit[100]{ns}$ verzögert. Der zeitliche Abstand der beiden Signale wird nun in diesem Versuch gemessen. Er weist eine gewisse Verteilung auf, welche durch die Lebensdauer des Myons bestimmt ist. 
+Zunächst trifft die Strahlung auf eine etwa $\unit[5]{cm}$ dicke Bleiabschirmung.
+Hier werden die weichen Komponenten abgeschirmt und ferner werden die Myonen stark
+abgebremst. Darunter befinden sich zwei Szintillatoren. Ein einfallendes Teilchen
+der Höhenstrahlung erzeugt in Zähler 1 und Zähler 2 je einen Impuls mit fester
+zeitlicher Korrelation. Das mit geeigneter Verschaltung gewonnene Koinzidenz-Signal
+(entspricht einem Myonendurchgang) gibt so nach fester Verzögerungszeit das Startsignal.
+Kommt nun ein Myon in Z2 zur Ruhe, so zerfällt es dort und verursacht dadurch einen
+weiteren Impuls (Stoppsignal) in Z2. Da man mit jedem Startsignal auch ein Stoppsignal
+erhält, wird das Startsignal um etwa $\unit[100]{ns}$ verzögert. Der zeitliche Abstand
+der beiden Signale wird nun in diesem Versuch gemessen. Er weist eine gewisse
+Verteilung auf, welche durch die Lebensdauer des Myons bestimmt ist. 
 
-Es muss also prinzipiell nur eine Zeitmessung erfolgen. Dies geschieht über das Abzählen der von einem $\unit[20]{MHz}$-Oszillator abgegebenen Impulse. Kommt innerhalb von $\unit[10]{\mu s}$ nach dem Startsignal kein Stopsignal, so wird die aktuelle Zählung genullt und kann wieder neu ausgelöst werden.
+Es muss also prinzipiell nur eine Zeitmessung erfolgen. Dies geschieht über das
+Abzählen der von einem $\unit[20]{MHz}$-Oszillator abgegebenen Impulse. Kommt
+innerhalb von $\unit[10]{\mu s}$ nach dem Startsignal kein Stopsignal, so wird
+die aktuelle Zählung genullt und kann wieder neu ausgelöst werden.
 
-Die Höhenstrahlung hat jedoch keine konstante Intensität. Bei denn zu erwartenden kleinen Zählraten wird die Messung von Schwellen- und Verzögerungskurven dadurch statistisch unsicher. Aus diesem Grund ist ein Monitorkreis als Referenz aufgebaut.
-In diesem werden die Diskriminatorschwellen minimal eingestellt. Auf diese Weise erhält man mit der Koinzidenzrate im Monitorkreis einen Referenzwert, der analog zu Z25 im ersten Teil zur Normierung der im Messkreis stattfindenden Koinzidenzen genutzt werden kann.
+Die Höhenstrahlung hat jedoch keine konstante Intensität. Bei denn zu erwartenden
+kleinen Zählraten wird die Messung von Schwellen- und Verzögerungskurven dadurch
+statistisch unsicher. Aus diesem Grund ist ein Monitorkreis als Referenz aufgebaut.
+In diesem werden die Diskriminatorschwellen minimal eingestellt. Auf diese Weise
+erhält man mit der Koinzidenzrate im Monitorkreis einen Referenzwert, der analog
+zu Z25 im ersten Teil zur Normierung der im Messkreis stattfindenden Koinzidenzen
+genutzt werden kann.
 
+%das hast du da noch geschrieben, was machen damit??:
+%Die Diskriminatorschwellen und Koinzidenzzeiten aller Szintillationszähler bis
+%auf Z12 sind bereits eingestellt, für den letzten Zähler nehmen wir die
+%Einstellung selbst vor.
+
+\subsubsection{Einstellung der Verzögerungszeit}
+Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
+messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
+dieses auf die Zählrate von Z25 um ein (für genügend lange Messdauer)
+zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch Veränderung
+der Kabellänge) die Verzögerung des Ausgangs Z25 gegen % oder!
+Damit erhalten wir folgenden Graphen:
+
+\begin{figure}[H]
+  \input{grafiken/koinzidenz.tikz}
+  \caption{Koinzidenzkurve}
+  \label{fig:koinzidenz}
+\end{figure}
+
+% Fehler
+
+Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
+ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
+zu erwarten wären haben wir das nicht weiter verfolgt.
+
+Aus der 
+% Ergebnis
+
+\subsection{Lebensdauer des Myons}
 \section{Auswertung}
 \subsection{Teil 1}
 \subsubsection{Winkelverteilung}
@@ -315,7 +416,14 @@ der Form
 \begin{align}
   N = a \cos^n(\theta-b)
 \end{align}
-an die Daten.
+an die Daten. Damit erhalten wir folgenden Graphen:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/winkelverteilung.tikz}
+  \end{center}
+  \caption{Winkelverteilung und Fit}
+  \label{fig:winkel_graph}
+\end{figure}
 
 \subsubsection{Zufallskoinzidenzen}
 
@@ -347,6 +455,8 @@ Daraus erhalten wir folgenden Graphen:
 \begin{appendix}
   \section{Graphen}
   \section{Tabellen}
+  % Winkelverteilung
+  % Lebensdauer
   \Literatur{quellen}
 \end{appendix}
 \end{document}
