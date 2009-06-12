@@ -1,6 +1,6 @@
 \begin{tikzpicture}[gnuplot]
 %% generated with GNUPLOT 4.2p5  (Lua 5.1.4; terminal rev. 90, script rev. 90)
-%% Wed Jun 10 23:53:24 2009
+%% Fri Jun 12 14:27:52 2009
 \gpsolidlines
 \gpcolor{gp lt color border}
 \gpsetlinetype{gp lt border}
@@ -63,7 +63,7 @@
 \draw[gp path] (12.040,8.382)--(12.040,8.202);
 \node[gp node center] at (12.040,0.677) { 40};
 \draw[gp path] (2.240,8.382)--(2.240,0.985)--(12.040,0.985)--(12.040,8.382)--cycle;
-\node[gp node center,rotate=90] at (0.614,4.683) {$\frac{N_{\text{oder}}}{N_25}$};
+\node[gp node center,rotate=90] at (0.614,4.683) {$\frac{N_{\text{oder}}}{N_{Z25}}$};
 \node[gp node center] at (7.140,0.215) {$\Delta t/\unit{ns}$};
 \node[gp node right] at (10.572,8.048) {Erster Versuchstag};
 \gpcolor{gp lt color 0}
@@ -113,6 +113,9 @@
 \draw[gp path] (5.303,7.098)--(5.303,7.427);
 \draw[gp path] (5.213,7.098)--(5.393,7.098);
 \draw[gp path] (5.213,7.427)--(5.393,7.427);
+\draw[gp path] (5.915,7.956)--(5.915,8.285);
+\draw[gp path] (5.825,7.956)--(6.005,7.956);
+\draw[gp path] (5.825,8.285)--(6.005,8.285);
 \draw[gp path] (7.079,7.386)--(7.201,7.386);
 \draw[gp path] (7.079,7.296)--(7.079,7.476);
 \draw[gp path] (7.201,7.296)--(7.201,7.476);
@@ -155,6 +158,9 @@
 \draw[gp path] (5.241,7.263)--(5.364,7.263);
 \draw[gp path] (5.241,7.173)--(5.241,7.353);
 \draw[gp path] (5.364,7.173)--(5.364,7.353);
+\draw[gp path] (5.854,8.120)--(5.976,8.120);
+\draw[gp path] (5.854,8.030)--(5.854,8.210);
+\draw[gp path] (5.976,8.030)--(5.976,8.210);
 \gpsetpointsize{4.00}
 \gppoint{gp mark 1}{(7.140,7.386)}
 \gppoint{gp mark 1}{(7.508,7.258)}
@@ -170,6 +176,7 @@
 \gppoint{gp mark 1}{(3.465,1.807)}
 \gppoint{gp mark 1}{(4.690,7.449)}
 \gppoint{gp mark 1}{(5.303,7.263)}
+\gppoint{gp mark 1}{(5.915,8.120)}
 \gppoint{gp mark 1}{(11.214,8.048)}
 \gpcolor{gp lt color border}
 \node[gp node right] at (10.572,7.740) {Zweiter Versuchstag};
@@ -178,9 +185,6 @@
 \draw[gp path] (10.756,7.740)--(11.672,7.740);
 \draw[gp path] (10.756,7.830)--(10.756,7.650);
 \draw[gp path] (11.672,7.830)--(11.672,7.650);
-\draw[gp path] (5.915,7.956)--(5.915,8.285);
-\draw[gp path] (5.825,7.956)--(6.005,7.956);
-\draw[gp path] (5.825,8.285)--(6.005,8.285);
 \draw[gp path] (6.528,6.495)--(6.528,6.824);
 \draw[gp path] (6.438,6.495)--(6.618,6.495);
 \draw[gp path] (6.438,6.824)--(6.618,6.824);
@@ -196,9 +200,6 @@
 \draw[gp path] (8.365,6.107)--(8.365,6.436);
 \draw[gp path] (8.275,6.107)--(8.455,6.107);
 \draw[gp path] (8.275,6.436)--(8.455,6.436);
-\draw[gp path] (5.854,8.120)--(5.976,8.120);
-\draw[gp path] (5.854,8.030)--(5.854,8.210);
-\draw[gp path] (5.976,8.030)--(5.976,8.210);
 \draw[gp path] (6.466,6.660)--(6.589,6.660);
 \draw[gp path] (6.466,6.570)--(6.466,6.750);
 \draw[gp path] (6.589,6.570)--(6.589,6.750);
@@ -214,7 +215,6 @@
 \draw[gp path] (8.304,6.271)--(8.426,6.271);
 \draw[gp path] (8.304,6.181)--(8.304,6.361);
 \draw[gp path] (8.426,6.181)--(8.426,6.361);
-\gppoint{gp mark 2}{(5.915,8.120)}
 \gppoint{gp mark 2}{(6.528,6.660)}
 \gppoint{gp mark 2}{(6.283,4.686)}
 \gppoint{gp mark 2}{(6.895,5.692)}

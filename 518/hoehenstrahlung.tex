@@ -342,47 +342,6 @@ Diskriminator als Veto verwendet. Der Ausgang jeder dieser Koinzidenzen ist
 dabei an einen Zähler angeschlossen woran wir dann die Winkelverteilung ablesen
 können.
 
-\subsection{Lebensdauer des Myons}
-Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
-Hierzu werden die Zerfallszeiten der in einem Szintillatormaterial zur Ruhe
-kommenden Myonen gemessen. Der Aufbau ist in der folgenden Abbildung gezeigt.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.50\textwidth]{grafiken/myonaufbau}
-  \caption[Aufbau]{Schematischer Versuchsaufbau~\cite{skript}}
-  \label{fig:myonaufbau}
-\end{figure}
-
-Zunächst trifft die Strahlung auf eine etwa $\unit[5]{cm}$ dicke Bleiabschirmung.
-Hier werden die weichen Komponenten abgeschirmt und ferner werden die Myonen stark
-abgebremst. Darunter befinden sich zwei Szintillatoren. Ein einfallendes Teilchen
-der Höhenstrahlung erzeugt in Zähler 1 und Zähler 2 je einen Impuls mit fester
-zeitlicher Korrelation. Das mit geeigneter Verschaltung gewonnene Koinzidenz-Signal
-(entspricht einem Myonendurchgang) gibt so nach fester Verzögerungszeit das Startsignal.
-Kommt nun ein Myon in Z2 zur Ruhe, so zerfällt es dort und verursacht dadurch einen
-weiteren Impuls (Stoppsignal) in Z2. Da man mit jedem Startsignal auch ein Stoppsignal
-erhält, wird das Startsignal um etwa $\unit[100]{ns}$ verzögert. Der zeitliche Abstand
-der beiden Signale wird nun in diesem Versuch gemessen. Er weist eine gewisse
-Verteilung auf, welche durch die Lebensdauer des Myons bestimmt ist. 
-
-Es muss also prinzipiell nur eine Zeitmessung erfolgen. Dies geschieht über das
-Abzählen der von einem $\unit[20]{MHz}$-Oszillator abgegebenen Impulse. Kommt
-innerhalb von $\unit[10]{\mu s}$ nach dem Startsignal kein Stopsignal, so wird
-die aktuelle Zählung genullt und kann wieder neu ausgelöst werden.
-
-Die Höhenstrahlung hat jedoch keine konstante Intensität. Bei denn zu erwartenden
-kleinen Zählraten wird die Messung von Schwellen- und Verzögerungskurven dadurch
-statistisch unsicher. Aus diesem Grund ist ein Monitorkreis als Referenz aufgebaut.
-In diesem werden die Diskriminatorschwellen minimal eingestellt. Auf diese Weise
-erhält man mit der Koinzidenzrate im Monitorkreis einen Referenzwert, der analog
-zu Z25 im ersten Teil zur Normierung der im Messkreis stattfindenden Koinzidenzen
-genutzt werden kann.
-
-%das hast du da noch geschrieben, was machen damit??:
-%Die Diskriminatorschwellen und Koinzidenzzeiten aller Szintillationszähler bis
-%auf Z12 sind bereits eingestellt, für den letzten Zähler nehmen wir die
-%Einstellung selbst vor.
-
 \subsubsection{Einstellung der Verzögerungszeit}
 Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
 messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
@@ -405,6 +364,54 @@ zu erwarten wären haben wir das nicht weiter verfolgt.
 
 Aus der 
 % Ergebnis
+
+\subsubsection{Einstellung der Diskriminatorschwelle}
+\label{cha:einstellung_schwelle}
+
+
+
+\subsection{Lebensdauer des Myons}
+Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
+Hierzu werden die Zerfallszeiten der in einem Szintillatormaterial zur Ruhe
+kommenden Myonen gemessen. Der Aufbau ist in der folgenden Abbildung gezeigt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.50\textwidth]{grafiken/myonaufbau}
+  \caption[Aufbau]{Schematischer Versuchsaufbau~\cite{skript}}
+  \label{fig:myonaufbau}
+\end{figure}
+
+Zunächst trifft die Strahlung auf eine etwa $\unit[5]{cm}$ dicke
+Bleiabschirmung.  Hier werden die weichen Komponenten abgeschirmt und ferner
+werden die Myonen stark abgebremst. Darunter befinden sich zwei Szintillatoren.
+Ein einfallendes Teilchen der Höhenstrahlung erzeugt in Zähler 1 und Zähler 2 je
+einen Impuls mit fester zeitlicher Korrelation. Das mit geeigneter Verschaltung
+gewonnene Koinzidenz-Signal (entspricht einem Myonendurchgang) gibt so nach
+fester Verzögerungszeit das Startsignal.  Kommt nun ein Myon in Z2 zur Ruhe, so
+zerfällt es dort und verursacht dadurch einen weiteren Impuls (Stoppsignal) in
+Z2. Da man mit jedem Startsignal auch ein Stoppsignal erhält, wird das
+Startsignal um etwa $\unit[100]{ns}$ verzögert. Der zeitliche Abstand der beiden
+Signale wird nun in diesem Versuch gemessen. Er weist eine gewisse Verteilung
+auf, welche durch die Lebensdauer des Myons bestimmt ist. 
+
+Es muss also prinzipiell nur eine Zeitmessung erfolgen. Dies geschieht über das
+Abzählen der von einem $\unit[20]{MHz}$-Oszillator abgegebenen Impulse. Kommt
+innerhalb von $\unit[10]{\mu s}$ nach dem Startsignal kein Stopsignal, so wird
+die aktuelle Zählung genullt und kann wieder neu ausgelöst werden.
+
+Die Höhenstrahlung hat jedoch keine konstante Intensität. Bei den zu erwartenden
+kleinen Zählraten wird die Messung von Schwellen- und Verzögerungskurven dadurch
+statistisch unsicher. Aus diesem Grund ist ein Monitorkreis als Referenz
+aufgebaut. In diesem werden die Diskriminatorschwellen minimal eingestellt. Auf
+diese Weise erhält man mit der Koinzidenzrate im Monitorkreis einen
+Referenzwert, der analog zu Z25 im ersten Teil zur Normierung der im Messkreis
+stattfindenden Koinzidenzen genutzt werden kann.
+
+Die Schwellen im Messkreis werden nach demselben Verfahren wie dem in Abschnitt
+\ref{cha:einstellung_schwelle} beschriebenen eingestellt. Die Graphen dazu sind
+in Anhang \ref{app:graphen_myon_schwellen} zu finden, die gewählten Werte waren
+$\unit[140]{Skt}$ für Diskriminator 1 und $\unit[110]{Skt}$ für Diskriminator 2.
+
 
 \subsection{Lebensdauer des Myons}
 \section{Auswertung}
@@ -454,7 +461,18 @@ Daraus erhalten wir folgenden Graphen:
 
 \begin{appendix}
   \section{Graphen}
-  \section{Tabellen}
+  \subsection{\ldots zur Einstellung der Diskriminatorschwellen}
+  \label{app:graphen_myon_schwellen}
+  \begin{figure}[H]
+    \input{grafiken/myon_d1.tikz}
+    \caption{Diskriminator 1}
+  \end{figure}
+  \begin{figure}[H]
+    \input{grafiken/myon_d2.tikz}
+    \caption{Diskriminator 2}
+  \end{figure}
+
+ \section{Tabellen}
   % Winkelverteilung
   % Lebensdauer
   \Literatur{quellen}

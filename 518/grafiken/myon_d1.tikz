@@ -1,0 +1,96 @@
+\begin{tikzpicture}[gnuplot]
+%% generated with GNUPLOT 4.2p5  (Lua 5.1.4; terminal rev. 90, script rev. 90)
+%% Fri Jun 12 14:27:52 2009
+\gpsolidlines
+\gpcolor{gp lt color border}
+\gpsetlinetype{gp lt border}
+\gpsetlinewidth{1.00}
+\draw[gp path] (1.872,0.985)--(2.052,0.985);
+\draw[gp path] (12.040,0.985)--(11.860,0.985);
+\node[gp node right] at (1.688,0.985) { 0.2};
+\draw[gp path] (1.872,1.807)--(2.052,1.807);
+\draw[gp path] (12.040,1.807)--(11.860,1.807);
+\node[gp node right] at (1.688,1.807) { 0.4};
+\draw[gp path] (1.872,2.629)--(2.052,2.629);
+\draw[gp path] (12.040,2.629)--(11.860,2.629);
+\node[gp node right] at (1.688,2.629) { 0.6};
+\draw[gp path] (1.872,3.451)--(2.052,3.451);
+\draw[gp path] (12.040,3.451)--(11.860,3.451);
+\node[gp node right] at (1.688,3.451) { 0.8};
+\draw[gp path] (1.872,4.273)--(2.052,4.273);
+\draw[gp path] (12.040,4.273)--(11.860,4.273);
+\node[gp node right] at (1.688,4.273) { 1};
+\draw[gp path] (1.872,5.094)--(2.052,5.094);
+\draw[gp path] (12.040,5.094)--(11.860,5.094);
+\node[gp node right] at (1.688,5.094) { 1.2};
+\draw[gp path] (1.872,5.916)--(2.052,5.916);
+\draw[gp path] (12.040,5.916)--(11.860,5.916);
+\node[gp node right] at (1.688,5.916) { 1.4};
+\draw[gp path] (1.872,6.738)--(2.052,6.738);
+\draw[gp path] (12.040,6.738)--(11.860,6.738);
+\node[gp node right] at (1.688,6.738) { 1.6};
+\draw[gp path] (1.872,7.560)--(2.052,7.560);
+\draw[gp path] (12.040,7.560)--(11.860,7.560);
+\node[gp node right] at (1.688,7.560) { 1.8};
+\draw[gp path] (1.872,8.382)--(2.052,8.382);
+\draw[gp path] (12.040,8.382)--(11.860,8.382);
+\node[gp node right] at (1.688,8.382) { 2};
+\draw[gp path] (1.872,0.985)--(1.872,1.165);
+\draw[gp path] (1.872,8.382)--(1.872,8.202);
+\node[gp node center] at (1.872,0.677) { 40};
+\draw[gp path] (3.002,0.985)--(3.002,1.165);
+\draw[gp path] (3.002,8.382)--(3.002,8.202);
+\node[gp node center] at (3.002,0.677) { 60};
+\draw[gp path] (4.132,0.985)--(4.132,1.165);
+\draw[gp path] (4.132,8.382)--(4.132,8.202);
+\node[gp node center] at (4.132,0.677) { 80};
+\draw[gp path] (5.261,0.985)--(5.261,1.165);
+\draw[gp path] (5.261,8.382)--(5.261,8.202);
+\node[gp node center] at (5.261,0.677) { 100};
+\draw[gp path] (6.391,0.985)--(6.391,1.165);
+\draw[gp path] (6.391,8.382)--(6.391,8.202);
+\node[gp node center] at (6.391,0.677) { 120};
+\draw[gp path] (7.521,0.985)--(7.521,1.165);
+\draw[gp path] (7.521,8.382)--(7.521,8.202);
+\node[gp node center] at (7.521,0.677) { 140};
+\draw[gp path] (8.651,0.985)--(8.651,1.165);
+\draw[gp path] (8.651,8.382)--(8.651,8.202);
+\node[gp node center] at (8.651,0.677) { 160};
+\draw[gp path] (9.780,0.985)--(9.780,1.165);
+\draw[gp path] (9.780,8.382)--(9.780,8.202);
+\node[gp node center] at (9.780,0.677) { 180};
+\draw[gp path] (10.910,0.985)--(10.910,1.165);
+\draw[gp path] (10.910,8.382)--(10.910,8.202);
+\node[gp node center] at (10.910,0.677) { 200};
+\draw[gp path] (12.040,0.985)--(12.040,1.165);
+\draw[gp path] (12.040,8.382)--(12.040,8.202);
+\node[gp node center] at (12.040,0.677) { 220};
+\draw[gp path] (1.872,8.382)--(1.872,0.985)--(12.040,0.985)--(12.040,8.382)--cycle;
+\node[gp node center,rotate=90] at (0.614,4.683) {Zählrate};
+\node[gp node center] at (6.956,0.215) {Schwelle/Skt};
+\gpcolor{gp lt color 0}
+\gpsetpointsize{4.00}
+\gppoint{gp mark 1}{(2.437,8.181)}
+\gppoint{gp mark 1}{(3.002,8.194)}
+\gppoint{gp mark 1}{(3.567,7.535)}
+\gppoint{gp mark 1}{(4.132,7.390)}
+\gppoint{gp mark 1}{(4.696,6.312)}
+\gppoint{gp mark 1}{(5.261,5.838)}
+\gppoint{gp mark 1}{(5.826,5.035)}
+\gppoint{gp mark 1}{(5.826,5.155)}
+\gppoint{gp mark 1}{(6.391,4.632)}
+\gppoint{gp mark 1}{(6.956,3.805)}
+\gppoint{gp mark 1}{(7.521,3.611)}
+\gppoint{gp mark 1}{(8.086,3.265)}
+\gppoint{gp mark 1}{(8.651,2.984)}
+\gppoint{gp mark 1}{(9.216,2.670)}
+\gppoint{gp mark 1}{(9.780,1.686)}
+\gppoint{gp mark 1}{(10.345,2.172)}
+\gppoint{gp mark 1}{(10.910,1.955)}
+\gppoint{gp mark 1}{(11.475,1.762)}
+\gpcolor{gp lt color border}
+\draw[gp path] (1.872,8.382)--(1.872,0.985)--(12.040,0.985)--(12.040,8.382)--cycle;
+%% coordinates of the plot area
+\gpdefrectangularnode{gp plot 1}{\pgfpoint{1.872cm}{0.985cm}}{\pgfpoint{12.040cm}{8.382cm}}
+\end{tikzpicture}
+%% gnuplot variables
