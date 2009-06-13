@@ -367,7 +367,24 @@ Aus der
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
 \label{cha:einstellung_schwelle}
+Die Diskriminatorschwelle soll so eingestellt werden, dass der geringen Energien
+entsprechende Untergrund herausgefiltert wird. Betrachtet man das
+undiskriminierte Spektrum, so erhält man etwas von folgender Form:
+% Graph
 
+Nun soll der erste Peak gefiltert werden, die Diskriminatorschwelle sollte also
+ziemlich genau im Minimum zwischen den beiden Maxima liegen. Da wir nicht
+genügend Zeit haben, ein komplettes Spektrum aufzunehmen bedienen wir uns
+folgender Methode:
+
+Wir messen statt des Spektrums die Gesamtzählrate, also das Integral über das
+Spektrum und normieren diese mit der Zeit für verschiedene Schwellen. Ein
+Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
+(idealisierend) davon aus, dass das Spektrum an diesem Minimum einen Nullpunkt
+hat, so ist im Integral dort ein Sattelpunkt. Aus der gemessenen Kurve können
+wir also indem wir diesen Wendepunkt bestimmen die ideale Schwelle bestimmen.
+
+% Graph
 
 
 \subsection{Lebensdauer des Myons}
@@ -445,44 +462,75 @@ an die Daten. Damit erhalten wir folgenden Graphen:
 
 \textbf{Bereinigung um Zufallsereignisse}
 
-Eingangs müssen zunächst die das Messergebnis verfälschenden Zufallsereignisse betrachtet werden, welche nicht einen Myonenzerfall wiederspiegeln. Man kann die aufgenommenen Ereignisse in drei Gruppen unterteilen.
+Eingangs müssen zunächst die das Messergebnis verfälschenden Zufallsereignisse
+betrachtet werden, welche nicht einen Myonenzerfall wiederspiegeln. Man kann die
+aufgenommenen Ereignisse in drei Gruppen unterteilen.
 
 \begin{enumerate}
 %besser mit a,b,c
-\item Beide Detektoren werden von dem Myon passiert, es zerfällt jedoch nicht im zweiten Detektor. Hieraus erhält man $N_a$ Ereignisse, welche ein Start- und ein gleichzeitiges Stopsignal liefern.
-\item Beide Detektoren werden passiert und das Myon zerfällt innerhalb von $\unit[10]{\mu s}$ im zweiten Detektor. Hierbei erhält man $N_b$ Signale, welche einen Start- und zwei Stopimpulse auslösen.
-\item Es wird nur der zweite Detektor getroffen, also nur ein Stopsignal hervorgerufen. Die hieraus erhaltene Anzahl an Signalen nennen wir $N_c$.
+\item Beide Detektoren werden von dem Myon passiert, es zerfällt jedoch nicht im
+    zweiten Detektor. Hieraus erhält man $N_a$ Ereignisse, welche ein Start- und
+    ein gleichzeitiges Stopsignal liefern.
+\item Beide Detektoren werden passiert und das Myon zerfällt innerhalb von
+    $\unit[10]{\mu s}$ im zweiten Detektor. Hierbei erhält man $N_b$ Signale,
+    welche einen Start- und zwei Stopimpulse auslösen.
+\item Es wird nur der zweite Detektor getroffen, also nur ein Stopsignal
+    hervorgerufen. Die hieraus erhaltene Anzahl an Signalen nennen wir $N_c$.
 \end{enumerate}
 
-Nun kennt man noch die Gesamtzahl der Startimpulse $N_{Start}$, die Gesamtzahl der Stoppimpulse $N_{Stopp}$, sowie die Gesamtmessdauer $T$.
+Nun kennt man noch die Gesamtzahl der Startimpulse $N_{Start}$, die Gesamtzahl
+der Stoppimpulse $N_{Stopp}$, sowie die Gesamtmessdauer $T$.
 
-\emph{Anmerkung: Wie bekannt, wurde von unserer Seite versäumt, die Daten zur verabredeten Zeit abzuholen. Freundlicherweise wurden die Daten vom anwesenden Tutor dokumentiert. Leider wurde jedoch versäumt, auch die soeben genannten Werte aufzunehmen. Somit haben wir nun in der Tat diesbezüglich keine Werte vorliegen. Wir werden die Rechnung deshalb beispielhaft durchführen, die dabei verwendeten Daten genügen einer gewissen Plausibilität sind jedoch \textbf{nicht} gemessen worden.}
+\emph{Anmerkung: Wie bekannt, wurde von unserer Seite versäumt, die Daten zur
+verabredeten Zeit abzuholen. Freundlicherweise wurden die Daten vom anwesenden
+Tutor dokumentiert. Leider hat dieser die soeben genannten Werte nicht
+aufgenommen. Somit haben wir nun in der Tat diesbezüglich keine Werte vorliegen.
+Wir werden die Rechnung deshalb beispielhaft durchführen, die dabei verwendeten
+Daten genügen einer gewissen Plausibilität sind jedoch \textbf{nicht} gemessen
+worden.}
 
 \begin{align*}
-N_{Start} = 000000 \ \ \ \ \ N_{Stopp} = 000000 \ \ \ \ \ T = \unit[424800]{s}
-%oder haben wir am di schon diese messung gestartet? dann wären es wohl eher \unit[496800]{s}
+  N_{Start} = 000000 \ \ \ \ \ N_{Stopp} = 000000 \ \ \ \ \ T = \unit[424800]{s}
+%oder haben wir am di schon diese messung gestartet? dann wären es wohl eher
+%\unit[496800]{s}
 \end{align*}
 
-Nun nehmen wir an, dass in guter Näherung alle im zweiten Detektor gestoppten Myonen innerhalb von $\unit[10]{\mu s}$ zerfallen. Dies ergibt aus der Summe der in den einzelnen Zeitbins gezählten Signale (siehe Tabelle \ref{tab:leben}) dann $N_b = 00000$. Die Werte für $N_a$ und $N_c$ lassen sich nun folgendermaßen bestimmen (siehe oben). Es gilt zunächst einmal:
+Nun nehmen wir an, dass in guter Näherung alle im zweiten Detektor gestoppten
+Myonen innerhalb von $\unit[10]{\mu s}$ zerfallen. Dies ergibt aus der Summe der
+in den einzelnen Zeitbins gezählten Signale (siehe Tabelle \ref{tab:leben}) dann
+$N_b = 00000$. Die Werte für $N_a$ und $N_c$ lassen sich nun folgendermaßen
+bestimmen (siehe oben). Es gilt zunächst einmal:
 \begin{align*}
-N_{Start} = N_a + N_b \ \ \ \ \ N_{Stop} = N_a + 2 N_b + N_c
+  N_{Start} = N_a + N_b \ \ \ \ \ N_{Stop} = N_a + 2 N_b + N_c
 \end{align*}
 Nun wird dies umgeformt und man erhält:
 \begin{align*}
-N_a = N_{Start} - N_b \ \ \ \ \ N_c = N_{Stop} - N_a - 2 N_b
+ N_a = N_{Start} - N_b \ \ \ \ \ N_c = N_{Stop} - N_a - 2 N_b
 \end{align*}
 Somit ergibt sich für unsere Beispielwerte $N_a=00000$ und $N_c=00000$.
 
-Auf Grund der angesprochenen Maßnahme der Verzögerung des Startsignals können wir $N_c$ nun als gute Approximation für die Anzahl der Zufallssignale annehmen. Es ergibt sich also eine Zufallssignalrate $n_Z = N_c/T = \unit[00.0 \pm 0.0]{s^{-1}}$.
+Aufgrund der angesprochenen Maßnahme der Verzögerung des Startsignals können wir
+$N_c$ nun als gute Approximation für die Anzahl der Zufallssignale annehmen. Es
+ergibt sich also eine Zufallssignalrate $n_Z = N_c/T = \unit[00.0 \pm
+0.0]{s^{-1}}$.
 
-Ein scheinbarer Myonenzerfall beschreibt gerade den Umstand, dass auf ein Startsignal ein auf ein Zufallsereignis rückführbares Stopsignal folgt. Die Gesamtzeit, in welcher die Versuchsapparatur für derartige Signale empfindlich ist, wird zu $t = N_{Start} \cdot \unit[10]{\mu s} = \unit[(00.00 \pm 0.00)]{s}$ bestimmt. Natürlich wird durch einen echten Zerfall diese Zeit verkürzt, da die Lebensdauer der Myonen kleiner als $\unit[10]{\mu s}$ ist, jedoch kann dies wegen $N_b << N_{a,c}$ vernachlässigt werden.
+Ein scheinbarer Myonenzerfall beschreibt gerade den Umstand, dass auf ein
+Startsignal ein auf ein Zufallsereignis rückführbares Stopsignal folgt. Die
+Gesamtzeit, in welcher die Versuchsapparatur für derartige Signale empfindlich
+ist, wird zu $t = N_{Start} \cdot \unit[10]{\mu s} = \unit[(00.00 \pm 0.00)]{s}$
+bestimmt. Natürlich wird durch einen echten Zerfall diese Zeit verkürzt, da die
+Lebensdauer der Myonen kleiner als $\unit[10]{\mu s}$ ist, jedoch kann dies
+wegen $N_b << N_{a,c}$ vernachlässigt werden.
+
+
 Es ergibt sich dann mit
 \begin{align*}
-N_Z &= n_Z \cdot t \\
-\Delta N_Z &= \sqrt{\Delta n^2_Z\ t^2 + \Delta t^2\ n^2_Z}
+  N_Z &= n_Z \cdot t \\
+  \Delta N_Z &= \sqrt{\Delta n^2_Z\ t^2 + \Delta t^2\ n^2_Z}
 \end{align*}
 schlussendlich die Gesamtzahl der Zufallsereignisse zu $N_Z = (000 \pm 00)$.
-Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins verteilt, sodass jeder Wert um $N^1_Z(00 \pm 0)$ korrigiert werden muss.
+Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins verteilt, sodass
+jeder Wert um $N^1_Z(00 \pm 0)$ korrigiert werden muss.
 
 % überall noch die zahlen einsetzen!!!!
 
