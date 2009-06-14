@@ -312,8 +312,8 @@ Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
 \label{cha:winkel_aufbau}
-Um die Winkelverteilung zu messen werden insgesamt 25 Szintillationszähler wie
-folgt aufgebaut:
+Um die Winkelverteilung der Höhenstrahlung zu messen werden insgesamt 25
+Szintillationszähler wie folgt aufgebaut (Aufbau war bereits realisiert):
 
 \newdimen\R
 \R=3cm
@@ -335,12 +335,14 @@ folgt aufgebaut:
 
 Die Zähler werden dann (nach den Diskriminatoren, die für einen Rechteckpuls
 sorgen) in Dreifachkoinzidenzen verschaltet, sodass diese genau dann einen Puls
-liefern, wenn ein Teilchen in gerader Linie durch das Zentrum der Apparatur
-(Z25) fliegt.  Dazu werden immer zwei gegenüberliegende Zähler (zum Beispiel Z12
-und Z24) mit einer Koinzidenzeinheit verbunden und der Ausgang von Z25 nach dem
-Diskriminator als Veto verwendet. Der Ausgang jeder dieser Koinzidenzen ist
-dabei an einen Zähler angeschlossen woran wir dann die Winkelverteilung ablesen
-können.
+liefern, wenn ein Teilchen in gerader Linie (mit annähernd Lichtgeschwindigkeit) durch
+das Zentrum der Apparatur (Z25) fliegt. Dazu werden immer zwei gegenüberliegende
+Zähler (zum Beispiel Z12 und Z24) mit einer Koinzidenzeinheit verbunden und der 
+Ausgang von Z25 nach dem Diskriminator als Veto verwendet. Der Ausgang jeder dieser 
+Koinzidenzen ist dabei an einen Zähler angeschlossen woran wir dann die
+Winkelverteilung in $15^{\circ}$-Schritten von $-90^{\circ}$ bis $+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme, dass keine Strahlung von unten einfällt).
+
+% pulshöhenspektrum fehlt noch
 
 \subsubsection{Einstellung der Verzögerungszeit}
 Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
@@ -348,6 +350,7 @@ messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
 dieses auf die Zählrate von Z25 um ein (für genügend lange Messdauer)
 zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch Veränderung
 der Kabellänge) die Verzögerung des Ausgangs Z25 gegen % oder!
+% ... da fehlt was!!! kommentar???
 Damit erhalten wir folgenden Graphen:
 
 \begin{figure}[H]
@@ -361,6 +364,8 @@ Damit erhalten wir folgenden Graphen:
 Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
 ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
 zu erwarten wären haben wir das nicht weiter verfolgt.
+
+% HV sache?!
 
 Aus der 
 % Ergebnis
@@ -382,10 +387,9 @@ Spektrum und normieren diese mit der Zeit für verschiedene Schwellen. Ein
 Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
 (idealisierend) davon aus, dass das Spektrum an diesem Minimum einen Nullpunkt
 hat, so ist im Integral dort ein Sattelpunkt. Aus der gemessenen Kurve können
-wir also indem wir diesen Wendepunkt bestimmen die ideale Schwelle bestimmen.
+wir also, indem wir diesen Wendepunkt bestimmen, die ideale Schwelle bestimmen.
 
 % Graph
-
 
 \subsection{Lebensdauer des Myons}
 Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
@@ -449,6 +453,8 @@ an die Daten. Damit erhalten wir folgenden Graphen:
   \caption{Winkelverteilung und Fit}
   \label{fig:winkel_graph}
 \end{figure}
+
+% mehr bla
 
 \subsubsection{Zufallskoinzidenzen}
 
@@ -563,6 +569,7 @@ Die Daten sind tabellarisch in Tab (\ref{tab:leben}) dargestellt. Wir erhalten f
 
 %bitte hier noch fitparameter
 %was schreiben, falls fehlerbalken zu kleine oder sowas
+%überhaupt was zu delta N schreiben
 
 Wir bestimmen nun mit Hilfe der Steigung $m$ die Lebensdauer $\tau$ des Myons zu:
 \begin{align}
