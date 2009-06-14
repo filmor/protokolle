@@ -539,7 +539,7 @@ jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
 Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden. Hierzu
 werden - wie bereits angesprochen - die Zeitdifferenzen zwischen den Start- und
 Stopsignalen, also die Zerfallszeiten mit Hilfe der Zeitbins ($\unit[1]{\mu s}$ Breite)
-gemessen. Es ergibt sich dann für jedes Bin $i$ eine Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle die sich nach Plausibilität, nicht nach Messung (siehe oben) bestimmten Werte benutzt. Es gilt nach dem Zerfallsgesetz:
+gemessen. Es ergibt sich dann für jedes Bin $i$ eine Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle die sich nach Plausibilität - nicht nach Messung (siehe oben) - bestimmten Werte benutzt. Es gilt nach dem Zerfallsgesetz:
 \begin{align}
   N(t) = N_0 \mathrm e^{-\lambda t}
 \end{align}
@@ -549,7 +549,7 @@ zu:
 \begin{align*}
 \tau = \frac{1}{\lambda}
 \end{align*}
-Der Fehler beträgt somit $\Delta \tau = \frac{\Delta\lambda}{\lambda^2}$. Sowohl den Mittelwert, also auch den Fehler der Zerfallskonstanten $\lambda$ erhalten wir dabei über einen Geradenfit an $\ln{N(t)}$. Die beschriebene Verzögerung des Startsignals geht nur über eine Verschiebung des Graphen entlang der Zeitachse ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis für die Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte $N^i$ in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
+Der Fehler beträgt somit $\Delta \tau = \frac{\Delta\lambda}{\lambda^2}$. Sowohl den Mittelwert, als auch den Fehler der Zerfallskonstanten $\lambda$ kann man dabei über einen Geradenfit an $\ln{N(t)}$ erhalten, was vorteilhaft für die manuelle Auswertung ist. In der Tat haben wir jedoch mit \texttt{Gnuplot} direkt an $N(t)$ eine Exponentialfunktion gefittet. Da optisch jedoch gemeinhin die Güte eines Geradenfits besser eingeschätzt werden kann, als diejenige einer gefitteten Exponentialfunktion, haben wir für die graphische Darstellung des Fits einen halblogarithmischen Plot verwendet (siehe unten). Die beschriebene Verzögerung des Startsignals geht nur über eine Verschiebung des Graphen entlang der Zeitachse ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis für die Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte $N^i$ in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
 
 Die Daten sind tabellarisch in Tab (\ref{tab:leben}) dargestellt. Wir erhalten folgenden Graphen:
 %bitte als geradenfit
