@@ -448,8 +448,7 @@ $\unit[140]{Skt}$ für Diskriminator 1 und $\unit[110]{Skt}$ für Diskriminator 2.
 
 
 \section{Auswertung}
-\subsection{Teil 1}
-\subsubsection{Winkelverteilung}
+\subsection{Winkelverteilung}
 Mit dem oben beschriebenen Aufbau wurde die Winkelverteilung der Höhenstrahlung.
 Angenommen wird eine $\cos²(\theta)$-Verteilung, daher fitten wir eine Funktion
 der Form
@@ -469,14 +468,19 @@ an die Daten. Damit erhalten wir folgenden Graphen:
 
 \subsubsection{Zufallskoinzidenzen}
 
-\subsubsection{Pulshöhenspektrum}
+\subsection{Pulshöhenspektrum}
+Da unsere Daten nicht verfügbar waren erhielten wir das Spektrum einer anderen
+Gruppe, die aber offenbar die Diskriminatorschwelle nicht gut eingestellt hatte:
+\begin{figure}[H]
+  \input{grafiken/spektrum.tikz}
+  \caption{Pulshöhenspektrum der Höhenstrahlung}
+  \label{fig:spektrum}
+\end{figure}
+Die Landauverteilung ist gut zu erkennen mit einer steilen Flanke zu niedrigen
+Energien und einer flacheren zu den höheren Energien.
 
-\subsection{Teil 2}
-
-\subsubsection{Lebensdauer des Myons}
-
-\textbf{Bereinigung um Zufallsereignisse}
-
+\subsection{Lebensdauer des Myons}
+\subsubsection{Bereinigung um Zufallsereignisse}
 Eingangs müssen zunächst die das Messergebnis verfälschenden Zufallsereignisse
 betrachtet werden, welche nicht einen Myonenzerfall wiederspiegeln. Man kann die
 aufgenommenen Ereignisse in drei Gruppen unterteilen.
@@ -537,7 +541,6 @@ bestimmt. Natürlich wird durch einen echten Zerfall diese Zeit verkürzt, da die
 Lebensdauer der Myonen kleiner als $\unit[10]{\mu s}$ ist, jedoch kann dies
 wegen $N_b \ll N_{a,c}$ vernachlässigt werden.
 
-
 Es ergibt sich dann mit
 \begin{align*}
   N_Z &= n_Z \cdot t \\
@@ -550,7 +553,7 @@ sodass jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
 % überall noch die zahlen einsetzen!!!!
 % hier muss möglw n größerer abstand hin
 
-\textbf{Bestimmung der Myonenlebensdauer}
+\subsubsection*{Bestimmung der Myonenlebensdauer}
 
 Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden.
 Hierzu werden - wie bereits angesprochen - die Zeitdifferenzen zwischen den

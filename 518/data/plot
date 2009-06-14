@@ -1,10 +1,11 @@
 set term lua solid
 
 set xlab 'Schwelle/Skt'
-set ylab 'Zählrate'
+set ylab 'normierte Rate'
 
 dN = 0.1
 dy(x,y) = sqrt(2) * dN * x/y
+set logscale y
 set output 'grafiken/myon_d1.tikz'
 plot 'data/myon_d1.txt' u 1:($2/$3):(1):(dy($2,$3)) w xyerr notitle
 set output 'grafiken/myon_d2.tikz'
