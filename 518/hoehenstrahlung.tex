@@ -459,9 +459,10 @@ $\unit[140]{Skt}$ für Diskriminator 1 und $\unit[110]{Skt}$ für Diskriminator 2.
 
 \section{Auswertung}
 \subsection{Winkelverteilung}
-Mit dem oben beschriebenen Aufbau wurde die Winkelverteilung der Höhenstrahlung.
-Angenommen wird eine $\cos²(\theta)$-Verteilung, daher fitten wir eine Funktion
-der Form
+Mit dem oben beschriebenen Aufbau wurde die Winkelverteilung der Höhenstrahlung
+ermittelt. Wir erhalten dabei die in Tabelle \ref{tab:winkel} aufgeführten
+Daten.  Angenommen wird eine $\cos^2(\theta)$-Verteilung, daher fitten wir eine
+Funktion der Form
 \begin{align}
   N = a \cos^n(\theta-b)
 \end{align}
@@ -473,8 +474,22 @@ an die Daten. Damit erhalten wir folgenden Graphen:
   \caption{Winkelverteilung und Fit}
   \label{fig:winkel_graph}
 \end{figure}
+Die Parameter werden bestimmt zu:
+\begin{align*}
+a &= 696.481 \pm 50.34 \\
+b &\approx 0 \\
+n &= 2.07959 \pm 0.421 \\
+\end{align*}
+Offenbar kann die Erwartung des Exponenten im Rahmen der Genauigkeit bestätigt
+werden.  Ferner ist deutlich die Anisotropie des Untergrundes zu erkennen. Eine
+Offset-Korrektur kann somit nicht einfach durchgeführt werden und wird deshalb
+nicht vorgenommen. Für einen Fit unter Annahme eines konstanten Offsets erhalten
+wir im Übrigen mit $n \approx 4$ auch einen deutlich schlechteren Wert.
 
-% mehr bla
+Es fällt auf, dass das Maximum in der Tat sehr gut beim erwarteten Winkel von
+$0^{\circ}$ liegt. Dies spricht zum einen für unseren Fit, zum anderen aber auch
+für eine sehr exakte Ausrichtung der Apparatur.
+
 
 \subsection{Pulshöhenspektrum}
 Da unsere Daten nicht verfügbar waren erhielten wir das Spektrum einer anderen
@@ -646,6 +661,7 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
     ]
     {data/winkelmessung.txt}
     \caption{Messung der Winkelabhängigkeit der Höhenstrahlung}
+    \label{tab:winkel}
   \end{table}
   \begin{table}[H]
     \centering
