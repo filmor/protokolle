@@ -55,3 +55,12 @@ set xlabel 't/$\unit{\mu s}$'
 set ylabel 'N'
 plot 'data/lebensdauer.txt' u 1:2:(0.2*$2) w yerr notitle, N(x) notitle
 
+reset
+
+set output 'grafiken/spektrum_ungefiltert.tikz'
+plot 'data/spektrum.txt' smooth csplines notitle
+
+set output 'grafiken/spektrum.tikz'
+set xlab 'Kanal'
+set ylab 'Zählrate'
+plot 'data/spektrum.txt' notitle

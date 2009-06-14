@@ -338,22 +338,19 @@ sorgen) in Dreifachkoinzidenzen verschaltet, sodass diese genau dann einen Puls
 liefern, wenn ein Teilchen in gerader Linie (mit annähernd Lichtgeschwindigkeit)
 durch das Zentrum der Apparatur (Z25) fliegt. Dazu werden immer zwei
 gegenüberliegende Zähler (zum Beispiel Z12 und Z24) mit einer Koinzidenzeinheit
-verbunden und der Ausgang von Z25 nach dem Diskriminator als Veto verwendet. Der
-Ausgang jeder dieser Koinzidenzen ist dabei an einen Zähler angeschlossen woran
-wir dann die Winkelverteilung in $15^{\circ}$-Schritten von $-90^{\circ}$ bis
-$+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme, dass keine
-Strahlung von unten einfällt).
-
-% pulshöhenspektrum fehlt noch
+verbunden und der invertierte Ausgang von Z25 nach dem Diskriminator als Veto
+verwendet. Der Ausgang jeder dieser Koinzidenzen ist dabei an einen Zähler
+angeschlossen woran wir dann die Winkelverteilung in $15^{\circ}$-Schritten von
+$-90^{\circ}$ bis $+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme,
+dass keine Strahlung von unten einfällt).
 
 \subsubsection{Einstellung der Verzögerungszeit}
 Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
-messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
-dieses auf die Zählrate von Z25 um ein (für genügend lange Messdauer)
-zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch Veränderung
-der Kabellänge) die Verzögerung des Ausgangs Z25 gegen % oder!
-% ... da fehlt was!!! kommentar???
-Damit erhalten wir folgenden Graphen:
+messen wir die Zählrate der ODER-Verschaltung der Zähler Z21, 22, 23, 24, 1, 2,
+3 und 4 und normieren dieses auf die Zählrate von Z25 um ein (für genügend lange
+Messdauer) zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch
+Veränderung der Kabellänge) die Verzögerung des Ausgangs Z25 gegen die
+ODER-Verschaltung. Damit erhalten wir folgenden Graphen:
 
 \begin{figure}[H]
   \input{grafiken/koinzidenz.tikz}
@@ -361,23 +358,25 @@ Damit erhalten wir folgenden Graphen:
   \label{fig:koinzidenz}
 \end{figure}
 
-% Fehler
-
 Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
 ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
-zu erwarten wären haben wir das nicht weiter verfolgt.
+zu erwarten wären haben wir das nicht weiter verfolgt. Wie auch bei der
+Diskriminatorschwelle beim Myonenlebensdauer-Versuch vermuten wir hier die alte
+HV als Ursache.
 
-% HV sache?!
-
-Aus der 
-% Ergebnis
+Aus der Verteilung der Punkte bestimmen wir in etwa die Mitte des Plateaus zu
+$\unit[-3]{ns}$ und wählen die Verkabelung entsprechend.
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
 \label{cha:einstellung_schwelle}
 Die Diskriminatorschwelle soll so eingestellt werden, dass der geringen Energien
 entsprechende Untergrund herausgefiltert wird. Betrachtet man das
 undiskriminierte Spektrum, so erhält man etwas von folgender Form:
-% Graph
+\begin{figure}[H]
+    \input{grafiken/spektrum_ungefiltert.tikz}
+    \caption{Spektrum}
+    \label{fig:schwelle_beispiel}
+\end{figure}
 
 Nun soll der erste Peak gefiltert werden, die Diskriminatorschwelle sollte also
 ziemlich genau im Minimum zwischen den beiden Maxima liegen. Da wir nicht
@@ -398,6 +397,10 @@ wir also, indem wir diesen Wendepunkt bestimmen, die ideale Schwelle bestimmen.
 \end{figure}
 
 Als Schwelle wählten wir dann schließlich $\unit[270]{Skt}$.
+
+Mit der eingestellten Z12/ODER-Koinzidenz wird schließlich noch das
+Pulshöhenspektrum aufgenommen, indem das Signal (zusammen mit der
+Intensitätsinformation) auf einen Vielkanalanalysator gegeben wird.
 
 \subsection{Lebensdauer des Myons}
 Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
