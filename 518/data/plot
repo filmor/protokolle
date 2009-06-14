@@ -3,13 +3,14 @@ set term lua solid
 set xlab 'Schwelle/Skt'
 set ylab 'Zählrate'
 
-dy(x,y,z) = 0
+dN = 0.1
+dy(x,y) = sqrt(2) * dN * x/y
 set output 'grafiken/myon_d1.tikz'
-plot 'data/myon_d1.txt' u 1:($2/$3):(1):(dy($2,$3,$4)) notitle
+plot 'data/myon_d1.txt' u 1:($2/$3):(1):(dy($2,$3)) w xyerr notitle
 set output 'grafiken/myon_d2.tikz'
-plot 'data/myon_d2.txt' u 1:($2/$3):(1):(dy($2,$3,$4)) notitle
+plot 'data/myon_d2.txt' u 1:($2/$3):(1):(dy($2/2,$3)) w xyerr notitle
 set output 'grafiken/winkel_d.tikz'
-plot 'data/winkel_d.txt' u 1:($2/$3):(1):(dy($2,$3,$4)) notitle
+plot 'data/winkel_d.txt' u 5:($2/$3):(1):(dy($2,$3)) w xyerr notitle
 
 reset
 
