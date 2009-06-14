@@ -312,8 +312,8 @@ Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
 \label{cha:winkel_aufbau}
-Um die Winkelverteilung zu messen werden insgesamt 25 Szintillationszähler wie
-folgt aufgebaut:
+Um die Winkelverteilung der Höhenstrahlung zu messen werden insgesamt 25
+Szintillationszähler wie folgt aufgebaut (Aufbau war bereits realisiert):
 
 \newdimen\R
 \R=3cm
@@ -335,12 +335,16 @@ folgt aufgebaut:
 
 Die Zähler werden dann (nach den Diskriminatoren, die für einen Rechteckpuls
 sorgen) in Dreifachkoinzidenzen verschaltet, sodass diese genau dann einen Puls
-liefern, wenn ein Teilchen in gerader Linie durch das Zentrum der Apparatur
-(Z25) fliegt.  Dazu werden immer zwei gegenüberliegende Zähler (zum Beispiel Z12
-und Z24) mit einer Koinzidenzeinheit verbunden und der Ausgang von Z25 nach dem
-Diskriminator als Veto verwendet. Der Ausgang jeder dieser Koinzidenzen ist
-dabei an einen Zähler angeschlossen woran wir dann die Winkelverteilung ablesen
-können.
+liefern, wenn ein Teilchen in gerader Linie (mit annähernd Lichtgeschwindigkeit)
+durch das Zentrum der Apparatur (Z25) fliegt. Dazu werden immer zwei
+gegenüberliegende Zähler (zum Beispiel Z12 und Z24) mit einer Koinzidenzeinheit
+verbunden und der Ausgang von Z25 nach dem Diskriminator als Veto verwendet. Der
+Ausgang jeder dieser Koinzidenzen ist dabei an einen Zähler angeschlossen woran
+wir dann die Winkelverteilung in $15^{\circ}$-Schritten von $-90^{\circ}$ bis
+$+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme, dass keine
+Strahlung von unten einfällt).
+
+% pulshöhenspektrum fehlt noch
 
 \subsubsection{Einstellung der Verzögerungszeit}
 Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
@@ -348,6 +352,7 @@ messen wir die Zählrate der ODER-Verschaltung (siehe Aufbau) und normieren
 dieses auf die Zählrate von Z25 um ein (für genügend lange Messdauer)
 zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch Veränderung
 der Kabellänge) die Verzögerung des Ausgangs Z25 gegen % oder!
+% ... da fehlt was!!! kommentar???
 Damit erhalten wir folgenden Graphen:
 
 \begin{figure}[H]
@@ -361,6 +366,8 @@ Damit erhalten wir folgenden Graphen:
 Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
 ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
 zu erwarten wären haben wir das nicht weiter verfolgt.
+
+% HV sache?!
 
 Aus der 
 % Ergebnis
@@ -382,7 +389,7 @@ Spektrum und normieren diese mit der Zeit für verschiedene Schwellen. Ein
 Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
 (idealisierend) davon aus, dass das Spektrum an diesem Minimum einen Nullpunkt
 hat, so ist im Integral dort ein Sattelpunkt. Aus der gemessenen Kurve können
-wir also indem wir diesen Wendepunkt bestimmen die ideale Schwelle bestimmen.
+wir also, indem wir diesen Wendepunkt bestimmen, die ideale Schwelle bestimmen.
 
 \begin{figure}[H]
   \input{grafiken/winkel_d.tikz}
@@ -391,7 +398,6 @@ wir also indem wir diesen Wendepunkt bestimmen die ideale Schwelle bestimmen.
 \end{figure}
 
 Als Schwelle wählten wir dann schließlich $\unit[270]{Skt}$.
-
 
 \subsection{Lebensdauer des Myons}
 Nun wird mit Hilfe einer anderen Apparatur die Lebensdauer der Myonen bestimmt.
@@ -455,6 +461,8 @@ an die Daten. Damit erhalten wir folgenden Graphen:
   \caption{Winkelverteilung und Fit}
   \label{fig:winkel_graph}
 \end{figure}
+
+% mehr bla
 
 \subsubsection{Zufallskoinzidenzen}
 
@@ -548,7 +556,7 @@ Start- und Stopsignalen, also die Zerfallszeiten mit Hilfe der Zeitbins
 Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht
 zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor
 bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle
-die sich nach Plausibilität, nicht nach Messung (siehe oben) bestimmten Werte
+die sich nach Plausibilität - nicht nach Messung (siehe oben) - bestimmten Werte
 benutzt. Es gilt nach dem Zerfallsgesetz:
 \begin{align}
   N(t) = N_0 \mathrm e^{-\lambda t}
@@ -560,15 +568,20 @@ $\lambda$ zu:
   \tau = \frac{1}{\lambda}
 \end{align*}
 Der Fehler beträgt somit $\Delta \tau = \frac{\Delta\lambda}{\lambda^2}$. Sowohl
-den Mittelwert, also auch den Fehler der Zerfallskonstanten $\lambda$ erhalten
-wir dabei über einen Geradenfit an $\ln{N(t)}$. Die beschriebene Verzögerung des
-Startsignals geht nur über eine Verschiebung des Graphen entlang der Zeitachse
-ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis für die
-Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte $N^i$
-in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
+den Mittelwert, als auch den Fehler der Zerfallskonstanten $\lambda$ kann man
+dabei über einen Geradenfit an $\ln{N(t)}$ erhalten, was vorteilhaft für die
+manuelle Auswertung ist. In der Tat haben wir jedoch mit \texttt{Gnuplot} direkt
+an $N(t)$ eine Exponentialfunktion gefittet. Da optisch jedoch gemeinhin die
+Güte eines Geradenfits besser eingeschätzt werden kann, als diejenige einer
+gefitteten Exponentialfunktion, haben wir für die graphische Darstellung des
+Fits einen halblogarithmischen Plot verwendet (siehe unten). Die beschriebene
+Verzögerung des Startsignals geht nur über eine Verschiebung des Graphen entlang
+der Zeitachse ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis
+für die Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte
+$N^i$ in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
 
-Die Daten sind tabellarisch in Tabelle (\ref{tab:leben}) dargestellt. Wir
-erhalten folgenden Graphen:
+Die Daten sind tabellarisch in Tab (\ref{tab:leben}) dargestellt. Wir erhalten
+folgenden Graphen:
 \begin{figure}[H]
   \begin{center}
     \input{grafiken/lebensdauer.tikz}
@@ -579,6 +592,7 @@ erhalten folgenden Graphen:
 
 %bitte hier noch fitparameter
 %was schreiben, falls fehlerbalken zu kleine oder sowas
+%überhaupt was zu delta N schreiben
 
 Wir bestimmen nun mit Hilfe der Steigung $m$ die Lebensdauer $\tau$ des Myons
 zu:
