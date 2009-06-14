@@ -384,7 +384,11 @@ Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
 hat, so ist im Integral dort ein Sattelpunkt. Aus der gemessenen Kurve können
 wir also indem wir diesen Wendepunkt bestimmen die ideale Schwelle bestimmen.
 
-% Graph
+\begin{figure}[H]
+  \input{grafiken/winkel_d.tikz}
+  \caption{Einstellung der Diskriminatorschwelle}
+  \label{fig:winkel_d}
+\end{figure}
 
 
 \subsection{Lebensdauer des Myons}
@@ -455,8 +459,6 @@ an die Daten. Damit erhalten wir folgenden Graphen:
 \subsubsection{Pulshöhenspektrum}
 
 \subsection{Teil 2}
-% Einstellung der Diskriminatorschwelle, wenn nicht hier, dann oben irgendwo
-
 
 \subsubsection{Lebensdauer des Myons}
 
@@ -605,9 +607,27 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
     \caption{Diskriminator 2}
   \end{figure}
 
- \section{Tabellen}
-  % Winkelverteilung
-  % Lebensdauer
+  \section{Tabellen}
+  \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+    columns/0/.style={column name={Winkel/$\unit{^\circ}$}},
+    columns/1/.style={column name={Zählrate}},
+    ]
+    {data/winkelmessung.txt}
+    \caption{Messung der Winkelabhängigkeit der Höhenstrahlung}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+    columns/0/.style={column name={t/$\unit{\mu s}$}},
+    columns/1/.style={column name={Zählrate}},
+    ]
+    {data/lebensdauer.txt}
+    \caption{Messung der Myonenlebensdauer}
+    \label{tab:leben}
+  \end{table}
+
   \Literatur{quellen}
 \end{appendix}
 \end{document}
