@@ -43,6 +43,7 @@ plot 'data/winkelmessung.txt' u 1:2:(5):(log($1)) w xyerr notitle, f(x) notitle
 
 reset
 
+set logscale y
 set output 'grafiken/lebensdauer.tikz'
 N(x) = N_0 * exp(-lambda * x) + C
 N_0 = 5000
@@ -51,5 +52,5 @@ fit N(x) 'data/lebensdauer.txt' via N_0, lambda, C
 
 set xlabel 't/$\unit{\mu s}$'
 set ylabel 'N'
-plot 'data/lebensdauer.txt' notitle, N(x) notitle
+plot 'data/lebensdauer.txt' u 1:2:(0.2*$2) w yerr notitle, N(x) notitle
 

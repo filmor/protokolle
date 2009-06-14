@@ -489,7 +489,8 @@ Wir werden die Rechnung deshalb beispielhaft durchführen, die dabei verwendeten
 Daten genügen einer gewissen Plausibilität sind jedoch \textbf{nicht} gemessen
 worden.}
 \begin{align*}
-  N_{Start} = 000000 \ \ \ \ \ \ N_{Stopp} = 000000 \ \ \ \ \ \ T = \unit[424800]{s}
+  N_{Start} = 000000 \ \ \ \ \ \ N_{Stopp} = 000000 \ \ \ \ \ \ T =
+  \unit[424800]{s}
 %oder haben wir am di schon diese messung gestartet? dann wären es wohl eher
 %\unit[496800]{s}
 \end{align*}
@@ -528,31 +529,42 @@ Es ergibt sich dann mit
   \Delta N_Z &= \sqrt{\Delta n^2_Z\ t^2 + \Delta t^2\ n^2_Z}
 \end{align*}
 schlussendlich die Gesamtzahl der Zufallsereignisse zu $N_Z = (000 \pm 00)$.
-Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins $i$ verteilt, sodass
-jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
+Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins $i$ verteilt,
+sodass jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
 
 % überall noch die zahlen einsetzen!!!!
 % hier muss möglw n größerer abstand hin
 
 \textbf{Bestimmung der Myonenlebensdauer}
 
-Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden. Hierzu
-werden - wie bereits angesprochen - die Zeitdifferenzen zwischen den Start- und
-Stopsignalen, also die Zerfallszeiten mit Hilfe der Zeitbins ($\unit[1]{\mu s}$ Breite)
-gemessen. Es ergibt sich dann für jedes Bin $i$ eine Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle die sich nach Plausibilität, nicht nach Messung (siehe oben) bestimmten Werte benutzt. Es gilt nach dem Zerfallsgesetz:
+Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden.
+Hierzu werden - wie bereits angesprochen - die Zeitdifferenzen zwischen den
+Start- und Stopsignalen, also die Zerfallszeiten mit Hilfe der Zeitbins
+($\unit[1]{\mu s}$ Breite) gemessen. Es ergibt sich dann für jedes Bin $i$ eine
+Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht
+zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor
+bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle
+die sich nach Plausibilität, nicht nach Messung (siehe oben) bestimmten Werte
+benutzt. Es gilt nach dem Zerfallsgesetz:
 \begin{align}
   N(t) = N_0 \mathrm e^{-\lambda t}
 \end{align}
 
-Die Lebensdauer $\tau$ des Myons erhalten wir dann aus der Zerfallskonstante $\lambda$
-zu:
+Die Lebensdauer $\tau$ des Myons erhalten wir dann aus der Zerfallskonstante
+$\lambda$ zu:
 \begin{align*}
-\tau = \frac{1}{\lambda}
+  \tau = \frac{1}{\lambda}
 \end{align*}
-Der Fehler beträgt somit $\Delta \tau = \frac{\Delta\lambda}{\lambda^2}$. Sowohl den Mittelwert, also auch den Fehler der Zerfallskonstanten $\lambda$ erhalten wir dabei über einen Geradenfit an $\ln{N(t)}$. Die beschriebene Verzögerung des Startsignals geht nur über eine Verschiebung des Graphen entlang der Zeitachse ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis für die Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte $N^i$ in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
+Der Fehler beträgt somit $\Delta \tau = \frac{\Delta\lambda}{\lambda^2}$. Sowohl
+den Mittelwert, also auch den Fehler der Zerfallskonstanten $\lambda$ erhalten
+wir dabei über einen Geradenfit an $\ln{N(t)}$. Die beschriebene Verzögerung des
+Startsignals geht nur über eine Verschiebung des Graphen entlang der Zeitachse
+ein, verzerrt jedoch nicht die Steigung, sodass das Messergebnis für die
+Lebensdauer nur über höhere Fehlergrenzen beeinflusst wird, da die Werte $N^i$
+in den Bins verkleinert und somit die relativen Fehler vergrößert werden.
 
-Die Daten sind tabellarisch in Tab (\ref{tab:leben}) dargestellt. Wir erhalten folgenden Graphen:
-%bitte als geradenfit
+Die Daten sind tabellarisch in Tabelle (\ref{tab:leben}) dargestellt. Wir
+erhalten folgenden Graphen:
 \begin{figure}[H]
   \begin{center}
     \input{grafiken/lebensdauer.tikz}
@@ -564,13 +576,18 @@ Die Daten sind tabellarisch in Tab (\ref{tab:leben}) dargestellt. Wir erhalten f
 %bitte hier noch fitparameter
 %was schreiben, falls fehlerbalken zu kleine oder sowas
 
-Wir bestimmen nun mit Hilfe der Steigung $m$ die Lebensdauer $\tau$ des Myons zu:
+Wir bestimmen nun mit Hilfe der Steigung $m$ die Lebensdauer $\tau$ des Myons
+zu:
 \begin{align}
-\tau = - \frac{1}{m} = \unit[(0.00 \pm 0.00)]{\mu s}
+  \tau = - \frac{1}{m} = \unit[(2.15 \pm 0.19)]{\mu s}
 \end{align}
 
-Dies ist ein zufriedenstellender Wert, da bei verhältnismäßig geringem Aufwand eine innerhalb der Fehlergrenzen gut mit dem Literaturwert $\tau = \unit[(2.197019 \pm 0.000021)]{\mu s}$~\cite{pdg} übereinstimmende Lebensdauer ermittelt werden konnte. Eine Möglichkeit zur Erhöhung der Messgenauigkeit ist dabei natürlich über die Verringerung der Binbreite gegeben. Hierbei ist jedoch zu beachten, dass sich die nötige Messdauer verlängern würde.
-
+Dies ist ein zufriedenstellender Wert, da bei verhältnismäßig geringem Aufwand
+eine innerhalb der Fehlergrenzen gut mit dem Literaturwert $\tau =
+\unit[(2.197019 \pm 0.000021)]{\mu s}$~\cite{pdg} übereinstimmende Lebensdauer
+ermittelt werden konnte. Eine Möglichkeit zur Erhöhung der Messgenauigkeit ist
+dabei natürlich über die Verringerung der Binbreite gegeben. Hierbei ist jedoch
+zu beachten, dass sich die nötige Messdauer verlängern würde.
 
 \section{Zusammenfassung}
 
