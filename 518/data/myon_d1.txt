@@ -1,4 +1,4 @@
-# d1/skt	kco1/skt	comon/skt	t/s	n_norm
+# d1/sktkco1	comon	t/s	n_norm
 50	1996	1023	513	1.951124145
 60	1237	633	330	1.954186414
 70	1794	1000	528	1.794

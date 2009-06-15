@@ -1,4 +1,4 @@
-räumlich:   4976
+﻿räumlich:   4976
 zeitlich:   357
 
 zeit:   430537

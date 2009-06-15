@@ -309,6 +309,31 @@ werden können. Diese Bedingung wird praktisch so erfüllt, dass man für die
 Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
 \ref{cha:winkel_aufbau}).
 
+\subsection{Zufallskoinzidenzen}
+Es werden in einer Koinzidenzeinheit nicht immer nur korrelierte Signale aufgenommen.
+Es kann durchaus passieren, dass zwei oder drei unkorrelierte Signale innerhalb der Auflösungszeit $\Delta t$ registriert werden. Dies liefert dann ebenfalls ein Signal. Da diese Zufallskoinzidenzen somit das Messergebnis verfälschen, muss dieser Umstand genauer untersucht werden.
+
+Zur Bestimmung des Anteils an Zufallskoinzidenzen nehmen wir eine Detektoranzahl $M$ mit Zählraten $n_i$ an, sowie Signaldauern der jeweiligen Diskriminatoren von $(\Delta t)_i$. Die Diskriminatorsignale werden nun in Koinzidenzeinheiten zusammengefasst. Die Gesamtmessdauer sei mit $T$ bezeichnet. Für die Wahrscheinlichkeit $p_j$, dass am Eingang des Detektors $j$ ein Signal anlieg,t gilt:
+\begin{align}
+p_j = \frac{N_j (\Delta t)_j}{T} = \frac{T n_j (\Delta t)_j}{T} = n_j (\Delta t)_j
+\end{align}
+Somit folgt für die Rate der Zufallskoinzidenzen schließlich:
+\begin{align}
+n^M_{Zufall} = \prod^M_{i=1} n_i (\Delta t)_i\ \sum^M_{j=1} \frac{1}{(\Delta t)_j}
+\end{align}
+
+In unserem Fall können die Signallängen als konstant identisch angesehen werden. Ferner interessieren uns nur die Zwei- und Dreifachkoinzidenzen. Hierfür folgt:
+\begin{align}
+n^2_{Zufall} = 2 (\Delta t) n_1 n_2 \quad n^3_{Zufall} = 3 (\Delta t)^2 n_1 n_2 n_3
+\label{eq:zufall}
+\end{align}
+
+Im vorliegenden Versuch können sowohl zeitliche, als auch räumliche Zufallskoinzidenzen auftreten. Dies soll nun kurz behandelt werden.
+
+Die räumlichen Zufallskoinzidenzen lassen sich messen, indem man ausnutzt, dass Koinzidenzsignale von drei nicht in einer Gerade angeordneten Detektoren nicht von einem Elementarteilchen ausgelöst werden können. Es müssen also unkorrelierte Koinzidenzen vorliegen. Es ergibt sich entweder eine Dreier-Zufallskoinzidenz (alle drei unkorreliert) oder aber zwei der Koinzidenzsignale sind korreliert (Myon durchfliegt linear zwei Detektoren). Es ist anzumerken, dass die Zweier-Zufallskoinzidenzen winkelabhängig sind (Minimum in der Horizontalen und Maximum in der Vertikalen). In einer Messung lässt sich dies grobwegs ausmitteln indem man einen Zenitwinkel von etwa $50^{\circ}$ wählt.
+
+Die zeitlichen Zufallskoinzidenzen sind über eine Verzögerung der Eingänge der Koinzidenzeinheit um eine im Vergleich zur Auflösungszeit hohe Zeitspanne messbar. Man misst so nur zufällig gleichzeitige Signale.
+
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
 \label{cha:winkel_aufbau}
@@ -345,19 +370,15 @@ $-90^{\circ}$ bis $+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme,
 dass keine Strahlung von unten einfällt).
 
 
-% ???!!!Pulshöhenspektrum???!!! (S. 13)
-
-
 \subsubsection{Einstellung der Verzögerungszeit}
-
-% hier muss mehr hin (S. 17)
-
-Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
-messen wir die Zählrate der ODER-Verschaltung der Zähler Z21, 22, 23, 24, 1, 2,
-3 und 4 und normieren dieses auf die Zählrate von Z25 um ein (für genügend lange
-Messdauer) zeitunabhängiges Ergebnis zu erhalten. Wir variieren dabei durch
-Veränderung der Kabellänge die Verzögerung des Ausgangs Z25 gegen die
-ODER-Verschaltung. Hierbei nutzen wir, dass die Signalausbreitungsgeschwindigkeit etwa $\unit[20]{cm/ns}$ beträgt. Ein Kabel von einem Meter Länge entspricht also einer Verzögerung von $\unit[5]{ns}$. Damit erhalten wir folgenden Graphen:
+Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit mit Hilfe einer aufzunehmenden Koinzidenzkurve. Dazu messen wir die Ereignisanzahlen der ODER-Verschaltung der Zähler Z21, 22, 23, 24, 1, 2, 3 und 4 und normieren dies auf 
+die von Z25 um ein (für genügend lange Messdauer) zeitunabhängiges Ergebnis zu
+erhalten. Wir variieren dabei durch Veränderung der Kabellänge die Verzögerung des
+Ausgangs Z25 gegen die ODER-Verschaltung. Hierbei nutzen wir, dass die 
+Signalausbreitungsgeschwindigkeit etwa $\unit[20]{cm/ns}$ beträgt. Ein Kabel von einem
+Meter Länge entspricht also einer Verzögerung von $\unit[5]{ns}$.
+Es wird willkürlich eine 0-Verzögerung festgelegt, anschließend werden verschiedene Verzögerungen des Ausgangs Z25 gegen die ODER-Verschaltung $\Delta t$ eingestellt.
+Damit erhalten wir folgenden Graphen:
 
 \begin{figure}[H]
   \input{grafiken/koinzidenz.tikz}
@@ -370,8 +391,19 @@ ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
 zu erwarten wären haben wir das nicht weiter verfolgt. Wie auch bei der
 Diskriminatorschwelle bei der Bestimmung der Myonenlebensdauer vermuten wir hier das alte HV-Gerät als Ursache.
 
-Aus der Verteilung der Punkte bestimmen wir in etwa die Mitte des Plateaus zu
-$\unit[-3]{ns}$ und wählen die Verkabelung entsprechend.
+Den Fehler der Verzögerungszeit schätzen wir zu etwa $\unit[0.5]{ns}$ ab.
+Den Fehler für die $N$ nehmen wir jeweils zu $\sqrt{N}$ an. Dies wird im Übrigen
+für sämtliche Ereignisanzahlen in diesem Versuch so gehandhabt. Es gilt:
+\begin{align*}
+\Delta \left(\frac{N_{ODER}}{N_{Z25}}\right) = \frac{N_{ODER}}{N_{Z25}}\ 
+                                  \sqrt{\frac{1}{N_{ODER}}+\frac{1}{N_{Z25}}}
+\end{align*}
+
+Wie erwartet erhalten wir in etwa ein verschmiertes Rechtecksignal (siehe obige Abbildung). Die in der Abbildung eingefügten Leitlinien sollen den Blick auf diesen
+Umstand lenken und können als grober Fit an die Daten angesehen werden, welcher das Ablesen der zu verwendenden Verzögerung erleichtert. Sie enthalten jedoch keine
+tiefere physikalische Information. 
+
+Aus der Verteilung der Punkte bestimmen wir in etwa die Mitte des Plateaus zu $\unit[(-3 \pm 1)]{ns}$ und wählen die Verkabelung entsprechend.
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
 \label{cha:einstellung_schwelle}
@@ -389,7 +421,7 @@ ziemlich genau im Minimum zwischen den beiden Maxima liegen. Da wir nicht
 genügend Zeit haben, ein komplettes Spektrum aufzunehmen bedienen wir uns
 folgender Methode:
 
-Wir messen statt des Spektrums die Gesamtzählrate, also das Integral über das
+Wir messen statt des Spektrums die Gesamtereignisanzahl, also das Integral über das
 Spektrum und normieren diese mit der Zeit für verschiedene Schwellen. Ein
 Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
 (idealisierend) davon aus, dass das Spektrum an diesem Minimum einen Nullpunkt
@@ -412,13 +444,15 @@ Unsere gemessene Schwellkurve ist im Folgenden dargestellt.
 
 Als Schwelle wählten wir dann schließlich $\unit[270]{Skt}$.
 
-Mit der eingestellten Z12/ODER-Koinzidenz wird schließlich noch das
-Pulshöhenspektrum aufgenommen, indem das Signal (zusammen mit der
-Intensitätsinformation) auf einen Vielkanalanalysator gegeben wird.
+Mit der eingestellten Z12/ODER-Koinzidenz wird nun noch das
+Pulshöhenspektrum aufgenommen. Hierzu wird das ODER-Signal auf das
+Linear-Gate gegeben, welches dann bei einem Puls das undiskriminierte
+Z12-Signal durchlässt. Der Ausgang wird dann auf einen Vielkanalanalysator
+gegeben wird. Auf diese Weise liegen dann auch die Intensitätsinformationen vor.
 
 \subsubsection{Messung der Zufallskoinzidenzen}
 Um die Messgenauigkeit zu erhöhen, müssen die Messwerte um Zufallskoinzidenzen 
-bereinigt werden. Aus diesem Grund besimmen wir die Rate der Zufallskoinzidenzen.
+bereinigt werden. Aus diesem Grund bestimmen wir die Rate der Zufallskoinzidenzen.
 Es können dabei sowohl räumliche als auch zeitliche Zufallskoinzidenzen auftreten. 
 
 Zur Messung der räumlichen Zufallskoinzidenzen schalten wir eine Dreifachkoinzidenz
@@ -499,10 +533,11 @@ b &\approx 0 \\
 n &= 2.08 \pm 0.42 \\
 \end{align*}
 Offenbar kann die Erwartung des Exponenten im Rahmen der Genauigkeit bestätigt
-werden.  Ferner ist deutlich die Anisotropie des Untergrundes zu erkennen. Eine
-Offset-Korrektur kann somit nicht einfach durchgeführt werden und wird deshalb
-nicht vorgenommen. Für einen Fit unter Annahme eines konstanten Offsets erhalten
-wir im Übrigen mit $n \approx 4$ auch einen deutlich schlechteren Wert.
+werden, auch wenn leichte Abweichungen vom Fit zu erkennen sind. Ferner ist deutlich 
+die Anisotropie des Untergrundes zu erkennen. Eine Offset-Korrektur kann somit nicht 
+einfach durchgeführt werden und wird deshalb nicht vorgenommen. Für einen Fit unter 
+Annahme eines konstanten Offsets erhalten wir im Übrigen mit $n \approx 4$ auch einen 
+deutlich schlechteren Wert.
 
 Es fällt auf, dass das Maximum in der Tat sehr gut beim erwarteten Winkel von
 $0^{\circ}$ liegt. Dies spricht zum einen für unseren Fit, zum anderen aber auch
@@ -522,8 +557,27 @@ Die Landauverteilung ist gut zu erkennen mit einer steilen Flanke zu niedrigen
 Energien und einer flacheren zu den höheren Energien.
 
 \subsection{Zufallskoinzidenzen}
+Zunächst sollen nun die auftretenden Dreifach-Koinzidenzen theoretisch quantifiziert
+werden. Die Messung ergab $T = \unit[430537]{s}$, $N_{Z12}=157807$, $N_{ODER}=35650$ (vermutlich Überlauf) , $N_{UODER}=21609$ sowie $N_{Z25}=725053$.
+Wir erhalten somit die Zählrate $n_{Z12}=\unit[(0.3665 \pm 0.0009)]{s^{-1}}$. Diese Zählrate wird nun genähert für alle Rand-Detektoren angenommen. Z25 wird extra betrachtet. Ferner sei die Länge des Diskriminatorausgangssignals $\Delta t = \unit[20]{ns}$. Somit folgt für die theoretisch erwartete Anzahl an Zufallskoinzidenzen nach Gleichung (\ref{eq:zufall}):
+\begin{align*}
+N^3_{Zufall} = 3 (\Delta t)^2\ \frac{N^2_{Z12}\ N_{Z25}}{T^2} = (1.169 \pm 0.001) \cdot 10^{-10}
+\end{align*}
+Man sollte also erwarten, dass Dreifach-Koinzidenzen nicht auftreten.
 
-% bla
+Experimentell ergab sich jedoch folgendes:
+\begin{table}[H]
+  \begin{tabular}{lc}
+    \toprule
+    Koinzidenz & Anzahl \\
+    \midrule[0.75pt]
+    zeitlich & $357$ \\
+    geometrisch & $4976$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Somit erhalten wir deutliche Abweichungen vom theoretischen Wert. Es ist aber zu beachten, dass die Zweifach-Koinzidenzen den theoretisch berechneten Wert erhöhen, da zwei der drei Signale dort nicht mehr - wie angenommen - unkorreliert sind. Ferner trägt noch bei, dass in der Theorie die Tatsache nicht erfasst wird, dass die Myonen in Schauern auftreten. Außerdem wird das Rauschen der Elektronik nicht mit berücksichtigt.
 
 \subsection{Lebensdauer des Myons}
 \subsubsection*{Bereinigung um Zufallsereignisse}
@@ -553,16 +607,14 @@ Wir werden die Rechnung deshalb beispielhaft durchführen, die dabei verwendeten
 Daten genügen einer gewissen Plausibilität sind jedoch \textbf{nicht} gemessen
 worden.}
 \begin{align*}
-  N_{Start} = 000000 \ \ \ \ \ \ N_{Stopp} = 000000 \ \ \ \ \ \ T =
+  N_{Start} = 1500000 \ \ \ \ \ \ N_{Stopp} = 12700000 \ \ \ \ \ \ T =
   \unit[424800]{s}
-%oder haben wir am di schon diese messung gestartet? dann wären es wohl eher
-%\unit[496800]{s}
 \end{align*}
 
 Nun nehmen wir an, dass in guter Näherung alle im zweiten Detektor gestoppten
 Myonen innerhalb von $\unit[10]{\mu s}$ zerfallen. Dies ergibt aus der Summe der
 in den einzelnen Zeitbins gezählten Signale (siehe Tabelle \ref{tab:leben}) dann
-$N_b = 00000$. Die Werte für $N_a$ und $N_c$ lassen sich nun folgendermaßen
+$N_b = 13351$. Die Werte für $N_a$ und $N_c$ lassen sich nun folgendermaßen
 bestimmen (siehe oben). Es gilt zunächst einmal:
 \begin{align*}
   N_{Start} = N_a + N_b \ \ \ \ \ \ N_{Stop} = N_a + 2 N_b + N_c
@@ -571,17 +623,16 @@ Nun wird dies umgeformt und man erhält:
 \begin{align*}
  N_a = N_{Start} - N_b \ \ \ \ \ \ N_c = N_{Stop} - N_a - 2 N_b
 \end{align*}
-Somit ergibt sich für unsere Beispielwerte $N_a=00000$ und $N_c=00000$.
+Somit ergibt sich für unsere Beispielwerte $N_a=1486649$ und $N_c=11186649$.
 
 Aufgrund der angesprochenen Maßnahme der Verzögerung des Startsignals können wir
 $N_c$ nun als gute Approximation für die Anzahl der Zufallssignale annehmen. Es
-ergibt sich also eine Zufallssignalrate $n_Z = N_c/T = \unit[00.0 \pm
-0.0]{s^{-1}}$.
+ergibt sich also eine Zufallssignalrate $n_Z = N_c/T = \unit[26.33 \pm 0.01]{s^{-1}}$.
 
 Ein scheinbarer Myonenzerfall beschreibt gerade den Umstand, dass auf ein
 Startsignal ein auf ein Zufallsereignis rückführbares Stopsignal folgt. Die
 Gesamtzeit, in welcher die Versuchsapparatur für derartige Signale empfindlich
-ist, wird zu $t = N_{Start} \cdot \unit[10]{\mu s} = \unit[(00.00 \pm 0.00)]{s}$
+ist, wird zu $t = N_{Start} \cdot \unit[10]{\mu s} = \unit[(15.00 \pm 0.01)]{s}$
 bestimmt. Natürlich wird durch einen echten Zerfall diese Zeit verkürzt, da die
 Lebensdauer der Myonen kleiner als $\unit[10]{\mu s}$ ist, jedoch kann dies
 wegen $N_b \ll N_{a,c}$ vernachlässigt werden.
@@ -591,23 +642,24 @@ Es ergibt sich dann mit
   N_Z &= n_Z \cdot t \\
   \Delta N_Z &= \sqrt{\Delta n^2_Z\ t^2 + \Delta t^2\ n^2_Z}
 \end{align*}
-schlussendlich die Gesamtzahl der Zufallsereignisse zu $N_Z = (000 \pm 00)$.
+schlussendlich die Gesamtzahl der Zufallsereignisse zu $N_Z = (395 \pm 10)$.
 Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins $i$ verteilt,
-sodass jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
+sodass jeder Wert um $N^i_Z = (40 \pm 1)$ korrigiert werden muss.
 
-% überall noch die zahlen einsetzen!!!!
 
 \subsubsection*{Bestimmung der Myonenlebensdauer}
 
-Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden.
+Nun kann mit dieser Vorarbeit die Lebensdauer eines Myons ermittelt werden. 
 Hierzu werden - wie bereits angesprochen - die Zeitdifferenzen zwischen den
 Start- und Stopsignalen, also die Zerfallszeiten mit Hilfe der Zeitbins
 ($\unit[1]{\mu s}$ Breite) gemessen. Es ergibt sich dann für jedes Bin $i$ eine
 Anzahl $N^i$, welche die Anzahl der bis zu diesem Zeitpunkt noch nicht
 zerfallenen Myonen angibt. Es ist zu beachten, dass diese Werte um die zuvor
-bestimmten Zufallsereignisse bereinigt werden müssen. Wir haben an dieser Stelle
-die sich nach Plausibilität - nicht nach Messung (siehe oben) - bestimmten Werte
-benutzt. Es gilt nach dem Zerfallsgesetz:
+bestimmten Zufallsereignisse bereinigt werden müssen. 
+
+\emph{Anmerkung: Da wir keine Messwerte zur Berechnung der Zufallsereignisse benutzen konnten (siehe oben) und eine Korrektur um diese Zufallsereignisse keinen Einfluss auf die Bestimmung der Lebensdauer hat, sondern nur den relativen Fehler verändert (siehe unten), haben wir \textbf{keine} Bereinigung um die Zufallsereignisse vorgenommen.}
+
+Es gilt nach dem Zerfallsgesetz:
 \begin{align}
   N(t) = N_0 \mathrm e^{-\lambda t}
 \end{align}
@@ -640,9 +692,7 @@ folgenden Graphen:
   \label{fig:lebensdauer}
 \end{figure}
 
-%bitte hier noch fitparameter
-%was schreiben, falls fehlerbalken zu kleine oder sowas
-%überhaupt was zu delta N schreiben
+Offenbar ergeben sich leichte Abweichungen von der Geraden, der Fehler sollte also leicht unteschätzt worden sein. Es ist jedoch ebenso offensichtlich keine grobe Abweichung vorhanden.
 
 Wir bestimmen nun mit Hilfe der Steigung $m$ die Lebensdauer $\tau$ des Myons
 zu:
@@ -658,8 +708,15 @@ dabei natürlich über die Verringerung der Binbreite gegeben. Hierbei ist jedoch
 zu beachten, dass sich die nötige Messdauer verlängern würde.
 
 \section{Zusammenfassung}
+Zunächst wurden die Diskriminatorschwellen und die Koinzidenzen erfolgreich eingestellt. 
 
-% bla
+Anschließend wurde die Winkelverteilung in guter Übereinstimmung mit der Erwartung zu $N = a \cos^n(\theta-b)$, mit $a = 696.48 \pm 50.34$, $b \approx 0$ und $n = 2.08 \pm 0.42$, bestimmt.
+
+Da die Daten unseres aufgenommenen Pulshöhenspektrums nicht mehr aufzufinden waren, verwendeten wir das einer anderen Gruppe. Trotz schlechter Diskriminatorschwelleneinstellung ist die \textsc{Landau}-Verteilung gut zu erkennen.
+
+Die geometrischen und zeitlichen Zufallskoinzidenzen für die Winkelmessung wurden bestimmt ($N_{geom} = 357$ und $N_{zeitl}$). Es ergaben sich dabei deutliche Abweichungen von den theoretisch erwarteten Werten (mehrere Größenordnungen), was über die Zweifach-Koinzidenzen, elektronisches Rauschen und die Schauernatur der Myonenintensität erklärt wird.
+
+Auf Grund fehlernder Messwerte wurden beispielhaft anhand plausibler Werte die Zufallsereignisse für die Lebensdauermessung berechnet. Abschließend wurde die Lebensdauer der Myonen in guter Übereinstimmung mit dem Literaturwert zu $\tau = - \frac{1}{m} = \unit[(2.15 \pm 0.19)]{\mu s}$ bestimmt.
 
 \begin{appendix}
   \section{Graphen}
@@ -670,18 +727,66 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
     \caption{Diskriminator 1}
   \end{figure}
   \begin{figure}[H]
-% es muss noch gekennzeichnet werden, welche punkte vom 1. bzw. 2. tag kommen!!!
     \input{grafiken/myon_d2.tikz}
     \caption{Diskriminator 2}
   \end{figure}
+Offenbar fallen fünf Messwerte aus dem Rahmen. Dies ist über die Messung dieser Werte an einem anderen (dem zweiten) Versuchstag zu erklären. Nach der Aufnahme von vier neuen Messwerten (dies sind die "`schlechtesten"' Werte in der Graphik) wurde dann durch unseren Tutor die HV leicht manipuliert. Der fünfte dieser Messwerte wurde danach bei unveränderter Schwelle aufgenommen und passte offensichtlich schon deutlich besser. Dies spricht dafür, dass - wie zuvor bereits angesprochen - das HV-Gerät keine ausreichende Stabilität mehr gewährleistet. Da die zuverwendende Schwelle jedoch bereits recht gut erkennbar ist, wird dies nicht weiter verfolgt.
 
   \section{Tabellen}
-  % es fehlen noch die tab zu den einstellungen (schwellenkurven, koinkurven)
   \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
+	 columns/0/.style={column name={$\Delta t$/$\unit{ns}$}},
+	 columns/1/.style={column name={$t$/$\unit{s}$}},
+	 columns/2/.style={column name={$N_{Z25}$}},
+	 columns/3/.style={column name={$N_{ODER}$}},
+    columns={0,1,2,3}
+    ]
+    {data/koinzidenz.txt}
+    \caption{Messdaten zur Koinzidenzkurve}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+	 columns/4/.style={column name={Schwelle/$\unit{Skt}$}},
+	 columns/0/.style={column name={$t$/$\unit{s}$}},
+	 columns/1/.style={column name={$N_{Z12}$}},
+	 columns/2/.style={column name={$N_{Z25}$}},
+	 columns/3/.style={column name={$N_{ODER}$}},
+    columns={4,0,1,2,3}
+    ]
+    {data/winkel_d.txt}
+    \caption{Messdaten zur Bestimmung der Diskriminatorschwelle im Versuchsaufbau zur Winkelabhängigkeit}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+	 columns/0/.style={column name={Schwelle/$\unit{Skt}$}},
+	 columns/3/.style={column name={$t$/$\unit{s}$}},
+	 columns/1/.style={column name={$N^{mess}_{ODER}$}},
+	 columns/2/.style={column name={$N^{mon}_{ODER}$}},
+    columns={0,3,1,2}
+    ]
+    {data/myon_d1.txt}
+    \caption{Messdaten zur Bestimmung der Schwelle des Diskriminators 1 im Versuchsaufbau zur Lebensdauermessung}
+  \end{table}
+   \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+	 columns/0/.style={column name={Schwelle/$\unit{Skt}$}},
+	 columns/3/.style={column name={$t$/$\unit{s}$}},
+	 columns/1/.style={column name={$N^{mess}_{ODER}$}},
+	 columns/2/.style={column name={$N^{mon}_{ODER}$}},
+    columns={0,3,1,2}
+    ]
+    {data/myon_d2.txt}
+    \caption{Messdaten zur Bestimmung der Schwelle des Diskriminators 2 im Versuchsaufbau zur Lebensdauermessung}
+  \end{table}
+ \begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
     columns/0/.style={column name={Winkel/$\unit{^\circ}$}},
-    columns/1/.style={column name={Zählrate}},
+    columns/1/.style={column name={N}},
     ]
     {data/winkelmessung.txt}
     \caption{Messung der Winkelabhängigkeit der Höhenstrahlung}
@@ -691,7 +796,7 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
     \centering
     \pgfplotstabletypesetfile[
     columns/0/.style={column name={t/$\unit{\mu s}$}},
-    columns/1/.style={column name={Zählrate}},
+    columns/1/.style={column name={N}},
     ]
     {data/lebensdauer.txt}
     \caption{Messung der Myonenlebensdauer}
