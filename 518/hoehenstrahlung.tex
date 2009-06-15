@@ -67,7 +67,7 @@ Cut-Off (Energieverluste durch Wechselwirkung mit den Photonen der kosmischen
 Hintergrundstrahlung) bisher nicht beobachtet werden.
 
 \subsection{Sekundäre Höhenstrahlung}
-Die sekundäre Höhenstrahlung entsteht bei Wechselwirkungen der primären
+Die sekundäre Höhenstrahlung wiederum entsteht bei Wechselwirkungen der primären
 Höhenstrahlung mit den Atomkernen der Luftmoleküle in der Erdatmosphäre. Die
 hochenergetischen Teilchen erzeugen dabei in verschiedenen Reaktionen neue
 Elementarteilchen. Häufig werden beispielsweise die beiden Mesonen Pion und Kaon
@@ -130,7 +130,7 @@ $z$       &-& Projektilladung\\
 $Z, A$    &-& Targetladung und -masse\\
 $\beta$   &-& Projektilgeschwindigkeit im Vergleich zu $c$\\
 $\gamma$  &-& $1/\sqrt{1-\beta^2}$\\
-$T_{max}$   &-& $(2m_e p^2)/(m^2_0 + m^2_e + 2 m_e E/c^2)$\\
+$T_{max}$ &-& $(2m_e p^2)/(m^2_0 + m^2_e + 2 m_e E/c^2)$\\
           & & $m_0$ - Masse des einfallenden Teilchens\\
           & & $p$, $E$ - Impuls und Gesamtenergie des Projektils\\
 $I$       &-& mittlere Ionisationsenergie des Targets\\
@@ -307,7 +307,7 @@ anliegen und eine hinreichende Länge besitzen, damit alle möglichen
 Zeitschwankungen der ersten Koinzidenz-Stufe von Zweifach-Einheiten abgedeckt
 werden können. Diese Bedingung wird praktisch so erfüllt, dass man für die
 Zähler Z1-Z24 längere Kabel als für Z25 verwendet (siehe
-\ref{cha:winkel_aufbau}.
+\ref{cha:winkel_aufbau}).
 
 \section{Versuchsaufbau und -durchführung}
 \subsection{Winkelverteilung und Pulshöhenspektrum der Höhenstrahlung}
@@ -329,7 +329,7 @@ Szintillationszähler wie folgt aufgebaut (Aufbau war bereits realisiert):
         (-\x*15+90:\R) {Z\x};
     }
   \end{tikzpicture}
-  \caption{Versuchsaufbau: Winkelmessung}
+  \caption{Schematischer Versuchsaufbau zur Winkelmessung}
   \label{fig:winkel}
 \end{figure}
 
@@ -344,13 +344,20 @@ angeschlossen woran wir dann die Winkelverteilung in $15^{\circ}$-Schritten von
 $-90^{\circ}$ bis $+90^{\circ}$ ablesen können (unter der [plausiblen] Annahme,
 dass keine Strahlung von unten einfällt).
 
+
+% ???!!!Pulshöhenspektrum???!!! (S. 13)
+
+
 \subsubsection{Einstellung der Verzögerungszeit}
+
+% hier muss mehr hin (S. 17)
+
 Zunächst bestimmen wir eine sinnvolle Schaltzeit für die Koinzidenzeinheit. Dazu
 messen wir die Zählrate der ODER-Verschaltung der Zähler Z21, 22, 23, 24, 1, 2,
 3 und 4 und normieren dieses auf die Zählrate von Z25 um ein (für genügend lange
-Messdauer) zeitunabhängiges Ergebnis zu erhalten. Wir variierten dabei (durch
-Veränderung der Kabellänge) die Verzögerung des Ausgangs Z25 gegen die
-ODER-Verschaltung. Damit erhalten wir folgenden Graphen:
+Messdauer) zeitunabhängiges Ergebnis zu erhalten. Wir variieren dabei durch
+Veränderung der Kabellänge die Verzögerung des Ausgangs Z25 gegen die
+ODER-Verschaltung. Hierbei nutzen wir, dass die Signalausbreitungsgeschwindigkeit etwa $\unit[20]{cm/ns}$ beträgt. Ein Kabel von einem Meter Länge entspricht also einer Verzögerung von $\unit[5]{ns}$. Damit erhalten wir folgenden Graphen:
 
 \begin{figure}[H]
   \input{grafiken/koinzidenz.tikz}
@@ -361,8 +368,7 @@ ODER-Verschaltung. Damit erhalten wir folgenden Graphen:
 Die Ergebnisse des zweiten Tages passten zwar nicht so richtig zu denen des
 ersten, da für eine "`fehlerhafte"' Koinzidenzeinstellung aber Werte um die 0
 zu erwarten wären haben wir das nicht weiter verfolgt. Wie auch bei der
-Diskriminatorschwelle beim Myonenlebensdauer-Versuch vermuten wir hier die alte
-HV als Ursache.
+Diskriminatorschwelle bei der Bestimmung der Myonenlebensdauer vermuten wir hier das alte HV-Gerät als Ursache.
 
 Aus der Verteilung der Punkte bestimmen wir in etwa die Mitte des Plateaus zu
 $\unit[-3]{ns}$ und wählen die Verkabelung entsprechend.
@@ -388,8 +394,16 @@ Spektrum und normieren diese mit der Zeit für verschiedene Schwellen. Ein
 Minimum in der Funktion entspricht einem Wendepunkt im Integral, gehen wir sogar
 (idealisierend) davon aus, dass das Spektrum an diesem Minimum einen Nullpunkt
 hat, so ist im Integral dort ein Sattelpunkt. Aus der gemessenen Kurve können
-wir also, indem wir diesen Wendepunkt bestimmen, die ideale Schwelle bestimmen.
+wir also, indem wir diesen Wendepunkt bestimmen, die ideale Schwelle bestimmen. Diese Methode ist in der folgenden Abbildung noch einmal graphisch veranschaulicht.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{grafiken/schwellschema}
+    \caption{Energiespektrum und Schwellkurve}
+    \label{fig:schema}
+\end{figure}
+
+Unsere gemessene Schwellkurve ist im Folgenden dargestellt.
 \begin{figure}[H]
   \input{grafiken/winkel_d.tikz}
   \caption{Einstellung der Diskriminatorschwelle}
@@ -403,9 +417,13 @@ Pulshöhenspektrum aufgenommen, indem das Signal (zusammen mit der
 Intensitätsinformation) auf einen Vielkanalanalysator gegeben wird.
 
 \subsubsection{Messung der Zufallskoinzidenzen}
-Zur Messung der räumlichen Zufallskoinzidenzen schalten wir eine
-Dreifachkoinzidenz von Zählern, die nicht in gerader Linie sind, in unserem Fall
-Z1, Z6 und (wiederum als negiertes Veto) Z25.
+Um die Messgenauigkeit zu erhöhen, müssen die Messwerte um Zufallskoinzidenzen 
+bereinigt werden. Aus diesem Grund besimmen wir die Rate der Zufallskoinzidenzen.
+Es können dabei sowohl räumliche als auch zeitliche Zufallskoinzidenzen auftreten. 
+
+Zur Messung der räumlichen Zufallskoinzidenzen schalten wir eine Dreifachkoinzidenz
+von Zählern, die nicht auf einer Geraden liegen, in unserem Fall Z1, Z6 und (wiederum
+als negiertes Veto) Z25.
 
 Zur Messung der zeitlichen Zufallskoinzidenzen verzögern wir die Zähler einer
 normalen Dreifachkoinzidenz gegeneinander. Wir nahmen dazu die Koinzidenz
@@ -476,9 +494,9 @@ an die Daten. Damit erhalten wir folgenden Graphen:
 \end{figure}
 Die Parameter werden bestimmt zu:
 \begin{align*}
-a &= 696.481 \pm 50.34 \\
+a &= 696.48 \pm 50.34 \\
 b &\approx 0 \\
-n &= 2.07959 \pm 0.421 \\
+n &= 2.08 \pm 0.42 \\
 \end{align*}
 Offenbar kann die Erwartung des Exponenten im Rahmen der Genauigkeit bestätigt
 werden.  Ferner ist deutlich die Anisotropie des Untergrundes zu erkennen. Eine
@@ -492,8 +510,9 @@ für eine sehr exakte Ausrichtung der Apparatur.
 
 
 \subsection{Pulshöhenspektrum}
-Da unsere Daten nicht verfügbar waren erhielten wir das Spektrum einer anderen
-Gruppe, die aber offenbar die Diskriminatorschwelle nicht gut eingestellt hatte:
+Da unsere Daten nicht verfügbar waren (siehe auch Anmerkung unten) erhielten wir das
+Spektrum einer anderen Gruppe, die aber offenbar die Diskriminatorschwelle nicht
+gut eingestellte:
 \begin{figure}[H]
   \input{grafiken/spektrum.tikz}
   \caption{Pulshöhenspektrum der Höhenstrahlung}
@@ -502,14 +521,17 @@ Gruppe, die aber offenbar die Diskriminatorschwelle nicht gut eingestellt hatte:
 Die Landauverteilung ist gut zu erkennen mit einer steilen Flanke zu niedrigen
 Energien und einer flacheren zu den höheren Energien.
 
+\subsection{Zufallskoinzidenzen}
+
+% bla
+
 \subsection{Lebensdauer des Myons}
-\subsubsection{Bereinigung um Zufallsereignisse}
+\subsubsection*{Bereinigung um Zufallsereignisse}
 Eingangs müssen zunächst die das Messergebnis verfälschenden Zufallsereignisse
 betrachtet werden, welche nicht einen Myonenzerfall wiederspiegeln. Man kann die
 aufgenommenen Ereignisse in drei Gruppen unterteilen.
 
 \begin{enumerate}
-%besser mit a,b,c
 \item Beide Detektoren werden von dem Myon passiert, es zerfällt jedoch nicht im
     zweiten Detektor. Hieraus erhält man $N_a$ Ereignisse, welche ein Start- und
     ein gleichzeitiges Stopsignal liefern.
@@ -574,7 +596,6 @@ Diese Ereignisse sind dabei statistisch auf die zehn Zeitbins $i$ verteilt,
 sodass jeder Wert um $N^i_Z = (00 \pm 0)$ korrigiert werden muss.
 
 % überall noch die zahlen einsetzen!!!!
-% hier muss möglw n größerer abstand hin
 
 \subsubsection*{Bestimmung der Myonenlebensdauer}
 
@@ -638,9 +659,11 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
 
 \section{Zusammenfassung}
 
+% bla
+
 \begin{appendix}
   \section{Graphen}
-  \subsection{\ldots zur Einstellung der Diskriminatorschwellen}
+  \subsection*{\ldots zur Einstellung der Diskriminatorschwellen}
   \label{app:graphen_myon_schwellen}
   \begin{figure}[H]
     \input{grafiken/myon_d1.tikz}
@@ -653,6 +676,7 @@ zu beachten, dass sich die nötige Messdauer verlängern würde.
   \end{figure}
 
   \section{Tabellen}
+  % es fehlen noch die tab zu den einstellungen (schwellenkurven, koinkurven)
   \begin{table}[H]
     \centering
     \pgfplotstabletypesetfile[
