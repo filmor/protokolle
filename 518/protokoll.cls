@@ -51,7 +51,7 @@
                 Gruppe $\beta 3$\\
                  \\\large\textnormal{Assistent: \assistent}
         }
-        \date{\vspace{1cm} Universität Bonn \\ 12. Juni 2009}
+        \date{\vspace{1cm} Universität Bonn \\ 10. Juni 2009}
     \end{titlepage}
     \maketitle
     \newpage
