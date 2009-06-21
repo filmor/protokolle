@@ -1,0 +1,54 @@
+REPORT-FILE from 06/17/2009 16:06:24.718 - 16:07:39.296  written 06/17/2009 16:08:20
+REALTIME: 74.583      
+TOTALSUM: 125702      
+ROISUM: 125702      
+MAXVAL: 401         
+LIVETIME: 73.605      
+cmline0=06/17/2009 16:06:24.718 - 16:07:39.296 
+range=8192
+prena=0
+mcsmode=4
+roimin=0
+roimax=8192
+rtpreset=10.000      
+ltpreset=0.000       
+evpreset=0           
+swpreset=1           
+rampmode=0
+rampstart=1024
+rampstep=1
+rampbin=1
+ramplen=1024
+qdacuse=0
+qdac=2048
+dac1use=0
+dac1val=0
+impsel=f
+thrstart=1716
+thr1=1716
+thr2=1716
+thrclk=2482
+diguse=8
+digval=0
+cycles=128
+sequences=1
+mempart=0
+dwelltime=3
+dwellunit=0
+syncout=909
+histlen=0
+autoinc=0 
+;datname=F:\Slow\Zweiter Detektor\5.mcd
+savedata=0
+fmt=3 
+smoothpts=5 
+caluse=1 
+calch00=1948.00
+calvl00=511.000000
+calch01=4785.00
+calvl01=1275.000000
+caloff=-13.593600
+calfact=0.269299
+calfact2=0
+calfact3=0
+calunit=keV

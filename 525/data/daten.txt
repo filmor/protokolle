@@ -1,0 +1,14 @@
+Verzögerungen (fast):
+-64 ns
+
+
+Zeiteichung:
+alle 16ns Peak
+
+
+
+4.2 V upper level
+216 Skt lower level
+
+
+nullstelle 32ns
