@@ -96,8 +96,49 @@ Der Erwartungswert der Helizität sollte also bei Paritätserhaltung verschwinden.
 Ist dem in einer Messung nicht so, liegt Paritätsverletzung vor.
 
 \subsection{Spinpolarisation}
+Die Polarisation eines Teilchens ist der Erwartungswert seines Spins, also $\vec
+P = \langle\vec \sigma\rangle$, gibt also an, in welche Richtung die
+Spins im Allgemeinen zeigen. Da wir die Helizität betrachten ist für uns nur die
+longitudinale Polarisation von Interesse:
+\begin{align}
+    P_l = \langle \vec \sigma \cdot \frac{\vec p}{\left|\vec p\right|} \rangle =
+    \frac{N_+ - N_-}{N_+ + N_-}
+    \label{eqn:polarisation}
+\end{align}
+wobei $N_+$ und $N_-$ die Anzahl der Elektronen mit positiver bzw.\ negativer
+Helizität sind.
+
+Da Antineutrinos immer positive Helizität haben ist anzunehmen, dass das beim
+$\beta$-Zerfall zusammen mit diesem ausgesandte Elektron negative Helizität hat.
+Allerdings sind Elektronen aufgrund ihrer größeren Masse als $0$ nicht
+vollständig polarisiert. Man erhält
+\begin{align*}
+    P_l = -\frac{v}{c}
+\end{align*}
+für die Polarisation der Elektronen.
+
+Bei der Mottstreuung hat allerdings nur die transversale Komponente einen
+Einfluss, daher versuchen wir, die Bewegungsrichtung um $\unit[90]{^\circ}$
+gegen die Spinrichtung zu drehen (in diesem Experiment durch Mehrfachstreuung an
+einer Kupferfolie). Dadurch tauschen die transversale und longitudinale
+Komponente ihre Rollen.
+
+Aufgrund relativistischer Effekte ist der Elektronenspin allerdings leicht an
+die Impulsrichtung gekoppelt, dreht sich also um einen gewissen Winkel, genauer
+um $\alpha = \sqrt{1-\frac{v^2}{c^2}}\ \phi$ mit, wobei $\phi$ der Ablenkwinkel
+ist.
+
+Wir erhalten also insgesamt:
+\begin{align}
+    P_{tr} = -P_l \sin \alpha = \frac{v}{c}
+        \sin\left(\alpha\right)
+    \label{}
+\end{align}
+Wir werden im Versuch $P_{tr}$ bestimmen und erhalten daraus dann letztlich die
+longitudinale Polarisation der Elektronen aus dem $\beta$-Zerfall.
 
 \subsection{Mottstreuung}
+
 
 \subsection{Messgrößen}
 
