@@ -278,15 +278,6 @@ besonders gutes Vakuum nicht von Nöten ist ($p=\unit[0.5]{Torr}$ reichen aus).
 
 
 \section{Versuchsdurchführung und Auswertung}
-Zunächst muss eine Untergrundmessung durchgeführt werden. Hierzu verwenden wir
-eine reine Trägerfolie (Hostaphanfolie). Nun wird in
-$\unit[30]{^\circ}$-Schritten eine Messung (Dauer: $\unit[400]{s}$) der
-Zählraten beider Detektoren vorgenommen.  Die sich ergebenden Messwerte sind in
-der folgenden Tabelle dargestellt.
-
-
-
-
 \newcommand{\plot}[1]{
   \begin{tikzpicture}
     \begin{axis}[xlabel={$\text{Winkel}/^\circ$},
@@ -298,8 +289,27 @@ der folgenden Tabelle dargestellt.
     \end{axis}
   \end{tikzpicture}
 }
-
 \subsection{Untergrundmessung}
+Zunächst muss eine Untergrundmessung durchgeführt werden. Hierzu verwenden wir
+eine reine Trägerfolie (Hostaphanfolie). Nun wird in 
+$\unit[30]{^\circ}$-Schritten des Azimutwinkels $\varphi$ eine Messung (Dauer: $\unit[400]{s}$) der Ereignisanzahlen $N$ beider Detektoren vorgenommen. Die sich ergebenden Messwerte sind in der folgenden Tabelle dargestellt. Die Fehler nehmen wir zu $\Delta \varphi = \unit[1]{^\circ}$ und $\Delta N = \sqrt{N}$ an.
+
+Es ist anzumerken, dass wir die Messung über zwei Tage verteilt durchführten. Am zweiten Tag war zu überprüfen, ob sich der Untergrund geändert hat. Hierzu nahmen wir einzelne Werte nochmals auf und verglichen sie mit denen des Vortages. Da keine Abweichungen zu beobachten waren, beließen wir es bei den Stichproben.
+
+\begin{table}[H]
+    \centering
+    \pgfplotstabletypesetfile[
+	 columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+	 columns/1/.style={column name={L_{Untergrund}}},
+	 columns/2/.style={column name={R_{Untergrund}}},
+    columns={0,1,2}
+    ]
+    {data/untergrund.txt}
+    \caption{Untergrundmessung}
+\end{table}
+
+In der folgenden Abbildung ist dieses Ergebnis graphisch dargestellt.
+
 
 
 \subsection{Messung der apparativen Asymmetrie}
