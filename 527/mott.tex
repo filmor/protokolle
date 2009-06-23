@@ -6,6 +6,7 @@
 
 \newcommand{\Isotop}[2]{\ensuremath{^{#2}\mathrm{#1}}\xspace}
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
+\newcommand{\Sr}{\Isotop{Sr}{90}}
 
 \begin{document}
 
@@ -238,16 +239,23 @@ Energie des einfallenden Photons.
 \end{figure}
 
 \section{Versuchsaufbau}
-
+Der Versuchsaufbau ist in der folgenden Abbildung schematisch dargestellt. Aus Strahlenschutzgründen sind noch diverse Bleiverkleidungen angebracht, diese sind hier jedoch nicht dargestellt.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.55\textwidth]{grafiken/aufbau}
-  \caption[Versuchsaufbau]{Schematischer Versuchsaufbau~\cite{meurin},
+  \caption[Versuchsaufbau]{Vertikalschnitt der Apparatur bei einem Azimut von $\unit[270]{^\circ}$~\cite{meurin},
   bearbeitet}
   \label{fig:aufbau}
 \end{figure}
 
+Die Apparatur besteht aus einem oberen und einem unteren Teil: zwei Plexiglastöpfen, welche mittels eines Aluminiumrohres miteinander verbunden sind. Der obere Plexiglastopf enthält ein verkapseltes $\Sr$-Präparat und eine Kupferfolie zur Reflektion der $\beta$-Teilchen (Spin-Rotation). Es wird somit ein transversalpolarisierter Elektronenstrahl mit senkrecht nach unten orientierter Impulsrichtung geliefert. Dabei zeigt die Transversalpolarisation in dieselbe Richtung wie die Verbindung von Refektor und Quelle. Diese beiden Komponenten sind fest miteinander verbunden und können mit dem Plexiglastopf um die Mittelachse des Rohres gedreht werden. Auf diese Weise lässt sich dann die Transversalpolarisation um die Impulsrichtung drehen. Der eingestellte Azimutwinkel kann dabei an einer angebrachten Skala abgelesen werden.
+
+Über das Rohr gelangt der Strahl nun in den unteren Versuchsteil, welcher als Analysator für die Transversalpolarisation dient. Die ankommenden Elekronen werden hier an einer dünnen Goldfolie einfach um $\unit[135]{^\circ}$ gestreuut. Daraufhin verlassen sie die Streukammer und werden mittels zweier sich gegenüber angebrachter Detektoren registriert. Auf diese Weise ist der Streuwinkel festgelegt und nur der Azimutwinkel wird variiert.
+
+Zur Messung muss die Apparatur mit einer Pumpe evakuiert werden, wobei ein besonders gutes Vakuum nicht von Nöten ist ($p=\unit[0.5]{Torr}$ reichen aus). 
+
+% Nachweisschaltung??!
 
 
 \section{Versuchsdurchführung und Auswertung}
