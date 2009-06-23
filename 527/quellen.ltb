@@ -27,35 +27,9 @@
     publisher={Springer-Verlag}
 }
 
-\bib{rietzler}{book}{
-    title={Kernphysikalisches Praktikum},
-    author={Wolfgang Rietzler u. Konrad Kopitzki},
-    year={},
-    edition={},
-    publisher={Teubner-Verlag}
-}
-
-
-\bib{prot}{article}{
-    title={$\gamma$-Spektroskopie mit Szintillations- und Halbleiterdetektoren},
-    author={Benjamin Joachimi u. Benedikt Klobes ($\beta$ 10)},
-    year={2005},
-    edition={},
-    publisher={}
-}
-
-\bib{quarks}{article}{
-    title={Strahlung in Deutschland},
-    author={Quarks und Co},
-    url={http://www.wdr.de/tv/quarks/sendungsbeitraege/2006/0411/004_tschernobyl.jsp?pbild=1}
-    year={2006},
-    edition={},
-    publisher={}
-}
-
-\bib{linien}{article}{
-    title={Table of Radioactive Isotopes},
-    url={http://ie.lbl.gov/toi/}
+\bib{meurin}{article}{
+    title={Diplomarbeit zum Mottstreuungsversuch},
+    author={Meurin},
     year={},
     edition={},
     publisher={}
