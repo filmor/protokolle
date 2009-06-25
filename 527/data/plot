@@ -11,9 +11,9 @@ set xrange [-15:345]
 set output 'grafiken/untergrund.tikz'
 
 f = 'data/untergrund.txt'
-dx(x) = 0
-dy(x) = 0
-plot f u 1:2:(dx($1)):(dy($2)) i 0 w xyerr lt rgb 'blue' title 'Links (1)', \
-     f u 1:3:(dx($1)):(dy($2)) i 0 w xyerr lt rgb 'red' title 'Rechts (1)', \
-     f u 1:2:(dx($1)):(dy($2)) i 1 w xyerr lt rgb 'blue' title 'Rechts (2)', \
-     f u 1:3:(dx($1)):(dy($2)) i 1 w xyerr lt rgb 'red' title 'Rechts (2)'
+dy(x) = sqrt(x)
+text = "%s, %s Tag"
+plot f u 1:2:(dy($2)) i 0 w yerr lt rgb 'blue' title sprintf(text,"Links","erster"), \
+     f u 1:3:(dy($2)) i 0 w yerr lt rgb 'red' title sprintf(text,"Rechts","erster"), \
+     f u 1:2:(dy($2)) i 1 w yerr lt rgb 'cyan' title sprintf(text,"Links","zweiter"), \
+     f u 1:3:(dy($2)) i 1 w yerr lt rgb 'magenta' title sprintf(text,"Rechts","zweiter")
