@@ -1,7 +1,7 @@
 \documentclass{protokoll}
 \usepackage{booktabs,multirow,xspace,gnuplot-lua-tikz}
 \newcommand{\assistent}{C. Lenk}
-\newcommand{\versuch}{Mottstreuung}
+\newcommand{\versuch}{\textsc{Mott}-Streuung}
 \newcommand{\nummer}{P527}
 
 \newcommand{\Isotop}[2]{\ensuremath{^{#2}\mathrm{#1}}\xspace}
@@ -25,34 +25,36 @@ nachgewiesen werden.
 Der $\beta$-Zerfall subsummiert drei Zerfälle, bei denen sich die Ordnungszahl
 $Z$ um eins ändert, die Nuklidzahl $A$ jedoch konstant bleibt.
 \begin{description}
-\item[$\beta^-$-Zerfall:] Beim $\beta^-$-Zerfall zerfällt ein Neutron innerhalb des Kerns in ein Proton, ein Elektron sowie ein Anti-Elektronneutrino:
+  \item[$\beta^-$-Zerfall:] Beim $\beta^-$-Zerfall zerfällt ein Neutron
+    innerhalb des Kerns in ein Proton, ein Elektron sowie ein
+    Anti-Elektronneutrino:
     \begin{align}
       n \to p + e^- + \bar\nu_e
     \end{align}
     Dieser Zerfall ist bei $m(A,Z) > m(A,Z+1)$ energetisch möglich.
 
-\item[$\beta^+$-Zerfall:] Beim $\beta^+$-Zerfall hingegen zerfällt ein
-  gebundenes Proton in ein Neutron, ein Positron und ein Elektronneutrino:
-  \begin{align}
-    p \to n + e^+ + \nu_e
-  \end{align}
-  Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
+  \item[$\beta^+$-Zerfall:] Beim $\beta^+$-Zerfall hingegen zerfällt ein
+    gebundenes Proton in ein Neutron, ein Positron und ein Elektronneutrino:
+    \begin{align}
+      p \to n + e^+ + \nu_e
+    \end{align}
+    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + 2 m_e$ energetisch möglich.
 
-\item[Elektroneneinfang:] Des Weiteren existiert noch die Möglichkeit des
-  Elektroneneinfangs. Da die Elektronen im Atom eine endliche
-  Aufenthaltswahrscheinlichkeit im Kern haben, können diese Elektronen von einem
-  Proton eingefangen werden. Hierbei entsteht ein Neutron und ein
-  Elektronneutrino:
-  \begin{align}
-    p + e^- \to n + \nu_e
-  \end{align}
-  Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{\text{Bind}}$ energetisch
-  möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des Elektrons
-  darstellt. In der jeweiligen Elektronenschale wird eine Lücke hinterlassen.
-  Der Atomkern ist nun angeregt.
-%noch nicht fertig
+  \item[Elektroneneinfang:] Des Weiteren existiert noch die Möglichkeit des
+    Elektroneneinfangs. Da die Elektronen im Atom eine endliche
+    Aufenthaltswahrscheinlichkeit im Kern haben, können diese Elektronen von
+    einem Proton eingefangen werden. Hierbei entsteht ein Neutron und ein
+    Elektronneutrino:
+    \begin{align}
+      p + e^- \to n + \nu_e
+    \end{align}
+    Dieser Zerfall ist bei $m(A,Z) > m(A,Z-1) + E^{e^-}_{\text{Bind}}$
+    energetisch möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des
+    Elektrons darstellt. In der jeweiligen Elektronenschale wird eine Lücke
+    hinterlassen.  Der Atomkern ist nun angeregt.
+    %noch nicht fertig
 \end{description}
- 
+
 \subsection{Parität}
 Die Parität ist in der Quantenmechanik genau dann erhalten, wenn Symmetrie
 bezüglich Raumspiegelung vorliegt. Es gilt für den Paritätsoperator:
@@ -80,14 +82,14 @@ ist also immer aus einem Polar- und einem Axialvektor zusammengesetzt. In
 unserem Fall sind dies der Elektronenspin und der Elektronenimpuls. Man erhält
 die Helizität zu:
 \begin{align}
-    h = \frac{\vec{\sigma} \cdot \vec{p}}
-             {\left|\vec{\sigma}\right| \left|\vec{p}\right|}
+  h = \frac{\vec{\sigma} \cdot \vec{p}}
+  {\left|\vec{\sigma}\right| \left|\vec{p}\right|}
 \end{align}
 Bei einem die Parität erhaltenden Prozess, muss gelten:
 \begin{align*}
   P \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
-    = -\left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
-    = \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+  = -\left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+  = \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
 \end{align*}
 Somit muss gelten:
 \begin{align}
@@ -98,13 +100,13 @@ Ist dem in einer Messung nicht so, liegt Paritätsverletzung vor.
 
 \subsection{Spinpolarisation}
 Die Polarisation eines Teilchens ist der Erwartungswert seines Spins, also $\vec
-P = \langle\vec \sigma\rangle$, gibt also an, in welche Richtung die
-Spins im Allgemeinen zeigen. Da wir die Helizität betrachten ist für uns nur die
+P = \langle\vec \sigma\rangle$, gibt also an, in welche Richtung die Spins im
+Allgemeinen zeigen. Da wir die Helizität betrachten ist für uns nur die
 longitudinale Polarisation von Interesse:
 \begin{align}
-    P_l = \langle \vec \sigma \cdot \frac{\vec p}{\left|\vec p\right|} \rangle =
-    \frac{N_+ - N_-}{N_+ + N_-}
-    \label{eqn:polarisation}
+  P_l = \langle \vec \sigma \cdot \frac{\vec p}{\left|\vec p\right|} \rangle =
+  \frac{N_+ - N_-}{N_+ + N_-}
+  \label{eqn:polarisation}
 \end{align}
 wobei $N_+$ und $N_-$ die Anzahl der Elektronen mit positiver bzw.\ negativer
 Helizität sind.
@@ -114,15 +116,15 @@ $\beta$-Zerfall zusammen mit diesem ausgesandte Elektron negative Helizität hat.
 Allerdings sind Elektronen aufgrund ihrer größeren Masse als $0$ nicht
 vollständig polarisiert. Man erhält
 \begin{align*}
-    P_l = -\frac{v}{c}
+  P_l = -\frac{v}{c}
 \end{align*}
 für die Polarisation der Elektronen.
 
-Bei der Mottstreuung hat allerdings nur die transversale Komponente einen
-Einfluss, daher versuchen wir, die Bewegungsrichtung um $\unit[90]{^\circ}$
-gegen die Spinrichtung zu drehen (in diesem Experiment durch Mehrfachstreuung an
-einer Kupferfolie). Dadurch tauschen die transversale und longitudinale
-Komponente ihre Rollen.
+Bei der \textsc{Mott}-Streuung hat allerdings nur die transversale Komponente
+einen Einfluss, daher versuchen wir, die Bewegungsrichtung um
+$\unit[90]{^\circ}$ gegen die Spinrichtung zu drehen (in diesem Experiment durch
+Mehrfachstreuung an einer Kupferfolie). Dadurch tauschen die transversale und
+longitudinale Komponente ihre Rollen.
 
 Aufgrund relativistischer Effekte ist der Elektronenspin allerdings leicht an
 die Impulsrichtung gekoppelt, dreht sich also um einen gewissen Winkel, genauer
@@ -131,15 +133,15 @@ ist.
 
 Wir erhalten also insgesamt:
 \begin{align}
-    P_{tr} = -P_l \sin \alpha = \frac{v}{c}
-        \sin\left(\alpha\right)
-    \label{}
+  P_{tr} = -P_l \sin \alpha = \frac{v}{c}
+  \sin\left(\alpha\right)
+  \label{}
 \end{align}
 Wir werden im Versuch $P_{tr}$ bestimmen und erhalten daraus dann letztlich die
 longitudinale Polarisation der Elektronen aus dem $\beta$-Zerfall.
 
-\subsection{Mottstreuung}
-Die Mottstreuung ist die "`elastische"' Streuung eines punktförmigen
+\subsection{\textsc{Mott}-Streuung}
+Die \textsc{Mott}-Streuung ist die "`elastische"' Streuung eines punktförmigen
 Spin-1/2-Teilchens, an einer punktförmigen Ladung ohne Spin. Diese Art der
 Streuung ist ähnlich der Rutherford-Streuung, bei der ein spinloses Teilchen
 an einer Ladung gestreut wird. Die zusätzliche Wechselwirkung ergibt sich aus
@@ -147,7 +149,7 @@ dem magnetischen Moment des Spins, der mit dem
 magnetischen Moment, welches durch den Bahndrehimpuls der gestreuten Ladung
 entsteht, wechselwirkt.
 
-Die Abhängigkeit vom Streuwinkel <math>\theta</math> lässt sich so verstehen,
+Die Abhängigkeit vom Streuwinkel $\theta$ lässt sich so verstehen,
 dass die Rückwärtsstreuung ($\theta=\pi$) unterdrückt wird, da dies einem
 Spinflip entspräche, der jedoch bei einem spinlosen Targetteilchen nicht möglich
 ist.  Im nichtrelativistischen Grenzfall (d.~h.\ Vernachlässigung des Spins
@@ -294,10 +296,10 @@ Stichproben.
 \begin{table}[H]
   \centering
   \pgfplotstabletypesetfile[
-    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
-    columns/1/.style={column name={$L_\text{Untergrund}$}},
-    columns/2/.style={column name={$R_\text{Untergrund}$}},
-    columns={0,1,2}
+  columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+  columns/1/.style={column name={$L_\text{Untergrund}$}},
+  columns/2/.style={column name={$R_\text{Untergrund}$}},
+  columns={0,1,2}
   ]
   {data/untergrund.txt}
   \caption{Untergrundmessung}
@@ -314,14 +316,90 @@ In der folgenden Abbildung ist dieses Ergebnis graphisch dargestellt.
 Es ist zu erkennen, dass der linke Detektor durchweg mehr Ereignisse zählt als
 der rechte und somit offenbar empfindlicher ist. Beide Detektoren weisen ferner
 sowohl ein Plateau, als auch ein ausgeprägtes Maximum auf. Beim rechten liegt
-dies bei $\unit[270]{^\circ}$ und beim linken bei $\unit[90]{^\circ}$.
-
-% noch was blablabalbalbalbalbla
+dies bei $\unit[270]{^\circ}$ und beim linken bei $\unit[90]{^\circ}$.  Die kann
+wie folgt erklärt werden. Nimmt man an, dass die $\beta$-Strahlung stark
+kollimiert ist, so werden bei $\unit[90]{^\circ}$ von der Quelle Elektronen zum
+linken Detektor und bei $\unit[270]{^\circ}$ zum rechten Detektor hin emittiert.
+Über unvollständige Ablenkung durch die Kupferfolie können dann einige
+Elektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
 
 \subsection{Messung der apparativen Asymmetrie}
+Nun wird die apparative Asymmetrie $\kappa_{\text{app}}$ untersucht. Hierzu wird
+in $\unit[30]{^\circ}$-Schritten mit einer zwei Millimeter dicken
+Aluminiumplatte als Streuer jeweils $\unit[100]{s}$ gemessen. Die dicke
+Aluminiumplatte sorgt dabei dafür, dass keine polarisationsbedingte Asymmetrie
+auftritt. Anschließend muss noch eine Untergrundkorrektur vorgenommen werden,
+dabei sind die unterschiedlichen Messdauern zu beachten.  Es gilt für die
+korrigierte Anzahl (analog auch für den rechten Detektor):
+\begin{align}
+  L_{korr} &= L - \frac{L_{\text{Untergrund}}}{4} \\
+  \Delta L_{korr} &= \sqrt{L+\frac{L_{Untergrund}}{16}}
+\end{align}
+
+Bei der Messung selbst ergab sich:
+\begin{table}[H]
+  \centering
+  \pgfplotstabletypesetfile[
+  columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+  columns/1/.style={column name={$L_\text{app}$}},
+  columns/2/.style={column name={$R_\text{app}$}},
+  columns={0,1,2}
+  ]
+  {data/apparative_asymmetrie.txt}
+  \caption{Messung der apparativen Asymmetrie (unkorrigiert)}
+\end{table}
+% oder korrigierte Daten hierhin und das in den Anhang
+
+Nun lässt sich der apparative Asymmetriefaktor mittels Gleichung
+(\ref{eq:appasym}) berechnen. Der Fehler ergibt sich zu:
+\begin{align}
+  \Delta \kappa_{\text{app}} = \kappa_{\text{app}} \sqrt{\left(\frac{\Delta
+  R_{korr}}{R_{korr}}\right)^2+\left(\frac{L_{korr}}{L_{korr}}\right)^2}
+\end{align}
+In der folgenden Tabelle sind die Ergebnisse nun zusammengefasst:
+
+% Tabelle mit korrigierten daten und fehlern sowie kappa_app mit fehler
+
+Stellt man diese Daten nun graphisch dar, so wird deutlich, dass die apparative
+Asymmetrie bei Änderung des Azimutwinkels annähernd konstant bleibt.
+
+% Abb. der kappa_app mit fehlerbalken
 
 
-\subsection{Winkelabhängigkeit der Mottstreuung}
+
+\subsection{\textsc{Mott}-Streuung an einer dünnen Folie}
+Nun wird in Abhängigkeit vom Azimut $\varphi$ die \textsc{Mott}-Streuung an
+einer etwa $\unit[2]{\mu m}$ dicken Goldfolie in $\unit[30]{^\circ}$-Schritten
+vermessen. Die Messdauer beträgt dabei jeweils $\unit[100]{s}$.
+
+% wie dick genau?? 2 oder 2.33??
+
+Erneut wird um den Untergrund korrigiert. Anschließend wird der Quotient
+$\frac{L_{\text{korr}}}{R_{\text{korr}}}$ gebildet und zur Berücksichtigung der
+apparativen Asymmetrie daraufhin durch $\kappa_{\text{app}}$ dividiert. Es gilt:
+\begin{align*}
+  \left(\frac{L}{R}\right)_{\kappa-\text{korr}} &=
+  \frac{L_{\text{korr}}}{R_{\text{korr}} \ \kappa_{\text{app}}} \\
+  \Delta \left(\frac{L}{R}\right)_{\kappa-\text{korr}} &=
+  \left(\frac{L}{R}\right)_{\kappa-\text{korr}}
+  \sqrt{\left(\frac{\Delta\kappa_{\text{app}}}{\kappa_{\text{app}}}\right)^2 +
+  \left(\frac{\Delta
+  L_{\text{korr}}}{L_{\text{korr}}}\right)^2+\left(\frac{\Delta
+  R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
+\end{align*}
+Die Ergebnisse sind in der folgenden Tabelle dargestellt:
+%Tabelle
+
+Nun wird $\left(\frac{L}{R}\right)_{\kappa-\text{korr}}$ gegen $\varphi$
+aufgetragen:
+%Abb. + erwartungsfit
+
+Dabei wurde der theoretisch erwartete Kurvenverlauf für die
+\textsc{Mott}-Streuung mittels eines freien Parameters $\delta$ an die Daten
+gefittet. Es ergibt sich dabei $\delta = (... \pm ...)$.
+
+% bla zur qualität des fits und so...
+
 
 
 \subsection{Bestimmung der Mott-Asymmetrie und der Elektronenpolarisation}
