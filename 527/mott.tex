@@ -355,7 +355,7 @@ Nun lässt sich der apparative Asymmetriefaktor mittels Gleichung
 (\ref{eq:appasym}) berechnen. Der Fehler ergibt sich zu:
 \begin{align}
   \Delta \kappa_{\text{app}} = \kappa_{\text{app}} \sqrt{\left(\frac{\Delta
-  R_{korr}}{R_{korr}}\right)^2+\left(\frac{L_{korr}}{L_{korr}}\right)^2}
+  R_{korr}}{R_{korr}}\right)^2+\left(\frac{\Delta L_{korr}}{L_{korr}}\right)^2}
 \end{align}
 In der folgenden Tabelle sind die Ergebnisse nun zusammengefasst:
 
@@ -377,21 +377,20 @@ Erneut wird um den Untergrund korrigiert. Anschließend wird der Quotient
 $\frac{L_{\text{korr}}}{R_{\text{korr}}}$ gebildet und zur Berücksichtigung der
 apparativen Asymmetrie daraufhin durch $\kappa_{\text{app}}$ dividiert. Es gilt:
 \begin{align*}
-  \left(\frac{L}{R}\right)_{\kappa-\text{korr}} &=
-  \frac{L_{\text{korr}}}{R_{\text{korr}} \ \kappa_{\text{app}}} \\
+  \left(\frac{L}{R}\right) &=
+                \frac{L_{\text{korr}}}{R_{\text{korr}} \ \kappa_{\text{app}}} \\
   \Delta \left(\frac{L}{R}\right)_{\kappa-\text{korr}} &=
-  \left(\frac{L}{R}\right)_{\kappa-\text{korr}}
-  \sqrt{\left(\frac{\Delta\kappa_{\text{app}}}{\kappa_{\text{app}}}\right)^2 +
-  \left(\frac{\Delta
-  L_{\text{korr}}}{L_{\text{korr}}}\right)^2+\left(\frac{\Delta
-  R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
+                \left(\frac{L}{R}\right)\sqrt{\left(\frac{\Delta\kappa_{\text{app}}}
+                {\kappa_{\text{app}}}\right)^2 + \left(\frac{\Delta
+                L_{\text{korr}}}{L_{\text{korr}}}\right)^2+\left(\frac{\Delta
+                R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
 \end{align*}
 Die Ergebnisse sind in der folgenden Tabelle dargestellt:
 %Tabelle
 
 Nun wird $\left(\frac{L}{R}\right)_{\kappa-\text{korr}}$ gegen $\varphi$
 aufgetragen:
-%Abb. + erwartungsfit
+%Abb. der Daten + erwartungsfit
 
 Dabei wurde der theoretisch erwartete Kurvenverlauf für die
 \textsc{Mott}streuung mittels eines freien Parameters $\delta$ an die Daten
@@ -399,7 +398,7 @@ gefittet. Es ergibt sich dabei $\delta = (... \pm ...)$.
 
 % bla zur qualität des fits und so...
 
-\subsection{Bestimmung der Mott-Asymmetrie und der Muektronenpolarisation}
+\subsection{Bestimmung der Mott-Asymmetrie und der Elektronenpolarisation}
 Zu guter Letzt wird nun noch die Abhängigkeit der \textsc{Mott}-Asymmetrie
 $\delta$ von der Foliendicke untersucht. Hierzu werden Folien verschiedener
 Dicke eingesetzt und  Messungen von jeweils $\unit[100]{s}$ bzw. bei
@@ -411,10 +410,63 @@ Messdauern bei der Herausrechnung des Untergrundes beachtet werden müssen.
 
 % bei Untergrundbereinigung verschiedene Messdauern beachten!!!
 
-% noch lange nicht fertig ...
+Nach erfolgter Untergrundkorrektur wird der Quotient $\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi}$ mit $\varphi \in \left\{ \unit[0]{^\circ}, \unit[180]{^\circ}\right\}$ berechnet. Der Fehler ergibt sich hierbei zu:
+\begin{align*}
+\Delta\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi} = 
+       \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi} \ 
+       \sqrt{\left(\frac{\Delta L_{\text{korr}}(\varphi)}{L_{\text{korr}}
+       (\varphi)}\right)^2 + \left(\frac{\Delta R_{\text{korr}}(\varphi)}
+       {R_{\text{korr}}(\varphi)}\right)^2}
+\end{align*}
+
+Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung (\ref{eq:deltastrich}), wobei für den Fehler
+\begin{align*}
+\Delta\left(\delta '^{-1}\right) = \delta '^{-1} \
+  \frac{\sqrt{\frac{\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)
+  _{\unit[0]{^{\circ}}}}
+  {\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[180]{^{\circ}}}}\ 
+  \left(\Delta\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)
+  _{\unit[180]{^{\circ}}}\right)^2 
+  + 
+  \frac{\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)
+  _{\unit[180]{^{\circ}}}}
+  {\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[0]{^{\circ}}}}\ 
+  \left(\Delta\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[0]{^{\circ}}}
+  \right)^2}}
+  {\left|\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[0]{^{\circ}}}
+  - \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[180]{^{\circ}}}\right|}
+\end{align*}
+
+Die Daten und die von uns berechneten Werte befinden sich in Tabelle \ref{tab:asym} im Anhang.
+
+% Tabelle mit den Werten in den Anhang
+
+In der folgenden Abbildung ist nun $\delta '^{-1}$ gegen die Streufoliendicke $d$ aufgetragen ($\Delta d = \unit[0.05]{\mu m}$).
+
+% Fehler für d ok?
+
+% Abb.
+
+Wie in der Theorie beschrieben gilt Gleichung (\ref{eq:einsdurchdeltastrich}). Anhand dieser Gleichung wurde an die Daten eine Gerade gefittet. Wir erhalten die Fitparameter zu:
+
+% Fitparameter angeben
+
+Nach besagter Gleichung (\ref{eq:einsdurchdeltastrich}) ist der Asymmetriefaktor $\delta$ über den inversen Ordinatenabschnitt gegeben ($\delta = \frac{1}{b}$). Mit Gleichung (\ref{eq:delta}) folgt für die intrinsische Elektronenpolarisation $P_0$ nun:
+\begin{align}
+P_0 &= - \frac{1}{0.25 \cdot b} \\
+\Delta P_0 &= \Delta b \ \frac{1}{0.25 \cdot b^2}
+\end{align}
+Somit erhalten wir die intrinsische Elektronenpolarisation zu $P_0 = (- ... \pm ...)$.
+
+% übliche Diskussion des Ergebnisses (siehe S. 20 joach)
+
+
+
+% bitte nach fertiger Theorie die refs zu formeln (ich glaub vor allem Kapitel 2.5 einfügen)- danke! siehe hierzu am besten das joachimi-prot
+
 
 \section{Zusammenfassung}
-
+% noch bla
 
 \begin{appendix}
   \Literatur{quellen}
