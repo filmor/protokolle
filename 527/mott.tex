@@ -128,7 +128,7 @@ longitudinale Komponente ihre Rollen.
 
 Aufgrund relativistischer Effekte ist der Elektronenspin allerdings leicht an
 die Impulsrichtung gekoppelt, dreht sich also um einen gewissen Winkel, genauer
-um $\alpha = \sqrt{1-\frac{v^2}{c^2}}\ \phi$ mit, wobei $\phi$ der Ablenkwinkel
+um $\alpha = \sqrt{1-\frac{v^2}{c^2}}\ \varphi$ mit, wobei $\varphi$ der Ablenkwinkel
 ist.
 
 Wir erhalten also insgesamt:
@@ -149,14 +149,50 @@ dem magnetischen Moment des Spins, der mit dem
 magnetischen Moment, welches durch den Bahndrehimpuls der gestreuten Ladung
 entsteht, wechselwirkt.
 
-Die Abhängigkeit vom Streuwinkel $\theta$ lässt sich so verstehen,
-dass die Rückwärtsstreuung ($\theta=\pi$) unterdrückt wird, da dies einem
-Spinflip entspräche, der jedoch bei einem spinlosen Targetteilchen nicht möglich
-ist.  Im nichtrelativistischen Grenzfall (d.~h.\ Vernachlässigung des Spins
-durch $\beta=\frac{v}{c}\ll 1$) geht der Mott-Streuquerschnitt in den
-Rutherford-Streuquerschnitt über. 
+Die Abhängigkeit vom Streuwinkel $\theta$ lässt sich so verstehen, dass die
+Rückwärtsstreuung ($\theta=\pi$) unterdrückt wird, da dies einem Spinflip
+entspräche, der jedoch bei einem spinlosen Targetteilchen nicht möglich ist. Im
+nichtrelativistischen Grenzfall (d.~h.\ Vernachlässigung des Spins durch
+$\beta=\frac{v}{c}\ll 1$) geht der Mott-Streuquerschnitt in den
+Rutherford-Streuquerschnitt über.
+
+Um den Effekt zu verstehen ist es sinnvoll, die Streuung aus dem Ruhesystem des
+Eelektrons zu betrachten. In diesem hat das entgegenkommende Proton einen
+Drehimpuls, welcher ein magnetisches Moment induziert. An dieses koppelt der
+Spin des Elektrons.
+
+Die Richtung des Drehimpulses und damit des magnetischen Moments ist dabei
+abhängig davon, ob das Elektronen links oder rechts am Kern gestreut wird.
+
+Der Rutherford-Streuquerschnitt
+\begin{align}
+  \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta) =
+    \frac{(Z\alpha)^2}{4E^2 v^4 \sin^4\frac{\theta}{2}}
+    \left(1 - v^2\sin^2\frac{\theta}{2}\right)
+  \label{eqn:rutherford}
+\end{align}
+wird wie folgt modifiziert:
+\begin{align}
+  \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta, \varphi) =
+    \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta) \ 
+    (1 - P_\text{tr} S(\theta, E, Z) \cos\varphi
+  \label{eqn:mott}
+\end{align}
+Dabei ist $\theta$ der gewöhnliche Streuwinkel, $\varphi$ der Azimutwinkel, der
+den Winkel zum Vektor $\vec\sigma \times \vec p$ angibt  $S$ die
+Asymmetriefunktion die den Grad der Asymmetrie angibt und $P_\text{tr}$ wiederum
+die transversale Polarisation.
+
+Die Asymmetriefunktion durchläuft ihr Maximum bei $\unit[135]{^\circ}$ und ist
+stark von der Kernladungszahl $Z$ abhängig, da das magnetische Moment ebenfalls
+stark von $Z$ abhängt.
 
 \subsection{Messgrößen}
+Im Versuch werden die folgenden Größen gemessen:
+
+\begin{description}
+  \item[Asymmetriefaktor]
+\end{description}
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
@@ -270,7 +306,7 @@ Azimutwinkel kann dabei an einer angebrachten Skala abgelesen werden.
 
 Über das Rohr gelangt der Strahl nun in den unteren Versuchsteil, welcher als
 Analysator für die Transversalpolarisation dient. Die ankommenden Elekronen
-werden hier an einer dünnen Goldfolie einfach um $\unit[135]{^\circ}$ gestreuut.
+werden hier an einer dünnen Goldfolie einfach um $\unit[135]{^\circ}$ gestreut.
 Daraufhin verlassen sie die Streukammer und werden mittels zweier sich gegenüber
 angebrachter Detektoren registriert. Auf diese Weise ist der Streuwinkel
 festgelegt und nur der Azimutwinkel wird variiert.
@@ -317,12 +353,12 @@ Es ist zu erkennen, dass der linke Detektor durchweg mehr Ereignisse zählt als
 der rechte und somit offenbar empfindlicher ist. Beide Detektoren weisen ferner
 sowohl ein Plateau, als auch ein ausgeprägtes Maximum auf. Beim rechten liegt
 dies bei $\unit[270]{^\circ}$ und beim linken bei $\unit[90]{^\circ}$.  Die kann
-wie folgt erklärt werden. Nimmt man an, dass die $\beta$-Strahlung stark
+wie folgt erklärt werden: Nimmt man an, dass die $\beta$-Strahlung stark
+% Muektronen?!
 kollimiert ist, so werden bei $\unit[90]{^\circ}$ von der Quelle Muektronen zum
 linken Detektor und bei $\unit[270]{^\circ}$ zum rechten Detektor hin emittiert.
 Über unvollständige Ablenkung durch die Kupferfolie können dann einige
 Muektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
-Die kann wie folgt erklärt werden. Nimmt man an, dass die $\beta$-Strahlung stark kollimiert ist, so werden bei $\unit[90]{^\circ}$ von der Quelle Muektronen zum linken Detektor und bei $\unit[270]{^\circ}$ zum rechten Detektor hin emittiert. Über unvollständige Ablenkung durch die Kupferfolie können dann einige Elektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
 
 \subsection{Messung der apparativen Asymmetrie}
 Nun wird die apparative Asymmetrie $\kappa_{\text{app}}$ untersucht. Hierzu wird
@@ -380,7 +416,8 @@ apparativen Asymmetrie daraufhin durch $\kappa_{\text{app}}$ dividiert. Es gilt:
   \left(\frac{L}{R}\right) &=
                 \frac{L_{\text{korr}}}{R_{\text{korr}} \ \kappa_{\text{app}}} \\
   \Delta \left(\frac{L}{R}\right)_{\kappa-\text{korr}} &=
-                \left(\frac{L}{R}\right)\sqrt{\left(\frac{\Delta\kappa_{\text{app}}}
+                \left(\frac{L}{R}\right)
+                \sqrt{\left(\frac{\Delta\kappa_{\text{app}}}
                 {\kappa_{\text{app}}}\right)^2 + \left(\frac{\Delta
                 L_{\text{korr}}}{L_{\text{korr}}}\right)^2+\left(\frac{\Delta
                 R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
@@ -410,7 +447,10 @@ Messdauern bei der Herausrechnung des Untergrundes beachtet werden müssen.
 
 % bei Untergrundbereinigung verschiedene Messdauern beachten!!!
 
-Nach erfolgter Untergrundkorrektur wird der Quotient $\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi}$ mit $\varphi \in \left\{ \unit[0]{^\circ}, \unit[180]{^\circ}\right\}$ berechnet. Der Fehler ergibt sich hierbei zu:
+Nach erfolgter Untergrundkorrektur wird der Quotient
+$\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi}$ mit $\varphi
+\in \left\{ \unit[0]{^\circ}, \unit[180]{^\circ}\right\}$ berechnet. Der Fehler
+ergibt sich hierbei zu:
 \begin{align*}
 \Delta\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi} = 
        \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\varphi} \ 
@@ -419,7 +459,8 @@ Nach erfolgter Untergrundkorrektur wird der Quotient $\left(\frac{L_{\text{korr}
        {R_{\text{korr}}(\varphi)}\right)^2}
 \end{align*}
 
-Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung (\ref{eq:deltastrich}), wobei für den Fehler
+Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung
+(\ref{eq:deltastrich}), wobei für den Fehler
 \begin{align*}
 \Delta\left(\delta '^{-1}\right) = \delta '^{-1} \
   \frac{\sqrt{\frac{\left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)
@@ -437,21 +478,28 @@ Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung (\ref{eq:deltastric
   - \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[180]{^{\circ}}}\right|}
 \end{align*}
 
-Die Daten und die von uns berechneten Werte befinden sich in Tabelle \ref{tab:asym} im Anhang.
+Die Daten und die von uns berechneten Werte befinden sich in Tabelle
+\ref{tab:asym} im Anhang.
 
 % Tabelle mit den Werten in den Anhang
 
-In der folgenden Abbildung ist nun $\delta '^{-1}$ gegen die Streufoliendicke $d$ aufgetragen ($\Delta d = \unit[0.05]{\mu m}$).
+In der folgenden Abbildung ist nun $\delta '^{-1}$ gegen die Streufoliendicke
+$d$ aufgetragen ($\Delta d = \unit[0.05]{\mu m}$).
 
 % Fehler für d ok?
 
 % Abb.
 
-Wie in der Theorie beschrieben gilt Gleichung (\ref{eq:einsdurchdeltastrich}). Anhand dieser Gleichung wurde an die Daten eine Gerade gefittet. Wir erhalten die Fitparameter zu:
+Wie in der Theorie beschrieben gilt Gleichung (\ref{eq:einsdurchdeltastrich}).
+Anhand dieser Gleichung wurde an die Daten eine Gerade gefittet. Wir erhalten
+die Fitparameter zu:
 
 % Fitparameter angeben
 
-Nach besagter Gleichung (\ref{eq:einsdurchdeltastrich}) ist der Asymmetriefaktor $\delta$ über den inversen Ordinatenabschnitt gegeben ($\delta = \frac{1}{b}$). Mit Gleichung (\ref{eq:delta}) folgt für die intrinsische Elektronenpolarisation $P_0$ nun:
+Nach besagter Gleichung (\ref{eq:einsdurchdeltastrich}) ist der Asymmetriefaktor
+$\delta$ über den inversen Ordinatenabschnitt gegeben ($\delta = \frac{1}{b}$).
+Mit Gleichung (\ref{eq:delta}) folgt für die intrinsische Elektronenpolarisation
+$P_0$ nun:
 \begin{align}
 P_0 &= - \frac{1}{0.25 \cdot b} \\
 \Delta P_0 &= \Delta b \ \frac{1}{0.25 \cdot b^2}
@@ -462,7 +510,8 @@ Somit erhalten wir die intrinsische Elektronenpolarisation zu $P_0 = (- ... \pm 
 
 
 
-% bitte nach fertiger Theorie die refs zu formeln (ich glaub vor allem Kapitel 2.5 einfügen)- danke! siehe hierzu am besten das joachimi-prot
+% bitte nach fertiger Theorie die refs zu formeln (ich glaub vor allem Kapitel
+% 2.5 einfügen)- danke! siehe hierzu am besten das joachimi-prot
 
 
 \section{Zusammenfassung}
