@@ -119,9 +119,9 @@ Da Antineutrinos immer positive Helizität haben ist anzunehmen, dass das beim
 $\beta$-Zerfall zusammen mit diesem ausgesandte Elektron negative Helizität hat.
 Allerdings sind Elektronen aufgrund ihrer größeren Masse als $0$ nicht
 vollständig polarisiert. Man erhält
-\begin{align*}
+\begin{align}
   P_l = -\frac{v}{c}
-\end{align*}
+\end{align}
 für die Polarisation der Elektronen.
 
 Bei der \textsc{Mott}streuung hat allerdings nur die transversale Komponente
@@ -137,12 +137,11 @@ ist.
 
 Wir erhalten also insgesamt:
 \begin{align}
-  P_{tr} = -P_l \sin \alpha = \frac{v}{c}
-  \sin\left(\alpha\right)
+  P_{tr} = -P_l \sin \alpha = \frac{v}{c}\sin\alpha \ \ \text{im Idealfall}
   \label{}
 \end{align}
 Wir werden im Versuch $P_{tr}$ bestimmen und erhalten daraus dann letztlich die
-longitudinale Polarisation der Elektronen aus dem $\beta$-Zerfall.
+intrinsische Polarisation ($P_0$) der Elektronen aus dem $\beta$-Zerfall.
 
 \subsection{\textsc{Mott}streuung}
 Die \textsc{Mott}streuung ist die "`elastische"' Streuung eines punktförmigen
@@ -179,7 +178,7 @@ wird wie folgt modifiziert:
 \begin{align}
   \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta, \varphi) =
     \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta) \ 
-    (1 - P_\text{tr}\ S(\theta, E, Z) \cos\varphi
+    (1 - P_\text{tr}\ S(\theta, E, Z) \cos\varphi)
   \label{eqn:mott}
 \end{align}
 Dabei ist $\theta$ der gewöhnliche Streuwinkel, $\varphi$ der Azimutwinkel, der
@@ -336,10 +335,10 @@ wir es bei den Stichproben.
 \begin{table}[H]
   \centering
   \pgfplotstabletypesetfile[
-  columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
-  columns/1/.style={column name={$L_\text{Untergrund}$}},
-  columns/2/.style={column name={$R_\text{Untergrund}$}},
-  columns={0,1,2}
+    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+    columns/1/.style={column name={$L_\text{Untergrund}$}},
+    columns/2/.style={column name={$R_\text{Untergrund}$}},
+    columns={0,1,2}
   ]
   {data/untergrund.txt}
   \caption{Untergrundmessung}
@@ -373,7 +372,7 @@ dabei sind die unterschiedlichen Messdauern zu beachten.  Es gilt für die
 korrigierte Anzahl (analog auch für den rechten Detektor):
 \begin{align*}
   L_{\text{korr}} &= L - \frac{L_{\text{Untergrund}}}{4} \\
-  \Delta L_{\text{korr}} &= \sqrt{L+\frac{L_{Untergrund}}{16}}
+  \Delta L_{\text{korr}} &= \sqrt{L+\frac{L_{\text{Untergrund}}}{16}}
 \end{align*}
 
 Bei der Messung selbst ergab sich:
@@ -385,27 +384,29 @@ Bei der Messung selbst ergab sich:
     columns/2/.style={column name={$R_\text{app}$}},
     columns={0,1,2}
   ]
-  {data/apparative_asymmetrie.txt}
-  \caption{Messung der apparativen Asymmetrie (unkorrigiert)}
+  {data/apparative_asymmetrie_korr.txt}
+  \caption{Messung der apparativen Asymmetrie (korrigiert)}
 \end{table}
-
-% oder korrigierte Daten hierhin und das in den Anhang
 
 Nun lässt sich der apparative Asymmetriefaktor mittels Gleichung
 (\ref{eq:appasym}) berechnen. Der Fehler ergibt sich zu:
 \begin{align*}
   \Delta \kappa_{\text{app}} = \kappa_{\text{app}} \sqrt{\left(\frac{\Delta
-  R_{\text{korr}}}{R_{\text{korr}}}\right)^2+\left(\frac{\Delta L_{\text{korr}}}{L_{\text{korr}}}\right)^2}
+  R_{\text{korr}}}{R_{\text{korr}}}\right)^2+\left(\frac{\Delta
+  L_{\text{korr}}}{L_{\text{korr}}}\right)^2}
 \end{align*}
-In der folgenden Tabelle sind die Ergebnisse nun zusammengefasst:
-
-% Tabelle mit korrigierten daten und fehlern sowie kappa_app mit fehler
 
 Stellt man diese Daten nun graphisch dar, so wird deutlich, dass die apparative
-Asymmetrie bei Änderung des Azimutwinkels annähernd konstant bleibt.
+Asymmetrie bei Änderung des Azimutwinkels annähernd konstant bleibt:
+\begin{figure}[H]
+  \centering
+  \input{grafiken/appasym.tikz}
+  \caption{Apparative Asymmetrie}
+  \label{fig:appasym}
+\end{figure}
 
-% Abb. der kappa_app mit fehlerbalken
-% überprüfen , ob wirklich konstant
+Das gewichtete Mittel ergibt uns somit einen apparativen Asymmetriefaktor von
+$\kappa_\text{app} = (1.3596 \pm 0.0061)$.
 
 
 \subsection{\textsc{Mott}streuung an einer dünnen Folie}
@@ -524,6 +525,16 @@ Somit erhalten wir die intrinsische Elektronenpolarisation zu $P_0 = (- ... \pm 
 % noch bla
 
 \begin{appendix}
+  \section{Tabellen}
+  \subsection{Unkorrigierte apparative Asymmetriedaten}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+    columns/1/.style={column name={$L_\text{app}$}},
+    columns/2/.style={column name={$R_\text{app}$}},
+    columns={0,1,2}
+  ]
+  {data/apparative_asymmetrie_korr.txt}
+
   \Literatur{quellen}
 
 \end{appendix}

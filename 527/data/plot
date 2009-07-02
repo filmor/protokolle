@@ -1,12 +1,8 @@
-set terminal lua
+set terminal lua solid
 
 set xlabel 'Winkel/$^\circ$'
 set ylabel 'Intensität'
 set xrange [-15:345]
-
-# plot '$1' u 1:2 title 'Links' smooth csplines lt rgb 'blue', '$1' u 1:2 \
-# notitle lt rgb 'blue', '$2' u 1:3 title 'Rechts' smooth csplines lt rgb \
-# 'red', '$2' u 1:3 notitle lt rgb 'red'
 
 set output 'grafiken/untergrund.tikz'
 
@@ -17,3 +13,24 @@ plot f u 1:2:(dy($2)) i 0 w yerr lt rgb 'blue' title sprintf(text,"Links","erste
      f u 1:3:(dy($2)) i 0 w yerr lt rgb 'red' title sprintf(text,"Rechts","erster"), \
      f u 1:2:(dy($2)) i 1 w yerr lt rgb 'cyan' title sprintf(text,"Links","zweiter"), \
      f u 1:3:(dy($2)) i 1 w yerr lt rgb 'magenta' title sprintf(text,"Rechts","zweiter")
+
+
+set output 'grafiken/appasym.tikz'
+
+res(x) = 1.3595
+dres = 0.0061
+ures(x) = res(x) - dres
+ores(x) = res(x) + dres
+
+kappa(x,y) = x/y
+dkappa(x, y) = kappa(x,y) * sqrt(1/x + 1/y)
+
+set ylabel '$\kappa_\text{app}$'
+plot 'data/apparative_asymmetrie_korr.txt' u 1:(kappa($2,$3)):(dkappa($2,$3)) w yerr \
+    notitle, \
+    res(x) lt rgb 'blue' title 'Mittelwert', \
+    ures(x) lt rgb 'grey' notitle, \
+    ores(x) lt rgb 'grey' notitle
+
+
+
