@@ -184,7 +184,7 @@ wird wie folgt modifiziert:
 \end{align}
 Dabei ist $\theta$ der gewöhnliche Streuwinkel, $\varphi$ der Azimutwinkel, der
 den Winkel zum Vektor $\vec{s} \times \vec p$ angibt, $S$ die
-Asymmetriefunktion die den Grad der Asymmetrie angibt und $P_\text{tr}$ wiederum
+Asymmetriefunktion, die den Grad der Asymmetrie angibt, und $P_\text{tr}$ wiederum
 die transversale Polarisation.
 
 Die Asymmetriefunktion durchläuft ihr Maximum bei $\unit[135]{^\circ}$ und ist
@@ -330,8 +330,8 @@ nehmen wir zu $\Delta \varphi = \unit[1]{^\circ}$ und $\Delta N = \sqrt{N}$ an.
 Es ist anzumerken, dass wir die Messung über zwei Tage verteilt durchführten. Am
 zweiten Tag war zu überprüfen, ob sich der Untergrund geändert hat. Hierzu
 nahmen wir einzelne Werte nochmals auf und verglichen sie mit denen des
-Vortages. Da keine Abweichungen zu beobachten waren, beließen wir es bei den
-Stichproben.
+Vortages. Da keine signifikanten Abweichungen zu beobachten waren, beließen
+wir es bei den Stichproben.
 
 \begin{table}[H]
   \centering
@@ -356,13 +356,12 @@ In der folgenden Abbildung ist dieses Ergebnis graphisch dargestellt.
 Es ist zu erkennen, dass der linke Detektor durchweg mehr Ereignisse zählt als
 der rechte und somit offenbar empfindlicher ist. Beide Detektoren weisen ferner
 sowohl ein Plateau, als auch ein ausgeprägtes Maximum auf. Beim rechten liegt
-dies bei $\unit[270]{^\circ}$ und beim linken bei $\unit[90]{^\circ}$.  Die kann
+dies bei $\unit[270]{^\circ}$ und beim linken bei $\unit[90]{^\circ}$. Dies kann
 wie folgt erklärt werden: Nimmt man an, dass die $\beta$-Strahlung stark
-% Muektronen?!
-kollimiert ist, so werden bei $\unit[90]{^\circ}$ von der Quelle Muektronen zum
+kollimiert ist, so werden bei $\unit[90]{^\circ}$ von der Quelle Elektronen zum
 linken Detektor und bei $\unit[270]{^\circ}$ zum rechten Detektor hin emittiert.
 Über unvollständige Ablenkung durch die Kupferfolie können dann einige
-Muektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
+Elektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
 
 \subsection{Messung der apparativen Asymmetrie}
 Nun wird die apparative Asymmetrie $\kappa_{\text{app}}$ untersucht. Hierzu wird
@@ -372,10 +371,10 @@ Aluminiumplatte sorgt dabei dafür, dass keine polarisationsbedingte Asymmetrie
 auftritt. Anschließend muss noch eine Untergrundkorrektur vorgenommen werden,
 dabei sind die unterschiedlichen Messdauern zu beachten.  Es gilt für die
 korrigierte Anzahl (analog auch für den rechten Detektor):
-\begin{align}
-  L_{korr} &= L - \frac{L_{\text{Untergrund}}}{4} \\
-  \Delta L_{korr} &= \sqrt{L+\frac{L_{Untergrund}}{16}}
-\end{align}
+\begin{align*}
+  L_{\text{korr}} &= L - \frac{L_{\text{Untergrund}}}{4} \\
+  \Delta L_{\text{korr}} &= \sqrt{L+\frac{L_{Untergrund}}{16}}
+\end{align*}
 
 Bei der Messung selbst ergab sich:
 \begin{table}[H]
@@ -389,14 +388,15 @@ Bei der Messung selbst ergab sich:
   {data/apparative_asymmetrie.txt}
   \caption{Messung der apparativen Asymmetrie (unkorrigiert)}
 \end{table}
+
 % oder korrigierte Daten hierhin und das in den Anhang
 
 Nun lässt sich der apparative Asymmetriefaktor mittels Gleichung
 (\ref{eq:appasym}) berechnen. Der Fehler ergibt sich zu:
-\begin{align}
+\begin{align*}
   \Delta \kappa_{\text{app}} = \kappa_{\text{app}} \sqrt{\left(\frac{\Delta
-  R_{korr}}{R_{korr}}\right)^2+\left(\frac{\Delta L_{korr}}{L_{korr}}\right)^2}
-\end{align}
+  R_{\text{korr}}}{R_{\text{korr}}}\right)^2+\left(\frac{\Delta L_{\text{korr}}}{L_{\text{korr}}}\right)^2}
+\end{align*}
 In der folgenden Tabelle sind die Ergebnisse nun zusammengefasst:
 
 % Tabelle mit korrigierten daten und fehlern sowie kappa_app mit fehler
@@ -405,7 +405,7 @@ Stellt man diese Daten nun graphisch dar, so wird deutlich, dass die apparative
 Asymmetrie bei Änderung des Azimutwinkels annähernd konstant bleibt.
 
 % Abb. der kappa_app mit fehlerbalken
-
+% überprüfen , ob wirklich konstant
 
 
 \subsection{\textsc{Mott}streuung an einer dünnen Folie}
@@ -427,10 +427,12 @@ apparativen Asymmetrie daraufhin durch $\kappa_{\text{app}}$ dividiert. Es gilt:
                 R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
 \end{align*}
 Die Ergebnisse sind in der folgenden Tabelle dargestellt:
+
 %Tabelle
 
 Nun wird $\left(\frac{L}{R}\right)_{\kappa-\text{korr}}$ gegen $\varphi$
 aufgetragen:
+
 %Abb. der Daten + erwartungsfit
 
 Dabei wurde der theoretisch erwartete Kurvenverlauf für die
