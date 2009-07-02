@@ -52,7 +52,11 @@ $Z$ um eins ändert, die Nuklidzahl $A$ jedoch konstant bleibt.
     energetisch möglich, wobei $E^{e^-}_{\text{Bind}}$ die Bindungsenergie des
     Elektrons darstellt. In der jeweiligen Elektronenschale wird eine Lücke
     hinterlassen.  Der Atomkern ist nun angeregt.
+
+
     %noch nicht fertig
+
+
 \end{description}
 
 \subsection{Parität}
@@ -82,29 +86,29 @@ ist also immer aus einem Polar- und einem Axialvektor zusammengesetzt. In
 unserem Fall sind dies der Elektronenspin und der Elektronenimpuls. Man erhält
 die Helizität zu:
 \begin{align}
-  h = \frac{\vec{\sigma} \cdot \vec{p}}
-  {\left|\vec{\sigma}\right| \left|\vec{p}\right|}
+  h = \frac{\vec{s} \cdot \vec{p}}
+  {\left|\vec{s}\right| \left|\vec{p}\right|}
 \end{align}
 Bei einem die Parität erhaltenden Prozess, muss gelten:
 \begin{align*}
-  P \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
-  = -\left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
-  = \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle
+  P \left\langle \vec{s} \cdot \vec{p} \right\rangle
+  = -\left\langle \vec{s} \cdot \vec{p} \right\rangle
+  = \left\langle \vec{s} \cdot \vec{p} \right\rangle
 \end{align*}
 Somit muss gelten:
 \begin{align}
-  \left\langle \vec{\sigma} \cdot \vec{p} \right\rangle = 0
+  \left\langle \vec{s} \cdot \vec{p} \right\rangle = 0
 \end{align}
 Der Erwartungswert der Helizität sollte also bei Paritätserhaltung verschwinden.
 Ist dem in einer Messung nicht so, liegt Paritätsverletzung vor.
 
 \subsection{Spinpolarisation}
 Die Polarisation eines Teilchens ist der Erwartungswert seines Spins, also $\vec
-P = \langle\vec \sigma\rangle$, gibt also an, in welche Richtung die Spins im
+P = \langle\vec s\rangle$, gibt also an, in welche Richtung die Spins im
 Allgemeinen zeigen. Da wir die Helizität betrachten ist für uns nur die
 longitudinale Polarisation von Interesse:
 \begin{align}
-  P_l = \langle \vec \sigma \cdot \frac{\vec p}{\left|\vec p\right|} \rangle =
+  P_l = \langle \vec s \cdot \frac{\vec p}{\left|\vec p\right|} \rangle =
   \frac{N_+ - N_-}{N_+ + N_-}
   \label{eqn:polarisation}
 \end{align}
@@ -143,7 +147,7 @@ longitudinale Polarisation der Elektronen aus dem $\beta$-Zerfall.
 \subsection{\textsc{Mott}streuung}
 Die \textsc{Mott}streuung ist die "`elastische"' Streuung eines punktförmigen
 Spin-1/2-Teilchens, an einer punktförmigen Ladung ohne Spin. Diese Art der
-Streuung ist ähnlich der Rutherford-Streuung, bei der ein spinloses Teilchen
+Streuung ist ähnlich der \textsc{Rutherford}-Streuung, bei der ein spinloses Teilchen
 an einer Ladung gestreut wird. Die zusätzliche Wechselwirkung ergibt sich aus
 dem magnetischen Moment des Spins, der mit dem
 magnetischen Moment, welches durch den Bahndrehimpuls der gestreuten Ladung
@@ -153,7 +157,7 @@ Die Abhängigkeit vom Streuwinkel $\theta$ lässt sich so verstehen, dass die
 Rückwärtsstreuung ($\theta=\pi$) unterdrückt wird, da dies einem Spinflip
 entspräche, der jedoch bei einem spinlosen Targetteilchen nicht möglich ist. Im
 nichtrelativistischen Grenzfall (d.~h.\ Vernachlässigung des Spins durch
-$\beta=\frac{v}{c}\ll 1$) geht der Mott-Streuquerschnitt in den
+$\beta=\frac{v}{c}\ll 1$) geht der \textsc{Mott}-Streuquerschnitt in den
 Rutherford-Streuquerschnitt über.
 
 Um den Effekt zu verstehen ist es sinnvoll, die Streuung aus dem Ruhesystem des
@@ -164,7 +168,7 @@ Spin des Elektrons.
 Die Richtung des Drehimpulses und damit des magnetischen Moments ist dabei
 abhängig davon, ob das Elektronen links oder rechts am Kern gestreut wird.
 
-Der Rutherford-Streuquerschnitt
+Der \textsc{Rutherford}-Streuquerschnitt
 \begin{align}
   \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta) =
     \frac{(Z\alpha)^2}{4E^2 v^4 \sin^4\frac{\theta}{2}}
@@ -175,11 +179,11 @@ wird wie folgt modifiziert:
 \begin{align}
   \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta, \varphi) =
     \frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta) \ 
-    (1 - P_\text{tr} S(\theta, E, Z) \cos\varphi
+    (1 - P_\text{tr}\ S(\theta, E, Z) \cos\varphi
   \label{eqn:mott}
 \end{align}
 Dabei ist $\theta$ der gewöhnliche Streuwinkel, $\varphi$ der Azimutwinkel, der
-den Winkel zum Vektor $\vec\sigma \times \vec p$ angibt  $S$ die
+den Winkel zum Vektor $\vec{s} \times \vec p$ angibt, $S$ die
 Asymmetriefunktion die den Grad der Asymmetrie angibt und $P_\text{tr}$ wiederum
 die transversale Polarisation.
 
@@ -435,7 +439,7 @@ gefittet. Es ergibt sich dabei $\delta = (... \pm ...)$.
 
 % bla zur qualität des fits und so...
 
-\subsection{Bestimmung der Mott-Asymmetrie und der Elektronenpolarisation}
+\subsection{Bestimmung der \textsc{Mott}-Asymmetrie und der Elektronenpolarisation}
 Zu guter Letzt wird nun noch die Abhängigkeit der \textsc{Mott}-Asymmetrie
 $\delta$ von der Foliendicke untersucht. Hierzu werden Folien verschiedener
 Dicke eingesetzt und  Messungen von jeweils $\unit[100]{s}$ bzw. bei
