@@ -139,7 +139,7 @@ Wir erhalten also insgesamt:
 \begin{align}
   P_{tr} = -P_l \sin \alpha = \frac{v}{c}
   \sin\left(\alpha\right)
-  \label{}
+  \label{eq:Ptr}
 \end{align}
 Wir werden im Versuch $P_{tr}$ bestimmen und erhalten daraus dann letztlich die
 longitudinale Polarisation der Elektronen aus dem $\beta$-Zerfall.
@@ -191,12 +191,58 @@ Die Asymmetriefunktion durchläuft ihr Maximum bei $\unit[135]{^\circ}$ und ist
 stark von der Kernladungszahl $Z$ abhängig, da das magnetische Moment ebenfalls
 stark von $Z$ abhängt.
 
-\subsection{Messgrößen}
-Im Versuch werden die folgenden Größen gemessen:
+\subsection{Asymmetriefaktor}
+Der Asymmetriefaktor ist definiert zu $\delta \equiv P_{\text{tr}} \ S(\Theta, E, Z)$. 
+Nach Gleichung (\ref{eq:Ptr}) gilt dann:
+\begin{align*}
+\delta = - P_0\ \frac{v}{c}\ S\ \sin{\alpha} = -0.25 \cdot P_0
+\end{align*}
+Dabei haben wir den im Skript angegebenen Korrekturfaktor für die teilweise Spinmitführung verwendet ($\frac{v}{c}\ S\ sin{\alpha} = 0.25$).
 
-\begin{description}
-  \item[Asymmetriefaktor]
-\end{description}
+Zur Messung des Asymmetriefaktors benutzt man zwei gegenüberliegende Detektoren ($\Delta \phi_{\text{Azimut}} = \pi$). Da die Ereignisanzahl der beiden Detektoren, L und R, dem Wirkungsquerschnitt für ihre jeweilige Azimutlage proportional sind, gilt:
+\begin{align*}
+\frac{\text{L}}{\text{R}}= \frac{w_{\text{L}} \Omega_{\text{L}} (1-\delta \cos{(\phi+\pi)})}{w_{\text{R}} \Omega_{\text{R}} (1-\delta \cos{(\phi)})} = \kappa_{\text{app}}\ \frac{1+\delta \cos{\phi}}{1-\delta \cos{\phi}}
+\end{align*}
+Hierbei bezeichnet $w$ die Ansprechwahrscheinlichkeit der Detektoren und $\Omega$ die jeweils aufgespannten Raumwinkel. Diese Größen und weitere apparative Asymmetrien werden in der zu bestimmenden Konstante $\kappa_{\text{app}}$ zusammengefasst. Bei der Bestimmung von $\kappa_{\text{app}}$ muss man die polarisationsbedingte Asymmetrie "`ausschalten"'. Übrig bleibt dann die apparative Asymmetrie.
+
+Bei Folien aus Material kleiner Ordnungszahl $Z$ ist die Asymmetriefunktion klein (siehe Abb. \ref{fig:asymmfkt}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{grafiken/asymmfkt}
+  \caption[Asymmetriefunktion]{Asymmetriefuntion S für verschiedene Ordnungszahlen~\cite{meurin}}
+  \label{fig:asymmfkt}
+\end{figure}
+
+Wählt man zusätzlich eine dicke Folie (Mehrfachstreuung überwiegt), so erhält man eine hinreichend symmetrische Messung mit $\delta \approx 0$, also:
+\begin{align*}
+\kappa_{\text{app}} = \frac{L}{R}
+\end{align*}
+
+Der Asymmeriefaktor $\delta$ lässt sich auch ohne $\kappa_{\text{app}}$ aus zwei Messungen bei $\phi \in \left\{ \unit[0]{^\circ},4 \unit[180]{^\circ} \right\}$
+bestimmen:
+\begin{align*}
+\frac{\left(\frac{\text L}{\text R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text R}\right)_{\unit[0]{^\circ}}} 
+&= \frac{\kappa_{\text{app}} \frac{1-\delta}{1+\delta}}{\kappa_{\text{app}} \frac{1-\delta}{1+\delta}} = \left(  \frac{1-\delta}{1+\delta}\right)^2 \\
+\Leftrightarrow \delta &= \frac{1-\sqrt{\frac{\left(\frac{\text L}{\text R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text R}\right)_{\unit[0]{^\circ}}}}}{1+\frac{\left(\frac{\text L}{\text R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text R}\right)_{\unit[0]{^\circ}}}}
+\end{align*}
+
+Tritt in einem Target Mehrfachstreuung auf, so liefert dies einen symmetrischen Untergrund, welcher mit wachsender Targetdicke $d$ immer stärker dominiert, da die Mehrfachstreuung mit $d^2$ und die Einfachstreuung mit $d$ wächst. 
+
+Sind L und R bereits korrigiert um $\kappa_{\text{app}}$, so erhält man:
+\begin{align*}
+\delta = \frac{\text L - \text R}{\text L + \text R}
+\end{align*}
+bzw. bei Berücksichtigung des symmetrischen Untergrundes $U$:
+\begin{align*}
+\delta = \frac{(\text L + \text U) - (\text R + \text U)}{(\text L + \text U) + (\text R + \text U)}
+\end{align*}
+
+Somit erhält man schließlich ($a$ ist Konstante, die nicht von $d$ abhängt):
+\begin{align*}
+\frac{1}{\delta '} = \frac{1}{\delta} + \frac{2 U}{L-R} \equiv \frac{1}{\delta} + a \cdot d
+\end{align*}
+
 
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
