@@ -201,13 +201,13 @@ Dabei haben wir den im Skript angegebenen Korrekturfaktor für die teilweise
 Spinmitführung verwendet ($\frac{v}{c}\ S\ sin{\alpha} = 0.25$).
 
 Zur Messung des Asymmetriefaktors benutzt man zwei gegenüberliegende Detektoren
-($\Delta \phi_{\text{Azimut}} = \pi$). Da die Ereignisanzahl der beiden
+($\Delta \varphi_{\text{Azimut}} = \pi$). Da die Ereignisanzahl der beiden
 Detektoren, L und R, dem Wirkungsquerschnitt für ihre jeweilige Azimutlage
 proportional sind, gilt:
 \begin{align*}
-  \frac{\text{L}}{\text{R}}= \frac{w_{\text{L}} \Omega_{\text{L}} (1-\delta
-  \cos{(\phi+\pi)})}{w_{\text{R}} \Omega_{\text{R}} (1-\delta \cos{(\phi)})} =
-  \kappa_{\text{app}}\ \frac{1+\delta \cos{\phi}}{1-\delta \cos{\phi}}
+  \frac{L}{R}= \frac{w_{\text{L}} \Omega_{\text{L}} (1-\delta
+  \cos{(\varphi+\pi)})}{w_{\text{R}} \Omega_{\text{R}} (1-\delta \cos{(\varphi)})} =
+  \kappa_{\text{app}}\ \frac{1+\delta \cos{\varphi}}{1-\delta \cos{\varphi}}
 \end{align*}
 Hierbei bezeichnet $w$ die Ansprechwahrscheinlichkeit der Detektoren und
 $\Omega$ die jeweils aufgespannten Raumwinkel. Diese Größen und weitere
@@ -235,18 +235,17 @@ man eine hinreichend symmetrische Messung mit $\delta \approx 0$, also:
 \end{align}
 
 Der Asymmeriefaktor $\delta$ lässt sich auch ohne $\kappa_{\text{app}}$ aus zwei
-Messungen bei $\phi \in \left\{ \unit[0]{^\circ},4 \unit[180]{^\circ} \right\}$
+Messungen bei $\varphi \in \left\{ \unit[0]{^\circ},4 \unit[180]{^\circ} \right\}$
 bestimmen:
 \begin{align}
-  \frac{\left(\frac{\text L}{\text
-  R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text
-  R}\right)_{\unit[0]{^\circ}}} &= \frac{\kappa_{\text{app}}
+  \frac{\left(\frac{L}{R}\right)_{\unit[180]{^\circ}}}{\left(\frac{L}{R}
+  \right)_{\unit[0]{^\circ}}} &= \frac{\kappa_{\text{app}}
   \frac{1-\delta}{1+\delta}}{\kappa_{\text{app}} \frac{1-\delta}{1+\delta}} =
   \left(  \frac{1-\delta}{1+\delta}\right)^2 \\ \Leftrightarrow \delta &=
-  \frac{1-\sqrt{\frac{\left(\frac{\text L}{\text
-  R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text
-  R}\right)_{\unit[0]{^\circ}}}}}{1+\frac{\left(\frac{\text L}{\text
-  R}\right)_{\unit[180]{^\circ}}}{\left(\frac{\text L}{\text
+  \frac{1-\sqrt{\frac{\left(\frac{L}{
+  R}\right)_{\unit[180]{^\circ}}}{\left(\frac{L}{
+  R}\right)_{\unit[0]{^\circ}}}}}{1+\frac{\left(\frac{L}{
+  R}\right)_{\unit[180]{^\circ}}}{\left(\frac{L}{
   R}\right)_{\unit[0]{^\circ}}}}
   \label{eq:delta}
 \end{align}
@@ -257,12 +256,12 @@ die Mehrfachstreuung mit $d^2$ und die Einfachstreuung mit $d$ wächst.
 
 Sind L und R bereits korrigiert um $\kappa_{\text{app}}$, so erhält man:
 \begin{align*}
-  \delta = \frac{\text L - \text R}{\text L + \text R}
+  \delta = \frac{L - R}{L + R}
 \end{align*}
 bzw. bei Berücksichtigung des symmetrischen Untergrundes $U$:
 \begin{align*}
-  \delta = \frac{(\text L + \text U) - (\text R + \text U)}{(\text L + \text U)
-  + (\text R + \text U)}
+  \delta = \frac{(L + U) - (R + U)}{(L + U)
+  + (R + U)}
 \end{align*}
 
 Somit erhält man schließlich ($a$ ist Konstante, die nicht von $d$ abhängt):
