@@ -398,28 +398,14 @@ Zunächst muss eine Untergrundmessung durchgeführt werden. Hierzu verwenden wir
 eine reine Trägerfolie (Hostaphanfolie). Nun wird in
 $\unit[30]{^\circ}$-Schritten des Azimutwinkels $\varphi$ eine Messung (Dauer:
 $\unit[400]{s}$) der Ereignisanzahlen $N$ beider Detektoren vorgenommen. Die
-sich ergebenden Messwerte sind in der folgenden Tabelle dargestellt. Die Fehler
+sich ergebenden Messwerte sind im Anhang tabellarisch dargestellt. Die Fehler
 nehmen wir zu $\Delta \varphi = \unit[1]{^\circ}$ und $\Delta N = \sqrt{N}$ an.
 
 Es ist anzumerken, dass wir die Messung über zwei Tage verteilt durchführten. Am
 zweiten Tag war zu überprüfen, ob sich der Untergrund geändert hat. Hierzu
 nahmen wir einzelne Werte nochmals auf und verglichen sie mit denen des
 Vortages. Da keine signifikanten Abweichungen zu beobachten waren, beließen
-wir es bei den Stichproben.
-
-\begin{table}[H]
-  \centering
-  \pgfplotstabletypesetfile[
-    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
-    columns/1/.style={column name={$L_\text{Untergrund}$}},
-    columns/2/.style={column name={$R_\text{Untergrund}$}},
-    columns={0,1,2}
-  ]
-  {data/untergrund.txt}
-  \caption{Untergrundmessung}
-\end{table}
-
-In der folgenden Abbildung ist dieses Ergebnis graphisch dargestellt.
+wir es bei den Stichproben. In der folgenden Abbildung ist dieses Ergebnis graphisch dargestellt.
 
 \begin{figure}[H]
   \input{grafiken/untergrund.tikz}
@@ -440,10 +426,10 @@ Elektronen durch die Abschirmung direkt in den Szintillationsdetekor gelangen.
 \subsection{Messung der apparativen Asymmetrie}
 Nun wird die apparative Asymmetrie $\kappa_{\text{app}}$ untersucht. Hierzu wird
 in $\unit[30]{^\circ}$-Schritten mit einer zwei Millimeter dicken
-Aluminiumplatte als Streuer jeweils $\unit[100]{s}$ gemessen. Die dicke
-Aluminiumplatte sorgt dabei dafür, dass keine polarisationsbedingte Asymmetrie
-auftritt. Anschließend muss noch eine Untergrundkorrektur vorgenommen werden,
-dabei sind die unterschiedlichen Messdauern zu beachten.  Es gilt für die
+Aluminiumplatte als Streuer jeweils $\unit[100]{s}$ gemessen (Daten im Anhang).
+Die dicke Aluminiumplatte sorgt dabei dafür, dass keine polarisationsbedingte 
+Asymmetrie auftritt. Anschließend muss noch eine Untergrundkorrektur vorgenommen 
+werden, dabei sind die unterschiedlichen Messdauern zu beachten. Es gilt für die
 korrigierte Anzahl (analog auch für den rechten Detektor):
 \begin{align*}
   L_{\text{korr}} &= L - \frac{L_{\text{Untergrund}}}{4} \\
@@ -470,7 +456,6 @@ Nun lässt sich der apparative Asymmetriefaktor mittels Gleichung
   R_{\text{korr}}}{R_{\text{korr}}}\right)^2+\left(\frac{\Delta
   L_{\text{korr}}}{L_{\text{korr}}}\right)^2}
 \end{align*}
-
 Stellt man diese Daten nun graphisch dar, so wird deutlich, dass die apparative
 Asymmetrie bei Änderung des Azimutwinkels annähernd konstant bleibt:
 \begin{figure}[H]
@@ -503,7 +488,7 @@ apparativen Asymmetrie daraufhin durch $\kappa_{\text{app}}$ dividiert. Es gilt:
                 R_{\text{korr}}}{R_{\text{korr}}}\right)^2}
 \end{align*}
 
-Diese Daten werden nun gegen $\varphi$ aufgetragen:
+Diese Daten (tabellarisch im Anhang) werden nun gegen $\varphi$ aufgetragen:
 \begin{figure}[H]
   \centering
   \input{grafiken/streuung.tikz}
@@ -512,7 +497,7 @@ Diese Daten werden nun gegen $\varphi$ aufgetragen:
 \end{figure}
 
 Dabei wurde der theoretisch erwartete Kurvenverlauf für die
-\textsc{Mott}streuung mittels eines freien Parameters $\delta$ an die Daten
+\textsc{Mott}streuung mittels des freien Parameters $\delta$ an die Daten
 gefittet. Es ergibt sich dabei $\delta = (0.0387 \pm 0.0035)$. Der Fit verläuft
 dabei fast komplett innerhalb der Fehlergrenzen, ist also recht gut.
 
@@ -558,7 +543,7 @@ Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung
   - \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[180]{^{\circ}}}\right|}
 \end{align*}
 
-Die Daten befinden sich in Tabelle \ref{tab:asym} im Anhang.
+Die Daten befinden sich im Anhang.
 
 In der folgenden Abbildung ist nun $\delta '^{-1}$ gegen die Streufoliendicke
 $d$ aufgetragen ($\Delta d = \unit[0.05]{\mu m}$).
@@ -578,7 +563,7 @@ die Fitparameter zu:
   \label{eqn:fitparameter}
 \end{align}
 
-\emph{Anmerkung: Für den Fit haben wir die ersten drei Werte, sowie den sechsten
+\emph{Anmerkung: Für den Fit haben wir die ersten drei Werte, sowie den fünften
 Wert herausgenommen, da die zu erkennenden großen Abweichungen auf einen
 Messfehler hindeuten. Die anderen Werte hingegen liegen offenbar gut auf einer
 Geraden.}
@@ -602,7 +587,7 @@ Kupferfolie. Unser Ergebnis übertrifft jedoch insofern die Erwartung, da der in
 \approx 0.65$) noch kleiner ist.
 
 \section{Zusammenfassung}
-Zunächst mussten für nachfolgende Bestimmungen Messungen zur Bereinigung der
+Für nachfolgende Bestimmungen mussten erst einmal Messungen zur Bereinigung der
 Daten durchgeführt werden. Zunächst wurde hierzu der Untergrund (Messung ohne
 Streufolie) bestimmt. Dieser musste im Folgenden dann stets von den Messdaten
 abgezogen werden. Dabei war auf unterschiedliche Zeitintervalle der
@@ -623,6 +608,15 @@ Elektronenpolarisation in guter Übereinstimmung mit der Erwartung zu $P_0 =
 
 \begin{appendix}
   \section{Tabellen}
+  \subsection{Daten zur Untergrundmessung}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+    columns/1/.style={column name={$L_\text{Untergrund}$}},
+    columns/2/.style={column name={$R_\text{Untergrund}$}},
+    columns={0,1,2}
+  ]
+  {data/untergrund.txt}
+
   \subsection{Unkorrigierte apparative Asymmetriedaten}
   \pgfplotstabletypesetfile[
     columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
@@ -631,6 +625,43 @@ Elektronenpolarisation in guter Übereinstimmung mit der Erwartung zu $P_0 =
     columns={0,1,2}
   ]
   {data/apparative_asymmetrie_korr.txt}
+
+\subsection{Unkorrigierte Daten zur \textsc{Mott}streuung}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+    columns/1/.style={column name={$L_\text{app}$}},
+    columns/2/.style={column name={$R_\text{app}$}},
+    columns={0,1,2}
+  ]
+  {data/mottstreuung.txt}
+
+  \subsection{Korrigierte Daten zur \textsc{Mott}streuung}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$\varphi$ [$\unit{^\circ}$]}},
+    columns/1/.style={column name={$L_\text{app}$}},
+    columns/2/.style={column name={$R_\text{app}$}},
+    columns={0,1,2}
+  ]
+  {data/mottstreuung_korr.txt}
+
+  \subsection{Unkorrigierte \textsc{Mott}asymmetriedaten}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$d$ [$\unit{\mu m}$]}},
+    columns/1/.style={column name={$L_\text{app}$}},
+    columns/2/.style={column name={$R_\text{app}$}},
+    columns={0,1,2}
+  ]
+  {data/mottasymmetrie.txt}
+
+  \subsection{Korrigierte \textsc{Mott}asymmetriedaten}
+  \pgfplotstabletypesetfile[
+    columns/0/.style={column name={$d$ [$\unit{\mu m}$]}},
+    columns/1/.style={column name={$L_\text{app}$}},
+    columns/2/.style={column name={$R_\text{app}$}},
+    columns={0,1,2}
+  ]
+  {data/mottasymmetrie_korr.txt}
+
 
   \Literatur{quellen}
 
