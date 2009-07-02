@@ -1,5 +1,7 @@
 set terminal lua solid
 
+set angles degrees
+
 set xlabel 'Winkel/$^\circ$'
 set ylabel 'Intensität'
 set xrange [-15:345]
@@ -14,23 +16,35 @@ plot f u 1:2:(dy($2)) i 0 w yerr lt rgb 'blue' title sprintf(text,"Links","erste
      f u 1:2:(dy($2)) i 1 w yerr lt rgb 'cyan' title sprintf(text,"Links","zweiter"), \
      f u 1:3:(dy($2)) i 1 w yerr lt rgb 'magenta' title sprintf(text,"Rechts","zweiter")
 
-
+####################################################################################
 set output 'grafiken/appasym.tikz'
 
-res(x) = 1.3595
-dres = 0.0061
-ures(x) = res(x) - dres
-ores(x) = res(x) + dres
+kappa = 1.3595
+dkappa = 0.0061
 
-kappa(x,y) = x/y
-dkappa(x, y) = kappa(x,y) * sqrt(1/x + 1/y)
+LR(x,y) = x/y
+dLR(x, y) = LR(x,y) * sqrt(1/x + 1/y)
 
 set ylabel '$\kappa_\text{app}$'
-plot 'data/apparative_asymmetrie_korr.txt' u 1:(kappa($2,$3)):(dkappa($2,$3)) w yerr \
+plot 'data/apparative_asymmetrie_korr.txt' u 1:(LR($2,$3)):(dLR($2,$3)) w yerr \
     notitle, \
-    res(x) lt rgb 'blue' title 'Mittelwert', \
-    ures(x) lt rgb 'grey' notitle, \
-    ores(x) lt rgb 'grey' notitle
+    kappa lt rgb 'blue' title 'Mittelwert', \
+    kappa - dkappa lt rgb 'grey' notitle, \
+    kappa + dkappa lt rgb 'grey' notitle
 
+####################################################################################
+set output 'grafiken/streuung.tikz'
 
+LR2(x,y) = x/(y * kappa)
+dLR2(x,y) = LR2(x,y) * sqrt(1/x + 1/y + (dkappa/kappa)**2)
+
+delta = 0.05
+LR_fit(x) = kappa * (1 + delta * cos(x))/(1 - delta * cos(x)) + X
+
+fit LR_fit(x) 'data/mottstreuung_korr.txt' u 1:(LR2($2,$3)):(1/dLR2($2,$3)**2) \
+                                                             via delta, X 
+
+set ylabel '$\frac{L_\text{korr}}{R_\text{korr} \kappa_\text{app}}$'
+plot 'data/mottstreuung_korr.txt' u 1:(LR2($2,$3)):(dLR2($2,$3)) w yerr notitle,\
+    LR_fit(x) notitle
 
