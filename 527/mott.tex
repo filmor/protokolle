@@ -559,34 +559,35 @@ Ferner bestimmen wir $\delta '^{-1}$ mit Hilfe von Gleichung
   - \left(\frac{L_{\text{korr}}}{R_{\text{korr}}}\right)_{\unit[180]{^{\circ}}}\right|}
 \end{align*}
 
-Die Daten und die von uns berechneten Werte befinden sich in Tabelle
-\ref{tab:asym} im Anhang.
-
-% Tabelle mit den Werten in den Anhang
+Die Daten befinden sich in Tabelle \ref{tab:asym} im Anhang.
 
 In der folgenden Abbildung ist nun $\delta '^{-1}$ gegen die Streufoliendicke
 $d$ aufgetragen ($\Delta d = \unit[0.05]{\mu m}$).
 
-% Fehler für d ok?
-
-% Abb.
+\begin{figure}[H]
+  \centering
+  \input{grafiken/mottasym.tikz}
+  \caption{Mottasymmetrie}
+  \label{fig:mottasym}
+\end{figure}
 
 Wie in der Theorie beschrieben gilt Gleichung (\ref{eq:einsdurchdeltastrich}).
 Anhand dieser Gleichung wurde an die Daten eine Gerade gefittet. Wir erhalten
 die Fitparameter zu:
-
-% Fitparameter angeben
-
+\begin{align}
+  m = 5.63 \pm 0.25 \quad b = 4.6 \pm 1.2
+  \label{eqn:fitparameter}
+\end{align}
 Nach besagter Gleichung (\ref{eq:einsdurchdeltastrich}) ist der Asymmetriefaktor
 $\delta$ über den inversen Ordinatenabschnitt gegeben ($\delta = \frac{1}{b}$).
 Mit Gleichung (\ref{eq:defdelta}) folgt für die intrinsische
 Elektronenpolarisation $P_0$ nun:
 \begin{align}
-P_0 &= - \frac{1}{0.25 \cdot b} \\
-\Delta P_0 &= \Delta b \ \frac{1}{0.25 \cdot b^2}
+  P_0 &= - \frac{1}{0.25 \cdot b} \\
+  \Delta P_0 &= \Delta b \ \frac{1}{0.25 \cdot b^2}
 \end{align}
-Somit erhalten wir die intrinsische Elektronenpolarisation zu $P_0 = (- ... \pm
-...)$.
+Somit erhalten wir die intrinsische Elektronenpolarisation zu $P_0 = (-0.87
+\pm 0.23)$.
 
 % übliche Diskussion des Ergebnisses (siehe S. 20 joach)
 
@@ -597,11 +598,13 @@ Daten durchgeführt werden. Zunächst wurde hierzu der Untergrund (Messung ohne
 Streufolie) bestimmt. Dieser musste im Folgenden dann stets von den Messdaten
 abgezogen werden. Dabei war auf unterschiedliche Zeitintervalle der
 verschiedenen Messungen zu achten. Anschließend wurde die apparative Asymmetrie
-bestimmt, durch welche zur Bereinigung später dividiert werden musste. Sie ergab sich zu $\kappa_\text{app} = (1.3596 \pm 0.0061)$.
+bestimmt, durch welche zur Bereinigung später dividiert werden musste. Sie ergab
+sich zu $\kappa_\text{app} = (1.3596 \pm 0.0061)$.
 
 Nach diesen Messungen wurde dann die \textsc{Mott}streuung an einer dünnen Folie
 ($\unit[2]{\mu m}$) durchgeführt und das Ergebnis mit der theoretischen
-Erwartung verglichen. Es wurde eine gute Übereinstimmung festgestellt. Der Asymmetriefaktor wurde zu $\delta = (0.0387 \pm 0.0035)$ bestimmt.
+Erwartung verglichen. Es wurde eine gute Übereinstimmung festgestellt. Der
+Asymmetriefaktor wurde zu $\delta = (0.0387 \pm 0.0035)$ bestimmt.
 
 Zu guter Letzt wurde die Abhängigkeit der \textsc{Mott}asymmetrie $\delta$ von
 der Foliendicke untersucht. 

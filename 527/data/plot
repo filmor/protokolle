@@ -48,3 +48,29 @@ set ylabel '$\frac{L_\text{korr}}{R_\text{korr} \kappa_\text{app}}$'
 plot 'data/mottstreuung_korr.txt' u 1:(LR2($2,$3)):(dLR2($2,$3)) w yerr notitle,\
     LR_fit(x) notitle
 
+####################################################################################
+set output 'grafiken/mottasym.tikz'
+
+dd = 0.5
+
+set autoscale x
+set xlabel '$d/\unit{\mu m}$'
+set ylabel "$\\delta'^{-1}$"
+
+delta_p(x,y,z,w) = (1 + sqrt(LR(z,w)/LR(x,y)))/(1 - sqrt(LR(z,w)/LR(x,y)))
+ddelta_p(x,y,z,w) = delta_p(x,y,z,w) * sqrt( \
+        LR(x,y)/LR(z,w) * dLR(z,w)**2 + LR(z,w)/LR(x,y) * dLR(x,y)**2 \
+        ) / abs(LR(x,y) - LR(z,w))
+
+m = 5
+b = 6
+f(x) = m * x + b
+
+fit f(x) 'data/mottasymmetrie_korr.txt' u \
+     1:(delta_p($2,$3,$4,$5)):(1/ddelta_p($2,$3,$4,$5)**2) via m,b
+
+
+plot 'data/mottasymmetrie_korr.txt' u \
+    1:(delta_p($2,$3,$4,$5)):(0.05):(ddelta_p($2,$3,$4,$5)) w xyerr notitle, \
+    f(x) notitle
+
