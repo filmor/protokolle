@@ -31,9 +31,35 @@ digitalisiert und anschließend wird der zum sich ergebenden Wert gehörende Kanal
 um eins erhöht. Die gespeicherten Kanalwerte können dann graphisch ausgegeben
 werden.
 
-%weitere teile
-%bla
+\item[Einkanaldiskriminator:]
+Ein Einkanaldiskriminator (Single Channel Analyzer, SCA) selektiert Eingangssignale
+nach ihrer Amplitude. In der Regel können hierzu eine untere und eine obere Schwelle, außerhalb derer Signale blockiert werden, eingestellt werden.
+Der Bereich zwischen diesen beiden Schwellen wird als \emph{Fenster} bezeichnet.
+Von besonderem Interesse ist die Stabilität der eingestellten Schwellwerte, insbesondere der Zusammenhang der eingestellten Schwellen zu den tatsächlichen.
+Dieser Zusammenhang ist in den Randbereichen des Einkanaldiskriminators i.\ A.\
+nicht linear. Aus diesem Grund sollte man in etwa die Mitte des SCA-Bereichs
+als Arbeitsbereich verwenden. Gegebenenfalls kann die Vorverstärkung angepasst werden.
 
+\item[Constant Fraction Diskriminator:]
+Ein Constant Fraction Diskriminator (CFD) benutzt, wie der Name schon andeutet, das sogenannte \emph{constant fraction triggering} (im Gegensatz zum \emph{leading edge triggering}). Bei letzerem wandelt der Diskriminator ein Eingangssignal bei Übersteigen einer bestimmten Schwelle in ein logisches Ausgangssignal um. Dieses Verfahren hat den Nachteil, dass bei zwei Signalen deren Maximum zwar zeitlich gleich liegt, welche jedoch eine unterschiedliche Amplitude oder Anstiegszeiten haben, die Ausgangssignale zu unterschiedlichen Zeitpunkten erzeugt werden. Dies verschlechtert dann die zeitliche Auflösung. Beim \emph{constant fraction triggering} hingegen wird das logische Ausgangssignal erzeugt, wenn ein bestimmter Bruchteil der Pulshöhe erreicht ist. Der optimale Anteil ist dabei vom Singaltyp abhängig und funktioniert nur für Signale gleicher Anstiegszeit.
+
+\item[Koinzidenzeinheit:]
+Eine Koinzidenzeinheit ist de facto ein logisches UND. Eine einfache Methode ist die 
+Summation der Eingangssignale. Wenn die Summe über einer bestimmten Schwelle liegt,
+so liegt eine zeitliche Koinzidenz vor.
+Es ist jedoch zu beachten, dass Koinzidenzen immer dann entstehen, wenn die Eingangspulse sich überlappen, auch wenn sie nicht zum gleichen Zeitpunkt beginnen.
+Dies wirkt sich negativ auf die zeitliche Auflösung aus. 
+
+\item[Delay:]
+Mittels eines Delays kann eine zeitliche Verzögerung eines Signals realisiert werden.
+Dies wird nötig, um beispielsweise unterschiedliche Kabellängen auszugleichen, um also
+eine Anpassung der elektrischen Weglänge vorzunehmen.
+
+\item[Zeit-Analog-Wandler:]
+Ein Zeit-Analog-Wandler (Time to Amplitude Converter, TAC) konvertiert Zeitintervalle
+zwischen zwei (logischen) Eingangssignalen proportional in Amplituden. Die erhaltenen 
+Ausgangssignale können dann beispielsweise mit einem MCA zu einem Zeit-Spektrum 
+verarbeitet werden.
 \end{description}
 
 
