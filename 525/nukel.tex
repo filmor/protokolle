@@ -132,6 +132,16 @@ Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[(10^{-9} -
 Szintillatormaterial, um die Zeitauflösung zu verbessern und die Totzeit zu
 verkürzen.
 
+Die Linien des Energiespektrums besitzen auch bei monoenergetischem Strahlungseinfall
+eine endliche Breite. Dies ist darauf zurückzuführen, dass der Kristall nicht immer dieselben Lichtpulse liefert und die Fluktuationen sich in den elektronischen 
+Komponenten zusätzlich verstärken. Da hier also statistische Prozesse zu Grunde liegen, werden ein \textsc{Gauß}-Profile erwartet. Als Energieauflösung definiert man:
+\begin{align}
+A = \frac{\Delta E}{E}
+\end{align}
+Wobei $E$ die Energie des Schwerpunktes der \textsc{Gauß}-Kurve und $\Delta E$ die 
+entpsrechende Halbwertsbreite meint. Letztere kann aus der Standardabweichung
+der Verteilung nach $\Delta E = 2.35 \cdot \sigma$ gewonnen werden.
+
 \subsubsection{Photomultiplier}
 \label{cha:photo}
 Ein Photomultiplier ist ein lichtsensitives Bauteil, welches einfallende
@@ -157,12 +167,10 @@ Energie des einfallenden Photons.
   \label{fig:photo}
 \end{figure}
 
-% brauchen wir das imphöhenspek??
+%bitte ebenfalls noch einmal inhaltlich überprüfen! danke!
 \subsubsection{Impulshöhenspektrum}
 Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei
-Verwendung des Vielkanalanalysators [siehe Abschnitt \ref{cha:mca}]) nicht einen
-einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}).
-Dieses wird als Impulshöhenspektrum bezeichnet.
+Verwendung des Vielkanalanalysators) nicht einen einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}). Dieses wird als Impulshöhenspektrum bezeichnet.
 
 \begin{figure}[H]
   \centering
@@ -173,11 +181,12 @@ Dieses wird als Impulshöhenspektrum bezeichnet.
 
 Der mit "`A"' gekennzeichnete Peak wird Photopeak oder Full Energy Peak genannt.
 Er entsteht, wenn ein einfallendes $\gamma$-Quant seine gesamte Energie im
-Kristall deponiert. Es ist bemerkenswert, dass dennoch auch dieser Peak eine
-endliche Breite besitzt und nicht etwa diskreter Natur ist. Dies ist dadurch
-erklärbar, dass die beteiligten Prozesse statistische sind (radioaktiver
-Zerfall, unterschiedliche Lichtausbeute für verschiedene Photonen gleicher
-Energie, elektronische Störungen etc.).
+Kristall deponiert. Somit gibt der Photopeak die Energie des Photons wieder. Die SCA-Fenster werden also immer bezüglich des entsprechenden Photopeaks eingestellt,
+wenn sie im Verlauf des Versuchs auf eine Linie eingestellt werden. Es ist 
+bemerkenswert, dass dennoch auch dieser Peak eine endliche Breite besitzt und 
+nicht etwa diskreter Natur ist. Dies ist dadurch erklärbar, dass die beteiligten
+Prozesse statistische sind (radioaktiver Zerfall, unterschiedliche Lichtausbeute
+für verschiedene Photonen gleicher Energie, elektronische Störungen etc.).
 
 Betrachten wir nun Peak "`B"'. Hierfür zeigt sich der \textsc{Compton}-Effekt
 verantwortlich. In einem solchen Streuprozess überträgt das einfallende Photon,
@@ -189,17 +198,17 @@ den Kristall, so wird lediglich die in der \textsc{Compton}-Streuung übertragene
 Energie detektiert. Für einen Streuwinkel $\pi$ ergibt sich dabei ein Maximum,
 welche dem Peak "`B"' entspricht. Er wird \textsc{Compton}-Kante genannt.
 
-Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung
-(siehe Abschnitt \ref{cha:ww}) zurück. Hierbei steht stets das Elektron mit
-seiner Energie für die Erzeugung eines Signals zur Verfügung. Das Positron
-jedoch wird nach kurzer Zeit mit einem der Elektronen aus dem Kristall
-annihilieren und dabei zwei entgegengesetzt propagierende Photonen erzeugen.
-Verlässt nun eines dieser Photonen den Kristall, so geht die dort deponierte
-Energie dem Detektor verloren und man erhält den sogenannten Single-Escape-Peak
-"`C"'. Völlig analog verhält es sich, falls beide Photonen nicht weiter
-wechselwirken. Dies äußert sich dann im Double-Escape-Peak "`D"'. Auf Grund der
-niedrigen Energien werden diese beiden Peaks jedoch für diesen Versuch
-irrelevant sein.
+Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung zurück. Hierbei steht stets das Elektron mit seiner Energie für die Erzeugung eines
+Signals zur Verfügung. Das Positron jedoch wird nach kurzer Zeit mit einem der 
+Elektronen aus dem Kristall annihilieren und dabei zwei entgegengesetzt
+propagierende Photonen erzeugen. Verlässt nun eines dieser Photonen den Kristall,
+so geht die dort deponierte Energie dem Detektor verloren und man erhält den
+sogenannten Single-Escape-Peak "`C"'. Völlig analog verhält es sich, falls beide
+Photonen nicht weiter wechselwirken. Dies äußert sich dann im Double-Escape-Peak
+"`D"'. 
+%stimmt das hier auch?:
+%Auf Grund der niedrigen Energien werden diese beiden Peaks jedoch für
+%diesen Versuch irrelevant sein.
 
 Ferner erhält das Photon beim \textsc{Compton}-Effekt die niedrigste Energie
 gerade dann, wenn es zurückgestreut wird. Dies ergibt dann im
@@ -207,7 +216,6 @@ niederenergetischen Bereich des Spektrums einen sogenannten Rückstreu-Peak (in
 der Grafik nicht dargestellt). Grund ist die Streuung eines Teils der
 $\gamma$-Quanten an den Begrenzungsflächen des Szintillators und anderen
 Materialien außerhalb des Detektors. 
-
 
 
 \section{Versuchsaufbau}
