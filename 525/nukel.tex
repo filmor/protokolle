@@ -250,7 +250,7 @@ Materialien außerhalb des Detektors.
 
 \section{Versuchsdurchführung und Auswertung}
 \subsection{Slow-Koinzidenzkreis einstellen}
-\subsection{Slow-Pulse des Photomultipliers kontrollieren}
+\subsubsection{Slow-Pulse des Photomultipliers kontrollieren}
 \subsubsection*{Slow-Pulse nach dem Vorverstärker}
 Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei
 ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert
@@ -280,7 +280,8 @@ $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
 
 \subsubsection*{Slow-Pulse nach dem Hauptverstärker}
 Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind
-in der folgenden Abbildung dargestellt.
+in der folgenden Abbildung dargestellt. Offenbar sind hinter dem Hauptverstärker
+beide Signale gleich.
 
 %oszibilder links rechts nebeneinander
 
@@ -299,14 +300,76 @@ Vorverstärker erheblich.
 
 
 \subsubsection{Triggerung mit dem SCA}
+Nun teilen wir das Signal hinter dem Hauptverstärker mit einem T-Stück und geben
+ein Teilsignal über einen Delayamplifier auf Kanal 1 des Oszilloskops (siehe
+Abb. \ref{fig:aufbautriggsca}). Das zweite Teilsignal wird über einen
+vollständig geöffneten SCA ebenfalls auf das Oszilloskop gegeben.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/aufbautriggsca}
+  \caption[Triggerung mit SCA]{Aufbau zur Triggerung mit dem SCA~\cite{skript2}}
+  \label{fig:aufbautriggsca}
+\end{figure}
+
+Das Oszilloskop wird nun auf das SCA-Signal getriggert und das Signal aus dem
+Delayamplifier verzögern wir bis der Logikpuls aus dem SCA die positive Flanke
+des verstärkten Signals möglichst vollständig überdeckt. Dies gelingt uns leider
+nur bedingt.
+
+%korrekt???
+% bla wie lang das signal und welche amplitude
+
+Das Signal aus dem Hauptverstärker erreicht sein Maximum etwa $\unit[...]{\mu
+s}$ nach Beginn des Logikpulses (siehe auch Abbildung \ref{fig:scaverst}).
+
+% abb. überlagerung sca und verstärkersignal
+%\label{fig:scaverst}
 
 \subsubsection{Aufnahme des Energiespektrums}
+Nun wird das SCA-Signal (siehe oben) auf den Gate-Eingang und das
+Verstärkersignal auf den Direct-Eingang des MCA gegeben (siehe Abb.
+\ref{fig:aufbauenergie}). Dabei wird der MCA coinc-Modus betrieben.
 
-\subsubsection{Auslesen des Spektrums}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/aufbauenergie}
+  \caption[Aufbau Energiespektrum]{Aufbau zur Aufnahme des 
+           Energiespektrums~\cite{skript2}}
+  \label{fig:aufbauenergie}
+\end{figure}
 
-\subsubsection{Energiespektren aufnehmen und auslesen}
+Wenn nun am Gate eine Spannung anliegt, dann ist der MCA freigeschaltet. Das
+Signal am Direct-Eingang kann also vom MCA dem entsprechenden Kanal zugeordnet
+werden. Da das Verstärkersignal sein Maximum erreicht, wenn am Ausgang des
+SCA ein Signal ausgegeben wird (siehe oben), nimmt nun der MCA alle
+Verstärkersignale mit in das Spektrum auf.
 
-\subsubsection{Einkanalfenster einstellen}
+Die $\unit[511]{keV}$-Linie wurde mittels des Verstärkers in der Mitte des
+Spektrums positioniert. Das aufgenommene Impulshöhenspektrum ist in der
+folgenden  Abbildung zu sehen.
+
+% abb. impulshöhenspek. Na22
+
+Ein Szintillationsdetektor erzeugt im Vergleich zu einem Halbleiterdetektor
+relativ wenige freie Elektronen. Somit wirken sich Fluktuationen auch stärker
+aus. Dies erklärt die Breite der $\unit[511]{keV}$-Linie.
+
+Wir bestimmen nun den Schwerpunkt und die Halbwertsbreite dieser Linie. Hierzu
+passen wir an die Linie eine \textsc{Gauß}kurve an.
+
+% oder wie machen wirs? blabla dazu dann noch
+
+Wir erhalten auf diese Weise für den Schwerpunkt der $\unit[511]{keV}$-Linie:
+
+% angabe des schwerpunktes (kanal), des fehlers, fwhm alles in kanal
+
+Somit erhalten wir für die Auflösung der $\unit[511]{keV}$-Linie:
+
+% A = dKanal/Kanal -> ergebnis
+
+
+\subsubsection{Einstellen des SCA-Fensters}
 
 \subsubsection{Slow-Koinzidenz herstellen}
 

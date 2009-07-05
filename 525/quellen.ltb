@@ -4,6 +4,13 @@
     year={2009},
 }
 
+\bib{skript2}{article}{
+    title={Skript zum Versuch P525},
+    author={Universität Bonn},
+    year={2009},
+}
+
+
 \bib{dem3}{book}{
     title={Experimentalphysik 3},
     author={Wolfgang Demtröder},
