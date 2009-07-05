@@ -8,60 +8,83 @@
 \newcommand{\Ba}{\Isotop{Ba}{133}}
 \newcommand{\Na}{\Isotop{Na}{22}}
 \newcommand{\Ne}{\Isotop{Ne}{22}}
+\newcommand{\Cs}{\Isotop{Cs}{137}}
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
 
 \begin{document}
 
 \section{Einleitung}
-Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik. Hierzu muss zunächst eine Anordnung für Koinzidenzmessungen aufgebaut und eingestellt werden. Beispielhaft wird anschließend eine Lebensdauermessung für \Cs durchgeführt.
+Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik.
+Hierzu muss zunächst eine Anordnung für Koinzidenzmessungen aufgebaut und
+eingestellt werden. Beispielhaft wird anschließend eine Lebensdauermessung für
+\Cs durchgeführt.
 
 \section{Theoretische Grundlagen}
 \subsection{Verwendete Quellen}
 \subsubsection{Natrium}
-Das von uns verwendete \Na zerfällt mit einer Halbwertszeit von $\unit[2.6]{a}$ und
-mit einer Wahrscheinlichkeit von mehr als $\unit[99]{\%}$ in den angeregten
+Das von uns verwendete \Na zerfällt mit einer Halbwertszeit von $\unit[2.6]{a}$
+und mit einer Wahrscheinlichkeit von mehr als $\unit[99]{\%}$ in den angeregten
 $2+$-Zustand des \Ne.
 \begin{align*}
-\Na \rightarrow \Ne + e^+ + \nu_e
+  \Na \rightarrow \Ne + e^+ + \nu_e
 \end{align*}
-Das bei diesem $\beta^+$-Zerfall enstandene Positron annihiliert dann sofort wieder
-mit einem Hüllenelektron, wobei zwei Photonen mit einer Energie von jeweils $\unit[511]{keV}$ emittiert werden. Im Ruhesystem des Positrons werden diese in einem
-$\unit[180]{^{\circ}}$ Winkel abgestrahlt und eignen sich somit sehr gut zur Eichung der Apparatur.
+Das bei diesem $\beta^+$-Zerfall enstandene Positron annihiliert dann sofort
+wieder mit einem Hüllenelektron, wobei zwei Photonen mit einer Energie von
+jeweils $\unit[511]{keV}$ emittiert werden. Im Ruhesystem des Positrons werden
+diese in einem $\unit[180]{^{\circ}}$ Winkel abgestrahlt und eignen sich somit
+sehr gut zur Eichung der Apparatur.
 
 \subsubsection{Barium}
 Das verwendete \Ba zerfällt mit einer Halbwertszeit von $\unit[10.51]{a}$ 
 
 %bla
+ 
+\begin{description}
+  \item[Einkanaldiskriminator:]
+    Ein Einkanaldiskriminator (Single Channel Analyzer, SCA) selektiert
+    Eingangssignale nach ihrer Amplitude. In der Regel können hierzu eine untere
+    und eine obere Schwelle, außerhalb derer Signale blockiert werden,
+    eingestellt werden. Der Bereich zwischen diesen beiden Schwellen wird als
+    \emph{Fenster} bezeichnet. Von besonderem Interesse ist die Stabilität der
+    eingestellten Schwellwerte, insbesondere der Zusammenhang der eingestellten
+    Schwellen zu den tatsächlichen. Dieser Zusammenhang ist in den Randbereichen
+    des Einkanaldiskriminators im Allgemeinen nicht linear. Aus diesem Grund
+    sollte man in etwa die Mitte des SCA-Bereichs als Arbeitsbereich verwenden.
+    Gegebenenfalls kann die Vorverstärkung angepasst werden.
 
-\item[Einkanaldiskriminator:]
-Ein Einkanaldiskriminator (Single Channel Analyzer, SCA) selektiert Eingangssignale
-nach ihrer Amplitude. In der Regel können hierzu eine untere und eine obere Schwelle, außerhalb derer Signale blockiert werden, eingestellt werden.
-Der Bereich zwischen diesen beiden Schwellen wird als \emph{Fenster} bezeichnet.
-Von besonderem Interesse ist die Stabilität der eingestellten Schwellwerte, insbesondere der Zusammenhang der eingestellten Schwellen zu den tatsächlichen.
-Dieser Zusammenhang ist in den Randbereichen des Einkanaldiskriminators i.\ A.\
-nicht linear. Aus diesem Grund sollte man in etwa die Mitte des SCA-Bereichs
-als Arbeitsbereich verwenden. Gegebenenfalls kann die Vorverstärkung angepasst werden.
+  \item[Constant Fraction Diskriminator:]
+    Ein Constant Fraction Diskriminator (CFD) benutzt, wie der Name schon
+    andeutet, das sogenannte \emph{constant fraction triggering} (im Gegensatz
+    zum \emph{leading edge triggering}). Bei letzerem wandelt der Diskriminator
+    ein Eingangssignal bei Übersteigen einer bestimmten Schwelle in ein
+    logisches Ausgangssignal um. Dieses Verfahren hat den Nachteil, dass bei
+    zwei Signalen deren Maximum zwar zeitlich gleich liegt, welche jedoch eine
+    unterschiedliche Amplitude oder Anstiegszeiten haben, die Ausgangssignale zu
+    unterschiedlichen Zeitpunkten erzeugt werden. Dies verschlechtert dann die
+    zeitliche Auflösung.  Beim \emph{constant fraction triggering} hingegen wird
+    das logische Ausgangssignal erzeugt, wenn ein bestimmter Bruchteil der
+    Pulshöhe erreicht ist.  Der optimale Anteil ist dabei vom Singaltyp abhängig
+    und funktioniert nur für Signale gleicher Anstiegszeit.
 
-\item[Constant Fraction Diskriminator:]
-Ein Constant Fraction Diskriminator (CFD) benutzt, wie der Name schon andeutet, das sogenannte \emph{constant fraction triggering} (im Gegensatz zum \emph{leading edge triggering}). Bei letzerem wandelt der Diskriminator ein Eingangssignal bei Übersteigen einer bestimmten Schwelle in ein logisches Ausgangssignal um. Dieses Verfahren hat den Nachteil, dass bei zwei Signalen deren Maximum zwar zeitlich gleich liegt, welche jedoch eine unterschiedliche Amplitude oder Anstiegszeiten haben, die Ausgangssignale zu unterschiedlichen Zeitpunkten erzeugt werden. Dies verschlechtert dann die zeitliche Auflösung. Beim \emph{constant fraction triggering} hingegen wird das logische Ausgangssignal erzeugt, wenn ein bestimmter Bruchteil der Pulshöhe erreicht ist. Der optimale Anteil ist dabei vom Singaltyp abhängig und funktioniert nur für Signale gleicher Anstiegszeit.
+  \item[Koinzidenzeinheit:]
+    Eine Koinzidenzeinheit ist de facto ein logisches UND. Eine einfache Methode
+    ist die Summation der Eingangssignale. Wenn die Summe über einer bestimmten
+    Schwelle liegt, so liegt eine zeitliche Koinzidenz vor.  Es ist jedoch zu
+    beachten, dass Koinzidenzen immer dann entstehen, wenn die Eingangspulse
+    sich überlappen, auch wenn sie nicht zum gleichen Zeitpunkt beginnen.  Dies
+    wirkt sich negativ auf die zeitliche Auflösung aus. 
 
-\item[Koinzidenzeinheit:]
-Eine Koinzidenzeinheit ist de facto ein logisches UND. Eine einfache Methode ist die 
-Summation der Eingangssignale. Wenn die Summe über einer bestimmten Schwelle liegt,
-so liegt eine zeitliche Koinzidenz vor.
-Es ist jedoch zu beachten, dass Koinzidenzen immer dann entstehen, wenn die Eingangspulse sich überlappen, auch wenn sie nicht zum gleichen Zeitpunkt beginnen.
-Dies wirkt sich negativ auf die zeitliche Auflösung aus. 
+  \item[Delay:]
+    Mittels eines Delays kann eine zeitliche Verzögerung eines Signals
+    realisiert werden.  Dies wird nötig, um beispielsweise unterschiedliche
+    Kabellängen auszugleichen, um also eine Anpassung der elektrischen Weglänge
+    vorzunehmen.
 
-\item[Delay:]
-Mittels eines Delays kann eine zeitliche Verzögerung eines Signals realisiert werden.
-Dies wird nötig, um beispielsweise unterschiedliche Kabellängen auszugleichen, um also
-eine Anpassung der elektrischen Weglänge vorzunehmen.
-
-\item[Zeit-Analog-Wandler:]
-Ein Zeit-Analog-Wandler (Time to Amplitude Converter, TAC) konvertiert Zeitintervalle
-zwischen zwei (logischen) Eingangssignalen proportional in Amplituden. Die erhaltenen 
-Ausgangssignale können dann beispielsweise mit einem MCA zu einem Zeit-Spektrum 
-verarbeitet werden.
+  \item[Zeit-Analog-Wandler:]
+    Ein Zeit-Analog-Wandler (Time to Amplitude Converter, TAC) konvertiert
+    Zeitintervalle zwischen zwei (logischen) Eingangssignalen proportional in
+    Amplituden. Die erhaltenen Ausgangssignale können dann beispielsweise mit
+    einem MCA zu einem Zeit-Spektrum verarbeitet werden.
 \end{description}
 
 
@@ -125,15 +148,19 @@ Zustände vorgegebene Abstiegszeit liegt bei etwa $\unit[(10^{-9} -
 Szintillatormaterial, um die Zeitauflösung zu verbessern und die Totzeit zu
 verkürzen.
 
-Die Linien des Energiespektrums besitzen auch bei monoenergetischem Strahlungseinfall
-eine endliche Breite. Dies ist darauf zurückzuführen, dass der Kristall nicht immer dieselben Lichtpulse liefert und die Fluktuationen sich in den elektronischen 
-Komponenten zusätzlich verstärken. Da hier also statistische Prozesse zu Grunde liegen, werden ein \textsc{Gauß}-Profile erwartet. Als Energieauflösung definiert man:
+Die Linien des Energiespektrums besitzen auch bei monoenergetischem
+Strahlungseinfall eine endliche Breite. Dies ist darauf zurückzuführen, dass der
+Kristall nicht immer dieselben Lichtpulse liefert und die Fluktuationen sich in
+den elektronischen Komponenten zusätzlich verstärken. Da hier also statistische
+Prozesse zu Grunde liegen, wird ein \textsc{Gauß}profil erwartet. Als
+Energieauflösung definiert man:
 \begin{align}
-A = \frac{\Delta E}{E}
+  A = \frac{\Delta E}{E}
 \end{align}
-Wobei $E$ die Energie des Schwerpunktes der \textsc{Gauß}-Kurve und $\Delta E$ die 
-entpsrechende Halbwertsbreite meint. Letztere kann aus der Standardabweichung
-der Verteilung nach $\Delta E = 2.35 \cdot \sigma$ gewonnen werden.
+Wobei $E$ die Energie des Schwerpunktes der \textsc{Gauß}-Kurve und $\Delta E$
+die entpsrechende Halbwertsbreite meint. Letztere kann aus der
+Standardabweichung der Verteilung nach $\Delta E = 2.35 \cdot \sigma$ gewonnen
+werden.
 
 \subsubsection{Photomultiplier}
 \label{cha:photo}
@@ -163,7 +190,9 @@ Energie des einfallenden Photons.
 %bitte ebenfalls noch einmal inhaltlich überprüfen! danke!
 \subsubsection{Impulshöhenspektrum}
 Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei
-Verwendung des Vielkanalanalysators) nicht einen einzigen Peak, sondern ein Spektrum ähnlich dem in Abbildung (\ref{fig:imph}). Dieses wird als Impulshöhenspektrum bezeichnet.
+Verwendung des Vielkanalanalysators) nicht einen einzigen Peak, sondern ein
+Spektrum ähnlich dem in Abbildung (\ref{fig:imph}). Dieses wird als
+Impulshöhenspektrum bezeichnet.
 
 \begin{figure}[H]
   \centering
@@ -174,12 +203,14 @@ Verwendung des Vielkanalanalysators) nicht einen einzigen Peak, sondern ein Spek
 
 Der mit "`A"' gekennzeichnete Peak wird Photopeak oder Full Energy Peak genannt.
 Er entsteht, wenn ein einfallendes $\gamma$-Quant seine gesamte Energie im
-Kristall deponiert. Somit gibt der Photopeak die Energie des Photons wieder. Die SCA-Fenster werden also immer bezüglich des entsprechenden Photopeaks eingestellt,
-wenn sie im Verlauf des Versuchs auf eine Linie eingestellt werden. Es ist 
-bemerkenswert, dass dennoch auch dieser Peak eine endliche Breite besitzt und 
-nicht etwa diskreter Natur ist. Dies ist dadurch erklärbar, dass die beteiligten
-Prozesse statistische sind (radioaktiver Zerfall, unterschiedliche Lichtausbeute
-für verschiedene Photonen gleicher Energie, elektronische Störungen etc.).
+Kristall deponiert. Somit gibt der Photopeak die Energie des Photons wieder. Die
+SCA-Fenster werden also immer bezüglich des entsprechenden Photopeaks
+eingestellt, wenn sie im Verlauf des Versuchs auf eine Linie eingestellt werden.
+Es ist bemerkenswert, dass dennoch auch dieser Peak eine endliche Breite besitzt
+und nicht etwa diskreter Natur ist. Dies ist dadurch erklärbar, dass die
+beteiligten Prozesse statistische sind (radioaktiver Zerfall, unterschiedliche
+Lichtausbeute für verschiedene Photonen gleicher Energie, elektronische
+Störungen etc.).
 
 Betrachten wir nun Peak "`B"'. Hierfür zeigt sich der \textsc{Compton}-Effekt
 verantwortlich. In einem solchen Streuprozess überträgt das einfallende Photon,
@@ -191,17 +222,16 @@ den Kristall, so wird lediglich die in der \textsc{Compton}-Streuung übertragene
 Energie detektiert. Für einen Streuwinkel $\pi$ ergibt sich dabei ein Maximum,
 welche dem Peak "`B"' entspricht. Er wird \textsc{Compton}-Kante genannt.
 
-Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung zurück. Hierbei steht stets das Elektron mit seiner Energie für die Erzeugung eines
-Signals zur Verfügung. Das Positron jedoch wird nach kurzer Zeit mit einem der 
-Elektronen aus dem Kristall annihilieren und dabei zwei entgegengesetzt
-propagierende Photonen erzeugen. Verlässt nun eines dieser Photonen den Kristall,
-so geht die dort deponierte Energie dem Detektor verloren und man erhält den
-sogenannten Single-Escape-Peak "`C"'. Völlig analog verhält es sich, falls beide
-Photonen nicht weiter wechselwirken. Dies äußert sich dann im Double-Escape-Peak
-"`D"'. 
-%stimmt das hier auch?:
-%Auf Grund der niedrigen Energien werden diese beiden Peaks jedoch für
-%diesen Versuch irrelevant sein.
+Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung
+zurück. Hierbei steht stets das Elektron mit seiner Energie für die Erzeugung
+eines Signals zur Verfügung. Das Positron jedoch wird nach kurzer Zeit mit einem
+der Elektronen aus dem Kristall annihilieren und dabei zwei entgegengesetzt
+propagierende Photonen erzeugen. Verlässt nun eines dieser Photonen den
+Kristall, so geht die dort deponierte Energie dem Detektor verloren und man
+erhält den sogenannten Single-Escape-Peak "`C"'. Völlig analog verhält es sich,
+falls beide Photonen nicht weiter wechselwirken. Dies äußert sich dann im
+Double-Escape-Peak "`D"'.  Auf Grund der niedrigen Energien werden diese beiden
+Peaks jedoch für diesen Versuch irrelevant sein.
 
 Ferner erhält das Photon beim \textsc{Compton}-Effekt die niedrigste Energie
 gerade dann, wenn es zurückgestreut wird. Dies ergibt dann im
