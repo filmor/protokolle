@@ -7,7 +7,7 @@
 \newcommand{\Isotop}[2]{\ensuremath{^{#2}\mathrm{#1}}\xspace}
 \newcommand{\Cs}{\Isotop{Cs}{133}}
 \newcommand{\Na}{\Isotop{Na}{22}}
-
+\newcommand{\Ne}{\Isotop{Ne}{22}}
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
 
 \begin{document}
@@ -18,7 +18,16 @@ Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik. Hier
 \section{Theoretische Grundlagen}
 \subsection{Verwendete Quellen}
 \subsubsection{Natrium}
-%bla
+Das von uns verwendete \Na zerfällt mit einer Halbwertszeit von $\unit[2.6]{a}$ und
+mit einer Wahrscheinlichkeit von mehr als $\unit[99]{\%}$ in den angeregten
+$2+$-Zustand des \Ne.
+\begin{align*}
+\Na \rightarrow \Ne + e^+ + \nu_e
+\end{align*}
+Das bei diesem $\beta^+$-Zerfall enstandene Positron annihiliert dann sofort wieder
+mit einem Hüllenelektron, wobei zwei Photonen mit einer Energie von jeweils $\unit[511]{keV}$ emittiert werden. Im Ruhesystem des Positrons werden diese in einem
+$\unit[180]{^{\circ}}$ Winkel abgestrahlt und eignen sich somit sehr gut zur Eichung der Apparatur.
+
 \subsubsection{Caesium}
 %bla
 
