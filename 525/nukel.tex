@@ -225,7 +225,7 @@ Materialien außerhalb des Detektors.
 
 \section{Versuchsdurchführung und Auswertung}
 \subsection{Slow-Koinzidenzkreis einstellen}
-\subsection{Slow-Pulse des Photomultipliers kontrollieren}
+\subsubsection{Slow-Pulse des Photomultipliers kontrollieren}
 \subsubsection*{Slow-Pulse nach dem Vorverstärker}
 Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen dargestellt.
 
@@ -257,6 +257,24 @@ Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[...]{\mu s}$
 
 
 \subsubsection{Triggerung mit dem SCA}
+Nun teilen wir das Signal hinter dem Hauptverstärker mit einem T-Stück und geben ein Teilsignal über einen Delayamplifier auf Kanal 1 des Oszilloskops (siehe Abb. \ref{fig:aufbautriggsca}). Das zweite Teilsignal wird über einen vollständig geöffneten SCA ebenfalls auf das Oszilloskop gegeben.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/aufbautriggsca}
+  \caption[Triggerung mit SCA]{Aufbau zur Triggerung mit dem SCA~\cite{skript2}}
+  \label{fig:aufbautriggsca}
+\end{figure}
+
+Das Oszilloskop wird nun auf das SCA-Signal getriggert und das Signal aus dem Delayamplifier verzögern wir bis der Logikpuls aus dem SCA die positive Flanke des verstärkten Signals möglichst vollständig überdeckt. Dies gelingt uns leider nur bedingt.
+
+%korrekt???
+% bla wie lang das signal und welche amplitude
+
+Das Signal aus dem Hauptverstärker erreicht sein Maximum etwa $\unit[...]{\mu s}$ nach Beginn des Logikpulses (siehe auch Abbildung \ref{fig:scaverst}).
+
+% abb. überlagerung sca und verstärkersignal
+%\label{fig:scaverst}
 
 \subsubsection{Aufnahme des Energiespektrums}
 
