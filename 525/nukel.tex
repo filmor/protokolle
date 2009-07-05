@@ -6,6 +6,7 @@
 
 \newcommand{\Isotop}[2]{\ensuremath{^{#2}\mathrm{#1}}\xspace}
 \newcommand{\Ba}{\Isotop{Ba}{133}}
+\newcommand{\Cs}{\Isotop{Cs}{133}}
 \newcommand{\Na}{\Isotop{Na}{22}}
 \newcommand{\Ne}{\Isotop{Ne}{22}}
 \newcommand{\Cs}{\Isotop{Cs}{137}}
@@ -17,11 +18,12 @@
 Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik.
 Hierzu muss zunächst eine Anordnung für Koinzidenzmessungen aufgebaut und
 eingestellt werden. Beispielhaft wird anschließend eine Lebensdauermessung für
-\Cs durchgeführt.
+den angeregten $\frac{5}{2}^+$-Zustand von \Cs durchgeführt.
 
 \section{Theoretische Grundlagen}
 \subsection{Verwendete Quellen}
 \subsubsection{Natrium}
+\label{cha:na}
 Das von uns verwendete \Na zerfällt mit einer Halbwertszeit von $\unit[2.6]{a}$
 und mit einer Wahrscheinlichkeit von mehr als $\unit[99]{\%}$ in den angeregten
 $2+$-Zustand des \Ne.
@@ -35,60 +37,65 @@ diese in einem $\unit[180]{^{\circ}}$ Winkel abgestrahlt und eignen sich somit
 sehr gut zur Eichung der Apparatur.
 
 \subsubsection{Barium}
-Das verwendete \Ba zerfällt mit einer Halbwertszeit von $\unit[10.51]{a}$ 
+Das verwendete \Ba zerfällt mit einer Halbwertszeit von $\unit[10.51]{a}$ ......
 
+%vll auch Cs?? oder nur?
 %bla
- 
+
+\subsection{Elektronik}
 \begin{description}
-  \item[Einkanaldiskriminator:]
-    Ein Einkanaldiskriminator (Single Channel Analyzer, SCA) selektiert
-    Eingangssignale nach ihrer Amplitude. In der Regel können hierzu eine untere
-    und eine obere Schwelle, außerhalb derer Signale blockiert werden,
-    eingestellt werden. Der Bereich zwischen diesen beiden Schwellen wird als
-    \emph{Fenster} bezeichnet. Von besonderem Interesse ist die Stabilität der
-    eingestellten Schwellwerte, insbesondere der Zusammenhang der eingestellten
-    Schwellen zu den tatsächlichen. Dieser Zusammenhang ist in den Randbereichen
-    des Einkanaldiskriminators im Allgemeinen nicht linear. Aus diesem Grund
-    sollte man in etwa die Mitte des SCA-Bereichs als Arbeitsbereich verwenden.
-    Gegebenenfalls kann die Vorverstärkung angepasst werden.
+  \item[Vielkanalanalysator:] Ein Vielkanalanalysator (Multi Channel Analysers,
+    MCA) sortiert Eingangssignale nach ihrer Amplitude. Dabei werden die Signale
+    mit einem Analog-Digital-Wandler digitalisiert und anschließend wird der zum
+    sich ergebenden Wert gehörende Kanal um eins erhöht. Die gespeicherten
+    Kanalwerte können dann graphisch ausgegeben werden.
 
-  \item[Constant Fraction Diskriminator:]
-    Ein Constant Fraction Diskriminator (CFD) benutzt, wie der Name schon
-    andeutet, das sogenannte \emph{constant fraction triggering} (im Gegensatz
-    zum \emph{leading edge triggering}). Bei letzerem wandelt der Diskriminator
-    ein Eingangssignal bei Übersteigen einer bestimmten Schwelle in ein
-    logisches Ausgangssignal um. Dieses Verfahren hat den Nachteil, dass bei
-    zwei Signalen deren Maximum zwar zeitlich gleich liegt, welche jedoch eine
-    unterschiedliche Amplitude oder Anstiegszeiten haben, die Ausgangssignale zu
-    unterschiedlichen Zeitpunkten erzeugt werden. Dies verschlechtert dann die
-    zeitliche Auflösung.  Beim \emph{constant fraction triggering} hingegen wird
-    das logische Ausgangssignal erzeugt, wenn ein bestimmter Bruchteil der
-    Pulshöhe erreicht ist.  Der optimale Anteil ist dabei vom Singaltyp abhängig
-    und funktioniert nur für Signale gleicher Anstiegszeit.
+  \item[Einkanaldiskriminator:] Ein Einkanaldiskriminator (Single Channel
+    Analyzer, SCA) selektiert Eingangssignale nach ihrer Amplitude. In der Regel
+    können hierzu eine untere und eine obere Schwelle, außerhalb derer Signale
+    blockiert werden, eingestellt werden.  Der Bereich zwischen diesen beiden
+    Schwellen wird als \emph{Fenster} bezeichnet.  Von besonderem Interesse ist
+    die Stabilität der eingestellten Schwellwerte, insbesondere der Zusammenhang
+    der eingestellten Schwellen zu den tatsächlichen.  Dieser Zusammenhang ist
+    in den Randbereichen des Einkanaldiskriminators i.\ A.\ nicht linear. Aus
+    diesem Grund sollte man in etwa die Mitte des SCA-Bereichs als
+    Arbeitsbereich verwenden. Gegebenenfalls kann die Vorverstärkung angepasst
+    werden.
 
-  \item[Koinzidenzeinheit:]
-    Eine Koinzidenzeinheit ist de facto ein logisches UND. Eine einfache Methode
-    ist die Summation der Eingangssignale. Wenn die Summe über einer bestimmten
-    Schwelle liegt, so liegt eine zeitliche Koinzidenz vor.  Es ist jedoch zu
-    beachten, dass Koinzidenzen immer dann entstehen, wenn die Eingangspulse
-    sich überlappen, auch wenn sie nicht zum gleichen Zeitpunkt beginnen.  Dies
-    wirkt sich negativ auf die zeitliche Auflösung aus. 
+  \item[Constant Fraction Diskriminator:] Ein Constant Fraction Diskriminator
+    (CFD) benutzt, wie der Name schon andeutet, das sogenannte \emph{constant
+    fraction triggering} (im Gegensatz zum \emph{leading edge triggering}). Bei
+    letzerem wandelt der Diskriminator ein Eingangssignal bei Übersteigen einer
+    bestimmten Schwelle in ein logisches Ausgangssignal um. Dieses Verfahren hat
+    den Nachteil, dass bei zwei Signalen deren Maximum zwar zeitlich gleich
+    liegt, welche jedoch eine unterschiedliche Amplitude oder Anstiegszeiten
+    haben, die Ausgangssignale zu unterschiedlichen Zeitpunkten erzeugt werden.
+    Dies verschlechtert dann die zeitliche Auflösung. Beim \emph{constant
+    fraction triggering} hingegen wird das logische Ausgangssignal erzeugt, wenn
+    ein bestimmter Bruchteil der Pulshöhe erreicht ist. Der optimale Anteil ist
+    dabei vom Singaltyp abhängig und funktioniert nur für Signale gleicher
+    Anstiegszeit.
 
-  \item[Delay:]
-    Mittels eines Delays kann eine zeitliche Verzögerung eines Signals
-    realisiert werden.  Dies wird nötig, um beispielsweise unterschiedliche
-    Kabellängen auszugleichen, um also eine Anpassung der elektrischen Weglänge
-    vorzunehmen.
+  \item[Koinzidenzeinheit:] Eine Koinzidenzeinheit ist de facto ein logisches
+    UND. Eine einfache Methode ist die Summation der Eingangssignale. Wenn die
+    Summe über einer bestimmten Schwelle liegt, so liegt eine zeitliche
+    Koinzidenz vor.  Es ist jedoch zu beachten, dass Koinzidenzen immer dann
+    entstehen, wenn die Eingangspulse sich überlappen, auch wenn sie nicht zum
+    gleichen Zeitpunkt beginnen.  Dies wirkt sich negativ auf die zeitliche
+    Auflösung aus. 
 
-  \item[Zeit-Analog-Wandler:]
-    Ein Zeit-Analog-Wandler (Time to Amplitude Converter, TAC) konvertiert
-    Zeitintervalle zwischen zwei (logischen) Eingangssignalen proportional in
-    Amplituden. Die erhaltenen Ausgangssignale können dann beispielsweise mit
-    einem MCA zu einem Zeit-Spektrum verarbeitet werden.
+  \item[Delay:] Mittels eines Delays kann eine zeitliche Verzögerung eines
+    Signals realisiert werden.  Dies wird nötig, um beispielsweise
+    unterschiedliche Kabellängen auszugleichen, um also eine Anpassung der
+    elektrischen Weglänge vorzunehmen.
+
+  \item[Zeit-Analog-Wandler:] Ein Zeit-Analog-Wandler (Time to Amplitude
+    Converter, TAC) konvertiert Zeitintervalle zwischen zwei (logischen)
+    Eingangssignalen proportional in Amplituden. Die erhaltenen Ausgangssignale
+    können dann beispielsweise mit einem MCA zu einem Zeit-Spektrum verarbeitet
+    werden.
 \end{description}
 
-
-%szinti immer noch überprüfen, ob ok, jetzt entnommen aus mott
 \subsection{Szintillationsdetektor}
 Ein Szintillationsdetektor besteht aus zwei Teilen, einem Szintillator und einem
 Photomultiplier (siehe Abb. \ref{fig:szinti}). Im Szintillator erzeugen die
@@ -241,12 +248,63 @@ $\gamma$-Quanten an den Begrenzungsflächen des Szintillators und anderen
 Materialien außerhalb des Detektors. 
 
 
-\section{Versuchsaufbau}
-%bla
-
-
 \section{Versuchsdurchführung und Auswertung}
-%bla
+\subsection{Slow-Koinzidenzkreis einstellen}
+\subsection{Slow-Pulse des Photomultipliers kontrollieren}
+Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen dargestellt.
+
+% oszillographen neben einander für links und rechts
+
+Es wird zunächst das Ergebnis für den linken Detektor beschrieben. 
+Man erkennt eine Schar von Pulsen, welche in etwa $\unit[...]{\mu s}$ ansteigen und in
+etwa $\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
+$\unit[511]{keV}$-Linie als die Linie höchster Intensität. Die stärksten Signale haben 
+Amplituden von bis zu $\unit[...]{V}$, die $\unit[511]{keV}$-Linie liefert dabei ein
+Signal mit einer Amplitude von etwa $\unit[...]{V}$.
+
+Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch
+die zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie erwartet (siehe Theoretische Grundlagen) - in etwa einer Exponentialfunktion.
+Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
+
+Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+
+\subsubsection{Triggerung mit dem SCA}
+
+\subsubsection{Aufnahme des Energiespektrums}
+
+\subsubsection{Auslesen des Spektrums}
+
+\subsubsection{Energiespektren aufnehmen und auslesen}
+
+\subsubsection{Einkanalfenster einstellen}
+
+\subsubsection{Slow-Koinzidenz herstellen}
+
+\subsection{Fast-Koinzidenzkreis einstellen}
+\subsubsection{Fast-Pulse des Photomultipliers kontrollieren}
+
+\subsubsection{Einstellung der Diskriminatorschwelle}
+
+\subsubsection{Fast-Koinzidenz einstellen}
+
+\subsubsection{Zeitlicher Abgleich von Fast- und Slow-Koinzidenz}
+
+\subsection{Zeiteichung des TAC}
+\subsubsection{Aufnahme der Prompt-Kurve}
+
+\subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
+
+\subsection{Messung der Lebensdauer}
+\subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
+
+
+\subsubsection{Koinzidenzen kontrollieren}
+
+\subsubsection{Messung der Lebensdauerkurve}
+
+\subsubsection{Energieeichung}
+
+
 
 
 \section{Zusammenfassung}
