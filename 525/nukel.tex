@@ -226,6 +226,7 @@ Materialien außerhalb des Detektors.
 \section{Versuchsdurchführung und Auswertung}
 \subsection{Slow-Koinzidenzkreis einstellen}
 \subsection{Slow-Pulse des Photomultipliers kontrollieren}
+\subsubsection*{Slow-Pulse nach dem Vorverstärker}
 Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen dargestellt.
 
 % oszillographen neben einander für links und rechts
@@ -242,6 +243,18 @@ die zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durc
 Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
 
 Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+
+\subsubsection*{Slow-Pulse nach dem Hauptverstärker}
+Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind in der folgenden Abbildung dargestellt.
+
+%oszibilder links rechts nebeneinander
+
+Da der Puls im Hauptverstärker ein CR-RC-CR-Glied (Doppeltdifferenzierer) durchläuft, beobachten wir am Ausgang des Haupverstärkers somit ein bipolares Signal. Dabei wurde die Verstärkung von uns so eingestellt, dass die intensivste Linie, welche wir erneut als die $\unit[511]{keV}$-Linie identifizieren, eine Amplitude von etwa  $\unit[3]{V}$ aufweist.
+
+% hier steht jetzt: (course gain 20 Skt/ fine gain 12,9 Skt ).
+
+Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[...]{\mu s}$, der negative Anteil von etwa $\unit[...]{\mu s}$. Der Doppeltdifferenzierer verkürzt also die effektive Signaldauer gegenüber dem Signal nach dem Vorverstärker erheblich.
+
 
 \subsubsection{Triggerung mit dem SCA}
 
