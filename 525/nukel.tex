@@ -6,6 +6,7 @@
 
 \newcommand{\Isotop}[2]{\ensuremath{^{#2}\mathrm{#1}}\xspace}
 \newcommand{\Ba}{\Isotop{Ba}{133}}
+\newcommand{\Cs}{\Isotop{Cs}{133}}
 \newcommand{\Na}{\Isotop{Na}{22}}
 \newcommand{\Ne}{\Isotop{Ne}{22}}
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
@@ -13,11 +14,12 @@
 \begin{document}
 
 \section{Einleitung}
-Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik. Hierzu muss zunächst eine Anordnung für Koinzidenzmessungen aufgebaut und eingestellt werden. Beispielhaft wird anschließend eine Lebensdauermessung für \Cs durchgeführt.
+Ziel dieses Versuchs ist die Einübung des Umgangs mit nuklearer Elektronik. Hierzu muss zunächst eine Anordnung für Koinzidenzmessungen aufgebaut und eingestellt werden. Beispielhaft wird anschließend eine Lebensdauermessung für den angeregten $\frac{5}{2}^+$-Zustand von \Cs durchgeführt.
 
 \section{Theoretische Grundlagen}
 \subsection{Verwendete Quellen}
 \subsubsection{Natrium}
+\label{cha:na}
 Das von uns verwendete \Na zerfällt mit einer Halbwertszeit von $\unit[2.6]{a}$ und
 mit einer Wahrscheinlichkeit von mehr als $\unit[99]{\%}$ in den angeregten
 $2+$-Zustand des \Ne.
@@ -29,9 +31,19 @@ mit einem Hüllenelektron, wobei zwei Photonen mit einer Energie von jeweils $\un
 $\unit[180]{^{\circ}}$ Winkel abgestrahlt und eignen sich somit sehr gut zur Eichung der Apparatur.
 
 \subsubsection{Barium}
-Das verwendete \Ba zerfällt mit einer Halbwertszeit von $\unit[10.51]{a}$ 
+Das verwendete \Ba zerfällt mit einer Halbwertszeit von $\unit[10.51]{a}$ ......
 
+%vll auch Cs?? oder nur?
 %bla
+
+\subsection{Elektronik}
+\begin{description}
+\item[Vielkanalanalysator:]
+Ein Vielkanalanalysator (Multi Channel Analysers, MCA) sortiert Eingangssignale
+nach ihrer Amplitude. Dabei werden die Signale mit einem Analog-Digital-Wandler
+digitalisiert und anschließend wird der zum sich ergebenden Wert gehörende Kanal
+um eins erhöht. Die gespeicherten Kanalwerte können dann graphisch ausgegeben
+werden.
 
 \item[Einkanaldiskriminator:]
 Ein Einkanaldiskriminator (Single Channel Analyzer, SCA) selektiert Eingangssignale
@@ -211,12 +223,63 @@ $\gamma$-Quanten an den Begrenzungsflächen des Szintillators und anderen
 Materialien außerhalb des Detektors. 
 
 
-\section{Versuchsaufbau}
-%bla
-
-
 \section{Versuchsdurchführung und Auswertung}
-%bla
+\subsection{Slow-Koinzidenzkreis einstellen}
+\subsection{Slow-Pulse des Photomultipliers kontrollieren}
+Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen dargestellt.
+
+% oszillographen neben einander für links und rechts
+
+Es wird zunächst das Ergebnis für den linken Detektor beschrieben. 
+Man erkennt eine Schar von Pulsen, welche in etwa $\unit[...]{\mu s}$ ansteigen und in
+etwa $\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
+$\unit[511]{keV}$-Linie als die Linie höchster Intensität. Die stärksten Signale haben 
+Amplituden von bis zu $\unit[...]{V}$, die $\unit[511]{keV}$-Linie liefert dabei ein
+Signal mit einer Amplitude von etwa $\unit[...]{V}$.
+
+Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch
+die zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie erwartet (siehe Theoretische Grundlagen) - in etwa einer Exponentialfunktion.
+Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
+
+Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+
+\subsubsection{Triggerung mit dem SCA}
+
+\subsubsection{Aufnahme des Energiespektrums}
+
+\subsubsection{Auslesen des Spektrums}
+
+\subsubsection{Energiespektren aufnehmen und auslesen}
+
+\subsubsection{Einkanalfenster einstellen}
+
+\subsubsection{Slow-Koinzidenz herstellen}
+
+\subsection{Fast-Koinzidenzkreis einstellen}
+\subsubsection{Fast-Pulse des Photomultipliers kontrollieren}
+
+\subsubsection{Einstellung der Diskriminatorschwelle}
+
+\subsubsection{Fast-Koinzidenz einstellen}
+
+\subsubsection{Zeitlicher Abgleich von Fast- und Slow-Koinzidenz}
+
+\subsection{Zeiteichung des TAC}
+\subsubsection{Aufnahme der Prompt-Kurve}
+
+\subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
+
+\subsection{Messung der Lebensdauer}
+\subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
+
+
+\subsubsection{Koinzidenzen kontrollieren}
+
+\subsubsection{Messung der Lebensdauerkurve}
+
+\subsubsection{Energieeichung}
+
+
 
 
 \section{Zusammenfassung}
