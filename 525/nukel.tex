@@ -251,22 +251,52 @@ Materialien außerhalb des Detektors.
 \section{Versuchsdurchführung und Auswertung}
 \subsection{Slow-Koinzidenzkreis einstellen}
 \subsection{Slow-Pulse des Photomultipliers kontrollieren}
-Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen dargestellt.
+\subsubsection*{Slow-Pulse nach dem Vorverstärker}
+Zunächst oszilloskopieren wir die Slow-Pulse der beiden Photomultiplier. Dabei
+ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert
+(siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen
+dargestellt.
 
 % oszillographen neben einander für links und rechts
 
-Es wird zunächst das Ergebnis für den linken Detektor beschrieben. 
-Man erkennt eine Schar von Pulsen, welche in etwa $\unit[...]{\mu s}$ ansteigen und in
-etwa $\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
-$\unit[511]{keV}$-Linie als die Linie höchster Intensität. Die stärksten Signale haben 
-Amplituden von bis zu $\unit[...]{V}$, die $\unit[511]{keV}$-Linie liefert dabei ein
-Signal mit einer Amplitude von etwa $\unit[...]{V}$.
+Es wird zunächst das Ergebnis für den linken Detektor beschrieben.  Man erkennt
+eine Schar von Pulsen, welche in etwa $\unit[...]{\mu s}$ ansteigen und in etwa
+$\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
+$\unit[511]{keV}$-Linie als die Linie höchster Intensität. Die stärksten Signale
+haben Amplituden von bis zu $\unit[...]{V}$, die $\unit[511]{keV}$-Linie liefert
+dabei ein Signal mit einer Amplitude von etwa $\unit[...]{V}$.
 
-Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch
-die zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie erwartet (siehe Theoretische Grundlagen) - in etwa einer Exponentialfunktion.
-Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
+Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch die
+zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch
+Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie
+erwartet (siehe Theoretische Grundlagen) - in etwa einer Exponentialfunktion.
+Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht
+zu beeinflussen.
 
-Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es
+ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird
+ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der
+$\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+
+\subsubsection*{Slow-Pulse nach dem Hauptverstärker}
+Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind
+in der folgenden Abbildung dargestellt.
+
+%oszibilder links rechts nebeneinander
+
+Da der Puls im Hauptverstärker ein CR-RC-CR-Glied (Doppeltdifferenzierer)
+durchläuft, beobachten wir am Ausgang des Haupverstärkers somit ein bipolares
+Signal. Dabei wurde die Verstärkung von uns so eingestellt, dass die intensivste
+Linie, welche wir erneut als die $\unit[511]{keV}$-Linie identifizieren, eine
+Amplitude von etwa  $\unit[3]{V}$ aufweist.
+
+% hier steht jetzt: (course gain 20 Skt/ fine gain 12,9 Skt ).
+
+Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[...]{\mu
+s}$, der negative Anteil von etwa $\unit[...]{\mu s}$. Der Doppeltdifferenzierer
+verkürzt also die effektive Signaldauer gegenüber dem Signal nach dem
+Vorverstärker erheblich.
+
 
 \subsubsection{Triggerung mit dem SCA}
 
