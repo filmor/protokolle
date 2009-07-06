@@ -1,0 +1,12 @@
+set terminal pdf
+
+po = 'data/plot_oszi'
+po2 = 'data/plot_oszi2'
+
+call po 'slow/erster/1.txt' 'erster_vor.pdf' 3
+call po 'slow/erster/1.txt' 'erster_nach.pdf' 2
+call po 'slow/zweiter/1.txt' 'zweiter_vor.pdf' 2
+call po 'slow/zweiter/1.txt' 'zweiter_nach.pdf' 3
+call po2 'slow/erster/2.txt' 'erster_sca.pdf' 2 3
+call po2 'slow/zweiter/2.txt' 'zweiter_sca.pdf' 2 3
+

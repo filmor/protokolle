@@ -1,0 +1,6 @@
+set output "grafiken/$1"
+
+set xlabel 't/µs'
+set ylabel 'U/V'
+
+plot "data/$0" u ($$1*10e6):$2 w lines notitle

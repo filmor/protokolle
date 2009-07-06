@@ -257,14 +257,21 @@ ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert
 (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen
 dargestellt.
 
-% oszillographen neben einander für links und rechts
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_vor}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_vor}
+  \end{minipage}
+  \label{fig:oszi1}
+\end{figure}
 
 Es wird zunächst das Ergebnis für den linken Detektor beschrieben.  Man erkennt
-eine Schar von Pulsen, welche in etwa $\unit[...]{\mu s}$ ansteigen und in etwa
+eine Schar von Pulsen, welche in weniger als $\unit[]{\mu s}$ ansteigen und in etwa
 $\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
-$\unit[511]{keV}$-Linie als die Linie höchster Intensität. Die stärksten Signale
-haben Amplituden von bis zu $\unit[...]{V}$, die $\unit[511]{keV}$-Linie liefert
-dabei ein Signal mit einer Amplitude von etwa $\unit[...]{V}$.
+$\unit[511]{keV}$-Linie als den Puls mit der höchsten Intensität. Die stärksten
+Signale haben Amplituden von bis zu $\unit[15]{mV}$.
 
 Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch die
 zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch
@@ -274,8 +281,8 @@ Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht
 zu beeinflussen.
 
 Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es
-ergibt sich $\unit[...]{\mu s}$. Der exponentielle Abfall hingegen wird
-ebenfalls zu $\unit[...]{\mu s}$ bestimmt. Die Amplitude der
+ergibt sich $\unit[5]{\mu s}$. Der exponentielle Abfall hingegen wird
+ebenfalls zu $\unit[1.4]{ms}$ bestimmt. Die Amplitude der
 $\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
 
 \subsubsection*{Slow-Pulse nach dem Hauptverstärker}
@@ -283,21 +290,28 @@ Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind
 in der folgenden Abbildung dargestellt. Offenbar sind hinter dem Hauptverstärker
 beide Signale gleich.
 
-%oszibilder links rechts nebeneinander
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_vor}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_vor}
+  \end{minipage}
+  \label{fig:oszi1}
+\end{figure}
 
 Da der Puls im Hauptverstärker ein CR-RC-CR-Glied (Doppeltdifferenzierer)
 durchläuft, beobachten wir am Ausgang des Haupverstärkers somit ein bipolares
 Signal. Dabei wurde die Verstärkung von uns so eingestellt, dass die intensivste
 Linie, welche wir erneut als die $\unit[511]{keV}$-Linie identifizieren, eine
-Amplitude von etwa  $\unit[3]{V}$ aufweist.
-
-% hier steht jetzt: (course gain 20 Skt/ fine gain 12,9 Skt ).
+Amplitude von etwa  $\unit[3]{V}$ aufweist. Offenbar haben wir allerdings die
+Messung für den einen Detektor fehlerhaft durchgeführt (soll heißen wir haben
+die Flanke verpasst).
 
 Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[...]{\mu
 s}$, der negative Anteil von etwa $\unit[...]{\mu s}$. Der Doppeltdifferenzierer
 verkürzt also die effektive Signaldauer gegenüber dem Signal nach dem
 Vorverstärker erheblich.
-
 
 \subsubsection{Triggerung mit dem SCA}
 \label{cha:triggsca}
@@ -315,17 +329,20 @@ vollständig geöffneten SCA ebenfalls auf das Oszilloskop gegeben.
 
 Das Oszilloskop wird nun auf das SCA-Signal getriggert und das Signal aus dem
 Delayamplifier verzögern wir bis der Logikpuls aus dem SCA die positive Flanke
-des verstärkten Signals möglichst vollständig überdeckt. Dies gelingt uns leider
-nur bedingt.
+des verstärkten Signals möglichst vollständig überdeckt.
 
-%korrekt???
-% bla wie lang das signal und welche amplitude
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_sca}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_sca}
+  \end{minipage}
+  \label{fig:scaverst}
+\end{figure}
 
 Das Signal aus dem Hauptverstärker erreicht sein Maximum etwa $\unit[...]{\mu
 s}$ nach Beginn des Logikpulses (siehe auch Abbildung \ref{fig:scaverst}).
-
-% abb. überlagerung sca und verstärkersignal
-%\label{fig:scaverst}
 
 \subsubsection{Aufnahme des Energiespektrums}
 Nun wird das SCA-Signal (siehe oben) auf den Gate-Eingang und das
@@ -350,7 +367,16 @@ Die $\unit[511]{keV}$-Linie wurde mittels des Verstärkers in der Mitte des
 Spektrums positioniert. Das aufgenommene Impulshöhenspektrum ist in der
 folgenden  Abbildung zu sehen.
 
-% abb. impulshöhenspek. Na22
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics{grafiken/erster_na22}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics{grafiken/erster_na22}
+  \end{minipage}
+  \caption{Impulshöhenspektrum von Natrium 22}
+  \label{fig:na22}
+\end{figure}
 
 Ein Szintillationsdetektor erzeugt im Vergleich zu einem Halbleiterdetektor
 relativ wenige freie Elektronen. Somit wirken sich Fluktuationen auch stärker
@@ -371,41 +397,71 @@ Somit erhalten wir für die Auflösung der $\unit[511]{keV}$-Linie:
 
 
 \subsubsection{Einstellen des SCA-Fensters}
-Nun verkleinern wir das Fenster des, bisher vollständig geöffneten SCA. Hierzu markieren wir zunächst auf dem Bildschirm des SCA das Maximum der Linie (entspricht grob dem Schwerpunkt) und verkleinern anschließend die obere Schwelle des SCA bis zum "`Rand"' des Peaks. Die untere Grenze wird entsprechend bis zum linken "`Rand"' erhöht.
+Nun verkleinern wir das Fenster des, bisher vollständig geöffneten SCA. Hierzu
+markieren wir zunächst auf dem Bildschirm des SCA das Maximum der Linie
+(entspricht grob dem Schwerpunkt) und verkleinern anschließend die obere
+Schwelle des SCA bis zum "`Rand"' des Peaks. Die untere Grenze wird entsprechend
+bis zum linken "`Rand"' erhöht.
 
 %wurde das wirklich soo gemacht? bildschirm? verbessern, falls falsch!
 
-Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher, dass
-unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat der $\unit[511]{keV}$-Linie entsprechen.
+Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher,
+dass unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie
+liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat der
+$\unit[511]{keV}$-Linie entsprechen.
 
-Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie
-in Abschnitt \ref{cha:triggsca} beschrieben (siehe Abbildung unten). In der Tat besteht das Signal aus dem Verstärker nicht mehr aus so vielen verschieden Linien. Auch die Streuung der Amplituden ist deutlich geringer. Es ist ein einzelnes bipolares Signal mit einer Amplitude von etwa $\unit[...]{V}$ zu erkennen. Dieses haben wir bereits als den zur $\unit[511]{keV}$-Linie gehörigen Puls identifizieren können. Hin und wieder sind allerdings einzelne Signale mit größeren oder kleineren Amplituden zu beobachten. Dies geschieht, da wir das Fenster des SCA auf einen Bereich um die $\unit[511]{keV}$-Linie einschränkten. Auf diese Weise lösen Signale, welche außerhalb dieses Fensters liegen, am SCA keine logischen Pulse mehr aus. Die Signale werden jedoch getrennt durch den SCA und den Verstärker geleitet. Somit werden die Signale außerhalb des Fensters dennoch auf das Oszilloskop geleitet. Dieses wird aber auf den logischen Puls getriggert. Kommt nun ein Puls mit einer Amplitude außerhalb des Fensters am Oszilloskop an, so geschieht dies mit sehr hoher Wahrscheinlichkeit zu einem Zeitpunkt, der eine bezüglich der Triggerung sehr ungünstige Lage hat. Das Signal lässt sich also nicht oszilloskopieren.
+Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie in
+Abschnitt \ref{cha:triggsca} beschrieben (siehe Abbildung unten). In der Tat
+besteht das Signal aus dem Verstärker nicht mehr aus so vielen verschieden
+Linien. Auch die Streuung der Amplituden ist deutlich geringer. Es ist ein
+einzelnes bipolares Signal mit einer Amplitude von etwa $\unit[...]{V}$ zu
+erkennen. Dieses haben wir bereits als den zur $\unit[511]{keV}$-Linie gehörigen
+Puls identifizieren können. Hin und wieder sind allerdings einzelne Signale mit
+größeren oder kleineren Amplituden zu beobachten. Dies geschieht, da wir das
+Fenster des SCA auf einen Bereich um die $\unit[511]{keV}$-Linie einschränkten.
+Auf diese Weise lösen Signale, welche außerhalb dieses Fensters liegen, am SCA
+keine logischen Pulse mehr aus. Die Signale werden jedoch getrennt durch den SCA
+und den Verstärker geleitet. Somit werden die Signale außerhalb des Fensters
+dennoch auf das Oszilloskop geleitet. Dieses wird aber auf den logischen Puls
+getriggert. Kommt nun ein Puls mit einer Amplitude außerhalb des Fensters am
+Oszilloskop an, so geschieht dies mit sehr hoher Wahrscheinlichkeit zu einem
+Zeitpunkt, der eine bezüglich der Triggerung sehr ungünstige Lage hat. Das
+Signal lässt sich also nicht oszilloskopieren.
 
 %stimmt das?
 
 % abb. triggerung mit dem sca-puls
 
 \subsubsection{Wiederholung für den zweiten Detektor}
-Nun bauen wir diese Schaltung auch für den zweiten Detektor auf. Wir wiederholen hierzu die beschriebenen Schritte. 
+Nun bauen wir diese Schaltung auch für den zweiten Detektor auf. Wir wiederholen
+hierzu die beschriebenen Schritte. 
 
-Die $\unit[511]{keV}$-Linie ist nun bei identischer Einstellung des MCA und des entsprechenden Verstärkers bei kleineren Kanalzahlen zu finden. 
-Auf dem Oszilloskop beobachtet man prinzipiell die gleichen Phänomene, der Logikpuls des hier verwendeten SCA besitzt dabei eine Amplitude von $\unit[...]{V}$. Auch messen wir eine verkürzte Dauer des SCA-Pulses ($\unit[...]{\mu s}$). 
+Die $\unit[511]{keV}$-Linie ist nun bei identischer Einstellung des MCA und des
+entsprechenden Verstärkers bei kleineren Kanalzahlen zu finden.  Auf dem
+Oszilloskop beobachtet man prinzipiell die gleichen Phänomene, der Logikpuls des
+hier verwendeten SCA besitzt dabei eine Amplitude von $\unit[...]{V}$. Auch
+messen wir eine verkürzte Dauer des SCA-Pulses ($\unit[...]{\mu s}$). 
 
 % tun wir das denn? wenn nein, ändern
 
-Somit war es hier nicht ohneweiteres möglich, die positive Flanke des Verstärkersignals vollständig mit dem Logikpuls zu bedecken.
+Somit war es hier nicht ohneweiteres möglich, die positive Flanke des
+Verstärkersignals vollständig mit dem Logikpuls zu bedecken.
 
 % ja? oder anderes... 
 
 \subsubsection{Slow-Koinzidenz herstellen}
-Nun ist der Aufbau der Slow-Koinzidenz anzugehen. Diese Schaltung wird
-in der späteren Messung zur Zeiteichung dafür Sorge tragen, dass der MCA nur
-dann Zeitsignale aufzeichnet, wenn im rechten und linken Detektor zeitgleich
-$\unit[511]{keV}$-Ereignisse registriert werden. In der Lebensdauermessung
-wird die Slow-Koinzidenz dann dafür sorgen, dass der MCA nur die Zeitsignale aufnimmt, welche der Lebensdauer des interessierenden Zustandes entsprechen.
+Nun ist der Aufbau der Slow-Koinzidenz anzugehen. Diese Schaltung wird in der
+späteren Messung zur Zeiteichung dafür Sorge tragen, dass der MCA nur dann
+Zeitsignale aufzeichnet, wenn im rechten und linken Detektor zeitgleich
+$\unit[511]{keV}$-Ereignisse registriert werden. In der Lebensdauermessung wird
+die Slow-Koinzidenz dann dafür sorgen, dass der MCA nur die Zeitsignale
+aufnimmt, welche der Lebensdauer des interessierenden Zustandes entsprechen.
 
-Es werden nun die Ausgangssignale der beiden SCAs auf die zwei Kanäle
-des Oszilloskops gegeben. Wir triggern auf die Flanke des schwächeren SCA-Signals und verzögern das Signal des SCA mit dem stärkeren Ausgangssignal mit Hilfe des Delay solange, bis das schwache SCA-Signal sich etwa in der Mitte des stärkeren SCA-Signals befindet. Dies ist im Folgenden dargestellt.
+Es werden nun die Ausgangssignale der beiden SCAs auf die zwei Kanäle des
+Oszilloskops gegeben. Wir triggern auf die Flanke des schwächeren SCA-Signals
+und verzögern das Signal des SCA mit dem stärkeren Ausgangssignal mit Hilfe des
+Delay solange, bis das schwache SCA-Signal sich etwa in der Mitte des stärkeren
+SCA-Signals befindet. Dies ist im Folgenden dargestellt.
 
 % oszibild hierzu
 % stimmt obiges eigentlich??? stark verzögert? oder doch schwach? gute nacht :)
