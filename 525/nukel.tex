@@ -300,6 +300,7 @@ Vorverstärker erheblich.
 
 
 \subsubsection{Triggerung mit dem SCA}
+\label{cha:triggsca}
 Nun teilen wir das Signal hinter dem Hauptverstärker mit einem T-Stück und geben
 ein Teilsignal über einen Delayamplifier auf Kanal 1 des Oszilloskops (siehe
 Abb. \ref{fig:aufbautriggsca}). Das zweite Teilsignal wird über einen
@@ -370,8 +371,45 @@ Somit erhalten wir für die Auflösung der $\unit[511]{keV}$-Linie:
 
 
 \subsubsection{Einstellen des SCA-Fensters}
+Nun verkleinern wir das Fenster des, bisher vollständig geöffneten SCA. Hierzu markieren wir zunächst auf dem Bildschirm des SCA das Maximum der Linie (entspricht grob dem Schwerpunkt) und verkleinern anschließend die obere Schwelle des SCA bis zum "`Rand"' des Peaks. Die untere Grenze wird entsprechend bis zum linken "`Rand"' erhöht.
+
+%wurde das wirklich soo gemacht? bildschirm? verbessern, falls falsch!
+
+Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher, dass
+unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat der $\unit[511]{keV}$-Linie entsprechen.
+
+Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie
+in Abschnitt \ref{cha:triggsca} beschrieben (siehe Abbildung unten). In der Tat besteht das Signal aus dem Verstärker nicht mehr aus so vielen verschieden Linien. Auch die Streuung der Amplituden ist deutlich geringer. Es ist ein einzelnes bipolares Signal mit einer Amplitude von etwa $\unit[...]{V}$ zu erkennen. Dieses haben wir bereits als den zur $\unit[511]{keV}$-Linie gehörigen Puls identifizieren können. Hin und wieder sind allerdings einzelne Signale mit größeren oder kleineren Amplituden zu beobachten. Dies geschieht, da wir das Fenster des SCA auf einen Bereich um die $\unit[511]{keV}$-Linie einschränkten. Auf diese Weise lösen Signale, welche außerhalb dieses Fensters liegen, am SCA keine logischen Pulse mehr aus. Die Signale werden jedoch getrennt durch den SCA und den Verstärker geleitet. Somit werden die Signale außerhalb des Fensters dennoch auf das Oszilloskop geleitet. Dieses wird aber auf den logischen Puls getriggert. Kommt nun ein Puls mit einer Amplitude außerhalb des Fensters am Oszilloskop an, so geschieht dies mit sehr hoher Wahrscheinlichkeit zu einem Zeitpunkt, der eine bezüglich der Triggerung sehr ungünstige Lage hat. Das Signal lässt sich also nicht oszilloskopieren.
+
+%stimmt das?
+
+% abb. triggerung mit dem sca-puls
+
+\subsubsection{Wiederholung für den zweiten Detektor}
+Nun bauen wir diese Schaltung auch für den zweiten Detektor auf. Wir wiederholen hierzu die beschriebenen Schritte. 
+
+Die $\unit[511]{keV}$-Linie ist nun bei identischer Einstellung des MCA und des entsprechenden Verstärkers bei kleineren Kanalzahlen zu finden. 
+Auf dem Oszilloskop beobachtet man prinzipiell die gleichen Phänomene, der Logikpuls des hier verwendeten SCA besitzt dabei eine Amplitude von $\unit[...]{V}$. Auch messen wir eine verkürzte Dauer des SCA-Pulses ($\unit[...]{\mu s}$). 
+
+% tun wir das denn? wenn nein, ändern
+
+Somit war es hier nicht ohneweiteres möglich, die positive Flanke des Verstärkersignals vollständig mit dem Logikpuls zu bedecken.
+
+% ja? oder anderes... 
 
 \subsubsection{Slow-Koinzidenz herstellen}
+Nun ist der Aufbau der Slow-Koinzidenz anzugehen. Diese Schaltung wird
+in der späteren Messung zur Zeiteichung dafür Sorge tragen, dass der MCA nur
+dann Zeitsignale aufzeichnet, wenn im rechten und linken Detektor zeitgleich
+$\unit[511]{keV}$-Ereignisse registriert werden. In der Lebensdauermessung
+wird die Slow-Koinzidenz dann dafür sorgen, dass der MCA nur die Zeitsignale aufnimmt, welche der Lebensdauer des interessierenden Zustandes entsprechen.
+
+Es werden nun die Ausgangssignale der beiden SCAs auf die zwei Kanäle
+des Oszilloskops gegeben. Wir triggern auf die Flanke des schwächeren SCA-Signals und verzögern das Signal des SCA mit dem stärkeren Ausgangssignal mit Hilfe des Delay solange, bis das schwache SCA-Signal sich etwa in der Mitte des stärkeren SCA-Signals befindet. Dies ist im Folgenden dargestellt.
+
+% oszibild hierzu
+% stimmt obiges eigentlich??? stark verzögert? oder doch schwach? gute nacht :)
+
 
 \subsection{Fast-Koinzidenzkreis einstellen}
 \subsubsection{Fast-Pulse des Photomultipliers kontrollieren}
