@@ -307,8 +307,8 @@ Amplitude von etwa  $\unit[3]{V}$ aufweist. Offenbar haben wir allerdings die
 Messung für den einen Detektor fehlerhaft durchgeführt (soll heißen wir haben
 die Flanke verpasst).
 
-Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[...]{\mu
-s}$, der negative Anteil von etwa $\unit[...]{\mu s}$. Der Doppeltdifferenzierer
+Der positive Anteil des Pulses hat dabei eine Dauer von etwa $\unit[2.8]{\mu
+s}$, der negative Anteil von etwa $\unit[4.9]{\mu s}$. Der Doppeltdifferenzierer
 verkürzt also die effektive Signaldauer gegenüber dem Signal nach dem
 Vorverstärker erheblich.
 
@@ -340,7 +340,7 @@ des verstärkten Signals möglichst vollständig überdeckt.
   \label{fig:scaverst}
 \end{figure}
 
-Das Signal aus dem Hauptverstärker erreicht sein Maximum etwa $\unit[...]{\mu
+Das Signal aus dem Hauptverstärker erreicht sein Maximum etwa $\unit[2.5]{\mu
 s}$ nach Beginn des Logikpulses (siehe auch Abbildung \ref{fig:scaverst}).
 
 \subsubsection{Aufnahme des Energiespektrums}
@@ -368,12 +368,12 @@ folgenden  Abbildung zu sehen.
 
 \begin{figure}[H]
   \begin{minipage}{0.4\textwidth}
-    \includegraphics{grafiken/erster_na22}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_na22}
   \end{minipage}
   \begin{minipage}{0.4\textwidth}
-    \includegraphics{grafiken/erster_na22}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_na22}
   \end{minipage}
-  \caption{Impulshöhenspektrum von Natrium 22}
+  \caption{Impulshöhenspektrum von \Na}
   \label{fig:na22}
 \end{figure}
 
@@ -384,10 +384,11 @@ aus. Dies erklärt die Breite der $\unit[511]{keV}$-Linie.
 Wir bestimmen nun den Schwerpunkt und die Halbwertsbreite dieser Linie. Hierzu
 passen wir an die Linie eine \textsc{Gauß}kurve an.
 
-% oder wie machen wirs? blabla dazu dann noch
-
 Wir erhalten auf diese Weise für den Schwerpunkt der $\unit[511]{keV}$-Linie:
-
+\begin{align}
+  A
+  \label{<++>}
+\end{align}<++>
 % angabe des schwerpunktes (kanal), des fehlers, fwhm alles in kanal
 
 Somit erhalten wir für die Auflösung der $\unit[511]{keV}$-Linie:
@@ -402,51 +403,28 @@ markieren wir zunächst auf dem Bildschirm des SCA das Maximum der Linie
 Schwelle des SCA bis zum "`Rand"' des Peaks. Die untere Grenze wird entsprechend
 bis zum linken "`Rand"' erhöht.
 
-%wurde das wirklich soo gemacht? bildschirm? verbessern, falls falsch!
-
 Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher,
 dass unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie
 liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat der
 $\unit[511]{keV}$-Linie entsprechen.
 
 Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie in
-Abschnitt \ref{cha:triggsca} beschrieben (siehe Abbildung unten). In der Tat
-besteht das Signal aus dem Verstärker nicht mehr aus so vielen verschieden
-Linien. Auch die Streuung der Amplituden ist deutlich geringer. Es ist ein
-einzelnes bipolares Signal mit einer Amplitude von etwa $\unit[...]{V}$ zu
-erkennen. Dieses haben wir bereits als den zur $\unit[511]{keV}$-Linie gehörigen
-Puls identifizieren können. Hin und wieder sind allerdings einzelne Signale mit
-größeren oder kleineren Amplituden zu beobachten. Dies geschieht, da wir das
-Fenster des SCA auf einen Bereich um die $\unit[511]{keV}$-Linie einschränkten.
-Auf diese Weise lösen Signale, welche außerhalb dieses Fensters liegen, am SCA
-keine logischen Pulse mehr aus. Die Signale werden jedoch getrennt durch den SCA
-und den Verstärker geleitet. Somit werden die Signale außerhalb des Fensters
-dennoch auf das Oszilloskop geleitet. Dieses wird aber auf den logischen Puls
-getriggert. Kommt nun ein Puls mit einer Amplitude außerhalb des Fensters am
-Oszilloskop an, so geschieht dies mit sehr hoher Wahrscheinlichkeit zu einem
-Zeitpunkt, der eine bezüglich der Triggerung sehr ungünstige Lage hat. Das
-Signal lässt sich also nicht oszilloskopieren.
-
-%stimmt das?
-
-% abb. triggerung mit dem sca-puls
-
-\subsubsection{Wiederholung für den zweiten Detektor}
-Nun bauen wir diese Schaltung auch für den zweiten Detektor auf. Wir wiederholen
-hierzu die beschriebenen Schritte. 
-
-Die $\unit[511]{keV}$-Linie ist nun bei identischer Einstellung des MCA und des
-entsprechenden Verstärkers bei kleineren Kanalzahlen zu finden.  Auf dem
-Oszilloskop beobachtet man prinzipiell die gleichen Phänomene, der Logikpuls des
-hier verwendeten SCA besitzt dabei eine Amplitude von $\unit[...]{V}$. Auch
-messen wir eine verkürzte Dauer des SCA-Pulses ($\unit[...]{\mu s}$). 
-
-% tun wir das denn? wenn nein, ändern
-
-Somit war es hier nicht ohneweiteres möglich, die positive Flanke des
-Verstärkersignals vollständig mit dem Logikpuls zu bedecken.
-
-% ja? oder anderes... 
+Abschnitt \ref{cha:triggsca} beschrieben. In der Tat besteht das Signal aus dem
+Verstärker nicht mehr aus so vielen verschieden Linien. Auch die Streuung der
+Amplituden ist deutlich geringer. Es ist ein einzelnes bipolares Signal mit
+einer Amplitude von etwa $\unit[3]{V}$ zu erkennen. Dieses haben wir bereits als
+den zur $\unit[511]{keV}$-Linie gehörigen Puls identifizieren können. Hin und
+wieder sind allerdings einzelne Signale mit größeren oder kleineren Amplituden
+zu beobachten. Dies geschieht, da wir das Fenster des SCA auf einen Bereich um
+die $\unit[511]{keV}$-Linie einschränkten.  Auf diese Weise lösen Signale,
+welche außerhalb dieses Fensters liegen, am SCA keine logischen Pulse mehr aus.
+Die Signale werden jedoch getrennt durch den SCA und den Verstärker geleitet.
+Somit werden die Signale außerhalb des Fensters dennoch auf das Oszilloskop
+geleitet. Dieses wird aber auf den logischen Puls getriggert. Kommt nun ein Puls
+mit einer Amplitude außerhalb des Fensters am Oszilloskop an, so geschieht dies
+mit sehr hoher Wahrscheinlichkeit zu einem Zeitpunkt, der eine bezüglich der
+Triggerung sehr ungünstige Lage hat. Das Signal lässt sich also nicht
+oszilloskopieren.
 
 \subsubsection{Slow-Koinzidenz herstellen}
 Nun ist der Aufbau der Slow-Koinzidenz anzugehen. Diese Schaltung wird in der
@@ -460,11 +438,7 @@ Es werden nun die Ausgangssignale der beiden SCAs auf die zwei Kanäle des
 Oszilloskops gegeben. Wir triggern auf die Flanke des schwächeren SCA-Signals
 und verzögern das Signal des SCA mit dem stärkeren Ausgangssignal mit Hilfe des
 Delay solange, bis das schwache SCA-Signal sich etwa in der Mitte des stärkeren
-SCA-Signals befindet. Dies ist im Folgenden dargestellt.
-
-% oszibild hierzu
-% stimmt obiges eigentlich??? stark verzögert? oder doch schwach? gute nacht :)
-
+SCA-Signals befindet.
 
 \subsection{Fast-Koinzidenzkreis einstellen}
 \subsubsection{Fast-Pulse der Photomultiplier}
@@ -472,21 +446,24 @@ Die Fast-Pulse der Photomultiplier besitzen im Gegensatz zu den Slow-Pulsen,
 welche an einer der hinteren Dynoden abgenommen wurden, eine negative Polarität.
 Ferner steigt das Fast-Signal deutlich schneller an als das Slow-Signal. Wir
 konnten deshalb mit dem Oszilloskop nur eine obere Grenze der Anstiegszeit
-festlegen ($\unit[...]{ns}$).
-
-%stimmt das?
+festlegen (etwa $\unit[5]{ns}$).
 
 Im Folgenden sind die beiden Signale graphisch dargestellt.
 
-% oszillographen l & r
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/fast_1}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/fast_2}
+  \end{minipage}
+  \label{fig:oszi1}
+\end{figure}
 
 Mit einem Fast-Signal lässt sich also die zeitliche Einordnung eines Ereignisses
 gut durchführen. Eine Impulsformung des Fast-Signals entfällt somit wie auch
-zuvor. Das Fast-Signal hat dabei eine Amplitude von etwa $\unit[...]{V}$ und
-fällt in etwa $\unit[...]{\mu s}$ ab.
-
-%hier ist nur von einem signal die rede, wenn die unterschiedlich waren, dann
-%noch ändern
+zuvor. Das Fast-Signal hat dabei eine Amplitude von etwa $\unit[-0.09]{V}$ und
+fällt in etwa $\unit[15]{ns}$ ab.
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
 Nun wird das Fast-Signal geteilt und der eine Teil über einen Verstärker und der
@@ -508,17 +485,16 @@ zweier Fast-Signale mit Hilfe eines TAC. Zunächst wird eine Kalibration anhand
 der beiden $\unit[511]{keV}$-Linien von \Na vorgenommen. Da diese Photonen
 gleichzeitig in beide Detektoren eintreten, müssen wir eines der Fast-Signale
 künstlich verzögern. Dazu leiten wir ein Signal über ein Delay, welches auf
-$\unit[...]{ns}$ eingestellt ist. Diese Zeitdifferenz dient nun als
+$\unit[32]{ns}$ eingestellt ist. Diese Zeitdifferenz dient nun als
 Zeitnullpunkt.
-%anderes prot: 48ns
 
 Der verzögerte Puls wird auf den Stopp-Eingang des TAC und der nichtverzögerte
 auf den Start-Eingang des TAC gegeben. Die Maximalamplitude des TAC stellen wir
-auf $\unit[...]{V}$ ein, die Anstiegszeit des TAC auf $\unit[...]{ns}$. Somit
-wird das verzögerte Signal mit großer Sicherheit am Stopp-Eingang eintreffen,
-bevor der TAC selbstständig stoppt. Am Oszilloskop kann man nun beobachten, dass
-das TAC-Signal am $\unit[1]{\Omega}$-Ausgang eine Höhe von etwa $\unit[...]{V}$
-erreicht. Also wird der TAC nach etwa $\unit[...]{ns}$ gestoppt.
+auf $\unit[4.2]{V}$ ein. Somit wird das verzögerte Signal mit großer Sicherheit
+am Stopp-Eingang eintreffen, bevor der TAC selbstständig stoppt. Am Oszilloskop
+kann man nun beobachten, dass das TAC-Signal am $\unit[1]{\Omega}$-Ausgang eine
+Höhe von etwa $\unit[...]{V}$ erreicht. Also wird der TAC nach etwa
+$\unit[...]{ns}$ gestoppt.
 
 \subsubsection{Abgleich der Fast-Slow-Koinzidenz}
 Der Slow-Kreis wird bei der Messung dafür sorgen, dass nur Ereignisse bestimmter
@@ -531,8 +507,6 @@ Fast- und dem Slow-Kreis möglichst zeitgleich an den jeweiligen Eingängen des
 MCA anliegen. Deshalb ist hier zunächst eine Einstellung mit dem Delayamlifier
 vorzunehmen. Wir geben beide Signale auf das Oszilloskop und stimmen dann die
 Signale mit Hilfe des Delayamplifier zeitlich ab.
-
-%ka ob da noch mehr hin muss...
 
 \subsection{Zeiteichung des TAC}
 \subsubsection{Aufnahme der Prompt-Kurve}
@@ -547,15 +521,13 @@ MCA (siehe hierzu auch Abb. \ref{fig:aufbaukoinz}).
   \label{fig:aufbaukoinz}
 \end{figure}
 
-Anschließend kann die Kurve aufgenommen werden. Dabei werden etwa 2000
-Ereignisse aufgenommen. 
+Anschließend kann das Spektrum aufgenommen werden.
 
 %kurve? die hams iwie nicht gemacht, aber ich würds tun
 
-Daraufhin verändern wir die zeitliche Verzögerung zwischen den beiden
-Fast-Zweigen um $\unit[\pm ...]{ns}$ und $\unit[\pm ...]{ns}$ und nehmen eine
-zweite Kurve auf.  So erhalten wir insgesamt fünf Kurven im gleichen Spektrum,
-jeweils im Abstand von $\unit[...]{ns}$.
+Danach verändern wir die zeitliche Verzögerung zwischen den beiden
+Fast-Zweigen so, dass wir letztlich fünf Peaks im Abstand von $\unit[16]{ns}$
+mit ähnlicher Höhe.
 
 % kurven? siehe oben
 
@@ -564,65 +536,57 @@ jeweils im Abstand von $\unit[...]{ns}$.
 %wenn ja, hinschreiben, bitte, dank
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
-Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hieru
+Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hierzu
 separieren wir die fünf Promptkurven und passen an jede ein \textsc{Gauß}-Profil
-an:
-
-% plot mit fit (ein beispiel rest in anhang oben am besten genauso)
+an.
 
 Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt
 sich:
 
-%ergebnis geradenfit für zeiteichung
+\begin{figure}[H]
+  %\includegraphics{grafiken/zeiteichung}
+  \caption{Zeiteichung}
+  \label{fig:zeiteichung}
+\end{figure}
 
 Für die Bestimmung der Zeitauflösung, welche im Übrigen energieabhängig ist,
-verwenden wir die Halbwertsbreiten der Linien. Wir erhalten dann:
+verwenden wir die Halbwertsbreiten der Linien.
 
-%tabelle mit ergebnissen
+\begin{table}
+  \centering
+  \begin{tabular}{l|cc}
+
+  \end{tabular}
+  \caption{Halbwertsbreiten der Zeiteichungslinien}
+  \label{tab:halbwertsbreiten}
+\end{table}
 
 Es lässt sich erkennen, dass die Zeitauflösung mit steigender Energie (steigende
 Zeit) abnimmt.
-%stimmts denn??
-%weiteres bla?
-
 
 \subsection{Messung der Lebensdauer}
 \subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
-Wir nehmen nun die vollständigen Spektren der \Ba-Quelle für die beiden Detektoren
-auf (siehe Abb. \ref{fig:baspek}).
+Wir nehmen nun die vollständigen Spektren der \Ba-Quelle für die beiden
+Detektoren auf (siehe Abbildung~\ref{fig:baspek}).
 
-% bild des ba spektrums (links und rechts)
-% \label{fig:baspek}
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_ba}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_ba}
+  \end{minipage}
+  \caption{Bariumspektrum}
+  \label{fig:baspek}
+\end{figure}
 
-Dann stellen wir die SCA-Fenster auf die beiden Linien ein. Die Fensterbreite wird dabei so gewählt, dass in der Koinzidenzmessung eine hinreichende Anzahl an Ereignissen gezählt wird (siehe Abb. \ref{fig:bafenster}).
+Dann stellen wir die SCA-Fenster auf die beiden Linien ein. Die Fensterbreite
+wird dabei so gewählt, dass in der Koinzidenzmessung eine hinreichende Anzahl an
+Ereignissen gezählt wird.
 
-%SCA-Fenster = Einkanalfenster??
-%linien nennen in keV
-%bild ba fenstereinstell. (links und rechts)
-%\label{bafenster}
-
-Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren vornehmen zu können. 
-
-%bilder davon?? also mit fits
-
-%hmm...?:
-%Da wir die Verst¨arkereinstellungen so angepasst
-%haben, dass die Kurven von 181Hf sich einschließlich des 482KeVPeaks
-%optimal ¨uber die 1024 Kan¨ale des MCA’s erstrecken ist die Messung
-%der 511KeV-Linie von Natrium hier unbrauchbar. Insbesondere sind
-%die Einstellungen der Verst¨arker unterschiedlich, außerdem ist die eingestellte
-%Verst¨arkung offensichtlich keine Garantie f¨ur tats¨achlich erbrachte
-%Verst¨arkung (Wir haben auf dem einen Verst¨arker eine Verst¨arkung von
-%24, auf dem anderen von 35 eingestellt – die Spektren sahen damit nahezu
-%identisch aus.) Allein deshalb erwarten wir eine stark unterschiedliche Energieeichung
-%f¨ur jeden Detektor; aufgrund der hohen Verst¨arkung d¨urften auch
-%die Halbwertsbreiten recht gross ausfallen.
-%In den 181Hf-Spektren (Abbildung 16) sind die 133, 482 und 345KeVLinien
-%zu identifizieren. Wir fitten jeweils Gaußkurven an die Peaks und
-%f¨uhren mit den drei erhaltenen Wertepaaren einen Geradenfit durch. Die
-%Messwerte selber haben einen Fehler von  sqrt(n), ansonsten werden die Fehler
-%des Gauß-Fits per Fehlerfortpflanzung weiter verarbeitet.
-
+Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine
+Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren
+vornehmen zu können. 
 
 Für die Energieeichung der beiden Detektoren erhalten wir:
 
@@ -633,19 +597,17 @@ Die bestimmten Energieauflösungen sind in der folgenden Tabelle dargestellt.
 % tab mit energieauflösungen siehe seite 21 prall skript
 
 \subsubsection{Koinzidenzen kontrollieren}
-Wegen der Energieabhängigkeit der Verarbeitungszeit der Diskriminatoren sind nun noch die Fast-Koinzidenz zu überprüfen. Es werden jedoch keine Veränderungen festgestellt.
+Wegen der Energieabhängigkeit der Verarbeitungszeit der Diskriminatoren sind nun
+noch die Fast-Koinzidenz zu überprüfen. Es werden jedoch keine Veränderungen
+festgestellt.
 
-%stimmt das?
-
-Somit muss keine erneute Einstellung vorgenommen werden, da am Slow-Kreis keine Veränderungen vorgenommen wurden. Die Koinzidenz zwischen Slow- und Fast-Kreis stimmt also noch immer.
-
+Somit muss keine erneute Einstellung vorgenommen werden, da am Slow-Kreis keine
+Veränderungen vorgenommen wurden. Die Koinzidenz zwischen Slow- und Fast-Kreis
+stimmt also noch immer.
 
 \subsubsection{Messung der Lebensdauerkurve}
 
 \subsubsection{Energieeichung}
-
-
-
 
 \section{Zusammenfassung}
 %bla
