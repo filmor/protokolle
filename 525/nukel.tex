@@ -472,7 +472,8 @@ So erhalten wir insgesamt fünf Kurven im gleichen Spektrum, jeweils im Abstand v
 % kurven? siehe oben
 
 %muss der text noch modifiziert werden?
-
+%wir hatten doch da das problem, dass nur ein teil genutzt werden konnte, oder?
+%wenn ja, hinschreiben, bitte, dank
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
 Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hieru separieren wir die fünf Promptkurven und passen an jede ein \textsc{Gauß}-Profil an:
@@ -494,9 +495,57 @@ Es lässt sich erkennen, dass die Zeitauflösung mit steigender Energie (steigende
 
 \subsection{Messung der Lebensdauer}
 \subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
+Wir nehmen nun die vollständigen Spektren der \Ba-Quelle für die beiden Detektoren
+auf (siehe Abb. \ref{fig:baspek}).
 
+% bild des ba spektrums (links und rechts)
+% \label{fig:baspek}
+
+Dann stellen wir die SCA-Fenster auf die beiden Linien ein. Die Fensterbreite wird dabei so gewählt, dass in der Koinzidenzmessung eine hinreichende Anzahl an Ereignissen gezählt wird (siehe Abb. \ref{fig:bafenster}).
+
+%SCA-Fenster = Einkanalfenster??
+%linien nennen in keV
+%bild ba fenstereinstell. (links und rechts)
+%\label{bafenster}
+
+Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren vornehmen zu können. 
+
+%bilder davon?? also mit fits
+
+%hmm...?:
+%Da wir die Verst¨arkereinstellungen so angepasst
+%haben, dass die Kurven von 181Hf sich einschließlich des 482KeVPeaks
+%optimal ¨uber die 1024 Kan¨ale des MCA’s erstrecken ist die Messung
+%der 511KeV-Linie von Natrium hier unbrauchbar. Insbesondere sind
+%die Einstellungen der Verst¨arker unterschiedlich, außerdem ist die eingestellte
+%Verst¨arkung offensichtlich keine Garantie f¨ur tats¨achlich erbrachte
+%Verst¨arkung (Wir haben auf dem einen Verst¨arker eine Verst¨arkung von
+%24, auf dem anderen von 35 eingestellt – die Spektren sahen damit nahezu
+%identisch aus.) Allein deshalb erwarten wir eine stark unterschiedliche Energieeichung
+%f¨ur jeden Detektor; aufgrund der hohen Verst¨arkung d¨urften auch
+%die Halbwertsbreiten recht gross ausfallen.
+%In den 181Hf-Spektren (Abbildung 16) sind die 133, 482 und 345KeVLinien
+%zu identifizieren. Wir fitten jeweils Gaußkurven an die Peaks und
+%f¨uhren mit den drei erhaltenen Wertepaaren einen Geradenfit durch. Die
+%Messwerte selber haben einen Fehler von  sqrt(n), ansonsten werden die Fehler
+%des Gauß-Fits per Fehlerfortpflanzung weiter verarbeitet.
+
+
+Für die Energieeichung der beiden Detektoren erhalten wir:
+
+% energieeichung links und rechts
+
+Die bestimmten Energieauflösungen sind in der folgenden Tabelle dargestellt.
+
+% tab mit energieauflösungen siehe seite 21 prall skript
 
 \subsubsection{Koinzidenzen kontrollieren}
+Wegen der Energieabhängigkeit der Verarbeitungszeit der Diskriminatoren sind nun noch die Fast-Koinzidenz zu überprüfen. Es werden jedoch keine Veränderungen festgestellt.
+
+%stimmt das?
+
+Somit muss keine erneute Einstellung vorgenommen werden, da am Slow-Kreis keine Veränderungen vorgenommen wurden. Die Koinzidenz zwischen Slow- und Fast-Kreis stimmt also noch immer.
+
 
 \subsubsection{Messung der Lebensdauerkurve}
 
