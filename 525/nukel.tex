@@ -9,7 +9,6 @@
 \newcommand{\Cs}{\Isotop{Cs}{133}}
 \newcommand{\Na}{\Isotop{Na}{22}}
 \newcommand{\Ne}{\Isotop{Ne}{22}}
-\newcommand{\Cs}{\Isotop{Cs}{137}}
 \newcommand{\FWHM}{E^\mathrm{FWHM}}
 
 \begin{document}
@@ -330,7 +329,7 @@ s}$ nach Beginn des Logikpulses (siehe auch Abbildung \ref{fig:scaverst}).
 \subsubsection{Aufnahme des Energiespektrums}
 Nun wird das SCA-Signal (siehe oben) auf den Gate-Eingang und das
 Verstärkersignal auf den Direct-Eingang des MCA gegeben (siehe Abb.
-\ref{fig:aufbauenergie}). Dabei wird der MCA coinc-Modus betrieben.
+\ref{fig:aufbauenergie}). Dabei wird der MCA Koinzidenzmodus betrieben.
 
 \begin{figure}[H]
   \centering
@@ -412,18 +411,86 @@ des Oszilloskops gegeben. Wir triggern auf die Flanke des schwächeren SCA-Signal
 
 
 \subsection{Fast-Koinzidenzkreis einstellen}
-\subsubsection{Fast-Pulse des Photomultipliers kontrollieren}
+\subsubsection{Fast-Pulse der Photomultiplier}
+Die Fast-Pulse der Photomultiplier besitzen im Gegensatz zu den Slow-Pulsen, welche an einer der hinteren Dynoden abgenommen wurden, eine negative Polarität. Ferner steigt das Fast-Signal deutlich schneller an als das Slow-Signal. Wir konnten deshalb mit dem Oszilloskop nur eine obere Grenze der Anstiegszeit festlegen ($\unit[...]{ns}$).
+
+%stimmt das?
+
+Im Folgenden sind die beiden Signale graphisch dargestellt.
+
+% oszillographen l & r
+
+Mit einem Fast-Signal lässt sich also die zeitliche Einordnung eines Ereignisses gut durchführen. Eine Impulsformung des Fast-Signals entfällt somit wie auch zuvor. Das Fast-Signal hat dabei eine Amplitude von etwa $\unit[...]{V}$ und fällt in etwa $\unit[...]{\mu s}$ ab.
+
+%hier ist nur von einem signal die rede, wenn die unterschiedlich waren, dann noch ändern
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
+Nun wird das Fast-Signal geteilt und der eine Teil über einen Verstärker und der andere 
+über einen CFD auf das Oszilloskop gegeben. Wir triggern dabei auf den Ausgang des CFD.
+Nun muss die Schwelle eingestellt werden. Diese setzen wir nun direkt über das Rauschen. Auf diese Weise gibt der CFD den Logikpuls nur mit kleiner Verzögerung gegenüber dem einlaufenden Signal aus. Schließlich bestimmt die Verzögerung der CFD-Signale gegenüber den Eingangssignalen die Genauigkeit der späteren Zeitmessungen.
 
-\subsubsection{Fast-Koinzidenz einstellen}
+Dies wird auf diese Weise für beide Fast-Signale (zwei Detektoren) vorgenommen.
 
-\subsubsection{Zeitlicher Abgleich von Fast- und Slow-Koinzidenz}
+Die CFDs verfügen offensichtlich über eine Rauschunterdrückung, da wir die Schwellen
+auf das Minimum einstellen können, ohne eine Auswirkung festzustellen.
+
+\subsubsection{Integration des TAC in den Fast-Kreis}
+Die Fast-Signale dienen der Zeitmessung. Wir messen dabei die Zeitdifferenz zweier Fast-Signale mit Hilfe eines TAC. Zunächst wird eine Kalibration anhand der beiden $\unit[511]{keV}$-Linien von \Na vorgenommen. Da diese Photonen gleichzeitig
+in beide Detektoren eintreten, müssen wir eines der Fast-Signale künstlich
+verzögern. Dazu leiten wir ein Signal über ein Delay, welches auf $\unit[...]{ns}$ eingestellt ist. Diese Zeitdifferenz dient nun als Zeitnullpunkt.
+%anderes prot: 48ns
+
+Der verzögerte Puls wird auf den Stopp-Eingang des TAC und der nichtverzögerte auf den Start-Eingang des TAC gegeben. Die Maximalamplitude des TAC stellen wir auf $\unit[...]{V}$ ein, die Anstiegszeit des TAC auf $\unit[...]{ns}$. Somit wird das verzögerte Signal mit großer Sicherheit am Stopp-Eingang eintreffen, bevor der TAC selbstständig stoppt. Am Oszilloskop kann man nun beobachten, dass das TAC-Signal am $\unit[1]{\Omega}$-Ausgang eine Höhe von etwa $\unit[...]{V}$ erreicht. Also wird der TAC nach etwa $\unit[...]{ns}$ gestoppt.
+
+\subsubsection{Abgleich der Fast-Slow-Koinzidenz}
+Der Slow-Kreis wird bei der Messung dafür sorgen, dass nur Ereignisse bestimmter
+Energie registriert werden. Der Fast-Kreis hingegen bestimmt den zeitlichen Abstand dieser Ereignisse. Das Signal des Slow-Kreis wird dann den im Koinzidenzmodus betriebenen MCA am Gate freischalten und das TAC-Signal aus dem Fast-Kreis wird mittels des MCA in den entsprechenden Kanal sortiert. Entscheidend für das korrekte Funktionieren ist dabei, dass die Signale aus dem Fast- und dem Slow-Kreis möglichst
+zeitgleich an den jeweiligen Eingängen des MCA anliegen. Deshalb ist hier zunächst eine Einstellung mit dem Delayamlifier vorzunehmen. Wir geben beide Signale auf das Oszilloskop und stimmen dann die Signale mit Hilfe des Delayamplifier zeitlich ab.
+
+%ka ob da noch mehr hin muss...
 
 \subsection{Zeiteichung des TAC}
 \subsubsection{Aufnahme der Prompt-Kurve}
+Wir geben nun das TAC-Signal mit der Slow-Koinzidenz als Gate auf den
+MCA (siehe hierzu auch Abb. \ref{fig:aufbaukoinz}). 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{grafiken/koinzaufbau}
+  \caption[Aufbau Koinzidenzmessung]{vollständiger Aufbau zur Koinzidenzmessung~\cite{skript2}}
+  \label{fig:aufbaukoinz}
+\end{figure}
+
+Anschließend kann die Kurve aufgenommen werden. Dabei werden etwa 2000 Ereignisse aufgenommen. 
+
+%kurve? die hams iwie nicht gemacht, aber ich würds tun
+
+Daraufhin verändern wir die zeitliche Verzögerung zwischen den beiden Fast-Zweigen
+um $\unit[\pm ...]{ns}$ und $\unit[\pm ...]{ns}$ und nehmen eine zweite Kurve auf.
+So erhalten wir insgesamt fünf Kurven im gleichen Spektrum, jeweils im Abstand von $\unit[...]{ns}$.
+
+% kurven? siehe oben
+
+%muss der text noch modifiziert werden?
+
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
+Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hieru separieren wir die fünf Promptkurven und passen an jede ein \textsc{Gauß}-Profil an:
+
+% plot mit fit (ein beispiel rest in anhang oben am besten genauso)
+
+Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt sich:
+
+%ergebnis geradenfit für zeiteichung
+
+Für die Bestimmung der Zeitauflösung, welche im Übrigen energieabhängig ist, verwenden wir die Halbwertsbreiten der Linien. Wir erhalten dann:
+
+%tabelle mit ergebnissen
+
+Es lässt sich erkennen, dass die Zeitauflösung mit steigender Energie (steigende Zeit) abnimmt.
+%stimmts denn??
+%weiteres bla?
+
 
 \subsection{Messung der Lebensdauer}
 \subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
