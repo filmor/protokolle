@@ -51,14 +51,14 @@ set xlabel 't/ns'
 set ylabel 'N'
 
 f(x) = m * x + b
-fit f(x) 'data/zeiteichung_peaks.txt' u (16*$0):1:(1/$4**2) via m, b
+fit f(x) 'data/zeiteichung_peaks.txt' u (8*$0):1:(1/$4**2) via m, b
 
-plot 'data/zeiteichung_peaks.txt' u (16*$0):1:($4 + (rand(0) - 0.5) * $5) \
+plot 'data/zeiteichung_peaks.txt' u (8*$0):1:($4 + (rand(0) - 0.5) * $5) \
     w yerr notitle, f(x) notitle
 
 h(x) = (x-b)/m
 
-lambda = 0.125 
+lambda = 0.125
 g(x) = -lambda * x + A
 fit g(x) 'data/lebensdauer.txt' u ($1>1000&&$1<2000?h($1):1/0):(log($2))\
         via lambda, A
