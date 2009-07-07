@@ -259,7 +259,7 @@ ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert
 (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen
 dargestellt.
 
-% stimmt links und rechts??
+% stimmt links und rechts?? bei den anderen steigts rechts steiler an, also ll vertauschen?? hier scheints nämlich mom beim linken bild schneller anzusteigen
 \begin{figure}[H]
   \begin{minipage}{0.49\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/erster_vor}
@@ -272,19 +272,19 @@ dargestellt.
 \end{figure}
 
 Man erkennt auf dem Oszillographen eine Schar von Pulsen (hier ist nur einer
-abgebildet), welche in weniger als $\unit[...]{\mu s}$ ansteigen und in etwa
+abgebildet), welche in weniger als $\unit[10]{\mu s}$ ansteigen und in etwa
 $\unit[100]{\mu s}$ wieder abfallen. Wir identifizieren die
 $\unit[511]{keV}$-Linie als den Puls mit der höchsten Intensität. Die stärksten
 Signale haben Amplituden von bis zu $\unit[15]{mV}$.
 
-% da fehlt noch eine zeitangabe
-% ists jetzt wirklich gaußförmig?
-
+% zeitangabe auf 10 mu s, ok??
+% ists jetzt wirklich gaußförmig? bzw kann man das erkennen? kannst dus erkennen?
 Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch die
 zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch
 Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie
 erwartet - in etwa einer Exponentialfunktion. Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
 
+% wie gesagt noch mal überprüfen ob wirklich rechts
 Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es
 ergeben sich hier $\unit[5]{\mu s}$. Aufgrund der größeren Amplitude dauert der Abfall
 mit $\unit[1.4]{ms}$ deutlich länger.
@@ -416,6 +416,7 @@ Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher,
 dass unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie
 liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat dieser Linie entsprechen.
 
+
 %stimmt dieser abschnitt??
 Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie in
 Abschnitt \ref{cha:triggsca} beschrieben. In der Tat besteht das Signal aus dem
@@ -544,13 +545,13 @@ mit ähnlicher Höhe haben.
 % kurve
 
 %muss der text noch modifiziert werden?
-%wir hatten doch da das problem, dass nur ein teil genutzt werden konnte, oder?
+%wir hatten doch da das problem, dass wir nur den anfangsbereich nutzen konnten, was war das genau, der grund ...
 
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
 Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hierzu
 passen wir an jede Kurve ein \textsc{Gauß}-Profil an. Dies haben wir bereits am Versuchstag mit dem zur Verfügung stehenden Programm gemacht.
-%stimmt das??
+%ok so??
 
 Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt
 sich:
@@ -626,7 +627,9 @@ stimmt also noch immer.
 
 \subsubsection{Messung der Lebensdauerkurve}
 Zunächst stellen wir eine konstante Verzögerung von $\unit[48]{ns}$ ein.
+
 % hab jetzt mal die 48ns vom anderen skript übernommen? ich hab auch ka
+
 Der $\unit[356]{keV}$-Zerfall gibt dem TAC das Startsignal, gestoppt wird dann
 durch den $\unit[81]{keV}$-Zerfall. So erreicht man, dass das Zeitspektrum in
 positiver x-Richtung verläuft. Da wir nur sehr geringe Zählraten erreichten,
@@ -657,6 +660,8 @@ Anschließend konnte die Lebensdauer des angeregten $\frac{5}{2}^+$-Zustands von 
 $\unit[(7.3175 \pm 0.0143)]{ns}$ bestimmt werden. Dies stimmt sehr gut mit dem Literaturwert von $\unit[7.3]{ns}$ überein, wenn auch der Fehler wohl etwas zu gering abgeschätzt wurde.
 
 \begin{appendix}
+%muss noch was hierhin???
+
   \Literatur{quellen}
 \end{appendix}
 \end{document}
