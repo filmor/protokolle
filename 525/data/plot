@@ -56,6 +56,10 @@ fit f(x) 'data/zeiteichung_peaks.txt' u (8*$0):1:(1/$4**2) via m, b
 plot 'data/zeiteichung_peaks.txt' u (8*$0):1:($4 + (rand(0) - 0.5) * $5) \
     w yerr notitle, f(x) notitle
 
+set ylabel 'Auflösung'
+set output 'grafiken/zeitaufloesung.pdf'
+plot [1:] 'data/zeiteichung_peaks.txt' u (16*$0):($4/$1):($4/$1*sqrt(($2/$1**2+($5/$4)**2))) w yerr notitle
+
 h(x) = (x-b)/m
 
 lambda = 0.125

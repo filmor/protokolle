@@ -259,13 +259,12 @@ ist als $\gamma$-Quelle das \Na-Präparat zwischen den Detektoren platziert
 (siehe auch Abschnitt \ref{cha:na}). Im Folgenden sind die Oszillographen
 dargestellt.
 
-% stimmt links und rechts?? bei den anderen steigts rechts steiler an, also ll vertauschen?? hier scheints nämlich mom beim linken bild schneller anzusteigen
 \begin{figure}[H]
   \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/erster_vor}
+    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_vor}
   \end{minipage}
   \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/zweiter_vor}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_vor}
   \end{minipage}
   \label{fig:oszi1}
   \caption{Slow-Pulse des linken und rechten Photomultipliers nach dem Vorverstärker}
@@ -277,33 +276,30 @@ $\unit[100]{\mu s}$ wieder abfallen. Wir identifizieren die
 $\unit[511]{keV}$-Linie als den Puls mit der höchsten Intensität. Die stärksten
 Signale haben Amplituden von bis zu $\unit[15]{mV}$.
 
-% zeitangabe auf 10 mu s, ok??
-% ists jetzt wirklich gaußförmig? bzw kann man das erkennen? kannst dus erkennen?
 Der Anstieg des Pulses ist etwa gaußförmig. Dies ist zum einen durch die
 zeitliche Streuung der Energieüberträge im Szintillator und zum anderen durch
 Prozesse im Photomultiplier bedingt. Der Abfall des Pulses folgt hingehen - wie
-erwartet - in etwa einer Exponentialfunktion. Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
+erwartet - in etwa einer Exponentialfunktion. Die Bauart und Bandbreite des
+Vorverstärkers scheinen also, die Signalform nicht zu beeinflussen.
 
-% wie gesagt noch mal überprüfen ob wirklich rechts
 Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es
-ergeben sich hier $\unit[5]{\mu s}$. Aufgrund der größeren Amplitude dauert der Abfall
-mit $\unit[1.4]{ms}$ deutlich länger.
+ergeben sich hier $\unit[5]{\mu s}$. Aufgrund der größeren Amplitude dauert der
+Abfall mit $\unit[1.4]{ms}$ deutlich länger.
 
 \subsubsection*{Slow-Pulse nach dem Hauptverstärker}
 Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind
 in der folgenden Abbildung dargestellt.
 
-% stimmt links und rechts??
-%Ist es vll sinnvoller dieses ganze rauschen daraus zunehmen, also nur den relevanten teil zu betrachten x: [-600:-400]????
 \begin{figure}[H]
-  \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/erster_nach}
-  \end{minipage}
   \begin{minipage}{0.49\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/zweiter_nach}
   \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_nach}
+  \end{minipage}
   \label{fig:oszi1}
-  \caption{Slow-Pulse des linken und rechten Photomultipliers nach dem Hauptverstärker}
+  \caption{Slow-Pulse des linken und rechten Photomultipliers nach dem
+  Hauptverstärker}
 \end{figure}
 
 Da der Puls im Hauptverstärker ein CR-RC-CR-Glied (Doppeltdifferenzierer)
@@ -339,13 +335,12 @@ des verstärkten Signals möglichst vollständig überdeckt.
 
 \begin{figure}[H]
   \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/erster_sca}
-  \end{minipage}
-  \begin{minipage}{0.49\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/zweiter_sca}
   \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{grafiken/erster_sca}
+  \end{minipage}
   \caption{SCA Signale}
-% was ist das linke, was das rechte??? genauer bitte
   \label{fig:scaverst}
 \end{figure}
 
@@ -416,8 +411,6 @@ Nun nehmen wir erneut ein Impulshöhenspektrum auf. Dabei stellen wir sicher,
 dass unser Fenster symmetrisch um den Schwerpunkt der $\unit[511]{keV}$-Linie
 liegt, damit die vom SCA durchgelassenen Ereignisse auch in der Tat dieser Linie entsprechen.
 
-
-%stimmt dieser abschnitt??
 Nun oszilloskopieren wir die Signale des SCA gegen die des Verstärkers, wie in
 Abschnitt \ref{cha:triggsca} beschrieben. In der Tat besteht das Signal aus dem
 Verstärker nicht mehr aus so vielen verschieden Linien. Auch die Streuung der
@@ -461,23 +454,21 @@ festlegen (etwa $\unit[5]{ns}$).
 
 Im Folgenden sind die beiden Signale graphisch dargestellt.
 
-%links rechts richtig???
 \begin{figure}[H]
   \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/fast_1}
+    \includegraphics[width=1.0\textwidth]{grafiken/fast_2}
   \end{minipage}
   \begin{minipage}{0.49\textwidth}
-    \includegraphics[width=1.0\textwidth]{grafiken/fast_2}
+    \includegraphics[width=1.0\textwidth]{grafiken/fast_1}
   \end{minipage}
   \label{fig:oszi1}
 \end{figure}
 
-Offenbar hat sich hier bei einem der Detektoren erneut ein Messfehler eingeschlichen.
-%noch mehr dazu?? oder ok?
-Mit einem Fast-Signal lässt sich also die zeitliche Einordnung eines Ereignisses
-gut durchführen. Eine Impulsformung des Fast-Signals entfällt somit wie auch
-zuvor. Das Fast-Signal hat dabei eine Amplitude von etwa $\unit[-0.09]{V}$ und
-fällt in etwa $\unit[15]{ns}$ ab.
+Offenbar hat sich hier bei einem der Detektoren erneut ein Messfehler
+eingeschlichen.  Mit einem Fast-Signal lässt sich also die zeitliche Einordnung
+eines Ereignisses gut durchführen. Eine Impulsformung des Fast-Signals entfällt
+somit wie auch zuvor. Das Fast-Signal hat dabei eine Amplitude von etwa
+$\unit[-0.09]{V}$ und fällt in etwa $\unit[15]{ns}$ ab.
 
 \subsubsection{Einstellung der Diskriminatorschwelle}
 Nun wird das Fast-Signal geteilt und der eine Teil über einen Verstärker und der
@@ -534,28 +525,16 @@ MCA (siehe hierzu auch Abb. \ref{fig:aufbaukoinz}).
   \label{fig:aufbaukoinz}
 \end{figure}
 
-Anschließend kann das Spektrum aufgenommen werden.
-
-%promptkurve hierhin
-
-Danach verändern wir die zeitliche Verzögerung zwischen den beiden
-Fast-Zweigen so, dass wir letztlich fünf Peaks im Abstand von $\unit[16]{ns}$
-mit ähnlicher Höhe haben.
-
-% kurve
-
-%muss der text noch modifiziert werden?
-%wir hatten doch da das problem, dass wir nur den anfangsbereich nutzen konnten, was war das genau, der grund ...
-
+Anschließend kann das Spektrum aufgenommen werden.  Danach verändern wir die
+zeitliche Verzögerung zwischen den beiden Fast-Zweigen so, dass wir letztlich
+fünf Peaks im Abstand von $\unit[16]{ns}$ mit ähnlicher Höhe haben.
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
-Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen. Hierzu
-passen wir an jede Kurve ein \textsc{Gauß}-Profil an. Dies haben wir bereits am Versuchstag mit dem zur Verfügung stehenden Programm gemacht.
-%ok so??
+Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen.
+Hierzu passen wir an jede Kurve ein \textsc{Gauß}-Profil an.
 
 Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt
 sich:
-
 \begin{figure}[H]
   \includegraphics{grafiken/zeiteichung}
   \caption{Zeiteichung}
@@ -565,19 +544,11 @@ sich:
 Für die Bestimmung der Zeitauflösung, welche im Übrigen energieabhängig ist,
 verwenden wir die Halbwertsbreiten der Linien.
 
-%muss noch gemahct werden
-
-%\begin{table}
-%  \centering
-%  \begin{tabular}{l|cc}
-%    \toprule
-%      &  & 
-%    \midrule[0.75pt]
-%    \bottomrule
-%  \end{tabular}
-%  \caption{Halbwertsbreiten der Zeiteichungslinien}
-%  \label{tab:halbwertsbreiten}
-%\end{table}
+\begin{figure}[H]
+  \includegraphics{grafiken/zeitaufloesung.pdf}
+  \caption{Zeitauflösung}
+  \label{fig:aufl}
+\end{figure}
 
 Es lässt sich erkennen, dass die Zeitauflösung mit steigender Energie (steigende
 Zeit) abnimmt.
@@ -601,8 +572,6 @@ Detektoren auf (siehe Abbildung~\ref{fig:baspek}).
 Dann stellen wir die SCA-Fenster auf die beiden Linien ein. Die Fensterbreite
 wird dabei so gewählt, dass in der Koinzidenzmessung eine hinreichende Anzahl an
 Ereignissen gezählt wird.
-
-%haben wir hier kurven???
 
 Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine
 Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren
@@ -628,12 +597,12 @@ stimmt also noch immer.
 \subsubsection{Messung der Lebensdauerkurve}
 Zunächst stellen wir eine konstante Verzögerung von $\unit[48]{ns}$ ein.
 
-% hab jetzt mal die 48ns vom anderen skript übernommen? ich hab auch ka
-
 Der $\unit[356]{keV}$-Zerfall gibt dem TAC das Startsignal, gestoppt wird dann
 durch den $\unit[81]{keV}$-Zerfall. So erreicht man, dass das Zeitspektrum in
 positiver x-Richtung verläuft. Da wir nur sehr geringe Zählraten erreichten,
-ließen wie die Messung länger als vorgesehen laufen (etwa einen Tag). Insgesamt bekamen wir so 33550336 Ereignisse. Der erhaltene Graph ist in Abbildung \ref{fig:lebensdauer} dargestellt.
+ließen wie die Messung länger als vorgesehen laufen (etwa einen Tag). Insgesamt
+bekamen wir so 33550336 Ereignisse. Der erhaltene Graph ist in Abbildung
+\ref{fig:lebensdauer} dargestellt.
 
 \begin{figure}[H]
   \includegraphics{grafiken/lebensdauer}
@@ -641,7 +610,7 @@ ließen wie die Messung länger als vorgesehen laufen (etwa einen Tag). Insgesamt 
   \label{fig:lebensdauer}
 \end{figure}
 
-An die abfallende flanke der Kurve fitten wir dann eine Exponentialfunktion und
+An die abfallende Flanke der Kurve fitten wir dann eine Exponentialfunktion und
 erhalten daraus direkt die Zerfallskonstante $\lambda$, woraus wir mit
 $\tau = \frac{1}{\lambda}$ die Lebensdauer berechnen.
 
@@ -655,13 +624,18 @@ Dieses Ergebnis stimmt sehr gut mit dem Literaturwert von $\unit[7.3]{ns}$
 überein, auch wenn unser Fehler wohl etwas zu gering abgeschätzt ist.
 
 \section{Zusammenfassung}
-Zunächst musste der Versuchsaufbau zur Lebensdauerbestimmung des angeregten $\frac{5}{2}^+$-Zustands von \Cs realisiert werden. Hierzu wurden die verschiedenen Komponenten (Slow-Koinzidenzkreis zur Energiebestimmung, Fast-Koinzidenzkreis zur Zeitmessung und TAC zur Zeitmessung) aufgebaut und eingestellt.
-Anschließend konnte die Lebensdauer des angeregten $\frac{5}{2}^+$-Zustands von \Cs zu 
-$\unit[(7.3175 \pm 0.0143)]{ns}$ bestimmt werden. Dies stimmt sehr gut mit dem Literaturwert von $\unit[7.3]{ns}$ überein, wenn auch der Fehler wohl etwas zu gering abgeschätzt wurde.
+Zunächst musste der Versuchsaufbau zur Lebensdauerbestimmung des angeregten
+$\frac{5}{2}^+$-Zustands von \Cs realisiert werden. Hierzu wurden die
+verschiedenen Komponenten (Slow-Koinzidenzkreis zur Energiebestimmung,
+Fast-Koinzidenzkreis zur Zeitmessung und TAC zur Zeitmessung) aufgebaut und
+eingestellt.
+
+Anschließend konnte die Lebensdauer des angeregten $\frac{5}{2}^+$-Zustands von
+\Cs zu $\unit[(7.3175 \pm 0.0143)]{ns}$ bestimmt werden. Dies stimmt sehr gut
+mit dem Literaturwert von $\unit[7.3]{ns}$ überein, wenn auch der Fehler wohl
+etwas zu gering abgeschätzt wurde.
 
 \begin{appendix}
-%muss noch was hierhin???
-
   \Literatur{quellen}
 \end{appendix}
 \end{document}
