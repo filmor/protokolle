@@ -31,3 +31,43 @@ set output 'grafiken/fast_1.pdf'
 plot [60:120] 'data/fast.txt' u ($1*1e9):2 w lines notitle
 set output 'grafiken/fast_2.pdf'
 plot [-80:-40] 'data/fast.txt' u ($1*1e9):2 w lines notitle
+
+# call 'data/fit_peak.plot' 'data/slow/erster/3.txt' 2 503 1 303 1 0
+
+f = 'data/fit_peak.plot'
+d = 'data/zeiteichung.txt'
+
+set print 'data/zeiteichung_peaks.txt'
+call f d 2 184 10 29 43 1 0
+call f d 2 421 33 29 47 1 0
+call f d 2 662 10 29 43 1 0
+call f d 2 900 10 29 43 1 0
+call f d 2 1135 10 29 43 1 0
+unset print
+
+set output 'grafiken/zeiteichung.pdf'
+
+set xlabel 't/ns'
+set ylabel 'N'
+
+f(x) = m * x + b
+fit f(x) 'data/zeiteichung_peaks.txt' u (16*$0):1:(1/$4**2) via m, b
+
+plot 'data/zeiteichung_peaks.txt' u (16*$0):1:($4 + (rand(0) - 0.5) * $5) \
+    w yerr notitle, f(x) notitle
+
+h(x) = (x-b)/m
+
+set logscale y
+
+lambda = 0.125 
+A = 9738
+D = 1010
+g(x) = A * exp(-lambda * (x-h(D)))
+# fit g(x) 'data/lebensdauer.txt' u ($1>D?h($1):1/0):2 via A, lambda, D
+
+
+set output 'grafiken/lebensdauer.pdf'
+set yrange [100:12000]
+set xrange [-13:-6]
+plot 'data/lebensdauer.txt' u (h($1)):2 w impulses notitle, g(x) w lines notitle
