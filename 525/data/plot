@@ -67,7 +67,6 @@ g(x) = -lambda * x + A
 fit g(x) 'data/lebensdauer.txt' u ($1>1000&&$1<2000?h($1):1/0):(log($2))\
         via lambda, A
 
-
 set output 'grafiken/lebensdauer.pdf'
 set yrange [100:12000]
 #set xrange [-13:-6]
