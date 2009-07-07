@@ -38,11 +38,11 @@ f = 'data/fit_peak.plot'
 d = 'data/zeiteichung.txt'
 
 set print 'data/zeiteichung_peaks.txt'
-call f d 2 184 10 29 43 1 0
-call f d 2 421 33 29 47 1 0
-call f d 2 662 10 29 43 1 0
-call f d 2 900 10 29 43 1 0
-call f d 2 1135 10 29 43 1 0
+call f d 2 184 10 29 1 0
+call f d 2 421 33 29 1 0
+call f d 2 662 10 29 1 0
+call f d 2 900 10 29 1 0
+call f d 2 1135 10 29 1 0
 unset print
 
 set output 'grafiken/zeiteichung.pdf'
@@ -58,16 +58,14 @@ plot 'data/zeiteichung_peaks.txt' u (16*$0):1:($4 + (rand(0) - 0.5) * $5) \
 
 h(x) = (x-b)/m
 
-set logscale y
-
 lambda = 0.125 
-A = 9738
-D = 1010
-g(x) = A * exp(-lambda * (x-h(D)))
-# fit g(x) 'data/lebensdauer.txt' u ($1>D?h($1):1/0):2 via A, lambda, D
+g(x) = -lambda * x + A
+fit g(x) 'data/lebensdauer.txt' u ($1>1000&&$1<2000?h($1):1/0):(log($2))\
+        via lambda, A
 
 
 set output 'grafiken/lebensdauer.pdf'
 set yrange [100:12000]
-set xrange [-13:-6]
-plot 'data/lebensdauer.txt' u (h($1)):2 w impulses notitle, g(x) w lines notitle
+#set xrange [-13:-6]
+plot 'data/lebensdauer.txt' u (h($1)):2 w impulses notitle, \
+    exp(g(x)) w lines lw 2 notitle
