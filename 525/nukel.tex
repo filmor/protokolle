@@ -193,7 +193,6 @@ Energie des einfallenden Photons.
   \label{fig:photo}
 \end{figure}
 
-%bitte ebenfalls noch einmal inhaltlich überprüfen! danke!
 \subsubsection{Impulshöhenspektrum}
 Auch bei der Detektion von monoenergetischer $\gamma$-Strahlung erhält man (bei
 Verwendung des Vielkanalanalysators) nicht einen einzigen Peak, sondern ein
@@ -220,13 +219,13 @@ Störungen etc.).
 
 Betrachten wir nun Peak "`B"'. Hierfür zeigt sich der \textsc{Compton}-Effekt
 verantwortlich. In einem solchen Streuprozess überträgt das einfallende Photon,
-wie in Abschnitt \ref{cha:ww} näher beschrieben, Energie auf ein Elektron.
-Wechselwirkt das Photon danach weiter im Kristall und gibt schlussendlich die
-gesamte Energie an den Kristall ab, so wird das Signal dem Photopeak
-zugerechnet. Erfolgt jedoch keine weitere Wechselwirkung und das Photon verlässt
-den Kristall, so wird lediglich die in der \textsc{Compton}-Streuung übertragene
-Energie detektiert. Für einen Streuwinkel $\pi$ ergibt sich dabei ein Maximum,
-welche dem Peak "`B"' entspricht. Er wird \textsc{Compton}-Kante genannt.
+Energie auf ein Elektron.  Wechselwirkt das Photon danach weiter im Kristall und
+gibt schlussendlich die gesamte Energie an den Kristall ab, so wird das Signal
+dem Photopeak zugerechnet. Erfolgt jedoch keine weitere Wechselwirkung und das
+Photon verlässt den Kristall, so wird lediglich die in der
+\textsc{Compton}-Streuung übertragene Energie detektiert. Für einen Streuwinkel
+$\pi$ ergibt sich dabei ein Maximum, welche dem Peak "`B"' entspricht. Er wird
+\textsc{Compton}-Kante genannt.
 
 Die mit "`C"' und "`D"' gekennzeichneten Peaks gehen auf die Paarerzeugung
 zurück. Hierbei steht stets das Elektron mit seiner Energie für die Erzeugung
@@ -266,9 +265,9 @@ dargestellt.
   \label{fig:oszi1}
 \end{figure}
 
-Es wird zunächst das Ergebnis für den linken Detektor beschrieben.  Man erkennt
-eine Schar von Pulsen, welche in weniger als $\unit[]{\mu s}$ ansteigen und in
-etwa $\unit[...]{\mu s}$ wieder abfallen. Wir identifizieren die
+Man erkennt auf dem Oszillographen eine Schar von Pulsen (hier ist nur einer
+abgebildet), welche in weniger als $\unit[]{\mu s}$ ansteigen und in etwa
+$\unit[100]{\mu s}$ wieder abfallen. Wir identifizieren die
 $\unit[511]{keV}$-Linie als den Puls mit der höchsten Intensität. Die stärksten
 Signale haben Amplituden von bis zu $\unit[15]{mV}$.
 
@@ -280,9 +279,8 @@ Die Bauart und Bandbreite des Vorverstärkers scheinen also, die Signalform nicht
 zu beeinflussen.
 
 Beim rechten Detektor steigen die Signale offenbar deutlich schneller an. Es
-ergibt sich $\unit[5]{\mu s}$. Der exponentielle Abfall hingegen wird
-ebenfalls zu $\unit[1.4]{ms}$ bestimmt. Die Amplitude der
-$\unit[511]{keV}$-Linie ergibt sich zu $\unit[...]{V}$
+ergibt sich $\unit[5]{\mu s}$. Aufgrund der größeren Amplitude dauert der Abfall
+mit $\unit[1.4]{ms}$ deutlich länger.
 
 \subsubsection*{Slow-Pulse nach dem Hauptverstärker}
 Nun messen wir die Signale hinter dem Hauptverstärker. Die Oszillographen sind
@@ -337,6 +335,7 @@ des verstärkten Signals möglichst vollständig überdeckt.
   \begin{minipage}{0.4\textwidth}
     \includegraphics[width=1.0\textwidth]{grafiken/zweiter_sca}
   \end{minipage}
+  \caption{SCA Signale}
   \label{fig:scaverst}
 \end{figure}
 
@@ -386,15 +385,15 @@ passen wir an die Linie eine \textsc{Gauß}kurve an.
 
 Wir erhalten auf diese Weise für den Schwerpunkt der $\unit[511]{keV}$-Linie:
 \begin{align}
-  A
-  \label{<++>}
-\end{align}<++>
-% angabe des schwerpunktes (kanal), des fehlers, fwhm alles in kanal
+  \mu_\text{links} = 399.38 \pm 21.43 &\quad \sigma_\text{links} = 16.13 \pm 1.7 \\
+  \mu_\text{rechts} = 472.26 \pm 15.36 &\quad \sigma_\text{rechts} = 33.97 \pm
+  2.54
+\end{align}
 
 Somit erhalten wir für die Auflösung der $\unit[511]{keV}$-Linie:
-
-% A = dKanal/Kanal -> ergebnis
-
+\begin{align}
+  A_\text{links} = 0.04 \pm 0.005 \quad A_\text{rechts} = 0.072 \pm 0.006
+\end{align}
 
 \subsubsection{Einstellen des SCA-Fensters}
 Nun verkleinern wir das Fenster des, bisher vollständig geöffneten SCA. Hierzu
@@ -493,8 +492,7 @@ auf den Start-Eingang des TAC gegeben. Die Maximalamplitude des TAC stellen wir
 auf $\unit[4.2]{V}$ ein. Somit wird das verzögerte Signal mit großer Sicherheit
 am Stopp-Eingang eintreffen, bevor der TAC selbstständig stoppt. Am Oszilloskop
 kann man nun beobachten, dass das TAC-Signal am $\unit[1]{\Omega}$-Ausgang eine
-Höhe von etwa $\unit[...]{V}$ erreicht. Also wird der TAC nach etwa
-$\unit[...]{ns}$ gestoppt.
+Höhe von etwa $\unit[3]{V}$ erreicht.
 
 \subsubsection{Abgleich der Fast-Slow-Koinzidenz}
 Der Slow-Kreis wird bei der Messung dafür sorgen, dass nur Ereignisse bestimmter
