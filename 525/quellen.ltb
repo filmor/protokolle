@@ -33,3 +33,12 @@
     edition={},
     publisher={Springer-Verlag}
 }
+
+
+\bib{rietzler}{book}{
+    title={Kernphysikalisches Praktikum},
+    author={Wolfgang Rietzler u. Konrad Kopitzki},
+    year={},
+    edition={},
+    publisher={Teubner-Verlag}
+}
