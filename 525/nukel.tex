@@ -547,7 +547,7 @@ Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt
 sich:
 
 \begin{figure}[H]
-  %\includegraphics{grafiken/zeiteichung}
+  \includegraphics{grafiken/zeiteichung}
   \caption{Zeiteichung}
   \label{fig:zeiteichung}
 \end{figure}
@@ -618,17 +618,25 @@ Zunächst stellen wir eine konstante Verzögerung von $\unit[...]{ns}$ ein.
 Der $\unit[...]{keV}$-Zerfall gibt dem TAC das Startsignal, gestoppt wird dann
 durch den $\unit[...]{keV}$-Zerfall. So erreicht man, dass das Zeitspektrum in
 positiver x-Richtung verläuft. Da wir nur sehr geringe Zählraten erreichten,
-ließen wie die Messung über den vorgesehenen Versuchszeitrahmen laufen
-($\unit[...]{s}$).
-%wissen wir das??
+ließen wie die Messung länger als vorgesehen laufen.
 
-Insgesamt bekamen wir so $\unit[...]{}$ Ereignisse. Der erhaltene Graph ist in
+Insgesamt bekamen wir so 33550336 Ereignisse. Der erhaltene Graph ist in
 Abbildung \ref{fig:messleben} dargestellt.
 
-%graph
-%vorgehen bei der auswertung, machs schnell, ich schreibs dann ins reine, wenn
-%das ok ist
+\begin{figure}[H]
+  \includegraphics{grafiken/lebensdauer}
+  \caption{Lebensdauerkurve}
+  \label{fig:lebensdauer}
+\end{figure}
 
+An die abfallende flanke der Kurve fitten wir dann eine Exponentialfunktion und
+erhalten daraus direkt die Zerfallskonstante $\lambda$, woraus wir mit
+$\tau = \frac{1}{\lambda}$ die Lebensdauer berechnen bekommen.
+
+\begin{align}
+  \tau = \unit[( \pm )]{ns}
+  \label{eq:ergebnis}
+\end{align}
 
 \section{Zusammenfassung}
 %bla
