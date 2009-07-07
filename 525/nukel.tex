@@ -575,15 +575,26 @@ Ereignissen gezählt wird.
 
 Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine
 Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren
-vornehmen zu können. 
-
-Für die Energieeichung der beiden Detektoren erhalten wir:
-
-% energieeichung links und rechts
+vornehmen zu können.
 
 Die bestimmten Energieauflösungen sind in der folgenden Tabelle dargestellt.
-
-% tab mit energieauflösungen siehe seite 21 prall skript
+\begin{table}
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    Detektor & Energie/$\unit{KeV}$ & $A$ & $\Delta A$ \\
+    \multirow{4}{*}{Linker Detektor} & $81$    & $0.057$ & $0.008$ \\
+                                     & $160.6$ & $0.044$ & $0.007$ \\
+                                     & $276.4$ & $0.072$ & $0.012$ \\
+                                     & $356$   & $0.056$ & $0.008$ \\
+    \multirow{4}{*}{Rechter Detektor}& $81$    & $0.123$ & $0.02$ \\
+                                     & $160.6$ & $0.125$ & $0.02$ \\
+                                     & $276.4$ & $0.073$ & $0.012$ \\
+                                     & $356$   & $0.056$ & $0.008$
+  \end{tabular}
+  \caption{Energieauflösungen}
+  \label{tab:aufl}
+\end{table}
 
 \subsubsection{Koinzidenzen kontrollieren}
 Wegen der Energieabhängigkeit der Verarbeitungszeit der Diskriminatoren sind nun
