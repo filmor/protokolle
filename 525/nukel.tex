@@ -531,10 +531,10 @@ fünf Peaks im Abstand von $\unit[16]{ns}$ mit ähnlicher Höhe haben.
 
 \subsubsection{Bestimmung der Auflösungszeit und der Zeiteichung}
 Nun ist die Auflösungszeit zu bestimmen und die Zeiteichung durchzuführen.
-Hierzu passen wir an jede Kurve ein \textsc{Gauß}-Profil an.
+Hierzu passen wir an jede Kurve ein \textsc{Gauß}-Profil an. Die Fehler bestimmen sich dabei aus den jeweiligen Halbwertsbreiten.
 
 Nun muss die Zeiteichung mittels eines Geradenfits bestimmt werden. Es ergibt
-sich:
+sich folgendes:
 \begin{figure}[H]
   \includegraphics{grafiken/zeiteichung}
   \caption{Zeiteichung}
@@ -542,7 +542,7 @@ sich:
 \end{figure}
 
 Für die Bestimmung der Zeitauflösung, welche im Übrigen energieabhängig ist,
-verwenden wir die Halbwertsbreiten der Linien.
+verwenden wir die Halbwertsbreiten der Linien. Wir erhalten hierfür folgendes.
 
 \begin{figure}[H]
   \includegraphics{grafiken/zeitaufloesung.pdf}
@@ -550,12 +550,12 @@ verwenden wir die Halbwertsbreiten der Linien.
   \label{fig:aufl}
 \end{figure}
 
-Es lässt sich erkennen, dass die Zeitauflösung mit steigender Energie (steigende
-Zeit) abnimmt.
+Es lässt sich also erkennen, dass die Zeitauflösung mit steigender Energie (steigende
+Zeit) abnimmt, also schlechter wird.
 
 \subsection{Messung der Lebensdauer}
 \subsubsection{Einkanalfenster für die \Ba-Quelle einstellen}
-Wir nehmen nun die vollständigen Spektren der \Ba-Quelle für die beiden
+Wir nehmen nun das vollständige Spektrum der \Ba-Quelle für die beiden
 Detektoren auf (siehe Abbildung~\ref{fig:baspek}).
 
 \begin{figure}[H]
@@ -577,24 +577,46 @@ Nun werden erneut \textsc{Gauß}kurven angepasst, um daraufhin eine
 Energieeichung und eine Bestimmung der Energieauflösung für beide Detektoren
 vornehmen zu können.
 
-Die bestimmten Energieauflösungen sind in der folgenden Tabelle dargestellt.
-\begin{table}
+Für die Energieeichung erhalten wir nach dem üblichen Vorgehen folgende Fitgeradenparameter (es wird ein linearer Zusammenhang der Form $f(x)=mx+c$ angenommen).
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Detektor & $m$ & $c$ \\
+    \midrule[0.75pt]
+    Linker Detektor & $0.2693$ & $-13.5936$ \\
+    Rechter Detektor& $0.243$ & $-13.45$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Energieeichung}
+  \label{tab:eneich}
+\end{table}
+
+Die bestimmten Energieauflösungen sind in der folgenden Tabelle dargestellt. Diese wurden ebenfalls mittels der Halbwertsbreite bestimmt ($A=\Delta E/E$, wobei $\Delta E$ FWHM).
+\begin{table}[H]
   \centering
   \begin{tabular}{lccc}
     \toprule
     Detektor & Energie/$\unit{KeV}$ & $A$ & $\Delta A$ \\
+    \midrule[0.75pt]
     \multirow{4}{*}{Linker Detektor} & $81$    & $0.057$ & $0.008$ \\
                                      & $160.6$ & $0.044$ & $0.007$ \\
                                      & $276.4$ & $0.072$ & $0.012$ \\
                                      & $356$   & $0.056$ & $0.008$ \\
+                                     & $511$   & $0.100$ & $0.010$ \\
+    \midrule[0.5pt]
     \multirow{4}{*}{Rechter Detektor}& $81$    & $0.123$ & $0.02$ \\
                                      & $160.6$ & $0.125$ & $0.02$ \\
                                      & $276.4$ & $0.073$ & $0.012$ \\
-                                     & $356$   & $0.056$ & $0.008$
+                                     & $356$   & $0.056$ & $0.008$ \\
+                                     & $511$   & $0.117$ & $0.008$ \\
+    \bottomrule
   \end{tabular}
   \caption{Energieauflösungen}
   \label{tab:aufl}
 \end{table}
+
+
 
 \subsubsection{Koinzidenzen kontrollieren}
 Wegen der Energieabhängigkeit der Verarbeitungszeit der Diskriminatoren sind nun
@@ -606,7 +628,7 @@ Veränderungen vorgenommen wurden. Die Koinzidenz zwischen Slow- und Fast-Kreis
 stimmt also noch immer.
 
 \subsubsection{Messung der Lebensdauerkurve}
-Zunächst stellen wir eine konstante Verzögerung von $\unit[48]{ns}$ ein.
+Zunächst stellen wir eine konstante Verzögerung von $\unit[48]{ns}$ ein. 
 
 Der $\unit[356]{keV}$-Zerfall gibt dem TAC das Startsignal, gestoppt wird dann
 durch den $\unit[81]{keV}$-Zerfall. So erreicht man, dass das Zeitspektrum in
@@ -621,9 +643,8 @@ bekamen wir so 33550336 Ereignisse. Der erhaltene Graph ist in Abbildung
   \label{fig:lebensdauer}
 \end{figure}
 
-An die abfallende Flanke der Kurve fitten wir dann eine Exponentialfunktion und
-erhalten daraus direkt die Zerfallskonstante $\lambda$, woraus wir mit
-$\tau = \frac{1}{\lambda}$ die Lebensdauer berechnen.
+An die abfallende Flanke der Kurve passen wir dann eine Exponentialfunktion an. Die vorgehende Berechnung der Fehler der Zeiteichung gehen dabei mit ein. Wir erhalten nun  direkt die Zerfallskonstante $\lambda$, woraus wir mit
+$\tau = \frac{1}{\lambda}$ die Lebensdauer berechnen können. Es ergibt sich schlussendlich folgendes.
 
 \begin{align}
   \lambda = \unit[(0.13667 \pm 0.00027)]{\frac{1}{ns}} \\
@@ -641,10 +662,7 @@ verschiedenen Komponenten (Slow-Koinzidenzkreis zur Energiebestimmung,
 Fast-Koinzidenzkreis zur Zeitmessung und TAC zur Zeitmessung) aufgebaut und
 eingestellt.
 
-Anschließend konnte die Lebensdauer des angeregten $\frac{5}{2}^+$-Zustands von
-\Cs zu $\unit[(7.3175 \pm 0.0143)]{ns}$ bestimmt werden. Dies stimmt sehr gut
-mit dem Literaturwert von $\unit[7.3]{ns}$ überein, wenn auch der Fehler wohl
-etwas zu gering abgeschätzt wurde.
+Anschließend konnte nach Zeit- und Energieeichung, sowie der Bestimmmung der Zeit- und Energieauflösung, die Lebensdauer des angeregten $\frac{5}{2}^+$-Zustands von \Cs zu $\unit[(7.3175 \pm 0.0143)]{ns}$ bestimmt werden. Dies stimmt sehr gut mit dem Literaturwert von $\unit[7.3]{ns}$ überein, wenn auch der Fehler wohl etwas zu gering abgeschätzt wurde.
 
 \begin{appendix}
   \Literatur{quellen}
