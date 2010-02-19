@@ -1,0 +1,8 @@
+# Detektor 1    2
+# Grade durch
+0   200
+# Umgeleitet
+203 0
+# Beide
+202 203
+
