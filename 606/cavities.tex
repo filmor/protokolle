@@ -1,0 +1,839 @@
+\documentclass{protokoll}
+
+\newcommand{\versuch}{Cavities}
+\newcommand{\assistent}{Andr\'e Bla}
+\newcommand{\nummer}{E106}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\chapter{Versuchsziel}
+Hohlraumresonatoren, engl.\ Cavities, sind Hochfrequenz-Resonatoren für
+elektromagnetische Wellen, die aus einem leitenden Hohlkörper bestehen.
+Hohlraumresonatoren werden vor allem in der Teilchenphysik als
+Beschleunigungsstruktur für geladene Teilchen an Teilchenbeschleunigern
+eingesetzt. Aber auch in vielen anderen Bereichen der Physik und vor allem 
+der Technik, wie z.~B.\ in Hochfrequenzanwendungen, werden Hohlraumresonatoren
+eingesetzt. Desweiteren kann anhand dieses Beispiels allgemein das Phänomen der
+Resonanz beobachtet und untersucht werden, das in allen Bereichen der Physik
+auftritt und von fundamentaler Bedeutung ist. Ziel dieses Versuches ist es also,
+neben dem Vermessen und Untersuchen einiger spezieller Eigenschaften von
+Hohlraumresonatoren, einen tieferen Einblick in Resonanzphänomene zu bekommen.
+\chapter{Theorie}
+\section{Hohlraumresonator}
+Einen Hohlraumresonator kann man sich aus einem Hohlleiter entstanden
+vorstellen. Bei einem Hohlleiter handelt es sich um ein leitendes Rohr mit
+definierten Abmessungen. Das Lösen der Maxwellgleichungen für den
+ladungsträgerfreien Raum mit den Randbedingungen, die der Hohlleiter bewirkt
+(dies sind verschwindendes elektrisches Feld parallel zu den Hohlleiterwänden am
+Ort der Hohlleiterwände sowie verschwindendes magnetisches Feld orthogonal zu
+den Hohlleiterwänden am Ort der Hohlleiterwände) zu Lösungen, die einer sich in
+Hohlleiterrichtung ausbreitenden Welle entsprechen.
+
+\begin{figure}[h]
+\centering
+\fbox{
+\includegraphics[width=0.45\textwidth]{grafiken/waveguidewall}
+}
+\caption{Darstellung eines Hohlleiters mit einer reflektierenden Wand}
+\end{figure}
+Wenn nun in einen Hohlleiter eine Störung in Form einer leitenden Wand eingefügt
+wird, so wird die sich im Hohlleiter ausbreitende Welle reflektiert. Wenn nun
+etwas weiter vorne eine zweite Wand eingefügt wird, so wird die Reflektierte
+Welle wieder reflektiert und überlagert sich mit der ursprünglichen hinlaufenden
+Welle. Innerhalb dieses Bereichs können sich stehende Wellen ausbilden, falls
+sich die zweimalig reflektierte Welle konstruktiv mit der hinlaufenden Welle
+überlagert. Dies entspricht diskreten Frequenzen -- den Resonanzfrequenzen. Diese
+Frequenzen können mithilfe einer speziellen Einkopplung angeregt werden. Diesen
+Aufbau nennt man dann Hohlraumresonator. 
+\begin{figure}[h]
+\centering
+\fbox{
+\includegraphics[width=0.45\textwidth]{grafiken/doris}
+}
+\caption{Fertig aufgebauter Hohlraumresonator zur Teilchenbeschleunigung wie er
+beispielsweise am DORIS-Beschleuniger am DESY in Hamburg genutzt wird mit
+einigen Kenngrößen}
+\end{figure}
+\section{Feldverteilung im zylinderförmigen Resonator}
+Werden die Maxwellgleichungen für Randbedingungen, die ein zylinderförmiger
+Hohlraumresonator verursacht (siehe oben, verschwindendes paralleles E-Feld und
+verschwindendes orthogonales H-Feld an jeder leitenden Fläche, also den
+Resonatorwänden), gelöst, so erhält man verschiedene Moden mit verschiedenen
+Resonanzfrequenzen. Diese lassen sich nach verschiedenen Eigenschaften
+klassifizieren. So gibt es zwei grundsätzlich verschiedene Arten von
+Eigenschwingungen. Zum einen jene, bei denen das elektrische Feld in z-Richtung
+(die Richtung des gedachten Hohlleiters) verschwindet. Bei diesen Moden ist das
+Elektrische Feld orthogonal zur $z$-Richtung, weshalb sie auch
+Transversal-Elektrische, oder kurz TE-Moden genannt werden. Zu anderen die
+Moden, bei denen das Magnetfeld in $z$-Richtung verschwindet. Diese Moden werden
+entsprechend Transversal-Magnetisch oder TM-Moden genannt.
+
+Desweiteren werden die Moden anhand von drei weiteren Zahlen klassifiziert.
+Davon gibt die erste, $m$, an, wie viele Maxima das Feld in z-Richtung hat. Die
+zweite, $n$, besagt, wie viele Maxima das Feld in radialer Richtung hat. Die
+letzte, $p$, besagt, wie viele Maxima das Feld in $\phi$, d.H. in angularer
+Richtung hat. Die Feldverteilung in longitudinaler Richtung ergibt sich damit
+durch:
+\begin{align*}
+  \text{TE}_{\text{mnp}}\text{-Moden:}& &
+  H_z(z,r,\phi,t) &= H_{mn} \cdot
+    J_m'(k_c r) \cdot \cos(m\phi)\cdot
+    \sin\left(\frac{p\pi}{lz}\right)\cdot
+    \mathrm e^{\mathrm i \omega_{mnp} t} \\
+  \text{TM}_{\text{mnp}}\text{-Moden:}& &
+  E_z(z,r,\phi,t) &= E_{mn} \cdot
+    J_m(k_c r) \cdot \cos(m \phi) \cdot
+    \cos\left(\frac{p \pi}{l z}\right) \cdot
+    \mathrm e^{\mathrm i \omega_{mnp} t}
+\end{align*}
+Dabei bezeichnet $J_m$ die Bessel-Funktion von $m$-ter Ordnung sowie $J'$
+deren Ableitung. $l$ ist die Länge des Resonators und $k_c$ bezeichnet die
+kritische Wellenzahl, die sich wie folgt ergibt:
+\begin{align*} 
+  \text{TE}_{\text{mnp}}\text{-Moden:}& &
+    k_c &= \frac{j_{mn}'}{a}\\
+  \text{TM}_{\text{mnp}}\text{-Moden:}& &
+    k_c &= \frac{j_{mn}}{a}
+\end{align*}
+wobei $j_{mn}$ die $n$-te Nullstelle der $m$-ten Besselfunktion ist -
+$j'_{mn}$ bezeichnet die $n$-te Nullstelle der Ableitung der $m$-ten
+Besselfunktion, $a$ ist der Radius des Resonators.
+Die orthogonalen Felder ergeben sich nach:
+\begin{eqnarray}
+  i k_c^2 \vec{E}_\bot &=& k \vec{\nabla}_\bot E_z + \omega \mu_0 \vec{\nabla}_\bot H_z \times \hat{e}_z\\
+i k_c^2 \vec{H}_\bot &=& k \vec{\nabla}_\bot H_z - \omega \epsilon_0 \vec{\nabla}_\bot E_z \times \hat{e}_z
+\end{eqnarray}
+Die Resonanzfrequenzen ergeben sich durch
+\begin{eqnarray}
+\label{reso1} 
+\text{TE}_{\text{mnp}}\text{-Moden:} \omega_{mnp} &=& c \cdot
+\sqrt{\left(\frac{j^{'}_{mn}}{a}\right)^2 + \left(\frac{p \pi}{l}\right)^2}\\
+\label{reso2} 
+\text{TM}_{\text{mnp}}\text{-Moden:} \omega_{mnp} &=& c \cdot
+\sqrt{\left(\frac{j_{mn}}{a}\right)^2 + \left(\frac{p \pi}{l}\right)^2}\\
+\end{eqnarray}
+Bei gegebener Geometrie des Resonators können die verschiedenen
+Resonanzfrequenzen in einer Modentabelle abgelesen werden.
+
+\section{Fundamentalmode}
+Bei den TM-Moden ist die TM$_{010}$-Mode die Fundamentalmode, das heißt die Mode
+mit der geringsten Frequenz. Bei den TE-Moden ist die TE$_{011}$-Mode die
+Fundamentalmode. Welche dieser beiden Moden die Fundamentalmode des Resonators
+ist hängt von seiner Geometrie ab. Sobald der Durchmesser des Resonators das
+$1.015$-fache der Länge des Resonators überschreitet so ist die TM$_{010}$-Mode
+die Fundamentalmode, ansonsten ist es TE$_{011}$.
+
+In der Teilchenphysik benutzt man zur Beschleunigung von geladenen Teilchen die
+TM$_{010}$-Mode -- diese hat den Vorteil, dass das elektrische Feld entlang der
+$z$-Richtung konstant ist. Dadurch gewinnt ein Teilchen bei einem Durchlauf durch
+den Resonator bei dieser Mode am meisten Energie gegenüber allen anderen Moden
+bei festgelegter maximalem elektrischen Feld im Resonator.
+
+\section{Einkopplung}
+Um den Resonator zum Schwingen anzuregen ist es nötig, Hochfrequenz in den
+Resonator einzukoppeln. Dafür gibt es verschiedene Möglichkeiten. Zum einen
+besteht die Möglichkeit, einen Hohlleiter an den Resonator zu flanschen und
+einen Schlitz an der Flanschstelle einzufügen. Durch die Größe des Schlitzes
+kann die Stärke der Kopplung modifiziert werden.
+
+Weiterhin gibt es Übergänge von Koaxialkabeln in den Resonator. Dies sind zum
+einen die Stiftkopplung, zum anderen die Schleifenkopplung. Bei der
+Stiftkopplung wird einfach der Innenleiter des Koaxialkabels als Stift in das
+Resonatorinnere gebracht, der Außenleiter wird mit dem Resonator selbst
+verbunden. Diese Art der Kopplung koppelt hauptsächlich an das elektrische Feld
+im Resonator. Bei der Schleifenkopplung wird der Innenleiter des Koaxialkabels
+in Form einer Schleife im Inneren des Resonators an den Außenleiter des
+Koaxialkabels gebracht und mit selbigem leitend verbunden. Der Außenleiter ist
+weiterhin mit dem Resonator verbunden. Diese Art der Kopplung stellt also einen
+NF-Kurzschluss dar, koppelt jedoch bei Hochfrequenz an das magnetische Feld.
+
+\section{Kenngrößen}
+Ein Hohlraumresonator kann im einfachsten Fall durch ein Ersatzschaltbild in
+Form einer Parallelschaltung eines Kondensators, einer Spule und eines
+Widerstands dargestellt werden. Die Größen in diesem Schaltbild -- also die
+Kapazität, die Induktivität, und der ohmsche Widerstand, charakterisieren den
+Resonator und seinen Resonanzverlauf vollständig. Desweiteren kann die Qualität
+der Kopplung an den Resonator noch durch den sogenannten Koppelfaktor
+beschrieben werden:
+\begin{align*}
+  \kappa &= \frac{P_{\text{ext}}}{P}
+\end{align*}
+dem Verhältnis der eingehenden Leistung auf dem Einkoppelweg ($P_{\text{ext}}$)
+zu der im Resonator verbrauchten Leistung im Gleichgewichtsfall ohne äußere
+Störungen (z.~B.\ durch durchfliegende Teilchen). Der Widerstand im
+Ersatzschaltbild wir auch Shuntimpedanz genannt.
+
+Die drei Resonatorkenngrößen und der Koppelfaktor können in weitere Größen
+umgerechnet werden. Man benötigt aber immer drei Größen zur Beschreibung des
+Resonators und eine zur Beschreibung der Kopplung. Ein Satz äquivalenter Größen
+sind beispielsweise die Shuntimpedanz, die Resonanzfrequenz sowie die Kreisgüte
+$Q_0$ und das Stehwellenverhältnis $S$ in der Einkoppelleitung.
+
+\section{Messmethoden}
+\subsection{Network-Analyser}
+\begin{figure}[h]
+\centering
+\fbox{
+\includegraphics[width=0.6\textwidth]{grafiken/vna}
+}
+\caption{Abgleichbarer, vektorieller Network-Analyser der Firma \emph{Rohde und
+Schwarz} wie er im Versuch verwendet wird -- hier mit angeschlossenem Cavity}
+\end{figure}
+
+Bei einem Network-Analyser handelt es sich um ein Gerät, dass auf einen Ausgang
+eine Hochfrequenz mit bestimmter Amplitude und Frequenz gibt und dann entweder
+die in diesen Ausgang zurück reflektierte Spannung oder die in einen getrennten
+Eingang transmittierte Spannung im Verhältnis zur abgegebenen Spannung misst.
+Der Network-Analyser fährt dabei die Frequenzen in einem vorher gewählten
+Intervall durch und stellt das frequenzabhängige Ergebnis in verschiedenen
+Darstellungsmodi auf dem Bildschirm dar.
+
+Mithilfe eines Network-Analysers ist es möglich, den Frequenzgang von
+Hochfrequenzkomponenten wie beispielsweise Kabeln, Schwingkreisen, LC- oder
+RC-Filtern oder Ähnlichem zu bestimmen. Auch der Verlauf der Verstärkung eines
+Verstärkerelementes kann mit diesem Gerät untersucht werden.
+
+Ein vektorieller Network-Analyser (VNA) bestimmt weiterhin die Phase zwischen
+dem emittierten und dem reflektierten bzw.\ transmittierten Signal. So ist es
+beispielsweise möglich, einen komplexen Anpasswiderstand, bei dem eine
+Phasendrehung auftritt, zu bestimmen.
+
+Häufig ist der Effekt, den ein Anschlusskabel auf den Frequenzgang hat nicht von
+Interesse -- der reine Frequenzgang des Messobjekts ohne Kabel ist von
+Interesse. Zu diesem Zweck kann man den im Versuch benutzten VNA kalibrieren.
+Dazu wird vor der eigentlichen Messung dorthin, wo später das Messobjekt
+angeschlossen werden soll, also an das Ende des Kabels, zuerst ein definierter
+Kurzschlussstecker, dann ein Abschlusswiderstand und schließlich ein definiertes
+offenes Ende geschraubt. Diese Objekte weisen eine feste
+Reflexionscharakteristik auf (Kurzschlussstecker: Vollständige Reflexion mit
+Phasendrehung um 180°, Abschlusswiderstand: keine Reflexion, offenes Ende:
+Vollständige Reflexion ohne Phasendrehung), womit der VNA die Möglichkeit hat,
+Effekte des Kabels wie Laufzeit und Dämpfung herauszurechnen.
+
+\subsection{Skalare Messungen}
+Bei dieser Messung wird das Cavity an den VNA angeschlossen. Der VNA wird jedoch
+nur im skalaren Betrieb genutzt. So kann der Reflexionsverlauf an der
+Einkopplung gemessen werden. Der Reflexionsfaktor ist dabei über den gesamten
+Frequenzbereich nahe 1, nur in der Nähe der Resonanzfrequenzen weicht er von
+1 ab und wird niedriger. Genau auf der Resonanz hat der Betrag des
+Reflexionsfaktors ein Minimum. Durch diese Messung können die verschiedenen
+Resonanzfrequenzen des Cavities bestimmt werden -- weiterhin kann über den
+Reflexionsfaktor bei der Resonanz auch der Koppelfaktor bestimmt werden. Da
+leider nur der Betrag des Reflexionsfaktors gemessen wird, kann der
+Koppelfaktor auf zwei verschiedene Werte eingeschränkt werden. Weiterhin ist es
+möglich, über die Breite der Kurve die Güte des Cavities zu bestimmen.
+
+\subsection{Vektorielle Messungen}
+Die gleiche Messung wird nun wiederholt, diesmal aber im vektoriellen Modus des
+VNA. So ist es auch hier möglich, die Resonanzfrequenz, die Kreisgüte sowie den
+Koppelfaktor zu bestimmen, wobei der Koppelfaktor diesmal aufgrund der
+vektoriellen Messung eindeutig bestimmt ist. Aus diesen Messergebnissen kann
+jetzt die unbelastete Güte bestimmt werden, die durch externe Impedanzen,
+beispielsweise durch das Kabel, die in einer externen Güte zusammengefasst
+werden können, verschlechtert wird und zu einer geringeren effektiven Güte
+führen. 
+\subsection{Störkörpermessungen}
+Die Störkörpermessmethode ist eine Möglichkeit, das in dem Cavity herrschende
+elektrische Feld zu bestimmen. Dabei wird ein kleiner Störkörper in das Cavity
+eingebracht. Dieser hat ein anderes $\varepsilon$ und $\mu$ als die Luft im
+Cavity, wodurch sich die Resonanzfrequenz ändert. Dieser Effekt kann gemessen
+werden und ist abhängig vom Ort, an dem der Störkörper eingefügt wurde. Mithilfe
+eines kleinen Störkörpers kann so das Feld im Cavity abgetastet werden. Zum
+einsatz kommt dafür ein Teflonkügelchen mit einem Radius von $\unit[1]{mm}$. 
+\subsubsection{Resonante Störkörpermessung}
+Bei der resonanten Störkörpermessung wird für jede Position des Störkörpers die
+Resonanzfrequenz berechnet. Aus der Abweichung $\Delta \omega$ gegenüber der
+Resonanzfrequenz im ungestörten Fall kommt man mithilfe der Slater-Formel auf
+eine Bestimmungsgleichung für das elektrische Feld:
+\begin{eqnarray}
+\label{eres}
+E(z)&=&\sqrt{2\cdot \frac{W}{\alpha_S}\cdot \frac{\Delta \omega(z)}{\omega_0}}
+\end{eqnarray}
+Dabei bezeichnet $W$ die im Resonator gespeicherte Energie und $\alpha_S$ die
+Störkörperkonstante:
+\begin{eqnarray}
+\label{alphas}
+\alpha_S &=& \frac{1}{2} \cdot (\epsilon - \epsilon_0) \cdot V_S
+\end{eqnarray}
+wobei $V_S$ das Volumen des Störkörpers bezeichnet.
+\subsubsection{Nichtresonante Störkörpermessung}
+Bei der nichtresonanten Störkörpermessug wird die Änderung des skalaren
+Reflexionsfaktors $\Delta \rho$ an der stelle der ungestörten Resonanzfrequenz
+gemessen. Wieder mithilfe der Slater-Formel sowie den Ergüssen aus Kapitel 4 des
+begleitenden Skriptes erhält man für das elektrische Feld am Ort des
+Störkörpers:
+\begin{eqnarray}
+\label{enres}
+E(z)&=&\sqrt{\frac{(1+\kappa)^2}{2 \kappa Q_0} \cdot \frac{W}{\alpha_S} \cdot \left| \Delta \rho(z) \right|}
+\end{eqnarray}
+
+\subsection{Bestimmung der Shuntimpedanz}
+Eine Integration des E-Feldes entlang der $z$-Richtung ergibt die gesamte
+Spannung im Cavity. Gemäß
+\begin{eqnarray*}
+  P&=&\frac{U^2}{2 \cdot R_S}
+\end{eqnarray*}
+kann aus dieser Spannung, zusammen mit der am VNA eingestellten Leistung, die
+Shunt-Impedanz gemessen werden.
+
+Desweiteren kann aus den in der Störkörpermessung gemessenen Daten die
+Shunt-Impedanz nach folgenden Formeln bestimmt werden:
+\begin{eqnarray}
+\label{Rs}
+R_S &=& \Lambda \cdot \frac{2 Q_0}{\omega_0^2 \cdot \alpha_S} \cdot \left| \int_{-L/2}^{L/2}{\sqrt{\Delta\omega(z)} dz} \right|^2\\
+R_S &=& \Lambda \cdot \frac{(1+\kappa)^2}{2 \omega_0 \cdot \kappa \cdot \alpha_S} \cdot \left| \int_{-L/2}^{L/2}{\sqrt{|\Delta\rho(z)|} dz} \right|^2
+\end{eqnarray}
+Dabei bezeichnet $\Lambda$ den Laufzeitfaktor, der sich daraus ergibt, dass ein
+Teilchen mit endlicher Geschwindigkeit aufgrund von Laufzeiteffekten nicht die
+Maximale Spannung sieht. Es ist:
+\begin{eqnarray}
+  \Lambda &=& \frac{U_{\text{eff}}^2}{U_{\text{max}}^2}
+\end{eqnarray}
+mit $U_{\text{eff}}$ der Spannung, die ein Teilchen tatsächlich sieht und
+$U_{max}$ der Maximalspannung im Cavity.
+\chapter{Versuchsdurchführung}
+\section{Vorbereitung}
+Vorbereitend sind einige Aufgaben zu lösen: 
+\subsection{Eigenmoden des Resonators}
+Der Resonator hat einen Innendurchmesser von $\unit[78.5]{mm}$ und eine Länge
+von $\unit[20]{mm}$ und ist zylindrisch aufgebaut. Gemäß \eqref{reso1} und
+\eqref{reso2} können so die Resonanzfrequenzen berechnet werden. Man erhält für
+die Zehn moden mit den niedrigsten Resonanzfrequenzen:
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ccc}
+  \toprule
+  Nr & Mode & Resonanzfrequenz / $\unit{MHz}$ \\
+  \midrule
+  1&TM$_{010}$&2925,394\\
+  2&TM$_{110}$&4661,164\\
+  3&TM$_{210}$&6247,332\\
+  4&TM$_{020}$&6715,005\\
+  5&TM$_{310}$&7761,279\\
+  6&TE$_{111}$&7827,288\\
+  7&TM$_{011}$&8050,337\\
+  8&TE$_{211}$&8369,836\\
+  9&TM$_{120}$&8534,261\\
+  10&TM$_{111} \& \text{TE}_{011}$&8830,427\\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{$\unit{dB}$ und $\unit{dBm}$}
+Die Einheit Dezibel ($\unit{dB}$) ist eine in der Hochfrequenztechnik häufig
+benutzte Einheit, da sie einfache Rechnungen ermöglicht. Das Dezibel ist eine
+logarithmische Einheit wodurch es möglich ist, an Stellen an denen man lineare
+Einheiten Multiplizieren müsste (wie beispielsweise bei der Dämpfung zweier
+hintereinandergeschalteter Dämpfungselemente), das Dezibel einfach zu addieren.
+Das Dezibel gibt dabei Verhältnisse von Leistungen an.
+
+Die Definition lautet wie folgt:
+\begin{eqnarray}
+  V / dB &=& 10\cdot \log_{10}(V) = 10 \cdot \log_{10}\left(\frac{P_1}{P_2}\right)
+\end{eqnarray}
+Der Vorfaktor 10 bewirkt handlichere Zahlenwerte. Dabei entsprechen
+$\unit[10]{dB}$ einer Abschwächung/Verstärkung um einen Faktor 10, 3dB einem
+Faktor 2. Da Spannungen wegen $P=UI$ und $U=RI$ sich nur mit der Wurzel aus dem
+Leistungsfaktor verändern, ergibt sich das Dezibel bei Spannungsverhältnissen
+entsprechend zu:
+\begin{eqnarray}
+  V / dB &=& 20\cdot \log_{10}(V) = 20 \cdot \log_{10}\left(\frac{U_1}{U_2}\right)
+\end{eqnarray}
+Die Einheit $\unit{dBm}$ bezeichnet ein Leistungsverhältnis. Dabei wird $P_2$
+auf $\unit[1]{mW}$ gesetzt, wodurch sich dann ein Wert in $\unit{dBm}$ direkt
+ein eine Leistung in $\unit{mW}$ umrechnen lässt.
+\subsection{VNA}
+Zu Beginn des Versuches hat uns der Tutor mit der Bedienung und Funktionsweise
+des im Versuch verwendeten VNA vertraut gemacht. Insbesondere wurde dabei Wert
+auf die verschiedenen Anzeigemodi und die Kalibrierung mit dem zur Verfügung
+stehenden Kalibrierset gelegt.
+
+\section{Dämpfung und Reflexion von Koaxialkabeln}
+\begin{figure}[h]
+\centering
+\fbox{
+\subfigure[ST-18 (blau)]{\includegraphics[width=0.49\textwidth]{grafiken/kabel_blau}}
+\subfigure[RG-142 (braun)]{\includegraphics[width=0.49\textwidth]{grafiken/kabel_braun}}
+}
+\caption{Dämpfungsverlauf von Koaxialkabeln}
+\end{figure}
+In diesem Versuchsteil haben wir zur Bekanntmachung mit dem Gerät ein
+Koaxialkabel vermessen. Dazu wurde mithilfe des Kabels der Ausgang und der
+Eingang des VNA verbunden. So ist der Dämpfungsverlauf des Kabels zu erkennen.
+Dabei wurde jegliche Kalibrierung aus dem Gerät entfernt, sodass tatsächlich die
+Dämpfung des Kabels gemessen wird.
+
+Es war festzustellen, dass bei beiden Kabeln die Dämpfung mit der Frequenz
+zunimmt. Desweiteren ist die Dämpfung bei $\unit[8]{GHz}$ bei dem blauen Kabel
+(ST-18) mit ca.\ $\unit[1.3]{dB}$ deutlich niedriger als die Dämpfung des
+braunen Kabels (RG-142), die bei der gleichen Frequenz ca.\ $\unit[3]{dB}$
+beträgt.
+
+Für die Messung der Reflexion haben wir das Kabel an einem Ende an den Ausgang
+des VNA angeschlossen, an dem anderen einfach offen gelassen. Der Verlauf der
+Reflexion ist wieder bei beiden Kabeln ähnlich -- der Reflexionsfaktor nimmt mit
+zunehmender Frequenz ab. Dieser Effekt ist wieder beim RG-142 deutlich stärker
+ausgeprägt als beim ST-18. Dies kann man durch eine nahezu perfekte Reflexion
+des Signals am Ende des Kabels erklären, die Abnahme mit der Frequenz ist nur
+der Effekt der Dämpfung auf dem Kabel.
+
+Der Unterschied zwischen den Kabeln kann viele Gründe haben, beispielsweise die
+Geometrie (Durchmesser Innen-/ Außenleiter), das Material und die Beschaffenheit
+des Dielektrikums sowie das Material des Leiters. Diese Parameter haben einen
+großen Einfluss auf die Qualität des Kabels.
+\section{Skalare Messungen}
+Bei diesem Versuchsteil haben wir alle Resonanzen im Bereich des VNA, das heißt
+bis $\unit[8]{GHz}$, der Cavities gesucht und vermessen. Die Cavities sind
+identisch, nur der Einkoppelort für die HF ist unterschiedlich. Einmal befindet
+sie sich oben auf dem Zylindermantel, einmal vorne auf einer der Stirnflächen.
+Beide Male handelt es sich um eine Schleifenkopplung. Wir haben den Betrag des
+skalaren Reflexionsfaktors aufgenommen. Den Betrag auf der Resonanzfrequenz
+sowie die Resonanzfrequenz selbst haben wir gemessen. Desweiteren haben wir noch
+verglichen, welche Mode die gefundene Resonanz darstellt und wie die berechnete
+Resonanzfrequenz ist.
+
+Aus dem Reflexionsfaktor in Resonanz wird nach
+\begin{eqnarray*}
+  \kappa &=& \frac{1+\rho}{1-\rho}
+\end{eqnarray*}
+der Koppelfaktor berechnet. Da das Vorzeichen von $\rho$ nicht bekannt ist,
+ergeben sich zwei Werte für $\kappa$.
+
+Weiterhin bestimmen wir die Breite der Kurve. Da der Reflexionsfaktor aufgrund
+des von 1 verschiedenen Koppelfaktors nie 0 wird, kann auch die Halbwertsbreite
+nicht bei den $\frac{1}{\sqrt{2}}$-Punkten abgelesen werden, sondern muss bei
+den Punkten abgelesen werden, für die gilt:
+\begin{eqnarray}
+  |\rho(\Delta \omega_H/2)| &=& \frac{\sqrt{\kappa^2+1}}{\kappa+1}
+\end{eqnarray}
+Die belastete und unbelastete Kreisgüte kann dann durch 
+\begin{eqnarray}
+  Q&=&\frac{Q_0}{1+\kappa}=\frac{\omega_0}{\Delta \omega_H}
+\end{eqnarray}
+bestimmt werden.
+
+An manchen Stellen deutet der Verlauf des skalaren Reflexionsfaktors auf eine
+kleine Resonanz hin. Bei Unsicherheiten ob dies tatsächlich eine Resonanz ist
+kann in den vektoriellen Modus des VNA gewechselt werden und nach eine
+Phasensprung bei der vermeindlichen Resonanzfrequenz gesucht werden. Wird dieser
+nicht gefunden, handelt es sich nicht um eine Resonanz.
+
+Sobald eine Resonanz als
+solche identifiziert war ist die Mittenfrequenz des VNA auf die Resonanzfrequenz
+einzustellen, und der Frequenzhub ("`Span"') so klein zu wählen, dass die
+Resonanzkurve gut auf dem Bildschirm zu sehen ist. Jetzt ist der VNA für genau
+diesen Frequenzbereich zu kalibrieren, um genaue Messwerte zu erhalten.
+
+Die Ergebnisse der Resonanzfrequenzbestimmung für den Resonator mit oben
+liegender Einkopplung sind in folgender Tabelle zu finden:
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{cccc}
+  \toprule
+  Resonanzfrequenz $f$ / MHz & Mode & berechnete Frequenz $f_0$/
+$\unit{MHz}$ & $\frac{\delta f}{f} = \frac{f_0-f}{f_0}$ / \% \\
+\midrule
+	2994&	TM010&	2925&	-2,36\\
+	4527&	TM110	&4661&	2,87\\
+	6197&	TM210	&6247&	0,8\\
+	6943&	TM020	&6715&	-3,4\\
+	7732&	TM310	&7761&	0,37\\
+\bottomrule
+\end{tabular}
+\caption{Resonanzfrequenzen des ersten Cavities mit obenliegender Einkopplung}
+\end{center}
+\end{table}
+Dabei haben wir den Wert für die Resonanzfrequenz auf MHz genau abgelesen. Mit
+dem Messaufbau ist prinzipiell eine genauere Messung möglich, weshalb der Fehler
+auf die Messung der Ablesefehler von einem MHz ist.
+
+Die gleichen Ergebnisse für die Messung am zweiten Cavity sind in folgender
+Tabelle zu sehen:
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{cccc}
+  \toprule
+Resonanzfrequenz $f$ / MHz & Mode & berechnete Frequenz $f_0$/ MHz & $\frac{\delta f}{f} = \frac{f_0-f}{f_0}$ / \% \\
+\midrule
+	4528&	TM110&	4661&	2,86\\
+	6201&	TM210	&6247&	0,74\\
+	6205&	TM210	&6247&	0,67\\
+	7740&	TM310	&7761&	0,27\\
+	7742&	TM310	&7761&	0,24\\
+  \bottomrule
+\end{tabular}
+\caption{Resonanzfrequenzen des zweiten Cavities mit seitlicher Einkopplung}
+\end{center}
+\end{table}
+Wieder ist der Fehler auf die Messung der Ablesefehler von \unit[1]{MHz}.
+
+Man sieht dass die berechneten Resonanzfrequenzen um bis zu ca.\ \unit[3]{\%}
+von den gemessenen abweichen. Diese Abweichung erklärt sich vermutlich durch
+Ungenauigkeiten bei der Fertigung (Messfehler auf die Länge und den Durchmesser)
+sowie durch die Tatsache, dass das Loch im Cavity bei der Berechnung der
+Resonanzfrequenzen nicht berücksichtigt wurde. Genauere Analysen wären
+beispielsweise durch eine numerische Simulation von genau dem aufgebauten Cavity
+möglich. Weiterhin sind die genutzten Formeln in guter Näherung brauchbar -- ein
+relativer Fehler von wenigen Prozent ist durchaus gut.
+
+Außerdem fällt auf, dass bei dem zweiten Cavity die TM010- sowie die TM020-Moden
+nicht messbar sind. Das kann durch den Einkoppelort erklärt werden. Offenbar ist
+es so, dass sich die Einkoppelspule entweder an einem Ort befindet, an dem das
+Magnetfeld der entsprechenden Mode verschwindet oder dass die Orientierung der
+Spule so ist, dass sie parallel zu den Magnetfeldlinien liegt, sodass sie nicht
+an selbige koppeln kann. Ein Blick auf die Feldplots im Anhang an das
+begleitende Skript bestätigen das. Bei der TM020-Mode ist die Einkopplung gerade
+in einem Minimum des Feldes, bei der TM010-Mode verlaufen die Feldlinien
+parallel zur Spule.
+
+Die TM210 und TM310-Moden tauchen zweimal auf, dabei handelt es sich um zwei
+verschiedene Polarisationen derselben Mode, die aufgrund von Asymmetrien
+aufspalten. Bei der TM310-Mode konnte die volle Halbwertsbreite nicht bestimmt
+werden, da sich die beiden Resonanzpeaks überlagern. Aus diesem Grunde wurde
+der $\rho_*$-Punkt nur auf einer Seite gemessen und sein Frequenzabstand zur
+Resonanzfrequenz verdoppelt als $\omega_H$ gewählt.
+
+In der folgenden Tabelle sind die gemessenen Werte für den Reflexionsfaktor
+$\rho_0$ bei der Resonanz, beide möglichen Werte für den Koppelfaktor $\kappa_+$
+und $\kappa_-$, den aus dem Koppelfaktor berechneten Wert bei dem die
+Halbwertsbreite abgelesen werden muss $\rho_*$ sowie die Halbwertsbreite $\Delta
+\omega_H$ selbst in Abhängigkeit von der Resonanzfrequenz $f$ zu sehen.
+Weiterhin ist die aus den Messdaten errechnete belastete Güte $Q$ sowie die
+unbelastete Güte $Q_0$ für beide Fälle des Koppelfaktors eingetragen.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c|cccccccc}
+  \toprule
+Frequenz $f$ / MHz & $\rho_0$ & $\kappa_+$ &  $\kappa_-$ & $\rho_*$ & $\Delta \omega_H$ & $Q$ & $Q_{0,+}$ & $Q_{0,-}$ \\
+\midrule
+2994&0,28&1,77&0,56&0,73&2320&1290,52&3579,8&2018,01\\
+4527&0,34&2,04&0,49&0,75&12700&356,46&1083,45&531,23\\
+6197&0,87&14,75&0,07&0,94&11520&537,93&8471,4&574,41\\
+6943&0,45&2,63&0,38&0,78&14220&488,26&1774,19&673,64\\
+7732&0,89&17,18&0,06&0,95&27800&278,13&5056,9&294,32\\
+\bottomrule
+\end{tabular}
+\caption{Kenndaten der verschiedenen Moden am Resonator mit obenliegender Einkopplung}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c|cccccccc}
+\toprule
+Frequenz $f$ / MHz & $\rho_0$ & $\kappa_+$ &  $\kappa_-$ & $\rho_*$ & $\Delta \omega_H$ & $Q$ & $Q_{0,+}$ & $Q_{0,-}$ \\
+\midrule
+
+4528&0,83&10,63&0,09&0,92&5560&814,39&9469,63&891,02\\
+6201&0,37&2,17&0,46&0,75&1635&3792,66&12032,55&5538,35\\
+6205&0,12&1,28&0,78&0,71&1560&3977,56&9070,84&7083,82\\
+7740&0,03&1,06&0,94&0,71&4490&1723,83&3557,77&3344,16\\
+7742&0,4&2,32&0,43&0,76&2880&2688,19&8919,03&3847,97\\
+\bottomrule
+\end{tabular}
+\caption{Kenndaten der verschiedenen Moden am Resonator mit seitlicher Einkopplung}
+\end{center}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\fbox{
+\subfigure[Resonanzkurve der TM210-Mode im Cavity mit seitlicher
+Einkopplung]{\includegraphics[width=0.49\textwidth]{grafiken/tm210}}
+\subfigure[Resonanzkurve der TM310-Mode im Cavity mit seitlicher Einkopplung -
+hier nur die Hälfte von $\omega_H$
+messbar]{\includegraphics[width=0.49\textwidth]{grafiken/tm310}}
+}
+\caption{Exemplarische Resonanzkurven -- hier der Moden, die in 2
+Polarisationsrichtungen aufspalten. Zu Erkennen ist das Messverfahren: Einen
+Cursor auf die Resonanz setzen, einen auf den $\rho_*$-Wert auf der linken
+Seite, einen auf der rechten Seite und dann alle gewünschten Werte ablesen}
+\end{figure}
+\section{Vektorielle Messungen}
+Bei diesem Teil wird wieder das Cavity mit der obenliegenden Schleifenkopplung
+gewählt. Im Bereich um die TM010-Mode wird der komplexe Reflexionsfaktor
+gemessen. Dies wird zuerst unkalibriert durchgeführt. Dabei sieht man, dass es
+einen Reflexionskreis und einen Resonanzkreis gibt. Der Reflexionskreis könnte
+bei einer solchen Messung als Referenz gewählt werden, falls das Gerät nicht
+kalibrierbar ist. So ist bei dem Reflexionskreis $\rho$ gleich 1, der
+Reflexionsfaktor bei der Resonanz kann dann am Resonanzpunkt (das ist der Punkt,
+der dem Schnittpunkt beider Kreise im Diagramm auf dem Resonanzkreis
+gegenüberliegt) zu bestimmen. Er ist gleich dem Verhältnis der Entfernung des
+Reflexionspunktes zur Null zum Radius des Reflektionskreises. Ein solches
+Diagramm im folgenden zu sehen.
+
+\begin{figure}[h]
+\centering
+\fbox{
+\includegraphics[width=0.75\textwidth]{grafiken/tm010vecuncal}
+}
+\caption{Verlauf des komplexen Reflexionsfaktors bei einer unkalibrierten
+Messung. Gut sichtbar der Resonanzkreis und der Reflexionskreis}
+\end{figure}
+Wenn nun eine Kalibration durchgeführt wird reduziert sich der Reflexionskreis
+auf einen einzigen Punkt bei $|\rho|=1$, von diesem Punkt an ist der
+Resonanzkreis zu sehen. Dieser Effekt ist auch sofort einleuchtend, wenn man
+sich die Funktionsweise der Kalibration vor Augen führt. Allerdings besteht noch
+ein globaler Phasenoffset der nicht durch die Kalibration ausgeglichen werden
+konnte, dessen Ursache vermutlich in der Laufzeit durch den Anschlussstecker des
+Cavities zu finden ist. Dieser kann jedoch durch einen manuell einstellbaren
+Offset im VNA ausgeglichen werden, sodass der Resonanzpunkt jetzt auf der
+Reellen Achse liegt. Der Reflexionsfaktor bei Resonanz kann direkt durch den
+Abstand vom Nullpunkt gemessen werden. Solche Bilder vor und nach der
+Kalibration sind im Folgenden zu sehen:
+\begin{figure}[h]
+\centering
+\fbox{
+\subfigure[kalibriert - ohne Phasen
+Offset]{\includegraphics[width=0.49\textwidth]{grafiken/tm010veccal}}
+\subfigure[kalibriert - mit Phasen Offset, diesmal im Smith-Diagramm, das eine
+logarithmische Darstellung in der komplexen Ebene
+ermöglicht]{\includegraphics[width=0.49\textwidth]{grafiken/tm010veccalphaseoffset}}
+}
+\caption{Verlauf des komplexen Reflexionsfaktors der TM010-Mode beim Cavity mit
+obenliegender Einkopplung}
+\end{figure}
+In dieser Darstellung kann mithilfe eines Markers die Resonanzfrequenz ermittelt
+werden. Weiterhin ist der Frequenzabstand der beiden vertikal maximal
+auseinanderliegenden Punkte auf dem Resonanzkreis gleich $\omega_H$. Zusätzlich
+kann auf diese Weise das Vorzeichen von $\rho$ im Resonanzfall bestimmt werden
+-- wenn die Null im Resonanzkreis liegt ist es positiv, sonst negativ. Da wir
+diese Messung parallel zu der skalaren Messung durchgeführt habe, sind unsere
+Werte identisch wie bei der skalaren Messung.
+
+Ein Genauigkeitsvorteil konnte bei keiner der beiden Methoden bei diesem Gerät
+festgestellt werden -- einzig das Wissen um das Vorzeichen von $\rho_0$ ist
+ausschließlich in der vektoriellen Darstellung möglich. So ergeben sich die
+Werte für $\kappa$, $Q_0$ und $Q$ wie in nachfolgender Tabelle zu sehen.
+Zusätzlich ist in dieser Tabelle die externe Güte nach:
+\begin{eqnarray}
+  Q_{\text{ext}} &=& \frac{Q_0 Q}{Q_0-Q}
+\end{eqnarray}
+für alle Resonanzen in beiden Cavities aufgetragen
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c|cccccc}
+  \toprule
+  Frequenz $f$ / MHz & Einkopplungsort & $\operatorname{sign}(\rho)$ &  $\kappa$ & $Q$ & $Q_{0}$ & $Q_{ext}$ \\
+\midrule
+2994&oben&+&1,77&1290,52&3579,8&2018,01\\
+4527&oben&+&2,04&356,46&1083,45&531,23\\
+6197&oben&+&14,75&537,93&8471,4&574,41\\
+6943&oben&+&2,63&488,26&1774,19&673,64\\
+7732&oben&+&17,18&278,13&5056,9&294,32\\
+4528&seitlich&+&10,63&814,39&9469,63&891,02\\
+6201&seitlich&-&0,46&3792,66&5538,35&12032,55\\
+6205&seitlich&-&0,78&3977,56&7083,82&9070,84\\
+7740&seitlich&-&0,94&1723,83&3344,16&3557,77\\
+7742&seitlich&-&0,43&2688,19&3847,97&8919,03\\
+\bottomrule
+\end{tabular}
+\caption{Vorzeichen des Reflexionsfaktors und sich daraus ergebende Kenngrößen beider Cavities}
+\end{center}
+\end{table}
+
+\section{Störkörpermessungen}
+Bei dieser Messung wird ein Störkörper, der aus einem Kügelchen Teflon mit
+Radius \unit[1]{mm} besteht, in ein weiteres Cavity mit obenliegender Kopplung
+eingebracht. Daraus ergibt sich nach \eqref{alphas} die Störkörperkonstante zu:
+\begin{eqnarray}
+  \alpha_S&=&2,30^\cdot10^{-9}
+\end{eqnarray}
+Dieses Kügelchen ist auf einer Garnschnur aufgezogen, deren Volumen als klein
+gegenüber dem Störkörper angenommen wird. Diese Schnur ist an einer Halterung
+befestigt und durch die Öffnung des Resonators gefädelt. Dieser ist beweglich
+montiert und seine Position in longitudinaler Richtung kann über einen Weggeber
+abgelesen werden. So ist es möglich den Störkörper längs durch den Resonator zu
+bewegen und für verschiedene Punkte eine Störkörpermessung durchzuführen. Dabei
+werden die Messdaten sowohl für die resonante als auch für die nichtresonante
+Störkörpermessmethode simultan aufgenommen.
+
+Dazu wird zuerst das Cavity ohne eingefügten Störkörper vermessen. Ein Marker
+wird auf die Resonanzfrequenz gesetzt, ein weiterer Marker (mitlaufend) auf das
+Minimum (jetzt liegen beide Marker auf der selben stelle). Sobald der Störkörper
+eingefügt wird kann an einem Marker der Reflexionsfaktor an der Stelle der
+ursprünglichen Resonanz abgelesen werden. Der Frequenzversatz der beiden Marker
+entspricht der Änderung der Resonanzfrequenz durch den Störkörper. Diese Daten
+werden in Abhängigkeit von der Position des Störkörpers aufgenommen. Ein
+beispielhaftes Bild für eine Messung ist im folgenden zu sehen:
+\begin{figure}[h]
+\centering
+\fbox{
+\includegraphics[width=0.75\textwidth]{grafiken/stoer}
+}
+\caption{Verlauf des Reflexionsfaktors bei der Störkörpermessung -- gut zu sehen
+die zwei Marker und die oben rechts ablesbaren Messwerte}
+\end{figure}
+Für das Cavity im ungestörten Fall haben wir folgende Daten aufgenommen bzw.\ 
+berechnet:
+\begin{eqnarray}
+f_{0} &=& 2996,72 \text{MHz}\\
+\Delta f &=& 2148 \text{kHz}\\
+Q &=& 1395,4\\
+|\rho_0| &=& 0,4385\\
+sign(\rho_0) &=& -1\\
+\kappa &=& 0,3903\\
+Q_0 &=& 1940,1\\
+P_0 &=&0 \text{dBm} = 1 \text{mW}
+\end{eqnarray}
+Die Daten sind in folgender Tabelle zu sehen:
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ccc}
+  \toprule
+Position $z$ / mm & $\Delta f$ / kHz & $\Delta \rho_S \cdot 1000$ \\
+\midrule
+31,8&22,5&0,33\\
+34&22,5&0,21\\
+37,8&22,5&0,26\\
+39&22,5&2,04\\
+41,2&22,5&0,01\\
+42,9&22,5&0,31\\
+44,7&22,5&0,8\\
+45,4&22,5&1,05\\
+46,6&45&1,44\\
+48&62,5&2,97\\
+50,3&77,5&5,98\\
+51,6&107,5&7,46\\
+52,5&112,5&8,34\\
+53,5&115&8,8\\
+54,6&112,5&9,25\\
+55,4&112,5&9,55\\
+56,4&112,5&9,6\\
+57,5&112,5&9,4\\
+58,6&112,5&8,55\\
+59,2&97,5&8\\
+60,5&97,5&6,75\\
+61,5&77,5&5,59\\
+62,8&70&4,16\\
+64,6&55&2,28\\
+65,6&25&1,31\\
+67,2&22,5&0,6\\
+68,5&25&0,18\\
+69,9&0&0\\
+\bottomrule
+\end{tabular}
+\caption{Messdaten der Störkörpermessung}
+\end{center}
+\end{table}
+
+
+Aus diesen Daten kann dann gemäß \eqref{eres} das elektrische Feld nach der
+resonanter Messmethode und gemäß \eqref{enres} das Feld nach der nichtresonanten
+Störkörpermessmethode bestimmt werden. Die im Resonator gespeicherte Energie
+kann durch 
+\begin{eqnarray}
+  Q=\frac{\omega_0 \cdot W}{P_{\text{abs}}}
+\end{eqnarray} 
+berechnet werden, wobei $P_{\text{abs}}$ die im Resonator absorbierte Leistung
+darstellt. Es gilt:
+\begin{eqnarray}
+  P_{\text{abs}}=(1-|\rho|^2) \cdot P_0
+\end{eqnarray}
+Mit den gemessenen Daten ergibt sich dann:
+\begin{eqnarray}
+  P_{\text{abs}}&=& \unit[807.7]{\mu W}\\
+  W &=& \unit[59.86]{pJ}
+\end{eqnarray}
+Weiterhin muss berücksichtigt werden, dass wir die Differenz der skalaren
+Reflexionsfaktoren gemessen haben, das heißt
+\begin{eqnarray}
+  \Delta \rho_S &=& |\rho_{\text{stör}}|-|\rho_0|
+\end{eqnarray}
+Für das Berechnen des elektrischen Feldes muss aber die der Betrag der Differenz
+der Reflexionsfaktoren in der komplexen Ebene verwendet werden. Diesen erhält
+man über:
+\begin{eqnarray}
+  \Delta \rho &=& \sqrt{\kappa (2 \cdot \Delta \rho_S \cdot \rho_0 + (\Delta \rho_S)^2)}
+\end{eqnarray}
+aus der von uns gemessenen Größe $\Delta \rho_S$.
+
+Die Werte für das $\Delta \rho$ sowie für das elektrische Feld für beide
+Messmethoden sind in folgender Tabelle zu sehen:
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c|ccc}
+  \toprule
+Position $z$ / mm & $E_{\text{resonant}}$ / $\frac{V}{m}$ & $\Delta \rho \cdot 1000$ & $E_{\text{nicht resonant}}$ / $\frac{V}{m}$\\
+\midrule
+31,8&210,09&10,63&199,7\\
+34&210,09&8,48&178,36\\
+37,8&210,09&9,47&188,51\\
+39&210,09&26,44&314,97\\
+41,2&210,09&2,03&87,2\\
+42,9&210,09&10,3&196,61\\
+44,7&210,09&16,56&249,22\\
+45,4&210,09&18,97&266,78\\
+46,6&297,12&22,22&288,73\\
+48&350,16&31,95&346,19\\
+50,3&389,92&45,4&412,68\\
+51,6&459,23&50,74&436,31\\
+52,5&469,79&53,69&448,78\\
+53,5&474,98&55,16&454,91\\
+54,6&469,79&56,57&460,7\\
+55,4&469,79&57,49&464,4\\
+56,4&469,79&57,62&464,95\\
+57,5&469,79&57,03&462,55\\
+58,6&469,79&54,36&451,61\\
+59,2&437,35&52,57&444,1\\
+60,5&437,35&48,26&425,49\\
+61,5&389,92&43,88&405,75\\
+62,8&370,57&37,83&376,71\\
+64,6&328,48&27,95&323,81\\
+65,6&221,46&21,22&282,13\\
+67,2&210,09&14,28&231,43\\
+68,5&221,46&7,85&171,62\\
+69,9&0&0&0\\
+\bottomrule
+\end{tabular}
+\caption{Messdaten der Störkörpermessung}
+\end{center}
+\end{table}
+Werden die Daten für das elektrische Feld entlang der $z$-Richtung integriert
+erhält man die maximale Spannung im Cavity. Wir erhalten:
+\begin{eqnarray}
+  U_{\text{resonant}}&=&\unit[11.85]{V}\\
+  U_{nicht resonant}&=&\unit[11.76]{V}\\
+\end{eqnarray}
+
+Wenn man nun davon ausgeht, ein einfach geladenes Teilchen mit
+Lichtgeschwindigkeit würde das Cavity so durchfliegen, dass das elektrische Feld
+gerade dann maximal wird, wenn sich das Teilchen bei $z=\unit[56]{mm}$ befindet,
+so ergibt sich die dann resultierende Beschleunigungsspannung durch Integration
+des elektrischen Feldes entlang $z$, wobei für jede Position der Wert des Feldes
+noch mit einem Faktor $k$ gewichtet werden muss, der daher rührt, dass das
+Elektrische Feld einen kosinusförmigen zeitlichen Verlauf hat. Es gilt:
+\begin{eqnarray}
+  k&=&cos(2 \pi f \cdot \frac{z}{c})
+\end{eqnarray}
+Für diese Beschleunigungsspannung ergibt sich durch numerische Integration der
+gewonnenen Messdaten:
+\begin{eqnarray}
+  U_{b,\text{resonant}}&=&\unit[9.40]{V}\\
+  U_{b,\text{nicht resonant}}&=&\unit[9.39]{V}\\
+\end{eqnarray}
+Daraus lässt sich der so genannte Laufzeitfaktor gewinnen. Er ergibt sich durch:
+\begin{eqnarray}
+\Lambda&=&\frac{U_b^2}{U^2}\\
+\Lambda_{\text{resonant}}&=&0.629\\
+\Lambda_{\text{nicht resonant}}&=&0.638
+\end{eqnarray}
+Mit den obigen Laufzeitfaktoren und \eqref{Rs} ergibt sich die Shunt-Impedanz
+nach beiden Methoden zu:
+\begin{eqnarray}
+  R_{S, \text{resonant}} &=& \unit[152.04]{k\Omega} \\
+  R_{S, \text{nicht resonant}} &=&  \unit[151.88]{k\Omega}
+\end{eqnarray}
+
+\chapter{Fazit}
+
+\newpage
+\listoffigures
+\listoftables
+\end{document}
