@@ -1,12 +1,7 @@
-\documentclass[a4paper,oneside,toc=bibliography]{scrartcl}
+\documentclass[a4paper,oneside]{scrartcl}
 
-\newcommand{\Nummer}{<++>}
-\newcommand{\Versuch}{<++>}
-\newcommand{\Datum}{<++>}
-
-%%fakesection prefix
-%\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{amsmath, amsthm, amssymb, amsrefs}
+\usepackage[scale=0.8]{geometry}
 \usepackage[ngerman]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{makeidx, graphicx, tikz, units, calc, pgfplots, fancyhdr}
@@ -20,7 +15,7 @@
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{\scriptsize P. PÃ¼tsch, B. Sauer - Versuch \Nummer: \Versuch}
+\rhead{\scriptsize P. Pütsch, B. Sauer - Versuch \Nummer: \Versuch}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.1pt}
 
@@ -34,33 +29,7 @@
 
 \usepgflibrary{plotmarks}
 
-\author{Philip PÃ¼tsch und Benedikt Sauer}
-
-\newcommand{\origdoc}{}
-\let\origdoc=\document
-\let\endorigdoc=\enddocument
-
-\renewenvironment{document}
-{\begin{origdoc}
-    \begin{titlepage}
-        \title{\Large{Advanced Laboratory Course}\\
-                \vspace{0.5cm}\textnormal{Wintersemester 09/10}\\
-                \vspace{2cm}\large\textnormal{Protokoll zu}\\
-                \vspace{0.5cm}\Huge{\Versuch}\vspace{1cm}
-        }
-        \author{Philip PÃ¼tsch, Benedikt Sauer\\
-                Gruppe p17\\
-        }
-        \date{\vspace{1cm} UniversitÃ¤t Bonn \\ \Datum}
-    \end{titlepage}
-    \maketitle
-    \newpage
-    \tableofcontents
-    \newpage
-}
-{
-    \end{origdoc}
-}
+\author{Philip Pütsch und Benedikt Sauer}
 
 \newcommand{\Literatur}[1]
 {
@@ -82,6 +51,23 @@
 \makeindex
 %%fakesection
 
+\input{meta}
+
 \begin{document}
-<++>
+\begin{titlepage}
+  \title{\Large{Advanced Laboratory Course}\\
+  \vspace{0.5cm}\textnormal{Wintersemester 09/10}\\
+  \vspace{2cm}\large\textnormal{Protokoll zu}\\
+  \vspace{0.5cm}\Huge{\Versuch}\vspace{1cm}
+  }
+  \author{Philip Pütsch, Benedikt Sauer\\
+  Gruppe p17\\
+  }
+  \date{\vspace{1cm} Universität Bonn \\ \Datum}
+\end{titlepage}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\input{text}
 \end{document}
