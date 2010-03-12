@@ -1,5 +1,236 @@
 \section{Einführung und Theorie}
+Dieser Versuch ist eine Einführung in die Holographie. Es werden zunächst am
+ersten Versuchstag selbst Reflexions- und Transmissionshologramme hergestellt.
+Am zweiten Versuchstag werden dann Lese- und Schreibeigenschaften des
+photorefraktiven Lithiumniobat-Kristalls untersucht.
 
-\section{Versuchsdurchführung}
+\subsection{Theoretischer Hintergrund}
+\subsection{Holographie}
+Ein Hologramm ist die Aufzeichnung einer Lichtwelle, ähnlich einer gewöhnlichen
+Photographie. Im Gegensatz zu dieser werden aber durch Interferenz auch
+Phaseninformation der Lichtwelle gespeichert, wodurch eine räumliche
+Rekonstruktion der aufgezeichneten Objektwelle möglich ist.
 
-\section{Auswertung}
+\subsubsection{Grundprinzip}
+Es werden zwei zueinander kohärente Wellen verwendet. Die erste wird auf das zu
+holographierende Objekt gerichtet, wovon sie zur Photoplatte reflektiert wird
+und heißt entsprechend \emph{Objektwelle}, die zweite wird direkt auf die
+Photoplatte gerichtet, die \emph{Referenzwelle}. Dabei werden auf der Platte
+aufgrund der Kohärenz Interferenzmuster erzeugt, die dann bei genügend hoher
+Auflösung der photoempfindlichen Schicht (für sichtbares Licht sind etwa 5000
+Linien pro \unit{mm} nötig) gespeichert werden.
+
+Sind $S$ und $R$ Signal- und Referenzwelle, so gilt:
+\begin{align*}
+   I \propto |R + S|^2 = |R|^2 + |S|^2 + 2\operatorname{Re}(RS)
+\end{align*}
+wobei $I$ die Intensitätsverteilung des Interferenzmusters ist. Im letzten Term
+ist also die Phasendifferenz von $R$ und $S$ erhalten (da $\operatorname{Re}(RS)
+= |RS|\cos(\phi_R + \phi_S)$).
+
+\subsubsection{Rekonstruktion der Objektwelle}
+Entwickelt man nun die Photoplatte oder den Film, so erhält man zunächst ein
+sogenanntes \emph{Amplitudenhologramm}. Ändert man nun den Aufbau leicht indem
+man das Objekt wegnimmt und die Objektwelle gegebenenfalls abdunkelt, so sieht
+man beim Blick durch das Filmmaterial an der selben Stelle, an der vorher das
+Objekt stand ein virtuelles dreidimensionales Bild von diesem. Es entsteht
+dadurch, dass die Referenzwelle an den geschwärzten Stellen auf dem entwickelten
+Bildträger (Film oder Photoplatte) gebeugt (genauer: beim Entwickeln wurde die
+lokal die Transmittivität des Materials geändert). Nehmen wir an, dass die
+Transmittivität des Films linear mit der Intensität abnimmt, also $\tau = a - b
+(|R + S|^2)$, so ergibt sich, in dem beschriebenen Aufbau:
+\begin{align}
+  R\tau = R(a - b(|R|^2 + |S|^2 + \bar{R}S + S\bar{R})
+  \label{eqn:rekonstruktion}
+\end{align}
+Der entscheidende Term ist nun $R\bar{R}S = |R|^2 S$, der offenbar die selbe
+Phase und relative Intensität hat wie die Signalwelle. Damit wurde $S$
+vollständig rekonstruiert.
+
+Ein \emph{Phasenhologramm} hingegen (wie es in diesem Versuch durch Bleichen aus
+dem Amplitudenhologramm entsteht) erreicht die Rekonstruktion der Objektwelle
+durch eine lokale Änderung der optischen Weglänge $s = n \cdot d$. Diese
+realisiert man entweder durch Änderung des Brechungsindexes $n$ oder Änderung
+der Materialdicke $d$, wie es zum Beispiel bei sogenannten Prägehologrammen, die
+oft als Sicherheitsmerkmal eingesetzt werden ausgeführt wird.
+
+\subsubsection{Realisierung des Aufbaus}
+Treten Objekt- und Referenzwelle auf der gleichen Seite in den Film ein, so
+spricht man von einem \emph{Transmissionshologramm}, da hier die Objektwelle
+aus der transmittierten Welle entsteht. Die zwei benötigten kohärenten Wellen
+werden dabei durch einen Strahlteiler erzeugt.
+
+Beim \emph{Reflexionshologramm} treten die Wellen auf entgegengesetzten Seiten
+ein, weshalb die Objektwelle aus dem reflektierten Licht rekonstruiert wird. Die
+kohärenten Wellen sind hierbei tatsächlich einfach die selbe Welle, die
+Referenzwelle wird direkt am Objekt, das hinter der Photoplatte steht
+reflektiert und interferiert dann auf dieser mit sich selbst.
+
+\subsubsection{Weitere Begriffe}
+Sind Objekt- und Referenzwelle ebene Wellen, so spricht man auch von einem
+\emph{elementaren Hologramm}.
+
+Man unterscheidet Hologramme auch noch nach der Dicke des
+Aufzeichnungsmaterials. Liegt diese im Bereich der Wellenlänge der Lichtwelle,
+so spricht man von einem \emph{dünnen Hologramm}. Bei dickeren Materialien
+spricht man von einem \emph{Volumenhologramm}, für die man Beugungseffekte,
+insbesondere Auslöschung durch Beugung an den Gitterebenen berücksichtigen.
+Je dicker dabei das Hologramm ist, umso schärfer muss die Braggbedingung zum
+Lesen eines Hologramms erfüllt sein:
+\begin{align}
+  \sin \theta = \frac{\lambda}{2d}
+  \label{eqn:bragg}
+\end{align}
+wobei $\theta$ der Einfallswinkel, $\lambda$ die Wellenlänge und $d$ der Abstand
+der Hologrammgitterebenen.
+
+\subsection{Photorefraktiver Effekt bei Lithiumniobat}
+Im zweiten Versuchsteil verwenden wir zur Aufzeichnung eines elementaren
+Hologrammes einen Kristall aus \ce{Li Nb O3 (Fe)}, also mit Eisen dotiertes
+Lithiumniobat.
+
+Mit diesem Material kann man (im Gegensatz zu gewöhnlichen Bildträgern)
+Hologramme sowohl wiederholt schreiben als auch löschen. Möglich wird dies durch
+den sogenannten \emph{photorefraktiven Effekt}, der sich aus mehreren
+Einzeleffekten zusammensetzt.
+
+Beleuchtet man einen photorefraktiven Kristall inhomogen (beispielsweise mit
+einer kosinusförmigen Intensitätsverteilung wie in (1)), so werden an den hellen Stellen
+mehr Elektronen herausgelöst als an den dunkleren, an diesen erhält man also
+einen Elektronenüberschuss (2). Durch Diffusion, Drift und den
+volumenphotovoltaischen Effekt wandern die Elektronen zu den dunkleren Stellen
+und werden von Störstellen eingefangen (3), so dass sich ein inhomogenes
+Raumladungsfeld E ausbildet (4). Über den \emph{elektrooptischen Effekt} wird dann der
+Brechungsindex n moduliert (5).
+
+Nach dem Schreiben des Hologramms gilt für den Brechungsindex
+\begin{align}
+  n(z) = n_0 + \Delta n_0 \cos{Kz}
+  \label{eqn:n_refr}
+\end{align}
+
+Der Mittelwert des Brechungsindexes ist $n_0$ und wird mit der Raumfrequenz $K =
+\frac{2\pi}{\Lambda}$ um die Amplitude $\Delta n_0$ entlang der z-Achse
+moduliert. Wir erwarten für die Schreib- und Lesekurven exponentielle Änderungen
+von $\Delta n_0$:
+\begin{align}
+  \Delta n_0(t) = A \left( 1 - \exp(-\frac{t}{\tau}) \right) \text{ bzw.} \\
+  \Delta n_0(t) = B \exp(-\frac{t}{\tau})
+  \label{eqn:lesen-schreiben}
+\end{align}
+
+\subsection{Beugungswirkungsgrad}
+Um die Effizienz der Beugung des Referenzstrahles zum Signalstrahl und damit ein
+Maß für die "`Lesbarkeit"' des Hologramms zu haben, bedienen wir uns dem
+Beugungswirkungsgrad, der definiert ist als:
+\begin{align}
+  \eta := \frac{I_\text{diff}}{I_\text{trans} + I_\text{diff}}
+  \label{eqn:wirkungsgrad}
+\end{align}
+
+Aus der Theorie der gekoppelten Schwingungen nach Kogelnik folgt nach dem Skript
+für den Beugungswirkungsgrad:
+\begin{align}
+  \eta(\theta) = \nu^2\ \frac{\sin^2\sqrt{\nu^2 + \xi^2}}{\nu^2 + \xi^2}
+  \label{eqn:kg-wirkungsgrad}
+\end{align}
+Dabei sind $\xi = \frac{Kd}{2}(\theta - \theta_\text{Bragg})$, $\nu =
+\frac{\pi d \Delta n_0}{\lambda \cos\theta}$ und $\theta$ der Einfallswinkel des
+Referenzstrahls.
+
+Ist die Braggbedingung erfüllt, so ist $\xi = 0$ und damit
+\begin{align*}
+  \eta(\theta) = \sin^2\nu = \sin^2 \left(\frac{\pi d \Delta n_0}{\lambda
+  \cos\theta}\right)
+\end{align*}
+
+\section{Versuchsdurchführung und Auswertung}
+
+\subsection{Dünne Hologramme}
+Am ersten Versuchstag wurden eigene Hologramme hergestellt. Aus der Fülle an
+Überraschungseierfiguren wählten wir zunächst eine rote Lokomotive aus, da mit einem roten
+Laser gearbeitet wurde. Da die Hologramme bei diesem noch nicht hinreichend
+stark waren führten wir die weiteren Aufnahmen mit einem stark reflektierenden
+Männchen und einem Objekt mit Kippbild durch.
+
+Der Aufbau war bei beiden Aufnahmen ähnlich:
+<+Aufbau+>
+
+
+\subsubsection{Transmissionshologramme}
+Zur Aufnahme der Transmissionshologramme verwenden wir genauer den folgenden
+Aufbau: <+Aufbau+>
+
+Der Laser wird zunächst mit dem Strahlteiler aufgeteilt und dann mit spiegeln so
+geleitet, dass der aufgeweitete Referenzstrahl direkt auf den Film trifft und
+der aufgeweitete Objektstrahl möglichst gut das Objekt ausleuchtet.
+
+Der OD-Filter dient dazu, die Intensitäten von Referenz- und Objektstrahl
+anzugleichen. Bei der Anordnung der Elemente auf dem optischen Tisch wird auf
+eine möglichst homogene Ausleuchtung des Objektes und des Filmes geachtet.
+Außerdem muss die Weglängendifferenz der beiden Teilstrahlen deutlich unter der
+Kohärenzlänge des Lasers von etwa \unit[30]{cm} liegen, um an der Position des
+Films Kohärenz zu gewährleisten, was aber kein Problem darstellte.
+
+Nun wird der Film zunächst belichtet (wobei die Zeiten im Skript tendenziell zu
+hoch angesetzt waren) indem zunächst der Strahl vom Laser geblockt wird und dann
+für einige Sekunden der Strahlblocker angehoben wird um Vibrationen zu
+vermeiden. In den bereitgestellten Wannen mit Entwickler, Stoppbad und
+Bleichmittel wird der Film dann entwickelt und zuletzt gebleicht. Dabei war bis
+zum Stoppbad der Raum nur durch eine blaue LED beleuchtet.
+
+Nach einigen Minuten Trocknen konnten wir das dreidimensionale Abbild
+beobachten, indem wir das Hologramm wieder an der selben Stelle einspannten und
+den Referenzstrahl darauf richteten. Nach etwas längerer Zeit war an der
+Kaltlichtlampe das Bild zumindest zu erahnen (man sah die Reflexionen, aber
+nicht genau das zugehörige Objekt), genau zu erkennen war es allerdings nicht.
+Gut zu sehen war aber, dass wie erwartet nur rotes Licht gebeugt wurde.
+
+\subsubsection{Reflexionshologramme}
+Für das Reflexionshologramm änderten wir den Aufbau leicht ab:
+<+Aufbau+>
+
+Es wird also im Prinzip nur das Objekt hinter dem Filmträger platziert, der
+Objektstrahl geblockt und der Film durch eine Photoplatte ersetzt.
+
+Die weiter Durchführung ist identisch zu der vorigen.
+
+In diesem Versuchsteil benutzten wir wie schon erwähnt andere Objekte, die
+stärker reflektierten. Außerdem verwendeten wir ein kleines Auto mit Kippbild,
+um zu sehen, ob dies auf dem Hologramm auch zu erkennen ist.
+
+Unsere Reflexionshologramme wurden deutlich besser, nach entsprechend langer
+Trocknungszeit waren die Hologramme auch ohne Laser sehr gut unter der
+Kaltlichtlampe zu erkennen. Das Kippbild allerdings zeigte nicht das erwünschte
+Verhalten, es war aber deutlich zu sehen, dass es bei einem bestimmten Winkel
+zumindest dunkel wurde, ohne aber das "`neue"' Bild zu zeigen. Vermutlich
+reichte die Winkelausleuchtung einfach nicht aus, da diese Kippbilder ab einem
+bestimmten Winkel mit ihren Prismen schräg einfallendes Licht reflektieren, das
+in diesem Fall ja nicht vorhanden war.
+
+\subsubsection{Reflexionshologramm mit Quellmittel}
+Im letzten Versuchsteil des ersten Versuchstages haben wir mit dem selben Aufbau
+wie im vorigen Abschnitt ein weiteres Hologramm aufgenommen, diesmal aber auf
+einer Photoplatte, die vor Versuchsbeginn in ein Quellmittel gelegt wurde.
+Zu Erwarten ist dabei, dass wenn die photosensitive Schicht nach dem Entwickeln
+und Bleichen wieder abquillt, was in Gleichungen einer nachträgliche
+Verringerung der Gitterkonstanten bewirkt. Daher muss das Hologramm um etwas zu
+sehen unter kurzwelligerem Licht betrachtet werden. Uns gelang es in der Tat
+auch nicht, das Hologramm mit dem roten Laser zu rekonstruieren. Unter der
+Kaltlichtlampe war aber leider auch nichts zu sehen, was uns vermuten ließ, dass
+wir möglicherweise zu lange haben Quellen lassen, weshalb sich der Bereich, in
+dem das Hologramm zu sehen ist in den UV-Bereich verschob.
+
+\subsection{Volumenhologramme in Lithiumniobat}
+
+\subsubsection{Untergrundmessung}
+
+\subsubsection{Schreibkurve}
+
+\subsubsection{Löschkurve}
+
+\subsubsection{Winkelabhängigkeit der Beugungseffizienz}
+
+\begin{appendix}
+\section{Messwerte}
+\end{appendix}
