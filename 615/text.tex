@@ -153,13 +153,16 @@ Laser gearbeitet wurde. Da die Hologramme bei diesem noch nicht hinreichend
 stark waren führten wir die weiteren Aufnahmen mit einem stark reflektierenden
 Männchen und einem Objekt mit Kippbild durch.
 
-Der Aufbau war bei beiden Aufnahmen ähnlich:
-<+Aufbau+>
-
-
 \subsubsection{Transmissionshologramme}
 Zur Aufnahme der Transmissionshologramme verwenden wir genauer den folgenden
-Aufbau: <+Aufbau+>
+Aufbau: 
+\begin{figure}[h]
+\begin{center}
+\includegraphics{grafiken/transmission}
+\end{center}
+\caption{Aufbau Transmissionshologramm}
+\label{fig:aufbau_trans}
+\end{figure}
 
 Der Laser wird zunächst mit dem Strahlteiler aufgeteilt und dann mit spiegeln so
 geleitet, dass der aufgeweitete Referenzstrahl direkt auf den Film trifft und
@@ -188,7 +191,13 @@ Gut zu sehen war aber, dass wie erwartet nur rotes Licht gebeugt wurde.
 
 \subsubsection{Reflexionshologramme}
 Für das Reflexionshologramm änderten wir den Aufbau leicht ab:
-<+Aufbau+>
+\begin{figure}[h!]
+\begin{center}
+\includegraphics{grafiken/reflexion}
+\end{center}
+\caption{Aufbau Reflexionshologramm}
+\label{fig:aufbau_ref}
+\end{figure}
 
 Es wird also im Prinzip nur das Objekt hinter dem Filmträger platziert, der
 Objektstrahl geblockt und der Film durch eine Photoplatte ersetzt.
@@ -222,15 +231,125 @@ wir möglicherweise zu lange haben Quellen lassen, weshalb sich der Bereich, in
 dem das Hologramm zu sehen ist in den UV-Bereich verschob.
 
 \subsection{Volumenhologramme in Lithiumniobat}
+Am zweiten Versuchstag wird ein elementares Transmissionshologramm zuerst in
+einen Lithiumniobatkristall geschrieben und dann wieder gelöscht, wobei in
+beiden Fällen über die Zeit die Intensität des transmittierten und des gebeugten
+Strahls gemessen wird. Im letzten Versuchsteil wird dann nach einem weiteren
+Schreibvorgang die Winkelabhängigkeit der Beugungseffizienz untersucht. Der
+Versuchsaufbau ist bei allen Teilen identisch:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics{grafiken/linb}
+\end{center}
+\caption{Aufbau Volumenholographie}
+\label{fig:aufbau_vol}
+\end{figure}
 
-\subsubsection{Untergrundmessung}
+Um den Kristall zwischen zwei Schreibvorgängen möglichst "`hologrammfrei"' zu
+haben, wird er zunächst mit einer starken Kaltlichtlampe beleuchtet, wodurch
+sich über die Zeit eine homogene Verteilung der Ladungsträger ausbildet.
+
+Beim Aufbau soll darauf geachtet werden, einen Winkel von etwa $\unit[20]{^\circ}$
+zwischen den Strahlen zu und ein möglichst gleichmäßiges Ausleuchten des
+Kristalls zu erhalten. Aus dem genauen Winkel von $\unit[20.1\pm 0.1]{^\circ}$ und
+den bekannten Brechungsindizes von Luft und Kristall lässt sich mit dem
+Snelliusschen Brechungsgesetz der Winkel im Kristall errechnen:
+\begin{align}
+  \theta = \arcsin\left( \frac{n_\text{Luft}}{n_\text{Kristall}} \right)
+  \sin\gamma = \unit[8.631 \pm 0.012]{^\circ}
+  \label{eqn:winkel}
+\end{align}
+
+Wir messen zunächst den Untergrund durch, für beide Verstärkungen, die wir in
+diesem Versuch verwendeten ($\unit[10^{-4}]{W}$ und $\unit[10^{-3}]{W}$) ergab sich
+ein identischer Untergrund, den wir dann mit den reglern wegregelten. Auch die
+Maxima beider Detektoren waren identisch. Wir gehen also davon aus, dass der
+systematische Fehler, den wir durch direktes Verwenden der Werte bekommen
+könnten vernachlässigbar sind.
 
 \subsubsection{Schreibkurve}
+Im ersten Versuchsteil nehmen wir etwa vierzig Minuten lang eine Schreibkurve
+auf, wobei jede Minute der Strahl einmal unterbrochen und die Beugungseffizienz
+gemessen wird. Daraus können wir wie beschrieben die Brechungsindexänderung
+$\Delta n_0$ berechnen:
+\begin{align}
+  \Delta n_0 = \arcsin\left( \sqrt{\eta} \right) \frac{\lambda \cos{\theta}}{\pi
+  d}
+\end{align}
+
+Die Schwierigkeit hierbei bestand darin, die Apparatur wirklich völlig still zu
+halten. Die ersten $\unit[6]{min}$ im Graphen zeigen, was passiert, wenn einem
+das nicht gelingt: Das eigentliche Hologramm wird langsam gelöscht und erst
+danach wieder mit einem neuen überschrieben.
+
+Die im Graphen gezeigten Fehlerbalken sind mit einem Fehler von $\unit[\pm
+0.1]{^\circ}$ und $\unit[\pm 1]{mV}$ mithilfe Gaußscher Fehlerfortpflanzung
+berechnet.
+
+\begin{figure}[H]
+  \input{grafiken/schreibkurve.tikz}
+  \caption{Schreibkurve und exponentieller Fit}
+  \label{fig:schreibkurve}
+\end{figure}
+
+Wie im Theorieteil beschrieben fitten wir daran die Funktion $\Delta n(t) =
+\Delta n_\text{max}\left( 1 - \exp\left( -\frac{t}{\tau} \right) \right)$.
+
+In Abbildung \ref{fig:schreibkurve} ist die Schreibkurve mit dem Fit zu sehen.
+Wir erhalten aus dem Fit die Werte:
+\begin{align}
+  \Delta n_\text{max} &= \unit[(18.09 \pm 0.06)]{10^{-3}} \\
+  \tau &= \unit[(26.78 \pm 39)]{min}
+  \label{eqn:werte_schreibkurve}
+\end{align}
 
 \subsubsection{Löschkurve}
+Die Löschkurve wird aufgenommen, indem über eine lange Zeit nur der Lesestrahl
+auf das Hologramm gerichtet ist. Durch diese homogene Beleuchtung wird
+gleichzeitig das geschriebene Hologramm wieder gelöscht. Da die Wellenamplitude 
+nur noch halb so groß ist wie beim Schreiben und damit die Intensität nur noch
+ein Viertel beträgt erwarten wir, dass $\tau$ in diesem Fall $4$ mal so groß ist
+wie beim schreiben. Die Löschkurve sieht wie folgt aus:
+
+\begin{figure}[H]
+  \input{grafiken/loeschkurve.tikz}
+  \caption{Löschkurve und exponentieller Fit}
+  \label{fig:loeschkurve}
+\end{figure}
+
+Diesmal fitten wir mit der einfachen Exponentialfunktion $\Delta n(t) = \Delta
+n_0 \exp\left( - \frac{t}{\tau} \right)$. Daraus erhalten wir die folgenden
+Werte:
+
+\begin{align}
+  \Delta n_0 &= \unit[(2.4 \pm 0.3)]{10^{-3}} \\
+  \tau &= \unit[(106.6 \pm 9.4)]{min}
+  \label{eqn:werte_loeschkurve}
+\end{align}
+
+Das für die Löschkurve erhaltene $\tau$ ist also das $3.98$-fache des bei der
+Schreibkurve, was sehr gut der Erwartung entspricht. Die Fehlergrenzen hierbei
+liegen bei $3.9$ bzw.\ $4.1$.
 
 \subsubsection{Winkelabhängigkeit der Beugungseffizienz}
+Im letzten Versuchsabschnitt wird eine Rockingkurve aufgenommen. Diese gibt
+einem Informationen über die Winkelabhängigkeit der Beugungseffizienz,
+insbesondere können wir damit den Braggwinkel und die Hologrammgitterkonstante
+berechnen. Um das Hologramm dabei nicht zu schnell zu löschen, wird der
+Lesestrahl durch einen OD-Filter geschickt. Wir eichten die Noniusschraube vor
+Ort und nahmen dann für jedes Grad einen Messpunkt auf. Damit ergab sich
+folgende Kurve:
+
+\begin{figure}
+  \input{grafiken/rockingkurve.tikz}
+  \caption{Rockingkurve}
+  \label{fig:rockingkurve}
+\end{figure}
+
+Aus dem Fit nach Kogelnik erhalten wir dann die Werte:
 
 \begin{appendix}
 \section{Messwerte}
+\subsection{Schreibkurve}
+
 \end{appendix}
