@@ -114,8 +114,8 @@ Der Mittelwert des Brechungsindexes ist $n_0$ und wird mit der Raumfrequenz $K =
 moduliert. Wir erwarten für die Schreib- und Lesekurven exponentielle Änderungen
 von $\Delta n_0$:
 \begin{align}
-  \Delta n_0(t) = A \left( 1 - \exp(-\frac{t}{\tau}) \right) \text{ bzw.} \\
-  \Delta n_0(t) = B \exp(-\frac{t}{\tau})
+  \Delta n_0(t) &= A \left( 1 - \exp(-\frac{t}{\tau}) \right) \text{ bzw.} \\
+  \Delta n_0(t) &= B \exp(-\frac{t}{\tau})
   \label{eqn:lesen-schreiben}
 \end{align}
 
@@ -145,7 +145,6 @@ Ist die Braggbedingung erfüllt, so ist $\xi = 0$ und damit
 \end{align*}
 
 \section{Versuchsdurchführung und Auswertung}
-
 \subsection{Dünne Hologramme}
 Am ersten Versuchstag wurden eigene Hologramme hergestellt. Aus der Fülle an
 Überraschungseierfiguren wählten wir zunächst eine rote Lokomotive aus, da mit einem roten
@@ -255,9 +254,19 @@ Kristalls zu erhalten. Aus dem genauen Winkel von $\unit[20.1\pm 0.1]{^\circ}$ u
 den bekannten Brechungsindizes von Luft und Kristall lässt sich mit dem
 Snelliusschen Brechungsgesetz der Winkel im Kristall errechnen:
 \begin{align}
-  \theta = \arcsin\left( \frac{n_\text{Luft}}{n_\text{Kristall}} \right)
-  \sin\gamma = \unit[8.631 \pm 0.012]{^\circ}
+  \theta = \arcsin\left( \frac{n_\text{Luft}}{n_\text{Kristall}}
+  \sin\gamma\right) = \unit[(8.631 \pm 0.012)]{^\circ}
   \label{eqn:winkel}
+\end{align}
+
+Da dies nun der Braggwinkel im Kristall ist, können wir daraus die Raumfrequenz
+bestimmen (mit $\Lambda = \frac{2\pi}{K}$):
+\begin{align}
+  \Lambda &= \frac{\lambda}{2n\sin(\theta)} \\
+  \Leftrightarrow K &= \frac{4\pi n \sin(\theta)}{\lambda} \\
+  \Rightarrow \Lambda &= \unit[(920.9 \pm 2.1)]{nm} \\
+  \Rightarrow K &= \unit[(6.822 \pm 0.02)]{MHz}
+  \label{eqn:raumfrequenz}
 \end{align}
 
 Wir messen zunächst den Untergrund durch, für beide Verstärkungen, die wir in
@@ -298,8 +307,8 @@ Wie im Theorieteil beschrieben fitten wir daran die Funktion $\Delta n(t) =
 In Abbildung \ref{fig:schreibkurve} ist die Schreibkurve mit dem Fit zu sehen.
 Wir erhalten aus dem Fit die Werte:
 \begin{align}
-  \Delta n_\text{max} &= \unit[(18.09 \pm 0.06)]{10^{-3}} \\
-  \tau &= \unit[(26.78 \pm 39)]{min}
+  \Delta n_\text{max} &= \unit[(3.158 \pm 0.11)]{10^{-4}} \\
+  \tau &= \unit[(28.78 \pm 39)]{min}
   \label{eqn:werte_schreibkurve}
 \end{align}
 
@@ -322,23 +331,31 @@ n_0 \exp\left( - \frac{t}{\tau} \right)$. Daraus erhalten wir die folgenden
 Werte:
 
 \begin{align}
-  \Delta n_0 &= \unit[(2.4 \pm 0.3)]{10^{-3}} \\
-  \tau &= \unit[(106.6 \pm 9.4)]{min}
+  \Delta n_0 &= \unit[(2.4201 \pm 0.0006)]{10^{-4}} \\
+  \tau &= \unit[(735.8 \pm 4.2)]{min}
   \label{eqn:werte_loeschkurve}
 \end{align}
 
-Das für die Löschkurve erhaltene $\tau$ ist also das $3.98$-fache des bei der
-Schreibkurve, was sehr gut der Erwartung entspricht. Die Fehlergrenzen hierbei
-liegen bei $3.9$ bzw.\ $4.1$.
+Der für $\Delta n_0$ erhaltene Wert stimmt dabei mit der Erwartung überein, er
+entspricht nämlich gut dem Endwert der Schreibkurve. Die Fehler sind hier weit
+geringer als bei der Schreibkurve, weil de facto nur ein linearer Fit berechnet
+wurde. Der Wert für $\tau$ hingegen liegt weit über dem Erwartungswert, dies
+erklären wir damit, dass einer der Strahlen den Kristall wohl deutlich weniger
+ausgeleuchtet hat als der andere. Aus den Werten ergibt sich, dass die
+Intensität wohl etwa $1/5$ betrug. Möglicherweise war auch der Strahlteiler
+nicht so gut wie angenommen. Außerdem war ein Spiegel recht verschmutzt, was in
+den vorigen Experimenten ohne aufgeweiteten Strahl nicht so stark auffiel.
 
 \subsubsection{Winkelabhängigkeit der Beugungseffizienz}
 Im letzten Versuchsabschnitt wird eine Rockingkurve aufgenommen. Diese gibt
 einem Informationen über die Winkelabhängigkeit der Beugungseffizienz,
 insbesondere können wir damit den Braggwinkel und die Hologrammgitterkonstante
 berechnen. Um das Hologramm dabei nicht zu schnell zu löschen, wird der
-Lesestrahl durch einen OD-Filter geschickt. Wir eichten die Noniusschraube vor
-Ort und nahmen dann für jedes Grad einen Messpunkt auf. Damit ergab sich
-folgende Kurve:
+Lesestrahl durch einen OD-Filter geschickt. Wir fanden folgenden Beziehung
+zwischen den Skalenteilen der Mikrometerschraube und dem Winkel:
+\begin{align}
+  \phi = (0.228 \pm 0.005) \frac{x}{\unit{Skt}}
+\end{align}
 
 \begin{figure}
   \input{grafiken/rockingkurve.tikz}
@@ -346,10 +363,106 @@ folgende Kurve:
   \label{fig:rockingkurve}
 \end{figure}
 
-Aus dem Fit nach Kogelnik erhalten wir dann die Werte:
+Leider schafften wir es nicht, daran eine vernünftige Kurve zu fitten. Wir
+können allerdings aus der Höhe des Peaks auf das $\Delta n_0$ an dieser Stelle
+schließen, was etwa $(1.13 \pm 0.01) \cdot 10^{-4}$ beträgt und damit auf jeden Fall
+in der richtigen Größenordnung liegt.
 
 \begin{appendix}
 \section{Messwerte}
 \subsection{Schreibkurve}
+\pgfplotstabletypesetfile[
+  display columns/0/.style={
+    column name={$t/\unit{min}$},
+    select equal part entry of={0}{2}
+    },
+  display columns/1/.style={
+    column name={Detektor links},
+    select equal part entry of={0}{2}
+    },
+  display columns/2/.style={
+    column name={Detektor rechts},
+    select equal part entry of={0}{2}
+    },
+  display columns/3/.style={
+    column name={$t/\unit{min}$},
+    select equal part entry of={1}{2},
+    column type/.add={|}{}
+    },
+  display columns/4/.style={
+    column name={Detektor links},
+    select equal part entry of={1}{2}
+    },
+  display columns/5/.style={
+    column name={Detektor rechts},
+    select equal part entry of={1}{2}
+    },
+  columns={0,1,2,0,1,2}
+ ]
+{data/schreiben2.txt}
+
+\subsection{Löschkurve}
+
+\pgfplotstabletypesetfile[
+  display columns/0/.style={
+    column name={$t/\unit{min}$},
+    select equal part entry of={0}{2}
+    },
+  display columns/1/.style={
+    column name={Detektor links},
+    select equal part entry of={0}{2}
+    },
+  display columns/2/.style={
+    column name={Detektor rechts},
+    select equal part entry of={0}{2}
+    },
+  display columns/3/.style={
+    column name={$t/\unit{min}$},
+    select equal part entry of={1}{2},
+    column type/.add={|}{}
+    },
+  display columns/4/.style={
+    column name={Detektor links},
+    select equal part entry of={1}{2}
+    },
+  display columns/5/.style={
+    column name={Detektor rechts},
+    select equal part entry of={1}{2}
+    },
+  columns={0,1,2,0,1,2}
+ ]
+{data/loeschen.txt}
+
+\subsection{Rockingkurve}
+\pgfplotstabletypesetfile[
+  display columns/0/.style={
+    column name={Winkel$/\unit{^\circ}$},
+    select equal part entry of={0}{2}
+    },
+  display columns/1/.style={
+    column name={Detektor},
+    select equal part entry of={0}{2}
+    },
+   display columns/2/.style={
+    column name={Winkel$/\unit{^\circ}$},
+    select equal part entry of={1}{2},
+    column type/.add={|}{}
+    },
+  display columns/3/.style={
+    column name={Detektor},
+    select equal part entry of={1}{2}
+    },
+  display columns/4/.style={
+    column name={Winkel$/\unit{^\circ}$},
+    select equal part entry of={1}{2},
+    column type/.add={|}{}
+    },
+  display columns/5/.style={
+    column name={Detektor},
+    select equal part entry of={1}{2}
+    },
+  columns={0,1,0,1,0,1}
+ ]
+{data/winkel2.txt}
 
 \end{appendix}
