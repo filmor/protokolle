@@ -1,0 +1,221 @@
+
+\section{Einleitung}
+
+\subsection{Das ATLAS-Experiment}
+\hyphenation{Ha-dro-nen-spei-cher-ring}
+Das ATLAS-Experiment ist eines der großen Experimente am Großen
+Hadronenspeicherring (LHC, \emph{Large Hadron Collider}). Im für diesen Versuch
+relevanten Protonenmodus werden in der Maschine Protonen in verschiedenen
+Beschleunigungsstufen in zuletzt gegenläufigen Vakuumröhren auf eine
+Schwerpunktsenergie von bis zu $\sqrt{s} = \unit[14]{TeV}$ beschleunigt und dann
+an definierten Kreuzungspunkten zur Kollision gebracht Dabei entsteht eine große
+Anzahl zu detektierender Teilchen (siehe Abschnitt~\ref{cha:aufnahme}) aus deren
+Energien, Impulsen und Ladungen man auf die Zwischenprodukte schließen kann.
+
+In dem Experiment soll vor allem der Hauptfrage nach der Existenz des
+Higgs-Bosons nachgegangen werden, allerdings sollen auch weitere Bereiche der
+Physik, insbesondere Physik jenseits des Standardmodells (zum Beispiel
+supersymmetrische Theorien) untersucht werden. Beispielsweise ist der LHC der
+erste Beschleuniger, der ausreichend Top-Quarks für genauere Untersuchungen
+liefern kann. Auch die Untersuchung der Physik von Beauty- bzw.\ Bottom-Quarks
+(B-Physik) ist mit ihm möglich.
+
+Abgesehen davon ist aber auch von Interesse, ob und wenn ja welche Anomalien der
+elektroschwachen Wechselwirkung bei solch hohen Energien auftreten können.
+
+Um die auftretenden Teilchen möglichst genau im Hinblick auf Ladung, Impuls und
+Art vermessen zu können, wurden folgende Designentscheidungen für ATLAS
+getroffen\cite{atlas-tp} (siehe auch Abschnitt \ref{cha:conv} für die
+Bezeichungen):
+\begin{itemize}
+  \item Sehr gute elektromagnetische Kaloriemetrie zur genauen Messung von
+    Photonen und Elektronenenenergie
+  \item Effiziente Spurverfolgung bei hoher Luminosität zur genauen Messung der
+    Leptonenimpulse
+  \item Genaue Myonenverfolgung
+  \item Große $\eta$-Abdeckung 
+\end{itemize}
+
+\subsubsection{Datenaufnahme}
+\label{cha:aufnahme}
+Werden im Beschleuniger zwei Teilchenpakete zur Kollision gebracht, so entsteht
+eine Vielzahl von anderen Teilchen. Um die Teilchen zu messen werden grob drei
+verschiedene Klassen von Detektoren benutzt. Da die Datenmengen deutlich zu groß
+sind um sie zu jeder Zeit auszulesen, werden Trigger verwendet.  Diese werden
+permanent ausgelesen und liefern Ereignisauswahldaten. Anhand dieser können dann
+Ereignisse selektiert und ausgelesen werden.
+
+\paragraph{Tracker}
+Die innerste Detektorschicht besteht aus einer hochauflösenden Anordnung von
+Siliziumpixeldetektoren. Die nächste Schicht wird durch den Halbleitertracker
+(SCT, \emph{semi-conductor tracker}) gebildet. Die äußerste Trackerschicht ist
+der Übergangsstrahlungsdetektor (kombiniert mit einigen sogenannten \emph{straw
+chambers}, die vom Prinzip her ähnlich wie Driftkammern funktionieren). Der
+gesamte Tracker befindet sich in einem zylindrischen Magnetfeld mit einer
+Flussdichte von $\unit[2]{T}$ um mit der durch die Lorentzkraft auftretenden
+Bahnkrümmung die Ladung der Teilchen vermessen zu können. Die Trackerdetektoren
+dienen der Spurrekonstruktion und damit der Ladungs- und Impulsmessung der
+Teilchen sowie dem Finden von Vertices, also Punkten der Wechselwirkung. Außerdem
+liefern sie bereits wichtige Kriterien zur Erkennung von Elektronen.
+
+\paragraph{Kalorimeter}
+\label{cha:kalorimeter}
+Die nächste Schicht des Detektors, die nicht mehr im Hauptmagnetfeld liegt
+(Streufelder sind durchaus noch vorhanden) besteht aus den Kalorimetern. Diese
+messen die Energie der Teilchen und liefern dazu auch noch Ortsinformationen.
+Zusammen mit den Trackerdaten können damit bereits leichte elektromagnetische
+Teilchen wie Elektronen oder Photonen unterschieden werden, da dies im
+Kalorimeter nicht möglich ist, da das Kalorimeter gerade mit der Umwandlung des
+Elektrons in einen Photonenschauer bzw.\ des Photons in ein
+Elektron-Positron-Paar arbeitet. Die entstandenen Teilchen bewirken natürlich
+wieder entsprechende Reaktionen (solange ihre Energien noch ausreichen). Dadurch
+ist bei der letztlichen Energiemessung nicht mehr auszumachen, welches Teilchen
+nun der Ausgangspunkt war.
+
+Man unterscheidet noch zwischen elektromagnetischem und hadronischem
+Kalorimeter. Ersteres liegt näher am Strahlrohr und detektiert praktisch alle
+Photonen und Elektronen, die darin komplett in messbare Energie umgewandelt
+werden. Die meisten Hadronen passieren dieses ohne vollständigen Energieverlust
+und werden erst im dahinterliegenden hadronischen Kalorimeter detektiert.
+Während das elektromagnetische Kalorimeter aus Flüssigargondetektoren besteht,
+ist das hadronischen Kalorimeters größtenteils ein Szintillationsdetektor. Da
+die Szintillatoren aber nicht sehr viel Strahlung aushalten, besteht der näher
+am Strahlrohr gelegene Teil des hadronischen Kalorimeters auch aus
+Flüssigargondetektoren.
+
+\paragraph{Myondetektor}
+Die Myonen werden normalerweise im Kalorimeter nicht detektiert, weshalb die
+äußerste Detektorschicht aus dem Myonspektrometer besteht. Bei ATLAS hat dieses (im
+Gegensatz zu den meisten anderen Detektoren) sein eigenes Magnetsystem und ist
+so in der Lage, sehr genaue Messungen zum Myonimpuls durchzuführen. Desweiteren
+enthält diese Schicht Triggerkammern.
+\\
+
+Für diese Analyse werden drei wichtige Sätze von Messdaten benötigt, nämlich
+Angaben über 
+\begin{itemize}
+  \item Anzahl
+  \item Impuls
+  \item Energie
+  \item und Ladung
+\end{itemize} von Elektronen, Myonen und Jets.
+
+\label{jet-recon}
+Mit Jets sind hier Teilchenströme gemeint, die aus wiederholten Zerfällen von
+Teilchen mit sehr hoher Masse entstehen und im Kalorimeter einen bestimmten
+Abdruck hinterlassen. In den Kalorimeterdaten werden sogenenannte Cluster
+gesucht, also eine Menge von aneinander angrenzenden Detektoren, die einen
+erhöhten Energiewert gemessen haben. Sind nun mehrere dieser Cluster nah genug
+aneinander, so wird zu dieser Stelle (an der offenbar viele Teilchen ankamen)
+ein Jet in die Daten geschrieben. Zu bemerken ist, dass ein Elektron
+\emph{immer} einen Jet erzeugt.
+
+Zu den Elektronen werden noch zusätzlich viele Informationen über die
+Identifikation in die Daten geschrieben, die in der Analyse für die Filterung
+mit \verb'El_IsEM' verwendet werden.
+
+\subsubsection{Datenanalyse}
+\hyphenation{Zu-sam-men-schluss Com-pu-ting er-fol-gen}
+Die Analyse soll schließlich im LHC Computing Grid erfolgen. Dies ist ein
+weltweiter Zusammenschluss verschiedener Rechnerverbünde, auf denen die
+Analyseprogramme ausgeführt werden. Dazu werden die benötigten Daten je nach
+Größe entweder mit dem Programm mitgeschickt oder im Grid selbst auf sogenannten
+Storage-Elementen gespeichert und über entsprechende Anweisung in den
+Grid-Job-Informationen zur Verfügung gestellt.
+
+\subsection{Konventionen und Bezeichnungen}
+\label{cha:conv}
+Es werden in diesem Protokoll durchgehend die in der Hochenergiephysik
+üblichen, natürlichen Einheiten verwendet. Die Raumrichtungen sind ebenfalls wie
+üblich so festgelegt, dass die $z$-Achse parallel zum Strahl gegen den
+Uhrzeigersinn, die $x$-Achse zum Zentrum des Beschleunigerringes und der
+Rechtshändigkeit des Koordinatensystems wegen die $y$-Achse nach oben gerichtet
+liegt.  Der Nullpunkt des Systems ist dabei der Mittelpunkt des Detektors, der
+im Idealfall, welcher in den Simulationen angenommen wird, genau der
+Kollisionspunkt ist.  Dies kann sich aber zumindest in $z$-Richtung im
+langfristigen Verlauf des Experimentes ändern, wenn bei der Einstellung
+festgestellt wird, dass für etwas andere Kollisionspunkte der Hintergrund
+geringer ist. In der $xy$-Ebene sollte aber der Nullpunkt möglichst immer das
+Detektorzentrum sein.
+
+Die $xy$-Ebene wird im Folgenden auch häufig als \emph{Transversalebene}
+bezeichnet, entsprechend ist die Strahlrichtung die Longitudinale.
+
+Ein in Beschleunigerexperimenten häufig verwendetes Koordinatensystem ist das
+auf den normalen Kugelkoordinaten aufbauende $(r, \eta, \phi)$-System.  Dabei
+werden $\phi$ und $r$ wie (in der angelsächsischen Literatur) üblich als der
+Azimutwinkel (in dem oben angegebenen kartesischen System) und Betrag gewählt.
+Statt des Polarwinkels $\theta$ wird aber die sogenannte \emph{Pseudorapidität}
+$\eta$ verwendet. Diese ist definiert als
+\begin{align}
+  \eta := -\ln{\tan{\frac \theta 2}}
+\end{align}
+Der Vorteil dieser Definition ist, dass ein differentieller Wirkungsquerschnitt
+bezüglich der Pseudorapidität im Gegensatz zum Azimutwinkel (annähernd)
+invariant unter Boosts entlang der z-Achse ist.  Tatsächlich invariant ist der
+differentielle Wirkungsquerschnitt bezüglich der Rapidität ($y := \frac12
+\frac{E + p_L}{E - p_L}$, wobei $p_L = p_z$ der Longitudinalimpuls ist). Diese
+ist aber für Energien, die im Vergleich zur Ruhemasse des Teilchens groß sind,
+annähernd gleich der Pseudorapidität.
+
+Als wichtige abgeleitete Größe erhält man den Abstand in der
+Polar-Pseudorapiditäts-Ebene
+\begin{align}
+  \Delta R := \sqrt{\Delta\phi^2 + \Delta\eta^2}
+  \label{def:dr}
+\end{align}
+
+\section{Eventdisplays}
+Im ersten Versuchsteil werden mit dem Progamm "`Atlantis"' Teilchenreaktionen
+untersucht. Das Programm zeigt die Daten in verschiedenen Diagrammen an,
+insbesondere auch in verschiedenen Ansichten des Detektors oder einem Legoplot.
+Man kann einzelne Spuren markieren woraufhin das Programm einem die zugehörigen
+Trackerdaten wir Impuls, Ladung etc.\ anzeigt. Zunächst betrachten wir die
+Lerndatensätze um einen Überblick über das Programm zu erhalten und ein wenig
+auszuprobieren. Danach beschäftigen wir uns mit den beiden ausgewählten
+Aufgaben:
+
+\subsection{Aufgabe 6 -- Bestimmung der invarianten $e^+e^-$-Masse}
+Für drei $Z^0 \to ee$-Zerfälle soll die invariante Masse der beiden
+resultierenden Leptonen berechnet werden. Dies soll zunächst exakt, also unter
+Berücksichtigung der Elektronenmasse von \unit[511]{KeV} geschehen, danach soll
+die Masse vernachlässigt werden. Zu erwarten ist, dass der Unterschied sehr
+gering ausfällt, da die $Z^0$-Masse mit etwa \unit[90]{GeV} sehr viel größer ist
+als die Elektronenmasse.
+
+Die verwendeten Daten waren die Folgenden:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c||cccc|cccc}
+    \toprule
+    & $p_1$ & $p_{1t}$ & $\phi_1$ & $E_1$ & $p_2$ & $p_{2t}$ & $\phi_2$ & $E_2$ \\
+    \midrule
+    1 & -49.69 & -41.69 & 47.323 & 47.9 & 60.92 & 39.98 & 224.921 & 55.4 \\
+    2 & -39.38 & -32.33 & 177.63 & 38 & 48.88 & 48.85 & 342.538 & 44.7 \\
+    3 & -69.77 & -37.03 & 136.157 & 67.5 & 61.97 & 31.23 & 310.645 & 61.5 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Ereignisdaten}
+  \label{tab:daten-66}
+\end{table}
+
+Daraus erhielten wir dann mit der Formel
+\begin{align}
+  
+  \label{<++>}
+\end{align}<++>
+
+
+\subsection{Aufgabe 8 -- Höhenstrahlung}
+Schon 2007 wurden mit dem ATLAS-Detektor Höhenstrahlungsereignisse aufgenommen,
+zu denen wir nun die Winkelverteilungen bestimmen und mit der Erwartung
+vergleichen. In Meereshöhe besteht die Höhenstrahlung fast ausschließlich aus
+Myonen aus pionischen Zerfällen, daher betrachten wir hier deren Daten.
+
+Dazu verwenden wir den Datensatz \verb'ATLASData-Cosmics-M5.zip' und extrahieren
+aus diesem mit einem Pythonskript 
+
+\section{Elektronenkalibration}
+
+\section{Suche nach neuer Physik}
+
