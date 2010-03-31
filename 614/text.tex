@@ -176,6 +176,7 @@ auszuprobieren. Danach beschäftigen wir uns mit den beiden ausgewählten
 Aufgaben:
 
 \subsection{Aufgabe 6 -- Bestimmung der invarianten $e^+e^-$-Masse}
+\label{cha:bla}
 Für drei $Z^0 \to ee$-Zerfälle soll die invariante Masse der beiden
 resultierenden Leptonen berechnet werden. Dies soll zunächst exakt, also unter
 Berücksichtigung der Elektronenmasse von \unit[511]{KeV} geschehen, danach soll
@@ -188,23 +189,67 @@ Die verwendeten Daten waren die Folgenden:
   \centering
   \begin{tabular}{c||cccc|cccc}
     \toprule
-    & $p_1$ & $p_{1t}$ & $\phi_1$ & $E_1$ & $p_2$ & $p_{2t}$ & $\phi_2$ & $E_2$ \\
+    & $\pm\left|\vec p_1\right|/\unit{GeV}$ & $p_{1}^\perp/\unit{GeV}$ &
+    $\phi_1/\unit{^\circ}$ & $E_1/\unit{GeV}$ & $\left|\vec
+    p_2\right|/\unit{GeV}$ & $p_{2}^\perp/\unit{GeV}$ & $\phi_2/\unit{^\circ}$ &
+    $E_2/\unit{GeV}$ \\
     \midrule
-    1 & -49.69 & -41.69 & 47.323 & 47.9 & 60.92 & 39.98 & 224.921 & 55.4 \\
-    2 & -39.38 & -32.33 & 177.63 & 38 & 48.88 & 48.85 & 342.538 & 44.7 \\
-    3 & -69.77 & -37.03 & 136.157 & 67.5 & 61.97 & 31.23 & 310.645 & 61.5 \\
+    1  &  $-49.69$  &  $-41.69$  &  $47.323$  &  $47.9$  &  $60.92$  &  $39.98$
+    &  $224.921$  &  $55.4$\\
+    2  &  $-39.38$  &  $-32.33$  &  $177.63$  &  $38$ &  $48.88$  &  $48.85$  &
+    $342.538$  &  $44.7$ \\
+    3  &  $-69.77$  & $-37.03$  &  $136.157$  &  $67.5$  &  $61.97$  &  $31.23$
+    &  $310.645$  & $61.5$ \\
     \bottomrule
   \end{tabular}
   \caption{Ereignisdaten}
   \label{tab:daten-66}
 \end{table}
+Dabei ist $\left|\vec p\right|$ jeweils der Gesamtimpuls (wobei das Vorzeichen
+das Vorzeichen der Ladung angibt), $p^\perp$ der Transversalimpuls, $\phi$ der
+gemessene Polarwinkel und $E$ die Gesamtenergie des jeweiligen Teilchens.
 
-Daraus erhielten wir dann mit der Formel
+Aus diesen Größen kann der gesamte Viererimpulsvektor berechnet werden:
 \begin{align}
-  
-  \label{<++>}
-\end{align}<++>
+  E &= \sqrt{\left|\vec p\right|^2 + \unit[511]{KeV}^2} \\
+  p_x &= p^\perp \cos{\phi} \\
+  p_y &= p^\perp \sin{\phi} \\
+  p_z &= \sqrt{\left|\vec p\right|^2 - (p^\perp)^2}
+\end{align}
 
+Nun berechnen wir die invariante Masse zunächst genau mit der Formel:
+\begin{align}
+  m &= \sqrt{(E_1 + E_2)^2 - \left|\vec p_1 + \vec p_2\right|^2}
+\end{align}
+und danach ohne Berücksichtigung der Elektronenmasse durch
+\begin{align}
+  m &= \sqrt{2(E_1E_2 - \vec p_1\cdot \vec p_2)}
+\end{align}
+
+Wie erwartet unterschieden sich die Ergebnisse praktisch überhaupt nicht:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c|ccc}
+    \toprule
+    & $m_\text{exakt}/\unit{GeV}$ & $m_\text{genähert}/\unit{GeV}$ & $\Delta
+    m/\unit{eV}$ \\
+    \midrule
+    1 & $83.0615$ & $83.0615$ & $6.35$ \\
+    2 & $82.5983$ & $82.5983$ & $6.4$ \\
+    3 & $67.9657$ & $67.9657$ & $7.71$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Invariante Massen}
+  \label{tab:invmass}
+\end{table}
+Die Massen unterscheiden sich im \unit{eV}-Bereich, liegen also weit jenseits
+der Fehlergrenzen, die bei optimistischen \unit[0.01]{GeV} immernoch etwa im
+\unit{MeV}-Bereich liegen, also mehrere Größenordnungen davon entfernt. Es ist
+also völlig legitim, die Elektronenmasse hier zu vernachlässigen.
+
+Zu sehen ist aber auch, dass die invarianten Massen sämtlich deutlich geringer
+sind als $m_{Z^0}$. Vermutlich ist das in diesem Fall aber Zufall und wir haben
+nur Daten von der linken Flanke der Breit-Wigner-Kurve verwendet.
 
 \subsection{Aufgabe 8 -- Höhenstrahlung}
 Schon 2007 wurden mit dem ATLAS-Detektor Höhenstrahlungsereignisse aufgenommen,
@@ -213,9 +258,47 @@ vergleichen. In Meereshöhe besteht die Höhenstrahlung fast ausschließlich aus
 Myonen aus pionischen Zerfällen, daher betrachten wir hier deren Daten.
 
 Dazu verwenden wir den Datensatz \verb'ATLASData-Cosmics-M5.zip' und extrahieren
-aus diesem mit einem Pythonskript 
+aus diesem mit einem Pythonskript die Winkeldaten (Azimutal- und Kotangens des
+Polarwinkels).  Da wir nun aber an dem Winkel zum Lot interessiert sind, rechnen
+wir diesen aus den beiden anderen aus:
+\begin{align}
+  \alpha(\phi, c) &= \operatorname{sgn}(\phi) \frac{\pi}{2} +
+  \arccos(\cos\phi\cdot\sin\arctan c)
+\end{align}
+Dabei ist $\alpha$ der Winkel zum Lot und $c$ der Kotangens des Polarwinkels ($c
+= \cot(\theta)$).
+
+Dies tragen wir nun im Histogramm auf und vergleichen es mit der erwarteten
+Verteilung $\cos^2 \theta$:
+\begin{figure}[h!]
+  \begin{center}
+    \input{grafiken/cos2theta.tikz}
+  \end{center}
+  \caption{Höhenstrahlungsmessung}
+  \label{fig:hoehenstrahlung}
+\end{figure}
+Es ist gut zu sehen, dass die Verteilung tatsächlich in etwa der erwarteten
+Verteilung folgt, insbesondere sind die beiden Maxima wie erwartet bei $0$ und
+$\unit[180]{^\circ}$ zu sehen. Dass die Funktion deutlich steiler abfällt kann mit
+der deutlich längeren Strecke, die die Strahlung in Materie zurücklegen muss,
+wenn sie schräg eintritt erklärt werden.
 
 \section{Elektronenkalibration}
+Wie oben beschrieben wird die Energie leichter elektromagnetischer Teilchen (vor
+allem Elektronen und Photonen) im elektromagnetischen Kalorimeter gemessen.
+Dieses besteht aus sehr vielen einzelnen Einheiten, die kalibriert werden
+müssen, da die Kalorimeter in der Energieausbeute variieren.
+
+Die Energie, die in den Datensätzen angegeben ist kommt als reine Rohenergiemessung
+direkt vom Detektor und ist deshalb mit den beschriebenen systematischen Fehlern
+behaftet. Im Allgemeinen ist diese Energie geringer als die tatsächliche, was
+wiederum die Ergebnisse in Abschnitt \ref{cha:bla} erklärt.
+
+In diesem Versuchsteil wird nun eine Kalibration der Elektronen durchgeführt um
+im folgenden Teil Aussagen ohne diese systematischen Fehler treffen zu können.
+Dazu werden $e^+e^-$-Paar-Ereignisse untersucht. Diese stammen zum größten Teil
+von $Z^0$-Zerfällen, die bereits sehr gut vermessen sind und sich deshalb gut zur
+Kalibration eignen.
 
 \section{Suche nach neuer Physik}
 
