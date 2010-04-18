@@ -1,0 +1,20 @@
+#!/bin/sh
+
+for i in name nummer
+do
+    echo -n $i "? "
+    read $i
+done
+
+[ ! -d $nummer ] && mkdir $nummer
+pushd $nummer > /dev/null
+fname=$(echo $name | tr [:upper:] [:lower:]).tex
+[ ! -e $fname ] && ln -s ../template.tex $fname
+touch $fname.latexmain
+cat > meta.tex << __EOF__
+\\newcommand{\\Nummer}{$nummer}
+\\newcommand{\\Versuch}{$name}
+\\newcommand{\\Datum}{$(date +"%d. %B %Y")}
+__EOF__
+touch text.tex
+popd > /dev/null

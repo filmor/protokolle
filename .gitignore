@@ -1,0 +1,8 @@
+*.lo[gft]
+*.aux
+*.idx
+*.toc
+*.bbl
+*.pgf-plot.gnuplot
+*.pgf-plot.table
+
