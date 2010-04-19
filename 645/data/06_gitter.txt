@@ -1,0 +1,9 @@
+# Alles in cm
+# Maxima:
+Blau 0, Grün 0: 0 +- 0.05
+Blau 1: 59.35 +- 0.1
+Blau 2: 133.2 +- 0.1
+Grün 1: 133.15 +- 0.2
+# Ausleuchtung des Gitters
+Blau: 0.5
+Grün: 0.9

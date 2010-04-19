@@ -1,0 +1,9 @@
+# Position der Ms /cm +-2mm
+
+   
+# dazwischen
+w1 9.8
+w2 12.7
+w3 14.5
+w4 16.9
+w5 19.5
