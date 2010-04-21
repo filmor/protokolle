@@ -1,0 +1,24 @@
+# Leerlaufspannungen (m = monokristallin, p = polykristallin, a = amorph)
+U_m = 348 mV
+U_p = 7.21 V
+U_a = <++> V
+
+1. Wählen das Potentiometer für (m) mit Maximum 5 kΩ (da U_0/I_0 = 25 Ω)
+    (das eine Poti ist kaputt!)
+2. Ändern die Schaltung (spannungsrichtige Messung!)
+    Denn:
+        Innenwiderstand Spannungsmessung
+            VC91 10 MΩ
+        Innenwiderstand Strommessung:
+            VC91 (Voltcraft)
+              2 mA: 100 Ω
+             20 mA:  11.2 Ω
+            200 mA:   2.2 Ω
+            
+            Metex
+              4 mA: 100   Ω
+            400 mA:   1.6 Ω
+    Daher:
+        Spannungsrichtige Messung ändert den Strom quasi nicht, da kaum Strom
+        über den 
+
