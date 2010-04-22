@@ -1,0 +1,3 @@
+Leerlaufspannung: 0.833 V
+Mit 3Ω Widerstand: 0.480 V, 0.137 A
+
