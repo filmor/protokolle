@@ -9,8 +9,8 @@ done
 [ ! -d $nummer ] && mkdir $nummer
 pushd $nummer > /dev/null
 fname=$(echo $name | tr [:upper:] [:lower:]).tex
-[ ! -e $fname ] && ln -s ../template.tex $fname
-touch $fname.latexmain
+[ ! -e "$fname" ] && ln -s ../template.tex "$fname"
+touch "$fname.latexmain"
 cat > meta.tex << __EOF__
 \\newcommand{\\Nummer}{$nummer}
 \\newcommand{\\Versuch}{$name}
