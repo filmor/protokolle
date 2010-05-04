@@ -1,0 +1,276 @@
+\section{Einleitung}
+In diesem Versuch werden die Eigenschaften von Solar- und Brennstoffzellen
+untersucht. Es werden dazu charakteristische Größen wie z.~B.\ die Kennlinien
+vermessen. Die Solarzelle wird in verschiedenen Ausführungen und Verschaltungen
+untersucht, unter anderem auch die Abhängigkeit der abgegebenen Leistung von der
+Wellenlänge. Die PEM-Brennstoffzelle wird vor allem im Hinblick auf ihren
+Wirkungsgrad untersucht.
+
+\subsection{Solarzelle}
+Solarzellen sind im wesentlichen Halbleiterdioden, die Licht ausgesetzt werden.
+Am pn-Übergang der Diode bildet sich zunächst wie gewöhnlich durch Diffusion eine
+Raumladungszone heraus.
+
+Treffen nun Photonen, die eine Energie haben die größer als die Bandlücke des
+Halbleiters ist (für Silizium, wie es in diesem Versuch verwendet wird ist das
+$E_G \approx \unit[1.1]{eV}$, entspricht einer Wellenlänge von \unit[<++>]{nm})
+entstehen durch den Photoeffekt Elektron-Loch-Paare. Außerhalb der
+Raumladungszone herrscht kein nennenswertes elektrisches Feld, so dass die
+Elektronen sich nicht von den Löchern wegbewegen und praktisch sofort
+rekombinieren. Innerhalb der Raumladungszone aber herrscht ein elektrisches Feld
+von (je nach Material) ca.\ \unit[0.6]{V}, dass die Elektronen von den Löchern
+trennt.
+
+Die Elektronen werden nun an einer Elektrode an der n-dotierten Schicht
+abgegriffen und fließen durch einen Stromkreis zurück zur p-dotierten Schicht,
+wodurch elektrische Arbeit verrichtet wird.
+
+Um den Strom zu maximieren sollte die Raumladungszone möglichst direkt an der
+Oberfläche der Zelle beginnen, weshalb die p-dotierte Schicht möglichst dünn
+sein sollte. Außerdem wird die Metallelektrode als dünnes Gitter auf dem Substrat
+aufgebracht, da sie sonst das gesamte Licht selbst absorbieren würde.
+
+\subsubsection{Typen von Solarzellen}
+Die in diesem Versuch verwendeten Solarzellen kann man den folgenden Typen
+zuordnen:
+\begin{itemize}
+  \item Die \emph{monokristalline Zelle} besteht, wie der Name schon sagt
+    idealerweise aus einem Einkristall des verwendeten Halbleiters. Eine solche
+    Zelle ist also sehr rein und hat wenige Fehlstellen, die beispielsweise die Breite
+    der Raumladungszone herabsetzen oder die Rekombination fördern. Mit
+    monokristallinen Zellen werden die höchsten Wirkungsgrade erzielt, außerdem
+    bieten sie aufgrund der fast komplett durchgehenden Kristallstruktur wenig
+    Angriffspunkte für Umwelteinflüsse und zeichnen sich so durch eine hohe
+    Haltbarkeit aus. Sie sind allerdings auch sehr teuer in der Herstellung, da
+    wie bei der Chipproduktion der Kristall aufwändig gezogen werden muss.
+  \item Bei \emph{polykristalline Zellen} hingegen steht die Reinheit des
+    Kristalls weniger im Vordergrund, wordurch eine solche Zellen eben aus
+    relativ vielen Kristallen besteht. Entsprechend günstiger sind sie in der
+    Herstellung, aber entsprechend geringer ist der Wirkungsgrad.
+  \item <+Amorphe Zellen+>
+\end{itemize}
+
+\subsection{Brennstoffzelle}
+Die Brennstoffzelle ist eine Methode zur direkten Umwandlung von chemischer in
+elektrische Energie.
+
+\subsubsection{Thermodynamische Grundlagen}
+Die maximal nutzbare Energie der Brennstoffzelle erhält man durch Betrachtung
+der Enthalpieänderung (bzw.\ des Brennwertes) der chemischen Reaktion:
+\begin{align}
+  \mathrm dH = \mathrm dU + P\mathrm dV = \mathrm dQ
+  \label{eqn:enthalpie}
+\end{align}
+
+
+
+\section{Solarzelle}
+Im ersten Versuchsteil werden die Eigenschaften verschiedener Solarzellen
+vermessen und verglichen.
+
+Um die Kennlinien aufzunehmen verwenden wir folgende Schaltung:
+\begin{center}
+  \begin{circuitikz}[scale=1.8]
+    \draw (-1,0)
+            to (1,0)
+            to [ammeter, *-] (1,1)
+            to [vR=$R_L$, -*] (1,2)
+          (1,0) -- (2,0)
+            to [voltmeter] (2,2)
+            -- (1,2)
+          (1,2) -- (-1,2)
+          (-1,0) to [american voltage source=Solarzelle, bipoles/length=2cm] (-1,2);
+  \end{circuitikz}
+\end{center}
+
+Wir messen also spannungsrichtig. Da der Innenwiderstand des Spannungsmessgeräts
+$\unit[10]{M\Omega}$ beträgt und unsere Lastwidestände maximal
+$\unit[5]{k\Omega}$ betragen liegt der Fehler der Strommessung dabei deutlich
+unter der Messungenauigkeit. Wir haben auf den Aufbau im Skript mit Schaltern
+zum Wechseln von strom- und spannungsrichtiger Messung verzichtet, da wir durch
+den vergleichsweise hohen (und vor allem je nach Messbereich variablen)
+Innenwiderstand des Strommessgeräts (im kleinsten Messbereich (\unit[2]{mA})
+immerhin $\unit[100]{\Omega}$) einen großen Fehler machten und keine
+vernünftigen Daten aufnehmen konnten.
+
+Als Lastwiderstände verwenden wir wie gesagt das
+$\unit[5]{k\Omega}$-Potentiometer $R_L$.
+
+\subsection{Kennlinien verschiedener Solarzellentypen}
+Wir vermessen für jeweils eine monokristalline und polykristalline sowie zwei
+amorphe Solarzellen die Kennlinie. Dazu werden die in einem Kasten plazierten
+Solarzellen zunächst von einem Diaprojektor möglichst gleichmäßig beleuchtet.
+Für die Außenmessungen kann der Kasten abmontiert und auf dem Dach angebracht
+werden.
+
+Mit obigem Aufbau messen wir dann die Kennlinien für jedes Material. Dabei
+berechnen wir als abgeleitete Größen die Leistung
+\begin{align}
+  P &= U \cdot I \\
+  \Delta P &= \sqrt{(\Delta U \cdot I)^2 + (U \cdot \Delta I)^2}
+  \label{eqn:leistung}
+\end{align}
+woraus wir im Graphen den Punkt höchster Leistung ablesen können. Die Fehler
+$\Delta U$ und $\Delta I$ sind abhängig von dem gewählten Messbereich und sind
+in den Graphen korrekt verwendet.
+
+Desweiteren wird der Füllfaktor bestimmt, der der Quotient der maximalen
+Leistung und der Leerlaufspannung mal dem Kurzschlussstrom ist.
+\begin{align}
+  f &= \frac{P_m}{U_0 I_0} \\
+  \Delta f &= \sqrt{\left(\frac{\Delta P_m}{U_0 I_0}\right)^2 +
+  \left(\frac{\Delta U_0 P_m}{U_0^2 I_0}\right)^2 + \left(\frac{\Delta I_0
+  P_m}{U_0 I_0^2}\right)^2}
+  \label{eqn:fuellfaktor}
+\end{align}
+
+Wir erhalten zunächst folgende Kennlinien:
+\newcommand{\Namen}{amorphen/amorph, monokristallinen/mono, polykristallinen/poly}
+\foreach \name/\file in \Namen{
+  \begin{figure}
+    \input{grafiken/kennlinie_\file_innen.tikz}
+    \input{grafiken/kennlinie_\file_aussen.tikz}
+    \caption{Kennlinie der \name{ }Zelle für die Innen- bzw. Außenmessung}
+    \label{fig:kennlinie_\file}
+  \end{figure}
+}
+
+Dabei ist die an die Kennlinie gefittete Funktion:
+\begin{align}
+  I(U) = A + B \exp(CU)
+  \label{eqn:fit_strom}
+\end{align}
+Der Fit der Leistung wurde nicht seperat durchgeführt sondern ist einfach $P =
+I(U) U$.
+
+Aus der gefitteten Kurve kann nun der Maximalwert der Leistung bestimmt werden,
+indem wir die Funktion ableiten und die Nullstelle bestimmen:
+\begin{align}
+  P'(U) &= (CU + 1) B \exp(CU) + A \overset{!}{=} 0\\
+  \Leftrightarrow -\frac AB &= (CU + 1) \exp(CU) \\
+  \Rightarrow U &= \frac{W(-\frac{\mathrm eA}B) - 1}{C}
+  \label{eqn:mpp}
+\end{align}
+
+Dabei ist $\mathrm e$ die Eulersche Zahl und $W(x)$ die Lambertsche W-Funktion,
+die Umkehrfunktion zu $f(x) = x\exp(x)$. Mit der Relation $W'(x) =
+\frac{W(x)}{x(1+W(x))}$ kann daraus der Fehler der Spannung errechnet werden.
+
+Um schließlich den Wirkungsgrad zu errechnen benötigen wir die Eingangsleistung.
+Für die Innenmessungen rechnen wir dafür mit einer Intensität von
+$\unit[(28.1\pm 1)]{\frac{W}{m^2}}$. Bei den Außenmessungen lag die Intensität
+im Bereich von $\unit[200-250]{\frac W{m^2}}$ für die monokristalline und die
+amorphe Zelle und bei $\unit[250-300]{\frac W{m^2}}$ für die polykristalline
+Zelle. Die Flächen der Zellen 
+
+Wir erhalten damit folgende Kenngrößen:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c|cccc}
+    \toprule
+    Typ & Maximale Leistung & Füllfaktor & Wirkungsgrad \\
+    \midrule
+    \input{data/daten_solarzelle.tex}
+    \bottomrule
+  \end{tabular}
+  \caption{Größen der Solarzellen}
+  \label{tab:solarzellen}
+\end{table}
+
+
+<++>
+
+\subsection{Messung der spektralen Empfindlichkeit der Solarzellen}
+In diesem Versuchsteil wurden mit einem Prismenmonochromator drei verschiedene
+Solarzellen mit Licht verschiedener Wellenlängen bestrahlt und jeweils die
+Leerlaufspannung bestimmt. Da der Projektor nicht für alle Wellenlängen die
+selbe Intensität ausgibt, werden die Messungen noch mit einem
+wellenlängenabhängigen Faktor korrigiert:
+\begin{align}
+  f(\lambda) = -0.7723 + 0.0077 \cdot \lambda - 1.11280\cdot 10^{-5} \cdot \lambda^2
+               + 5.3942\cdot 10^{-9} \cdot \lambda^3
+  \label{eqn:korrekturfaktor}
+\end{align}
+Zuletzt werden die Werte noch jeweils auf das Maximum der Spannung normiert und
+alle in ein Diagramm eingetragen:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/wellenlaenge.tikz}
+  \end{center}
+  \caption{Wellenlängenabhängigkeit der Leerlaufspannung}
+  \label{fig:wellenlaenge}
+\end{figure}
+
+Es ist gut zu erkennen, dass die Indoorzelle einen sehr großen
+Wellenlängenbereich abdeckt und bei etwa $\unit[500]{nm}$ die Leerlaufspannung
+stark einbricht. Die Outdoorzelle hingegen hat nur einen relativ schmalen
+Bereich maximaler Leerlaufspannung und hat ansonsten eine der
+Intensitätsverteilung des Sonnenlichts relativ ähnliche Form (relativ starker
+Anstieg von kleinen Wellenlängen her und etwas schwächerer Abfall zu größeren
+bei einem Maximum um $\unit[620]{nm}$). Dass die Maxima von In- und Outdoorzelle
+zusammenfallen liegt wohl daran, dass künstliches Licht in seiner Verteilung dem
+natürlichen Licht nachempfunden werden soll und zumindest immer im gelblichen
+liegt. Die Zelle ist vermutlich auf Glühbirnenlicht ausgelegt, da sie in den
+Bereichen größerer Wellenlängen auch noch hohe Leistungen bringt.
+
+Da die polykristalline einen der Outdoorzelle sehr ähnlichen Verlauf aufweist
+ist sie wohl ebenfalls für den Außenbereich konzipiert.
+
+\subsection{Kennlinien von Modulen von Solarzellen}
+In diesem Versuchsteil werden Kennlinien für verschiedene Verschaltungen von
+Solarzellen vermessen und ausgewertet. Zur Verfügung stehen sechs identische
+Zellen, die praktisch beliebig verkabelt werden können.
+
+Zunächst untersuchen wir die Kennlinien zweier einzelner Zellen, um Vorhersagen
+über die anderen Schaltungen treffen zu können:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/zellen.tikz}
+  \end{center}
+  \caption{Kennlinien zweier einzelner Zellen}
+  \label{fig:zellen}
+\end{figure}
+Zu erwarten ist nun, da die Zellen jeweils eine Spannungsquelle darstellen, dass
+die Leerlaufspannung der Parallelschaltung in etwa der der einzelnen Zellen
+entspricht (also etwa $\unit[0.45]{mV}$) während sie bei der der Reihenschaltung
+in der Größenordnung des sechsfachen davon liegen sollte. Beim Kurzschlussstrom
+sollte sich genau das gegensätzliche Bild zeigen, also etwa $\unit[6]{mA}$ für
+die Reihenschaltung und ungefähr das sechsfache davon bei der Parallelschaltung.
+Außerdem erwarten wir, dass die Parallelschaltung was die Kennlinie angeht bei
+Abschattung einer 4-Zellen-Schaltung entspricht während bei der Reihenschaltung
+das Ergebnis nicht absehbar ist.
+
+Dies wird in den nächsten Diagrammen bestätigt:
+\begin{figure}[h!]
+  \begin{center}
+    \input{grafiken/parallel.tikz}
+  \end{center}
+  \caption{Kennlinien der Parallelschaltung}
+  \label{fig:parallelschaltung}
+\end{figure}
+Die Werte für Kurzschlussstrom und Leerlaufspannung bewegen sich in den
+erwarteten Bereichen, insbesondere stimmt die Vorhersage für die Abschattung mit
+der Messung überein. Die Parallelschaltung der Solarzellen ist also was den
+Kennlinienverlauf und die Leistungskurve angeht stabil unter inhomogenen
+Beleuchtungsbedingungen.
+
+Bei der Reihenschaltung zeigt sich ein anderes Bild:
+\begin{figure}[H]
+  \begin{center}
+    \input{grafiken/reihe.tikz}
+  \end{center}
+  \caption{Kennlinien der Reihenschaltung}
+  \label{fig:reihenschaltung}
+\end{figure}
+Hier ist zum Einen zu sehen, dass sich Leistung und Leerlaufspannung sowie
+Kurzschlussstrom wie erwartet verhalten (also Leerlaufspannung versechsfacht,
+Kurzschlussstrom gesechstelt), der Füllfaktor sich also merklich verringert. Bei
+Abschattung zeigt sich der noch größere Nachteil der Reihenschaltung. Hier
+bricht die Kennlinie schon bei viel geringeren Spannungswerten ein und ist auch
+nicht mehr eine Exponentialkurve, entsprechend geringer ist auch die
+maximale Leistung.
+
+\subsection{Langzeitdaten}
+
+\section{Brennstoffzelle}
+

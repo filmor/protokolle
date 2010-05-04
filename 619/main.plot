@@ -13,9 +13,9 @@ set y2range [0:]
 set xrange [0:]
 
 plot_cmd = "plot datei u 2:1 title 'Strom' lc 1, \
-                datei u 2:($2 * $1) axes x1y2 title 'Leistung' lc 2, \
-                i(x) lc 1 notitle, \
-                p(x) axes x1y2 lc 2 notitle;"
+            datei u 2:($2 * $1) axes x1y2 title 'Leistung' lc 2, \
+            i(x) lc 1 notitle, \
+            p(x) axes x1y2 lc 2 notitle;"
 
 fit_cmd = "fit i(x) datei u 2:1 via A, B, C;".plot_cmd
 
@@ -53,4 +53,45 @@ A = 32; B = -6; C = 5;
 @cmd
 A = 822; B = -119; C = 4;
 @cmd2
+
+# =====================================================================================
+plot_cmd = "datei u 2:1 title 'Strom', \
+            datei u 2:($2 * $1) axes x1y2 title 'Leistung',\
+            datei2 u 2:1 title 'Strom (abgeschattet)', \
+            datei2 u 2:($2 * $1) axes x1y2 title 'Leistung (abgeschattet)';"
+cmd = "set output 'grafiken/'.typ.'.tikz';\
+       datei = 'data/05_'.typ.'.txt';coffset=0;\
+       datei2 = 'data/05_'.typ.'_abgeschattet.txt';\
+       plot ".plot_cmd.";"
+
+set xlabel '$U/\unit{mV}$'
+set y2label '$P/\unit{\mu W}$'
+typ = 'reihe'; @cmd
+set xlabel '$U/\unit{V}$'
+set y2label '$P/\unit{mW}$'
+typ = 'parallel'; @cmd
+
+set output 'grafiken/zellen.tikz'
+datei = 'data/05_zelle2.txt'
+datei2 = 'data/05_zelle3.txt'
+set yrange [0:8]
+plot datei u 2:1 title 'Strom (Zelle 2)', \
+     datei u 2:($2 * $1) axes x1y2 title 'Leistung (Zelle 2)',\
+     datei2 u 2:1 title 'Strom (Zelle 3)', \
+     datei2 u 2:($2 * $1) axes x1y2 title 'Leistung (Zelle 3)'
+
+reset
+
+# =====================================================================================
+set output 'grafiken/wellenlaenge.tikz'
+set yrange [0:1.3]
+
+set xlabel '$\lambda/\unit{nm}$'
+
+f(x) = -0.7723 + 0.0077 * x - 1.11280e-5*x**2 + 5.3942e-9*x**3
+
+plot 'data/03_indoor.txt' u 1:(f($1)*$2/1362):(2):(0.01*$2/1362) w xyerr title '\small Indoorzelle', \
+     'data/03_outdoor.txt' u 1:(f($1)*$2/456):(2):(0.01*$2/456) w xyerr title '\small Outdoorzelle', \
+     'data/03_poly.txt' u 1:(f($1)*$2/15):(2):(0.01*$2/15) w xyerr title '\small Polykristalline Zelle'
+
 
