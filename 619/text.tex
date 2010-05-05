@@ -79,7 +79,7 @@ Entropie $S$ ein. Damit erhält man per Legendre-Transformation:
 Dies ist das Gibbsche Potential und gibt die maximale nutzbare Energie der
 Brennstoffzelle an.
 
-\subsection{Wirkungsweise der Brennstoffzelle}
+\subsubsection{Wirkungsweise der Brennstoffzelle}
 Eine Brennstoffzelle besteht aus zwei mit einem Elektrolyt gefüllten Kammern,
 die durch eine ionendurchlässige Membran getrennt sind. Auf beiden Seiten der
 Membran sind Zuläufe für die "`Brennstoffe"' angebracht. Außerdem sind dort auch
@@ -91,10 +91,46 @@ In diesem Versuch verwenden wir eine sogenannten PEM-Brennstoffzelle
 Nafion, ein für Anionen undurchlässiges Polymer und die Katalysatoren aus
 Platin.
 
-<+Funktionsweise+>
+Die Stromerzeugung läuft nun wie folgt ab: An die Elektroden werden Wasserstoff
+(\ce{H2}) und Sauerstoff (\ce{O2}) geleitet. Der Wasserstoff wird an dem
+Katalysator und dem sauren Elektrolyt ionisiert. Durch die Membran dringen nur
+die Protonen, die Elektronen bleiben an der Anode, es kommt also zu einer
+Ladungstrennung. Auf der Kathodenseite wird der Sauerstoff ebenfalls
+aufgespalten und ergibt dann mit zwei Protonen zusammen unter Elektroneneinfang
+das Endprodukt Wasser. Es wird also im Endeffekt positive Ladung von der Anode
+an die Kathode transportiert.
 
-\subsection{Kennlinie}
-<+Kennlinie+>
+\subsubsection{Kennlinie}
+Wäre die Brennstoffzelle eine ideale Spannungsquelle, so würde sie bei jedem
+Strom $I$ die Leerlaufspannung liefern. Die Kennlinie der realen Brennstoffzelle
+wird jedoch von verschiedenen Faktoren beeinflusst. Sie lässt sich im
+wesentlichen in drei Bereiche aufteilen:
+
+\paragraph{Bereich 1}
+In diesem Spannungsbereich dominieren elektrokinetische Effekte den Verlauf der
+Kennlinie. Da das System nicht mehr im Gleichgewicht ist, verändern sich die
+Aktivierungsenergien für Hin- und Rückrichtung um den Betrag $\alpha F U$ bzw.\
+$-(1-\alpha)FU$. Der Strom $I$ steht dabei in direktem Zusammenhang zur
+Umwandlungsrate und folgt einem exponentiellem Verlauf.
+
+Man erhält für die Spannung in Abhängigkeit vom Strom:
+\begin{align}
+  U = C \ln{\frac{I_0}{I}}
+\end{align}
+
+\paragraph{Bereich 2}
+In diesem Abschnitt überwiegen die Ohmschen Widerstände der Brennstoffzelle, der
+beteiligten Kabel und der Kontakte. Der Verlauf ist hier also linear:
+\begin{align}
+  U = R\cdot I
+\end{align}
+
+\paragraph{Bereich 3}
+Der exponentielle Abfall in diesem Abschnitt hängt damit zusammen, dass bei
+steigender Umwandlungsrate nicht mehr genügend Wasserstoff und Sauerstoff an
+Anode und Kathode zur Verfügung stehen, sie also schneller verbraucht werden als
+Nachschub zu den Elektroden diffundiert. Die Diffusion liefert wiederum einen
+exponentiellen Verlauf.
 
 \subsection{Wirkungsgrade}
 Wie oben bereits angesprochen, kann aus thermodynamischen Gründen nicht der
@@ -136,8 +172,13 @@ beschriebenen) Elektrolyseur sinnvoll. Für diesen sollte aber $\eta_\text{F}$
 
 \subsection{Elektrolyse}
 \label{cha:elektro}
-<+Elektrolyse+>
-
+Die für die Brennstoffzelle benötigten Gase werden per Elektrolyse aus
+destilliertem Wasser gewonnen. An zwei in das Wasser eingetauchte Elektroden
+sammeln sich dabei Wasserstoff und Sauerstoff durch folgende Reaktionen:
+\begin{align}
+  \mathrm{2 \ H_2O \to 4 \ H^+ + 4 \ e^- + O_2} \\
+  \mathrm{4 \ H^+ + 4 \ e^- \to 2 \ H_2}
+\end{align}
 
 \section{Solarzelle}
 Im ersten Versuchsteil werden die Eigenschaften verschiedener Solarzellen
