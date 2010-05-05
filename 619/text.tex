@@ -13,10 +13,10 @@ Raumladungszone heraus.
 
 Treffen nun Photonen, die eine Energie haben die größer als die Bandlücke des
 Halbleiters ist (für Silizium, wie es in diesem Versuch verwendet wird ist das
-$E_G \approx \unit[1.1]{eV}$, entspricht einer Wellenlänge von \unit[<++>]{nm})
-entstehen durch den Photoeffekt Elektron-Loch-Paare. Außerhalb der
-Raumladungszone herrscht kein nennenswertes elektrisches Feld, so dass die
-Elektronen sich nicht von den Löchern wegbewegen und praktisch sofort
+$E_G \approx \unit[1.1]{eV}$, entspricht einer Wellenlänge von \unit[1127]{nm},
+also infrarotem Licht) entstehen durch den Photoeffekt Elektron-Loch-Paare.
+Außerhalb der Raumladungszone herrscht kein nennenswertes elektrisches Feld, so
+dass die Elektronen sich nicht von den Löchern wegbewegen und praktisch sofort
 rekombinieren. Innerhalb der Raumladungszone aber herrscht ein elektrisches Feld
 von (je nach Material) ca.\ \unit[0.6]{V}, dass die Elektronen von den Löchern
 trennt.
@@ -47,10 +47,16 @@ zuordnen:
     Kristalls weniger im Vordergrund, wordurch eine solche Zellen eben aus
     relativ vielen Kristallen besteht. Entsprechend günstiger sind sie in der
     Herstellung, aber entsprechend geringer ist der Wirkungsgrad.
-  \item <+Amorphe Zellen+>
+  \item \emph{Amorphe Solarzellen} bestehen aus einer dünnen, nichtkristallinen
+    also amorphen Siliziumschicht und werden daher auch als Dünnschichtzellen
+    bezeichnet. Sie können etwa durch Aufdampfen hergestellt werden und sind
+    preiswert, haben im Sonnenlicht einen nur geringen Wirkungsgrad, bieten jedoch
+    Vorteile bei wenig Licht, Streulicht und bei hoher Betriebstemperatur. Amorphe
+    Zellen werden beispielsweise auf Taschenrechnern oder Uhren eingesetzt.
 \end{itemize}
 
 \subsection{Brennstoffzelle}
+\hyphenation{Ent-hal-pie-"an-de-rung}
 Die Brennstoffzelle ist eine Methode zur direkten Umwandlung von chemischer in
 elektrische Energie.
 
@@ -58,10 +64,79 @@ elektrische Energie.
 Die maximal nutzbare Energie der Brennstoffzelle erhält man durch Betrachtung
 der Enthalpieänderung (bzw.\ des Brennwertes) der chemischen Reaktion:
 \begin{align}
-  \mathrm dH = \mathrm dU + P\mathrm dV = \mathrm dQ
+  \mathrm dH &= \mathrm dU + \mathrm d(pV) \\
+             &= \mathrm dU + P\mathrm dV = \mathrm dQ \text{ bei konstantem Druck}
   \label{eqn:enthalpie}
 \end{align}
+Da bei Brennstoffzellen üblicherweise das Endprodukt flüssig ist muss auch die
+Verdampfungswärme berücksichtigt werden. Außerdem ist geht noch die Änderung der
+Entropie $S$ ein. Damit erhält man per Legendre-Transformation:
+\begin{align}
+  \mathrm dG &= \mathrm dH - \mathrm d(TS) \\
+             &= \mathrm dH - \mathrm T\mathrm dS
+  \label{eqn:gibb}
+\end{align}
+Dies ist das Gibbsche Potential und gibt die maximale nutzbare Energie der
+Brennstoffzelle an.
 
+\subsection{Wirkungsweise der Brennstoffzelle}
+Eine Brennstoffzelle besteht aus zwei mit einem Elektrolyt gefüllten Kammern,
+die durch eine ionendurchlässige Membran getrennt sind. Auf beiden Seiten der
+Membran sind Zuläufe für die "`Brennstoffe"' angebracht. Außerdem sind dort auch
+Elektroden für den Ladungstransport und Katalysatoren für die Reaktion
+angebracht.
+
+In diesem Versuch verwenden wir eine sogenannten PEM-Brennstoffzelle
+(Proton Exchange Membran). In dieser sind Elektrolyt und Membran meist aus
+Nafion, ein für Anionen undurchlässiges Polymer und die Katalysatoren aus
+Platin.
+
+<+Funktionsweise+>
+
+\subsection{Kennlinie}
+<+Kennlinie+>
+
+\subsection{Wirkungsgrade}
+Wie oben bereits angesprochen, kann aus thermodynamischen Gründen nicht der
+volle Brennwert $\Delta H$ als Energie genutzt werden. Daher definiert man den
+Wirkungsgrad der Brennstoffzelle als:
+\begin{align}
+  \eta_\text{max} = \frac{\Delta G}{\Delta H}
+  \label{eqn:wgrad_fc}
+\end{align}
+Bei Raumtemperatur ist dieser Wirkungsgrad $\unit[83]{\%}$. Das heißt, dass etwa
+$\unit[17]{\%}$ der Energie in Wärme oder auf andere Art und
+Weise in irreversiblen Prozessen umgesetzt werden.
+
+Der technische Wirkungsgrad $\eta_\text{tech}$ ist aufgrund von
+Spannungsverlusten geringer. Er wird als das Verhältnis von gelieferter
+elektrischer Energie $W_\text{el} = QU = ItU$ zu verbrannter, um die Verdampfungswärme
+korrigierte chemischer Energie $\Delta H$ definiert:
+\begin{align}
+  \eta_\text{tech} &= \frac{W_\text{el}}{n \Delta H} = \frac{ItU}{n \Delta H}
+  \label{eqn:wgrad_tech}
+\end{align}
+Dabei ist $n$ die verbrauchte Stoffmenge des Brennstoffes in \unit{mol}. Der
+Faktor ist notwendig, da die Enthalpie hier auf $\unit[1]{mol}$ normiert ist.
+
+Zuletzt haben wir noch den Faraday-Wirkungsgrad, der das Verhältnis von
+theoretisch fließender Ladung $Q_\text{th}$ zu tatsächlich geflossener Ladung
+$Q_\text{real}$ an und wird deshalb auch als Stromausbeute bezeichnet. Er ist
+also wie folgt definiert:
+\begin{align}
+  \eta_\text{F} = \frac{Q_\text{tat}}{Q_\text{th}} = \frac{I\cdot t}{nzF}
+  \label{eqn:wgrad_f}
+\end{align}
+wobei $I$ der von der Brennstoffzelle gelieferte Strom und $t$ der Messzeitraum
+und $Q = -nzF$ das erste Faradaysche Gesetz ($z$ die Wertigkeit des Ions und $F
+= \unit[96485.3399]{\frac{C}{mol}}$ die Faraday-Konstante) ist.
+
+Dieser Wirkungsgrad ist auch für den (in Abschnitt \ref{cha:elektro}
+beschriebenen) Elektrolyseur sinnvoll. Für diesen sollte aber $\eta_\text{F}$
+
+\subsection{Elektrolyse}
+\label{cha:elektro}
+<+Elektrolyse+>
 
 
 \section{Solarzelle}
@@ -178,7 +253,7 @@ Wir erhalten damit folgende Kenngrößen:
 \end{table}
 
 
-<++>
+
 
 \subsection{Messung der spektralen Empfindlichkeit der Solarzellen}
 In diesem Versuchsteil wurden mit einem Prismenmonochromator drei verschiedene

@@ -90,8 +90,8 @@ set xlabel '$\lambda/\unit{nm}$'
 
 f(x) = -0.7723 + 0.0077 * x - 1.11280e-5*x**2 + 5.3942e-9*x**3
 
-plot 'data/03_indoor.txt' u 1:(f($1)*$2/1362):(2):(0.01*$2/1362) w xyerr title '\small Indoorzelle', \
-     'data/03_outdoor.txt' u 1:(f($1)*$2/456):(2):(0.01*$2/456) w xyerr title '\small Outdoorzelle', \
-     'data/03_poly.txt' u 1:(f($1)*$2/15):(2):(0.01*$2/15) w xyerr title '\small Polykristalline Zelle'
+plot 'data/03_indoor.txt' u 1:(f($1)*$2/1362):(2):(0.01*$2/1362) w xyerr title 'Indoorzelle', \
+     'data/03_outdoor.txt' u 1:(f($1)*$2/456):(2):(0.01*$2/456) w xyerr title 'Outdoorzelle', \
+     'data/03_poly.txt' u 1:(f($1)*$2/15):(2):(0.01*$2/15) w xyerr title 'Polykristalline Zelle'
 
 
