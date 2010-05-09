@@ -167,9 +167,6 @@ wobei $I$ der von der Brennstoffzelle gelieferte Strom und $t$ der Messzeitraum
 und $Q = -nzF$ das erste Faradaysche Gesetz ($z$ die Wertigkeit des Ions und $F
 = \unit[96485.3399]{\frac{C}{mol}}$ die Faraday-Konstante) ist.
 
-Dieser Wirkungsgrad ist auch für den (in Abschnitt \ref{cha:elektro}
-beschriebenen) Elektrolyseur sinnvoll. Für diesen sollte aber $\eta_\text{F}$
-
 \subsection{Elektrolyse}
 \label{cha:elektro}
 Die für die Brennstoffzelle benötigten Gase werden per Elektrolyse aus
@@ -179,6 +176,8 @@ sammeln sich dabei Wasserstoff und Sauerstoff durch folgende Reaktionen:
   \mathrm{2 \ H_2O \to 4 \ H^+ + 4 \ e^- + O_2} \\
   \mathrm{4 \ H^+ + 4 \ e^- \to 2 \ H_2}
 \end{align}
+Der Wasserstoffionen sammelt sich dabei an der Kathode, die Sauerstoffionen an
+der Anode.
 
 \section{Solarzelle}
 Im ersten Versuchsteil werden die Eigenschaften verschiedener Solarzellen
@@ -384,9 +383,190 @@ Kurzschlussstrom gesechstelt), der Füllfaktor sich also merklich verringert. Bei
 Abschattung zeigt sich der noch größere Nachteil der Reihenschaltung. Hier
 bricht die Kennlinie schon bei viel geringeren Spannungswerten ein und ist auch
 nicht mehr eine Exponentialkurve, entsprechend geringer ist auch die
-maximale Leistung.
+maximale Leistung. Dies kommt daher, dass die abgeschatteten Zellen in dieser
+Schaltung in Sperrrichtung betriebene Dioden sind.
 
 \subsection{Langzeitdaten}
+Zuletzt werten wir noch Daten aus einer Langzeitmessung aus. Wir wählen dazu die
+Tage
+\begin{description}
+  \item[Tag A: 15.05.98] \dots da dies der Tag mit der höchsten durchschnittlichen
+    Sonneneinstrahlung ist.
+  \item[Tag B: 30.09.97] \dots als einen Tag mit leicht wechselnder Wetterlage und
+    deutlich geringerer Gesamteinstrahlung.
+  \item[Tag C: 22.08.97] \dots als Tag mit stark wechselnden Beleuchtungsverhältnissen.
+\end{description}
+In jeder Datei sind Spannungs-, Strom- und Leistungsabgabe von einer festen und
+einer der Sonne nachgeführten Solarzelle sowie die Daten eines Pyranometers
+eingetragen.
+
+Da in den Dateien die Zeitwerte nicht homogen verteilt sind integrieren wir mit
+einem kleinen AWK-Skript per Rechteckverfahren. Die Intensitäten sind alle auf
+$\unit[1]{m^2}$ normiert, sind also als Leistungen direkt vergleichbar. Die hier
+angegebenen Werte sind allerdings \emph{nicht} die tatsächlich von den
+Solarmodulen umgesetzten Energien. Lediglich die Effizienzen sind  Wir
+erhalten für die gewählten Tage die folgenden auszurechnenden Werte:
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|ccccc}
+    \toprule
+    & Eingangsenergie/$\unit{Wh}$ & $W_\text{var}/\unit{Wh}$ & $\eta_\text{var}$
+    & $W_\text{fest}/\unit{Wh}$ & $\eta_\text{fest}$ \\
+    \midrule
+    Tag A & $5819.8$ & $698.1$ & $\unit[12]{\%}$ & $587.2$ & $\unit[10.1]{\%}$ \\
+    Tag B & $770.9$ & $39.7$ & $\unit[5.2]{\%}$ & $38.4$ & $\unit[4.97]{\%}$ \\
+    Tag C & $1554.6$ & $118.2$ & $\unit[7.6]{\%}$ & $118.5$ & $\unit[7.6]{\%}$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messdaten aus den Langzeitmessungen}
+  \label{tab:langzeit}
+\end{table}
+Man erkennt an den Daten, dass die Effizienz beider Solarzellen an Tagen mit
+gutem Wetter deutlich höher ist. Da die Nachführtechnik etwa $\unit[11]{Wh}$ am
+Tag verbraucht erkennt man auch, dass sich diese praktisch ausschließlich an
+Tagen mit sehr gutem Wetter lohnt, wobei auch hier, da die Solarzelle vermutlich
+deutlich kleiner als $\unit[1]{m^2}$, die Energiedifferenz also wohl eher im
+unteren zweistelligen $\unit{Wh}$-Bereich liegt der Nutzen einer solchen Technik
+in unseren Breiten eher nicht zu bestätigen ist.
+
+Betrachtet man noch die Leistungskurven (Abbildungen \ref{fig:leistung_a} bis
+\ref{fig:leistung_b}, so erkennt man dass an dem sehr guten
+Tag die Solarzellen schnell in Sättigung gehen, somit nicht das gesamte
+Potential der Einstrahlung ausgenutzt wird. Der Unterschied zwischen geführter
+und fester Solarzelle ist hier auch nur am sonnigsten Tag zu erkennen, an dem
+die geführte Solarzelle praktisch mit Sonnenaufgang ihre maximale
+Ausgangsleistung erreicht, während die feste Zelle erst zwei Stunden später
+soweit ist. Der starke Einbruch der Kurve noch deutlich vor dem tatsächlichen
+Sonnenuntergang ist wohl mit einem Gebäude in der Nähe zu erklären.
+
+\foreach \big/\sm in {A/a, B/b, C/c}{
+  \begin{figure}
+    \input{grafiken/leistung_\sm.tikz}
+    \caption{Leistungskurven für Tag \big}
+    \label{fig:leistung_\sm}
+  \end{figure}
+}
 
 \section{Brennstoffzelle}
+Im Versuchsteil der Brennstoffzelle soll ein System aus Elektrolyseur und
+Brennstoffzelle aufgebaut werden. Der Elektrolyseur liefert aus Wasser
+Wasserstoff und Sauerstoff an die Elektroden der Brennstoffzelle und soll
+eigentlich mit einer Solarzelle betrieben werden, die allerdings bei unserer
+Durchführung defekt war. Die Daten für die Kennlinie wurden uns daher vom
+Assistenten zur Verfügung gestellt. Die Kennlinie der Brennstoffzelle nehmen
+wir durch anschließen verschiedener Lastwiderstände auf.
 
+\subsection{Kennlinie der Solarzelle und des Elektrolyseurs}
+Wir tragen wie im ersten Versuchsteil die Kennlinie der Solarzelle sowie die
+Leistungskurve auf, wobei beides für zwei verschiedene Intensitäten dargestellt
+ist. Desweiteren ist die Kennlinie des Elektrolyseurs eingetragen.
+\begin{figure}[H]
+  \input{grafiken/bsz_kennlinie_solarzelle.tikz}
+  \caption{Kennlinien der Solarzelle für zwei verschiedene Intensitäten}
+  \label{fig:bsz_kennlinie_solarzelle}
+\end{figure}
+Optimal wäre für die Zelle natürlich wieder der Punkt größter Leistung,
+allerdings ist die Kennlinie in diesem Bereich alles andere als konstant. Da die
+Kennlinie des Elektrolyseurs eine Exponentialfunktion ist wäre dann das
+Verhalten des Systems sehr instabil unter geringfügigen Änderungen der
+Intensität. Setzt man dagegen den Arbeitspunkt auf das Plateau (möglichst weit
+in Richtung des Abfalls), so erhält man eine hohe Leistung und ausreichende
+Stabilität. Da bei uns die Solarzelle nicht funktionierte haben wir mit einem
+Netzgerät eine deutlich stabilere Spannungsquelle und konnten deshalb mit der
+höchsten verfügbaren Spannung arbeiten.
+
+\subsection{Kennlinie der Brennstoffzelle}
+Die Brennstoffzelle zeigt folgende Kennlinie:
+\begin{figure}[H]
+  \input{grafiken/kennlinie_brennstoffzelle.tikz}
+  \caption{Kennlinie der Brennstoffzelle}
+  \label{fig:kennlinie_bsz}
+\end{figure}
+Dies ist eine Kennlinie, wie wir sie nach der Theorie erwarten. Um den
+Innenwiderstand zu berechnen fitten wir an die Punkte im mittleren Bereich
+(Bereich 2 in der Einleitung) eine Gerade, deren Steigung dann genau der
+Innenwiderstand ist. Dabei erhalten wir
+\begin{align}
+  R_\text{Innen} = \unit[(2.097 \pm 0.065)]{\Omega}
+  \label{eqn:innenwiderstand}
+\end{align}
+In früheren Protokollen sind ähnliche Werte zu finden, wir können den Wert also
+als bestätigt ansehen.
+
+\subsection{Wirkungsgrad des Elektrolyseurs}
+Wir betrachten die Faraday- und technischen Wirkungsgrade des Elektrolyseurs.
+Dazu haben wir (von der Versuchsbeschreibung abweichend) für zwei verschiedene
+Stromstärken ($\unit[1]{A}$ und $\unit[300]{mA}$) minütlich das Volumen des
+freigesetzten Wasserstoffs im Kolben gemessen. Da die Skaleneinteilung in
+$\unit{ml}$-Schritten war nehmen wir einen Fehler von $\Delta V =
+\unit[0.5]{ml}$ an. Für die Zeitmessung ist der Fehler gegen den Messbereich
+insignifikant.
+
+Wir erhalten folgende Graphen:
+\begin{figure}[H]
+  \input{grafiken/wirkungsgrad_elek.tikz}
+  \caption{Wirkungsgrad des Elektrolyseurs für verschiedene Ströme}
+  \label{fig:wirkungsgrad_elek}
+\end{figure}
+
+Die Fitgeraden haben dabei die Steigungen:
+\begin{align}
+  m_{\unit[1]{A}} &= \unit[(6.82 \pm 0.05)]{\frac{ml}{min}} \\
+  m_{\unit[300]{mA}} &= \unit[(1.57 \pm 0.08)]{\frac{ml}{min}} \approx
+  0.23\ m_{\unit[1]{A}}
+  \label{eqn:steigungen}
+\end{align}
+
+Daraus können wir nun den Faraday-Wirkungsgrad bestimmen. Es gilt:
+\begin{align}
+  \eta_\mathrm{F} = \frac{I\cdot t}{nzF}
+\end{align}
+Hierbei setzen wir für $I$ den jeweils eingestellten Strom, für $t$
+$\unit[1]{min} = \unit[60]{s}$ und für $n$ die gemessene Stoffmenge ein, die wir
+aus der Steigung durch Nutzung des Umrechnungsfaktors für das Gas
+($\unit[1]{mol} \overset{\wedge}{=} \unit[24.5]{l}$ unter Normalbedingungen)
+erhalten. Für $z$ setzen wir $2$ ein, da wir den Prozess \ce{H2 -> 2H+}
+betrachten. Damit erhalten wir nun folgende Faraday-Wirkungsgrade:
+\begin{align}
+  \eta_{\mathrm F,\unit[1]{A}} &= 0.865 \pm 0.051 \\
+  \eta_{\mathrm F,\unit[300]{mA}} &= 0.688 \pm 0.034
+\end{align}
+Die Fehler erhielten wir dabei durch gewöhnliche Fehlerfortpflanzung.
+
+Nun können wir noch den technischen Wirkungsgrad bestimmen, der sich als
+Quotient der gespeicherten chemischen Energie zur verbrauchten elektrischen
+Energie berechnet. Wir wissen aus der Versuchsbeschreibung, dass die
+Reaktionsenthalpie für diesen Prozess $\Delta H_c = -286 \frac{kJ}{mol}$
+beträgt. Die Spannung können wir aus unserer Kennlinie ablesen. Sie beträgt für
+$I = \unit[1]{A} \to U = \unit[1.92]{V}$ und für $I = \unit[300]{mA} \to U =
+\unit[1.58]{V}$. Damit erhalten wir unter der Annahme $\Delta U =
+\unit[0.01]{V}$:
+\begin{align}
+  \eta_\text{tech} = \frac{\left|\Delta H_c\right|}{2FU} \\
+  \Rightarrow \eta_{\text{tech},\unit[1]{A}} &= 0.772 \pm 0.004 \\
+    \text{und } \eta_{\text{tech},\unit[300]{mA}} &= 0.938 \pm 0.006
+\end{align}
+Man sieht zwar an der Formel, dass $\eta_\text{tech}$ antiproportional zur
+Spannung ist und damit formal unbeschränkt ist, allerdings sieht man, dass wenn
+der technische Wirkungsgrad gegen $1$ geht der Elektrolysestrom verschwindet,
+der Prozess also stoppt.
+
+\subsection{Wirkungsgrad der Brennstoffzelle}
+Analog zu vorigem Versuchsteil können wir nun Faraday-Wirkungsgrad und
+technischen Wirkungsgrad für die Brennstoffzelle bestimmen. Um eine zuverlässige
+Aussage über diese zu erhalten ist es wichtig die Leckrate des Systems zu
+kennen. Wir maßen bei einem Anfangszustand von $V_\ce{O2} = \unit[10]{ml}$ und
+$V_\ce{H2} = \unit[20]{ml}$ nach fünf Minuten die Werte $V_\ce{O2} = \unit[(9
+    \pm 0.5)]{ml}$ und $V_\ce{H2} = \unit[(17 \pm 0.5)]{ml}$. Wir gehen also von
+einer Leckrate von etwa $\unit[0.5]{\frac{ml}{min}}$. Nachdem wir nun nochmal
+das System durchgespült haben und möglichst genau versucht haben den
+Anfangszustand von $V_\ce{O2} = \unit[10]{ml}$ und $V_\ce{H2} = \unit[20]{ml}$
+wiederherzustellen messen wir nun über die Zeit für verschiedene Widerstände die
+verbrauchte Gasmenge.
+
+
+
+\subsection{Wirkungsgrad des Gesamtsystems}
+Zuletzt bestimmen wir noch den Wirkungsgrad des Gesamtsystems aus Solarzelle,
+Elektrolyseur und Brennstoffzelle.
+<++>

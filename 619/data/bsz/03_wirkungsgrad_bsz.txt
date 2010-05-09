@@ -1,20 +1,27 @@
-                    O_2/ml  H_2/ml  U/mV    I/mA
-Startzustand:       10      20
+# t/min O_2/ml  H_2/ml  U/mV    I/mA
+# Startzustand:
+# 0     10      20
+# Nach 5 min
+# 5     9       17
 
-Nach fünf Minuten:  9       17
 
-3Ω Widerstand 0min: 10  20    456     132
-              2min: 9   17    448     130
-              4min: 7   14    435     126
-              6min: 6   11    424     123
-              8min: 5   8     416     120
-            
-1Ω Widerstand 0min: 10  20  267 223
-              2min: 8   16  231 193
-              4min: 6   12  218 183
-              6min: 5   8   211 177
+# 3Ω Widerstand
+0   10  20    456     132
+2   9   17    448     130
+4   7   14    435     126
+6   6   11    424     123
+8   5   8     416     120
 
-½Ω Widerstand 0min: 10  20  189 285
-              2min: 8   15  166 251
-              4min: 6   10  156 236
-              6min: 4   6   150 227
+
+# 1Ω Widerstand
+0   10  20  267 223
+2   8   16  231 193
+4   6   12  218 183
+6   5   8   211 177
+
+
+# ½Ω Widerstand
+0   10  20  189 285
+2   8   15  166 251
+4   6   10  156 236
+6   4   6   150 227
