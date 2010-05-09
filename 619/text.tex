@@ -7,9 +7,9 @@ Wellenlänge. Die PEM-Brennstoffzelle wird vor allem im Hinblick auf ihren
 Wirkungsgrad untersucht.
 
 \subsection{Solarzelle}
-Solarzellen sind im wesentlichen Halbleiterdioden, die Licht ausgesetzt werden.
-Am pn-Übergang der Diode bildet sich zunächst wie gewöhnlich durch Diffusion eine
-Raumladungszone heraus.
+Solarzellen sind im wesentlichen in Sperrrichtung betriebene Halbleiterdioden,
+die Licht ausgesetzt werden. Am pn-Übergang der Diode bildet sich zunächst wie
+gewöhnlich durch Diffusion und Drift eine Raumladungszone heraus.
 
 Treffen nun Photonen, die eine Energie haben die größer als die Bandlücke des
 Halbleiters ist (für Silizium, wie es in diesem Versuch verwendet wird ist das
@@ -19,9 +19,10 @@ Außerhalb der Raumladungszone herrscht kein nennenswertes elektrisches Feld, so
 dass die Elektronen sich nicht von den Löchern wegbewegen und praktisch sofort
 rekombinieren. Innerhalb der Raumladungszone aber herrscht ein elektrisches Feld
 von (je nach Material) ca.\ \unit[0.6]{V}, dass die Elektronen von den Löchern
-trennt.
+trennt, daher ist die Größe der Raumladungszone von entscheidender Bedeutung für
+die Effizienz der Solarzelle.
 
-Die Elektronen werden nun an einer Elektrode an der n-dotierten Schicht
+Die Elektronen werden nun an einer Metallelektrode an der n-dotierten Schicht
 abgegriffen und fließen durch einen Stromkreis zurück zur p-dotierten Schicht,
 wodurch elektrische Arbeit verrichtet wird.
 
@@ -58,7 +59,9 @@ zuordnen:
 \subsection{Brennstoffzelle}
 \hyphenation{Ent-hal-pie-"an-de-rung}
 Die Brennstoffzelle ist eine Methode zur direkten Umwandlung von chemischer in
-elektrische Energie.
+elektrische Energie und kann deshalb genutzt werden um beispielsweise
+Elektromotoren zu betreiben. Kombiniert mit einem Elektrolyseur kann sie auch
+als Akkumulator dienen.
 
 \subsubsection{Thermodynamische Grundlagen}
 Die maximal nutzbare Energie der Brennstoffzelle erhält man durch Betrachtung
@@ -82,14 +85,14 @@ Brennstoffzelle an.
 \subsubsection{Wirkungsweise der Brennstoffzelle}
 Eine Brennstoffzelle besteht aus zwei mit einem Elektrolyt gefüllten Kammern,
 die durch eine ionendurchlässige Membran getrennt sind. Auf beiden Seiten der
-Membran sind Zuläufe für die "`Brennstoffe"' angebracht. Außerdem sind dort auch
+Membran sind Zuläufe für die Brennstoffe angebracht. Außerdem sind dort auch
 Elektroden für den Ladungstransport und Katalysatoren für die Reaktion
 angebracht.
 
-In diesem Versuch verwenden wir eine sogenannten PEM-Brennstoffzelle
-(Proton Exchange Membran). In dieser sind Elektrolyt und Membran meist aus
-Nafion, ein für Anionen undurchlässiges Polymer und die Katalysatoren aus
-Platin.
+In diesem Versuch verwenden wir eine sogenannten PEM-Brennstoffzelle (Proton
+Exchange Membran). In dieser sind Elektrolyt und Membran meist aus Nafion, ein
+für Anionen undurchlässiges saures Polymer und die Katalysatoren aus Platin
+hergestellt.
 
 Die Stromerzeugung läuft nun wie folgt ab: An die Elektroden werden Wasserstoff
 (\ce{H2}) und Sauerstoff (\ce{O2}) geleitet. Der Wasserstoff wird an dem
@@ -164,8 +167,8 @@ also wie folgt definiert:
   \label{eqn:wgrad_f}
 \end{align}
 wobei $I$ der von der Brennstoffzelle gelieferte Strom und $t$ der Messzeitraum
-und $Q = -nzF$ das erste Faradaysche Gesetz ($z$ die Wertigkeit des Ions und $F
-= \unit[96485.3399]{\frac{C}{mol}}$ die Faraday-Konstante) ist.
+und $Q = -nzF$ das erste Faradaysche Gesetz mit $F =
+\unit[96485.3399]{\frac{C}{mol}}$ der Faraday-Konstanten ist.
 
 \subsection{Elektrolyse}
 \label{cha:elektro}
@@ -177,7 +180,9 @@ sammeln sich dabei Wasserstoff und Sauerstoff durch folgende Reaktionen:
   \mathrm{4 \ H^+ + 4 \ e^- \to 2 \ H_2}
 \end{align}
 Der Wasserstoffionen sammelt sich dabei an der Kathode, die Sauerstoffionen an
-der Anode.
+der Anode. Da ein Elektrolyseur im Prinzip eine umgekehrte Brennstoffzelle ist,
+sind auch für diesen technischer und faradayscher Wirkungsgrad sinnvoll
+definiert und werden in diesem Versuch auch bestimmt.
 
 \section{Solarzelle}
 Im ersten Versuchsteil werden die Eigenschaften verschiedener Solarzellen
@@ -536,7 +541,7 @@ Die Fehler erhielten wir dabei durch gewöhnliche Fehlerfortpflanzung.
 Nun können wir noch den technischen Wirkungsgrad bestimmen, der sich als
 Quotient der gespeicherten chemischen Energie zur verbrauchten elektrischen
 Energie berechnet. Wir wissen aus der Versuchsbeschreibung, dass die
-Reaktionsenthalpie für diesen Prozess $\Delta H_c = -286 \frac{kJ}{mol}$
+Reaktionsenthalpie für diesen Prozess $\Delta H_c = -\unit[286]{\frac{kJ}{mol}}$
 beträgt. Die Spannung können wir aus unserer Kennlinie ablesen. Sie beträgt für
 $I = \unit[1]{A} \to U = \unit[1.92]{V}$ und für $I = \unit[300]{mA} \to U =
 \unit[1.58]{V}$. Damit erhalten wir unter der Annahme $\Delta U =
@@ -562,11 +567,23 @@ einer Leckrate von etwa $\unit[0.5]{\frac{ml}{min}}$. Nachdem wir nun nochmal
 das System durchgespült haben und möglichst genau versucht haben den
 Anfangszustand von $V_\ce{O2} = \unit[10]{ml}$ und $V_\ce{H2} = \unit[20]{ml}$
 wiederherzustellen messen wir nun über die Zeit für verschiedene Widerstände die
-verbrauchte Gasmenge.
+verbrauchte Gasmenge. Wir erhalten damit folgende Daten:
+\begin{table}
+  \centering
+  \begin{tabular}{c|ccc}
+    \toprule
+    Widerstand/$\unit{\Omega}$ & $\eta_\text{F}$ & $\eta_\text{tech}$ \\
+    \midrule
+    $3$ & $0.95 \pm 0.1$ & $0.46 \pm 0.01$ \\
+    $1$ & $0.92 \pm 0.1$ & $0.41 \pm 0.01$ \\
+    $0.5$ & $0.90 \pm 0.2$ & $0.38 \pm 0.01$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Wirkungsgrad der Brennstoffzelle}
+\end{table}
 
-
-
-\subsection{Wirkungsgrad des Gesamtsystems}
-Zuletzt bestimmen wir noch den Wirkungsgrad des Gesamtsystems aus Solarzelle,
-Elektrolyseur und Brennstoffzelle.
-<++>
+Man sieht, dass der technische Wirkungsgrad der Brennstoffzelle mit dem Strom
+fällt. Es ist also vermutlich sinnvoll, mehrere Brennstoffzellen parallel zu
+verschalten um so die Last aufzuteilen und einen hohen Wirkungsgrad zu erhalten.
+Dadurch geht aber prinzipbedingt natürlich der Verlust hoch. Dies sollte dann je
+nach Anwendung abgewogen werden.
